@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WhiteItemInputView" customModule="A_Shipvio" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundDisabledView" destination="zBu-3F-Jow" id="Gm6-3z-OnO"/>
+                <outlet property="backgroundEnabledView" destination="EAX-P0-5s1" id="EaG-IC-pKS"/>
+                <outlet property="inputTextField" destination="SOU-Ra-B1n" id="KHJ-BV-SsN"/>
+                <outlet property="titleLabel" destination="Ilj-Z1-IUk" id="21d-46-DzG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="e71-vj-elv">
+            <rect key="frame" x="0.0" y="0.0" width="254" height="187"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilj-Z1-IUk" customClass="LocalizedLabel" customModule="A_Shipvio" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="254" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="InputViewLabelColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBu-3F-Jow">
+                    <rect key="frame" x="0.0" y="29" width="254" height="158"/>
+                    <color key="backgroundColor" name="InputViewDisabledBackground"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAX-P0-5s1">
+                    <rect key="frame" x="0.0" y="29" width="254" height="158"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bkt-Gt-1Ts">
+                    <rect key="frame" x="0.0" y="28.5" width="254" height="158.5"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOU-Ra-B1n" customClass="LocalizedTextField" customModule="A_Shipvio" customModuleProvider="target">
+                            <rect key="frame" x="10" y="0.0" width="234" height="158.5"/>
+                            <color key="textColor" name="InputViewTextColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="SOU-Ra-B1n" secondAttribute="bottom" id="Dhl-Cn-rB3"/>
+                        <constraint firstAttribute="trailing" secondItem="SOU-Ra-B1n" secondAttribute="trailing" constant="10" id="N2v-wn-fU1"/>
+                        <constraint firstItem="SOU-Ra-B1n" firstAttribute="leading" secondItem="Bkt-Gt-1Ts" secondAttribute="leading" constant="10" id="eYx-Ea-dsj"/>
+                        <constraint firstItem="SOU-Ra-B1n" firstAttribute="top" secondItem="Bkt-Gt-1Ts" secondAttribute="top" id="rBI-S8-kgB"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Bkt-Gt-1Ts" firstAttribute="top" secondItem="Ilj-Z1-IUk" secondAttribute="bottom" constant="8" id="2pb-xu-hgx"/>
+                <constraint firstItem="EAX-P0-5s1" firstAttribute="leading" secondItem="Bkt-Gt-1Ts" secondAttribute="leading" id="6uQ-yS-cHX"/>
+                <constraint firstAttribute="trailing" secondItem="Bkt-Gt-1Ts" secondAttribute="trailing" id="8lB-xY-uJS"/>
+                <constraint firstItem="zBu-3F-Jow" firstAttribute="bottom" secondItem="EAX-P0-5s1" secondAttribute="bottom" id="FN4-0K-M90"/>
+                <constraint firstAttribute="trailing" secondItem="Ilj-Z1-IUk" secondAttribute="trailing" id="Pad-wi-Wvl"/>
+                <constraint firstItem="zBu-3F-Jow" firstAttribute="top" secondItem="EAX-P0-5s1" secondAttribute="top" id="Txx-nk-llv"/>
+                <constraint firstItem="zBu-3F-Jow" firstAttribute="leading" secondItem="EAX-P0-5s1" secondAttribute="leading" id="UKE-X3-hG2"/>
+                <constraint firstItem="EAX-P0-5s1" firstAttribute="trailing" secondItem="Bkt-Gt-1Ts" secondAttribute="trailing" id="XBv-ey-9HX"/>
+                <constraint firstItem="Ilj-Z1-IUk" firstAttribute="top" secondItem="e71-vj-elv" secondAttribute="top" id="biI-MB-Vxt"/>
+                <constraint firstAttribute="bottom" secondItem="Bkt-Gt-1Ts" secondAttribute="bottom" id="d5K-rs-loS"/>
+                <constraint firstItem="Bkt-Gt-1Ts" firstAttribute="leading" secondItem="e71-vj-elv" secondAttribute="leading" id="l5j-nI-XJj"/>
+                <constraint firstItem="Ilj-Z1-IUk" firstAttribute="leading" secondItem="e71-vj-elv" secondAttribute="leading" id="o36-SY-DHd"/>
+                <constraint firstItem="zBu-3F-Jow" firstAttribute="trailing" secondItem="EAX-P0-5s1" secondAttribute="trailing" id="qV5-VC-KRW"/>
+                <constraint firstItem="EAX-P0-5s1" firstAttribute="top" secondItem="Bkt-Gt-1Ts" secondAttribute="top" id="y2f-U2-pcT"/>
+                <constraint firstItem="EAX-P0-5s1" firstAttribute="bottom" secondItem="Bkt-Gt-1Ts" secondAttribute="bottom" id="ycy-wj-Ixt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vuQ-jQ-Dk2"/>
+            <point key="canvasLocation" x="19" y="-191.5"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="InputViewDisabledBackground">
+            <color red="0.95300000910000005" green="0.95700001720000005" blue="0.97299999000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="InputViewLabelColor">
+            <color red="0.57599997520000001" green="0.58300000429999999" blue="0.65399998429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="InputViewTextColor">
+            <color red="0.28400000930000002" green="0.32400000099999998" blue="0.54799997810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,369 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+#####
+
+# Project specific variables
+
+workspace = "Shipvio3.xcworkspace"
+slack_channel = "#testovani"
+
+customer_alpha = {
+  app_identifier: "com.shipvio.hauler.alpha",
+  scheme: "Shipvio_Customer_Alpha",
+  plist_path: "./Shipvio3/Customer/Shipvio_Customer_Alpha-Info.plist",
+  output_name: "A-Shipvio",
+  crashlytics_groups: "ios-internal",
+  testflight_groups: ['App Store Connect Users', 'Public']
+}
+
+customer_beta = {
+  app_identifier: "com.shipvio.hauler.beta",
+  scheme: "Shipvio_Customer_Beta",
+  plist_path: "./Shipvio3/Customer/Shipvio_Customer_Beta-Info.plist",
+  output_name: "B-Shipvio",
+  crashlytics_groups: "ios-internal",
+  testflight_groups: ['App Store Connect Users', 'Public']
+}
+
+customer_production = {
+  app_identifier: "com.shipvio.hauler",
+  scheme: "Shipvio_Customer",
+  plist_path: "./Shipvio3/Customer/Shipvio_Customer-Info.plist",
+  output_name: "Shipvio"
+}
+
+driver_alpha = {
+  app_identifier: "cz.qest.shipvio.alpha",
+  scheme: "Shipvio_Driver_Alpha",
+  plist_path: "./Shipvio3/Driver/Shipvio_Driver_Alpha-Info.plist",
+  output_name: "A-Shipvio Drive",
+  crashlytics_groups: "ios-internal",
+  testflight_groups: ['App Store Connect Users', 'Public']
+}
+
+driver_beta = {
+  app_identifier: "cz.qest.shipvio.beta",
+  scheme: "Shipvio_Driver_Beta",
+  plist_path: "./Shipvio3/Driver/Shipvio_Driver_Beta-Info.plist",
+  output_name: "B-Shipvio Drive",
+  crashlytics_groups: "ios-internal",
+  testflight_groups: ['App Store Connect Users', 'Public']
+}
+
+driver_production = {
+  app_identifier: "cz.qest.shipvio",
+  scheme: "Shipvio_Driver",
+  plist_path: "./Shipvio3/Driver/Shipvio_Driver-Info.plist",
+  output_name: "Shipvio Drive"
+}
+
+#####
+
+# Variables shared among all projects (do not change unless necessary)
+
+qest_apple_id = "fastlaneqest@gmail.com"
+qest_team_id_dev = "5GVVJYAWEG"
+qest_team_id_connect = "117876876"
+qest_match_branch = "master"
+qest_distribution_certificate = "iPhone Distribution: Qest automation s.r.o."
+
+slack_url = "https://hooks.slack.com/services/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"
+
+match_url = "ssh://qest@vs-ssh.visualstudio.com:22/DefaultCollection/Qest/_ssh/match-ios"
+
+crashlytics_path = "./Pods/Crashlytics"
+crashlytics_api_token = "18e1a50fbeb901050cdf2ec31d5b9728a4fd6ca7"
+crashlytics_build_secret = "26d21ec388f36b7bd4ebbbf41cf2e675d9d2d03e71277cdb201e18e95f65e87b"
+
+#####
+
+# Variables to specify developer for AppStore production release
+
+client_apple_id = qest_apple_id
+client_team_id_dev = qest_team_id_dev
+client_team_id_connect = qest_team_id_connect
+client_match_branch = qest_match_branch
+client_distribution_certificate = qest_distribution_certificate
+
+#####
+
+default_platform(:ios)
+
+platform :ios do
+  before_all do
+    ENV["SLACK_URL"] = slack_url
+  end
+
+  # BUILD FOR FABRIC
+
+  desc "Create a new Shipvio Customer Alpha build for Fabric"
+  lane :build_customer_alpha_fabric do
+    build_fabric(customer_alpha)
+  end
+
+  desc "Create a new Shipvio Driver Alpha build for Fabric"
+  lane :build_driver_alpha_fabric do
+    build_fabric(driver_alpha)
+  end
+
+  desc "Create a new Shipvio Customer Beta build for Fabric"
+  lane :build_customer_beta_fabric do
+    build_fabric(customer_beta)
+  end
+
+  desc "Create a new Shipvio Driver Beta build for Fabric"
+  lane :build_driver_beta_fabric do
+    build_fabric(driver_beta)
+  end
+
+  desc "Create a new Alpha/Beta build for Fabric"
+  private_lane :build_fabric do |config|
+    match(
+      username: qest_apple_id,
+      team_id: qest_team_id_dev,
+      app_identifier: config[:app_identifier],
+      git_url: match_url,
+      git_branch: qest_match_branch,
+      type: "development",
+      force_for_new_devices: true
+    )
+    gym(
+      workspace: workspace,
+      scheme: config[:scheme],
+      clean: true,
+      export_method: "development",
+      export_xcargs: "-allowProvisioningUpdates",
+      archive_path: "#{config[:output_name]}.xcarchive",
+      output_name: "#{config[:output_name]}"
+    )
+    upload_symbols_to_crashlytics(
+      dsym_path: "./#{config[:output_name]}.app.dSYM.zip", 
+      api_token: crashlytics_api_token
+    )
+  end
+
+  # RELEASE VIA FABRIC
+
+  desc "Release the Shipvio Customer Alpha build via Fabric"
+  lane :release_customer_alpha_fabric do
+    release_fabric(customer_alpha)
+  end
+
+  desc "Release the Shipvio Driver Alpha build via Fabric"
+  lane :release_driver_alpha_fabric do
+    release_fabric(driver_alpha)
+  end
+
+  desc "Release the Shipvio Customer Beta build via Fabric"
+  lane :release_customer_beta_fabric do
+    release_fabric(customer_beta)
+  end
+
+  desc "Release the Shipvio Driver Beta build via Fabric"
+  lane :release_driver_beta_fabric do
+    release_fabric(driver_beta)
+  end
+
+  desc "Release the Alpha/Beta build via Fabric"
+  private_lane :release_fabric do |config|
+    version = get_info_plist_value(path: config[:plist_path], key: "CFBundleShortVersionString")
+    build = get_info_plist_value(path: config[:plist_path], key: "CFBundleVersion")
+    crashlytics(
+      crashlytics_path: crashlytics_path,
+      ipa_path: "./#{config[:output_name]}.ipa",
+      api_token: crashlytics_api_token,
+      build_secret: crashlytics_build_secret,
+      groups: config[:crashlytics_groups]
+    )
+    slack(
+      message: "[iOS #{config[:output_name]}] #{version} build #{build} released via Fabric",
+      channel: slack_channel,
+      default_payloads: [],
+      payload: {}
+    )
+  end
+
+  # BUILD FOR TESTFLIGHT
+
+  desc "Create a new Shipvio Customer Alpha build for TestFlight"
+  lane :build_customer_alpha_testflight do
+    build_testflight(customer_alpha)
+  end
+
+  desc "Create a new Shipvio Driver Alpha build for TestFlight"
+  lane :build_driver_alpha_testflight do
+    build_testflight(driver_alpha)
+  end
+
+  desc "Create a new Shipvio Customer Beta build for TestFlight"
+  lane :build_customer_beta_testflight do
+    build_testflight(customer_beta)
+  end
+
+  desc "Create a new Shipvio Driver Beta build for TestFlight"
+  lane :build_driver_beta_testflight do
+    build_testflight(driver_beta)
+  end
+
+  desc "Create a new Alpha/Beta build for TestFlight"
+  private_lane :build_testflight do |config|
+    match(
+      username: qest_apple_id,
+      team_id: qest_team_id_dev,
+      app_identifier: config[:app_identifier],
+      git_url: match_url,
+      git_branch: qest_match_branch,
+      type: "appstore"
+    )
+    gym(
+      workspace: workspace,
+      scheme: config[:scheme],
+      clean: true,
+      export_method: "app-store",
+      codesigning_identity: qest_distribution_certificate,
+      xcargs: "PROVISIONING_PROFILE_SPECIFIER='match AppStore #{config[:app_identifier]}'",
+      archive_path: "#{config[:output_name]}.xcarchive",
+      output_name: "#{config[:output_name]}"
+    )
+    upload_symbols_to_crashlytics(
+      dsym_path: "./#{config[:output_name]}.app.dSYM.zip", 
+      api_token: crashlytics_api_token
+    )
+  end
+
+  # RELEASE VIA TESTFLIGHT
+
+  desc "Release the Shipvio Customer Alpha build via TestFlight"
+  lane :release_customer_alpha_testflight do
+    release_testflight(customer_alpha)
+  end
+
+  desc "Release the Shipvio Driver Alpha build via TestFlight"
+  lane :release_driver_alpha_testflight do
+    release_testflight(driver_alpha)
+  end
+
+  desc "Release the Shipvio Customer Beta build via TestFlight"
+  lane :release_customer_beta_testflight do
+    release_testflight(customer_beta)
+  end
+
+  desc "Release the Shipvio Driver Beta build via TestFlight"
+  lane :release_driver_beta_testflight do
+    release_testflight(driver_beta)
+  end
+
+  desc "Release the Alpha/Beta build via TestFlight"
+  private_lane :release_testflight do |config|
+    version = get_info_plist_value(path: config[:plist_path], key: "CFBundleShortVersionString")
+    build = get_info_plist_value(path: config[:plist_path], key: "CFBundleVersion")
+    pilot(
+      ipa: "./#{config[:output_name]}.ipa",
+      username: qest_apple_id,
+      dev_portal_team_id: qest_team_id_dev,
+      team_id: qest_team_id_connect,
+      app_identifier: config[:app_identifier],
+      groups: config[:testflight_groups],
+      distribute_external: true,
+      changelog: "#{config[:output_name]} #{version} build #{build}",
+      wait_for_uploaded_build: true
+    )
+    slack(
+      message: "[iOS #{config[:output_name]}] #{version} build #{build} released via TestFlight",
+      channel: slack_channel,
+      default_payloads: [],
+      payload: {}
+    )
+  end
+
+  # BUILD FOR APPSTORE
+
+  desc "Create a new Shipvio Customer Production build for AppStore"
+  lane :build_customer_production do
+    build_production(customer_production)
+  end
+
+  desc "Create a new Shipvio Driver Production build for AppStore"
+  lane :build_driver_production do
+    build_production(driver_production)
+  end
+
+  desc "Create a new Production build for AppStore"
+  private_lane :build_production do |config|
+    match(
+      username: client_apple_id,
+      team_id: client_team_id_dev,
+      app_identifier: config[:app_identifier],
+      git_url: match_url,
+      git_branch: client_match_branch,
+      type: "appstore"
+    )
+    gym(
+      workspace: workspace,
+      scheme: config[:scheme],
+      clean: true,
+      export_method: "app-store",
+      codesigning_identity: client_distribution_certificate,
+      xcargs: "PROVISIONING_PROFILE_SPECIFIER='match AppStore #{config[:app_identifier]}'",
+      archive_path: "#{config[:output_name]}.xcarchive",
+      output_name: "#{config[:output_name]}"
+    )
+    upload_symbols_to_crashlytics(
+      dsym_path: "./#{config[:output_name]}.app.dSYM.zip",
+      api_token: crashlytics_api_token
+    )
+  end
+
+  # SUBMIT TO APPSTORE
+
+  desc "Submit the Shipvio Customer Production build to AppStore"
+  lane :release_customer_production do
+    release_production(customer_production)
+  end
+
+  desc "Create a new Shipvio Driver Production build for AppStore"
+  lane :release_driver_production do
+    release_production(driver_production)
+  end
+
+  desc "Submit the Production build to AppStore"
+  private_lane :release_production do |config|
+    version = get_info_plist_value(path: config[:plist_path], key: "CFBundleShortVersionString")
+    build = get_info_plist_value(path: config[:plist_path], key: "CFBundleVersion")
+    deliver(
+      ipa: "./#{config[:output_name]}.ipa",
+      username: client_apple_id,
+      dev_portal_team_id: client_team_id_dev,
+      team_id: client_team_id_connect,
+      app_identifier: config[:app_identifier],
+      force: true,
+      skip_screenshots: true,
+      skip_metadata: true
+    )
+    slack(
+      message: "[iOS #{config[:output_name]}] #{version} build #{build} submitted to the AppStore",
+      channel: slack_channel,
+      default_payloads: [],
+      payload: {}
+    )
+  end
+
+  # You can define as many lanes as you want
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+  end
+
+  error do |lane, exception|
+    # This block is called, only if there was an error in the executed lane
+  end
+end
