@@ -15,13 +15,13 @@ enum AuthAPI {
 }
 
 extension AuthAPI: TargetType {
-    var baseURL: URL { return URL(string: "\(NetworkingConstants.baseURL)")! }
+    var baseURL: URL { return URL(string: "\(NetworkingConstants.baseURL)/api")! }
     var path: String {
         switch self {
         case .login:
-            return "/api/auth/login"
+            return "/auth/login"
         case .register:
-            return "/api/auth/register"
+            return "/auth/register"
         }
     }
     var method: Moya.Method {
@@ -30,7 +30,7 @@ extension AuthAPI: TargetType {
             return .post
         }
     }
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         return nil
     }
     var task: Task {

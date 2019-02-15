@@ -1,6 +1,6 @@
 //
 //  PreviewObject.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 05/09/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -10,13 +10,13 @@ import Foundation
 import RealmSwift
 import Realm
 
-// Custom wrapper around Realm Object to handle previews of objects coming from API
+// Wrapper around Realm Object to handle previews of objects coming from API
 // Just decode to your preview object during decoding phase
 // Then call createFullObject() to obtain full object updated with values from preview object
 
-class PreviewObject: Object, Decodable {
+class PreviewObject: Object {
     
-    func createFullObject<T: CodableObject>() -> T {
+    func createFullObject<T: Object>() -> T {
         
         // Create a new empty instance of full object
         var object = T()

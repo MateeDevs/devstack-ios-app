@@ -10,9 +10,8 @@ import UIKit
 
 class AppFlowController {
     
-    fileprivate let window: UIWindow
-    
-    fileprivate let dependencies: AppDependency
+    private let window: UIWindow
+    private let dependencies: AppDependency
     
     init(window: UIWindow) {
         self.window = window

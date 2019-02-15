@@ -9,14 +9,16 @@
 import UIKit
 import RxSwift
 
-class BaseViewController: UIViewController {
+public class BaseViewController: UIViewController {
     
-    /// In case the DisposeBag not to be emptied.
-    /// Thus keep the same subscriptions for whole life cycle.
-    public var allowRecyclingBag : Bool = true
+    // MARK: Stored properties
     
-    fileprivate var bag : DisposeBag = DisposeBag()
-    public var disposeBag : DisposeBag {
+    // In case the DisposeBag not to be emptied.
+    // Thus keep the same subscriptions for whole life cycle.
+    public var allowRecyclingBag: Bool = true
+    
+    private var bag: DisposeBag = DisposeBag()
+    private(set) var disposeBag: DisposeBag {
         set(value) {
             if allowRecyclingBag {
                 bag = value
@@ -27,39 +29,44 @@ class BaseViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
+    // MARK: Lifecycle methods
+    override public func viewDidLoad() {
         super.viewDidLoad()
         setupViewAppearance()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // As long as viewWillAppear make sure to setup your viewModel
         setupViewModel()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override public func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         // Remove the current reference to the disposeBag so all current subscriptions are disposed
         disposeBag = DisposeBag()
     }
     
-    /// Method to be overridden in subclasses
-    func setupViewModel() {
+    override public var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    // MARK: Default methods
+    public func setupViewModel() {
+        
+        // Override this method in a subclass and setup the view model
+        
         // Fresh initializaton of DisposeBag whenever subscriptions are about to initialize
         disposeBag = DisposeBag()
     }
     
-    /// Method to be overridden in subclasses
-    func setupViewAppearance() {
-        view.backgroundColor = Asset.Colors.mainBackground.color
+    public func setupViewAppearance() {
         
-        // set back button title
+        // Override this method in a subclass and setup the view appearance
+        
+        // Setup background color and back button title
+        view.backgroundColor = Asset.Colors.mainBackground.color
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: L10n.back, style: .plain, target: nil, action: nil)
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
 }

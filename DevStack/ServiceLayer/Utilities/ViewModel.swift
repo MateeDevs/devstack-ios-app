@@ -9,7 +9,7 @@
 import Foundation
 import os.log
 
-class ViewModel {
+open class ViewModel {
     
     init() {
         os_log("%@ initialized", log: Logger.lifecycleLog(), type: .info, "\(self)")

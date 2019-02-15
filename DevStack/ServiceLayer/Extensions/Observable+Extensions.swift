@@ -1,6 +1,6 @@
 //
 //  Observable+Extensions.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 26/07/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -12,25 +12,28 @@ import RxCocoa
 
 extension ObservableType {
     
-    func catchErrorJustComplete() -> Observable<E> {
-        return catchError { _ in
-            return Observable.empty()
-        }
-    }
-    
-    func asDriverOnErrorJustComplete() -> Driver<E> {
+    public func asDriverOnErrorJustComplete() -> Driver<E> {
         return asDriver { error in
             return Driver.empty()
         }
     }
     
-    func mapToVoid() -> Observable<Void> {
-        return map { _ in }
+    public func mapToLce<T: Any>() -> Observable<Lce<T>> where E == T {
+        return flatMap({ object -> Observable<Lce<T>> in
+            return Observable.just(Lce<T>(data: object))
+        }).catchError({ (error) in error.asServiceError() }).startWith(Lce(loading: true))
     }
     
-    func mapToLceVoid() -> Observable<Lce<Void>> {
+    public func mapToLce<T: Any>() -> Observable<Lce<[T]>> where E == [T] {
+        return flatMap({ objects -> Observable<Lce<[T]>> in
+            return Observable.just(Lce<[T]>(data: objects))
+        }).catchError({ (error) in error.asServiceError() }).startWith(Lce(loading: true))
+    }
+    
+    public func mapToLceVoid() -> Observable<Lce<Void>> {
         return map { _ in
             return Lce(data: Void())
         }
     }
+    
 }

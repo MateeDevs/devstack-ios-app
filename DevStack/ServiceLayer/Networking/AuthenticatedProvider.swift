@@ -1,6 +1,6 @@
 //
 //  AuthenticatedProvider.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 23/07/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -10,6 +10,7 @@ import Foundation
 import Moya
 import Alamofire
 import RxSwift
+import os.log
 
 // Custom Moya provider
 // Idea taken from: https://github.com/Moya/Moya/blob/master/docs/Examples/ComposingProvider.md
@@ -18,25 +19,25 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
     
     private let provider: MoyaProvider<MultiTarget>
     
-    init(headers: [String : String] = [:], parameters: [String : Any] = [:]) {
+    init(headers: [String: String] = [:], parameters: [String: Any] = [:]) {
         
         let endpointClosure = { (target: MultiTarget) -> Endpoint in
             
-            // add custom headers and parameters
+            // Add custom headers and parameters
             var defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
             defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: headers)
             if parameters.count > 0 {
                 defaultEndpoint = defaultEndpoint.replacing(task: .requestParameters(parameters: parameters, encoding: URLEncoding.default))
             }
             
-            // add service headers
+            // Add service headers
             defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: ["Client-Type": "ios"])
             defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: ["Client-App": "\(Bundle.main.bundleIdentifier!)[\(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String)]"])
             defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: ["Client-API": "\(NetworkingConstants.apiVersion)"])
             defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: ["Client-OS": UIDevice.current.systemVersion])
             defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: ["Client-HW": UIDevice.current.identifierForVendor!.uuidString])
             
-            // add auth header to every request if available
+            // Add auth header to every request if available
             if let authToken = KeychainStore.get(key: KeychainCoding.authToken) {
                 defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: ["Authorization": "Bearer \(authToken)"])
             }
@@ -49,16 +50,16 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
                 let request = try endpoint.urlRequest()
                 done(.success(request))
             } catch let error as NSError {
-                print(error)
+                os_log("Moya request closure error:\n%@", log: Logger.networkingLog(), type: .error, "\(error)")
                 return
             }
         }
         
-        // configure manager
+        // Configure manager
         let configuration = URLSessionConfiguration.default
         let manager = Alamofire.SessionManager(configuration: configuration)
         
-        // configure plugins
+        // Configure plugins
         var plugins: [PluginType] = []
         plugins.append(CustomNetworkActivityPlugin())
         #if DEBUG
@@ -68,7 +69,8 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
                 let prettyData =  try JSONSerialization.data(withJSONObject: dataAsJSON, options: .prettyPrinted)
                 return prettyData
             } catch {
-                return data // fallback to original data if it can't be serialized.
+                // Fallback to original data if it can't be serialized
+                return data
             }
         }))
         #endif

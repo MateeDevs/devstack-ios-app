@@ -10,19 +10,29 @@ import Foundation
 import RealmSwift
 
 // MARK: - User model object
-@objcMembers class User: Object, Codable {
+@objcMembers public class User: Object, Codable {
     
     // MARK: Stored properties
-    dynamic var id: String = ""
-    dynamic var email: String = ""
-    dynamic var firstName: String = ""
-    dynamic var lastName: String = ""
-    dynamic var phone: String?
-    dynamic var bio: String?
-    dynamic var pictureUrl: String?
+    public dynamic var id: String = ""
+    public dynamic var email: String = ""
+    public dynamic var firstName: String = ""
+    public dynamic var lastName: String = ""
+    public dynamic var phone: String?
+    public dynamic var bio: String?
+    public dynamic var pictureUrl: String?
+    
+    // MARK: Relationships
+    public var regions = List<User>()
+    
+    // MARK: API model for updating
+    override func apiModel() -> [String : Any] {
+        var model = super.apiModel()
+        model.removeValue(forKey: "regions")
+        return model
+    }
     
     // MARK: Realm API
-    override static func primaryKey() -> String? {
+    override public static func primaryKey() -> String? {
         return "id"
     }
     
@@ -38,7 +48,7 @@ import RealmSwift
     }
     
     // MARK: Decodable
-    convenience required init(from decoder: Decoder) throws {
+    convenience required public init(from decoder: Decoder) throws {
         self.init()
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
@@ -51,7 +61,7 @@ import RealmSwift
     }
     
     // MARK: Encodable
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(firstName, forKey: .firstName)
         try container.encodeIfPresent(lastName, forKey: .lastName)
@@ -63,7 +73,7 @@ import RealmSwift
 
 // MARK: - Convenience utils
 extension User {
-    var fullName: String {
+    public var fullName: String {
         return "\(firstName) \(lastName)"
     }
 }

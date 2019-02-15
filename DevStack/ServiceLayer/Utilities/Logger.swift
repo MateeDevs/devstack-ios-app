@@ -6,40 +6,41 @@
 //  Copyright © 2019 Qest. All rights reserved.
 //
 
-// Taken from: https://github.com/AckeeCZ/iOS-MVVM-ProjectTemplate
-
 import Foundation
 import os.log
 
-/// Contains pre-defined OSLog categories
-struct LoggerCategory {
-    /// Generic app logging category
+// Define log categories
+// Idea taken from: https://github.com/AckeeCZ/iOS-MVVM-ProjectTemplate
+
+// Contains pre-defined OSLog categories
+private struct LoggerCategory {
+    // Generic app logging category
     static var app: String { return "App" }
-    /// Networking logging category
+    // Networking logging category
     static var networking: String { return "Networking" }
-    /// Lifecycle logging category
+    // Lifecycle logging category
     static var lifecycle: String { return "Lifecycle" }
 }
 
-/// Wrapper class for os_log function
-struct Logger {
-    /// Create OSLog with subsystem and category
-    static func osLog(subsystem: String = Bundle.main.bundleIdentifier ?? "-", category: String) -> OSLog {
+// Wrapper class for os_log function
+public struct Logger {
+    // Create OSLog with subsystem and category
+    public static func osLog(subsystem: String = Bundle.main.bundleIdentifier ?? "-", category: String) -> OSLog {
         return OSLog(subsystem: subsystem, category: category)
     }
     
-    /// Create app log
-    static func appLog() -> OSLog {
+    // Create app log
+    public static func appLog() -> OSLog {
         return OSLog(subsystem: Bundle.main.bundleIdentifier ?? "-", category: LoggerCategory.app)
     }
     
-    /// Create networking log
-    static func networkingLog() -> OSLog {
+    // Create networking log
+    public static func networkingLog() -> OSLog {
         return OSLog(subsystem: Bundle.main.bundleIdentifier ?? "-", category: LoggerCategory.networking)
     }
     
-    /// Create lifecycle log
-    static func lifecycleLog() -> OSLog {
+    // Create lifecycle log
+    public static func lifecycleLog() -> OSLog {
         return OSLog(subsystem: Bundle.main.bundleIdentifier ?? "-", category: LoggerCategory.lifecycle)
     }
 }

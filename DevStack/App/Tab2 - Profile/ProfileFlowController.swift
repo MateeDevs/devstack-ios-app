@@ -12,8 +12,8 @@ class ProfileFlowController: FlowController {
     
     override func start() {
         super.start()
-        let profile = StoryboardScene.Profile.initialScene.instantiate()
-        navigationController.viewControllers = [profile]
+        let vc = StoryboardScene.Profile.initialScene.instantiate()
+        navigationController.viewControllers = [vc]
     }
     
 }

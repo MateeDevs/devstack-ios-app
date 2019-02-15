@@ -29,22 +29,4 @@ extension UIImageView {
         }
     }
     
-    // Extension to handle image downloads from Shipvio API
-    func setImage(fileId: Int, fileToken: String? = nil,
-                  width: Int = NetworkingConstants.thumbnailSize,
-                  height: Int = NetworkingConstants.thumbnailSize) {
-        
-        // Compose URL
-        var urlString = NetworkingConstants.baseURL + "/api/v2/files/\(fileId)/thumbnail"
-        if let fileToken = fileToken {
-            urlString = urlString + "/" + fileToken
-        }
-        urlString = urlString + "?width=\(width)&height=\(height)"
-        
-        guard let url = URL(string: urlString) else { return }
-        
-        // Set image to image view using AlamofireImage
-        self.af_setImage(withURL: url)
-    }
-    
 }

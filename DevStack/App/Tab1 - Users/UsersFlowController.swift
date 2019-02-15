@@ -12,8 +12,9 @@ class UsersFlowController: FlowController {
     
     override func start() {
         super.start()
-        let users = StoryboardScene.Users.initialScene.instantiate()
-        navigationController.viewControllers = [users]
+        let vc = StoryboardScene.Users.initialScene.instantiate()
+        vc.viewModel = UsersViewModel(dependencies: dependencies)
+        navigationController.viewControllers = [vc]
     }
     
 }

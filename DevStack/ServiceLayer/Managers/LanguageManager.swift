@@ -1,19 +1,20 @@
 //
 //  LanguageManager.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 30/08/2018.
 //  Copyright © 2018 Qest. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import os.log
 
 // Language manager to handle app language change
 
 public enum Language: String {
     case ar,cs,en,sk
     
-    var fullName: String {
+    public var fullName: String {
         switch self {
         case .ar:
             return L10n.languageArFullname
@@ -26,11 +27,11 @@ public enum Language: String {
         }
     }
     
-    static let allCases = [ar, cs, en, sk]
-    static let allValues = allCases.map({ $0.rawValue })
+    public static let allCases = [ar, cs, en, sk]
+    public static let allValues = allCases.map({ $0.rawValue })
 }
 
-fileprivate enum LanguageManagerCoding {
+private enum LanguageManagerCoding {
     static let selectedLanguage = "selectedLanguage"
 }
 
@@ -43,7 +44,8 @@ public class LanguageManager {
     public var selectedLanguage: Language {
         get {
             guard let language = UserDefaults.standard.string(forKey: LanguageManagerCoding.selectedLanguage) else {
-                fatalError("Did you set the default language for the app ?")
+                os_log("LanguageManager default language not set.", log: Logger.appLog(), type: .info)
+                return Language(rawValue: "en")!
             }
             return Language(rawValue: language)!
         }
@@ -54,16 +56,12 @@ public class LanguageManager {
     
     // Returns the direction of the language
     public var isRightToLeft: Bool {
-        get {
-            return selectedLanguage == .ar ? true : false
-        }
+        return selectedLanguage == .ar ? true : false
     }
     
     // Returns the app locale for use in dates and currencies
     public var appLocale: Locale {
-        get {
-            return Locale(identifier: selectedLanguage.rawValue)
-        }
+        return Locale(identifier: selectedLanguage.rawValue)
     }
     
     // Set the default language that the app will run first time

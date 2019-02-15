@@ -1,6 +1,6 @@
 //
 //  ServiceError.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 23/07/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -8,14 +8,10 @@
 
 import Foundation
 
-class ServiceError: Error, Codable {
+public class ServiceError: Error {
     
-    var statusCode: Int = StatusCode.unknown
-    var message: String = L10n.unknownError
-    
-    public enum CodingKeys: String, CodingKey {
-        case message
-    }
+    public let statusCode: Int
+    public let message: String
     
     init(statusCode: Int = StatusCode.unknown, message: String = L10n.unknownError) {
         self.statusCode = statusCode

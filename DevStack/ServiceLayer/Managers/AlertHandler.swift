@@ -1,27 +1,26 @@
 //
 //  AlertHandler.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 25/07/2018.
 //  Copyright © 2018 Qest. All rights reserved.
 //
 
-// FIXME: Find or implement alternative for Whisper
-
 import UIKit
 //import Whisper
+#warning("FIXME: Find or implement alternative for Whisper")
 
-enum AlertMessageType: Int {
+public enum AlertMessageType: Int {
     case info = 0
     case success = 1
     case error = 2
 }
 
-class AlertHandler {
+public class AlertHandler {
     
-    static func showAlert(title: String, message: String? = nil,
-                          defaultActionText: String, defaultActionStyle: UIAlertAction.Style = .default, defaultActionHandler: ((UIAlertAction) -> Void)? = nil,
-                          cancelActionText: String? = nil, cancelActionStyle: UIAlertAction.Style = .cancel, cancelActionHandler: ((UIAlertAction) -> Void)? = nil) {
+    public static func showAlert(title: String, message: String? = nil,
+                                 defaultActionText: String, defaultActionStyle: UIAlertAction.Style = .default, defaultActionHandler: ((UIAlertAction) -> Void)? = nil,
+                                 cancelActionText: String? = nil, cancelActionStyle: UIAlertAction.Style = .cancel, cancelActionHandler: ((UIAlertAction) -> Void)? = nil) {
         if let vc = UIApplication.topViewController() {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             
@@ -37,10 +36,10 @@ class AlertHandler {
         }
     }
     
-    static func showAlertWithError(_ error: ServiceError, title: String = L10n.dialogErrorTitle,
-                                   messages: [Int : String] = [:], defaultMessage: String = L10n.unknownError,
-                                   defaultActionText: String = L10n.dialogErrorCloseText, defaultActionStyle: UIAlertAction.Style = .default,
-                                   defaultActionHandler: ((UIAlertAction) -> Void)? = nil) {
+    public static func showAlertWithError(_ error: ServiceError, title: String = L10n.dialogErrorTitle,
+                                          messages: [Int: String] = [:], defaultMessage: String = L10n.unknownError,
+                                          defaultActionText: String = L10n.dialogErrorCloseText, defaultActionStyle: UIAlertAction.Style = .default,
+                                          defaultActionHandler: ((UIAlertAction) -> Void)? = nil) {
         if let message = messages[error.statusCode] {
             showAlert(title: title, message: message, defaultActionText: defaultActionText, defaultActionStyle: defaultActionStyle, defaultActionHandler: defaultActionHandler)
         } else if error.statusCode == StatusCode.validationError {
@@ -50,7 +49,7 @@ class AlertHandler {
         }
     }
     
-    static func showWhisper(message: String, type: AlertMessageType = AlertMessageType.info, shouldHide: Bool = false) {
+    public static func showWhisper(message: String, type: AlertMessageType = AlertMessageType.info, shouldHide: Bool = false) {
 //
 //        // set a color based on the message type
 //        let bgColor: UIColor
@@ -80,7 +79,7 @@ class AlertHandler {
 //        }
     }
     
-    static func showWhisperWithError(_ error: ServiceError, messages: [Int : String] = [:], defaultMessage: String = L10n.unknownError) {
+    public static func showWhisperWithError(_ error: ServiceError, messages: [Int: String] = [:], defaultMessage: String = L10n.unknownError) {
 //        if let message = messages[error.statusCode] {
 //            showWhisper(message: message, type: .error, shouldHide: true)
 //        } else if error.statusCode == StatusCode.validationError {
@@ -90,7 +89,7 @@ class AlertHandler {
 //        }
     }
     
-    static func hideWhisper() {
+    public static func hideWhisper() {
 //        if let navVc = UIApplication.topViewController()?.navigationController, !navVc.navigationBar.isHidden {
 //            Whisper.hide(whisperFrom: navVc)
 //        }

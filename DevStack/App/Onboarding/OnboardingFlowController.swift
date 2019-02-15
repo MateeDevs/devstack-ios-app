@@ -18,11 +18,11 @@ class OnboardingFlowController: FlowController, LoginFlowDelegate {
     
     override func start() {
         super.start()
-        let login = StoryboardScene.Login.initialScene.instantiate()
-        login.viewModel = LoginViewModel(dependencies: dependencies)
-        login.flowDelegate = self
+        let vc = StoryboardScene.Login.initialScene.instantiate()
+        vc.viewModel = LoginViewModel(dependencies: dependencies)
+        vc.flowDelegate = self
         navigationController.navigationBar.isHidden = true
-        navigationController.viewControllers = [login]
+        navigationController.viewControllers = [vc]
         UIApplication.shared.statusBarView?.backgroundColor = Asset.Colors.mainBackground.color
     }
     

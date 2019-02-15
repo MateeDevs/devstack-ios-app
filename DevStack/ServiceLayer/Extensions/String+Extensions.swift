@@ -1,18 +1,17 @@
 //
 //  String+Extensions.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 23/07/2018.
 //  Copyright © 2018 Qest. All rights reserved.
 //
 
-import UIKit
 import Foundation
 
 extension String {
     
     var utf8Encoded: Data {
-        return self.data(using: .utf8)!
+        return data(using: .utf8)!
     }
     
     func iso8601(dateFormat: String = NetworkingConstants.iso8601DefaultFormat, timeZone: TimeZone? = TimeZone.current) -> Date {

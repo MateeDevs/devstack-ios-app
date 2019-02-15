@@ -1,6 +1,6 @@
 //
 //  CLLocationManager+Rx.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Viktor Kaderabek on 10/08/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -41,4 +41,3 @@ extension Reactive where Base: CLLocationManager {
         }
     }
 }
-

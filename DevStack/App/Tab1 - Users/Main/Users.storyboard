@@ -13,7 +13,7 @@
         <!--Users View Controller-->
         <scene sceneID="xLy-pi-vf3">
             <objects>
-                <viewController id="zCZ-Ic-KZP" customClass="UsersViewController" customModule="A_DevStack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zCZ-Ic-KZP" customClass="UsersViewController" customModule="DevStack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1tn-rb-XoA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,6 +21,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sfi-0w-wpk">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="zCZ-Ic-KZP" id="AOa-pa-Dq4"/>
+                                    <outlet property="delegate" destination="zCZ-Ic-KZP" id="8FQ-Td-WOv"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -32,6 +36,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sKv-hq-jhr"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Sfi-0w-wpk" id="Usi-Ga-l2q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwA-DS-f8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

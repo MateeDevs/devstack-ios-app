@@ -1,6 +1,6 @@
 //
 //  Object+Extensions.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 28/08/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 import Realm
+import RxSwift
 
 extension Object {
     
@@ -16,12 +17,12 @@ extension Object {
     // Just override apiModel() function in your object's class and remove properties you don't want to be updated
     // Idea taken from: https://github.com/realm/realm-cocoa/issues/4882
     // Doesn't work for nested objects :(
-    @objc func fullModel() -> [String : Any] {
-        var model: [String : Any] = [:]
+    @objc func fullModel() -> [String: Any] {
+        var model: [String: Any] = [:]
         let schema = RLMSchema.partialShared().schema(forClassName: String(describing: type(of: self).self))
         if let schema = schema {
             for property in schema.properties {
-                model[property.name] = self.value(forKey: property.name)
+                model[property.name] = value(forKey: property.name)
             }
         }
         return model
@@ -33,7 +34,7 @@ extension Object {
     
     func exists() -> Bool {
         let realm = try! Realm()
-        if let id = self.value(forKey: "id") {
+        if let id = value(forKey: "id") {
             return realm.object(ofType: type(of: self).self, forPrimaryKey: id) != nil
         } else {
             return false

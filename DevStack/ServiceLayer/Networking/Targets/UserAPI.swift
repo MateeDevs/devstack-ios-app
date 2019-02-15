@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 enum UserAPI {
-    case getUsers()
+    case getUsersForPage(_ page: Int)
     case getUserById(_ id: String)
     case updateUser(_ user: User)
 }
@@ -19,12 +19,12 @@ extension UserAPI: TargetType {
     var baseURL: URL { return URL(string: "\(NetworkingConstants.baseURL)/api")! }
     var path: String {
         switch self {
-        case .getUsers:
-            return "/api/user"
+        case .getUsersForPage:
+            return "/user"
         case .getUserById(let id):
-            return "/api/user/\(id)"
+            return "/user/\(id)"
         case .updateUser(let user):
-            return "/api/user/\(user.id)"
+            return "/user/\(user.id)"
         }
     }
     var method: Moya.Method {
@@ -35,11 +35,17 @@ extension UserAPI: TargetType {
             return .get
         }
     }
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         return nil
     }
     var task: Task {
         switch self {
+        case .getUsersForPage(let page):
+            let params: [String: Any] = [
+                "page" : page,
+                "limit" : NetworkingConstants.paginationCount
+            ]
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
         case .updateUser(let user):
             return .requestParameters(parameters: user.dictionary, encoding: JSONEncoding.default)
         default:
@@ -48,7 +54,7 @@ extension UserAPI: TargetType {
     }
     var sampleData: Data {
         switch self {
-        case .getUsers:
+        case .getUsersForPage:
             return NetworkingUtilities.stubbedResponse("UserList")
         case .getUserById, .updateUser:
             return NetworkingUtilities.stubbedResponse("User")

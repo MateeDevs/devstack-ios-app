@@ -1,6 +1,6 @@
 //
 //  Realm+Extensions.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 07/08/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -14,73 +14,69 @@ import RxRealm
 extension ObservableType {
     
     ///
-    /// Transformation that unwraps an object from Lce and saves it to the database.
+    /// Transformation that saves an object to the database.
     ///
     /// - parameter setPrimaryKey: Optional parameter to set object's primary key (useful for foreign key).
     /// - parameter primaryKeyName: Optional parameter to set alternate primary key name (default is "id").
-    /// - returns: Observable which emits Lce of a given type.
+    /// - returns: Observable which emits saved object.
     ///
-    func save<T: Object>(setPrimaryKey: String? = nil, primaryKeyName: String = "id") -> Observable<Lce<T>> where E == Lce<T> {
-        return flatMap({ (event) -> Observable<Lce<T>> in
-            guard let object = event.data else { return Observable.just(event) }
+    func save<T: Object>(setPrimaryKey: String? = nil, primaryKeyName: String = "id") -> Observable<T> where E == T {
+        return flatMap({ (object) -> Observable<T> in
             if let id = setPrimaryKey {
                 object[primaryKeyName] = id
             }
             let realm = try! Realm()
             return realm.rx.save(object)
-        }).catchError({ (error) in error.asServiceError() })
+        })
     }
     
     ///
-    /// Transformation that unwraps an array of objects from Lce and saves it to the database.
+    /// Transformation that saves an array of objects to the database.
     ///
-    /// - returns: Observable which emits Lce with Array of a given type.
+    /// - returns: Observable which emits saved array.
     ///
-    func save<T: Object>() -> Observable<Lce<[T]>> where E == Lce<[T]> {
-        return flatMap({ (event) -> Observable<Lce<[T]>> in
-            guard let objects = event.data else { return Observable.just(event) }
+    func save<T: Object>() -> Observable<[T]> where E == [T] {
+        return flatMap({ (objects) -> Observable<[T]> in
             let realm = try! Realm()
             return realm.rx.save(objects)
-        }).catchError({ (error) in error.asServiceError() })
+        })
     }
     
     ///
-    /// Transformation that unwraps an object from Lce, append it to a given list and saves it to the database.
+    /// Transformation that append an object to a given list and saves it to the database.
     ///
     /// - parameter list: List that will be extented with new object.
     /// - parameter setPrimaryKey: Optional parameter to set object's primary key (useful for foreign key).
     /// - parameter primaryKeyName: Optional parameter to set alternate primary key name (default is "id").
-    /// - returns: Observable which emits Lce of a given type.
+    /// - returns: Observable which emits saved object.
     ///
-    func appendToList<T: Object>(_ list: List<T>, setPrimaryKey: String? = nil, primaryKeyName: String = "id") -> Observable<Lce<T>> where E == Lce<T> {
-        return flatMap({ (event) -> Observable<Lce<T>> in
-            guard let object = event.data else { return Observable.just(event) }
+    func appendToList<T: Object>(_ list: List<T>, setPrimaryKey: String? = nil, primaryKeyName: String = "id") -> Observable<T> where E == T {
+        return flatMap({ (object) -> Observable<T> in
             if let id = setPrimaryKey {
                 object[primaryKeyName] = id
             }
             let realm = try! Realm()
-            return realm.rx.appendToList(list, objects: [object]).map({ _ in Lce<T>(data: object) })
-        }).catchError({ (error) in error.asServiceError() })
+            return realm.rx.appendToList(list, objects: [object]).map({ _ in object })
+        })
     }
     
     ///
-    /// Transformation that unwraps an array of objects from Lce, append it to a given list and saves it to the database.
+    /// Transformation that append all objects from an array to a given list and saves it to the database.
     ///
     /// - parameter list: List that will be extented with new objects.
-    /// - returns: Observable which emits Lce with Array of a given type.
+    /// - returns: Observable which emits saved array.
     ///
-    func appendToList<T: Object>(_ list: List<T>) -> Observable<Lce<[T]>> where E == Lce<[T]> {
-        return flatMap({ (event) -> Observable<Lce<[T]>> in
-            guard let objects = event.data else { return Observable.just(event) }
+    func appendToList<T: Object>(_ list: List<T>) -> Observable<[T]> where E == [T] {
+        return flatMap({ (objects) -> Observable<[T]> in
             let realm = try! Realm()
-            return realm.rx.appendToList(list, objects: objects).map({ _ in Lce<[T]>(data: objects) })
-        }).catchError({ (error) in error.asServiceError() })
+            return realm.rx.appendToList(list, objects: objects).map({ _ in objects })
+        })
     }
     
 }
 
 extension Reactive where Base: Realm {
-    func save<T: Object>(_ object: T, update: Bool = true, withApiModel: Bool = true) -> Observable<Lce<T>> {
+    func save<T: Object>(_ object: T, update: Bool = true, withApiModel: Bool = true) -> Observable<T> {
         return Observable.create { observer in
             do {
                 try self.base.write {
@@ -91,7 +87,7 @@ extension Reactive where Base: Realm {
                         self.base.create(T.self, value: withApiModel ? object.apiModel() : object.fullModel(), update: update)
                     }
                 }
-                observer.onNext(Lce<T>(data: object))
+                observer.onNext(object)
                 observer.onCompleted()
             } catch {
                 observer.onError(error)
@@ -100,7 +96,7 @@ extension Reactive where Base: Realm {
         }
     }
     
-    func save<T: Object>(_ objects: [T], update: Bool = true, withApiModel: Bool = true) -> Observable<Lce<[T]>> {
+    func save<T: Object>(_ objects: [T], update: Bool = true, withApiModel: Bool = true) -> Observable<[T]> {
         return Observable.create { observer in
             do {
                 try self.base.write {
@@ -113,7 +109,7 @@ extension Reactive where Base: Realm {
                         }
                     }
                 }
-                observer.onNext(Lce<[T]>(data: objects))
+                observer.onNext(objects)
                 observer.onCompleted()
             } catch {
                 observer.onError(error)
@@ -122,7 +118,7 @@ extension Reactive where Base: Realm {
         }
     }
     
-    func appendToList<T: Object>(_ list: List<T>, objects: [T], update: Bool = true, withApiModel: Bool = true) -> Observable<Lce<[T]>> {
+    func appendToList<T: Object>(_ list: List<T>, objects: [T], update: Bool = true, withApiModel: Bool = true) -> Observable<[T]> {
         return Observable.create { observer in
             do {
                 try self.base.write {
@@ -145,7 +141,7 @@ extension Reactive where Base: Realm {
                         }
                     }
                 }
-                observer.onNext(Lce<[T]>(data: list.toArray()))
+                observer.onNext(list.toArray())
                 observer.onCompleted()
             } catch {
                 observer.onError(error)
@@ -154,13 +150,13 @@ extension Reactive where Base: Realm {
         }
     }
     
-    func delete<T: Object>(_ object: T) -> Observable<Lce<Void>> {
+    func delete<T: Object>(_ object: T) -> Observable<Void> {
         return Observable.create { observer in
             do {
                 try self.base.write {
                     self.base.delete(object)
                 }
-                observer.onNext(Lce<Void>(data: Void()))
+                observer.onNext(Void())
                 observer.onCompleted()
             } catch {
                 observer.onError(error)

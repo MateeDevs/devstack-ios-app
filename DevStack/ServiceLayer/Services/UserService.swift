@@ -1,6 +1,6 @@
 //
 //  UserService.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 08/10/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -10,31 +10,37 @@ import Foundation
 import RxSwift
 import Moya
 
-protocol HasUserService {
+public protocol HasUserService {
     var userService: UserService { get }
 }
 
-class UserService: BaseService {
+public class UserService {
     
-    func getUser() -> Observable<Lce<[User]>> {
-        return dbStream()
+    private let database = DatabaseManager()
+    private let network = NetworkManager()
+    
+    public func getUsers() -> Observable<Lce<[User]>> {
+        let db = database.observableCollection(User.self)
+        return db
     }
     
-    func downloadUsersForPage(_ page: Int) -> Observable<Lce<[User]>> {
-        let endpoint = UserAPI.getUsers()
-        return networkStream(endpoint).save().startWith(Lce(loading: true))
+    public func downloadUsersForPage(_ page: Int) -> Observable<Lce<[User]>> {
+        let endpoint = UserAPI.getUsersForPage(page)
+        let net = network.observableRequest(endpoint).map([User].self, atKeyPath: "data").save().mapToLce()
+        return net.startWith(Lce(loading: true))
     }
     
-    func getUserById(_ id: String) -> Observable<Lce<User>> {
-        let db: Observable<Lce<User>> = dbStream(id: id)
+    public func getUserById(_ id: String) -> Observable<Lce<User>> {
+        let db = database.observableObject(User.self, id: id)
         let endpoint = UserAPI.getUserById(id)
-        let network: Observable<Lce<User>> = networkStream(endpoint).save()
-        return Observable.merge(db, network).startWith(Lce(loading: true))
+        let net = network.observableRequest(endpoint).map(User.self).save().mapToLce()
+        return Observable.merge(db, net).startWith(Lce(loading: true))
     }
     
-    func updateUser(_ user: User) -> Observable<Lce<User>> {
+    public func updateUser(_ user: User) -> Observable<Lce<User>> {
         let endpoint = UserAPI.updateUser(user)
-        return networkStream(endpoint).save().startWith(Lce(loading: true))
+        let net = network.observableRequest(endpoint).map(User.self).save().mapToLce()
+        return net.startWith(Lce(loading: true))
     }
     
 }
