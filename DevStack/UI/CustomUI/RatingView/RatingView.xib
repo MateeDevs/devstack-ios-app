@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatingView" customModule="A_Shipvio" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatingView" customModule="A_DevStack" customModuleProvider="target">
             <connections>
                 <outlet property="star1" destination="oqN-D4-ECX" id="5Kk-H9-JQF"/>
                 <outlet property="star2" destination="8nn-VC-Yud" id="Eiz-Wv-3FA"/>
@@ -30,19 +31,19 @@
                 <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="2jI-ZF-BbU">
                     <rect key="frame" x="7" y="5" width="186" height="25"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarEmptyX" translatesAutoresizingMaskIntoConstraints="NO" id="x7c-k8-3NT" customClass="ColoredImageView" customModule="A_Shipvio" customModuleProvider="target">
+                        <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="x7c-k8-3NT" customClass="ColoredImageView" customModule="A_DevStack" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="26" height="25"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarEmptyX" translatesAutoresizingMaskIntoConstraints="NO" id="ZJg-bz-6xo" customClass="ColoredImageView" customModule="A_Shipvio" customModuleProvider="target">
+                        <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="ZJg-bz-6xo" customClass="ColoredImageView" customModule="A_DevStack" customModuleProvider="target">
                             <rect key="frame" x="40" y="0.0" width="26" height="25"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarEmptyX" translatesAutoresizingMaskIntoConstraints="NO" id="VB4-Fg-Qpv" customClass="ColoredImageView" customModule="A_Shipvio" customModuleProvider="target">
+                        <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="VB4-Fg-Qpv" customClass="ColoredImageView" customModule="A_DevStack" customModuleProvider="target">
                             <rect key="frame" x="80" y="0.0" width="26" height="25"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarEmptyX" translatesAutoresizingMaskIntoConstraints="NO" id="H1n-j1-4eR" customClass="ColoredImageView" customModule="A_Shipvio" customModuleProvider="target">
+                        <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="H1n-j1-4eR" customClass="ColoredImageView" customModule="A_DevStack" customModuleProvider="target">
                             <rect key="frame" x="120" y="0.0" width="26" height="25"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarEmptyX" translatesAutoresizingMaskIntoConstraints="NO" id="K3T-Gu-gdR" customClass="ColoredImageView" customModule="A_Shipvio" customModuleProvider="target">
+                        <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="K3T-Gu-gdR" customClass="ColoredImageView" customModule="A_DevStack" customModuleProvider="target">
                             <rect key="frame" x="160" y="0.0" width="26" height="25"/>
                         </imageView>
                     </subviews>
@@ -57,7 +58,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUV-iw-p8O">
                             <rect key="frame" x="0.0" y="0.0" width="26" height="25"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StarFull" translatesAutoresizingMaskIntoConstraints="NO" id="oqN-D4-ECX" customClass="ColoredImageView" customModule="A_Shipvio" customModuleProvider="target">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="oqN-D4-ECX" customClass="ColoredImageView" customModule="A_DevStack" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="26" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -67,7 +68,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCg-qe-gQx">
                             <rect key="frame" x="40" y="0.0" width="26" height="25"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StarFull" translatesAutoresizingMaskIntoConstraints="NO" id="8nn-VC-Yud" customClass="ColoredImageView" customModule="A_Shipvio" customModuleProvider="target">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="8nn-VC-Yud" customClass="ColoredImageView" customModule="A_DevStack" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="26" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -77,7 +78,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecA-mC-ayd">
                             <rect key="frame" x="80" y="0.0" width="26" height="25"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StarFull" translatesAutoresizingMaskIntoConstraints="NO" id="KUp-vh-SVf" customClass="ColoredImageView" customModule="A_Shipvio" customModuleProvider="target">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="KUp-vh-SVf" customClass="ColoredImageView" customModule="A_DevStack" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="26" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -87,7 +88,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mzG-Da-KD1">
                             <rect key="frame" x="120" y="0.0" width="26" height="25"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StarFull" translatesAutoresizingMaskIntoConstraints="NO" id="Yry-vf-6SB" customClass="ColoredImageView" customModule="A_Shipvio" customModuleProvider="target">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="Yry-vf-6SB" customClass="ColoredImageView" customModule="A_DevStack" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="26" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -97,7 +98,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6t-IN-rq6">
                             <rect key="frame" x="160" y="0.0" width="26" height="25"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StarFull" translatesAutoresizingMaskIntoConstraints="NO" id="scy-JR-iQh" customClass="ColoredImageView" customModule="A_Shipvio" customModuleProvider="target">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="scy-JR-iQh" customClass="ColoredImageView" customModule="A_DevStack" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="26" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -121,7 +122,7 @@
         </view>
     </objects>
     <resources>
-        <image name="StarEmptyX" width="26" height="24"/>
-        <image name="StarFull" width="26" height="24"/>
+        <image name="Star" width="26" height="24.5"/>
+        <image name="StarEmpty" width="26" height="24.5"/>
     </resources>
 </document>

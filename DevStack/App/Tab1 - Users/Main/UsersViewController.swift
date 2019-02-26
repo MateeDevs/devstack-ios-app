@@ -28,6 +28,7 @@ final class UsersViewController: BaseTableViewController<User> {
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         registerCells([UserTableViewCell.nameOfClass])
     }
 
@@ -39,13 +40,11 @@ final class UsersViewController: BaseTableViewController<User> {
         let output = viewModel?.transform(input: input)
         
         output?.getUsersEvent.drive(onNext: { [weak self] (event) in
-            guard let self = self else { return }
-            self.handleDatabaseData(event)
+            self?.handleDatabaseData(event)
         }).disposed(by: disposeBag)
         
         output?.downloadUsersEvent.drive(onNext: { [weak self] (event) in
-            guard let self = self else { return }
-            self.handleNetworkData(event)
+            self?.handleNetworkData(event)
         }).disposed(by: disposeBag)
     }
 

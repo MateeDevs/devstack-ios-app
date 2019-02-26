@@ -1,5 +1,5 @@
 //
-//  Int+Extensions.swift
+//  Int+UIExtensions.swift
 //  DevStack
 //
 //  Created by Viktor Kaderabek on 10/09/2018.

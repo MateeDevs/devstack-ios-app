@@ -1,6 +1,6 @@
 //
 //  DashedLineView.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Viktor Kaderabek on 25/09/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -8,19 +8,19 @@
 
 import UIKit
 
-@IBDesignable class DashedLineView: UIView {
+@IBDesignable open class DashedLineView: UIView {
     
-    override func awakeFromNib() {
+    @IBInspectable public var lineColor: UIColor = .black
+    @IBInspectable public var lineLength: CGFloat = 6
+    @IBInspectable public var lineGap: CGFloat = 3
+    
+    override open func awakeFromNib() {
         super.awakeFromNib()
     }
-
-    @IBInspectable var lineColor: UIColor = Asset.Colors.mainBackground.color
-    @IBInspectable var lineLenght: CGFloat = 6
-    @IBInspectable var lineGap: CGFloat = 3
     
-    override func draw(_ rect: CGRect) {
+    override open func draw(_ rect: CGRect) {
         // Graphics context
-        let  context: CGContext = UIGraphicsGetCurrentContext()!
+        guard let context = UIGraphicsGetCurrentContext() else { return }
         
         // Line points
         let p0 = CGPoint(x: bounds.minX, y: bounds.minY)
@@ -31,7 +31,7 @@ import UIKit
         context.addLine(to: p1)
         
         // Line property
-        context.setLineDash(phase: 0.0, lengths: [lineLenght, lineGap])
+        context.setLineDash(phase: 0.0, lengths: [lineLength, lineGap])
         context.setLineWidth(bounds.height * 2)
         context.setLineCap(.butt)
         lineColor.set()

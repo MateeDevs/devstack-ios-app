@@ -1,6 +1,6 @@
 //
-//  CustomTabBarButton.swift
-//  Shipvio3
+//  TabBarButton.swift
+//  DevStack
 //
 //  Created by Petr Chmelar on 07/09/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -8,12 +8,7 @@
 
 import UIKit
 
-class CustomTabBarButton: XIBView {
-    
-    /// required nib name
-    override var nibName: String {
-        return CustomTabBarButton.nameOfClass
-    }
+class TabBarButton: XIBView {
     
     @IBOutlet weak var button: LocalizedButton!
     @IBOutlet weak var mainLabel: UILabel!

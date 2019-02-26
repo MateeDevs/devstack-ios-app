@@ -8,18 +8,18 @@
 
 import UIKit
 
-class FlowController {
+open class FlowController {
     
     public let navigationController: UINavigationController
     public let dependencies: AppDependency
     
-    init(navigationController: UINavigationController, dependencies: AppDependency) {
+    public init(navigationController: UINavigationController, dependencies: AppDependency) {
         self.navigationController = navigationController
         self.dependencies = dependencies
     }
     
-    // Method to be overridden in subclasses
-    func start() {
+    open func start() {
+        // Override this method in a subclass and start the flow
     }
     
 }

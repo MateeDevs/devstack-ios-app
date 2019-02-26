@@ -8,12 +8,14 @@
 
 import UIKit
 
-@IBDesignable class LocalizedLabel: UILabel {
-    @IBInspectable var requiredSymbol : String?
-    @IBInspectable var uppercased: Bool = false
+@IBDesignable open class LocalizedLabel: UILabel {
+    
+    @IBInspectable public var requiredSymbol: String?
+    @IBInspectable public var uppercased: Bool = false
 
-    override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
+        
         if let text = text {
             if uppercased {
                 self.text = NSLocalizedString(text, comment: "").uppercased()
@@ -21,7 +23,7 @@ import UIKit
                 self.text = NSLocalizedString(text, comment: "")
             }
             
-            if let symbol = requiredSymbol, let text = self.text {
+            if let symbol = requiredSymbol {
                 self.text = text + " " + symbol
             }
         }

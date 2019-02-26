@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 // MARK: - AuthToken model object
 struct AuthToken: Codable {

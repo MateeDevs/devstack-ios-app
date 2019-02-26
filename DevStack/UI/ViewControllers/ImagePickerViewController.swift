@@ -1,6 +1,6 @@
 //
 //  ImagePickerViewController.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 08/10/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -8,36 +8,31 @@
 
 import UIKit
 
-protocol ImagePickerControllerDelegate: class {
-    func photoSelected(image: UIImage?, desc: String?)
+public protocol ImagePickerControllerDelegate: class {
+    func photoSelected(image: UIImage?, sender: UIButton?)
 }
 
-class ImagePickerViewController: InputViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+open class ImagePickerViewController: BaseViewController {
     
-    var desc: String?
+    // MARK: Stored properties
+    public var imagePickerTitle: String = L10n.imagePickerTitle
+    public var imagePickerSubtitle: String = L10n.imagePickerSubtitle
+    private var sender: UIButton? = nil
     
-    var image : UIImage? {
-        didSet {
-            imagePickerDelegate?.photoSelected(image: image, desc: desc)
-        }
-    }
+    public weak var imagePickerDelegate: ImagePickerControllerDelegate?
     
-    var imagePickerTitle: String = L10n.imagePickerTitle
-    var imagePickerMessage: String = L10n.imagePickerSubtitle
-    
-    weak var imagePickerDelegate : ImagePickerControllerDelegate?
-    
-    override func viewDidLoad() {
+    // MARK: Lifecycle methods
+    override open func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func addPicture(_ sender: UIButton) {
+    // MARK: Additional methods
+    @IBAction public func addPicture(_ sender: UIButton) {
+        self.sender = sender
         view.endEditing(true)
         
-        desc = "\(sender.tag)"
-        
-        // present ActionSheet with camera/library options
-        let actionSheetController = UIAlertController(title: imagePickerTitle, message: imagePickerMessage, preferredStyle: .actionSheet)
+        // Setup action sheet with camera/library options
+        let actionSheetController = UIAlertController(title: imagePickerTitle, message: imagePickerSubtitle, preferredStyle: .actionSheet)
         
         let photoLibrary = UIAlertAction(title: L10n.imagePickerLibrary, style: .default, handler: { [weak self] (action) in
             self?.selectPhoto(sourceType: .photoLibrary)
@@ -52,39 +47,34 @@ class ImagePickerViewController: InputViewController, UIImagePickerControllerDel
         let cancel = UIAlertAction(title: L10n.imagePickerCancel, style: .cancel, handler: nil)
         actionSheetController.addAction(cancel)
         
-        // required for iPad
-        actionSheetController.popoverPresentationController?.sourceView = self.view
-        actionSheetController.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+        // Required for iPad
+        actionSheetController.popoverPresentationController?.sourceView = view
+        actionSheetController.popoverPresentationController?.sourceRect = CGRect(x: view.bounds.midX, y: view.bounds.midY, width: 0, height: 0)
         actionSheetController.popoverPresentationController?.permittedArrowDirections = []
         
         present(actionSheetController, animated: true, completion: nil)
     }
     
-    func selectPhoto(sourceType: UIImagePickerController.SourceType) {
-        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.allowsEditing = false
-            imagePicker.sourceType = sourceType
-            present(imagePicker, animated: true, completion: { [weak self] () -> Void in
-                self?.view.stopActivityIndicator()
-            })
-        } else {
-            view.stopActivityIndicator()
-        }
+    private func selectPhoto(sourceType: UIImagePickerController.SourceType) {
+        guard UIImagePickerController.isSourceTypeAvailable(sourceType) else { return }
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = sourceType
+        present(imagePicker, animated: true)
     }
-    
-    // MARK: - Image picker delegate
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+}
 
-        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            // save image to photo library if taken by camera
-            if picker.sourceType == .camera {
-                UIImageWriteToSavedPhotosAlbum(selectedImage, nil, nil, nil)
-            }
-            image = selectedImage
-            dismiss(animated: true, completion: nil)
+extension ImagePickerViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        
+        // Save image to photo library if taken by camera
+        if picker.sourceType == .camera {
+            UIImageWriteToSavedPhotosAlbum(selectedImage, nil, nil, nil)
         }
+        
+        imagePickerDelegate?.photoSelected(image: selectedImage, sender: sender)
+        dismiss(animated: true, completion: nil)
     }
-    
 }

@@ -23,8 +23,6 @@ internal enum Asset {
     internal static let greyLight = ColorAsset(name: "GreyLight")
     internal static let mainBackground = ColorAsset(name: "MainBackground")
     internal static let mainRed = ColorAsset(name: "MainRed")
-    internal static let star = ColorAsset(name: "Star")
-    internal static let starEmpty = ColorAsset(name: "StarEmpty")
   }
   internal enum Images {
     internal static let qestLogo = ImageAsset(name: "QestLogo")

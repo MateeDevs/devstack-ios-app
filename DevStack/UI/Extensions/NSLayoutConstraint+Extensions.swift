@@ -1,12 +1,11 @@
 //
 //  NSLayoutConstraint+Extensions.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 01/10/2018.
 //  Copyright © 2018 Qest. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension NSLayoutConstraint {
@@ -17,28 +16,27 @@ extension NSLayoutConstraint {
     /// - parameter multiplier: CGFloat value of multiplier
     /// - returns: NSLayoutConstraint with a given multiplier
     ///
-    func cloneWithMultiplier(multiplier: CGFloat) -> NSLayoutConstraint? {
+    public func cloneWithMultiplier(_ multiplier: CGFloat) -> NSLayoutConstraint? {
         
-        guard let firstItemNotNill = firstItem, let secondItemNotNill = secondItem else {
-            return nil
-        }
+        guard let firstItem = firstItem, let secondItem = secondItem else { return nil }
         
         NSLayoutConstraint.deactivate([self])
         
         let newConstraint = NSLayoutConstraint(
-            item: firstItemNotNill,
+            item: firstItem,
             attribute: firstAttribute,
             relatedBy: relation,
-            toItem: secondItemNotNill,
+            toItem: secondItem,
             attribute: secondAttribute,
             multiplier: multiplier,
             constant: constant)
         
         newConstraint.priority = priority
-        newConstraint.shouldBeArchived = self.shouldBeArchived
-        newConstraint.identifier = self.identifier
+        newConstraint.shouldBeArchived = shouldBeArchived
+        newConstraint.identifier = identifier
         
         NSLayoutConstraint.activate([newConstraint])
+        
         return newConstraint
     }
 }

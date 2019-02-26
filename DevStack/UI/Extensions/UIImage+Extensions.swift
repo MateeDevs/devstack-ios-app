@@ -1,6 +1,6 @@
 //
 //  UIImage+Extensions.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 08/10/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -8,14 +8,12 @@
 
 import UIKit
 
-public extension UIImage {
+extension UIImage {
     
-    // Extension to fix orientation of an UIImage without EXIF
-    func fixOrientation() -> UIImage {
+    // Fix orientation of an UIImage without EXIF
+    public func fixOrientation() -> UIImage {
         
-        guard let cgImage = cgImage else {
-            return self
-        }
+        guard let cgImage = cgImage else { return self }
         
         if imageOrientation == .up {
             return self
@@ -24,33 +22,26 @@ public extension UIImage {
         var transform = CGAffineTransform.identity
         
         switch imageOrientation {
-            
         case .down, .downMirrored:
             transform = transform.translatedBy(x: size.width, y: size.height)
             transform = transform.rotated(by: CGFloat(Double.pi))
-            
         case .left, .leftMirrored:
             transform = transform.translatedBy(x: size.width, y: 0)
             transform = transform.rotated(by: CGFloat(Double.pi / 2))
-            
         case .right, .rightMirrored:
             transform = transform.translatedBy(x: 0, y: size.height)
             transform = transform.rotated(by: CGFloat(-Double.pi / 2))
-            
         case .up, .upMirrored:
             break
         }
         
         switch imageOrientation {
-            
         case .upMirrored, .downMirrored:
             transform.translatedBy(x: size.width, y: 0)
             transform.scaledBy(x: -1, y: 1)
-            
         case .leftMirrored, .rightMirrored:
             transform.translatedBy(x: size.height, y: 0)
             transform.scaledBy(x: -1, y: 1)
-            
         case .up, .down, .left, .right:
             break
         }
@@ -60,10 +51,8 @@ public extension UIImage {
             ctx.concatenate(transform)
             
             switch imageOrientation {
-                
             case .left, .leftMirrored, .right, .rightMirrored:
                 ctx.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.height, height: size.width))
-                
             default:
                 ctx.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
             }
@@ -73,7 +62,7 @@ public extension UIImage {
             }
         }
         
-        // return original if something go wrong
+        // Return original if something go wrong
         return self
     }
     

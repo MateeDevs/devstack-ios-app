@@ -8,115 +8,76 @@
 
 import UIKit
 
-@IBDesignable class EnhancedButton: LocalizedButton {
+@IBDesignable open class EnhancedButton: LocalizedButton {
     
-    @IBInspectable var cornerRadius: CGFloat = 0.0 {
+    @IBInspectable public var cornerRadius: CGFloat = 0.0 {
         didSet {
-            self.layer.cornerRadius = self.cornerRadius
-            self.layer.masksToBounds = self.cornerRadius > 0
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = cornerRadius > 0
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat = 0.0 {
+    @IBInspectable public var borderWidth: CGFloat = 0.0 {
         didSet {
-            self.layer.borderWidth = self.borderWidth
+            layer.borderWidth = borderWidth
         }
     }
     
-    @IBInspectable var borderColor: UIColor = .black {
+    @IBInspectable public var borderColor: UIColor = .black {
         didSet {
-            self.layer.borderColor = self.borderColor.cgColor
+            layer.borderColor = borderColor.cgColor
         }
     }
     
-    @IBInspectable var titleLeftPadding: CGFloat = 0.0 {
+    @IBInspectable public var titleLeftPadding: CGFloat = 0.0 {
         didSet {
-            self.titleEdgeInsets.left = self.titleLeftPadding
+            titleEdgeInsets.left = titleLeftPadding
         }
     }
     
-    @IBInspectable var titleRightPadding: CGFloat = 0.0 {
+    @IBInspectable public var titleRightPadding: CGFloat = 0.0 {
         didSet {
-            self.titleEdgeInsets.right = self.titleRightPadding
+            titleEdgeInsets.right = titleRightPadding
         }
     }
     
-    @IBInspectable var titleTopPadding: CGFloat = 0.0 {
+    @IBInspectable public var titleTopPadding: CGFloat = 0.0 {
         didSet {
-            self.titleEdgeInsets.top = self.titleTopPadding
+            titleEdgeInsets.top = titleTopPadding
         }
     }
     
-    @IBInspectable var titleBottomPadding: CGFloat = 0.0 {
+    @IBInspectable public var titleBottomPadding: CGFloat = 0.0 {
         didSet {
-            self.titleEdgeInsets.bottom = self.titleBottomPadding
+            titleEdgeInsets.bottom = titleBottomPadding
         }
     }
     
-    @IBInspectable var imageLeftPadding: CGFloat = 0.0 {
+    @IBInspectable public var imageLeftPadding: CGFloat = 0.0 {
         didSet {
-            self.imageEdgeInsets.left = self.imageLeftPadding
+            imageEdgeInsets.left = imageLeftPadding
         }
     }
     
-    @IBInspectable var imageRightPadding: CGFloat = 0.0 {
+    @IBInspectable public var imageRightPadding: CGFloat = 0.0 {
         didSet {
-            self.imageEdgeInsets.right = self.imageRightPadding
+            imageEdgeInsets.right = imageRightPadding
         }
     }
     
-    @IBInspectable var imageTopPadding: CGFloat = 0.0 {
+    @IBInspectable public var imageTopPadding: CGFloat = 0.0 {
         didSet {
-            self.imageEdgeInsets.top = self.imageTopPadding
+            imageEdgeInsets.top = imageTopPadding
         }
     }
     
-    @IBInspectable var imageBottomPadding: CGFloat = 0.0 {
+    @IBInspectable public var imageBottomPadding: CGFloat = 0.0 {
         didSet {
-            self.imageEdgeInsets.bottom = self.imageBottomPadding
+            imageEdgeInsets.bottom = imageBottomPadding
         }
     }
     
-    @IBInspectable var enableImageRightAligned: Bool = false
-    
-    @IBInspectable var enableGradientBackground: Bool = false
-    @IBInspectable var enableGradientStyleHorizontal: Bool = false
-    
-    @IBInspectable var gradientColor1: UIColor = UIColor.black
-    @IBInspectable var gradientColor2: UIColor = UIColor.white
-    @IBInspectable var gradientColorDisabled1: UIColor = UIColor.black
-    @IBInspectable var gradientColorDisabled2: UIColor = UIColor.white
-    
-    fileprivate var gradientLayer: CAGradientLayer = CAGradientLayer()
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        if self.enableImageRightAligned, let imageView = self.imageView {
-            self.imageEdgeInsets.left = self.bounds.width - imageView.bounds.width - self.imageRightPadding
-        }
-        
-        if self.enableGradientBackground {
-            self.gradientLayer.removeFromSuperlayer()
-            self.gradientLayer = CAGradientLayer()
-            self.gradientLayer.frame = self.bounds
-            if self.isEnabled {
-                self.gradientLayer.colors = [self.gradientColor1.cgColor, self.gradientColor2.cgColor]
-            } else {
-                self.gradientLayer.colors = [self.gradientColorDisabled1.cgColor, self.gradientColorDisabled2.cgColor]
-            }
-            if self.enableGradientStyleHorizontal {
-                self.gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
-                self.gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
-            } else {
-                self.gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
-                self.gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
-            }
-            self.layer.insertSublayer(gradientLayer, at: 0)
-        }
-    }
-    
-    @IBInspectable var imageColor: UIColor = UIColor.black {
+    @IBInspectable public var imageColor: UIColor = .black {
         didSet {
             if currentImage != nil {
                 setImage(currentImage?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate), for: .normal)
@@ -125,6 +86,49 @@ import UIKit
                 setImage(nil, for: .normal)
             }
         }
+    }
+    
+    @IBInspectable public var enableImageRightAligned: Bool = false
+    
+    @IBInspectable public var enableGradientBackground: Bool = false
+    @IBInspectable public var enableGradientStyleHorizontal: Bool = false
+    
+    @IBInspectable public var gradientColor1: UIColor = .black
+    @IBInspectable public var gradientColor2: UIColor = .white
+    @IBInspectable public var gradientColorDisabled1: UIColor = .black
+    @IBInspectable public var gradientColorDisabled2: UIColor = .white
+    
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if enableImageRightAligned, let imageView = imageView {
+            imageEdgeInsets.left = bounds.width - imageView.bounds.width - imageRightPadding
+        }
+        
+        if enableGradientBackground {
+            setupGradient()
+        }
+    }
+    
+    private func setupGradient() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        
+        if isEnabled {
+            gradientLayer.colors = [gradientColor1.cgColor, gradientColor2.cgColor]
+        } else {
+            gradientLayer.colors = [gradientColorDisabled1.cgColor, gradientColorDisabled2.cgColor]
+        }
+        
+        if enableGradientStyleHorizontal {
+            gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+            gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+        } else {
+            gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
+            gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
+        }
+        
+        layer.insertSublayer(gradientLayer, at: 0)
     }
     
 }

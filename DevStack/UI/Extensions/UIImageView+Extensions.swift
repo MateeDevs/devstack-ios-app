@@ -1,22 +1,23 @@
 //
 //  UIImageView+Extensions.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 27/09/2018.
 //  Copyright © 2018 Qest. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import AlamofireImage
 
 extension UIImageView {
+
+    // Workaround, because extensions must not contain stored properties
+    // Idea taken from: https://link.medium.com/6mPz1wuTCU
     
-    struct Holder {
-        static var _rounded:Bool = false
+    private struct Holder {
+        static var _rounded: Bool = false
     }
     
-    var rounded: Bool {
+    public var rounded: Bool {
         get {
             return Holder._rounded
         }
@@ -24,7 +25,7 @@ extension UIImageView {
             Holder._rounded = newValue
             layer.borderWidth = 0
             layer.masksToBounds = newValue ? false : true
-            layer.cornerRadius = newValue ? frame.height/2 : 0
+            layer.cornerRadius = newValue ? frame.height / 2 : 0
             clipsToBounds = newValue
         }
     }

@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-public class BaseViewController: UIViewController {
+open class BaseViewController: UIViewController {
     
     // MARK: Stored properties
     
@@ -30,29 +30,29 @@ public class BaseViewController: UIViewController {
     }
     
     // MARK: Lifecycle methods
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         setupViewAppearance()
     }
     
-    override public func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // As long as viewWillAppear make sure to setup your viewModel
         setupViewModel()
     }
     
-    override public func viewDidDisappear(_ animated: Bool) {
+    override open func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         // Remove the current reference to the disposeBag so all current subscriptions are disposed
         disposeBag = DisposeBag()
     }
     
-    override public var preferredStatusBarStyle: UIStatusBarStyle {
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
     // MARK: Default methods
-    public func setupViewModel() {
+    open func setupViewModel() {
         
         // Override this method in a subclass and setup the view model
         
@@ -60,7 +60,7 @@ public class BaseViewController: UIViewController {
         disposeBag = DisposeBag()
     }
     
-    public func setupViewAppearance() {
+    open func setupViewAppearance() {
         
         // Override this method in a subclass and setup the view appearance
         

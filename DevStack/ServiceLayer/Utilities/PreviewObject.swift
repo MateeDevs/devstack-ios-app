@@ -23,7 +23,7 @@ class PreviewObject: Object {
         
         // Try to populate with values from db
         let realm = try! Realm()
-        if let id = self.value(forKey: "id"), let dbObject = realm.object(ofType: T.self, forPrimaryKey: id) {
+        if let id = value(forKey: "id"), let dbObject = realm.object(ofType: T.self, forPrimaryKey: id) {
             // Cannot use init(value: ...)
             // Related issue: https://github.com/realm/realm-cocoa/issues/5714
             object = T(value: dbObject, schema: .partialPrivateShared())
@@ -33,7 +33,7 @@ class PreviewObject: Object {
         let schema = RLMSchema.partialShared().schema(forClassName: String(describing: type(of: self).self))
         if let schema = schema {
             for property in schema.properties {
-                object.setValue(self.value(forKey: property.name), forKey: property.name)
+                object.setValue(value(forKey: property.name), forKey: property.name)
             }
         }
         

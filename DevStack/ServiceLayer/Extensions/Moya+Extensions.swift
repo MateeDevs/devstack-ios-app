@@ -14,7 +14,7 @@ extension ObservableType where E == Response {
     
     // Transformation for filtering out successful status codes (same as default filterSuccessfulStatusCodes)
     // Additionaly provides conversion from MoyaError to ServiceError
-    // Idea taken from: https://stackoverflow.com/questions/39185109/custom-error-response-handling-with-moya-rxswift
+    // Idea taken from: https://stackoverflow.com/a/43526402
     func filterSuccess() -> Observable<E> {
         return flatMap { (response) -> Observable<E> in
             if 200 ... 299 ~= response.statusCode {

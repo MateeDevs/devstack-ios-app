@@ -1,6 +1,6 @@
 //
 //  UserImageView.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Viktor Kaderabek on 12/09/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -9,65 +9,44 @@
 import UIKit
 import AlamofireImage
 
-class UserImageView: XIBView {
+public class UserImageView: XIBView {
     
-    @IBInspectable var widthMultiplier: CGFloat = 1.0 {
-        didSet {
-            widthConstraint = widthConstraint.cloneWithMultiplier(multiplier: widthMultiplier)
-            setDimensions()
-        }
-    }
+    @IBOutlet private weak var userPlaceHolderView: UIView!
+    @IBOutlet private weak var initialsLabel: UILabel!
+    @IBOutlet private weak var userImageView: UIImageView!
     
-    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var userPlaceHolderView: UIView!
-    @IBOutlet weak var initialsLabel: UILabel!
-    @IBOutlet weak var userImageView: UIImageView!
-    
-    override var nibName: String {
-        return UserImageView.nameOfClass
-    }
-    
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         layoutIfNeeded()
         setDimensions()
     }
     
-    convenience init(user: User) {
+    convenience public init(user: User) {
         self.init()
         setupWithUser(user)
         setDimensions()
     }
     
-    convenience init(string: String) {
+    convenience public init(string: String) {
         self.init()
         setupWithString(string)
         setDimensions()
     }
     
-    func setupWithUser(_ user: User) {
-        guard let pictureUrl = user.pictureUrl, let url = URL(string: pictureUrl) else { return }
-        userImageView.af_setImage(withURL: url)
-        self.initialsLabel.text = CustomDataFormatter.userInitials(from: user.fullName)
-        setAppearance(isCountPlaceholder: false)
+    private func setupWithUser(_ user: User) {
+        //guard let pictureUrl = user.pictureUrl, let url = URL(string: pictureUrl) else { return }
+        //userImageView.af_setImage(withURL: url)
+        initialsLabel.text = DataFormatter.userInitials(from: user.fullName)
+        userPlaceHolderView.backgroundColor = UIColor.lightGray
     }
     
-    func setupWithString(_ string: String) {
-        self.initialsLabel.text = CustomDataFormatter.userInitials(from: string)
-        setAppearance(isCountPlaceholder: true)
+    private func setupWithString(_ string: String) {
+        initialsLabel.text = DataFormatter.userInitials(from: string)
+        userPlaceHolderView.backgroundColor = UIColor.lightGray
     }
     
-    func setAppearance(isCountPlaceholder: Bool) {
-        if isCountPlaceholder {
-            self.userPlaceHolderView.backgroundColor = UIColor.clear
-        } else {
-            self.userPlaceHolderView.backgroundColor = Asset.Colors.greyLight.color
-        }
-    }
-    
-    func setDimensions() {
-        userPlaceHolderView.layer.cornerRadius = (userPlaceHolderView.frame.size.width * widthMultiplier) / 2.0
+    private func setDimensions() {
+        userPlaceHolderView.layer.cornerRadius = userPlaceHolderView.frame.size.width / 2.0
         initialsLabel.font = UIFont.systemFont(ofSize: userPlaceHolderView.frame.size.width / 2.85, weight: .medium)
     }
 

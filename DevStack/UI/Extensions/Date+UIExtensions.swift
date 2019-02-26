@@ -8,32 +8,18 @@
 
 import Foundation
 
+public enum DateFormat: String {
+    case ddMMyyyyHHmm = "dd. MM. yyyy, HH:mm"
+    case EEddMMMyyyHHmmZ = "EE, dd MMM yyyy HH:mm Z"
+    case ddMMyyyy = "dd. MM. yyyy"
+    case HHmm = "HH:mm"
+}
+
 extension Date {
     
-    enum DateFormat : String {
-        case ddMMyyyyHHmm = "dd. MM. yyyy, HH:mm"
-        case EEddMMMyyyHHmmZ = "EE, dd MMM yyyy HH:mm Z"
-        case ddMMyyyy = "dd. MM. yyyy"
-        case HHmm = "HH:mm"
-    }
-    
-    var formatted: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = DateFormat.ddMMyyyyHHmm.rawValue
-        return  formatter.string(from: self)
-    }
-    
-    static func dateFromString(_ stringDate: String, dateFormat: String = DateFormat.EEddMMMyyyHHmmZ.rawValue) -> Date? {
+    public func toString(dateFormat: String = DateFormat.ddMMyyyyHHmm.rawValue) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat
-        let date = dateFormatter.date(from:stringDate)
-        return date
-    }
-    
-    static func stringFromDate(_ date: Date, dateFormat: String = DateFormat.ddMMyyyyHHmm.rawValue) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = dateFormat
-        let string = dateFormatter.string(from: date)
-        return string
+        return dateFormatter.string(from: self)
     }
 }

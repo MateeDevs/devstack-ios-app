@@ -13,7 +13,7 @@ public class ServiceError: Error {
     public let statusCode: Int
     public let message: String
     
-    init(statusCode: Int = StatusCode.unknown, message: String = L10n.unknownError) {
+    public init(statusCode: Int = StatusCode.unknown, message: String = L10n.unknownError) {
         self.statusCode = statusCode
         self.message = message
     }

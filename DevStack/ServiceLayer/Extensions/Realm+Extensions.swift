@@ -124,7 +124,7 @@ extension Reactive where Base: Realm {
                 try self.base.write {
                     // It's not possible to append objects directly (nested objects won't be updated)
                     // Instead we have to append a reference for every object
-                    // Idea taken from: https://stackoverflow.com/a/40595430/6947225
+                    // Idea taken from: https://stackoverflow.com/a/40595430
                     for object in objects {
                         // Create new object if it doesn't exists or partially update existing one
                         if !object.exists() {

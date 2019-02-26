@@ -13,11 +13,10 @@ import os.log
 extension Error {
     
     func asServiceError<T: Any>() -> Observable<Lce<T>> {
-        if let serviceError = self as? ServiceError {
-            return Observable.just(Lce(error: serviceError))
-        } else {
+        guard let serviceError = self as? ServiceError else {
             os_log("Error can't be converted to ServiceError:\n%@", log: Logger.appLog(), type: .error, "\(self)")
             return Observable.error(self)
         }
+        return Observable.just(Lce(error: serviceError))
     }
 }

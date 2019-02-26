@@ -8,7 +8,6 @@
 
 import Foundation
 import RxSwift
-import Moya
 
 public protocol HasUserService {
     var userService: UserService { get }

@@ -8,7 +8,6 @@
 
 import Foundation
 import RxSwift
-import Moya
 import RealmSwift
 import os.log
 

@@ -10,6 +10,7 @@ import Foundation
 import os.log
 
 // Language manager to handle app language change
+// Idea taken from: https://github.com/Abedalkareem/LanguageManager-iOS
 
 public enum Language: String {
     case ar,cs,en,sk
@@ -66,9 +67,7 @@ public class LanguageManager {
     
     // Set the default language that the app will run first time
     public func setDefaultLanguage(_ language: Language) {
-        guard UserDefaults.standard.string(forKey: LanguageManagerCoding.selectedLanguage) == nil else {
-            return
-        }
+        guard UserDefaults.standard.string(forKey: LanguageManagerCoding.selectedLanguage) == nil else { return }
         selectedLanguage = language
     }
     

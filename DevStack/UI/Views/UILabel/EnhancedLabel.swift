@@ -8,42 +8,40 @@
 
 import UIKit
 
-@IBDesignable class EnhancedLabel: LocalizedLabel {
+@IBDesignable open class EnhancedLabel: LocalizedLabel {
     
-    @IBInspectable var charSpace: Double = 1.0 {
+    @IBInspectable public var charSpace: Double = 1.0 {
         didSet {
             reloadAttributedTitle()
         }
     }
     
-    @IBInspectable var lineSpace: Double = 1.0 {
+    @IBInspectable public var lineSpace: Double = 1.0 {
         didSet {
             reloadAttributedTitle()
         }
     }
     
-    @IBInspectable var lineHeight: Double = 1.0 {
+    @IBInspectable public var lineHeight: Double = 1.0 {
         didSet {
             reloadAttributedTitle()
         }
     }
     
     private func reloadAttributedTitle() {
-        if var text = text {
-            text = NSLocalizedString(text, comment: "")
+        guard let text = text else { return }
             
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineSpacing = CGFloat(lineSpace)
-            paragraphStyle.lineHeightMultiple = CGFloat(lineHeight)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = CGFloat(lineSpace)
+        paragraphStyle.lineHeightMultiple = CGFloat(lineHeight)
             
-            let attributes: [NSAttributedString.Key : Any] = [
-                NSAttributedString.Key.kern: charSpace,
-                NSAttributedString.Key.paragraphStyle: paragraphStyle
-            ]
+        let attributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.kern: charSpace,
+            NSAttributedString.Key.paragraphStyle: paragraphStyle
+        ]
             
-            let attributedString = NSMutableAttributedString(string: text, attributes: attributes)
-            attributedText = attributedString
-        }
+        let attributedString = NSMutableAttributedString(string: text, attributes: attributes)
+        attributedText = attributedString
     }
     
 }

@@ -1,6 +1,6 @@
 //
 //  LocalizedImageView.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 24/10/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class LocalizedImageView: UIImageView {
+open class LocalizedImageView: UIImageView {
     
-    override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         image = image?.imageFlippedForRightToLeftLayoutDirection()
     }

@@ -25,11 +25,8 @@ struct DatabaseManager {
         let dbObjects = realm.objects(T.self).filter(NSPredicate(format: "\(primaryKeyName) == %d", id))
         
         return Observable.collection(from: dbObjects).flatMap { (objects) -> Observable<Lce<T>> in
-            if let object = objects.first {
-                return Observable.just(Lce(data: object))
-            } else {
-                return Observable.empty()
-            }
+            guard let object = objects.first else { return Observable.empty() }
+            return Observable.just(Lce(data: object))
         }
     }
     
@@ -55,11 +52,8 @@ struct DatabaseManager {
         }
         
         return Observable.array(from: dbObjects).flatMap { (objects) -> Observable<Lce<[T]>> in
-            if objects.count > 0 {
-                return Observable.just(Lce(data: objects))
-            } else {
-                return Observable.just(Lce(data: []))
-            }
+            guard objects.count > 0 else { return Observable.just(Lce(data: [])) }
+            return Observable.just(Lce(data: objects))
         }
     }
     

@@ -8,17 +8,16 @@
 
 import UIKit
 import RxSwift
-import RealmSwift
 
-public class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
+open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: UI components
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet public weak var tableView: UITableView!
     
     // MARK: Stored properties
     private(set) var items: [T] = [] {
         didSet {
-            self.tableView?.reloadData()
+            tableView?.reloadData()
         }
     }
     
@@ -36,7 +35,7 @@ public class BaseTableViewController<T: AnyObject>: BaseViewController, UIScroll
     private var refreshControl = UIRefreshControl()
     
     // MARK: Lifecycle methods
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         // Setup pull to refresh
@@ -45,7 +44,7 @@ public class BaseTableViewController<T: AnyObject>: BaseViewController, UIScroll
         tableView?.refreshControl = refreshControl
     }
     
-    override public func viewDidAppear(_ animated: Bool) {
+    override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         currentPage = 0
@@ -66,9 +65,8 @@ public class BaseTableViewController<T: AnyObject>: BaseViewController, UIScroll
     }
     
     public func handleDatabaseData(_ event: Lce<[T]>) {
-        if let items = event.data {
-            self.items = items
-        }
+        guard let items = event.data else { return }
+        self.items = items
     }
     
     public func handleNetworkData(_ event: Lce<[T]>) {
@@ -84,33 +82,32 @@ public class BaseTableViewController<T: AnyObject>: BaseViewController, UIScroll
     }
     
     // MARK: UIScrollViewDelegate methods
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.isNearBottomEdge(), shouldFetchMore {
-            shouldFetchMore = false
-            page.onNext(currentPage)
-        }
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard scrollView.isNearBottomEdge(), shouldFetchMore else { return }
+        shouldFetchMore = false
+        page.onNext(currentPage)
     }
     
     // MARK: UITableViewDataSource methods
-    public func numberOfSections(in tableView: UITableView) -> Int {
+    open func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Override this method in a subclass and setup the cells
         return UITableViewCell()
     }
     
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Override this method in a subclass and setup the action
     }
     
     // MARK: UITableViewDelegate methods
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 }

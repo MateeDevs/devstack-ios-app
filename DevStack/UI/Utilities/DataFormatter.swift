@@ -1,34 +1,30 @@
 //
-//  CustomDataFormatter.swift
-//  Shipvio3
+//  DataFormatter.swift
+//  DevStack
 //
 //  Created by Viktor Kaderabek on 12/09/2018.
 //  Copyright © 2018 Qest. All rights reserved.
 //
 
+#warning("FIXME: To be refactored")
+
 import UIKit
 
-struct CustomDataFormatter {
+struct DataFormatter {
     
-    
+    ///
     /// Distance label formatting
     ///
-    /// - Parameter distance: distance in meters (m)
-    /// - Returns: formatted distance label
+    /// - parameter distance: Distance in meters (m)
+    /// - parameter rounded: Indicates whether to round distance in kilometers
+    /// - returns: Formatted distance label
+    ///
     static func formatDistance(from distance: Int, rounded: Bool = false) -> String {
         if distance >= 1000 {
             if LanguageManager.shared.isRightToLeft {
-                if rounded {
-                    return "km \(Int((CGFloat(distance) / 1000).rounded()))"
-                } else {
-                    return "km \(CGFloat(distance) / 1000)"
-                }
+                return rounded ? "km \(Int((CGFloat(distance) / 1000).rounded()))" : "km \(CGFloat(distance) / 1000)"
             } else {
-                if rounded {
-                    return "\(Int((CGFloat(distance) / 1000).rounded())) km"
-                } else {
-                    return "\(CGFloat(distance) / 1000) km"
-                }
+                return rounded ? "\(Int((CGFloat(distance) / 1000).rounded())) km" : "\(CGFloat(distance) / 1000) km"
             }
         } else {
             if LanguageManager.shared.isRightToLeft {
@@ -39,25 +35,19 @@ struct CustomDataFormatter {
         }
     }
     
-    
+    ///
     /// Weight label formatting
     ///
-    /// - Parameter weight: weight in kilos (kg)
-    /// - Returns: formatted weight label
+    /// - parameter weight: Weight in kilos (kg)
+    /// - parameter rounded: Indicates whether to round weight in tons
+    /// - returns: Formatted weight label
+    ///
     static func formatWeight(from weight: Int, rounded: Bool = false) -> String {
         if weight >= 1000 {
             if LanguageManager.shared.isRightToLeft {
-                if rounded {
-                    return "t \(Int((CGFloat(weight) / 1000).rounded()))"
-                } else {
-                    return "t \(CGFloat(weight) / 1000)"
-                }
+                return rounded ? "t \(Int((CGFloat(weight) / 1000).rounded()))" : "t \(CGFloat(weight) / 1000)"
             } else {
-                if rounded {
-                    return "\(Int((CGFloat(weight) / 1000).rounded())) t"
-                } else {
-                    return "\(CGFloat(weight) / 1000) t"
-                }
+                return rounded ? "\(Int((CGFloat(weight) / 1000).rounded())) t" : "\(CGFloat(weight) / 1000) t"
             }
         } else {
             if LanguageManager.shared.isRightToLeft {
@@ -68,10 +58,13 @@ struct CustomDataFormatter {
         }
     }
     
+    ///
     /// Dimension label formatting
     ///
-    /// - Parameter dimension: dimension in centimeters (mm)
-    /// - Returns: formatted dimension label
+    /// - parameter dimension: Dimension in milimeters (mm)
+    /// - parameter rounded: Indicates whether to round distance
+    /// - returns: Formatted dimension label
+    ///
     static func formatDimension(from dimension: Int, rounded: Bool = false) -> String {
         if dimension >= 1000 {
             if rounded  {
@@ -103,9 +96,9 @@ struct CustomDataFormatter {
             return L10n.tomorrowText
         } else {
             if let offsetMinutes = offsetMinutes {
-                return date.iso8601(dateFormat: Date.DateFormat.ddMMyyyy.rawValue, timeZone: TimeZone(secondsFromGMT: offsetMinutes*60))
+                return date.iso8601(dateFormat: DateFormat.ddMMyyyy.rawValue, timeZone: TimeZone(secondsFromGMT: offsetMinutes*60))
             } else {
-                return date.iso8601(dateFormat: Date.DateFormat.ddMMyyyy.rawValue)
+                return date.iso8601(dateFormat: DateFormat.ddMMyyyy.rawValue)
             }
         }
     }
@@ -121,9 +114,9 @@ struct CustomDataFormatter {
         }
         
         if let offsetMinutes = offsetMinutes {
-            return date.iso8601(dateFormat: Date.DateFormat.HHmm.rawValue, timeZone: TimeZone(secondsFromGMT: offsetMinutes*60))
+            return date.iso8601(dateFormat: DateFormat.HHmm.rawValue, timeZone: TimeZone(secondsFromGMT: offsetMinutes*60))
         } else {
-            return date.iso8601(dateFormat: Date.DateFormat.HHmm.rawValue)
+            return date.iso8601(dateFormat: DateFormat.HHmm.rawValue)
         }
     }
     
@@ -194,7 +187,7 @@ struct CustomDataFormatter {
     /// - Parameter fullName: full name
     /// - Returns: initials
     static func userInitials(from fullName: String) -> String {
-        let words : Array<Substring> = fullName.split(separator: " ")
+        let words: [Substring] = fullName.split(separator: " ")
         let initials = words.map({String($0.first ?? Character(""))})
         let userInitials = initials.joined()
         return userInitials

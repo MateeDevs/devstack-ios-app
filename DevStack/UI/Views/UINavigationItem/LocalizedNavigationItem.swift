@@ -1,6 +1,6 @@
 //
 //  LocalizedNavigationItem.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Viktor Kaderabek on 13/08/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -8,17 +8,20 @@
 
 import UIKit
 
-class LocalizedNavigationItem: UINavigationItem {
+open class LocalizedNavigationItem: UINavigationItem {
 
-    override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
-        if let title = self.title {
+        
+        if let title = title {
             self.title = NSLocalizedString(title, comment: "")
         }
-        if let backButtonTitle = self.backBarButtonItem?.title {
+        
+        if let backButtonTitle = backBarButtonItem?.title {
             self.backBarButtonItem?.title = NSLocalizedString(backButtonTitle, comment: "")
         }
-        if let prompt = self.prompt {
+        
+        if let prompt = prompt {
             self.prompt = NSLocalizedString(prompt, comment: "")
         }
     }

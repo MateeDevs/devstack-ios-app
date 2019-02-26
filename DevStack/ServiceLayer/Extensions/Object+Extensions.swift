@@ -15,7 +15,7 @@ extension Object {
     
     // Model for partial updates of Realm objects (to prevent overwriting optional existing attributes)
     // Just override apiModel() function in your object's class and remove properties you don't want to be updated
-    // Idea taken from: https://github.com/realm/realm-cocoa/issues/4882
+    // Idea taken from: https://github.com/realm/realm-cocoa/issues/4882#issuecomment-295613895
     // Doesn't work for nested objects :(
     @objc func fullModel() -> [String: Any] {
         var model: [String: Any] = [:]
@@ -33,11 +33,8 @@ extension Object {
     }
     
     func exists() -> Bool {
+        guard let id = value(forKey: "id") else { return false }
         let realm = try! Realm()
-        if let id = value(forKey: "id") {
-            return realm.object(ofType: type(of: self).self, forPrimaryKey: id) != nil
-        } else {
-            return false
-        }
+        return realm.object(ofType: type(of: self).self, forPrimaryKey: id) != nil
     }
 }

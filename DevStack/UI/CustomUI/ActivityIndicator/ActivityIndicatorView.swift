@@ -14,8 +14,4 @@ class ActivityIndicatorView: XIBView {
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
-    override var nibName: String {
-        return ActivityIndicatorView.nameOfClass
-    }
-    
 }
