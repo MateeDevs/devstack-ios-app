@@ -22,11 +22,11 @@ class LoginViewController: InputViewController {
     var viewModel: LoginViewModel?
     
     // MARK: - UI components
-    @IBOutlet weak var emailTextFieldView: UIView!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextFieldView: UIView!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet private weak var emailTextFieldView: UIView!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextFieldView: UIView!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginButton: UIButton!
     
     // MARK: - Stored properties
     

@@ -26,8 +26,7 @@ public struct LocationManager {
     public lazy var currentLocation = locationManager.rx.didUpdateLocations
         .map { locations in
             return locations[0]
-        }
-        .filter { location in
+        }.filter { location in
             return location.horizontalAccuracy < kCLLocationAccuracyHundredMeters
         }.take(1)
     

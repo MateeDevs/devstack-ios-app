@@ -470,7 +470,6 @@
 		45E8A56E220F7933003F7502 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		45E8A56F220F7933003F7502 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		45EBB308217600360080D179 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
-		45ECA08E21676A9D000B1124 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		45ECA09521676AA3000B1124 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		45ECA09621676AA8000B1124 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		45ECA09721676AAE000B1124 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -963,8 +962,8 @@
 		45E1E61C221D5C55006C84D1 /* LocationManager */ = {
 			isa = PBXGroup;
 			children = (
-				A8DDD09F211DFD6200EEB48F /* CLLocationManager+Rx.swift */,
 				A8DDD0B9211E3D6900EEB48F /* LocationManager.swift */,
+				A8DDD09F211DFD6200EEB48F /* CLLocationManager+Rx.swift */,
 				45E1E618221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift */,
 			);
 			path = LocationManager;
@@ -1190,7 +1189,6 @@
 				Base,
 				cs,
 				sk,
-				ar,
 			);
 			mainGroup = 4558D2FE20FCC8FF005BC325;
 			productRefGroup = 4558D30820FCC8FF005BC325 /* Products */;
@@ -1316,7 +1314,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "source ~/.bash_profile\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/Base.lproj/Localizable.strings --lang en\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/cs.lproj/Localizable.strings --lang cs\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/sk.lproj/Localizable.strings --lang sk\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/en.lproj/Localizable.strings --lang en\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/ar.lproj/Localizable.strings --lang ar\n";
+			shellScript = "source ~/.bash_profile\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/Base.lproj/Localizable.strings --lang en\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/cs.lproj/Localizable.strings --lang cs\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/sk.lproj/Localizable.strings --lang sk\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/en.lproj/Localizable.strings --lang en\n";
 		};
 		4597627B20FE14880034DE29 /* Script for Twine */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1330,7 +1328,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "source ~/.bash_profile\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/Base.lproj/Localizable.strings --lang en\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/cs.lproj/Localizable.strings --lang cs\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/sk.lproj/Localizable.strings --lang sk\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/en.lproj/Localizable.strings --lang en\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/ar.lproj/Localizable.strings --lang ar\n";
+			shellScript = "source ~/.bash_profile\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/Base.lproj/Localizable.strings --lang en\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/cs.lproj/Localizable.strings --lang cs\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/sk.lproj/Localizable.strings --lang sk\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/en.lproj/Localizable.strings --lang en\n";
 		};
 		4597627C20FE14960034DE29 /* Script for Twine */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1344,7 +1342,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "source ~/.bash_profile\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/Base.lproj/Localizable.strings --lang en\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/cs.lproj/Localizable.strings --lang cs\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/sk.lproj/Localizable.strings --lang sk\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/en.lproj/Localizable.strings --lang en\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/ar.lproj/Localizable.strings --lang ar\n";
+			shellScript = "source ~/.bash_profile\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/Base.lproj/Localizable.strings --lang en\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/cs.lproj/Localizable.strings --lang cs\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/sk.lproj/Localizable.strings --lang sk\nbundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/en.lproj/Localizable.strings --lang en\n";
 		};
 		4597628020FE15250034DE29 /* Script for SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1913,7 +1911,6 @@
 		45ECA08D21676A9D000B1124 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				45ECA08E21676A9D000B1124 /* ar */,
 				45ECA09521676AA3000B1124 /* Base */,
 				45ECA09621676AA8000B1124 /* cs */,
 				45ECA09721676AAE000B1124 /* en */,
@@ -2058,7 +2055,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack;
 				PRODUCT_NAME = DevStack;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2079,7 +2076,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack;
 				PRODUCT_NAME = DevStack;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -2100,7 +2097,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack.alpha;
 				PRODUCT_NAME = "A-DevStack";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2121,7 +2118,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack.alpha;
 				PRODUCT_NAME = "A-DevStack";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -2142,7 +2139,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack.beta;
 				PRODUCT_NAME = "B-DevStack";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2163,7 +2160,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack.beta;
 				PRODUCT_NAME = "B-DevStack";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

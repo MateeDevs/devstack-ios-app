@@ -31,9 +31,9 @@ final class UsersViewModel: ViewModel, ViewModelType {
         
         let getUsersEvent: Driver<Lce<[User]>> = self.dependencies.userService.getUsers().asDriverOnErrorJustComplete()
         
-        let downloadUsersEvent = input.page.flatMap { (page) -> Observable<Lce<[User]>> in
+        let downloadUsersEvent = input.page.flatMap({ (page) -> Observable<Lce<[User]>> in
             return self.dependencies.userService.downloadUsersForPage(page)
-            }.asDriverOnErrorJustComplete()
+        }).asDriverOnErrorJustComplete()
         
         return Output(getUsersEvent: getUsersEvent, downloadUsersEvent: downloadUsersEvent)
     }

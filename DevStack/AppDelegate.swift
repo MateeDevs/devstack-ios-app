@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Shipvio3
+//  DevStack
 //
 //  Created by Petr Chmelar on 16/07/2018.
 //  Copyright © 2018 Qest. All rights reserved.
@@ -10,12 +10,11 @@ import UIKit
 import Fabric
 import Crashlytics
 import RealmSwift
-import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var window: UIWindow?
+    private(set) var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
