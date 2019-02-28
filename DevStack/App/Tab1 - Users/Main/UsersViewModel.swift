@@ -29,7 +29,7 @@ final class UsersViewModel: ViewModel, ViewModelType {
     
     func transform(input: Input) -> Output {
         
-        let getUsersEvent: Driver<Lce<[User]>> = self.dependencies.userService.getUsers().asDriverOnErrorJustComplete()
+        let getUsersEvent: Driver<Lce<[User]>> = dependencies.userService.getUsers().asDriverOnErrorJustComplete()
         
         let downloadUsersEvent = input.page.flatMap({ (page) -> Observable<Lce<[User]>> in
             return self.dependencies.userService.downloadUsersForPage(page)

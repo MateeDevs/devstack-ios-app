@@ -12,14 +12,13 @@ extension UIView {
     
     // MARK: Activity Indicator on view
     
-    public func startActivityIndicator(style: UIActivityIndicatorView.Style = .whiteLarge, color: UIColor = ColorTheme.mainColor, backgroundColor: UIColor = UIColor.clear) {
+    public func startActivityIndicator(style: UIActivityIndicatorView.Style = .whiteLarge, color: UIColor = ColorTheme.mainColor, backgroundColor: UIColor = .clear) {
         endEditing(true)
         stopActivityIndicator()
         let activityIndicatorView = ActivityIndicatorView()
         activityIndicatorView.indicator.style = style
         activityIndicatorView.indicator.color = color
         activityIndicatorView.backgroundView.backgroundColor = backgroundColor
-        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
         activityIndicatorView.setConstraintsToCoverView(self)
     }
     
@@ -44,22 +43,20 @@ extension UIView {
     
     // Constraints to view bounds
     public func setConstraintsToCoverView(_ containerView: UIView) {
-        translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(self)
-        let horConstraint = NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: containerView, attribute: .centerX, multiplier: 1.0, constant: 0.0)
-        let verConstraint = NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: containerView, attribute: .centerY, multiplier: 1.0, constant: 0.0)
-        let widConstraint = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: containerView, attribute: .width, multiplier: 1.0, constant: 0.0)
-        let heiConstraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal,toItem: containerView, attribute: .height,multiplier: 1.0, constant: 0.0)
-        containerView.addConstraints([horConstraint, verConstraint, widConstraint, heiConstraint])
+        translatesAutoresizingMaskIntoConstraints = false
+        centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+        widthAnchor.constraint(equalTo: containerView.widthAnchor).isActive = true
+        heightAnchor.constraint(equalTo: containerView.heightAnchor).isActive = true
     }
     
     // Constraints to center in view
     public func setConstraintsToCenterInView(_ containerView: UIView) {
-        translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(self)
-        let horConstraint = NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: containerView, attribute: .centerX, multiplier: 1.0, constant: 0.0)
-        let verConstraint = NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: containerView, attribute: .centerY, multiplier: 1.0, constant: 0.0)
-        containerView.addConstraints([horConstraint, verConstraint])
+        translatesAutoresizingMaskIntoConstraints = false
+        centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
     }
     
 }

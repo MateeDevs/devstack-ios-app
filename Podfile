@@ -5,23 +5,22 @@ platform :ios, '11.0'
 use_frameworks!
 
 def shared_pods
-    # Pods for app analytics
+    # App analytics
     pod 'Fabric'
     pod 'Crashlytics'
     
-    # Pods for FRP
+    # Functional reactive programming
     pod 'RxSwift'
     pod 'RxCocoa'
-    pod 'RxDataSources'
     
-    # Pods for networking + data serialization
+    # Networking + database
     pod 'Moya/RxSwift'
     pod 'AlamofireImage'
     pod 'RealmSwift'
-    pod "RxRealm"
+    pod 'RxRealm'
     pod 'KeychainAccess'
       
-    # Pods for localization
+    # Other utilities
     pod 'SwiftGen'
 end
 

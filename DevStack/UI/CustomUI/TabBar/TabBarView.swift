@@ -21,22 +21,22 @@ public protocol TabBarViewDelegate: class {
     @IBInspectable public var buttonMainLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
     @IBInspectable public var buttonMainLabelFontHighlighted: UIFont = UIFont.systemFont(ofSize: 16)
     
-    @IBInspectable public var buttonMainLabelColor: UIColor = UIColor.white
-    @IBInspectable public var buttonMainLabelColorHighlighted: UIColor = UIColor.white
+    @IBInspectable public var buttonMainLabelColor: UIColor = .white
+    @IBInspectable public var buttonMainLabelColorHighlighted: UIColor = .white
     
     @IBInspectable public var buttonNumberLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
     @IBInspectable public var buttonNumberLabelFontHighlighted: UIFont = UIFont.systemFont(ofSize: 16)
     
-    @IBInspectable public var buttonNumberLabelColor: UIColor = UIColor.white
-    @IBInspectable public var buttonNumberLabelColorHighlighted: UIColor = UIColor.white
+    @IBInspectable public var buttonNumberLabelColor: UIColor = .white
+    @IBInspectable public var buttonNumberLabelColorHighlighted: UIColor = .white
     
-    @IBInspectable public var buttonNumberViewBackgroundColor: UIColor = UIColor.clear
-    @IBInspectable public var buttonNumberViewBackgroundColorHighlighted: UIColor = UIColor.clear
+    @IBInspectable public var buttonNumberViewBackgroundColor: UIColor = .clear
+    @IBInspectable public var buttonNumberViewBackgroundColorHighlighted: UIColor = .clear
     
-    @IBInspectable public var buttonBackgroundColor: UIColor = UIColor.clear
-    @IBInspectable public var buttonBackgroundColorHighlighted: UIColor = UIColor.clear
+    @IBInspectable public var buttonBackgroundColor: UIColor = .clear
+    @IBInspectable public var buttonBackgroundColorHighlighted: UIColor = .clear
     
-    @IBInspectable public var stripViewColor: UIColor = UIColor.red {
+    @IBInspectable public var stripViewColor: UIColor = .red {
         didSet {
             stripView?.backgroundColor = stripViewColor
         }

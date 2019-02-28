@@ -37,12 +37,12 @@ public class UserImageView: XIBView {
         //guard let pictureUrl = user.pictureUrl, let url = URL(string: pictureUrl) else { return }
         //userImageView.af_setImage(withURL: url)
         initialsLabel.text = DataFormatter.userInitials(from: user.fullName)
-        userPlaceHolderView.backgroundColor = UIColor.lightGray
+        userPlaceHolderView.backgroundColor = .lightGray
     }
     
     private func setupWithString(_ string: String) {
         initialsLabel.text = DataFormatter.userInitials(from: string)
-        userPlaceHolderView.backgroundColor = UIColor.lightGray
+        userPlaceHolderView.backgroundColor = .lightGray
     }
     
     private func setDimensions() {

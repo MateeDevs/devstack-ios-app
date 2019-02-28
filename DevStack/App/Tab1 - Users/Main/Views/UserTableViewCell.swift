@@ -8,9 +8,7 @@
 
 import UIKit
 
-class UserTableViewCell: UITableViewCell {
-    
-    static let prefferedHeight: CGFloat = 44.0
+class UserTableViewCell: BaseTableViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
     

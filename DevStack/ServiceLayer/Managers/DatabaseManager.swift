@@ -15,6 +15,7 @@ struct DatabaseManager {
     ///
     /// Generic function for observing on a specified object from database.
     ///
+    /// - parameter type: Type of object.
     /// - parameter id: Primary key to specify an object.
     /// - parameter primaryKeyName: Optional parameter to set alternate primary key name (default is "id").
     /// - returns: Observable which emits Lce of a given type.
@@ -33,6 +34,7 @@ struct DatabaseManager {
     ///
     /// Generic function for observing on a specified collection of objects from database.
     ///
+    /// - parameter type: Type of objects.
     /// - parameter predicate: NSPredicate for optional objects filtering.
     /// - parameter sortBy: Optional parameter for sorting.
     /// - parameter ascending: Optional parameter for sorting in ascending or descending order.

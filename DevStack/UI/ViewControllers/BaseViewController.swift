@@ -66,7 +66,7 @@ open class BaseViewController: UIViewController {
         
         // Setup background color and back button title
         view.backgroundColor = Asset.Colors.mainBackground.color
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: L10n.back, style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: L10n.back, style: .plain, target: nil, action: nil)
     }
     
 }

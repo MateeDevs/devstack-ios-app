@@ -23,13 +23,13 @@ public protocol RatingViewDelegate: class {
         }
     }
     
-    @IBInspectable public var starDefaultColor: UIColor = UIColor.yellow {
+    @IBInspectable public var starDefaultColor: UIColor = .yellow {
         didSet {
             paintStars()
         }
     }
     
-    @IBInspectable public var starEmptyColor: UIColor =  UIColor.lightGray {
+    @IBInspectable public var starEmptyColor: UIColor = .lightGray {
         didSet {
             paintEmptyStars()
         }

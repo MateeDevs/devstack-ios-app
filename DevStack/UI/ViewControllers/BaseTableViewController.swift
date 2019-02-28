@@ -12,7 +12,12 @@ import RxSwift
 open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: UI components
-    @IBOutlet public weak var tableView: UITableView!
+    @IBOutlet public weak var tableView: UITableView! {
+        didSet {
+            // If you need separator add it into the cell
+            tableView.separatorStyle = .none
+        }
+    }
     
     // MARK: Stored properties
     private(set) var items: [T] = [] {

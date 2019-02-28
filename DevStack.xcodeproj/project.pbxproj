@@ -134,6 +134,9 @@
 		4588FF0A2225A73C0014FC79 /* RatingView.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4588FF092225A73C0014FC79 /* RatingView.xcassets */; };
 		4588FF0B2225A73C0014FC79 /* RatingView.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4588FF092225A73C0014FC79 /* RatingView.xcassets */; };
 		4588FF0C2225A73C0014FC79 /* RatingView.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4588FF092225A73C0014FC79 /* RatingView.xcassets */; };
+		4588FF0F2226EF360014FC79 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588FF0E2226EF360014FC79 /* BaseTableViewCell.swift */; };
+		4588FF102226EF360014FC79 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588FF0E2226EF360014FC79 /* BaseTableViewCell.swift */; };
+		4588FF112226EF360014FC79 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588FF0E2226EF360014FC79 /* BaseTableViewCell.swift */; };
 		45890B0821FF519B00894255 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45890B0721FF519B00894255 /* Profile.storyboard */; };
 		45890B0921FF519B00894255 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45890B0721FF519B00894255 /* Profile.storyboard */; };
 		45890B0A21FF519B00894255 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45890B0721FF519B00894255 /* Profile.storyboard */; };
@@ -413,6 +416,7 @@
 		4571DB2A22159EE90036919A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4585A15C214FE3DE00186D7D /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		4588FF092225A73C0014FC79 /* RatingView.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RatingView.xcassets; sourceTree = "<group>"; };
+		4588FF0E2226EF360014FC79 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		45890AF821FF4E1100894255 /* strings.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = strings.txt; path = "../../../../qest/twine-localization/devstack/strings.txt"; sourceTree = "<group>"; };
 		45890B0721FF519B00894255 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		45890B1F21FF5CD800894255 /* AuthToken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AuthToken.json; sourceTree = "<group>"; };
@@ -728,6 +732,14 @@
 			path = UserImageView;
 			sourceTree = "<group>";
 		};
+		4588FF0D2226EF220014FC79 /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4588FF0E2226EF360014FC79 /* BaseTableViewCell.swift */,
+			);
+			path = UITableViewCell;
+			sourceTree = "<group>";
+		};
 		45890AFA21FF515800894255 /* Tab2 - Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -894,6 +906,7 @@
 				4511A70C213D6E0B006AD4CC /* UIImageView */,
 				459762F420FE222F0034DE29 /* UILabel */,
 				A8DDD0D52121E2F100EEB48F /* UINavigationItem */,
+				4588FF0D2226EF220014FC79 /* UITableViewCell */,
 				459762F620FE22630034DE29 /* UITextField */,
 				459762F320FE22220034DE29 /* UITextView */,
 				459762F720FE22790034DE29 /* UIView */,
@@ -1434,10 +1447,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DevStack/Pods-DevStack-frameworks.sh",
+				"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack/Pods-DevStack-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -1445,7 +1457,6 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
@@ -1453,7 +1464,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -1461,13 +1471,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DevStack/Pods-DevStack-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack/Pods-DevStack-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		78E6FDB10F4506CE89EF4F3D /* [CP] Embed Pods Frameworks */ = {
@@ -1476,10 +1485,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha-frameworks.sh",
+				"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -1487,7 +1495,6 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
@@ -1495,7 +1502,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -1503,13 +1509,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		968C7269E3BACFD41354FCA7 /* [CP] Check Pods Manifest.lock */ = {
@@ -1536,10 +1541,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta-frameworks.sh",
+				"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -1547,7 +1551,6 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
@@ -1555,7 +1558,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -1563,13 +1565,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C41C8A2EE11E16B2E3D7151C /* [CP] Check Pods Manifest.lock */ = {
@@ -1657,6 +1658,7 @@
 				45890B5822087C5D00894255 /* Date+UIExtensions.swift in Sources */,
 				4511A72D213DDCCB006AD4CC /* UIView+Extensions.swift in Sources */,
 				A8DDD0BA211E3D6900EEB48F /* LocationManager.swift in Sources */,
+				4588FF0F2226EF360014FC79 /* BaseTableViewCell.swift in Sources */,
 				456852232105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
 				455261C7210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8C79A9F2157FD71007A4339 /* Plurals.swift in Sources */,
@@ -1761,6 +1763,7 @@
 				45890B5922087C5D00894255 /* Date+UIExtensions.swift in Sources */,
 				4511A72E213DDCCB006AD4CC /* UIView+Extensions.swift in Sources */,
 				A8DDD0BB211E3D6900EEB48F /* LocationManager.swift in Sources */,
+				4588FF102226EF360014FC79 /* BaseTableViewCell.swift in Sources */,
 				A8C79AA02157FD71007A4339 /* Plurals.swift in Sources */,
 				456852242105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
 				455261C8210AFF1800E5F1E1 /* Assets.swift in Sources */,
@@ -1865,6 +1868,7 @@
 				45890B5A22087C5D00894255 /* Date+UIExtensions.swift in Sources */,
 				4511A72F213DDCCB006AD4CC /* UIView+Extensions.swift in Sources */,
 				A8DDD0BC211E3D6900EEB48F /* LocationManager.swift in Sources */,
+				4588FF112226EF360014FC79 /* BaseTableViewCell.swift in Sources */,
 				456852252105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
 				455261C9210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8C79AA12157FD71007A4339 /* Plurals.swift in Sources */,

@@ -75,7 +75,7 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
         }))
         #endif
         
-        self.provider = MoyaProvider<MultiTarget>(endpointClosure: endpointClosure, requestClosure: requestClosure, manager: manager, plugins: plugins)
+        provider = MoyaProvider<MultiTarget>(endpointClosure: endpointClosure, requestClosure: requestClosure, manager: manager, plugins: plugins)
     }
     
     func request(_ target: MultiTarget) -> Single<Moya.Response> {
