@@ -11,6 +11,7 @@ import UIKit
 class MainFlowController: FlowController, OnboardingFlowDelegate {
     
     override func start() {
+        super.start()
         if KeychainStore.get(key: KeychainCoding.userId) != nil {
             setupMain()
         } else {
@@ -19,28 +20,28 @@ class MainFlowController: FlowController, OnboardingFlowDelegate {
     }
     
     func setupMain() {
-        let main = StoryboardScene.Main.initialScene.instantiate()
+        let main = MainTabBarController.instantiate()
         
-        let usersNavController = UINavigationController()
-        usersNavController.tabBarItem = UITabBarItem(title: L10n.bottomBarItem1, image: Asset.Images.contactsTabBar.image, tag: 0)
-        let usersFlowController = UsersFlowController(navigationController: usersNavController, dependencies: dependencies)
-        usersFlowController.start()
+        let usersNc = UINavigationController()
+        usersNc.tabBarItem = UITabBarItem(title: L10n.bottomBarItem1, image: Asset.Images.contactsTabBar.image, tag: 0)
+        let usersFc = UsersFlowController(navigationController: usersNc, dependencies: dependencies)
+        startChildFlow(usersFc)
         
-        let profileNavController = UINavigationController()
-        profileNavController.tabBarItem = UITabBarItem(title: L10n.bottomBarItem2, image: Asset.Images.profileTabBar.image, tag: 1)
-        let profileFlowController = ProfileFlowController(navigationController: profileNavController, dependencies: dependencies)
-        profileFlowController.start()
+        let profileNc = UINavigationController()
+        profileNc.tabBarItem = UITabBarItem(title: L10n.bottomBarItem2, image: Asset.Images.profileTabBar.image, tag: 1)
+        let profileFc = ProfileFlowController(navigationController: profileNc, dependencies: dependencies)
+        startChildFlow(profileFc)
         
-        main.viewControllers = [usersNavController, profileNavController]
+        main.viewControllers = [usersNc, profileNc]
         navigationController.navigationBar.isHidden = true
         navigationController.viewControllers = [main]
     }
     
     func presentOnboarding() {
-        let onboardingNavController = UINavigationController()
-        let flowController = OnboardingFlowController(navigationController: onboardingNavController, dependencies: dependencies)
-        navigationController.present(onboardingNavController, animated: true, completion: nil)
-        flowController.flowDelegate = self
-        flowController.start()
+        let nc = UINavigationController()
+        let fc = OnboardingFlowController(navigationController: nc, dependencies: dependencies)
+        navigationController.present(nc, animated: true, completion: nil)
+        fc.flowDelegate = self
+        startChildFlow(fc)
     }
 }

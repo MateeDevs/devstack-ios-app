@@ -8,13 +8,21 @@
 
 import UIKit
 
-class UsersFlowController: FlowController {
+class UsersFlowController: FlowController, UsersFlowDelegate, UserDetailFlowDelegate {
     
     override func start() {
         super.start()
-        let vc = StoryboardScene.Users.initialScene.instantiate()
-        vc.viewModel = UsersViewModel(dependencies: dependencies)
+        let vm = UsersViewModel(dependencies: dependencies)
+        let vc = UsersViewController.instantiate(viewModel: vm)
+        vc.flowDelegate = self
         navigationController.viewControllers = [vc]
+    }
+    
+    func showUserDetail(userId: String) {
+        let vm = UserDetailViewModel(dependencies: dependencies)
+        let vc = UserDetailViewController.instantiate(viewModel: vm, userId: userId)
+        vc.flowDelegate = self
+        navigationController.show(vc, sender: nil)
     }
     
 }

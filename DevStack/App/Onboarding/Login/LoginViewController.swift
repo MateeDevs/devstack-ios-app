@@ -15,22 +15,29 @@ protocol LoginFlowDelegate: class {
 
 class LoginViewController: InputViewController {
     
-    // MARK: - FlowDelegate
+    // MARK: FlowDelegate
     var flowDelegate: LoginFlowDelegate?
     
-    // MARK: - ViewModels
-    var viewModel: LoginViewModel?
+    // MARK: ViewModels
+    var viewModel: LoginViewModel!
     
-    // MARK: - UI components
+    // MARK: UI components
     @IBOutlet private weak var emailTextFieldView: UIView!
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextFieldView: UIView!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
     
-    // MARK: - Stored properties
+    // MARK: Stored properties
     
-    // MARK: - Lifecycle methods
+    // MARK: Inits
+    static func instantiate(viewModel: LoginViewModel) -> LoginViewController {
+        let vc = StoryboardScene.Login.initialScene.instantiate()
+        vc.viewModel = viewModel
+        return vc
+    }
+    
+    // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,7 +50,7 @@ class LoginViewController: InputViewController {
         #endif
     }
     
-    // MARK: - Default methods
+    // MARK: Default methods
     override func setupViewModel() {
         super.setupViewModel()
         
@@ -93,6 +100,6 @@ class LoginViewController: InputViewController {
         return .default
     }
     
-    // MARK: - Custom methods
+    // MARK: Custom methods
     
 }

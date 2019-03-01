@@ -13,7 +13,12 @@ enum MainTab: Int {
     case profile = 1
 }
 
-class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
+class MainTabBarController: UITabBarController {
+    
+    static func instantiate() -> MainTabBarController {
+        let vc = StoryboardScene.Main.initialScene.instantiate()
+        return vc
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

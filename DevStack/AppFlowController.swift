@@ -8,24 +8,11 @@
 
 import UIKit
 
-class AppFlowController {
+class AppFlowController: FlowController {
     
-    private let window: UIWindow
-    private let dependencies: AppDependency
-    
-    init(window: UIWindow) {
-        self.window = window
-        dependencies = AppDependency(
-            loginService: LoginService(),
-            userService: UserService()
-        )
-    }
-    
-    func start() {
-        let navController = UINavigationController()
-        window.rootViewController = navController
-        window.makeKeyAndVisible()
-        let flowController = MainFlowController(navigationController: navController, dependencies: dependencies)
-        flowController.start()
+    override func start() {
+        super.start()
+        let fc = MainFlowController(navigationController: navigationController, dependencies: dependencies)
+        startChildFlow(fc)
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol UsersFlowDelegate: class {
-
+    func showUserDetail(userId: String)
 }
 
 final class UsersViewController: BaseTableViewController<User> {
@@ -19,11 +19,18 @@ final class UsersViewController: BaseTableViewController<User> {
     weak var flowDelegate: UsersFlowDelegate?
 
     // MARK: ViewModels
-    var viewModel: UsersViewModel?
+    private var viewModel: UsersViewModel!
 
     // MARK: UI components
 
     // MARK: Stored properties
+    
+    // MARK: Inits
+    static func instantiate(viewModel: UsersViewModel) -> UsersViewController {
+        let vc = StoryboardScene.Users.initialScene.instantiate()
+        vc.viewModel = viewModel
+        return vc
+    }
 
     // MARK: Lifecycle methods
     override func viewDidLoad() {
@@ -37,19 +44,21 @@ final class UsersViewController: BaseTableViewController<User> {
         super.setupViewModel()
         
         let input = UsersViewModel.Input(page: page)
-        let output = viewModel?.transform(input: input)
+        let output = viewModel.transform(input: input)
         
-        output?.getUsersEvent.drive(onNext: { [weak self] (event) in
+        output.getUsersEvent.drive(onNext: { [weak self] (event) in
             self?.handleDatabaseData(event)
         }).disposed(by: disposeBag)
         
-        output?.downloadUsersEvent.drive(onNext: { [weak self] (event) in
+        output.downloadUsersEvent.drive(onNext: { [weak self] (event) in
             self?.handleNetworkData(event)
         }).disposed(by: disposeBag)
     }
 
     override func setupViewAppearance() {
         super.setupViewAppearance()
+        
+        navigationItem.title = L10n.usersViewToolbarTitle
     }
 
     // MARK: TableView methods
@@ -63,7 +72,8 @@ final class UsersViewController: BaseTableViewController<User> {
     }
     
     override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Row #\(indexPath.row) clicked")
+        let user = items[indexPath.row]
+        flowDelegate?.showUserDetail(userId: user.id)
     }
 
     // MARK: Additional methods

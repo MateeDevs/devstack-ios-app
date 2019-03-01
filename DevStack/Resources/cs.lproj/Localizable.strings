@@ -365,3 +365,8 @@
 "login_view_invalid_credentials" = "Neplatné přihlašovací údaje.";
 
 "login_view_error_email_not_verified" = "Uživatelský účet nemá ověřený email.";
+
+
+/********** Users View **********/
+
+"users_view_toolbar_title" = "Uživatelé";

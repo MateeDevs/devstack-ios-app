@@ -13,7 +13,7 @@
         <!--Users View Controller-->
         <scene sceneID="xLy-pi-vf3">
             <objects>
-                <viewController id="zCZ-Ic-KZP" customClass="UsersViewController" customModule="DevStack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zCZ-Ic-KZP" customClass="UsersViewController" customModule="A_DevStack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1tn-rb-XoA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

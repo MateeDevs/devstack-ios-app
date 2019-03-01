@@ -1,40 +1,44 @@
 // 
-//  ProfileViewController.swift
+//  UserDetailViewController.swift
 //  DevStack
 //
-//  Created by Petr Chmelar on 06/02/2019.
+//  Created by Petr Chmelar on 28/02/2019.
 //  Copyright © 2019 Qest. All rights reserved.
 //
 
 import UIKit
 import RxSwift
 
-protocol ProfileFlowDelegate: class {
+protocol UserDetailFlowDelegate: class {
 
 }
 
-final class ProfileViewController: BaseViewController {
+final class UserDetailViewController: BaseViewController {
 
     // MARK: FlowDelegate
-    weak var flowDelegate: ProfileFlowDelegate?
+    weak var flowDelegate: UserDetailFlowDelegate?
 
     // MARK: ViewModels
-    var viewModel: ProfileViewModel!
+    private var viewModel: UserDetailViewModel!
 
     // MARK: UI components
 
     // MARK: Stored properties
+    private var userId: String!
     
     // MARK: Inits
-    static func instantiate(viewModel: ProfileViewModel) -> ProfileViewController {
-        let vc = StoryboardScene.Profile.initialScene.instantiate()
+    static func instantiate(viewModel: UserDetailViewModel, userId: String) -> UserDetailViewController {
+        let vc = StoryboardScene.UserDetail.initialScene.instantiate()
         vc.viewModel = viewModel
+        vc.userId = userId
         return vc
     }
 
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(userId)
     }
 
     // MARK: Default methods

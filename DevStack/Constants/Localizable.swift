@@ -382,6 +382,8 @@ public enum L10n {
   public static let uploadingPhotoInProgress = L10n.tr("Localizable", "uploading_photo_in_progress")
   /// Photo has been uploaded.
   public static let uploadingPhotoSuccess = L10n.tr("Localizable", "uploading_photo_success")
+  /// Users
+  public static let usersViewToolbarTitle = L10n.tr("Localizable", "users_view_toolbar_title")
   /// Verifying…
   public static let verifying = L10n.tr("Localizable", "verifying")
   /// Verification failed

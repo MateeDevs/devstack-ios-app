@@ -8,11 +8,13 @@
 
 import UIKit
 
-class ProfileFlowController: FlowController {
+class ProfileFlowController: FlowController, ProfileFlowDelegate {
     
     override func start() {
         super.start()
-        let vc = StoryboardScene.Profile.initialScene.instantiate()
+        let vm = ProfileViewModel(dependencies: dependencies)
+        let vc = ProfileViewController.instantiate(viewModel: vm)
+        vc.flowDelegate = self
         navigationController.viewControllers = [vc]
     }
     

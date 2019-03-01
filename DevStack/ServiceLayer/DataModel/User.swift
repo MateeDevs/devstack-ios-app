@@ -9,7 +9,6 @@
 import Foundation
 import RealmSwift
 
-// MARK: - User model object
 @objcMembers public class User: Object, Codable {
     
     // MARK: Stored properties
@@ -58,7 +57,6 @@ import RealmSwift
     }
 }
 
-// MARK: - Convenience utils
 extension User {
     public var fullName: String {
         return "\(firstName) \(lastName)"

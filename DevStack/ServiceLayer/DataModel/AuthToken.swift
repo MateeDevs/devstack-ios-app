@@ -8,7 +8,6 @@
 
 import Foundation
 
-// MARK: - AuthToken model object
 struct AuthToken: Codable {
     
     // MARK: API properties

@@ -137,6 +137,15 @@
 		4588FF0F2226EF360014FC79 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588FF0E2226EF360014FC79 /* BaseTableViewCell.swift */; };
 		4588FF102226EF360014FC79 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588FF0E2226EF360014FC79 /* BaseTableViewCell.swift */; };
 		4588FF112226EF360014FC79 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588FF0E2226EF360014FC79 /* BaseTableViewCell.swift */; };
+		4588FF2722282D000014FC79 /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4588FF2422282CFF0014FC79 /* UserDetail.storyboard */; };
+		4588FF2822282D000014FC79 /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4588FF2422282CFF0014FC79 /* UserDetail.storyboard */; };
+		4588FF2922282D000014FC79 /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4588FF2422282CFF0014FC79 /* UserDetail.storyboard */; };
+		4588FF2A22282D000014FC79 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588FF2522282D000014FC79 /* UserDetailViewController.swift */; };
+		4588FF2B22282D000014FC79 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588FF2522282D000014FC79 /* UserDetailViewController.swift */; };
+		4588FF2C22282D000014FC79 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588FF2522282D000014FC79 /* UserDetailViewController.swift */; };
+		4588FF2D22282D000014FC79 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588FF2622282D000014FC79 /* UserDetailViewModel.swift */; };
+		4588FF2E22282D000014FC79 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588FF2622282D000014FC79 /* UserDetailViewModel.swift */; };
+		4588FF2F22282D000014FC79 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588FF2622282D000014FC79 /* UserDetailViewModel.swift */; };
 		45890B0821FF519B00894255 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45890B0721FF519B00894255 /* Profile.storyboard */; };
 		45890B0921FF519B00894255 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45890B0721FF519B00894255 /* Profile.storyboard */; };
 		45890B0A21FF519B00894255 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45890B0721FF519B00894255 /* Profile.storyboard */; };
@@ -417,6 +426,9 @@
 		4585A15C214FE3DE00186D7D /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		4588FF092225A73C0014FC79 /* RatingView.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RatingView.xcassets; sourceTree = "<group>"; };
 		4588FF0E2226EF360014FC79 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		4588FF2422282CFF0014FC79 /* UserDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetail.storyboard; sourceTree = "<group>"; };
+		4588FF2522282D000014FC79 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		4588FF2622282D000014FC79 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		45890AF821FF4E1100894255 /* strings.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = strings.txt; path = "../../../../qest/twine-localization/devstack/strings.txt"; sourceTree = "<group>"; };
 		45890B0721FF519B00894255 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		45890B1F21FF5CD800894255 /* AuthToken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AuthToken.json; sourceTree = "<group>"; };
@@ -740,6 +752,23 @@
 			path = UITableViewCell;
 			sourceTree = "<group>";
 		};
+		4588FF2322282CE20014FC79 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				4588FF2422282CFF0014FC79 /* UserDetail.storyboard */,
+				4588FF2522282D000014FC79 /* UserDetailViewController.swift */,
+				4588FF2622282D000014FC79 /* UserDetailViewModel.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		4588FF3422289EFF0014FC79 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		45890AFA21FF515800894255 /* Tab2 - Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -788,6 +817,7 @@
 		459761C820FDD4050034DE29 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				4588FF3422289EFF0014FC79 /* Test */,
 				45890B3322086BC000894255 /* Onboarding */,
 				4597621720FDDE270034DE29 /* Main */,
 				45E8A4E2220B0803003F7502 /* Tab1 - Users */,
@@ -987,6 +1017,7 @@
 			children = (
 				45E8A4E5220B0803003F7502 /* UsersFlowController.swift */,
 				45E8A52E220DDE04003F7502 /* Main */,
+				4588FF2322282CE20014FC79 /* Detail */,
 			);
 			path = "Tab1 - Users";
 			sourceTree = "<group>";
@@ -1222,6 +1253,7 @@
 			files = (
 				4588FF0A2225A73C0014FC79 /* RatingView.xcassets in Resources */,
 				45E8A570220F7933003F7502 /* Users.storyboard in Resources */,
+				4588FF2722282D000014FC79 /* UserDetail.storyboard in Resources */,
 				45DE1D9821CAACC300C455C4 /* UserList.json in Resources */,
 				453CEAB321553E1F00A94BAC /* RatingView.xib in Resources */,
 				4511A6EA213D2677006AD4CC /* TabBarView.xib in Resources */,
@@ -1248,6 +1280,7 @@
 			files = (
 				4588FF0B2225A73C0014FC79 /* RatingView.xcassets in Resources */,
 				45E8A571220F7933003F7502 /* Users.storyboard in Resources */,
+				4588FF2822282D000014FC79 /* UserDetail.storyboard in Resources */,
 				45DE1D9921CAACC300C455C4 /* UserList.json in Resources */,
 				453CEAB421553E1F00A94BAC /* RatingView.xib in Resources */,
 				4511A6EB213D2677006AD4CC /* TabBarView.xib in Resources */,
@@ -1274,6 +1307,7 @@
 			files = (
 				4588FF0C2225A73C0014FC79 /* RatingView.xcassets in Resources */,
 				45E8A572220F7933003F7502 /* Users.storyboard in Resources */,
+				4588FF2922282D000014FC79 /* UserDetail.storyboard in Resources */,
 				45DE1D9A21CAACC300C455C4 /* UserList.json in Resources */,
 				453CEAB521553E1F00A94BAC /* RatingView.xib in Resources */,
 				4511A6EC213D2677006AD4CC /* TabBarView.xib in Resources */,
@@ -1620,6 +1654,7 @@
 				4558D30B20FCC8FF005BC325 /* AppDelegate.swift in Sources */,
 				A82385E1213423AE00CC941C /* AccessoryTextField.swift in Sources */,
 				A82386862138AF1700CC941C /* ColoredImageView.swift in Sources */,
+				4588FF2D22282D000014FC79 /* UserDetailViewModel.swift in Sources */,
 				45DE1D9421CA9CA300C455C4 /* AuthAPI.swift in Sources */,
 				45E8A4A9220AEBAE003F7502 /* Logger.swift in Sources */,
 				459762DE20FE21290034DE29 /* Storyboards.swift in Sources */,
@@ -1663,6 +1698,7 @@
 				455261C7210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8C79A9F2157FD71007A4339 /* Plurals.swift in Sources */,
 				A8D348DD2163777200B7D08F /* DataValidator.swift in Sources */,
+				4588FF2A22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C7210095ED006D3618 /* LocalizedLabel.swift in Sources */,
 				45E8A4B9220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
 				45E1E61E221DA9EE006C84D1 /* LocalizedTextView.swift in Sources */,
@@ -1725,6 +1761,7 @@
 				459761CE20FDD60A0034DE29 /* AppDelegate.swift in Sources */,
 				A82385E2213423AE00CC941C /* AccessoryTextField.swift in Sources */,
 				A82386872138AF1700CC941C /* ColoredImageView.swift in Sources */,
+				4588FF2E22282D000014FC79 /* UserDetailViewModel.swift in Sources */,
 				459762DF20FE21290034DE29 /* Storyboards.swift in Sources */,
 				45DE1D9521CA9CA300C455C4 /* AuthAPI.swift in Sources */,
 				45E8A4AA220AEBAE003F7502 /* Logger.swift in Sources */,
@@ -1768,6 +1805,7 @@
 				456852242105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
 				455261C8210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8D348DE2163777200B7D08F /* DataValidator.swift in Sources */,
+				4588FF2B22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C8210095ED006D3618 /* LocalizedLabel.swift in Sources */,
 				45E8A4BA220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
 				45E1E61F221DA9EE006C84D1 /* LocalizedTextView.swift in Sources */,
@@ -1830,6 +1868,7 @@
 				459761DC20FDD61E0034DE29 /* AppDelegate.swift in Sources */,
 				A82385E3213423AE00CC941C /* AccessoryTextField.swift in Sources */,
 				A82386882138AF1700CC941C /* ColoredImageView.swift in Sources */,
+				4588FF2F22282D000014FC79 /* UserDetailViewModel.swift in Sources */,
 				45DE1D9621CA9CA300C455C4 /* AuthAPI.swift in Sources */,
 				45E8A4AB220AEBAE003F7502 /* Logger.swift in Sources */,
 				459762E020FE21290034DE29 /* Storyboards.swift in Sources */,
@@ -1873,6 +1912,7 @@
 				455261C9210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8C79AA12157FD71007A4339 /* Plurals.swift in Sources */,
 				A8D348DF2163777200B7D08F /* DataValidator.swift in Sources */,
+				4588FF2C22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C9210095ED006D3618 /* LocalizedLabel.swift in Sources */,
 				45E8A4BB220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
 				45E1E620221DA9EE006C84D1 /* LocalizedTextView.swift in Sources */,

@@ -15,6 +15,7 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private(set) var window: UIWindow?
+    private var appFlowController: AppFlowController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -34,11 +35,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         LanguageManager.shared.setDefaultLanguage(Language(rawValue: NSLocale.current.languageCode ?? "en") ?? .en)
         
+        // Init main window with navigation controller
+        let navController = UINavigationController()
         window = UIWindow(frame: UIScreen.main.bounds)
-        if let window = window {
-            let flowController = AppFlowController(window: window)
-            flowController.start()
-        }
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
+        
+        // Init app flow controller and start the flow
+        appFlowController = AppFlowController(navigationController: navController, dependencies: makeDependencies())
+        appFlowController?.start()
         
         return true
     }
@@ -65,8 +70,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    // MARK: - Realm
+    // MARK: Dependencies
+    private func makeDependencies() -> AppDependency {
+        return AppDependency(
+            loginService: LoginService(),
+            userService: UserService()
+        )
+    }
     
+    // MARK: Realm
     private func realmSetup() {
         // Realm BASIC migration setup
         var config = Realm.Configuration(
@@ -90,8 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Realm.Configuration.defaultConfiguration = config
     }
     
-    // MARK: - Appearance
-    
+    // MARK: Appearance
     private func appAppearance() {
         
         // Status bar and Navigation bar
@@ -108,5 +119,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // UITextField
         UITextField.appearance().tintColor = ColorTheme.mainColor
     }
-    
 }

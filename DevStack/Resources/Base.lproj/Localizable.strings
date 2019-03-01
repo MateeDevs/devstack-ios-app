@@ -365,3 +365,8 @@
 "login_view_invalid_credentials" = "Invalid credentials";
 
 "login_view_error_email_not_verified" = "User email hasn't been verified yet.";
+
+
+/********** Users View **********/
+
+"users_view_toolbar_title" = "Users";

@@ -14,15 +14,15 @@ protocol OnboardingFlowDelegate: class {
 
 class OnboardingFlowController: FlowController, LoginFlowDelegate {
     
-    var flowDelegate: OnboardingFlowDelegate?
+    weak var flowDelegate: OnboardingFlowDelegate?
     
     override func start() {
         super.start()
-        let vc = StoryboardScene.Login.initialScene.instantiate()
-        vc.viewModel = LoginViewModel(dependencies: dependencies)
+        let vm = LoginViewModel(dependencies: dependencies)
+        let vc = LoginViewController.instantiate(viewModel: vm)
         vc.flowDelegate = self
-        navigationController.navigationBar.isHidden = true
         navigationController.viewControllers = [vc]
+        navigationController.navigationBar.isHidden = true
         UIApplication.shared.statusBarView?.backgroundColor = Asset.Colors.mainBackground.color
     }
     
@@ -30,5 +30,6 @@ class OnboardingFlowController: FlowController, LoginFlowDelegate {
         flowDelegate?.setupMain()
         navigationController.dismiss(animated: true, completion: nil)
         UIApplication.shared.statusBarView?.backgroundColor = ColorTheme.mainColor
+        stopChildFlow()
     }
 }
