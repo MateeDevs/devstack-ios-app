@@ -39,6 +39,14 @@ target 'DevStack_Beta' do
 end
 
 post_install do |installer|
+
+    installer.pods_project.build_configurations.each do |config|
+        # Prevent signing
+        config.build_settings['PROVISIONING_PROFILE_SPECIFIER'] = ''
+        config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+        config.build_settings['CODE_SIGNING_REQUIRED'] = 'NO'
+    end
+
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
 
@@ -48,9 +56,6 @@ post_install do |installer|
             # Update the Swift version if necessary
             config.build_settings['SWIFT_VERSION'] = '4.2'
 
-            # Prevent signing
-            config.build_settings['PROVISIONING_PROFILE_SPECIFIER'] = ''
-
             # Turn on Whole Module Optimization
             if config.name == 'Release'
                 config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Owholemodule'
@@ -59,4 +64,5 @@ post_install do |installer|
             end
         end
     end
+
 end

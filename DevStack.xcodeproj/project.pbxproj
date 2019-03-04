@@ -1496,7 +1496,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack/Pods-DevStack-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DevStack/Pods-DevStack-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -1525,7 +1525,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack/Pods-DevStack-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DevStack/Pods-DevStack-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		78E6FDB10F4506CE89EF4F3D /* [CP] Embed Pods Frameworks */ = {
@@ -1534,7 +1534,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -1563,7 +1563,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		968C7269E3BACFD41354FCA7 /* [CP] Check Pods Manifest.lock */ = {
@@ -1590,7 +1590,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -1619,7 +1619,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C41C8A2EE11E16B2E3D7151C /* [CP] Check Pods Manifest.lock */ = {
