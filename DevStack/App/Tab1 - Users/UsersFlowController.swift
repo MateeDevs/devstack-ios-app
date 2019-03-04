@@ -19,7 +19,7 @@ class UsersFlowController: FlowController, UsersFlowDelegate, UserDetailFlowDele
     }
     
     func showUserDetail(userId: String) {
-        let vm = UserDetailViewModel(dependencies: dependencies)
+        let vm = UserDetailViewModel(dependencies: dependencies, userId: userId)
         let vc = UserDetailViewController.instantiate(viewModel: vm, userId: userId)
         vc.flowDelegate = self
         navigationController.show(vc, sender: nil)

@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol OnboardingFlowDelegate: class {
+protocol OnboardingFlowControllerDelegate: class {
     func setupMain()
 }
 
 class OnboardingFlowController: FlowController, LoginFlowDelegate {
     
-    weak var flowDelegate: OnboardingFlowDelegate?
+    weak var delegate: OnboardingFlowControllerDelegate?
     
     override func start() {
         super.start()
@@ -27,7 +27,7 @@ class OnboardingFlowController: FlowController, LoginFlowDelegate {
     }
     
     func popToMain() {
-        flowDelegate?.setupMain()
+        delegate?.setupMain()
         navigationController.dismiss(animated: true, completion: nil)
         UIApplication.shared.statusBarView?.backgroundColor = ColorTheme.mainColor
         stopChildFlow()

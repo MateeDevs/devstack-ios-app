@@ -9,13 +9,14 @@
 import RxSwift
 import RxCocoa
 
-class LoginViewModel: ViewModel, ViewModelType {
+final class LoginViewModel: ViewModel, ViewModelType {
     
     typealias Dependencies = HasLoginService
     fileprivate let dependencies: Dependencies
     
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
+        super.init()
     }
     
     struct Input {

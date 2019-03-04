@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,12 +18,62 @@
                     <view key="view" contentMode="scaleToFill" id="NqY-lr-Xhd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mOy-UN-9uA" customClass="UserImageView" customModule="A_DevStack" customModuleProvider="target">
+                                <rect key="frame" x="137.5" y="84" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mOy-UN-9uA" secondAttribute="height" multiplier="1:1" id="AeO-2F-q4e"/>
+                                    <constraint firstAttribute="width" constant="100" id="GRV-XH-pht"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderTextColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderBackgroundColor">
+                                        <color key="value" name="MainRed"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgE-43-xes">
+                                <rect key="frame" x="24" y="216" width="327" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bF-jg-b3i" customClass="BaseButton" customModule="A_DevStack" customModuleProvider="target">
+                                <rect key="frame" x="24" y="573" width="327" height="30"/>
+                                <state key="normal" title="profile_view_logout_button"/>
+                                <connections>
+                                    <action selector="loginButtonTouchUpInside:" destination="CkE-Zn-ye5" eventType="touchDragInside" id="ARi-hg-Lr9"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="1bF-jg-b3i" secondAttribute="trailing" constant="24" id="2FZ-by-nI7"/>
+                            <constraint firstItem="1bF-jg-b3i" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="24" id="4aV-YQ-haS"/>
+                            <constraint firstItem="QgE-43-xes" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="24" id="AeF-PG-T3e"/>
+                            <constraint firstItem="QgE-43-xes" firstAttribute="top" secondItem="mOy-UN-9uA" secondAttribute="bottom" constant="32" id="ZFi-kY-v5r"/>
+                            <constraint firstItem="qdr-Ev-KLG" firstAttribute="bottom" secondItem="1bF-jg-b3i" secondAttribute="bottom" constant="64" id="ayI-9I-SKR"/>
+                            <constraint firstItem="mOy-UN-9uA" firstAttribute="top" secondItem="qdr-Ev-KLG" secondAttribute="top" constant="64" id="bcs-N7-QsU"/>
+                            <constraint firstItem="mOy-UN-9uA" firstAttribute="centerX" secondItem="qdr-Ev-KLG" secondAttribute="centerX" id="ee3-lY-QOq"/>
+                            <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="QgE-43-xes" secondAttribute="trailing" constant="24" id="zRM-Uf-ohf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qdr-Ev-KLG"/>
                     </view>
+                    <connections>
+                        <outlet property="userImageView" destination="mOy-UN-9uA" id="ReL-lm-how"/>
+                        <outlet property="userNameLabel" destination="QgE-43-xes" id="7kj-Ql-R2H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SbZ-rD-OKs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="MainRed">
+            <color red="0.93333333333333335" green="0.18823529411764706" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

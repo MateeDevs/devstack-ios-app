@@ -48,6 +48,9 @@ post_install do |installer|
             # Update the Swift version if necessary
             config.build_settings['SWIFT_VERSION'] = '4.2'
 
+            # Prevent signing
+            config.build_settings['PROVISIONING_PROFILE_SPECIFIER'] = ''
+
             # Turn on Whole Module Optimization
             if config.name == 'Release'
                 config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Owholemodule'

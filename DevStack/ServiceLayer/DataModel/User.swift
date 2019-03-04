@@ -18,6 +18,7 @@ import RealmSwift
     public dynamic var lastName: String = ""
     public dynamic var phone: String?
     public dynamic var bio: String?
+    public dynamic var pictureUrl: String?
     
     // MARK: Realm API
     override public static func primaryKey() -> String? {
@@ -45,6 +46,7 @@ import RealmSwift
         lastName = try container.decodeIfPresent(String.self, forKey: .lastName) ?? ""
         phone = try container.decodeIfPresent(String.self, forKey: .phone)
         bio = try container.decodeIfPresent(String.self, forKey: .bio)
+        pictureUrl = try container.decodeIfPresent(String.self, forKey: .pictureUrl)
     }
     
     // MARK: Encodable
@@ -54,6 +56,7 @@ import RealmSwift
         try container.encodeIfPresent(lastName, forKey: .lastName)
         try container.encodeIfPresent(phone, forKey: .phone)
         try container.encodeIfPresent(bio, forKey: .bio)
+        try container.encodeIfPresent(pictureUrl, forKey: .pictureUrl)
     }
 }
 

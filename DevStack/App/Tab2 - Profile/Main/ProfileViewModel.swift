@@ -2,7 +2,7 @@
 //  ProfileViewModel.swift
 //  DevStack
 //
-//  Created by Petr Chmelar on 06/02/2019.
+//  Created by Petr Chmelar on 04/03/2019.
 //  Copyright © 2019 Qest. All rights reserved.
 //
 
@@ -11,11 +11,12 @@ import RxCocoa
 
 final class ProfileViewModel: ViewModel, ViewModelType {
     
-    typealias Dependencies = HasNoService
+    typealias Dependencies = HasLoginService
     fileprivate let dependencies: Dependencies
     
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
+        super.init()
     }
     
     struct Input {
@@ -26,5 +27,9 @@ final class ProfileViewModel: ViewModel, ViewModelType {
     
     func transform(input: Input) -> Output {
         return Output()
+    }
+    
+    func logout() {
+        dependencies.loginService.logout()
     }
 }

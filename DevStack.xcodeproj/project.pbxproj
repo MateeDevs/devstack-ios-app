@@ -238,6 +238,18 @@
 		45D0FD192147E3D100277C14 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */; };
 		45D0FD1A2147E3D100277C14 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */; };
 		45D0FD1B2147E3D100277C14 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */; };
+		45DA07E3222D793E0003D32A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07E2222D793D0003D32A /* ProfileViewModel.swift */; };
+		45DA07E4222D793E0003D32A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07E2222D793D0003D32A /* ProfileViewModel.swift */; };
+		45DA07E5222D793E0003D32A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07E2222D793D0003D32A /* ProfileViewModel.swift */; };
+		45DA07F0222D7D800003D32A /* BaseHeadlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07EE222D7D7F0003D32A /* BaseHeadlineLabel.swift */; };
+		45DA07F1222D7D800003D32A /* BaseHeadlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07EE222D7D7F0003D32A /* BaseHeadlineLabel.swift */; };
+		45DA07F2222D7D800003D32A /* BaseHeadlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07EE222D7D7F0003D32A /* BaseHeadlineLabel.swift */; };
+		45DA07F3222D7D800003D32A /* BaseTextFieldHintLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07EF222D7D7F0003D32A /* BaseTextFieldHintLabel.swift */; };
+		45DA07F4222D7D800003D32A /* BaseTextFieldHintLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07EF222D7D7F0003D32A /* BaseTextFieldHintLabel.swift */; };
+		45DA07F5222D7D800003D32A /* BaseTextFieldHintLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07EF222D7D7F0003D32A /* BaseTextFieldHintLabel.swift */; };
+		45DA07F7222D7DA00003D32A /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07F6222D7DA00003D32A /* BaseButton.swift */; };
+		45DA07F8222D7DA00003D32A /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07F6222D7DA00003D32A /* BaseButton.swift */; };
+		45DA07F9222D7DA00003D32A /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07F6222D7DA00003D32A /* BaseButton.swift */; };
 		45DE1D9421CA9CA300C455C4 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DE1D9321CA9CA300C455C4 /* AuthAPI.swift */; };
 		45DE1D9521CA9CA300C455C4 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DE1D9321CA9CA300C455C4 /* AuthAPI.swift */; };
 		45DE1D9621CA9CA300C455C4 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DE1D9321CA9CA300C455C4 /* AuthAPI.swift */; };
@@ -265,9 +277,6 @@
 		45E8A4BE220AF3C0003F7502 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8A4BC220AF3C0003F7502 /* ProfileViewController.swift */; };
 		45E8A4BF220AF3C0003F7502 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8A4BC220AF3C0003F7502 /* ProfileViewController.swift */; };
 		45E8A4C0220AF3C0003F7502 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8A4BC220AF3C0003F7502 /* ProfileViewController.swift */; };
-		45E8A4C1220AF3C0003F7502 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8A4BD220AF3C0003F7502 /* ProfileViewModel.swift */; };
-		45E8A4C2220AF3C0003F7502 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8A4BD220AF3C0003F7502 /* ProfileViewModel.swift */; };
-		45E8A4C3220AF3C0003F7502 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8A4BD220AF3C0003F7502 /* ProfileViewModel.swift */; };
 		45E8A4ED220B0803003F7502 /* UsersFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8A4E5220B0803003F7502 /* UsersFlowController.swift */; };
 		45E8A4EE220B0803003F7502 /* UsersFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8A4E5220B0803003F7502 /* UsersFlowController.swift */; };
 		45E8A4EF220B0803003F7502 /* UsersFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8A4E5220B0803003F7502 /* UsersFlowController.swift */; };
@@ -468,6 +477,10 @@
 		45B76DA6213591ED003BB997 /* Object+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Object+Extensions.swift"; sourceTree = "<group>"; };
 		45C089E72215C12200D0DD49 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
+		45DA07E2222D793D0003D32A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		45DA07EE222D7D7F0003D32A /* BaseHeadlineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHeadlineLabel.swift; sourceTree = "<group>"; };
+		45DA07EF222D7D7F0003D32A /* BaseTextFieldHintLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTextFieldHintLabel.swift; sourceTree = "<group>"; };
+		45DA07F6222D7DA00003D32A /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		45DE1D9321CA9CA300C455C4 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		45DE1D9721CAACC300C455C4 /* UserList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserList.json; sourceTree = "<group>"; };
 		45E1E618221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
@@ -477,7 +490,6 @@
 		45E8A4B4220AEF90003F7502 /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		45E8A4B8220AF3A3003F7502 /* ProfileFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFlowController.swift; sourceTree = "<group>"; };
 		45E8A4BC220AF3C0003F7502 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		45E8A4BD220AF3C0003F7502 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		45E8A4E5220B0803003F7502 /* UsersFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersFlowController.swift; sourceTree = "<group>"; };
 		45E8A54D220F4BB5003F7502 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		45E8A559220F6F2C003F7502 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
@@ -955,6 +967,8 @@
 		459762F420FE222F0034DE29 /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
+				45DA07EE222D7D7F0003D32A /* BaseHeadlineLabel.swift */,
+				45DA07EF222D7D7F0003D32A /* BaseTextFieldHintLabel.swift */,
 				456851E92100CAED006D3618 /* EnhancedLabel.swift */,
 				456851C6210095ED006D3618 /* LocalizedLabel.swift */,
 			);
@@ -964,6 +978,7 @@
 		459762F520FE223B0034DE29 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
+				45DA07F6222D7DA00003D32A /* BaseButton.swift */,
 				456851E22100BC9A006D3618 /* EnhancedButton.swift */,
 				456851DB2100BC8B006D3618 /* LocalizedButton.swift */,
 			);
@@ -1027,7 +1042,7 @@
 			children = (
 				45890B0721FF519B00894255 /* Profile.storyboard */,
 				45E8A4BC220AF3C0003F7502 /* ProfileViewController.swift */,
-				45E8A4BD220AF3C0003F7502 /* ProfileViewModel.swift */,
+				45DA07E2222D793D0003D32A /* ProfileViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1646,7 +1661,9 @@
 				4511A6A02138112B006AD4CC /* LanguageManager.swift in Sources */,
 				456852552105D024006D3618 /* ServiceError.swift in Sources */,
 				A891BDB72108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
+				45DA07E3222D793E0003D32A /* ProfileViewModel.swift in Sources */,
 				45C089E82215C12200D0DD49 /* DatabaseManager.swift in Sources */,
+				45DA07F7222D7DA00003D32A /* BaseButton.swift in Sources */,
 				45B76D8B213590C5003BB997 /* ActivityIndicator.swift in Sources */,
 				45890B3922086C6600894255 /* OnboardingFlowController.swift in Sources */,
 				45E8A576220F7933003F7502 /* UsersViewModel.swift in Sources */,
@@ -1671,6 +1688,7 @@
 				45E1E619221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				45890B5C22087C8B00894255 /* String+UIExtensions.swift in Sources */,
 				456852102101E432006D3618 /* User.swift in Sources */,
+				45DA07F3222D7D800003D32A /* BaseTextFieldHintLabel.swift in Sources */,
 				456852462105CF82006D3618 /* LoginService.swift in Sources */,
 				A82385DA213418B400CC941C /* ShadowView.swift in Sources */,
 				451233E3215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
@@ -1698,6 +1716,7 @@
 				455261C7210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8C79A9F2157FD71007A4339 /* Plurals.swift in Sources */,
 				A8D348DD2163777200B7D08F /* DataValidator.swift in Sources */,
+				45DA07F0222D7D800003D32A /* BaseHeadlineLabel.swift in Sources */,
 				4588FF2A22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C7210095ED006D3618 /* LocalizedLabel.swift in Sources */,
 				45E8A4B9220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
@@ -1716,7 +1735,6 @@
 				45890B4322086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B5220AEF90003F7502 /* FlowController.swift in Sources */,
 				45B76D99213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
-				45E8A4C1220AF3C0003F7502 /* ProfileViewModel.swift in Sources */,
 				A891BDC32108CB2600BBA179 /* XIBView.swift in Sources */,
 				45E8A4ED220B0803003F7502 /* UsersFlowController.swift in Sources */,
 				4585A15D214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
@@ -1753,7 +1771,9 @@
 				4511A6A12138112B006AD4CC /* LanguageManager.swift in Sources */,
 				456852562105D024006D3618 /* ServiceError.swift in Sources */,
 				A891BDB82108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
+				45DA07E4222D793E0003D32A /* ProfileViewModel.swift in Sources */,
 				45C089E92215C12200D0DD49 /* DatabaseManager.swift in Sources */,
+				45DA07F8222D7DA00003D32A /* BaseButton.swift in Sources */,
 				45B76D8C213590C5003BB997 /* ActivityIndicator.swift in Sources */,
 				45890B3A22086C6600894255 /* OnboardingFlowController.swift in Sources */,
 				45E8A577220F7933003F7502 /* UsersViewModel.swift in Sources */,
@@ -1778,6 +1798,7 @@
 				45E1E61A221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				45890B5D22087C8B00894255 /* String+UIExtensions.swift in Sources */,
 				456852112101E432006D3618 /* User.swift in Sources */,
+				45DA07F4222D7D800003D32A /* BaseTextFieldHintLabel.swift in Sources */,
 				456852472105CF82006D3618 /* LoginService.swift in Sources */,
 				451233E4215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				A82385DB213418B400CC941C /* ShadowView.swift in Sources */,
@@ -1805,6 +1826,7 @@
 				456852242105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
 				455261C8210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8D348DE2163777200B7D08F /* DataValidator.swift in Sources */,
+				45DA07F1222D7D800003D32A /* BaseHeadlineLabel.swift in Sources */,
 				4588FF2B22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C8210095ED006D3618 /* LocalizedLabel.swift in Sources */,
 				45E8A4BA220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
@@ -1823,7 +1845,6 @@
 				45890B4422086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B6220AEF90003F7502 /* FlowController.swift in Sources */,
 				45B76D9A213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
-				45E8A4C2220AF3C0003F7502 /* ProfileViewModel.swift in Sources */,
 				A891BDC42108CB2600BBA179 /* XIBView.swift in Sources */,
 				45E8A4EE220B0803003F7502 /* UsersFlowController.swift in Sources */,
 				4585A15E214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
@@ -1860,7 +1881,9 @@
 				4511A6A22138112B006AD4CC /* LanguageManager.swift in Sources */,
 				456852572105D024006D3618 /* ServiceError.swift in Sources */,
 				A891BDB92108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
+				45DA07E5222D793E0003D32A /* ProfileViewModel.swift in Sources */,
 				45C089EA2215C12200D0DD49 /* DatabaseManager.swift in Sources */,
+				45DA07F9222D7DA00003D32A /* BaseButton.swift in Sources */,
 				45B76D8D213590C5003BB997 /* ActivityIndicator.swift in Sources */,
 				45890B3B22086C6600894255 /* OnboardingFlowController.swift in Sources */,
 				45E8A578220F7933003F7502 /* UsersViewModel.swift in Sources */,
@@ -1885,6 +1908,7 @@
 				45E1E61B221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				45890B5E22087C8B00894255 /* String+UIExtensions.swift in Sources */,
 				456852122101E432006D3618 /* User.swift in Sources */,
+				45DA07F5222D7D800003D32A /* BaseTextFieldHintLabel.swift in Sources */,
 				456852482105CF82006D3618 /* LoginService.swift in Sources */,
 				A82385DC213418B400CC941C /* ShadowView.swift in Sources */,
 				451233E5215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
@@ -1912,6 +1936,7 @@
 				455261C9210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8C79AA12157FD71007A4339 /* Plurals.swift in Sources */,
 				A8D348DF2163777200B7D08F /* DataValidator.swift in Sources */,
+				45DA07F2222D7D800003D32A /* BaseHeadlineLabel.swift in Sources */,
 				4588FF2C22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C9210095ED006D3618 /* LocalizedLabel.swift in Sources */,
 				45E8A4BB220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
@@ -1930,7 +1955,6 @@
 				45890B4522086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B7220AEF90003F7502 /* FlowController.swift in Sources */,
 				45B76D9B213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
-				45E8A4C3220AF3C0003F7502 /* ProfileViewModel.swift in Sources */,
 				A891BDC52108CB2600BBA179 /* XIBView.swift in Sources */,
 				45E8A4EF220B0803003F7502 /* UsersFlowController.swift in Sources */,
 				4585A15F214FE3DE00186D7D /* Array+Extensions.swift in Sources */,

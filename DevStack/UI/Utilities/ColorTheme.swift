@@ -9,7 +9,7 @@
 import UIKit
 
 // Use this struct for easy app branding
-// For example to set a different theme for customer and seller apps
+// For example to set a different theme for customer and seller apps etc.
 
 public struct ColorTheme {
     public static var mainColor: UIColor { return Asset.Colors.mainRed.color }

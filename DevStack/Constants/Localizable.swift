@@ -14,9 +14,9 @@ public enum L10n {
   public static let arrowRightCharacter = L10n.tr("Localizable", "arrow_right_character")
   /// Back
   public static let back = L10n.tr("Localizable", "back")
-  /// Tab1
+  /// Users
   public static let bottomBarItem1 = L10n.tr("Localizable", "bottom_bar_item_1")
-  /// Tab2
+  /// Profile
   public static let bottomBarItem2 = L10n.tr("Localizable", "bottom_bar_item_2")
   /// Tab3
   public static let bottomBarItem3 = L10n.tr("Localizable", "bottom_bar_item_3")
@@ -336,6 +336,10 @@ public enum L10n {
   public static let permissionCameraDeniedMsg = L10n.tr("Localizable", "permission_camera_denied_msg")
   /// You need permission to upload photos
   public static let permissionExternalStorageMsg = L10n.tr("Localizable", "permission_external_storage_msg")
+  /// Logout
+  public static let profileViewLogoutButton = L10n.tr("Localizable", "profile_view_logout_button")
+  /// Profile
+  public static let profileViewToolbarTitle = L10n.tr("Localizable", "profile_view_toolbar_title")
   /// Remaining
   public static let remainingTimeText = L10n.tr("Localizable", "remaining_time_text")
   /// Retry
@@ -382,6 +386,8 @@ public enum L10n {
   public static let uploadingPhotoInProgress = L10n.tr("Localizable", "uploading_photo_in_progress")
   /// Photo has been uploaded.
   public static let uploadingPhotoSuccess = L10n.tr("Localizable", "uploading_photo_success")
+  /// User detail
+  public static let userDetailViewToolbarTitle = L10n.tr("Localizable", "user_detail_view_toolbar_title")
   /// Users
   public static let usersViewToolbarTitle = L10n.tr("Localizable", "users_view_toolbar_title")
   /// Verifying…

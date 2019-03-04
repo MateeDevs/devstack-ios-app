@@ -22,9 +22,17 @@ final class UserDetailViewController: BaseViewController {
     private var viewModel: UserDetailViewModel!
 
     // MARK: UI components
-
+    @IBOutlet weak var userImageView: UserImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    
     // MARK: Stored properties
     private var userId: String!
+    private var user: User? {
+        didSet {
+            userImageView.setupWithUser(user)
+            userNameLabel.text = user?.fullName
+        }
+    }
     
     // MARK: Inits
     static func instantiate(viewModel: UserDetailViewModel, userId: String) -> UserDetailViewController {
@@ -37,17 +45,26 @@ final class UserDetailViewController: BaseViewController {
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(userId)
     }
 
     // MARK: Default methods
     override func setupViewModel() {
         super.setupViewModel()
+        
+        let input = UserDetailViewModel.Input()
+        let output = viewModel.transform(input: input)
+        
+        output.getUserDetailEvent.drive(onNext: { [weak self] (event) in
+            if let userDetail = event.data {
+                self?.user = userDetail
+            }
+        }).disposed(by: disposeBag)
     }
 
     override func setupViewAppearance() {
         super.setupViewAppearance()
+        
+        navigationItem.title = L10n.userDetailViewToolbarTitle
     }
 
     // MARK: Additional methods

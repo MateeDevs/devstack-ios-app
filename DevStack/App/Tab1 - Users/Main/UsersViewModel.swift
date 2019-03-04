@@ -16,6 +16,7 @@ final class UsersViewModel: ViewModel, ViewModelType {
     
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
+        super.init()
     }
     
     struct Input {

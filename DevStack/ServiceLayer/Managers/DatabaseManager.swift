@@ -23,7 +23,7 @@ struct DatabaseManager {
     func observableObject<T: Object>(_ type: T.Type, id: String, primaryKeyName: String = "id") -> Observable<Lce<T>> {
         
         let realm = try! Realm()
-        let dbObjects = realm.objects(T.self).filter(NSPredicate(format: "\(primaryKeyName) == %d", id))
+        let dbObjects = realm.objects(T.self).filter(NSPredicate(format: "\(primaryKeyName) == %@", id))
         
         return Observable.collection(from: dbObjects).flatMap { (objects) -> Observable<Lce<T>> in
             guard let object = objects.first else { return Observable.empty() }

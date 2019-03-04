@@ -24,116 +24,116 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQm-U7-xrj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="RF1-1c-aHI">
-                                                <rect key="frame" x="24" y="64" width="327" height="274.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login_view_headline_title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WB7-Ew-rrp" customClass="BaseHeadlineLabel" customModule="A_DevStack" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="64" width="327" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PGK-yN-1Ou">
+                                                <rect key="frame" x="24" y="116.5" width="327" height="160"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login_view_headline_title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WB7-Ew-rrp" customClass="BaseHeadlineLabel" customModule="A_Shipvio" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="327" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PGK-yN-1Ou">
-                                                        <rect key="frame" x="0.0" y="52.5" width="327" height="160"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPM-XN-bSq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="327" height="72"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPM-XN-bSq">
-                                                                <rect key="frame" x="0.0" y="0.0" width="327" height="72"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login_view_email_field_hint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gku-9b-Qjz" customClass="BaseTextFieldHintLabel" customModule="A_DevStack" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="327" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9M-Ek-uQA">
+                                                                <rect key="frame" x="0.0" y="24.5" width="327" height="47.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login_view_email_field_hint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gku-9b-Qjz" customClass="BaseTextFieldHintLabel" customModule="A_Shipvio" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="327" height="20.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FfQ-Nw-hWK">
+                                                                        <rect key="frame" x="8" y="0.0" width="311" height="47.5"/>
                                                                         <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9M-Ek-uQA">
-                                                                        <rect key="frame" x="0.0" y="24.5" width="327" height="47.5"/>
-                                                                        <subviews>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FfQ-Nw-hWK">
-                                                                                <rect key="frame" x="8" y="0.0" width="311" height="47.5"/>
-                                                                                <nil key="textColor"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
-                                                                                <connections>
-                                                                                    <outlet property="delegate" destination="ZcH-Db-QSc" id="Odj-1D-v0r"/>
-                                                                                </connections>
-                                                                            </textField>
-                                                                        </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <constraints>
-                                                                            <constraint firstItem="FfQ-Nw-hWK" firstAttribute="top" secondItem="d9M-Ek-uQA" secondAttribute="top" id="PSh-mm-WOc"/>
-                                                                            <constraint firstItem="FfQ-Nw-hWK" firstAttribute="leading" secondItem="d9M-Ek-uQA" secondAttribute="leading" constant="8" id="qZp-nk-dUh"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="FfQ-Nw-hWK" secondAttribute="trailing" constant="8" id="wHh-IE-Khh"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="FfQ-Nw-hWK" secondAttribute="bottom" id="yUj-RH-On0"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="d9M-Ek-uQA" firstAttribute="top" secondItem="Gku-9b-Qjz" secondAttribute="bottom" constant="4" id="CJS-34-NIv"/>
-                                                                    <constraint firstItem="Gku-9b-Qjz" firstAttribute="leading" secondItem="dPM-XN-bSq" secondAttribute="leading" id="Kmr-KM-Q6F"/>
-                                                                    <constraint firstAttribute="height" constant="72" id="SbZ-yr-Pch"/>
-                                                                    <constraint firstItem="d9M-Ek-uQA" firstAttribute="leading" secondItem="dPM-XN-bSq" secondAttribute="leading" id="W1D-iI-pdr"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="Gku-9b-Qjz" secondAttribute="trailing" id="lUy-75-De9"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="d9M-Ek-uQA" secondAttribute="trailing" id="nvn-JZ-2yI"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="d9M-Ek-uQA" secondAttribute="bottom" id="oBi-0J-633"/>
-                                                                    <constraint firstItem="Gku-9b-Qjz" firstAttribute="top" secondItem="dPM-XN-bSq" secondAttribute="top" id="vzb-O6-dU9"/>
-                                                                </constraints>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kV-1L-kH3">
-                                                                <rect key="frame" x="0.0" y="88" width="327" height="72"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login_view_password_field_hint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZI0-K4-rG0" customClass="BaseTextFieldHintLabel" customModule="A_Shipvio" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="327" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsv-de-D5h">
-                                                                        <rect key="frame" x="0.0" y="24.5" width="327" height="47.5"/>
-                                                                        <subviews>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="thU-B4-f5N">
-                                                                                <rect key="frame" x="8" y="0.0" width="311" height="47.5"/>
-                                                                                <nil key="textColor"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="done" secureTextEntry="YES"/>
-                                                                                <connections>
-                                                                                    <outlet property="delegate" destination="ZcH-Db-QSc" id="GWq-Et-O66"/>
-                                                                                </connections>
-                                                                            </textField>
-                                                                        </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <constraints>
-                                                                            <constraint firstItem="thU-B4-f5N" firstAttribute="leading" secondItem="fsv-de-D5h" secondAttribute="leading" constant="8" id="1x7-rv-qZF"/>
-                                                                            <constraint firstItem="thU-B4-f5N" firstAttribute="top" secondItem="fsv-de-D5h" secondAttribute="top" id="GPw-TI-cOI"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="thU-B4-f5N" secondAttribute="bottom" id="kBe-ad-VSy"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="thU-B4-f5N" secondAttribute="trailing" constant="8" id="kt6-vs-CeW"/>
-                                                                        </constraints>
-                                                                    </view>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
+                                                                        <connections>
+                                                                            <outlet property="delegate" destination="ZcH-Db-QSc" id="Odj-1D-v0r"/>
+                                                                        </connections>
+                                                                    </textField>
                                                                 </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="fsv-de-D5h" secondAttribute="bottom" id="Ek8-Sz-Lcr"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="ZI0-K4-rG0" secondAttribute="trailing" id="Fhd-u2-jis"/>
-                                                                    <constraint firstItem="fsv-de-D5h" firstAttribute="leading" secondItem="5kV-1L-kH3" secondAttribute="leading" id="G0y-s8-WeM"/>
-                                                                    <constraint firstItem="ZI0-K4-rG0" firstAttribute="top" secondItem="5kV-1L-kH3" secondAttribute="top" id="KeX-k8-eLD"/>
-                                                                    <constraint firstItem="ZI0-K4-rG0" firstAttribute="leading" secondItem="5kV-1L-kH3" secondAttribute="leading" id="Mzh-iJ-FKr"/>
-                                                                    <constraint firstItem="fsv-de-D5h" firstAttribute="top" secondItem="ZI0-K4-rG0" secondAttribute="bottom" constant="4" id="WYS-lD-CEa"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="fsv-de-D5h" secondAttribute="trailing" id="j3n-Al-gGV"/>
-                                                                    <constraint firstAttribute="height" constant="72" id="jFp-Ao-h8x"/>
+                                                                    <constraint firstItem="FfQ-Nw-hWK" firstAttribute="top" secondItem="d9M-Ek-uQA" secondAttribute="top" id="PSh-mm-WOc"/>
+                                                                    <constraint firstItem="FfQ-Nw-hWK" firstAttribute="leading" secondItem="d9M-Ek-uQA" secondAttribute="leading" constant="8" id="qZp-nk-dUh"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="FfQ-Nw-hWK" secondAttribute="trailing" constant="8" id="wHh-IE-Khh"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="FfQ-Nw-hWK" secondAttribute="bottom" id="yUj-RH-On0"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
-                                                    </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yZ-xb-K3F" customClass="BaseButton" customModule="A_Shipvio" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="244.5" width="327" height="30"/>
-                                                        <state key="normal" title="login_view_login_button_title"/>
-                                                    </button>
+                                                        <constraints>
+                                                            <constraint firstItem="d9M-Ek-uQA" firstAttribute="top" secondItem="Gku-9b-Qjz" secondAttribute="bottom" constant="4" id="CJS-34-NIv"/>
+                                                            <constraint firstItem="Gku-9b-Qjz" firstAttribute="leading" secondItem="dPM-XN-bSq" secondAttribute="leading" id="Kmr-KM-Q6F"/>
+                                                            <constraint firstAttribute="height" constant="72" id="SbZ-yr-Pch"/>
+                                                            <constraint firstItem="d9M-Ek-uQA" firstAttribute="leading" secondItem="dPM-XN-bSq" secondAttribute="leading" id="W1D-iI-pdr"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Gku-9b-Qjz" secondAttribute="trailing" id="lUy-75-De9"/>
+                                                            <constraint firstAttribute="trailing" secondItem="d9M-Ek-uQA" secondAttribute="trailing" id="nvn-JZ-2yI"/>
+                                                            <constraint firstAttribute="bottom" secondItem="d9M-Ek-uQA" secondAttribute="bottom" id="oBi-0J-633"/>
+                                                            <constraint firstItem="Gku-9b-Qjz" firstAttribute="top" secondItem="dPM-XN-bSq" secondAttribute="top" id="vzb-O6-dU9"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kV-1L-kH3">
+                                                        <rect key="frame" x="0.0" y="88" width="327" height="72"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login_view_password_field_hint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZI0-K4-rG0" customClass="BaseTextFieldHintLabel" customModule="A_DevStack" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="327" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsv-de-D5h">
+                                                                <rect key="frame" x="0.0" y="24.5" width="327" height="47.5"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="thU-B4-f5N">
+                                                                        <rect key="frame" x="8" y="0.0" width="311" height="47.5"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="done" secureTextEntry="YES"/>
+                                                                        <connections>
+                                                                            <outlet property="delegate" destination="ZcH-Db-QSc" id="GWq-Et-O66"/>
+                                                                        </connections>
+                                                                    </textField>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="thU-B4-f5N" firstAttribute="leading" secondItem="fsv-de-D5h" secondAttribute="leading" constant="8" id="1x7-rv-qZF"/>
+                                                                    <constraint firstItem="thU-B4-f5N" firstAttribute="top" secondItem="fsv-de-D5h" secondAttribute="top" id="GPw-TI-cOI"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="thU-B4-f5N" secondAttribute="bottom" id="kBe-ad-VSy"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="thU-B4-f5N" secondAttribute="trailing" constant="8" id="kt6-vs-CeW"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="fsv-de-D5h" secondAttribute="bottom" id="Ek8-Sz-Lcr"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ZI0-K4-rG0" secondAttribute="trailing" id="Fhd-u2-jis"/>
+                                                            <constraint firstItem="fsv-de-D5h" firstAttribute="leading" secondItem="5kV-1L-kH3" secondAttribute="leading" id="G0y-s8-WeM"/>
+                                                            <constraint firstItem="ZI0-K4-rG0" firstAttribute="top" secondItem="5kV-1L-kH3" secondAttribute="top" id="KeX-k8-eLD"/>
+                                                            <constraint firstItem="ZI0-K4-rG0" firstAttribute="leading" secondItem="5kV-1L-kH3" secondAttribute="leading" id="Mzh-iJ-FKr"/>
+                                                            <constraint firstItem="fsv-de-D5h" firstAttribute="top" secondItem="ZI0-K4-rG0" secondAttribute="bottom" constant="4" id="WYS-lD-CEa"/>
+                                                            <constraint firstAttribute="trailing" secondItem="fsv-de-D5h" secondAttribute="trailing" id="j3n-Al-gGV"/>
+                                                            <constraint firstAttribute="height" constant="72" id="jFp-Ao-h8x"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yZ-xb-K3F" customClass="BaseButton" customModule="A_DevStack" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="553" width="327" height="30"/>
+                                                <state key="normal" title="login_view_login_button_title"/>
+                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="RF1-1c-aHI" firstAttribute="leading" secondItem="ZQm-U7-xrj" secondAttribute="leading" constant="24" id="3eC-FC-qpB"/>
-                                            <constraint firstAttribute="trailing" secondItem="RF1-1c-aHI" secondAttribute="trailing" constant="24" id="8kd-d1-D8G"/>
-                                            <constraint firstAttribute="bottom" secondItem="RF1-1c-aHI" secondAttribute="bottom" constant="308.5" id="EB8-2N-GmE"/>
-                                            <constraint firstItem="RF1-1c-aHI" firstAttribute="top" secondItem="ZQm-U7-xrj" secondAttribute="top" constant="64" id="gfE-J1-Cew"/>
+                                            <constraint firstAttribute="trailing" secondItem="PGK-yN-1Ou" secondAttribute="trailing" constant="24" id="0TY-bK-44i"/>
+                                            <constraint firstItem="PGK-yN-1Ou" firstAttribute="top" secondItem="WB7-Ew-rrp" secondAttribute="bottom" constant="32" id="3mk-ls-0a0"/>
+                                            <constraint firstItem="6yZ-xb-K3F" firstAttribute="leading" secondItem="ZQm-U7-xrj" secondAttribute="leading" constant="24" id="A2y-tA-fTc"/>
+                                            <constraint firstItem="WB7-Ew-rrp" firstAttribute="top" secondItem="ZQm-U7-xrj" secondAttribute="top" constant="64" id="AXS-wD-ouM"/>
+                                            <constraint firstItem="PGK-yN-1Ou" firstAttribute="leading" secondItem="ZQm-U7-xrj" secondAttribute="leading" constant="24" id="Au3-gd-KUj"/>
+                                            <constraint firstAttribute="bottom" secondItem="6yZ-xb-K3F" secondAttribute="bottom" constant="64" id="Dz2-5J-fR6"/>
+                                            <constraint firstAttribute="trailing" secondItem="WB7-Ew-rrp" secondAttribute="trailing" constant="24" id="HdM-kZ-SZn"/>
+                                            <constraint firstItem="WB7-Ew-rrp" firstAttribute="leading" secondItem="ZQm-U7-xrj" secondAttribute="leading" constant="24" id="XnZ-Cs-iH9"/>
+                                            <constraint firstAttribute="trailing" secondItem="6yZ-xb-K3F" secondAttribute="trailing" constant="24" id="bk8-RT-3Kp"/>
                                         </constraints>
                                     </view>
                                 </subviews>

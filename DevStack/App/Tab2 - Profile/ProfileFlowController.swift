@@ -8,14 +8,26 @@
 
 import UIKit
 
+protocol ProfileFlowControllerDelegate: class {
+    func presentOnboarding()
+}
+
 class ProfileFlowController: FlowController, ProfileFlowDelegate {
+    
+    weak var delegate: ProfileFlowControllerDelegate?
     
     override func start() {
         super.start()
-        let vm = ProfileViewModel(dependencies: dependencies)
-        let vc = ProfileViewController.instantiate(viewModel: vm)
+        guard let userId = KeychainStore.get(key: KeychainCoding.userId) else { return }
+        let userVm = UserDetailViewModel(dependencies: dependencies, userId: userId)
+        let profileVm = ProfileViewModel(dependencies: dependencies)
+        let vc = ProfileViewController.instantiate(userViewModel: userVm, profileViewModel: profileVm)
         vc.flowDelegate = self
         navigationController.viewControllers = [vc]
+    }
+    
+    func presentOnboarding() {
+        delegate?.presentOnboarding()
     }
     
 }

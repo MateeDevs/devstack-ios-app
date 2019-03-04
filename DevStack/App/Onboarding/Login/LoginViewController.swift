@@ -13,13 +13,13 @@ protocol LoginFlowDelegate: class {
     func popToMain()
 }
 
-class LoginViewController: InputViewController {
+final class LoginViewController: InputViewController {
     
     // MARK: FlowDelegate
-    var flowDelegate: LoginFlowDelegate?
+    weak var flowDelegate: LoginFlowDelegate?
     
     // MARK: ViewModels
-    var viewModel: LoginViewModel!
+    private var viewModel: LoginViewModel!
     
     // MARK: UI components
     @IBOutlet private weak var emailTextFieldView: UIView!

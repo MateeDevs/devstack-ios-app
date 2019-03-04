@@ -9,11 +9,23 @@
 import UIKit
 import AlamofireImage
 
-public class UserImageView: XIBView {
+@IBDesignable public class UserImageView: XIBView {
     
     @IBOutlet private weak var userPlaceHolderView: UIView!
     @IBOutlet private weak var initialsLabel: UILabel!
     @IBOutlet private weak var userImageView: UIImageView!
+    
+    @IBInspectable public var placeholderTextColor: UIColor = .white {
+        didSet {
+            initialsLabel.textColor = placeholderTextColor
+        }
+    }
+    
+    @IBInspectable public var placeholderBackgroundColor: UIColor = .lightGray {
+        didSet {
+            userPlaceHolderView.backgroundColor = placeholderBackgroundColor
+        }
+    }
     
     override public func awakeFromNib() {
         super.awakeFromNib()
@@ -27,22 +39,12 @@ public class UserImageView: XIBView {
         setDimensions()
     }
     
-    convenience public init(string: String) {
-        self.init()
-        setupWithString(string)
-        setDimensions()
-    }
-    
-    private func setupWithUser(_ user: User) {
-        //guard let pictureUrl = user.pictureUrl, let url = URL(string: pictureUrl) else { return }
-        //userImageView.af_setImage(withURL: url)
+    public func setupWithUser(_ user: User?) {
+        guard let user = user else { return }
         initialsLabel.text = DataFormatter.userInitials(from: user.fullName)
-        userPlaceHolderView.backgroundColor = .lightGray
-    }
-    
-    private func setupWithString(_ string: String) {
-        initialsLabel.text = DataFormatter.userInitials(from: string)
-        userPlaceHolderView.backgroundColor = .lightGray
+        if let pictureUrl = user.pictureUrl, let url = URL(string: pictureUrl) {
+            userImageView.af_setImage(withURL: url)
+        }
     }
     
     private func setDimensions() {

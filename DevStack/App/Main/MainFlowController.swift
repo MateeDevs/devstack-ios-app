@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainFlowController: FlowController, OnboardingFlowDelegate {
+class MainFlowController: FlowController, OnboardingFlowControllerDelegate, ProfileFlowControllerDelegate {
     
     override func start() {
         super.start()
@@ -30,6 +30,7 @@ class MainFlowController: FlowController, OnboardingFlowDelegate {
         let profileNc = UINavigationController()
         profileNc.tabBarItem = UITabBarItem(title: L10n.bottomBarItem2, image: Asset.Images.profileTabBar.image, tag: 1)
         let profileFc = ProfileFlowController(navigationController: profileNc, dependencies: dependencies)
+        profileFc.delegate = self
         startChildFlow(profileFc)
         
         main.viewControllers = [usersNc, profileNc]
@@ -41,7 +42,7 @@ class MainFlowController: FlowController, OnboardingFlowDelegate {
         let nc = UINavigationController()
         let fc = OnboardingFlowController(navigationController: nc, dependencies: dependencies)
         navigationController.present(nc, animated: true, completion: nil)
-        fc.flowDelegate = self
+        fc.delegate = self
         startChildFlow(fc)
     }
 }
