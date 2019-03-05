@@ -323,9 +323,6 @@
 		A82385DA213418B400CC941C /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82385D9213418B400CC941C /* ShadowView.swift */; };
 		A82385DB213418B400CC941C /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82385D9213418B400CC941C /* ShadowView.swift */; };
 		A82385DC213418B400CC941C /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82385D9213418B400CC941C /* ShadowView.swift */; };
-		A82385E1213423AE00CC941C /* AccessoryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82385E0213423AE00CC941C /* AccessoryTextField.swift */; };
-		A82385E2213423AE00CC941C /* AccessoryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82385E0213423AE00CC941C /* AccessoryTextField.swift */; };
-		A82385E3213423AE00CC941C /* AccessoryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82385E0213423AE00CC941C /* AccessoryTextField.swift */; };
 		A82386862138AF1700CC941C /* ColoredImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82386852138AF1700CC941C /* ColoredImageView.swift */; };
 		A82386872138AF1700CC941C /* ColoredImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82386852138AF1700CC941C /* ColoredImageView.swift */; };
 		A82386882138AF1700CC941C /* ColoredImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82386852138AF1700CC941C /* ColoredImageView.swift */; };
@@ -530,7 +527,6 @@
 		A396B97477C4C299D79FB7D8 /* Pods-Shipvio_Customer_Beta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shipvio_Customer_Beta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shipvio_Customer_Beta/Pods-Shipvio_Customer_Beta.debug.xcconfig"; sourceTree = "<group>"; };
 		A592C9E57154D698582F52F6 /* Pods-DevStack_Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Alpha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha.debug.xcconfig"; sourceTree = "<group>"; };
 		A82385D9213418B400CC941C /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
-		A82385E0213423AE00CC941C /* AccessoryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryTextField.swift; sourceTree = "<group>"; };
 		A82386852138AF1700CC941C /* ColoredImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredImageView.swift; sourceTree = "<group>"; };
 		A82FEF96214650B5006204F3 /* Int+UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+UIExtensions.swift"; sourceTree = "<group>"; };
 		A83F0EAF21490B8000313067 /* DataFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFormatter.swift; sourceTree = "<group>"; };
@@ -774,13 +770,6 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
-		4588FF3422289EFF0014FC79 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		45890AFA21FF515800894255 /* Tab2 - Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -829,7 +818,6 @@
 		459761C820FDD4050034DE29 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				4588FF3422289EFF0014FC79 /* Test */,
 				45890B3322086BC000894255 /* Onboarding */,
 				4597621720FDDE270034DE29 /* Main */,
 				45E8A4E2220B0803003F7502 /* Tab1 - Users */,
@@ -988,7 +976,6 @@
 		459762F620FE22630034DE29 /* UITextField */ = {
 			isa = PBXGroup;
 			children = (
-				A82385E0213423AE00CC941C /* AccessoryTextField.swift */,
 				456851BF2100929E006D3618 /* LocalizedTextField.swift */,
 			);
 			path = UITextField;
@@ -1418,7 +1405,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen xcassets \"DevStack/Resources/Colors.xcassets\" \"DevStack/Resources/Images.xcassets\" -t swift4 --output \"DevStack/Constants/Assets.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen strings \"DevStack/Resources/Base.lproj/Localizable.strings\" -t flat-swift4 --param publicAccess --output \"DevStack/Constants/Localizable.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen ib \"DevStack\" -t scenes-swift4 --output \"DevStack/Constants/Storyboards.swift\"\nsed -i '' -e 's/A_DevStack.//g;s/B_DevStack.//g;s/DevStack.//g;s/import A_DevStack//g;s/import B_DevStack//g;s/import DevStack//g;' DevStack/Constants/Storyboards.swift\n";
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen xcassets \"DevStack/Resources/Colors.xcassets\" \"DevStack/Resources/Images.xcassets\" -t swift4 --param publicAccess --output \"DevStack/Constants/Assets.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen strings \"DevStack/Resources/Base.lproj/Localizable.strings\" -t flat-swift4 --param publicAccess --output \"DevStack/Constants/Localizable.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen ib \"DevStack\" -t scenes-swift4 --output \"DevStack/Constants/Storyboards.swift\"\nsed -i '' -e 's/A_DevStack.//g;s/B_DevStack.//g;s/DevStack.//g;s/import A_DevStack//g;s/import B_DevStack//g;s/import DevStack//g;' DevStack/Constants/Storyboards.swift\n";
 		};
 		4597628220FE17930034DE29 /* Script for Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1446,7 +1433,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen xcassets \"DevStack/Resources/Colors.xcassets\" \"DevStack/Resources/Images.xcassets\" -t swift4 --output \"DevStack/Constants/Assets.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen strings \"DevStack/Resources/Base.lproj/Localizable.strings\" -t flat-swift4 --param publicAccess --output \"DevStack/Constants/Localizable.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen ib \"DevStack\" -t scenes-swift4 --output \"DevStack/Constants/Storyboards.swift\"\nsed -i '' -e 's/A_DevStack.//g;s/B_DevStack.//g;s/DevStack.//g;s/import A_DevStack//g;s/import B_DevStack//g;s/import DevStack//g;' DevStack/Constants/Storyboards.swift\n";
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen xcassets \"DevStack/Resources/Colors.xcassets\" \"DevStack/Resources/Images.xcassets\" -t swift4 --param publicAccess --output \"DevStack/Constants/Assets.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen strings \"DevStack/Resources/Base.lproj/Localizable.strings\" -t flat-swift4 --param publicAccess --output \"DevStack/Constants/Localizable.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen ib \"DevStack\" -t scenes-swift4 --output \"DevStack/Constants/Storyboards.swift\"\nsed -i '' -e 's/A_DevStack.//g;s/B_DevStack.//g;s/DevStack.//g;s/import A_DevStack//g;s/import B_DevStack//g;s/import DevStack//g;' DevStack/Constants/Storyboards.swift\n";
 		};
 		459762FA20FE26470034DE29 /* Script for Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1474,7 +1461,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen xcassets \"DevStack/Resources/Colors.xcassets\" \"DevStack/Resources/Images.xcassets\" -t swift4 --output \"DevStack/Constants/Assets.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen strings \"DevStack/Resources/Base.lproj/Localizable.strings\" -t flat-swift4 --param publicAccess --output \"DevStack/Constants/Localizable.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen ib \"DevStack\" -t scenes-swift4 --output \"DevStack/Constants/Storyboards.swift\"\nsed -i '' -e 's/A_DevStack.//g;s/B_DevStack.//g;s/DevStack.//g;s/import A_DevStack//g;s/import B_DevStack//g;s/import DevStack//g;' DevStack/Constants/Storyboards.swift\n";
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen xcassets \"DevStack/Resources/Colors.xcassets\" \"DevStack/Resources/Images.xcassets\" -t swift4 --param publicAccess --output \"DevStack/Constants/Assets.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen strings \"DevStack/Resources/Base.lproj/Localizable.strings\" -t flat-swift4 --param publicAccess --output \"DevStack/Constants/Localizable.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen ib \"DevStack\" -t scenes-swift4 --output \"DevStack/Constants/Storyboards.swift\"\nsed -i '' -e 's/A_DevStack.//g;s/B_DevStack.//g;s/DevStack.//g;s/import A_DevStack//g;s/import B_DevStack//g;s/import DevStack//g;' DevStack/Constants/Storyboards.swift\n";
 		};
 		459762FD20FE268C0034DE29 /* Script for Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1669,7 +1656,6 @@
 				45E8A576220F7933003F7502 /* UsersViewModel.swift in Sources */,
 				45E8A573220F7933003F7502 /* UsersViewController.swift in Sources */,
 				4558D30B20FCC8FF005BC325 /* AppDelegate.swift in Sources */,
-				A82385E1213423AE00CC941C /* AccessoryTextField.swift in Sources */,
 				A82386862138AF1700CC941C /* ColoredImageView.swift in Sources */,
 				4588FF2D22282D000014FC79 /* UserDetailViewModel.swift in Sources */,
 				45DE1D9421CA9CA300C455C4 /* AuthAPI.swift in Sources */,
@@ -1779,7 +1765,6 @@
 				45E8A577220F7933003F7502 /* UsersViewModel.swift in Sources */,
 				45E8A574220F7933003F7502 /* UsersViewController.swift in Sources */,
 				459761CE20FDD60A0034DE29 /* AppDelegate.swift in Sources */,
-				A82385E2213423AE00CC941C /* AccessoryTextField.swift in Sources */,
 				A82386872138AF1700CC941C /* ColoredImageView.swift in Sources */,
 				4588FF2E22282D000014FC79 /* UserDetailViewModel.swift in Sources */,
 				459762DF20FE21290034DE29 /* Storyboards.swift in Sources */,
@@ -1889,7 +1874,6 @@
 				45E8A578220F7933003F7502 /* UsersViewModel.swift in Sources */,
 				45E8A575220F7933003F7502 /* UsersViewController.swift in Sources */,
 				459761DC20FDD61E0034DE29 /* AppDelegate.swift in Sources */,
-				A82385E3213423AE00CC941C /* AccessoryTextField.swift in Sources */,
 				A82386882138AF1700CC941C /* ColoredImageView.swift in Sources */,
 				4588FF2F22282D000014FC79 /* UserDetailViewModel.swift in Sources */,
 				45DE1D9621CA9CA300C455C4 /* AuthAPI.swift in Sources */,

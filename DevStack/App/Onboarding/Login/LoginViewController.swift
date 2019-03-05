@@ -26,7 +26,7 @@ final class LoginViewController: InputViewController {
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextFieldView: UIView!
     @IBOutlet private weak var passwordTextField: UITextField!
-    @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet weak var loginButton: BaseButton!
     
     // MARK: Stored properties
     
@@ -88,9 +88,9 @@ final class LoginViewController: InputViewController {
         super.setupViewAppearance()
         
         emailTextFieldView.layer.borderWidth = 2.0
-        emailTextFieldView.layer.borderColor = Asset.Colors.greyLight.color.cgColor
+        emailTextFieldView.layer.borderColor = UIColor.lightGray.cgColor
         passwordTextFieldView.layer.borderWidth = 2.0
-        passwordTextFieldView.layer.borderColor = Asset.Colors.greyLight.color.cgColor
+        passwordTextFieldView.layer.borderColor = UIColor.lightGray.cgColor
         
         emailTextField.textContentType = UITextContentType(rawValue: "")
         passwordTextField.textContentType = UITextContentType(rawValue: "")

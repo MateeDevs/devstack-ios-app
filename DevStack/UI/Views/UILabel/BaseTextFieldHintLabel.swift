@@ -13,7 +13,7 @@ class BaseTextFieldHintLabel: LocalizedLabel {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        textColor = Asset.Colors.greyDark.color
+        textColor = .gray
         font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
     }
     

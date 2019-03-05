@@ -159,7 +159,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="FfQ-Nw-hWK" id="edM-g0-Txl"/>
                         <outlet property="emailTextFieldView" destination="d9M-Ek-uQA" id="VM9-Pe-XNO"/>
-                        <outlet property="loginButton" destination="6yZ-xb-K3F" id="pU5-UJ-Ks6"/>
+                        <outlet property="loginButton" destination="6yZ-xb-K3F" id="R1g-Ye-9uU"/>
                         <outlet property="passwordTextField" destination="thU-B4-f5N" id="Xx2-Mc-C9C"/>
                         <outlet property="passwordTextFieldView" destination="fsv-de-D5h" id="Gx6-ze-MC5"/>
                         <outlet property="scrollView" destination="obQ-ZS-x3F" id="39e-4z-mAC"/>
