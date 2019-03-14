@@ -5,11 +5,11 @@
 //  Created by Petr Chmelar on 26/07/2018.
 //  Copyright © 2018 Qest. All rights reserved.
 //
+// LCE -> Loading / Content / Error
+// Idea taken from: https://tech.instacart.com/lce-modeling-data-loading-in-rxjava-b798ac98d80
+//
 
 import Foundation
-
-// Lce -> Loading / Content / Error
-// Idea taken from: https://tech.instacart.com/lce-modeling-data-loading-in-rxjava-b798ac98d80
 
 public class Lce<T> {
     public let isLoading: Bool

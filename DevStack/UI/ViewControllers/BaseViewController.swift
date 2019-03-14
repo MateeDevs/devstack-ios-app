@@ -13,8 +13,7 @@ open class BaseViewController: UIViewController {
     
     // MARK: Stored properties
     
-    // In case the DisposeBag not to be emptied.
-    // Thus keep the same subscriptions for whole life cycle.
+    /// In case the DisposeBag not to be emptied. Thus keep the same subscriptions for whole life cycle.
     public var allowRecyclingBag: Bool = true
     
     private var bag: DisposeBag = DisposeBag()
@@ -52,18 +51,15 @@ open class BaseViewController: UIViewController {
     }
     
     // MARK: Default methods
+    
+    /// Override this method in a subclass and setup the view model
     open func setupViewModel() {
-        
-        // Override this method in a subclass and setup the view model
-        
         // Fresh initializaton of DisposeBag whenever subscriptions are about to initialize
         disposeBag = DisposeBag()
     }
     
+    /// Override this method in a subclass and setup the view appearance
     open func setupUI() {
-        
-        // Override this method in a subclass and setup the view appearance
-        
         // Setup background color and back button title
         view.backgroundColor = Asset.Colors.mainBackground.color
         navigationItem.backBarButtonItem = UIBarButtonItem(title: L10n.back, style: .plain, target: nil, action: nil)

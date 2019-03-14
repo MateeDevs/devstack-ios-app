@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
     
-    // Fix orientation of an UIImage without EXIF
+    /// Fix orientation of an UIImage without EXIF
     public func fixOrientation() -> UIImage {
         
         guard let cgImage = cgImage else { return self }

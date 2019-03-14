@@ -5,14 +5,14 @@
 //  Created by Petr Chmelar on 05/09/2018.
 //  Copyright © 2018 Qest. All rights reserved.
 //
+// Wrapper around Realm Object to handle previews of objects coming from API
+// Just decode to your preview object during decoding phase
+// Then call createFullObject() to obtain full object updated with values from preview object
+//
 
 import Foundation
 import RealmSwift
 import Realm
-
-// Wrapper around Realm Object to handle previews of objects coming from API
-// Just decode to your preview object during decoding phase
-// Then call createFullObject() to obtain full object updated with values from preview object
 
 class PreviewObject: Object {
     

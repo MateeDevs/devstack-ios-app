@@ -21,16 +21,18 @@ open class FlowController {
         self.dependencies = dependencies
     }
     
+    /// Override this method in a subclass and start the flow
     open func start() {
-        // Override this method in a subclass and start the flow
     }
     
+    /// Starts child flow controller.
     public func startChildFlow(_ flowController: FlowController) {
         childControllers.append(flowController)
         flowController.parentController = self
         flowController.start()
     }
     
+    /// Stops child flow controller. Must be called when returning to parent flow controller.
     public func stopChildFlow() {
         parentController?.removeChild(self)
     }

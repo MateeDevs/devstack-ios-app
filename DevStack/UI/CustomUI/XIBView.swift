@@ -38,8 +38,8 @@ open class XIBView: UIView {
         return view
     }
     
+    /// Override this method in a subclass for additional setup
     open func configureViews() {
-        // Override this method in a subclass for additional setup
     }
     
 }

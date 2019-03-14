@@ -14,7 +14,7 @@ open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollVi
     // MARK: UI components
     @IBOutlet public weak var tableView: UITableView! {
         didSet {
-            // If you need separator add it into the cell
+            // If you need separator add it directly into the cell
             tableView.separatorStyle = .none
         }
     }

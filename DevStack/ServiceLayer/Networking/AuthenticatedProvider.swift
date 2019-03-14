@@ -5,15 +5,15 @@
 //  Created by Petr Chmelar on 23/07/2018.
 //  Copyright © 2018 Qest. All rights reserved.
 //
+// Custom Moya provider
+// Idea taken from: https://github.com/Moya/Moya/blob/master/docs/Examples/ComposingProvider.md
+//
 
 import Foundation
 import Moya
 import Alamofire
 import RxSwift
 import os.log
-
-// Custom Moya provider
-// Idea taken from: https://github.com/Moya/Moya/blob/master/docs/Examples/ComposingProvider.md
 
 final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetType {
     

@@ -5,8 +5,8 @@
 //  Created by Viktor Kaderabek on 04/08/2017.
 //  Copyright © 2017 Qest. All rights reserved.
 //
-
-// Do not fix missing constraints in .xib, otherwise the stack view won't adjust properly
+// Do not fix missing constraints in .xib, otherwise the stack view won't adjust properly!
+//
 
 import UIKit
 
@@ -73,7 +73,7 @@ public protocol TabBarViewDelegate: class {
         widthConstraintStripView.constant = scrollView.contentSize.width / max(CGFloat(tabBarButtons.count), 1)
     }
     
-    // Must be a last call on tab bar view initialization
+    /// Must be a last call on tab bar view initialization
     public func setupAvailableOptions(_ options: [String]) {
         addButtons(titles: options)
     }

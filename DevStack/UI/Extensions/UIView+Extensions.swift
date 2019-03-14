@@ -41,7 +41,7 @@ extension UIView {
     
     // MARK: Constraints
     
-    // Constraints to view bounds
+    /// Constraints to view bounds
     public func setConstraintsToCoverView(_ containerView: UIView) {
         containerView.addSubview(self)
         translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +51,7 @@ extension UIView {
         heightAnchor.constraint(equalTo: containerView.heightAnchor).isActive = true
     }
     
-    // Constraints to center in view
+    /// Constraints to center in view
     public func setConstraintsToCenterInView(_ containerView: UIView) {
         containerView.addSubview(self)
         translatesAutoresizingMaskIntoConstraints = false

@@ -10,7 +10,7 @@ import Foundation
 
 extension NSObject {
 
-    // Class name literal
+    /// Class name literal
     public class var nameOfClass: String {
         get {
             guard let className = NSStringFromClass(self).components(separatedBy: ".").last else { return "N/A" }

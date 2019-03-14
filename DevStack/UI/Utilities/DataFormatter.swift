@@ -82,6 +82,7 @@ struct DataFormatter {
     /// - Parameter date: date to format
     /// - Parameter offsetMinutes: time zone offset in minutes to be applied onto date
     /// - Returns: formatted date label
+    ///
     static func dateStringWording(from date: Date?, offsetMinutes: Int? = nil) -> String? {
         guard let date = date else {
             return nil
@@ -108,6 +109,7 @@ struct DataFormatter {
     /// - Parameter date: time to format
     /// - Parameter offsetMinutes: time zone offset in minutes to be applied onto date
     /// - Returns: formatted time label
+    ///
     static func timeString(from date: Date?, offsetMinutes: Int? = nil) -> String? {
         guard let date = date else {
             return nil
@@ -125,6 +127,7 @@ struct DataFormatter {
     /// - Parameter date1: date to be compared
     /// - Parameter date2: date to be compared
     /// - Returns: Positive or negative number of days between date1 and date2
+    ///
     static func numberOfDaysString(from date1: Date?, to date2: Date?, offsetMinutes: Int = 0) -> String? {
         guard let date1 = date1, let date2 = date2 else {
             return nil
@@ -150,6 +153,7 @@ struct DataFormatter {
     /// - Parameter dateToCompare: date to be compared
     /// - Parameter dateInitial: date to be compared
     /// - Returns: Localized "Before xyz days/hours/minutes"
+    ///
     static func timeDifferenceString(dateToCompare: Date, dateInitial: Date) -> String {
         let elapsedTime = dateToCompare.timeIntervalSince(dateInitial)
         if (elapsedTime < 60) {
@@ -168,6 +172,7 @@ struct DataFormatter {
     /// - Parameter date: date to format
     /// - Parameter offsetMinutes: time zone offset in minutes to be applied onto date
     /// - Returns: Today/Tomorrow with time, otherwise returns only date without time
+    ///
     static func dateTimeInFutureString(_ date: Date?, offsetMinutes: Int? = nil) -> String? {
         guard let date = date else {
             return nil
@@ -186,6 +191,7 @@ struct DataFormatter {
     ///
     /// - Parameter fullName: full name
     /// - Returns: initials
+    ///
     static func userInitials(from fullName: String) -> String {
         let words: [Substring] = fullName.split(separator: " ")
         let initials = words.map({String($0.first ?? Character(""))})

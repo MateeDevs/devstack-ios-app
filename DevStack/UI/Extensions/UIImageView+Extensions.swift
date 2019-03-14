@@ -12,7 +12,6 @@ extension UIImageView {
 
     // Workaround, because extensions must not contain stored properties
     // Idea taken from: https://link.medium.com/6mPz1wuTCU
-    
     private struct Holder {
         static var _rounded: Bool = false
     }
