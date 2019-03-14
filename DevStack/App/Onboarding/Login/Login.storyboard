@@ -123,6 +123,10 @@
                                                 <rect key="frame" x="24" y="553" width="327" height="30"/>
                                                 <state key="normal" title="login_view_login_button_title"/>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8h-Ws-6nH" customClass="LocalizedButton" customModule="A_DevStack" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="591" width="327" height="30"/>
+                                                <state key="normal" title="login_view_register_button_title"/>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="PGK-yN-1Ou" secondAttribute="trailing" constant="24" id="0TY-bK-44i"/>
@@ -130,10 +134,13 @@
                                             <constraint firstItem="6yZ-xb-K3F" firstAttribute="leading" secondItem="ZQm-U7-xrj" secondAttribute="leading" constant="24" id="A2y-tA-fTc"/>
                                             <constraint firstItem="WB7-Ew-rrp" firstAttribute="top" secondItem="ZQm-U7-xrj" secondAttribute="top" constant="64" id="AXS-wD-ouM"/>
                                             <constraint firstItem="PGK-yN-1Ou" firstAttribute="leading" secondItem="ZQm-U7-xrj" secondAttribute="leading" constant="24" id="Au3-gd-KUj"/>
+                                            <constraint firstAttribute="trailing" secondItem="S8h-Ws-6nH" secondAttribute="trailing" constant="24" id="Bz2-JB-sih"/>
+                                            <constraint firstItem="S8h-Ws-6nH" firstAttribute="leading" secondItem="ZQm-U7-xrj" secondAttribute="leading" constant="24" id="CSK-vH-y9X"/>
                                             <constraint firstAttribute="bottom" secondItem="6yZ-xb-K3F" secondAttribute="bottom" constant="64" id="Dz2-5J-fR6"/>
                                             <constraint firstAttribute="trailing" secondItem="WB7-Ew-rrp" secondAttribute="trailing" constant="24" id="HdM-kZ-SZn"/>
                                             <constraint firstItem="WB7-Ew-rrp" firstAttribute="leading" secondItem="ZQm-U7-xrj" secondAttribute="leading" constant="24" id="XnZ-Cs-iH9"/>
                                             <constraint firstAttribute="trailing" secondItem="6yZ-xb-K3F" secondAttribute="trailing" constant="24" id="bk8-RT-3Kp"/>
+                                            <constraint firstItem="S8h-Ws-6nH" firstAttribute="top" secondItem="6yZ-xb-K3F" secondAttribute="bottom" constant="8" id="kUe-Bp-jzR"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -162,6 +169,7 @@
                         <outlet property="loginButton" destination="6yZ-xb-K3F" id="R1g-Ye-9uU"/>
                         <outlet property="passwordTextField" destination="thU-B4-f5N" id="Xx2-Mc-C9C"/>
                         <outlet property="passwordTextFieldView" destination="fsv-de-D5h" id="Gx6-ze-MC5"/>
+                        <outlet property="registerButton" destination="S8h-Ws-6nH" id="ioa-ZL-KVl"/>
                         <outlet property="scrollView" destination="obQ-ZS-x3F" id="39e-4z-mAC"/>
                     </connections>
                 </viewController>

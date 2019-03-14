@@ -20,11 +20,12 @@ final class ProfileViewController: BaseViewController {
 
     // MARK: ViewModels
     private var userViewModel: UserDetailViewModel!
-    private var profileViewModel: ProfileViewModel!
+    private var logoutViewModel: LogoutViewModel!
 
     // MARK: UI components
-    @IBOutlet weak var userImageView: UserImageView!
-    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet private weak var userImageView: UserImageView!
+    @IBOutlet private weak var userNameLabel: UILabel!
+    @IBOutlet private weak var logoutButton: BaseButton!
     
     // MARK: Stored properties
     private var user: User? {
@@ -35,10 +36,10 @@ final class ProfileViewController: BaseViewController {
     }
     
     // MARK: Inits
-    static func instantiate(userViewModel: UserDetailViewModel, profileViewModel: ProfileViewModel) -> ProfileViewController {
+    static func instantiate(userViewModel: UserDetailViewModel, logoutViewModel: LogoutViewModel) -> ProfileViewController {
         let vc = StoryboardScene.Profile.initialScene.instantiate()
         vc.userViewModel = userViewModel
-        vc.profileViewModel = profileViewModel
+        vc.logoutViewModel = logoutViewModel
         return vc
     }
 
@@ -51,26 +52,29 @@ final class ProfileViewController: BaseViewController {
     override func setupViewModel() {
         super.setupViewModel()
         
-        let input = UserDetailViewModel.Input()
-        let output = userViewModel.transform(input: input)
+        // UserViewModel
+        let userViewModelInput = UserDetailViewModel.Input()
+        let userViewModelOutput = userViewModel.transform(input: userViewModelInput)
         
-        output.getUserDetailEvent.drive(onNext: { [weak self] (event) in
+        userViewModelOutput.getUserDetailEvent.drive(onNext: { [weak self] (event) in
             if let userDetail = event.data {
                 self?.user = userDetail
             }
         }).disposed(by: disposeBag)
+        
+        // LogoutViewModel
+        let logoutViewModelInput = LogoutViewModel.Input(logoutButtonTaps: logoutButton.rx.tap.asSignal())
+        let logoutViewModelOutput = logoutViewModel.transform(input: logoutViewModelInput)
+        
+        logoutViewModelOutput.logoutEvent.drive(onNext: { [weak self] event in
+            self?.flowDelegate?.presentOnboarding()
+        }).disposed(by: disposeBag)
     }
 
-    override func setupViewAppearance() {
-        super.setupViewAppearance()
+    override func setupUI() {
+        super.setupUI()
         
         navigationItem.title = L10n.profileViewToolbarTitle
-    }
-
-    // MARK: Additional methods
-    @IBAction func loginButtonTouchUpInside(_ sender: EnhancedButton) {
-        profileViewModel.logout()
-        flowDelegate?.presentOnboarding()
     }
     
 }

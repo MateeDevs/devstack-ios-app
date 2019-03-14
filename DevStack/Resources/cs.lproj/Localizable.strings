@@ -362,9 +362,24 @@
 
 "login_view_login_button_title" = "Přihlásit se";
 
-"login_view_invalid_credentials" = "Neplatné přihlašovací údaje.";
+"login_view_register_button_title" = "Registrovat se";
 
 "login_view_error_email_not_verified" = "Uživatelský účet nemá ověřený email.";
+
+
+/********** Registration View **********/
+
+"registration_view_headline_title" = "Registrace";
+
+"registration_view_email_field_hint" = "E-mail";
+
+"registration_view_password_field_hint" = "Heslo";
+
+"registration_view_register_button_title" = "Registrovat se";
+
+"registration_view_login_button_title" = "Přihlásit se";
+
+"register_view_email_already_exists" = "Uživatel s daným emailem již existuje.";
 
 
 /********** Users View **********/

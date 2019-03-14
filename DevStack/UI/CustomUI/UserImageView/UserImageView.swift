@@ -33,12 +33,6 @@ import AlamofireImage
         setDimensions()
     }
     
-    convenience public init(user: User) {
-        self.init()
-        setupWithUser(user)
-        setDimensions()
-    }
-    
     public func setupWithUser(_ user: User?) {
         guard let user = user else { return }
         initialsLabel.text = DataFormatter.userInitials(from: user.fullName)

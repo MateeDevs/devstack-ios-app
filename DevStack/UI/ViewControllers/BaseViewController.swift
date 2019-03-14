@@ -32,7 +32,7 @@ open class BaseViewController: UIViewController {
     // MARK: Lifecycle methods
     override open func viewDidLoad() {
         super.viewDidLoad()
-        setupViewAppearance()
+        setupUI()
     }
     
     override open func viewWillAppear(_ animated: Bool) {
@@ -60,7 +60,7 @@ open class BaseViewController: UIViewController {
         disposeBag = DisposeBag()
     }
     
-    open func setupViewAppearance() {
+    open func setupUI() {
         
         // Override this method in a subclass and setup the view appearance
         

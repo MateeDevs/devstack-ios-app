@@ -206,12 +206,12 @@ public enum L10n {
   public static let loginViewErrorEmailNotVerified = L10n.tr("Localizable", "login_view_error_email_not_verified")
   /// Sign in
   public static let loginViewHeadlineTitle = L10n.tr("Localizable", "login_view_headline_title")
-  /// Invalid credentials
-  public static let loginViewInvalidCredentials = L10n.tr("Localizable", "login_view_invalid_credentials")
   /// Sign in
   public static let loginViewLoginButtonTitle = L10n.tr("Localizable", "login_view_login_button_title")
   /// Password
   public static let loginViewPasswordFieldHint = L10n.tr("Localizable", "login_view_password_field_hint")
+  /// Register
+  public static let loginViewRegisterButtonTitle = L10n.tr("Localizable", "login_view_register_button_title")
   /// Required field
   public static let mandatoryField = L10n.tr("Localizable", "mandatory_field")
   /// %1$d days
@@ -340,6 +340,18 @@ public enum L10n {
   public static let profileViewLogoutButton = L10n.tr("Localizable", "profile_view_logout_button")
   /// Profile
   public static let profileViewToolbarTitle = L10n.tr("Localizable", "profile_view_toolbar_title")
+  /// User with specified email already exists.
+  public static let registerViewEmailAlreadyExists = L10n.tr("Localizable", "register_view_email_already_exists")
+  /// E-mail
+  public static let registrationViewEmailFieldHint = L10n.tr("Localizable", "registration_view_email_field_hint")
+  /// Registration
+  public static let registrationViewHeadlineTitle = L10n.tr("Localizable", "registration_view_headline_title")
+  /// Sign in
+  public static let registrationViewLoginButtonTitle = L10n.tr("Localizable", "registration_view_login_button_title")
+  /// Password
+  public static let registrationViewPasswordFieldHint = L10n.tr("Localizable", "registration_view_password_field_hint")
+  /// Register
+  public static let registrationViewRegisterButtonTitle = L10n.tr("Localizable", "registration_view_register_button_title")
   /// Remaining
   public static let remainingTimeText = L10n.tr("Localizable", "remaining_time_text")
   /// Retry

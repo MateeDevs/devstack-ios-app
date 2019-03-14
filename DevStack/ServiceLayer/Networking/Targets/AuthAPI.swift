@@ -11,7 +11,7 @@ import Moya
 
 enum AuthAPI {
     case login(email: String, password: String)
-    case register(email: String, password: String, user: User)
+    case registration(email: String, password: String, user: User)
 }
 
 extension AuthAPI: TargetType {
@@ -20,13 +20,13 @@ extension AuthAPI: TargetType {
         switch self {
         case .login:
             return "/auth/login"
-        case .register:
-            return "/auth/register"
+        case .registration:
+            return "/auth/registration"
         }
     }
     var method: Moya.Method {
         switch self {
-        case .login, .register:
+        case .login, .registration:
             return .post
         }
     }
@@ -41,10 +41,10 @@ extension AuthAPI: TargetType {
                 "pass": password
             ]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
-        case .register(let email, let password, let user):
+        case .registration(let email, let password, let user):
             var params = user.dictionary
             params["email"] = email
-            params["password"] = password
+            params["pass"] = password
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         }
     }
@@ -52,7 +52,7 @@ extension AuthAPI: TargetType {
         switch self {
         case .login:
             return NetworkingUtilities.stubbedResponse("AuthToken")
-        case .register:
+        case .registration:
             return NetworkingUtilities.stubbedResponse("User")
         }
     }

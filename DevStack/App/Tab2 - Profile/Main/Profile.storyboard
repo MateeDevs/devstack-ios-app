@@ -44,9 +44,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bF-jg-b3i" customClass="BaseButton" customModule="A_DevStack" customModuleProvider="target">
                                 <rect key="frame" x="24" y="573" width="327" height="30"/>
                                 <state key="normal" title="profile_view_logout_button"/>
-                                <connections>
-                                    <action selector="loginButtonTouchUpInside:" destination="CkE-Zn-ye5" eventType="touchDragInside" id="ARi-hg-Lr9"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -63,6 +60,7 @@
                         <viewLayoutGuide key="safeArea" id="qdr-Ev-KLG"/>
                     </view>
                     <connections>
+                        <outlet property="logoutButton" destination="1bF-jg-b3i" id="XuL-A9-MyD"/>
                         <outlet property="userImageView" destination="mOy-UN-9uA" id="ReL-lm-how"/>
                         <outlet property="userNameLabel" destination="QgE-43-xes" id="7kj-Ql-R2H"/>
                     </connections>

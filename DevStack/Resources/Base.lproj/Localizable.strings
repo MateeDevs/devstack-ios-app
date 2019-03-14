@@ -362,9 +362,24 @@
 
 "login_view_login_button_title" = "Sign in";
 
-"login_view_invalid_credentials" = "Invalid credentials";
+"login_view_register_button_title" = "Register";
 
 "login_view_error_email_not_verified" = "User email hasn't been verified yet.";
+
+
+/********** Registration View **********/
+
+"registration_view_headline_title" = "Registration";
+
+"registration_view_email_field_hint" = "E-mail";
+
+"registration_view_password_field_hint" = "Password";
+
+"registration_view_register_button_title" = "Register";
+
+"registration_view_login_button_title" = "Sign in";
+
+"register_view_email_already_exists" = "User with specified email already exists.";
 
 
 /********** Users View **********/

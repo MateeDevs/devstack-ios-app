@@ -1,5 +1,5 @@
 // 
-//  ProfileViewModel.swift
+//  LogoutViewModel.swift
 //  DevStack
 //
 //  Created by Petr Chmelar on 04/03/2019.
@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-final class ProfileViewModel: ViewModel, ViewModelType {
+final class LogoutViewModel: ViewModel, ViewModelType {
     
     typealias Dependencies = HasLoginService
     fileprivate let dependencies: Dependencies
@@ -20,16 +20,19 @@ final class ProfileViewModel: ViewModel, ViewModelType {
     }
     
     struct Input {
+        let logoutButtonTaps: Signal<()>
     }
     
     struct Output {
+        let logoutEvent: Driver<Lce<Void>>
     }
     
     func transform(input: Input) -> Output {
-        return Output()
-    }
-    
-    func logout() {
-        dependencies.loginService.logout()
+        
+        let logoutEvent = input.logoutButtonTaps.flatMap { _ -> Driver<Lce<Void>> in
+            return self.dependencies.loginService.logout().asDriverOnErrorJustComplete()
+        }
+        
+        return Output(logoutEvent: logoutEvent)
     }
 }

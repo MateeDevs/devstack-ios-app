@@ -12,7 +12,7 @@ protocol OnboardingFlowControllerDelegate: class {
     func setupMain()
 }
 
-class OnboardingFlowController: FlowController, LoginFlowDelegate {
+class OnboardingFlowController: FlowController, LoginFlowDelegate, RegistrationFlowDelegate {
     
     weak var delegate: OnboardingFlowControllerDelegate?
     
@@ -26,10 +26,21 @@ class OnboardingFlowController: FlowController, LoginFlowDelegate {
         UIApplication.shared.statusBarView?.backgroundColor = Asset.Colors.mainBackground.color
     }
     
-    func popToMain() {
+    func dismiss() {
         delegate?.setupMain()
         navigationController.dismiss(animated: true, completion: nil)
         UIApplication.shared.statusBarView?.backgroundColor = ColorTheme.mainColor
         stopChildFlow()
+    }
+    
+    func showRegistration() {
+        let vm = RegistrationViewModel(dependencies: dependencies)
+        let vc = RegistrationViewController.instantiate(viewModel: vm)
+        vc.flowDelegate = self
+        navigationController.show(vc, sender: nil)
+    }
+    
+    func popRegistration() {
+        navigationController.popViewController(animated: true)
     }
 }

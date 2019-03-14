@@ -29,7 +29,14 @@ public class LoginService {
         return net
     }
     
-    public func logout() {
+    public func registration(email: String, password: String, firstName: String, lastName: String) -> Observable<Lce<User>> {
+        let user = User(value: ["firstName": firstName, "lastName": lastName])
+        let endpoint = AuthAPI.registration(email: email, password: password, user: user)
+        let net = network.observableRequest(endpoint).map(User.self).save().mapToLce()
+        return net
+    }
+    
+    public func logout() -> Observable<Lce<Void>> {
         // Clear UserDefaults
         //UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
         //UserDefaults.standard.synchronize()
@@ -47,6 +54,8 @@ public class LoginService {
             os_log("Error during Realm deleteAll operation:\n%@", log: Logger.appLog(), type: .error, "\(error)")
             print(error)
         }
+        
+        return Observable.just(Lce(loading: false))
     }
     
 }

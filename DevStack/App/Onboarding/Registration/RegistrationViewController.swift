@@ -1,95 +1,82 @@
-//
-//  LoginViewController.swift
+// 
+//  RegistrationViewController.swift
 //  DevStack
 //
-//  Created by Petr Chmelar on 04/02/2019.
+//  Created by Petr Chmelar on 05/03/2019.
 //  Copyright © 2019 Qest. All rights reserved.
 //
 
 import UIKit
 import RxSwift
 
-protocol LoginFlowDelegate: class {
-    func dismiss()
-    func showRegistration()
+protocol RegistrationFlowDelegate: class {
+    func popRegistration()
 }
 
-final class LoginViewController: InputViewController {
-    
+final class RegistrationViewController: InputViewController {
+
     // MARK: FlowDelegate
-    weak var flowDelegate: LoginFlowDelegate?
-    
+    weak var flowDelegate: RegistrationFlowDelegate?
+
     // MARK: ViewModels
-    private var viewModel: LoginViewModel!
-    
+    var viewModel: RegistrationViewModel!
+
     // MARK: UI components
     @IBOutlet private weak var emailTextFieldView: UIView!
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextFieldView: UIView!
     @IBOutlet private weak var passwordTextField: UITextField!
-    @IBOutlet private weak var loginButton: BaseButton!
-    @IBOutlet private weak var registerButton: LocalizedButton!
-    
+    @IBOutlet private weak var registerButton: BaseButton!
+    @IBOutlet private weak var loginButton: LocalizedButton!
+
     // MARK: Stored properties
-    
+
     // MARK: Inits
-    static func instantiate(viewModel: LoginViewModel) -> LoginViewController {
-        let vc = StoryboardScene.Login.initialScene.instantiate()
+    static func instantiate(viewModel: RegistrationViewModel) -> RegistrationViewController {
+        let vc = StoryboardScene.Registration.initialScene.instantiate()
         vc.viewModel = viewModel
         return vc
     }
-    
+
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        #if ALPHA
-        emailTextField.text = "petr.chmelar@qest.cz"
-        passwordTextField.text = "11111111"
-        #elseif BETA
-        emailTextField.text = "petr.chmelar@qest.cz"
-        passwordTextField.text = "11111111"
-        #endif
     }
-    
+
     // MARK: Default methods
     override func setupViewModel() {
         super.setupViewModel()
         
-        let input = LoginViewModel.Input(email: emailTextField.rx.text.orEmpty.asDriver(),
-                                         password: passwordTextField.rx.text.orEmpty.asDriver(),
-                                         loginButtonTaps: loginButton.rx.tap.asSignal())
+        let input = RegistrationViewModel.Input(email: emailTextField.rx.text.orEmpty.asDriver(),
+                                                password: passwordTextField.rx.text.orEmpty.asDriver(),
+                                                registerButtonTaps: registerButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
         
-        output.values.drive(onNext: { (text) in
-            print(text)
-        }).disposed(by: disposeBag)
-        
-        output.loginEvent.drive(onNext: { [weak self] event in
+        output.registrationEvent.drive(onNext: { [weak self] event in
             if event.isLoading {
                 self?.view.startActivityIndicator()
             } else if let error = event.error {
                 self?.view.stopActivityIndicator()
                 AlertHandler.showAlertWithError(
                     error,
-                    messages: [401:L10n.invalidCredentials],
-                    defaultMessage: L10n.signingFailed
+                    messages: [409:L10n.registerViewEmailAlreadyExists],
+                    defaultMessage: L10n.signingUpFailed
                 )
             } else {
                 self?.view.stopActivityIndicator()
-                self?.flowDelegate?.dismiss()
+                self?.flowDelegate?.popRegistration()
             }
         }).disposed(by: disposeBag)
         
-        output.loginButtonEnabled.drive(onNext: { [weak self] (enabled) in
-            self?.loginButton.isEnabled = enabled
+        output.registerButtonEnabled.drive(onNext: { [weak self] (enabled) in
+            self?.registerButton.isEnabled = enabled
         }).disposed(by: disposeBag)
         
-        registerButton.rx.tap.bind { [weak self] in
-            self?.flowDelegate?.showRegistration()
+        loginButton.rx.tap.bind { [weak self] in
+            self?.flowDelegate?.popRegistration()
         }.disposed(by: disposeBag)
     }
-    
+
     override func setupUI() {
         super.setupUI()
         
@@ -101,13 +88,13 @@ final class LoginViewController: InputViewController {
         emailTextField.textContentType = UITextContentType(rawValue: "")
         passwordTextField.textContentType = UITextContentType(rawValue: "")
         
-        registerButton.tintColor = Asset.Colors.mainRed.color
+        loginButton.tintColor = Asset.Colors.mainRed.color
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
-    
-    // MARK: Custom methods
-    
+
+    // MARK: Additional methods
+
 }

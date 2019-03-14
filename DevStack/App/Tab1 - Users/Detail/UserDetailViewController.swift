@@ -22,8 +22,8 @@ final class UserDetailViewController: BaseViewController {
     private var viewModel: UserDetailViewModel!
 
     // MARK: UI components
-    @IBOutlet weak var userImageView: UserImageView!
-    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet private weak var userImageView: UserImageView!
+    @IBOutlet private weak var userNameLabel: UILabel!
     
     // MARK: Stored properties
     private var userId: String!
@@ -61,8 +61,8 @@ final class UserDetailViewController: BaseViewController {
         }).disposed(by: disposeBag)
     }
 
-    override func setupViewAppearance() {
-        super.setupViewAppearance()
+    override func setupUI() {
+        super.setupUI()
         
         navigationItem.title = L10n.userDetailViewToolbarTitle
     }

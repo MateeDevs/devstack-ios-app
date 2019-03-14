@@ -11,7 +11,7 @@ import RealmSwift
 
 @objcMembers public class User: Object, Codable {
     
-    // MARK: Stored properties
+    // MARK: API properties
     public dynamic var id: String = ""
     public dynamic var email: String = ""
     public dynamic var firstName: String = ""
@@ -25,29 +25,29 @@ import RealmSwift
         return "id"
     }
     
-    // MARK: Mapping
-    enum CodingKeys: String, CodingKey {
-        case id
-        case email
-        case firstName
-        case lastName
-        case phone
-        case bio
-        case pictureUrl
-    }
-    
-    // MARK: Decodable
-    convenience required public init(from decoder: Decoder) throws {
-        self.init()
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
-        email = try container.decodeIfPresent(String.self, forKey: .email) ?? ""
-        firstName = try container.decodeIfPresent(String.self, forKey: .firstName) ?? ""
-        lastName = try container.decodeIfPresent(String.self, forKey: .lastName) ?? ""
-        phone = try container.decodeIfPresent(String.self, forKey: .phone)
-        bio = try container.decodeIfPresent(String.self, forKey: .bio)
-        pictureUrl = try container.decodeIfPresent(String.self, forKey: .pictureUrl)
-    }
+//    // MARK: Mapping
+//    enum CodingKeys: String, CodingKey {
+//        case id
+//        case email
+//        case firstName
+//        case lastName
+//        case phone
+//        case bio
+//        case pictureUrl
+//    }
+//
+//    // MARK: Decodable
+//    convenience required public init(from decoder: Decoder) throws {
+//        self.init()
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
+//        email = try container.decodeIfPresent(String.self, forKey: .email) ?? ""
+//        firstName = try container.decodeIfPresent(String.self, forKey: .firstName) ?? ""
+//        lastName = try container.decodeIfPresent(String.self, forKey: .lastName) ?? ""
+//        phone = try container.decodeIfPresent(String.self, forKey: .phone)
+//        bio = try container.decodeIfPresent(String.self, forKey: .bio)
+//        pictureUrl = try container.decodeIfPresent(String.self, forKey: .pictureUrl)
+//    }
     
     // MARK: Encodable
     public func encode(to encoder: Encoder) throws {

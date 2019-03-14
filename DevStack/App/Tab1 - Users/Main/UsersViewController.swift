@@ -55,8 +55,8 @@ final class UsersViewController: BaseTableViewController<User> {
         }).disposed(by: disposeBag)
     }
 
-    override func setupViewAppearance() {
-        super.setupViewAppearance()
+    override func setupUI() {
+        super.setupUI()
         
         navigationItem.title = L10n.usersViewToolbarTitle
     }
