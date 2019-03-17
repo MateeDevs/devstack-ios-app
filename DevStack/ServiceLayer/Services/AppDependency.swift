@@ -12,10 +12,11 @@ public protocol HasNoService {
 public struct AppDependency: HasNoService, HasLoginService, HasUserService, HasLocationManager {
     public let loginService: LoginService
     public let userService: UserService
-    public lazy var locationManager = LocationManager()
+    public let locationManager: LocationManager
     
-    public init(loginService: LoginService, userService: UserService) {
+    public init(loginService: LoginService, userService: UserService, locationManager: LocationManager) {
         self.loginService = loginService
         self.userService = userService
+        self.locationManager = locationManager
     }
 }

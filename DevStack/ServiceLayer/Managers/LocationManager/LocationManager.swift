@@ -11,23 +11,26 @@ import CoreLocation
 import RxSwift
 
 public protocol HasLocationManager {
-    var locationManager: LocationManager { mutating get }
+    var locationManager: LocationManager { get }
 }
 
-public struct LocationManager {
+public class LocationManager {
     
-    private var locationManager: CLLocationManager = {
+    private lazy var locationManager: CLLocationManager = {
         let locationMgr = CLLocationManager()
         locationMgr.requestWhenInUseAuthorization()
         locationMgr.startUpdatingLocation()
         return locationMgr
     }()
     
-    public lazy var currentLocation = locationManager.rx.didUpdateLocations
-        .map { locations in
-            return locations[0]
-        }.filter { location in
-            return location.horizontalAccuracy < kCLLocationAccuracyHundredMeters
-        }.take(1)
-    
+    /// Function for observing current location
+    public func getCurrentLocation() -> Observable<CLLocation> {
+        return locationManager.rx.didUpdateLocations
+            .map { locations in
+                return locations[0]
+            }.filter { location in
+                return location.horizontalAccuracy < kCLLocationAccuracyHundredMeters
+            }
+    }
+
 }

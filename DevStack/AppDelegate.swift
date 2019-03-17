@@ -74,7 +74,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func makeDependencies() -> AppDependency {
         return AppDependency(
             loginService: LoginService(),
-            userService: UserService()
+            userService: UserService(),
+            locationManager: LocationManager()
         )
     }
     
