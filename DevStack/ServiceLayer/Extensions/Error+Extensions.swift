@@ -8,13 +8,12 @@
 
 import Foundation
 import RxSwift
-import os.log
 
 extension Error {
     
     func asServiceError<T: Any>() -> Observable<Lce<T>> {
         guard let serviceError = self as? ServiceError else {
-            os_log("Error can't be converted to ServiceError:\n%@", log: Logger.appLog(), type: .error, "\(self)")
+            Logger.error("Error can't be converted to ServiceError:\n%@", "\(self)", category: .app)
             return Observable.error(self)
         }
         return Observable.just(Lce(error: serviceError))

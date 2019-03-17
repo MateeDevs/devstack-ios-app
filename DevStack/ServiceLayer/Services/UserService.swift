@@ -25,21 +25,19 @@ public class UserService {
     
     public func downloadUsersForPage(_ page: Int) -> Observable<Lce<[User]>> {
         let endpoint = UserAPI.getUsersForPage(page)
-        let net = network.observableRequest(endpoint).map([User].self, atKeyPath: "data").save().mapToLce()
-        return net.startWith(Lce(loading: true))
+        return network.observableRequest(endpoint).map([User].self, atKeyPath: "data").save().mapToLce()
     }
     
     public func getUserById(_ id: String) -> Observable<Lce<User>> {
         let db = database.observableObject(User.self, id: id)
         let endpoint = UserAPI.getUserById(id)
         let net = network.observableRequest(endpoint).map(User.self).save().mapToLce()
-        return Observable.merge(db, net).startWith(Lce(loading: true))
+        return Observable.merge(db, net)
     }
     
     public func updateUser(_ user: User) -> Observable<Lce<User>> {
         let endpoint = UserAPI.updateUser(user)
-        let net = network.observableRequest(endpoint).map(User.self).save().mapToLce()
-        return net.startWith(Lce(loading: true))
+        return network.observableRequest(endpoint).map(User.self).save().mapToLce()
     }
     
 }

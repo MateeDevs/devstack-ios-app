@@ -26,15 +26,11 @@ final class LoginViewModel: ViewModel, ViewModelType {
     }
     
     struct Output {
-        let values: Driver<String>
         let loginEvent: Driver<Lce<Void>>
         let loginButtonEnabled: Driver<Bool>
     }
     
     func transform(input: Input) -> Output {
-        
-        let values = Driver.combineLatest(input.email, input.password) { "Email: \($0); Password: \($1)" }
-        
         let activity = ActivityIndicator()
         let inputs = Driver.combineLatest(input.email, input.password) { (email: $0, password: $1) }
         
@@ -44,7 +40,6 @@ final class LoginViewModel: ViewModel, ViewModelType {
             } else {
                 return self.dependencies.loginService.login(email: inputs.email, password: inputs.password)
                     .trackActivity(activity)
-                    .startWith(Lce(loading: true))
                     .asDriverOnErrorJustComplete()
             }
         }
@@ -53,6 +48,6 @@ final class LoginViewModel: ViewModel, ViewModelType {
             return !activity
         })
         
-        return Output(values: values, loginEvent: loginEvent, loginButtonEnabled: loginButtonEnabled)
+        return Output(loginEvent: loginEvent, loginButtonEnabled: loginButtonEnabled)
     }
 }

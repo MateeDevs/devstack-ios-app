@@ -39,7 +39,6 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
             } else {
                 return self.dependencies.loginService.registration(email: inputs.email, password: inputs.password, firstName: "Anonymous", lastName: "")
                     .trackActivity(activity)
-                    .startWith(Lce(loading: true))
                     .asDriverOnErrorJustComplete()
             }
         }

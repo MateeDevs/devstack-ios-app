@@ -8,7 +8,6 @@
 
 import Foundation
 import KeychainAccess
-import os.log
 
 struct KeychainCoding {
     static let authToken = "authToken"
@@ -33,7 +32,7 @@ class KeychainStore {
             let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")
             try keychain.remove(key)
         } catch let error {
-            os_log("Error during KeychainStore delete operation:\n%@", log: Logger.appLog(), type: .error, "\(error)")
+            Logger.error("Error during KeychainStore delete operation:\n%@", "\(error)", category: .app)
         }
     }
     

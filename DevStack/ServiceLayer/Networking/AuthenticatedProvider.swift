@@ -13,7 +13,6 @@ import Foundation
 import Moya
 import Alamofire
 import RxSwift
-import os.log
 
 final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetType {
     
@@ -50,7 +49,7 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
                 let request = try endpoint.urlRequest()
                 done(.success(request))
             } catch let error as NSError {
-                os_log("Moya request closure error:\n%@", log: Logger.networkingLog(), type: .error, "\(error)")
+                Logger.error("Moya request closure error:\n%@", "\(error)", category: .networking)
                 return
             }
         }

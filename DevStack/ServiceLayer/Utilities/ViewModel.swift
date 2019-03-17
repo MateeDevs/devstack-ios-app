@@ -7,15 +7,13 @@
 //
 
 import Foundation
-import os.log
 
 open class ViewModel {
-    
     init() {
-        os_log("%@ initialized", log: Logger.lifecycleLog(), type: .info, "\(self)")
+        Logger.info("%@ initialized", "\(self)", category: .lifecycle)
     }
     
     deinit {
-        os_log("%@ deinitialized", log: Logger.lifecycleLog(), type: .info, "\(self)")
+        Logger.info("%@ deinitialized", "\(self)", category: .lifecycle)
     }
 }

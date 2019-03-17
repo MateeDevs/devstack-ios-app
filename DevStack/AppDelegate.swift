@@ -20,11 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         #if ALPHA
-        print("ALPHA environment")
+        Logger.info("ALPHA environment", category: .app)
         #elseif BETA
-        print("BETA environment")
+        Logger.info("BETA environment", category: .app)
         #else
-        print("PRODUCTION environment")
+        Logger.info("PRODUCTION environment", category: .app)
         #endif
         
         Fabric.with([Crashlytics.self])

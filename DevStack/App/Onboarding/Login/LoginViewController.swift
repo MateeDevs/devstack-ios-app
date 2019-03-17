@@ -61,10 +61,6 @@ final class LoginViewController: InputViewController {
                                          loginButtonTaps: loginButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
         
-        output.values.drive(onNext: { (text) in
-            print(text)
-        }).disposed(by: disposeBag)
-        
         output.loginEvent.drive(onNext: { [weak self] event in
             if event.isLoading {
                 self?.view.startActivityIndicator()

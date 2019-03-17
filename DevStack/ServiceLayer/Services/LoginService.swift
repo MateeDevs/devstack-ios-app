@@ -9,7 +9,6 @@
 import Foundation
 import RxSwift
 import RealmSwift
-import os.log
 
 public protocol HasLoginService {
     var loginService: LoginService { get }
@@ -22,18 +21,16 @@ public class LoginService {
     
     public func login(email: String, password: String) -> Observable<Lce<Void>> {
         let endpoint = AuthAPI.login(email: email, password: password)
-        let net = network.observableRequest(endpoint).map(AuthToken.self).do(onNext: { (authToken) in
+        return network.observableRequest(endpoint).map(AuthToken.self).do(onNext: { (authToken) in
             KeychainStore.save(key: KeychainCoding.authToken, value: authToken.token)
             KeychainStore.save(key: KeychainCoding.userId, value: authToken.userId)
-        }).mapToLceVoid().startWith(Lce(loading: true))
-        return net
+        }).mapToLceVoid()
     }
     
     public func registration(email: String, password: String, firstName: String, lastName: String) -> Observable<Lce<User>> {
         let user = User(value: ["firstName": firstName, "lastName": lastName])
         let endpoint = AuthAPI.registration(email: email, password: password, user: user)
-        let net = network.observableRequest(endpoint).map(User.self).save().mapToLce()
-        return net
+        return network.observableRequest(endpoint).map(User.self).save().mapToLce()
     }
     
     public func logout() -> Observable<Lce<Void>> {
@@ -51,8 +48,7 @@ public class LoginService {
                 realm.deleteAll()
             }
         } catch let error as NSError {
-            os_log("Error during Realm deleteAll operation:\n%@", log: Logger.appLog(), type: .error, "\(error)")
-            print(error)
+            Logger.error("Error during Realm deleteAll operation:\n%@", "\(error)", category: .app)
         }
         
         return Observable.just(Lce(loading: false))

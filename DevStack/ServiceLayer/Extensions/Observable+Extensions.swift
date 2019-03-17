@@ -33,7 +33,7 @@ extension ObservableType {
     func mapToLceVoid() -> Observable<Lce<Void>> {
         return map { _ in
             return Lce(data: Void())
-        }
+        }.catchError({ (error) in error.asServiceError() }).startWith(Lce(loading: true))
     }
     
 }

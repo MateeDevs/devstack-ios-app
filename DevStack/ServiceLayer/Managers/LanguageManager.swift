@@ -10,7 +10,6 @@
 //
 
 import Foundation
-import os.log
 
 public enum Language: String {
     case ar,cs,en,sk
@@ -44,11 +43,13 @@ public class LanguageManager {
     /// Returns the selected language
     public var selectedLanguage: Language {
         get {
-            guard let language = UserDefaults.standard.string(forKey: LanguageManagerCoding.selectedLanguage) else {
-                os_log("LanguageManager default language not set.", log: Logger.appLog(), type: .info)
-                return Language(rawValue: "en")!
+            guard
+                let savedLanguage = UserDefaults.standard.string(forKey: LanguageManagerCoding.selectedLanguage),
+                let language = Language(rawValue: savedLanguage) else {
+                    Logger.info("LanguageManager: Default language not set, fallback to english applied.", category: .app)
+                    return .en
             }
-            return Language(rawValue: language)!
+            return language
         }
         set {
             UserDefaults.standard.set(newValue.rawValue, forKey: LanguageManagerCoding.selectedLanguage)
