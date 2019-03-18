@@ -42,6 +42,7 @@ public struct Logger {
         case 3: os_log(message, log: category.log, type: type, a[0], a[1], a[2])
         case 2: os_log(message, log: category.log, type: type, a[0], a[1])
         case 1: os_log(message, log: category.log, type: type, a[0])
+        case 0: os_log(message, log: category.log, type: type)
         default: os_log("Can't log message. Wrong number of arguments!", log: category.log, type: type)
         }
     }

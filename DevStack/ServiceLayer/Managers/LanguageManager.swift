@@ -26,9 +26,6 @@ public enum Language: String {
             return L10n.languageSkFullname
         }
     }
-    
-    public static let allCases = [ar, cs, en, sk]
-    public static let allValues = allCases.map({ $0.rawValue })
 }
 
 private enum LanguageManagerCoding {
