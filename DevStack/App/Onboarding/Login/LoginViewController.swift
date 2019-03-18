@@ -66,18 +66,14 @@ final class LoginViewController: InputViewController {
                 self?.view.startActivityIndicator()
             } else if let error = event.error {
                 self?.view.stopActivityIndicator()
-                AlertHandler.showAlertWithError(
-                    error,
-                    messages: [401:L10n.invalidCredentials],
-                    defaultMessage: L10n.signingFailed
-                )
+                AlertHandler.showAlertWithError(error)
             } else {
                 self?.view.stopActivityIndicator()
                 self?.flowDelegate?.dismiss()
             }
         }).disposed(by: disposeBag)
         
-        output.loginButtonEnabled.drive(onNext: { [weak self] (enabled) in
+        output.loginButtonEnabled.drive(onNext: { [weak self] enabled in
             self?.loginButton.isEnabled = enabled
         }).disposed(by: disposeBag)
         

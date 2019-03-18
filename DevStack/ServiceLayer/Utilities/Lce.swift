@@ -14,7 +14,7 @@ import Foundation
 public class Lce<T> {
     public let isLoading: Bool
     public let hasError: Bool
-    public let error: ServiceError?
+    public let error: Error?
     public let data: T?
     
     public init(loading: Bool) {
@@ -31,7 +31,7 @@ public class Lce<T> {
         self.data = data
     }
     
-    public init(error: ServiceError) {
+    public init(error: Error) {
         self.isLoading = false
         self.hasError = true
         self.error = error

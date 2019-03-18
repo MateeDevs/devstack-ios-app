@@ -11,11 +11,16 @@ import RxSwift
 
 extension Error {
     
-    func asServiceError<T: Any>() -> Observable<Lce<T>> {
-        guard let serviceError = self as? ServiceError else {
-            Logger.error("Error can't be converted to ServiceError:\n%@", "\(self)", category: .app)
-            return Observable.error(self)
+    func asLceError<T: Any>(_ errors: LceErrors? = nil) -> Observable<Lce<T>> {
+        
+        Logger.error("%@", localizedDescription, category: .app)
+        
+        guard let serviceError = self as? ServiceError else { return Observable.error(self) }
+        
+        if let message = errors?.messages[serviceError.statusCode] {
+            return Observable.just(Lce(error: ServiceError(statusCode: serviceError.statusCode, message: message)))
+        } else {
+            return Observable.just(Lce(error: ServiceError(statusCode: serviceError.statusCode, message: errors?.defaultMessage)))
         }
-        return Observable.just(Lce(error: serviceError))
     }
 }

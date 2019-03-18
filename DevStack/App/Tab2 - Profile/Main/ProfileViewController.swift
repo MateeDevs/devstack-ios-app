@@ -56,7 +56,7 @@ final class ProfileViewController: BaseViewController {
         let userViewModelInput = UserDetailViewModel.Input()
         let userViewModelOutput = userViewModel.transform(input: userViewModelInput)
         
-        userViewModelOutput.getUserDetailEvent.drive(onNext: { [weak self] (event) in
+        userViewModelOutput.getUserDetailEvent.drive(onNext: { [weak self] event in
             if let userDetail = event.data {
                 self?.user = userDetail
             }

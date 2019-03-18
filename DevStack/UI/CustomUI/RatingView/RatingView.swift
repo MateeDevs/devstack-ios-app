@@ -90,13 +90,13 @@ public protocol RatingViewDelegate: class {
     }
     
     private func paintStars() {
-        starArray.forEach { (imageView) in
+        starArray.forEach { imageView in
             imageView.imageColor = starDefaultColor
         }
     }
     
     private func paintEmptyStars() {
-        starEmptyArray.forEach { (imageView) in
+        starEmptyArray.forEach { imageView in
             imageView.imageColor = starEmptyColor
         }
     }

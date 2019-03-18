@@ -57,18 +57,14 @@ final class RegistrationViewController: InputViewController {
                 self?.view.startActivityIndicator()
             } else if let error = event.error {
                 self?.view.stopActivityIndicator()
-                AlertHandler.showAlertWithError(
-                    error,
-                    messages: [409:L10n.registerViewEmailAlreadyExists],
-                    defaultMessage: L10n.signingUpFailed
-                )
+                AlertHandler.showAlertWithError(error)
             } else {
                 self?.view.stopActivityIndicator()
                 self?.flowDelegate?.popRegistration()
             }
         }).disposed(by: disposeBag)
         
-        output.registerButtonEnabled.drive(onNext: { [weak self] (enabled) in
+        output.registerButtonEnabled.drive(onNext: { [weak self] enabled in
             self?.registerButton.isEnabled = enabled
         }).disposed(by: disposeBag)
         

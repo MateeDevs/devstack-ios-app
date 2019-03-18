@@ -18,22 +18,28 @@ extension ObservableType {
         }
     }
     
-    func mapToLce<T: Any>() -> Observable<Lce<T>> where E == T {
+    func mapToLce<T: Any>(_ errors: LceErrors? = nil) -> Observable<Lce<T>> where E == T {
         return flatMap({ object -> Observable<Lce<T>> in
             return Observable.just(Lce<T>(data: object))
-        }).catchError({ (error) in error.asServiceError() }).startWith(Lce(loading: true))
+        }).catchError({ error in
+            error.asLceError(errors)
+        }).startWith(Lce(loading: true))
     }
     
-    func mapToLce<T: Any>() -> Observable<Lce<[T]>> where E == [T] {
+    func mapToLce<T: Any>(_ errors: LceErrors? = nil) -> Observable<Lce<[T]>> where E == [T] {
         return flatMap({ objects -> Observable<Lce<[T]>> in
             return Observable.just(Lce<[T]>(data: objects))
-        }).catchError({ (error) in error.asServiceError() }).startWith(Lce(loading: true))
+        }).catchError({ error in
+            error.asLceError(errors)
+        }).startWith(Lce(loading: true))
     }
     
-    func mapToLceVoid() -> Observable<Lce<Void>> {
+    func mapToLceVoid(_ errors: LceErrors? = nil) -> Observable<Lce<Void>> {
         return map { _ in
             return Lce(data: Void())
-        }.catchError({ (error) in error.asServiceError() }).startWith(Lce(loading: true))
+        }.catchError({ error in
+            error.asLceError(errors)
+        }).startWith(Lce(loading: true))
     }
     
 }

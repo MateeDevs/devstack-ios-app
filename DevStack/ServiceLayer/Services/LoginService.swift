@@ -21,16 +21,18 @@ public class LoginService {
     
     public func login(email: String, password: String) -> Observable<Lce<Void>> {
         let endpoint = AuthAPI.login(email: email, password: password)
-        return network.observableRequest(endpoint).map(AuthToken.self).do(onNext: { (authToken) in
+        let errors = LceErrors(messages: [401: L10n.invalidCredentials], defaultMessage: L10n.signingFailed)
+        return network.observableRequest(endpoint).map(AuthToken.self).do(onNext: { authToken in
             KeychainStore.save(key: KeychainCoding.authToken, value: authToken.token)
             KeychainStore.save(key: KeychainCoding.userId, value: authToken.userId)
-        }).mapToLceVoid()
+        }).mapToLceVoid(errors)
     }
     
     public func registration(email: String, password: String, firstName: String, lastName: String) -> Observable<Lce<User>> {
         let user = User(value: ["firstName": firstName, "lastName": lastName])
         let endpoint = AuthAPI.registration(email: email, password: password, user: user)
-        return network.observableRequest(endpoint).map(User.self).save().mapToLce()
+        let errors = LceErrors(messages: [409: L10n.registerViewEmailAlreadyExists], defaultMessage: L10n.signingUpFailed)
+        return network.observableRequest(endpoint).map(User.self).save().mapToLce(errors)
     }
     
     public func logout() -> Observable<Lce<Void>> {

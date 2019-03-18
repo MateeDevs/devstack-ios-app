@@ -8,13 +8,17 @@
 
 import Foundation
 
-public class ServiceError: Error {
+struct ServiceError: LocalizedError {
     
-    public let statusCode: Int
-    public let message: String
+    let statusCode: Int
+    let message: String?
     
-    public init(statusCode: Int = StatusCode.unknown, message: String = L10n.unknownError) {
+    init(statusCode: Int, message: String?) {
         self.statusCode = statusCode
         self.message = message
+    }
+    
+    public var errorDescription: String? {
+        return message ?? L10n.unknownError
     }
 }

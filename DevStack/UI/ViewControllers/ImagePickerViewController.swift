@@ -34,12 +34,12 @@ open class ImagePickerViewController: BaseViewController {
         // Setup action sheet with camera/library options
         let actionSheetController = UIAlertController(title: imagePickerTitle, message: imagePickerSubtitle, preferredStyle: .actionSheet)
         
-        let photoLibrary = UIAlertAction(title: L10n.imagePickerLibrary, style: .default, handler: { [weak self] (action) in
+        let photoLibrary = UIAlertAction(title: L10n.imagePickerLibrary, style: .default, handler: { [weak self] action in
             self?.selectPhoto(sourceType: .photoLibrary)
         })
         actionSheetController.addAction(photoLibrary)
         
-        let takePhotoByCamera = UIAlertAction(title: L10n.imagePickerCamera, style: .default, handler: { [weak self] (action) in
+        let takePhotoByCamera = UIAlertAction(title: L10n.imagePickerCamera, style: .default, handler: { [weak self] action in
             self?.selectPhoto(sourceType: .camera)
         })
         actionSheetController.addAction(takePhotoByCamera)

@@ -46,11 +46,11 @@ final class UsersViewController: BaseTableViewController<User> {
         let input = UsersViewModel.Input(page: page)
         let output = viewModel.transform(input: input)
         
-        output.getUsersEvent.drive(onNext: { [weak self] (event) in
+        output.getUsersEvent.drive(onNext: { [weak self] event in
             self?.handleDatabaseData(event)
         }).disposed(by: disposeBag)
         
-        output.downloadUsersEvent.drive(onNext: { [weak self] (event) in
+        output.downloadUsersEvent.drive(onNext: { [weak self] event in
             self?.handleNetworkData(event)
         }).disposed(by: disposeBag)
     }

@@ -20,7 +20,8 @@ extension ObservableType where E == Response {
             if 200 ... 299 ~= response.statusCode {
                 return Observable.just(response)
             } else {
-                return Observable.error(ServiceError(statusCode: response.statusCode))
+                let message = String(data: response.data, encoding: String.Encoding.utf8)
+                return Observable.error(ServiceError(statusCode: response.statusCode, message: message))
             }
         }
     }

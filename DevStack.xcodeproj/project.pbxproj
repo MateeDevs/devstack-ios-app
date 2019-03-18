@@ -67,6 +67,12 @@
 		453CEAC721583A7D00A94BAC /* RatingViewSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453CEAC021583A7C00A94BAC /* RatingViewSmall.swift */; };
 		453CEAC821583A7D00A94BAC /* RatingViewSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453CEAC021583A7C00A94BAC /* RatingViewSmall.swift */; };
 		453CEAC921583A7D00A94BAC /* RatingViewSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453CEAC021583A7C00A94BAC /* RatingViewSmall.swift */; };
+		454FEE3922404B2C00EB7A54 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3822404B2C00EB7A54 /* ValidationError.swift */; };
+		454FEE3A22404B2C00EB7A54 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3822404B2C00EB7A54 /* ValidationError.swift */; };
+		454FEE3B22404B2C00EB7A54 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3822404B2C00EB7A54 /* ValidationError.swift */; };
+		454FEE3D2240601E00EB7A54 /* LceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3C2240601E00EB7A54 /* LceErrors.swift */; };
+		454FEE3E2240601E00EB7A54 /* LceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3C2240601E00EB7A54 /* LceErrors.swift */; };
+		454FEE3F2240601E00EB7A54 /* LceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3C2240601E00EB7A54 /* LceErrors.swift */; };
 		455261B52109F36F00E5F1E1 /* Moya+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261B42109F36F00E5F1E1 /* Moya+Extensions.swift */; };
 		455261B62109F36F00E5F1E1 /* Moya+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261B42109F36F00E5F1E1 /* Moya+Extensions.swift */; };
 		455261B72109F36F00E5F1E1 /* Moya+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261B42109F36F00E5F1E1 /* Moya+Extensions.swift */; };
@@ -416,6 +422,8 @@
 		453CEAB221553E1F00A94BAC /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		453CEABF21583A7C00A94BAC /* RatingViewSmall.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingViewSmall.xib; sourceTree = "<group>"; };
 		453CEAC021583A7C00A94BAC /* RatingViewSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewSmall.swift; sourceTree = "<group>"; };
+		454FEE3822404B2C00EB7A54 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		454FEE3C2240601E00EB7A54 /* LceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LceErrors.swift; sourceTree = "<group>"; };
 		455261B42109F36F00E5F1E1 /* Moya+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+Extensions.swift"; sourceTree = "<group>"; };
 		455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		455261C2210AFE1100E5F1E1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -635,6 +643,17 @@
 			path = RatingView;
 			sourceTree = "<group>";
 		};
+		454FEE3722404B1400EB7A54 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				454FEE3C2240601E00EB7A54 /* LceErrors.swift */,
+				456852542105D024006D3618 /* ServiceError.swift */,
+				45B76D9121359138003BB997 /* StatusCode.swift */,
+				454FEE3822404B2C00EB7A54 /* ValidationError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		455261CA210B156B00E5F1E1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -743,12 +762,11 @@
 		4568524C2105CFD8006D3618 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				454FEE3722404B1400EB7A54 /* Errors */,
 				45B76D8A213590C5003BB997 /* ActivityIndicator.swift */,
 				45A92DFC2109ABE9007579AC /* Lce.swift */,
 				45E8A4A8220AEBAE003F7502 /* Logger.swift */,
 				4589DDF3213FF93700800E67 /* PreviewObject.swift */,
-				456852542105D024006D3618 /* ServiceError.swift */,
-				45B76D9121359138003BB997 /* StatusCode.swift */,
 				45E8A49A220AD4CB003F7502 /* ViewModel.swift */,
 				459762E220FE21BC0034DE29 /* ViewModelType.swift */,
 			);
@@ -1667,6 +1685,7 @@
 				45890B2421FF5E8F00894255 /* AuthToken.swift in Sources */,
 				A8A2E502217DD3C70006023F /* GradientView.swift in Sources */,
 				4589DDF4213FF93700800E67 /* PreviewObject.swift in Sources */,
+				454FEE3D2240601E00EB7A54 /* LceErrors.swift in Sources */,
 				45976371210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A3216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
 				450D3DEB2111F043008BAE71 /* KeychainStore.swift in Sources */,
@@ -1746,6 +1765,7 @@
 				45890B4722086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2B22159EE90036919A /* NetworkManager.swift in Sources */,
 				45A3D59F2119B76000E39169 /* Realm+Extensions.swift in Sources */,
+				454FEE3922404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				45890B4322086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B5220AEF90003F7502 /* FlowController.swift in Sources */,
 				45B76D99213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
@@ -1778,6 +1798,7 @@
 				45890B2521FF5E8F00894255 /* AuthToken.swift in Sources */,
 				4597625720FDEBEB0034DE29 /* MainFlowController.swift in Sources */,
 				4589DDF5213FF93700800E67 /* PreviewObject.swift in Sources */,
+				454FEE3E2240601E00EB7A54 /* LceErrors.swift in Sources */,
 				45976372210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A4216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
 				450D3DEC2111F043008BAE71 /* KeychainStore.swift in Sources */,
@@ -1857,6 +1878,7 @@
 				45890B4822086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2C22159EE90036919A /* NetworkManager.swift in Sources */,
 				45A3D5A02119B76000E39169 /* Realm+Extensions.swift in Sources */,
+				454FEE3A22404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				45890B4422086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B6220AEF90003F7502 /* FlowController.swift in Sources */,
 				45B76D9A213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
@@ -1889,6 +1911,7 @@
 				45890B2621FF5E8F00894255 /* AuthToken.swift in Sources */,
 				A8A2E504217DD3C70006023F /* GradientView.swift in Sources */,
 				4589DDF6213FF93700800E67 /* PreviewObject.swift in Sources */,
+				454FEE3F2240601E00EB7A54 /* LceErrors.swift in Sources */,
 				45976373210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A5216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
 				450D3DED2111F043008BAE71 /* KeychainStore.swift in Sources */,
@@ -1968,6 +1991,7 @@
 				45890B4922086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2D22159EE90036919A /* NetworkManager.swift in Sources */,
 				45A3D5A12119B76000E39169 /* Realm+Extensions.swift in Sources */,
+				454FEE3B22404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				45890B4522086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B7220AEF90003F7502 /* FlowController.swift in Sources */,
 				45B76D9B213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
@@ -2131,7 +2155,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5GVVJYAWEG;
 				INFOPLIST_FILE = "$(SRCROOT)/DevStack/App/DevStack-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack;
 				PRODUCT_NAME = DevStack;
@@ -2149,7 +2176,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5GVVJYAWEG;
 				INFOPLIST_FILE = "$(SRCROOT)/DevStack/App/DevStack-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack;
 				PRODUCT_NAME = DevStack;
@@ -2169,7 +2199,10 @@
 				"DEBUG_INFORMATION_FORMAT[sdk=iphonesimulator*]" = dwarf;
 				DEVELOPMENT_TEAM = 5GVVJYAWEG;
 				INFOPLIST_FILE = "$(SRCROOT)/DevStack/App/DevStack_Alpha-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DALPHA\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack.alpha;
 				PRODUCT_NAME = "A-DevStack";
@@ -2187,7 +2220,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5GVVJYAWEG;
 				INFOPLIST_FILE = "$(SRCROOT)/DevStack/App/DevStack_Alpha-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DALPHA\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack.alpha;
 				PRODUCT_NAME = "A-DevStack";
@@ -2205,7 +2241,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5GVVJYAWEG;
 				INFOPLIST_FILE = "$(SRCROOT)/DevStack/App/DevStack_Beta-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DBETA\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack.beta;
 				PRODUCT_NAME = "B-DevStack";
@@ -2223,7 +2262,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5GVVJYAWEG;
 				INFOPLIST_FILE = "$(SRCROOT)/DevStack/App/DevStack_Beta-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DBETA\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack.beta;
 				PRODUCT_NAME = "B-DevStack";
