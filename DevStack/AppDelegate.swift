@@ -106,12 +106,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Appearance
     private func appAppearance() {
         
-        // Status bar and Navigation bar
+        // Navigation bar
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        
-        UIApplication.shared.statusBarView?.backgroundColor = ColorTheme.mainColor
         UINavigationBar.appearance().barTintColor = ColorTheme.mainColor
         
         // Tab bar

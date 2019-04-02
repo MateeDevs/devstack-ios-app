@@ -23,13 +23,11 @@ class OnboardingFlowController: FlowController, LoginFlowDelegate, RegistrationF
         vc.flowDelegate = self
         navigationController.viewControllers = [vc]
         navigationController.navigationBar.isHidden = true
-        UIApplication.shared.statusBarView?.backgroundColor = Asset.Colors.mainBackground.color
     }
     
     func dismiss() {
         delegate?.setupMain()
         navigationController.dismiss(animated: true, completion: nil)
-        UIApplication.shared.statusBarView?.backgroundColor = ColorTheme.mainColor
         stopChildFlow()
     }
     

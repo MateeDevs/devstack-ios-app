@@ -10,10 +10,6 @@ import UIKit
 
 extension UIApplication {
     
-    public var statusBarView: UIView? {
-        return value(forKey: "statusBar") as? UIView
-    }
-    
     public var safeAreaInsets: UIEdgeInsets? {
         guard #available(iOS 11.0, *), let window = UIApplication.shared.keyWindow else { return nil }
         return window.safeAreaInsets
