@@ -10,6 +10,9 @@
 		450384752170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
 		450384762170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
 		450384772170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
+		450392852256B29D0037BF42 /* GoogleService-Info-Alpha.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450392842256B29D0037BF42 /* GoogleService-Info-Alpha.plist */; };
+		450392872256B35E0037BF42 /* GoogleService-Info-Beta.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450392862256B35E0037BF42 /* GoogleService-Info-Beta.plist */; };
+		450392892256B3C60037BF42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450392882256B3C60037BF42 /* GoogleService-Info.plist */; };
 		450D3DC7210F4A6C008BAE71 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450D3DC6210F4A6C008BAE71 /* Date+Extensions.swift */; };
 		450D3DC8210F4A6C008BAE71 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450D3DC6210F4A6C008BAE71 /* Date+Extensions.swift */; };
 		450D3DC9210F4A6C008BAE71 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450D3DC6210F4A6C008BAE71 /* Date+Extensions.swift */; };
@@ -395,6 +398,9 @@
 		3108F6D7CC6CF709865E9678 /* Pods-DevStack_Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Alpha.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha.release.xcconfig"; sourceTree = "<group>"; };
 		3266EC7634F7BCD070190849 /* Pods-DevStack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack/Pods-DevStack.release.xcconfig"; sourceTree = "<group>"; };
 		450384742170E4FC004F43DC /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
+		450392842256B29D0037BF42 /* GoogleService-Info-Alpha.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Alpha.plist"; sourceTree = "<group>"; };
+		450392862256B35E0037BF42 /* GoogleService-Info-Beta.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Beta.plist"; sourceTree = "<group>"; };
+		450392882256B3C60037BF42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		450D3DC6210F4A6C008BAE71 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		450D3DD421105261008BAE71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		450D3DDB21105F02008BAE71 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
@@ -458,9 +464,9 @@
 		4589DDF3213FF93700800E67 /* PreviewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewObject.swift; sourceTree = "<group>"; };
 		459761D720FDD60A0034DE29 /* A-DevStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A-DevStack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		459761E520FDD61E0034DE29 /* B-DevStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "B-DevStack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4597621120FDD8E10034DE29 /* DevStack_Alpha-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DevStack_Alpha-Info.plist"; sourceTree = "<group>"; };
-		4597621220FDD8E10034DE29 /* DevStack_Beta-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DevStack_Beta-Info.plist"; sourceTree = "<group>"; };
-		4597621320FDD8E10034DE29 /* DevStack-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DevStack-Info.plist"; sourceTree = "<group>"; };
+		4597621120FDD8E10034DE29 /* Info-Alpha.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Alpha.plist"; sourceTree = "<group>"; };
+		4597621220FDD8E10034DE29 /* Info-Beta.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Beta.plist"; sourceTree = "<group>"; };
+		4597621320FDD8E10034DE29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4597621920FDE4360034DE29 /* AppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
 		4597624D20FDEBC80034DE29 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4597625120FDEBDF0034DE29 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -594,6 +600,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		450392832256B14C0037BF42 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				4597621120FDD8E10034DE29 /* Info-Alpha.plist */,
+				4597621220FDD8E10034DE29 /* Info-Beta.plist */,
+				4597621320FDD8E10034DE29 /* Info.plist */,
+				450392842256B29D0037BF42 /* GoogleService-Info-Alpha.plist */,
+				450392862256B35E0037BF42 /* GoogleService-Info-Beta.plist */,
+				450392882256B3C60037BF42 /* GoogleService-Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		4511A6E0213D2606006AD4CC /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -687,7 +706,6 @@
 				4597626520FDEC350034DE29 /* UI */,
 				459761C820FDD4050034DE29 /* App */,
 				4558D30A20FCC8FF005BC325 /* AppDelegate.swift */,
-				4597621920FDE4360034DE29 /* AppFlowController.swift */,
 			);
 			path = DevStack;
 			sourceTree = "<group>";
@@ -841,14 +859,13 @@
 		459761C820FDD4050034DE29 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				450392832256B14C0037BF42 /* Config */,
 				45890B3322086BC000894255 /* Onboarding */,
 				4597621720FDDE270034DE29 /* Main */,
 				45E8A4E2220B0803003F7502 /* Tab1 - Users */,
 				45890AFA21FF515800894255 /* Tab2 - Profile */,
 				4597622220FDE5440034DE29 /* LaunchScreen */,
-				4597621320FDD8E10034DE29 /* DevStack-Info.plist */,
-				4597621120FDD8E10034DE29 /* DevStack_Alpha-Info.plist */,
-				4597621220FDD8E10034DE29 /* DevStack_Beta-Info.plist */,
+				4597621920FDE4360034DE29 /* AppFlowController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1303,6 +1320,7 @@
 				450D3DD521105261008BAE71 /* Images.xcassets in Resources */,
 				459EC5A022396ED60045BE3B /* UserDetail.storyboard in Resources */,
 				4597624E20FDEBC80034DE29 /* Main.storyboard in Resources */,
+				450392892256B3C60037BF42 /* GoogleService-Info.plist in Resources */,
 				455261C3210AFE1100E5F1E1 /* Colors.xcassets in Resources */,
 				4511A718213D73C8006AD4CC /* ActivityIndicatorView.xib in Resources */,
 			);
@@ -1320,6 +1338,7 @@
 				A83F0EBF21490F1100313067 /* UserImageView.xib in Resources */,
 				45890B2121FF5CD800894255 /* AuthToken.json in Resources */,
 				45128B7A2142A627007B6B47 /* TabBarButton.xib in Resources */,
+				450392852256B29D0037BF42 /* GoogleService-Info-Alpha.plist in Resources */,
 				456852392105BD20006D3618 /* User.json in Resources */,
 				45DA0809222E87780003D32A /* Registration.storyboard in Resources */,
 				45890B4022086C9C00894255 /* Login.storyboard in Resources */,
@@ -1357,6 +1376,7 @@
 				453CEAC321583A7D00A94BAC /* RatingViewSmall.xib in Resources */,
 				45ECA09121676A9D000B1124 /* Localizable.strings in Resources */,
 				450D3DD721105261008BAE71 /* Images.xcassets in Resources */,
+				450392872256B35E0037BF42 /* GoogleService-Info-Beta.plist in Resources */,
 				459EC5A222396ED60045BE3B /* UserDetail.storyboard in Resources */,
 				4597625020FDEBC80034DE29 /* Main.storyboard in Resources */,
 				455261C5210AFE1100E5F1E1 /* Colors.xcassets in Resources */,
@@ -1509,7 +1529,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 18e1a50fbeb901050cdf2ec31d5b9728a4fd6ca7 26d21ec388f36b7bd4ebbbf41cf2e675d9d2d03e71277cdb201e18e95f65e87b";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 18e1a50fbeb901050cdf2ec31d5b9728a4fd6ca7 26d21ec388f36b7bd4ebbbf41cf2e675d9d2d03e71277cdb201e18e95f65e87b\n";
 		};
 		591C1CB3B38410305BBE636A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1517,9 +1537,10 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack/Pods-DevStack-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DevStack/Pods-DevStack-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -1529,11 +1550,13 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -1543,10 +1566,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack/Pods-DevStack-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DevStack/Pods-DevStack-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		78E6FDB10F4506CE89EF4F3D /* [CP] Embed Pods Frameworks */ = {
@@ -1555,9 +1579,10 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -1567,11 +1592,13 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -1581,10 +1608,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		968C7269E3BACFD41354FCA7 /* [CP] Check Pods Manifest.lock */ = {
@@ -1611,9 +1639,10 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -1623,11 +1652,13 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -1637,10 +1668,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods.nosync/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C41C8A2EE11E16B2E3D7151C /* [CP] Check Pods Manifest.lock */ = {
@@ -2136,9 +2168,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5GVVJYAWEG;
-				INFOPLIST_FILE = "$(SRCROOT)/DevStack/App/DevStack-Info.plist";
+				INFOPLIST_FILE = DevStack/App/Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2148,6 +2181,7 @@
 				PRODUCT_NAME = DevStack;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -2157,9 +2191,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5GVVJYAWEG;
-				INFOPLIST_FILE = "$(SRCROOT)/DevStack/App/DevStack-Info.plist";
+				INFOPLIST_FILE = DevStack/App/Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2169,6 +2204,7 @@
 				PRODUCT_NAME = DevStack;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -2178,9 +2214,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Alpha";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5GVVJYAWEG;
-				INFOPLIST_FILE = "$(SRCROOT)/DevStack/App/DevStack_Alpha-Info.plist";
+				INFOPLIST_FILE = "DevStack/App/Config/Info-Alpha.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2190,6 +2227,7 @@
 				PRODUCT_NAME = "A-DevStack";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -2199,9 +2237,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Alpha";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5GVVJYAWEG;
-				INFOPLIST_FILE = "$(SRCROOT)/DevStack/App/DevStack_Alpha-Info.plist";
+				INFOPLIST_FILE = "DevStack/App/Config/Info-Alpha.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2211,6 +2250,7 @@
 				PRODUCT_NAME = "A-DevStack";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -2220,9 +2260,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Beta";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5GVVJYAWEG;
-				INFOPLIST_FILE = "$(SRCROOT)/DevStack/App/DevStack_Beta-Info.plist";
+				INFOPLIST_FILE = "DevStack/App/Config/Info-Beta.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2232,6 +2273,7 @@
 				PRODUCT_NAME = "B-DevStack";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -2241,9 +2283,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Beta";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5GVVJYAWEG;
-				INFOPLIST_FILE = "$(SRCROOT)/DevStack/App/DevStack_Beta-Info.plist";
+				INFOPLIST_FILE = "DevStack/App/Config/Info-Beta.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2253,6 +2296,7 @@
 				PRODUCT_NAME = "B-DevStack";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

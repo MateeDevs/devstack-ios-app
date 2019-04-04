@@ -9,6 +9,7 @@
 import UIKit
 import Fabric
 import Crashlytics
+import Firebase
 import RealmSwift
 
 @UIApplicationMain
@@ -27,9 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Logger.info("PRODUCTION environment", category: .app)
         #endif
         
+        #warning("FIXME: Remove after Crashlytics are fully integrated into Firebase")
         Fabric.with([Crashlytics.self])
         
         realmSetup()
+        firebaseSetup()
         
         appAppearance()
         
@@ -101,6 +104,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         config.deleteRealmIfMigrationNeeded = true
         // Tell Realm to use this new configuration object for the default Realm
         Realm.Configuration.defaultConfiguration = config
+    }
+    
+    // MARK: Firebase
+    private func firebaseSetup() {
+        var filePath: String?
+        #if ALPHA
+        filePath = Bundle.main.path(forResource: "GoogleService-Info-Alpha", ofType: "plist")
+        #elseif BETA
+        filePath = Bundle.main.path(forResource: "GoogleService-Info-Beta", ofType: "plist")
+        #else
+        filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")
+        #endif
+        
+        if let filePath = filePath, let options = FirebaseOptions(contentsOfFile: filePath) {
+            FirebaseApp.configure(options: options)
+        }
     }
     
     // MARK: Appearance

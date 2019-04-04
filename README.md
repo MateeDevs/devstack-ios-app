@@ -36,7 +36,7 @@ FIXME
 ## RubyGems + CocoaPods
 - Vsechny ruby gems pouzivane v projektu (cocoapods, twine, fastlane, ..) instalujeme pres [Bundler](http://bundler.io/)
 - Jednotlive gemy jsou specifikovane v Gemfile a Gemfile.lock a nainstaluji se prikazem `bundle install --path vendor/bundle`
-- Jakykoli z nainstalovanych gemu je mozne spustit prikazem `bundle exec` (napr. `bundle exec pod install` pro cocoapods)
+- Jakykoli z nainstalovanych gemu je mozne spustit prikazem `bundle exec` (napr. `bundle exec pod install --repo-update` pro cocoapods)
 - Commitujeme pouze Gemfile/Gemfile.lock a Podfile/Podfile.lock (adresare Pods a vendor ne!)
 
 ## Style Guide
@@ -58,7 +58,9 @@ FIXME
 ## Build + Release
 - Projekt vyuziva CI/CD pomoci Visual Studio Team Services a [Fastlane](https://fastlane.tools/)
 - Hlavni konfigurace pro Fastlane se nachazi v souboru fastlane/Fastfile
-- Pro vydani nove verze aplikace je nutne nejprve nastavit pozadovane cislo verze a buildu prostrednictvim Xcode
-- Commit, ze ktereho bude sestaven build, je nutne otagovat prikazem: `git tag -a 'build/1.0(1)' -m 'tag message'`
-- Pro spusteni buildu staci pushnout otagovany commit prikazem `git push origin YOUR_BRANCH --tags`
-- Automaticky dojde k buildu alpha/beta/production verze a releasu alpha verze prostrednictvim Testflight
+- Pro vydani nove verze aplikace je nutne nejprve nastavit pozadovane cislo verze prostrednictvim Xcode
+- Cislo buildu je automaticky generovano na CI, hodnota nastavena v Xcode je ignorovana
+- Z aktualni develop branche je nutne vytvorit build branch prikazem `git checkout -b 'build/1.0'`
+- Pro spusteni buildu staci pushnout vytvorenou build branch `git push origin build/1.0`
+- Automaticky dojde k buildu alpha/beta/production verze a releasu alpha verze prostrednictvim TestFlight
+- V pripade ze build branch obsahuje nejake dodatecne zmeny, je nutne vytvorit merge request do developu

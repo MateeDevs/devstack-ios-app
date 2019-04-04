@@ -8,6 +8,7 @@ def shared_pods
     # App analytics
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'Firebase'
     
     # Functional reactive programming
     pod 'RxSwift'
