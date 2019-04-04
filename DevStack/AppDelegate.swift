@@ -15,7 +15,7 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private(set) var window: UIWindow?
-    private var appFlowController: AppFlowController?
+    private(set) var flowController: AppFlowController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -41,9 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
-        // Init app flow controller and start the flow
-        appFlowController = AppFlowController(navigationController: navController, dependencies: makeDependencies())
-        appFlowController?.start()
+        // Init main flow controller and start the flow
+        flowController = AppFlowController(navigationController: navController, dependencies: makeDependencies())
+        flowController?.start()
         
         return true
     }

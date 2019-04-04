@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 protocol ProfileFlowDelegate: class {
     func presentOnboarding()
@@ -19,8 +20,7 @@ final class ProfileViewController: BaseViewController {
     weak var flowDelegate: ProfileFlowDelegate?
 
     // MARK: ViewModels
-    private var userViewModel: UserDetailViewModel!
-    private var logoutViewModel: LogoutViewModel!
+    private var viewModel: UserDetailViewModel!
 
     // MARK: UI components
     @IBOutlet private weak var userImageView: UserImageView!
@@ -36,10 +36,9 @@ final class ProfileViewController: BaseViewController {
     }
     
     // MARK: Inits
-    static func instantiate(userViewModel: UserDetailViewModel, logoutViewModel: LogoutViewModel) -> ProfileViewController {
+    static func instantiate(viewModel: UserDetailViewModel) -> ProfileViewController {
         let vc = StoryboardScene.Profile.initialScene.instantiate()
-        vc.userViewModel = userViewModel
-        vc.logoutViewModel = logoutViewModel
+        vc.viewModel = viewModel
         return vc
     }
 
@@ -52,23 +51,19 @@ final class ProfileViewController: BaseViewController {
     override func setupViewModel() {
         super.setupViewModel()
         
-        // UserViewModel
-        let userViewModelInput = UserDetailViewModel.Input()
-        let userViewModelOutput = userViewModel.transform(input: userViewModelInput)
+        let input = UserDetailViewModel.Input()
+        let output = viewModel.transform(input: input)
         
-        userViewModelOutput.getUserDetailEvent.drive(onNext: { [weak self] event in
+        output.getUserDetailEvent.drive(onNext: { [weak self] event in
             if let userDetail = event.data {
                 self?.user = userDetail
             }
         }).disposed(by: disposeBag)
         
-        // LogoutViewModel
-        let logoutViewModelInput = LogoutViewModel.Input(logoutButtonTaps: logoutButton.rx.tap.asSignal())
-        let logoutViewModelOutput = logoutViewModel.transform(input: logoutViewModelInput)
-        
-        logoutViewModelOutput.logoutEvent.drive(onNext: { [weak self] event in
+        logoutButton.rx.tap.bind { [weak self] in
+            LoginService.logout()
             self?.flowDelegate?.presentOnboarding()
-        }).disposed(by: disposeBag)
+        }.disposed(by: disposeBag)
     }
 
     override func setupUI() {

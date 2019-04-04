@@ -80,8 +80,13 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
     func request(_ target: MultiTarget) -> Single<Moya.Response> {
         let actualRequest = provider.rx.request(target).flatMap { (response) -> PrimitiveSequence<SingleTrait, Response> in
             if response.statusCode == 401 {
-                #warning("TODO: do something clever")
-                return Single.just(response)
+                
+                // Perform logout and present login screen
+                LoginService.logout()
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.flowController?.presentOnboarding()
+                
+                return Single.error(MoyaError.statusCode(response))
             } else {
                 return Single.just(response)
             }

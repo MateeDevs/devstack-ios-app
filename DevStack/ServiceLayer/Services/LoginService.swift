@@ -35,7 +35,7 @@ public class LoginService {
         return network.observableRequest(endpoint).map(User.self).save().mapToLce(errors)
     }
     
-    public func logout() -> Observable<Lce<Void>> {
+    public static func logout() {
         // Clear UserDefaults
         //UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
         //UserDefaults.standard.synchronize()
@@ -52,8 +52,6 @@ public class LoginService {
         } catch let error as NSError {
             Logger.error("Error during Realm deleteAll operation:\n%@", "\(error)", category: .app)
         }
-        
-        return Observable.just(Lce(loading: false))
     }
     
 }

@@ -19,9 +19,8 @@ class ProfileFlowController: FlowController, ProfileFlowDelegate {
     override func start() {
         super.start()
         guard let userId = KeychainStore.get(key: KeychainCoding.userId) else { return }
-        let userVm = UserDetailViewModel(dependencies: dependencies, userId: userId)
-        let logoutVm = LogoutViewModel(dependencies: dependencies)
-        let vc = ProfileViewController.instantiate(userViewModel: userVm, logoutViewModel: logoutVm)
+        let vm = UserDetailViewModel(dependencies: dependencies, userId: userId)
+        let vc = ProfileViewController.instantiate(viewModel: vm)
         vc.flowDelegate = self
         navigationController.viewControllers = [vc]
     }
