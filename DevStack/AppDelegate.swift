@@ -30,12 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         #warning("FIXME: Remove after Crashlytics are fully integrated into Firebase")
         Fabric.with([Crashlytics.self])
-        
+
+        clearKeychain()
         realmSetup()
         firebaseSetup()
         
         appAppearance()
-        
         LanguageManager.shared.setDefaultLanguage(Language(rawValue: NSLocale.current.languageCode ?? "en") ?? .en)
         
         // Init main window with navigation controller
@@ -71,6 +71,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    // MARK: Clear keychain on first run
+    private func clearKeychain() {
+        if !UserDefaults.standard.bool(forKey: "hasRunBefore") {
+            KeychainStore.deleteAll()
+            UserDefaults.standard.set(true, forKey: "hasRunBefore")
+        }
     }
     
     // MARK: Dependencies

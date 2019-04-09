@@ -23,8 +23,8 @@ public class LoginService {
         let endpoint = AuthAPI.login(email: email, password: password)
         let errors = LceErrors(messages: [401: L10n.invalidCredentials], defaultMessage: L10n.signingFailed)
         return network.observableRequest(endpoint).map(AuthToken.self).do(onNext: { authToken in
-            KeychainStore.save(key: KeychainCoding.authToken, value: authToken.token)
-            KeychainStore.save(key: KeychainCoding.userId, value: authToken.userId)
+            KeychainStore.save(.authToken, value: authToken.token)
+            KeychainStore.save(.userId, value: authToken.userId)
         }).mapToLceVoid(errors)
     }
     
@@ -36,10 +36,6 @@ public class LoginService {
     }
     
     public static func logout() {
-        // Clear UserDefaults
-        //UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-        //UserDefaults.standard.synchronize()
-        
         // Clear KeyChain
         KeychainStore.deleteAll()
         

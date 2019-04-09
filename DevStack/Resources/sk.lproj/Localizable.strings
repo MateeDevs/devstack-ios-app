@@ -90,11 +90,11 @@
 
 "hour_unit" = "%1$s h";
 
-"kilomenters_unit" = "%1$s km";
+"kilometer_unit" = "%1$s km";
 
-"kilomenters_unit_number" = "%1$d km";
+"kilometer_unit_number" = "%1$d km";
 
-"kilomenters_unit_label" = "km";
+"kilometer_unit_label" = "km";
 
 "minutes_per_kilometer" = "min/km";
 
@@ -146,27 +146,19 @@
 
 /********** Languages **********/
 
-"language_cs" = "CZ";
-
-"language_cs_fullname_brackets" = "Čeština (CS)";
+"language_cs" = "CS";
 
 "language_cs_fullname" = "Čeština";
 
 "language_sk" = "SK";
 
-"language_sk_fullname_brackets" = "Slovenčina (SK)";
-
 "language_sk_fullname" = "Slovenčina";
 
 "language_en" = "EN";
 
-"language_en_fullname_brackets" = "Angličtina (EN)";
-
 "language_en_fullname" = "Angličtina";
 
-"language_ar" = "EN";
-
-"language_ar_fullname_brackets" = "Arabčina (AR)";
+"language_ar" = "AR";
 
 "language_ar_fullname" = "Arabčina";
 

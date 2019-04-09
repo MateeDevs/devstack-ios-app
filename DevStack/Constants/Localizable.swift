@@ -163,39 +163,31 @@ public enum L10n {
   /// kg
   public static let kilogramUnitLabel = L10n.tr("Localizable", "kilogram_unit_label")
   /// %1$s km
-  public static func kilomentersUnit(_ p1: UnsafePointer<CChar>) -> String {
-    return L10n.tr("Localizable", "kilomenters_unit", p1)
+  public static func kilometerUnit(_ p1: UnsafePointer<CChar>) -> String {
+    return L10n.tr("Localizable", "kilometer_unit", p1)
   }
   /// km
-  public static let kilomentersUnitLabel = L10n.tr("Localizable", "kilomenters_unit_label")
+  public static let kilometerUnitLabel = L10n.tr("Localizable", "kilometer_unit_label")
   /// %1$d km
-  public static func kilomentersUnitNumber(_ p1: Int) -> String {
-    return L10n.tr("Localizable", "kilomenters_unit_number", p1)
+  public static func kilometerUnitNumber(_ p1: Int) -> String {
+    return L10n.tr("Localizable", "kilometer_unit_number", p1)
   }
   /// AR
   public static let languageAr = L10n.tr("Localizable", "language_ar")
   /// Arabic
   public static let languageArFullname = L10n.tr("Localizable", "language_ar_fullname")
-  /// Arabic (AR)
-  public static let languageArFullnameBrackets = L10n.tr("Localizable", "language_ar_fullname_brackets")
-  /// CZ
+  /// CS
   public static let languageCs = L10n.tr("Localizable", "language_cs")
   /// Czech
   public static let languageCsFullname = L10n.tr("Localizable", "language_cs_fullname")
-  /// Czech (CS)
-  public static let languageCsFullnameBrackets = L10n.tr("Localizable", "language_cs_fullname_brackets")
   /// EN
   public static let languageEn = L10n.tr("Localizable", "language_en")
   /// English
   public static let languageEnFullname = L10n.tr("Localizable", "language_en_fullname")
-  /// English (EN)
-  public static let languageEnFullnameBrackets = L10n.tr("Localizable", "language_en_fullname_brackets")
   /// SK
   public static let languageSk = L10n.tr("Localizable", "language_sk")
   /// Slovak
   public static let languageSkFullname = L10n.tr("Localizable", "language_sk_fullname")
-  /// Slovak (SK)
-  public static let languageSkFullnameBrackets = L10n.tr("Localizable", "language_sk_fullname_brackets")
   /// Loading…
   public static let loading = L10n.tr("Localizable", "loading")
   /// Loading failed

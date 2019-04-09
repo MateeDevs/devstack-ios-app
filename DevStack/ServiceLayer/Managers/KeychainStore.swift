@@ -9,37 +9,36 @@
 import Foundation
 import KeychainAccess
 
-struct KeychainCoding {
-    static let authToken = "authToken"
-    static let userId = "userId"
+enum KeychainCoding: String, CaseIterable {
+    case authToken
+    case userId
 }
 
-class KeychainStore {
+struct KeychainStore {
     
-    static func save(key: String, value: String) {
+    static func save(_ key: KeychainCoding, value: String) {
         let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")
-        keychain[key] = value
+        keychain[key.rawValue] = value
     }
     
-    static func get(key: String) -> String? {
+    static func get(_ key: KeychainCoding) -> String? {
         let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")
-        guard let value = keychain[key] else { return nil }
+        guard let value = keychain[key.rawValue] else { return nil }
         return value
     }
     
-    static func delete(key: String) {
+    static func delete(_ key: KeychainCoding) {
         do {
             let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")
-            try keychain.remove(key)
+            try keychain.remove(key.rawValue)
         } catch let error {
             Logger.error("Error during KeychainStore delete operation:\n%@", "\(error)", category: .app)
         }
     }
     
     static func deleteAll() {
-        let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")
-        for key in keychain.allKeys() {
-            delete(key: key)
+        for key in KeychainCoding.allCases {
+            delete(key)
         }
     }
 

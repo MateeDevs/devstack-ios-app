@@ -859,12 +859,12 @@
 		459761C820FDD4050034DE29 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				450392832256B14C0037BF42 /* Config */,
 				45890B3322086BC000894255 /* Onboarding */,
 				4597621720FDDE270034DE29 /* Main */,
 				45E8A4E2220B0803003F7502 /* Tab1 - Users */,
 				45890AFA21FF515800894255 /* Tab2 - Profile */,
 				4597622220FDE5440034DE29 /* LaunchScreen */,
+				450392832256B14C0037BF42 /* Config */,
 				4597621920FDE4360034DE29 /* AppFlowController.swift */,
 			);
 			path = App;

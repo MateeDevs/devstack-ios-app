@@ -15,21 +15,12 @@ public enum Language: String {
     case ar,cs,en,sk
     
     public var fullName: String {
-        switch self {
-        case .ar:
-            return L10n.languageArFullname
-        case .cs:
-            return L10n.languageCsFullname
-        case .en:
-            return L10n.languageEnFullname
-        case .sk:
-            return L10n.languageSkFullname
-        }
+        return NSLocalizedString("language_\(rawValue)_fullname", comment: "")
     }
 }
 
-private enum LanguageManagerCoding {
-    static let selectedLanguage = "selectedLanguage"
+private enum LanguageManagerCoding: String {
+    case selectedLanguage
 }
 
 public class LanguageManager {
@@ -41,7 +32,7 @@ public class LanguageManager {
     public var selectedLanguage: Language {
         get {
             guard
-                let savedLanguage = UserDefaults.standard.string(forKey: LanguageManagerCoding.selectedLanguage),
+                let savedLanguage = UserDefaults.standard.string(forKey: LanguageManagerCoding.selectedLanguage.rawValue),
                 let language = Language(rawValue: savedLanguage) else {
                     Logger.info("LanguageManager: Default language not set, fallback to english applied.", category: .app)
                     return .en
@@ -49,7 +40,7 @@ public class LanguageManager {
             return language
         }
         set {
-            UserDefaults.standard.set(newValue.rawValue, forKey: LanguageManagerCoding.selectedLanguage)
+            UserDefaults.standard.set(newValue.rawValue, forKey: LanguageManagerCoding.selectedLanguage.rawValue)
         }
     }
     
@@ -65,7 +56,7 @@ public class LanguageManager {
     
     /// Set the default language that the app will run first time
     public func setDefaultLanguage(_ language: Language) {
-        guard UserDefaults.standard.string(forKey: LanguageManagerCoding.selectedLanguage) == nil else { return }
+        guard UserDefaults.standard.string(forKey: LanguageManagerCoding.selectedLanguage.rawValue) == nil else { return }
         selectedLanguage = language
     }
     
@@ -73,7 +64,6 @@ public class LanguageManager {
     public func setLanguage(_ language: Language) {
         selectedLanguage = language
         UserDefaults.standard.set([language.rawValue], forKey: "AppleLanguages")
-        UserDefaults.standard.synchronize()
         exit(EXIT_SUCCESS)
     }
     

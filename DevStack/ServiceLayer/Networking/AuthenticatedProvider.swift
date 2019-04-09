@@ -37,7 +37,7 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
             defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: ["Client-HW": UIDevice.current.identifierForVendor!.uuidString])
             
             // Add auth header to every request if available
-            if let authToken = KeychainStore.get(key: KeychainCoding.authToken) {
+            if let authToken = KeychainStore.get(.authToken) {
                 defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: ["Authorization": "Bearer \(authToken)"])
             }
             

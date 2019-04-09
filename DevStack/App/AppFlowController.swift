@@ -12,7 +12,7 @@ class AppFlowController: FlowController, OnboardingFlowControllerDelegate, Profi
     
     override func start() {
         super.start()
-        if KeychainStore.get(key: KeychainCoding.userId) != nil {
+        if KeychainStore.get(.userId) != nil {
             setupMain()
         } else {
             presentOnboarding()
