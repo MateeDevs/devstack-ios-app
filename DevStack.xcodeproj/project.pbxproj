@@ -220,6 +220,9 @@
 		45A388C1225E06EF00037FFA /* Measurement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388C0225E06EF00037FFA /* Measurement+Extensions.swift */; };
 		45A388C2225E06EF00037FFA /* Measurement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388C0225E06EF00037FFA /* Measurement+Extensions.swift */; };
 		45A388C3225E06EF00037FFA /* Measurement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388C0225E06EF00037FFA /* Measurement+Extensions.swift */; };
+		45A388C7225E388B00037FFA /* FullscreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388C6225E388B00037FFA /* FullscreenImageViewController.swift */; };
+		45A388C8225E388B00037FFA /* FullscreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388C6225E388B00037FFA /* FullscreenImageViewController.swift */; };
+		45A388C9225E388B00037FFA /* FullscreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388C6225E388B00037FFA /* FullscreenImageViewController.swift */; };
 		45A3D59F2119B76000E39169 /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+Extensions.swift */; };
 		45A3D5A02119B76000E39169 /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+Extensions.swift */; };
 		45A3D5A12119B76000E39169 /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+Extensions.swift */; };
@@ -481,6 +484,7 @@
 		459EC59F22396ED60045BE3B /* UserDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserDetail.storyboard; sourceTree = "<group>"; };
 		459EC5A32239895F0045BE3B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		45A388C0225E06EF00037FFA /* Measurement+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Measurement+Extensions.swift"; sourceTree = "<group>"; };
+		45A388C6225E388B00037FFA /* FullscreenImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenImageViewController.swift; sourceTree = "<group>"; };
 		45A3D59E2119B76000E39169 /* Realm+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Extensions.swift"; sourceTree = "<group>"; };
 		45A92DF521085864007579AC /* AlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
 		45A92DFC2109ABE9007579AC /* Lce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lce.swift; sourceTree = "<group>"; };
@@ -961,6 +965,7 @@
 			children = (
 				456851B821008988006D3618 /* BaseViewController.swift */,
 				45E8A54D220F4BB5003F7502 /* BaseTableViewController.swift */,
+				45A388C6225E388B00037FFA /* FullscreenImageViewController.swift */,
 				45ECA1A2216B919B000B1124 /* ImagePickerViewController.swift */,
 				45976370210087710034DE29 /* InputViewController.swift */,
 			);
@@ -1769,6 +1774,7 @@
 				A8C79A9F2157FD71007A4339 /* Plurals.swift in Sources */,
 				A8D348DD2163777200B7D08F /* DataValidator.swift in Sources */,
 				45DA07F0222D7D800003D32A /* BaseHeadlineLabel.swift in Sources */,
+				45A388C7225E388B00037FFA /* FullscreenImageViewController.swift in Sources */,
 				4588FF2A22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C7210095ED006D3618 /* LocalizedLabel.swift in Sources */,
 				45DA080B222E87780003D32A /* RegistrationViewController.swift in Sources */,
@@ -1880,6 +1886,7 @@
 				455261C8210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8D348DE2163777200B7D08F /* DataValidator.swift in Sources */,
 				45DA07F1222D7D800003D32A /* BaseHeadlineLabel.swift in Sources */,
+				45A388C8225E388B00037FFA /* FullscreenImageViewController.swift in Sources */,
 				4588FF2B22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C8210095ED006D3618 /* LocalizedLabel.swift in Sources */,
 				45DA080C222E87780003D32A /* RegistrationViewController.swift in Sources */,
@@ -1991,6 +1998,7 @@
 				A8C79AA12157FD71007A4339 /* Plurals.swift in Sources */,
 				A8D348DF2163777200B7D08F /* DataValidator.swift in Sources */,
 				45DA07F2222D7D800003D32A /* BaseHeadlineLabel.swift in Sources */,
+				45A388C9225E388B00037FFA /* FullscreenImageViewController.swift in Sources */,
 				4588FF2C22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C9210095ED006D3618 /* LocalizedLabel.swift in Sources */,
 				45DA080D222E87780003D32A /* RegistrationViewController.swift in Sources */,

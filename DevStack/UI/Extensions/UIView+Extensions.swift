@@ -15,11 +15,18 @@ extension UIView {
     public func startActivityIndicator(style: UIActivityIndicatorView.Style = .whiteLarge, color: UIColor = ColorTheme.mainColor, backgroundColor: UIColor = .clear) {
         endEditing(true)
         stopActivityIndicator()
+        
         let activityIndicatorView = ActivityIndicatorView()
         activityIndicatorView.indicator.style = style
         activityIndicatorView.indicator.color = color
         activityIndicatorView.backgroundView.backgroundColor = backgroundColor
-        activityIndicatorView.setConstraintsToCoverView(self)
+        
+        addSubview(activityIndicatorView)
+        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicatorView.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor).isActive = true
+        activityIndicatorView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor).isActive = true
+        activityIndicatorView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
+        activityIndicatorView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
     }
     
     public func stopActivityIndicator() {
@@ -37,26 +44,6 @@ extension UIView {
             }
         }
         return false
-    }
-    
-    // MARK: Constraints
-    
-    /// Constraints to view bounds
-    public func setConstraintsToCoverView(_ containerView: UIView) {
-        containerView.addSubview(self)
-        translatesAutoresizingMaskIntoConstraints = false
-        centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
-        centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
-        widthAnchor.constraint(equalTo: containerView.widthAnchor).isActive = true
-        heightAnchor.constraint(equalTo: containerView.heightAnchor).isActive = true
-    }
-    
-    /// Constraints to center in view
-    public func setConstraintsToCenterInView(_ containerView: UIView) {
-        containerView.addSubview(self)
-        translatesAutoresizingMaskIntoConstraints = false
-        centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
-        centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
     }
     
 }

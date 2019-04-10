@@ -48,11 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         flowController = AppFlowController(navigationController: navController, dependencies: makeDependencies())
         flowController?.start()
         
-        let d = Date()
-        print(d.toString())
-        print(d.toStringWithTemplate(.ddMMyyyyHHmm))
-        print(d.toStringWithFormat(.ddMMyyyyHHmm))
-        
         return true
     }
     

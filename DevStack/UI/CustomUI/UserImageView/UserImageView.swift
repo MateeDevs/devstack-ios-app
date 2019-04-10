@@ -35,7 +35,7 @@ import AlamofireImage
     
     public func setupWithUser(_ user: User?) {
         guard let user = user else { return }
-        initialsLabel.text = DataFormatter.userInitials(from: user.fullName)
+        initialsLabel.text = user.fullName.initials
         if let pictureUrl = user.pictureUrl, let url = URL(string: pictureUrl) {
             userImageView.af_setImage(withURL: url)
         }
