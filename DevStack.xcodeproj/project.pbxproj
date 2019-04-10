@@ -217,6 +217,9 @@
 		459EC5A42239895F0045BE3B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459EC5A32239895F0045BE3B /* Profile.storyboard */; };
 		459EC5A52239895F0045BE3B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459EC5A32239895F0045BE3B /* Profile.storyboard */; };
 		459EC5A62239895F0045BE3B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459EC5A32239895F0045BE3B /* Profile.storyboard */; };
+		45A388C1225E06EF00037FFA /* Measurement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388C0225E06EF00037FFA /* Measurement+Extensions.swift */; };
+		45A388C2225E06EF00037FFA /* Measurement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388C0225E06EF00037FFA /* Measurement+Extensions.swift */; };
+		45A388C3225E06EF00037FFA /* Measurement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388C0225E06EF00037FFA /* Measurement+Extensions.swift */; };
 		45A3D59F2119B76000E39169 /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+Extensions.swift */; };
 		45A3D5A02119B76000E39169 /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+Extensions.swift */; };
 		45A3D5A12119B76000E39169 /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+Extensions.swift */; };
@@ -341,9 +344,6 @@
 		A82FEF97214650B5006204F3 /* Int+UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FEF96214650B5006204F3 /* Int+UIExtensions.swift */; };
 		A82FEF98214650B5006204F3 /* Int+UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FEF96214650B5006204F3 /* Int+UIExtensions.swift */; };
 		A82FEF99214650B5006204F3 /* Int+UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FEF96214650B5006204F3 /* Int+UIExtensions.swift */; };
-		A83F0EB021490B8000313067 /* DataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83F0EAF21490B8000313067 /* DataFormatter.swift */; };
-		A83F0EB121490B8000313067 /* DataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83F0EAF21490B8000313067 /* DataFormatter.swift */; };
-		A83F0EB221490B8000313067 /* DataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83F0EAF21490B8000313067 /* DataFormatter.swift */; };
 		A83F0EB721490EE200313067 /* UserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83F0EB621490EE200313067 /* UserImageView.swift */; };
 		A83F0EB821490EE200313067 /* UserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83F0EB621490EE200313067 /* UserImageView.swift */; };
 		A83F0EB921490EE200313067 /* UserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83F0EB621490EE200313067 /* UserImageView.swift */; };
@@ -480,6 +480,7 @@
 		45976370210087710034DE29 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		459EC59F22396ED60045BE3B /* UserDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserDetail.storyboard; sourceTree = "<group>"; };
 		459EC5A32239895F0045BE3B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		45A388C0225E06EF00037FFA /* Measurement+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Measurement+Extensions.swift"; sourceTree = "<group>"; };
 		45A3D59E2119B76000E39169 /* Realm+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Extensions.swift"; sourceTree = "<group>"; };
 		45A92DF521085864007579AC /* AlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
 		45A92DFC2109ABE9007579AC /* Lce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lce.swift; sourceTree = "<group>"; };
@@ -547,7 +548,6 @@
 		A82385D9213418B400CC941C /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		A82386852138AF1700CC941C /* ColoredImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredImageView.swift; sourceTree = "<group>"; };
 		A82FEF96214650B5006204F3 /* Int+UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+UIExtensions.swift"; sourceTree = "<group>"; };
-		A83F0EAF21490B8000313067 /* DataFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFormatter.swift; sourceTree = "<group>"; };
 		A83F0EB621490EE200313067 /* UserImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageView.swift; sourceTree = "<group>"; };
 		A83F0EBD21490F1000313067 /* UserImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserImageView.xib; sourceTree = "<group>"; };
 		A83F0EC42149310600313067 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
@@ -928,7 +928,6 @@
 			isa = PBXGroup;
 			children = (
 				45890B2721FFB95D00894255 /* ColorTheme.swift */,
-				A83F0EAF21490B8000313067 /* DataFormatter.swift */,
 				A8D348DC2163777200B7D08F /* DataValidator.swift */,
 				45E8A4B4220AEF90003F7502 /* FlowController.swift */,
 				A847B1AB210F4872002F9ED1 /* LocationHelper.swift */,
@@ -942,6 +941,7 @@
 			children = (
 				45890B5722087C5D00894255 /* Date+UIExtensions.swift */,
 				A82FEF96214650B5006204F3 /* Int+UIExtensions.swift */,
+				45A388C0225E06EF00037FFA /* Measurement+Extensions.swift */,
 				4512341A2162326A00F85985 /* NSLayoutConstraint+Extensions.swift */,
 				450D3DDB21105F02008BAE71 /* NSObject+Extensions.swift */,
 				45890B5B22087C8B00894255 /* String+UIExtensions.swift */,
@@ -1710,6 +1710,7 @@
 				45976371210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A3216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
 				450D3DEB2111F043008BAE71 /* KeychainStore.swift in Sources */,
+				45A388C1225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
 				453CEAB921553E1F00A94BAC /* RatingView.swift in Sources */,
 				4511A6A02138112B006AD4CC /* LanguageManager.swift in Sources */,
 				456852552105D024006D3618 /* ServiceError.swift in Sources */,
@@ -1726,7 +1727,6 @@
 				45DE1D9421CA9CA300C455C4 /* AuthAPI.swift in Sources */,
 				45E8A4A9220AEBAE003F7502 /* Logger.swift in Sources */,
 				459762DE20FE21290034DE29 /* Storyboards.swift in Sources */,
-				A83F0EB021490B8000313067 /* DataFormatter.swift in Sources */,
 				45ECA1B1216BF761000B1124 /* UserAPI.swift in Sources */,
 				A8DDD0CF2121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F0213D2677006AD4CC /* TabBarView.swift in Sources */,
@@ -1821,6 +1821,7 @@
 				45976372210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A4216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
 				450D3DEC2111F043008BAE71 /* KeychainStore.swift in Sources */,
+				45A388C2225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
 				453CEABA21553E1F00A94BAC /* RatingView.swift in Sources */,
 				4511A6A12138112B006AD4CC /* LanguageManager.swift in Sources */,
 				456852562105D024006D3618 /* ServiceError.swift in Sources */,
@@ -1837,7 +1838,6 @@
 				459762DF20FE21290034DE29 /* Storyboards.swift in Sources */,
 				45DE1D9521CA9CA300C455C4 /* AuthAPI.swift in Sources */,
 				45E8A4AA220AEBAE003F7502 /* Logger.swift in Sources */,
-				A83F0EB121490B8000313067 /* DataFormatter.swift in Sources */,
 				A8DDD0D02121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				45ECA1B2216BF761000B1124 /* UserAPI.swift in Sources */,
 				4511A6F1213D2677006AD4CC /* TabBarView.swift in Sources */,
@@ -1932,6 +1932,7 @@
 				45976373210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A5216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
 				450D3DED2111F043008BAE71 /* KeychainStore.swift in Sources */,
+				45A388C3225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
 				453CEABB21553E1F00A94BAC /* RatingView.swift in Sources */,
 				4511A6A22138112B006AD4CC /* LanguageManager.swift in Sources */,
 				456852572105D024006D3618 /* ServiceError.swift in Sources */,
@@ -1948,7 +1949,6 @@
 				45DE1D9621CA9CA300C455C4 /* AuthAPI.swift in Sources */,
 				45E8A4AB220AEBAE003F7502 /* Logger.swift in Sources */,
 				459762E020FE21290034DE29 /* Storyboards.swift in Sources */,
-				A83F0EB221490B8000313067 /* DataFormatter.swift in Sources */,
 				45ECA1B3216BF761000B1124 /* UserAPI.swift in Sources */,
 				A8DDD0D12121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F2213D2677006AD4CC /* TabBarView.swift in Sources */,

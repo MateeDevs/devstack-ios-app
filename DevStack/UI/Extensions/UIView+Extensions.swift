@@ -30,7 +30,7 @@ extension UIView {
         }
     }
     
-    public func isLoading() -> Bool {
+    public var isLoading: Bool {
         for view in subviews {
             if view.isKind(of: ActivityIndicatorView.self) {
                 return true

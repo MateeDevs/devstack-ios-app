@@ -18,13 +18,13 @@ open class BaseViewController: UIViewController {
     
     private var bag: DisposeBag = DisposeBag()
     private(set) var disposeBag: DisposeBag {
+        get {
+            return bag
+        }
         set(value) {
             if allowRecyclingBag {
                 bag = value
             }
-        }
-        get {
-            return bag
         }
     }
     

@@ -10,11 +10,18 @@ import Foundation
 
 extension String {
     
-    public func secured() -> String {
+    public var secured: String {
         return String(map { _ in return "*" })
     }
     
-    public func toDate(dateFormat: String = DateFormat.EEddMMMyyyHHmmZ.rawValue) -> Date? {
+    public var initials: String {
+        let words: [Substring] = split(separator: " ")
+        let initials = words.map({String($0.first ?? Character(""))})
+        let userInitials = initials.joined()
+        return userInitials
+    }
+    
+    public func toDate(dateFormat: String = DateFormat.ddMMyyyyHHmm.rawValue) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat
         return dateFormatter.date(from: self)
