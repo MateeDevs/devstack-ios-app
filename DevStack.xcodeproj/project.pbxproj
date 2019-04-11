@@ -223,6 +223,9 @@
 		45A388C7225E388B00037FFA /* FullscreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388C6225E388B00037FFA /* FullscreenImageViewController.swift */; };
 		45A388C8225E388B00037FFA /* FullscreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388C6225E388B00037FFA /* FullscreenImageViewController.swift */; };
 		45A388C9225E388B00037FFA /* FullscreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388C6225E388B00037FFA /* FullscreenImageViewController.swift */; };
+		45A388D3225F39EF00037FFA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388D2225F39EF00037FFA /* WebViewController.swift */; };
+		45A388D4225F39EF00037FFA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388D2225F39EF00037FFA /* WebViewController.swift */; };
+		45A388D5225F39EF00037FFA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388D2225F39EF00037FFA /* WebViewController.swift */; };
 		45A3D59F2119B76000E39169 /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+Extensions.swift */; };
 		45A3D5A02119B76000E39169 /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+Extensions.swift */; };
 		45A3D5A12119B76000E39169 /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+Extensions.swift */; };
@@ -485,6 +488,7 @@
 		459EC5A32239895F0045BE3B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		45A388C0225E06EF00037FFA /* Measurement+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Measurement+Extensions.swift"; sourceTree = "<group>"; };
 		45A388C6225E388B00037FFA /* FullscreenImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenImageViewController.swift; sourceTree = "<group>"; };
+		45A388D2225F39EF00037FFA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		45A3D59E2119B76000E39169 /* Realm+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Extensions.swift"; sourceTree = "<group>"; };
 		45A92DF521085864007579AC /* AlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
 		45A92DFC2109ABE9007579AC /* Lce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lce.swift; sourceTree = "<group>"; };
@@ -968,6 +972,7 @@
 				45A388C6225E388B00037FFA /* FullscreenImageViewController.swift */,
 				45ECA1A2216B919B000B1124 /* ImagePickerViewController.swift */,
 				45976370210087710034DE29 /* InputViewController.swift */,
+				45A388D2225F39EF00037FFA /* WebViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1770,6 +1775,7 @@
 				A8DDD0BA211E3D6900EEB48F /* LocationManager.swift in Sources */,
 				4588FF0F2226EF360014FC79 /* BaseTableViewCell.swift in Sources */,
 				456852232105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
+				45A388D3225F39EF00037FFA /* WebViewController.swift in Sources */,
 				455261C7210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8C79A9F2157FD71007A4339 /* Plurals.swift in Sources */,
 				A8D348DD2163777200B7D08F /* DataValidator.swift in Sources */,
@@ -1882,6 +1888,7 @@
 				A8DDD0BB211E3D6900EEB48F /* LocationManager.swift in Sources */,
 				4588FF102226EF360014FC79 /* BaseTableViewCell.swift in Sources */,
 				A8C79AA02157FD71007A4339 /* Plurals.swift in Sources */,
+				45A388D4225F39EF00037FFA /* WebViewController.swift in Sources */,
 				456852242105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
 				455261C8210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8D348DE2163777200B7D08F /* DataValidator.swift in Sources */,
@@ -1994,6 +2001,7 @@
 				A8DDD0BC211E3D6900EEB48F /* LocationManager.swift in Sources */,
 				4588FF112226EF360014FC79 /* BaseTableViewCell.swift in Sources */,
 				456852252105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
+				45A388D5225F39EF00037FFA /* WebViewController.swift in Sources */,
 				455261C9210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8C79AA12157FD71007A4339 /* Plurals.swift in Sources */,
 				A8D348DF2163777200B7D08F /* DataValidator.swift in Sources */,

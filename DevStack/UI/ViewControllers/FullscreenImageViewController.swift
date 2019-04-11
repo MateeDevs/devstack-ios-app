@@ -2,7 +2,7 @@
 //  FullscreenImageViewController.swift
 //  DevStack
 //
-//  Created by Petr Chmelar on 10/04/2019.
+//  Created by Petr Chmelar on 16/10/2018.
 //  Copyright © 2019 Qest. All rights reserved.
 //
 
