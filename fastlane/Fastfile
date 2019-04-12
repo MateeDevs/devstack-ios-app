@@ -101,6 +101,10 @@ platform :ios do
 
   desc "Create a new build"
   private_lane :build do |config|
+    if config[:git_branch] !~ /build\/+\d\.+\d?\.*\d$/
+      UI.user_error!("Invalid git branch: \"#{config[:git_branch]}\". Expected: \"build/x.x.x\".")
+    end
+    increment_version_number(version_number: config[:git_branch].split('/').last)
     increment_build_number(build_number: config[:build_number])
     match(
       username: config[:apple_id],

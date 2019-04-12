@@ -58,7 +58,7 @@ FIXME
 ## Build + Release
 - Projekt vyuziva CI/CD pomoci Visual Studio Team Services a [Fastlane](https://fastlane.tools/)
 - Hlavni konfigurace pro Fastlane se nachazi v souboru fastlane/Fastfile
-- Pro vydani nove verze aplikace je nutne nejprve nastavit pozadovane cislo verze prostrednictvim Xcode
+- Cislo verze je automaticky nastaveno dle nazvu build branche, napriklad `1.0` pro branch `build/1.0`
 - Cislo buildu je automaticky generovano na CI, hodnota nastavena v Xcode je ignorovana
 - Z aktualni develop branche je nutne vytvorit build branch prikazem `git checkout -b 'build/1.0'`
 - Pro spusteni buildu staci pushnout vytvorenou build branch `git push origin build/1.0`
