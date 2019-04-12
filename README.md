@@ -75,3 +75,24 @@ FIXME
 - Build number is generated on the CI server, the values set in the Xcode are ignored
 - The builds for all environments (alpha/beta/production) are produced and alpha version is released via TestFlight
 - Used build branch should be merged back to the develop branch if any changes are made
+
+## TODO
+- Convert to Swift 5.0 
+- Script for renaming DevStack to YourProject
+- Second version with [SnapKit](https://github.com/SnapKit/SnapKit) instead of xibs and storyboards
+- Alternative for [Whisper](https://github.com/hyperoslo/Whisper)
+
+## Renaming DevStack to YourProject
+- Workspace
+- Project
+- Root folder
+- Targets
+- Schemes (ensure proper linking with Targets)
+- Info.plist path for all targets
+- BundleID for all targets (prompt + also update in README)
+- Product name for all targets (prompt)
+- Podfile
+- Script for twine (prompt for twine subfolder)
+- Script for swiftgen
+- Fastfile
+- Warning about GoogleService-Info.plist 
