@@ -17,11 +17,10 @@ final class CustomNetworkActivityPlugin: PluginType {
     
     /// Called by the provider as soon as a response arrives, even if the request is cancelled.
     func didReceive(_ result: Result<Moya.Response, MoyaError>, target: TargetType) {
-        #warning("FIXME: Find better way to show no connection alert")
-//        if case Result.success(_) = result {
-//            AlertHandler.hideWhisper()
-//        } else {
-//            AlertHandler.showWhisper(message: L10n.errorNoInternetConnection, type: .error)
-//        }
+        if case Result.success(_) = result {
+            // Hide NoConnectionAlert
+        } else {
+            // Show NoConnectionAlert
+        }
     }
 }

@@ -40,7 +40,7 @@ extension Date {
     }
     
     /// Conversion from Date to String based on a given date format.   
-    /// Please note that this conversion does not respect user's locale/preferences.
+    /// - Please note that this conversion does not respect user's locale/preferences.
     public func toStringWithFormat(_ dateFormat: DateFormat) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = dateFormat.rawValue
@@ -48,7 +48,7 @@ extension Date {
     }
     
     /// Elapsed time between date and now (nil for future dates).
-    /// Converted into localized String "Before xyz days/hours/minutes"
+    /// - Converted into localized String "Before xyz days/hours/minutes"
     public var elapsedTimeString: String? {
         let elapsedTime = Date().timeIntervalSince(self)
         if elapsedTime < 0 {

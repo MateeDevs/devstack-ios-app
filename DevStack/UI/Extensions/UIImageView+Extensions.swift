@@ -10,8 +10,8 @@ import UIKit
 
 extension UIImageView {
 
-    // Workaround, because extensions must not contain stored properties
-    // Idea taken from: https://link.medium.com/6mPz1wuTCU
+    /// Workaround, because extensions must not contain stored properties
+    /// - Idea taken from [Stored properties and extensions](https://link.medium.com/6mPz1wuTCU)
     private struct Holder {
         static var _rounded: Bool = false
     }

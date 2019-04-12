@@ -5,15 +5,12 @@
 //  Created by Petr Chmelar on 06/02/2019.
 //  Copyright © 2019 Qest. All rights reserved.
 //
-// Define log categories
-// Ideas taken from: https://github.com/AckeeCZ/iOS-MVVM-ProjectTemplate
-// and from: https://gist.github.com/smosko/6b8c161a7ae092e7b72e891a5050deaa
-//
 
 import Foundation
 import os.log
 
 /// Predefined OSLog categories
+/// - Idea taken from [AckeeCZ iOS-MVVM-ProjectTemplate](https://github.com/AckeeCZ/iOS-MVVM-ProjectTemplate)
 public enum LoggerCategory {
     case app,networking,lifecycle
     
@@ -31,6 +28,7 @@ public enum LoggerCategory {
 }
 
 /// Wrapper class for os_log function
+/// - Idea taken from [Unified Logging Wrapper](https://gist.github.com/smosko/6b8c161a7ae092e7b72e891a5050deaa)
 public struct Logger {
     
     private static func log(_ message: StaticString, _ a: [CVarArg], category: LoggerCategory, type: OSLogType) {

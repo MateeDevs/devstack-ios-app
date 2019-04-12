@@ -5,9 +5,6 @@
 //  Created by Petr Chmelar on 30/08/2018.
 //  Copyright © 2018 Qest. All rights reserved.
 //
-// Language manager to handle app language change
-// Idea taken from: https://github.com/Abedalkareem/LanguageManager-iOS
-//
 
 import Foundation
 
@@ -23,6 +20,8 @@ private enum LanguageManagerCoding: String {
     case selectedLanguage
 }
 
+/// Language manager to handle app language change
+/// - Idea taken from [LanguageManager-iOS](https://github.com/Abedalkareem/LanguageManager-iOS)
 public class LanguageManager {
     
     /// Returns the singleton LanguageManager instance
