@@ -38,7 +38,7 @@ FIXME
 - Individual gems are specified in the `Gemfile` and `Gemfile.lock` and can be installed with `bundle install --path vendor/bundle`
 - Any of the installed gems can be started with `bundle exec` (for example `bundle exec pod install --repo-update` for CocoaPods)
 - Only the `Gemfile/Gemfile.lock` and `Podfile/Podfile.lock` should be committed (Do not commit `Pods` and `vendor` directories!)
-- You can use the `setup.sh` script for quick setup of all required gems and pods
+- You can use the `scripts/setup.sh` for quick setup of all required gems and pods
 
 ## Architecture (MVVM)
 - Service Layer is composed from individual microservices (LoginService, UserService, etc.)
