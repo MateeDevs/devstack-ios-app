@@ -34,33 +34,44 @@ FIXME
 FIXME
 
 ## RubyGems + CocoaPods
-- Vsechny ruby gems pouzivane v projektu (cocoapods, twine, fastlane, ..) instalujeme pres [Bundler](http://bundler.io/)
-- Jednotlive gemy jsou specifikovane v Gemfile a Gemfile.lock a nainstaluji se prikazem `bundle install --path vendor/bundle`
-- Jakykoli z nainstalovanych gemu je mozne spustit prikazem `bundle exec` (napr. `bundle exec pod install --repo-update` pro cocoapods)
-- Commitujeme pouze Gemfile/Gemfile.lock a Podfile/Podfile.lock (adresare Pods a vendor ne!)
+- All ruby gems used in the project (cocoapods, twine, fastlane, ..) are installed via [Bundler](http://bundler.io/)
+- Individual gems are specified in the `Gemfile` and `Gemfile.lock` and can be installed with `bundle install --path vendor/bundle`
+- Any of the installed gems can be started with `bundle exec` (for example `bundle exec pod install --repo-update` for CocoaPods)
+- Only the `Gemfile/Gemfile.lock` and `Podfile/Podfile.lock` should be committed (Do not commit `Pods` and `vendor` directories!)
+- You can use the `setup.sh` script for quick setup of all required gems and pods
+
+## Architecture (MVVM)
+- Service Layer is composed from individual microservices (LoginService, UserService, etc.)
+- Individual microservices obtains data either from the database or from the API depending on the specific use case
+- Network communication is based on [Moya](https://github.com/Moya/Moya) network framework
+- Model layer is represented via [Realm](https://github.com/realm/realm-cocoa) object models and native Decodable is used for mapping from JSON
+- Asynchronous functions in microservices are represented as observables with the [RxSwift](https://github.com/ReactiveX/RxSwift) framework
+- Those observables usually combines stream from the database and stream from a network call
+- Microservices are injected into ViewModels with the FlowController pattern
+- ViewModel has properties, methods to change them and observables which are then observed in relevant ViewControllers
 
 ## Style Guide
 - [Swift Style Guide](https://github.com/raywenderlich/swift-style-guide)
-- Nedokoncene nebo nefunkcni casti kodu oznacujeme komentarem // TODO: nebo // FIXME:
-- Struktura projektu v XCode by mela odpovidat adresarove strukture na disku
-- Identifikatory pro storyboardy, assety, barvy a lokalizovane texty generujeme prostrednictvim SwiftGen
+- To ensure a uniform style, it is advisable to use the ready-made templates for ViewController / ViewModel / FlowController etc.
+- The templates are available from a separate repository [ios-templates](https://github.com/pchmelar/ios-templates)
+- When using storyboards, strictly go with the rule `one view = one storyboard`!
+- Project structure in the Xcode should reflect the directory structure on your drive
+- Unfinished or broken code should be marked with `#warning("TODO:")` or `#warning("FIXME:")`
+- Identifiers for storyboard, assets, colors and localized strings are generated with [SwiftGen](https://github.com/SwiftGen/SwiftGen)
 
-## Lokalizace
-- Texty v aplikaci jsou lokalizovane a sdilene s Android tymem prostrednictvim [Twine](https://github.com/scelis/twine)
-- Vsechny texty jsou ulozene v jedinem souboru strings.txt, ktery se nachazi v samostatnem repozitari twine-localization
-- Cesta k repozitari twine-localization je nactena z bash promenne TWINE_FOLDER (je nutne pridat do ~/.bash_profile)
-- Pri buildu aplikace je spusten script, ktery ze souboru strings.txt vygeneruje prislusne Localizable.strings soubory
-- Pri modifikaci souboru strings.txt je nutne dodrzovat stanovenou syntaxi a veskere zmeny pravidelne pullovat/pushovat
-
-## Service Layer
-- TODO
+## Localization
+- All strings in the application are localized and shared with the Android team via [Twine](https://github.com/scelis/twine)
+- Strings are stored in the file `strings.txt` in the separate repository [twine-localization](https://qest.visualstudio.com/Qest/_git/twine-localization)
+- Path to the `twine-localization` folder is loaded from the bash variable `TWINE_FOLDER` (must be added into `~/.bash_profile`)
+- The build phase script then generates appropriate `Localizable.strings` files from the mentioned `strings.txt` file
+- When modifying `strings.txt` it is required to comply with the specified syntax and to pull/push all the changes frequently
 
 ## Build + Release
-- Projekt vyuziva CI/CD pomoci Visual Studio Team Services a [Fastlane](https://fastlane.tools/)
-- Hlavni konfigurace pro Fastlane se nachazi v souboru fastlane/Fastfile
-- Cislo verze je automaticky nastaveno dle nazvu build branche, napriklad `1.0` pro branch `build/1.0`
-- Cislo buildu je automaticky generovano na CI, hodnota nastavena v Xcode je ignorovana
-- Z aktualni develop branche je nutne vytvorit build branch prikazem `git checkout -b 'build/1.0'`
-- Pro spusteni buildu staci pushnout vytvorenou build branch `git push origin build/1.0`
-- Automaticky dojde k buildu alpha/beta/production verze a releasu alpha verze prostrednictvim TestFlight
-- V pripade ze build branch obsahuje nejake dodatecne zmeny, je nutne vytvorit merge request do developu
+- CI/CD process is based on Azure DevOps and [Fastlane](https://fastlane.tools/)
+- Main configuration for Fastlane is in the `fastlane/Fastfile` file
+- Build branch should be created from the actual develop branch - `git checkout -b 'build/1.2.3'`
+- The build is started right after the push - `git push origin build/1.2.3`
+- Version number is automatically set based on the branch name (for example `1.2.3` for the branch `build/1.2.3`)
+- Build number is generated on the CI server, the values set in the Xcode are ignored
+- The builds for all environments (alpha/beta/production) are produced and alpha version is released via TestFlight
+- Used build branch should be merged back to the develop branch if any changes are made
