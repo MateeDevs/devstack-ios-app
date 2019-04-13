@@ -16,13 +16,13 @@ public class WebViewController: BaseViewController {
     private var shouldAddCookies: Bool = false
     
     // MARK: Inits
-    init(url: URL, shouldAddCookies: Bool = false) {
+    public init(url: URL, shouldAddCookies: Bool = false) {
         self.url = url
         self.shouldAddCookies = shouldAddCookies
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

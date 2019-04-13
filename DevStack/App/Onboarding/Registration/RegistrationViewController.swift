@@ -42,6 +42,10 @@ final class RegistrationViewController: InputViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
 
     // MARK: Default methods
     override func setupViewModel() {
@@ -85,10 +89,6 @@ final class RegistrationViewController: InputViewController {
         passwordTextField.textContentType = UITextContentType(rawValue: "")
         
         loginButton.tintColor = Asset.Colors.mainRed.color
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
     }
 
     // MARK: Additional methods

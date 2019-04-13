@@ -52,6 +52,10 @@ final class LoginViewController: InputViewController {
         #endif
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+    
     // MARK: Default methods
     override func setupViewModel() {
         super.setupViewModel()
@@ -96,10 +100,6 @@ final class LoginViewController: InputViewController {
         registerButton.tintColor = Asset.Colors.mainRed.color
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
-    }
-    
-    // MARK: Custom methods
+    // MARK: Additional methods
     
 }

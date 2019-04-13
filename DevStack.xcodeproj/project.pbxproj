@@ -58,6 +58,9 @@
 		45128B802142A634007B6B47 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45128B7F2142A634007B6B47 /* TabBarButton.swift */; };
 		45128B812142A634007B6B47 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45128B7F2142A634007B6B47 /* TabBarButton.swift */; };
 		45128B822142A634007B6B47 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45128B7F2142A634007B6B47 /* TabBarButton.swift */; };
+		4515CC1D226158AE00204767 /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515CC1C226158AE00204767 /* SafariViewController.swift */; };
+		4515CC1E226158AE00204767 /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515CC1C226158AE00204767 /* SafariViewController.swift */; };
+		4515CC1F226158AE00204767 /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515CC1C226158AE00204767 /* SafariViewController.swift */; };
 		453CEAB321553E1F00A94BAC /* RatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453CEAB121553E1F00A94BAC /* RatingView.xib */; };
 		453CEAB421553E1F00A94BAC /* RatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453CEAB121553E1F00A94BAC /* RatingView.xib */; };
 		453CEAB521553E1F00A94BAC /* RatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453CEAB121553E1F00A94BAC /* RatingView.xib */; };
@@ -427,6 +430,7 @@
 		4512341A2162326A00F85985 /* NSLayoutConstraint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extensions.swift"; sourceTree = "<group>"; };
 		45128B782142A627007B6B47 /* TabBarButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarButton.xib; sourceTree = "<group>"; };
 		45128B7F2142A634007B6B47 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		4515CC1C226158AE00204767 /* SafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
 		453CEAB121553E1F00A94BAC /* RatingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingView.xib; sourceTree = "<group>"; };
 		453CEAB221553E1F00A94BAC /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		453CEABF21583A7C00A94BAC /* RatingViewSmall.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingViewSmall.xib; sourceTree = "<group>"; };
@@ -977,6 +981,7 @@
 				45A388C6225E388B00037FFA /* FullscreenImageViewController.swift */,
 				45ECA1A2216B919B000B1124 /* ImagePickerViewController.swift */,
 				45976370210087710034DE29 /* InputViewController.swift */,
+				4515CC1C226158AE00204767 /* SafariViewController.swift */,
 				45A388D2225F39EF00037FFA /* WebViewController.swift */,
 			);
 			path = ViewControllers;
@@ -1725,6 +1730,7 @@
 				45976371210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A3216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
 				450D3DEB2111F043008BAE71 /* KeychainStore.swift in Sources */,
+				4515CC1D226158AE00204767 /* SafariViewController.swift in Sources */,
 				45A388C1225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
 				453CEAB921553E1F00A94BAC /* RatingView.swift in Sources */,
 				4511A6A02138112B006AD4CC /* LanguageManager.swift in Sources */,
@@ -1839,6 +1845,7 @@
 				45976372210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A4216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
 				450D3DEC2111F043008BAE71 /* KeychainStore.swift in Sources */,
+				4515CC1E226158AE00204767 /* SafariViewController.swift in Sources */,
 				45A388C2225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
 				453CEABA21553E1F00A94BAC /* RatingView.swift in Sources */,
 				4511A6A12138112B006AD4CC /* LanguageManager.swift in Sources */,
@@ -1953,6 +1960,7 @@
 				45976373210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A5216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
 				450D3DED2111F043008BAE71 /* KeychainStore.swift in Sources */,
+				4515CC1F226158AE00204767 /* SafariViewController.swift in Sources */,
 				45A388C3225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
 				453CEABB21553E1F00A94BAC /* RatingView.swift in Sources */,
 				4511A6A22138112B006AD4CC /* LanguageManager.swift in Sources */,
