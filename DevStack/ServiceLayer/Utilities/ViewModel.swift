@@ -10,10 +10,10 @@ import Foundation
 
 open class ViewModel {
     init() {
-        Logger.info("%@ initialized", "\(self)", category: .lifecycle)
+        Logger.info("%@ initialized", "\(type(of: self))", category: .lifecycle)
     }
     
     deinit {
-        Logger.info("%@ deinitialized", "\(self)", category: .lifecycle)
+        Logger.info("%@ deinitialized", "\(type(of: self))", category: .lifecycle)
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppFlowController: FlowController, OnboardingFlowControllerDelegate, ProfileFlowControllerDelegate {
+class AppFlowController: FlowController, MainFlowControllerDelegate, OnboardingFlowControllerDelegate {
     
     override func start() {
         super.start()
@@ -20,22 +20,9 @@ class AppFlowController: FlowController, OnboardingFlowControllerDelegate, Profi
     }
     
     func setupMain() {
-        let main = MainTabBarController.instantiate()
-        
-        let usersNc = UINavigationController()
-        usersNc.tabBarItem = UITabBarItem(title: L10n.bottomBarItem1, image: Asset.Images.contactsTabBar.image, tag: 0)
-        let usersFc = UsersFlowController(navigationController: usersNc, dependencies: dependencies)
-        startChildFlow(usersFc)
-        
-        let profileNc = UINavigationController()
-        profileNc.tabBarItem = UITabBarItem(title: L10n.bottomBarItem2, image: Asset.Images.profileTabBar.image, tag: 1)
-        let profileFc = ProfileFlowController(navigationController: profileNc, dependencies: dependencies)
-        profileFc.delegate = self
-        startChildFlow(profileFc)
-        
-        main.viewControllers = [usersNc, profileNc]
-        navigationController.navigationBar.isHidden = true
-        navigationController.viewControllers = [main]
+        let fc = MainFlowController(navigationController: navigationController, dependencies: dependencies)
+        fc.delegate = self
+        startChildFlow(fc)
     }
     
     func presentOnboarding() {

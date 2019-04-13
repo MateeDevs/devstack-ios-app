@@ -25,6 +25,9 @@
 		450D3DEB2111F043008BAE71 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450D3DEA2111F043008BAE71 /* KeychainStore.swift */; };
 		450D3DEC2111F043008BAE71 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450D3DEA2111F043008BAE71 /* KeychainStore.swift */; };
 		450D3DED2111F043008BAE71 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450D3DEA2111F043008BAE71 /* KeychainStore.swift */; };
+		450DED282261EF29002314E5 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450DED272261EF29002314E5 /* MainFlowController.swift */; };
+		450DED292261EF29002314E5 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450DED272261EF29002314E5 /* MainFlowController.swift */; };
+		450DED2A2261EF29002314E5 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450DED272261EF29002314E5 /* MainFlowController.swift */; };
 		450E863421072D35001D3E54 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E863321072D35001D3E54 /* AppDependency.swift */; };
 		450E863521072D35001D3E54 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E863321072D35001D3E54 /* AppDependency.swift */; };
 		450E863621072D35001D3E54 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E863321072D35001D3E54 /* AppDependency.swift */; };
@@ -417,6 +420,7 @@
 		450D3DD421105261008BAE71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		450D3DDB21105F02008BAE71 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		450D3DEA2111F043008BAE71 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
+		450DED272261EF29002314E5 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		450E863321072D35001D3E54 /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
 		4511A69F2138112B006AD4CC /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		4511A6BB213948EB006AD4CC /* Demand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demand.swift; sourceTree = "<group>"; };
@@ -889,6 +893,7 @@
 		4597621720FDDE270034DE29 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				450DED272261EF29002314E5 /* MainFlowController.swift */,
 				4597624D20FDEBC80034DE29 /* Main.storyboard */,
 				4597625120FDEBDF0034DE29 /* MainTabBarController.swift */,
 			);
@@ -1803,6 +1808,7 @@
 				45D0FD192147E3D100277C14 /* UIScrollView+Extensions.swift in Sources */,
 				4597621A20FDE4360034DE29 /* AppFlowController.swift in Sources */,
 				A869CEAB215A879100B05A12 /* DashedLineView.swift in Sources */,
+				450DED282261EF29002314E5 /* MainFlowController.swift in Sources */,
 				456851DC2100BC8B006D3618 /* LocalizedButton.swift in Sources */,
 				A82FEF97214650B5006204F3 /* Int+UIExtensions.swift in Sources */,
 				45A92DFD2109ABE9007579AC /* Lce.swift in Sources */,
@@ -1918,6 +1924,7 @@
 				45D0FD1A2147E3D100277C14 /* UIScrollView+Extensions.swift in Sources */,
 				4597621B20FDE4360034DE29 /* AppFlowController.swift in Sources */,
 				A869CEAC215A879100B05A12 /* DashedLineView.swift in Sources */,
+				450DED292261EF29002314E5 /* MainFlowController.swift in Sources */,
 				456851DD2100BC8B006D3618 /* LocalizedButton.swift in Sources */,
 				A82FEF98214650B5006204F3 /* Int+UIExtensions.swift in Sources */,
 				45A92DFE2109ABE9007579AC /* Lce.swift in Sources */,
@@ -2033,6 +2040,7 @@
 				45D0FD1B2147E3D100277C14 /* UIScrollView+Extensions.swift in Sources */,
 				4597621C20FDE4360034DE29 /* AppFlowController.swift in Sources */,
 				A869CEAD215A879100B05A12 /* DashedLineView.swift in Sources */,
+				450DED2A2261EF29002314E5 /* MainFlowController.swift in Sources */,
 				456851DE2100BC8B006D3618 /* LocalizedButton.swift in Sources */,
 				A82FEF99214650B5006204F3 /* Int+UIExtensions.swift in Sources */,
 				45A92DFF2109ABE9007579AC /* Lce.swift in Sources */,

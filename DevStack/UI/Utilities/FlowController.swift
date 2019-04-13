@@ -19,6 +19,11 @@ open class FlowController {
     public init(navigationController: UINavigationController, dependencies: AppDependency) {
         self.navigationController = navigationController
         self.dependencies = dependencies
+        Logger.info("%@ initialized", "\(type(of: self))", category: .lifecycle)
+    }
+    
+    deinit {
+        Logger.info("%@ deinitialized", "\(type(of: self))", category: .lifecycle)
     }
     
     /// Override this method in a subclass and start the flow

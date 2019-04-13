@@ -28,6 +28,21 @@ open class BaseViewController: UIViewController {
         }
     }
     
+    // MARK: Inits
+    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        Logger.info("%@ initialized", "\(type(of: self))", category: .lifecycle)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        Logger.info("%@ initialized", "\(type(of: self))", category: .lifecycle)
+    }
+    
+    deinit {
+        Logger.info("%@ deinitialized", "\(type(of: self))", category: .lifecycle)
+    }
+    
     // MARK: Lifecycle methods
     override open func viewDidLoad() {
         super.viewDidLoad()
