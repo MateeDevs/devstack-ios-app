@@ -5,8 +5,6 @@
 //  Created by Viktor Kaderabek on 04/08/2017.
 //  Copyright © 2017 Qest. All rights reserved.
 //
-// Do not fix missing constraints in .xib, otherwise the stack view won't adjust properly!
-//
 
 import UIKit
 
