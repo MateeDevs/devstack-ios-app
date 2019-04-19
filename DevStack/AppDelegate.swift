@@ -15,7 +15,7 @@ import RealmSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    private(set) var window: UIWindow?
+    var window: UIWindow?
     private(set) var flowController: AppFlowController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

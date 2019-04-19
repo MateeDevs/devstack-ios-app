@@ -31,7 +31,7 @@ extension UIImage {
         case .right, .rightMirrored:
             transform = transform.translatedBy(x: 0, y: size.height)
             transform = transform.rotated(by: CGFloat(-Double.pi / 2))
-        case .up, .upMirrored:
+        default:
             break
         }
         
@@ -42,7 +42,7 @@ extension UIImage {
         case .leftMirrored, .rightMirrored:
             transform.translatedBy(x: size.height, y: 0)
             transform.scaledBy(x: -1, y: 1)
-        case .up, .down, .left, .right:
+        default:
             break
         }
         

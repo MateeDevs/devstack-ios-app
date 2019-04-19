@@ -77,7 +77,6 @@ FIXME
 - Used build branch should be merged back to the develop branch if any changes are made
 
 ## TODO
-- Convert to Swift 5.0 
 - Script for renaming DevStack to YourProject
 - Implement [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination)
 - Implement alternative for [Whisper](https://github.com/hyperoslo/Whisper)

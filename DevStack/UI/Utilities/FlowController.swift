@@ -43,7 +43,7 @@ open class FlowController {
     }
     
     private func removeChild(_ flowController: FlowController) {
-        if let index = childControllers.index(where: { $0 === flowController }) {
+        if let index = childControllers.firstIndex(where: { $0 === flowController }) {
             childControllers.remove(at: index)
         }
     }

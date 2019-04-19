@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIFont {
+extension UIFont {
     
     ///
     /// Helper for easy access to custom font.
