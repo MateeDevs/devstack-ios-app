@@ -55,7 +55,7 @@ post_install do |installer|
             config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS'] = 'NO'
 
             # Update the Swift version if necessary
-            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['SWIFT_VERSION'] = '5.0'
 
             # Turn on Whole Module Optimization
             if config.name == 'Release'

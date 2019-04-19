@@ -406,10 +406,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		067FC3D69B07DB989C936280 /* Pods-Shipvio_Driver_Beta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shipvio_Driver_Beta.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shipvio_Driver_Beta/Pods-Shipvio_Driver_Beta.release.xcconfig"; sourceTree = "<group>"; };
-		0DAC026734FBD279385CF51F /* Pods-Shipvio_Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shipvio_Driver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shipvio_Driver/Pods-Shipvio_Driver.debug.xcconfig"; sourceTree = "<group>"; };
-		17DDA60BBD697195FF02CAAB /* Pods-Shipvio_Customer_Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shipvio_Customer_Alpha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shipvio_Customer_Alpha/Pods-Shipvio_Customer_Alpha.release.xcconfig"; sourceTree = "<group>"; };
-		26401A55AA34CB39B3ADE6F6 /* Pods-Shipvio_Customer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shipvio_Customer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shipvio_Customer/Pods-Shipvio_Customer.debug.xcconfig"; sourceTree = "<group>"; };
 		3108F6D7CC6CF709865E9678 /* Pods-DevStack_Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Alpha.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha.release.xcconfig"; sourceTree = "<group>"; };
 		3266EC7634F7BCD070190849 /* Pods-DevStack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack/Pods-DevStack.release.xcconfig"; sourceTree = "<group>"; };
 		450384742170E4FC004F43DC /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
@@ -543,16 +539,8 @@
 		45ECA1B0216BF761000B1124 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		45ECA1C5216BFA90000B1124 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		45F4AE412180B88400E75B4A /* LocalizedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedImageView.swift; sourceTree = "<group>"; };
-		48C65E55B80E160DB1538C3D /* Pods_Shipvio_Driver_Beta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shipvio_Driver_Beta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		49ACC4822F7093B3CD3F3ADB /* Pods-Shipvio_Customer_Beta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shipvio_Customer_Beta.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shipvio_Customer_Beta/Pods-Shipvio_Customer_Beta.release.xcconfig"; sourceTree = "<group>"; };
-		4A5575C2539F15C6CC7BED61 /* Pods-Shipvio_Driver_Beta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shipvio_Driver_Beta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shipvio_Driver_Beta/Pods-Shipvio_Driver_Beta.debug.xcconfig"; sourceTree = "<group>"; };
-		4BD725930EF1DF2E1DAD5660 /* Pods_Shipvio_Customer_Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shipvio_Customer_Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		60980CF60145DE4337C0BB69 /* Pods-Shipvio_Driver_Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shipvio_Driver_Alpha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shipvio_Driver_Alpha/Pods-Shipvio_Driver_Alpha.debug.xcconfig"; sourceTree = "<group>"; };
-		6B669AD04A6ED98653C3148C /* Pods-Shipvio_Customer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shipvio_Customer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shipvio_Customer/Pods-Shipvio_Customer.release.xcconfig"; sourceTree = "<group>"; };
 		7226BBC8D76CB9A545614575 /* Pods_DevStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		73518EADCE45933DA59C87D0 /* Pods_Shipvio_Customer_Beta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shipvio_Customer_Beta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A71598D309E35AF6F901FEE /* Pods_DevStack_Beta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevStack_Beta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8084133DAE3B4EF670E695F0 /* Pods-Shipvio_Driver_Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shipvio_Driver_Alpha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shipvio_Driver_Alpha/Pods-Shipvio_Driver_Alpha.release.xcconfig"; sourceTree = "<group>"; };
 		841509852166483B003E4779 /* DashboardActualTransportCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardActualTransportCollectionViewCell.swift; sourceTree = "<group>"; };
 		841509862166483B003E4779 /* DashboardActualTransportCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardActualTransportCollectionViewCell.xib; sourceTree = "<group>"; };
 		8415099521665FD8003E4779 /* DashboardCurrentJobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCurrentJobTableViewCell.swift; sourceTree = "<group>"; };
@@ -563,7 +551,6 @@
 		841509AA21666750003E4779 /* DashboardNextJobCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardNextJobCollectionViewCell.xib; sourceTree = "<group>"; };
 		84D8C6912166437700BD07AF /* DashboardActualTransportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardActualTransportTableViewCell.swift; sourceTree = "<group>"; };
 		84D8C6922166437700BD07AF /* DashboardActualTransportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardActualTransportTableViewCell.xib; sourceTree = "<group>"; };
-		A396B97477C4C299D79FB7D8 /* Pods-Shipvio_Customer_Beta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shipvio_Customer_Beta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shipvio_Customer_Beta/Pods-Shipvio_Customer_Beta.debug.xcconfig"; sourceTree = "<group>"; };
 		A592C9E57154D698582F52F6 /* Pods-DevStack_Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Alpha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha.debug.xcconfig"; sourceTree = "<group>"; };
 		A82385D9213418B400CC941C /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		A82386852138AF1700CC941C /* ColoredImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredImageView.swift; sourceTree = "<group>"; };
@@ -582,14 +569,9 @@
 		A8DDD0B9211E3D6900EEB48F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A8DDD0CE2121E2E400EEB48F /* LocalizedNavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedNavigationItem.swift; sourceTree = "<group>"; };
 		AFEE2864E1EDF8F86BC7B391 /* Pods-DevStack_Beta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Beta.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta.release.xcconfig"; sourceTree = "<group>"; };
-		C37C614A68BB28C9FB1E2A72 /* Pods_Shipvio_Driver_Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shipvio_Driver_Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9CE84CB85981A52E697AA31 /* Pods-Shipvio_Customer_Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shipvio_Customer_Alpha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shipvio_Customer_Alpha/Pods-Shipvio_Customer_Alpha.debug.xcconfig"; sourceTree = "<group>"; };
 		DA7BCD130DBE3DF8A33EE847 /* Pods_DevStack_Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevStack_Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD1EE92A9740314059408958 /* Pods-DevStack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack/Pods-DevStack.debug.xcconfig"; sourceTree = "<group>"; };
-		E5E6FD84FD7537ACB84609F4 /* Pods_Shipvio_Customer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shipvio_Customer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1293FBA7E27D0D4C9443F57 /* Pods-Shipvio_Driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shipvio_Driver.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shipvio_Driver/Pods-Shipvio_Driver.release.xcconfig"; sourceTree = "<group>"; };
 		F50E336A748BE131E45BF8CF /* Pods-DevStack_Beta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Beta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta.debug.xcconfig"; sourceTree = "<group>"; };
-		FD2F4957DA0F0B706B8DE1D2 /* Pods_Shipvio_Driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shipvio_Driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1130,18 +1112,6 @@
 		5BF3E3FE6D7D49981E7A931F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				26401A55AA34CB39B3ADE6F6 /* Pods-Shipvio_Customer.debug.xcconfig */,
-				6B669AD04A6ED98653C3148C /* Pods-Shipvio_Customer.release.xcconfig */,
-				D9CE84CB85981A52E697AA31 /* Pods-Shipvio_Customer_Alpha.debug.xcconfig */,
-				17DDA60BBD697195FF02CAAB /* Pods-Shipvio_Customer_Alpha.release.xcconfig */,
-				A396B97477C4C299D79FB7D8 /* Pods-Shipvio_Customer_Beta.debug.xcconfig */,
-				49ACC4822F7093B3CD3F3ADB /* Pods-Shipvio_Customer_Beta.release.xcconfig */,
-				0DAC026734FBD279385CF51F /* Pods-Shipvio_Driver.debug.xcconfig */,
-				F1293FBA7E27D0D4C9443F57 /* Pods-Shipvio_Driver.release.xcconfig */,
-				60980CF60145DE4337C0BB69 /* Pods-Shipvio_Driver_Alpha.debug.xcconfig */,
-				8084133DAE3B4EF670E695F0 /* Pods-Shipvio_Driver_Alpha.release.xcconfig */,
-				4A5575C2539F15C6CC7BED61 /* Pods-Shipvio_Driver_Beta.debug.xcconfig */,
-				067FC3D69B07DB989C936280 /* Pods-Shipvio_Driver_Beta.release.xcconfig */,
 				DD1EE92A9740314059408958 /* Pods-DevStack.debug.xcconfig */,
 				3266EC7634F7BCD070190849 /* Pods-DevStack.release.xcconfig */,
 				A592C9E57154D698582F52F6 /* Pods-DevStack_Alpha.debug.xcconfig */,
@@ -1155,12 +1125,6 @@
 		6F197C24FB7B3AFC8FF9EA45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E5E6FD84FD7537ACB84609F4 /* Pods_Shipvio_Customer.framework */,
-				4BD725930EF1DF2E1DAD5660 /* Pods_Shipvio_Customer_Alpha.framework */,
-				73518EADCE45933DA59C87D0 /* Pods_Shipvio_Customer_Beta.framework */,
-				FD2F4957DA0F0B706B8DE1D2 /* Pods_Shipvio_Driver.framework */,
-				C37C614A68BB28C9FB1E2A72 /* Pods_Shipvio_Driver_Alpha.framework */,
-				48C65E55B80E160DB1538C3D /* Pods_Shipvio_Driver_Beta.framework */,
 				7226BBC8D76CB9A545614575 /* Pods_DevStack.framework */,
 				DA7BCD130DBE3DF8A33EE847 /* Pods_DevStack_Alpha.framework */,
 				7A71598D309E35AF6F901FEE /* Pods_DevStack_Beta.framework */,
@@ -1236,7 +1200,7 @@
 			dependencies = (
 			);
 			name = DevStack;
-			productName = Shipvio3;
+			productName = DevStack;
 			productReference = 4558D30720FCC8FF005BC325 /* DevStack.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -1258,7 +1222,7 @@
 			dependencies = (
 			);
 			name = DevStack_Alpha;
-			productName = Shipvio3;
+			productName = "A-DevStack";
 			productReference = 459761D720FDD60A0034DE29 /* A-DevStack.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -1280,7 +1244,7 @@
 			dependencies = (
 			);
 			name = DevStack_Beta;
-			productName = Shipvio3;
+			productName = "B-DevStack";
 			productReference = 459761E520FDD61E0034DE29 /* B-DevStack.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -2216,7 +2180,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack;
 				PRODUCT_NAME = DevStack;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -2239,7 +2203,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack;
 				PRODUCT_NAME = DevStack;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -2308,7 +2272,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DBETA\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack.beta;
 				PRODUCT_NAME = "B-DevStack";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -2331,7 +2295,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DBETA\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack.beta;
 				PRODUCT_NAME = "B-DevStack";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

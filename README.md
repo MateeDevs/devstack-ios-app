@@ -39,6 +39,7 @@ FIXME
 - Any of the installed gems can be started with `bundle exec` (for example `bundle exec pod install --repo-update` for CocoaPods)
 - Only the `Gemfile/Gemfile.lock` and `Podfile/Podfile.lock` should be committed (Do not commit `Pods` and `vendor` directories!)
 - You can use the `scripts/setup.sh` for quick setup of all required gems and pods
+- There is also `scripts/rename.sh` for quick renaming from DevStack to YourProject
 
 ## Architecture (MVVM)
 - Service Layer is composed from individual microservices (LoginService, UserService, etc.)
@@ -77,7 +78,6 @@ FIXME
 - Used build branch should be merged back to the develop branch if any changes are made
 
 ## TODO
-- Script for renaming DevStack to YourProject
 - Implement [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination)
 - Implement alternative for [Whisper](https://github.com/hyperoslo/Whisper)
 - Second version with [SnapKit](https://github.com/SnapKit/SnapKit) instead of xibs and storyboards
@@ -85,18 +85,3 @@ FIXME
 - Setup [Xcode Injection](https://github.com/johnno1962/InjectionIII) for SnapKit version
 - Provide example of [self-sizing child VC](https://useyourloaf.com/blog/self-sizing-child-views/)
 - Provide example unit tests
-
-## Renaming DevStack to YourProject
-- Workspace
-- Project
-- Root folder
-- Targets
-- Schemes (ensure proper linking with Targets)
-- Info.plist path for all targets
-- BundleID for all targets (prompt + also update in README)
-- Product name for all targets (prompt)
-- Podfile
-- Script for twine (prompt for twine subfolder)
-- Script for swiftgen
-- Fastfile
-- Warning about GoogleService-Info.plist 
