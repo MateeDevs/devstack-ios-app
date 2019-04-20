@@ -58,12 +58,11 @@ final class RegistrationViewController: InputViewController {
         
         output.registrationEvent.drive(onNext: { [weak self] event in
             if event.isLoading {
-                self?.view.startActivityIndicator()
+                self?.showWhisper(message: L10n.signingUp)
             } else if let error = event.error {
-                self?.view.stopActivityIndicator()
-                AlertHandler.showAlertWithError(error)
+                self?.showWhisperWithError(error)
             } else {
-                self?.view.stopActivityIndicator()
+                self?.hideWhisper()
                 self?.flowDelegate?.popRegistration()
             }
         }).disposed(by: disposeBag)

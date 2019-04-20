@@ -76,9 +76,10 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
         provider = MoyaProvider<MultiTarget>(endpointClosure: endpointClosure, requestClosure: requestClosure, manager: manager, plugins: plugins)
     }
     
-    func request(_ target: MultiTarget) -> Single<Moya.Response> {
+    func request(_ target: MultiTarget, withInterceptor: Bool = true) -> Single<Moya.Response> {
         let actualRequest = provider.rx.request(target).flatMap { (response) -> PrimitiveSequence<SingleTrait, Response> in
             if response.statusCode == 401 {
+                guard withInterceptor else { return Single.just(response) }
                 
                 // Perform logout and present login screen
                 LoginService.logout()

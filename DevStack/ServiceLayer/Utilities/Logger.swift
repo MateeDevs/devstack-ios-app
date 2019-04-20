@@ -17,12 +17,9 @@ public enum LoggerCategory {
     /// OSLogs for predefined categories
     public var log: OSLog {
         switch self {
-        case .app:
-            return OSLog(subsystem: Bundle.main.bundleIdentifier ?? "-", category: "App")
-        case .networking:
-            return OSLog(subsystem: Bundle.main.bundleIdentifier ?? "-", category: "Networking")
-        case .lifecycle:
-            return OSLog(subsystem: Bundle.main.bundleIdentifier ?? "-", category: "Lifecycle")
+        case .app: return OSLog(subsystem: Bundle.main.bundleIdentifier ?? "-", category: "App")
+        case .networking: return OSLog(subsystem: Bundle.main.bundleIdentifier ?? "-", category: "Networking")
+        case .lifecycle: return OSLog(subsystem: Bundle.main.bundleIdentifier ?? "-", category: "Lifecycle")
         }
     }
 }

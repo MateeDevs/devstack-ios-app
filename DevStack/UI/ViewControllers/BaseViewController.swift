@@ -59,6 +59,9 @@ open class BaseViewController: UIViewController {
         super.viewDidDisappear(animated)
         // Remove the current reference to the disposeBag so all current subscriptions are disposed
         disposeBag = DisposeBag()
+        
+        // Ensure that any presented WhisperView is removed
+        hideWhisper()
     }
     
     override open var preferredStatusBarStyle: UIStatusBarStyle {

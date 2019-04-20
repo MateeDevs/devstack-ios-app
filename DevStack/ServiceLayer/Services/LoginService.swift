@@ -22,7 +22,7 @@ public class LoginService {
     public func login(email: String, password: String) -> Observable<Lce<Void>> {
         let endpoint = AuthAPI.login(email: email, password: password)
         let errors = LceErrors(messages: [401: L10n.invalidCredentials], defaultMessage: L10n.signingFailed)
-        return network.observableRequest(endpoint).map(AuthToken.self).do(onNext: { authToken in
+        return network.observableRequest(endpoint, withInterceptor: false).map(AuthToken.self).do(onNext: { authToken in
             KeychainStore.save(.authToken, value: authToken.token)
             KeychainStore.save(.userId, value: authToken.userId)
         }).mapToLceVoid(errors)

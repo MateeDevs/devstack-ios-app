@@ -9,24 +9,15 @@
 import UIKit
 
 extension UIImageView {
-
-    /// Workaround, because extensions must not contain stored properties
-    /// - Idea taken from [Stored properties and extensions](https://link.medium.com/6mPz1wuTCU)
-    private struct Holder {
-        static var _rounded: Bool = false
-    }
     
     public var rounded: Bool {
         get {
-            return Holder._rounded
+            return layer.cornerRadius == frame.height / 2 ? true : false
         }
         set(newValue) {
-            Holder._rounded = newValue
-            layer.borderWidth = 0
-            layer.masksToBounds = newValue ? false : true
             layer.cornerRadius = newValue ? frame.height / 2 : 0
+            layer.masksToBounds = newValue
             clipsToBounds = newValue
         }
     }
-    
 }

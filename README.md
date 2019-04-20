@@ -78,10 +78,8 @@ FIXME
 - Used build branch should be merged back to the develop branch if any changes are made
 
 ## TODO
-- Implement [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination)
-- Implement alternative for [Whisper](https://github.com/hyperoslo/Whisper)
+- Provide example of [self-sizing child VC](https://useyourloaf.com/blog/self-sizing-child-views/)
 - Second version with [SnapKit](https://github.com/SnapKit/SnapKit) instead of xibs and storyboards
 - Implement [ViewStyles](https://felginep.github.io/2019-02-19/uiview-styling-with-functions) for SnapKit version
 - Setup [Xcode Injection](https://github.com/johnno1962/InjectionIII) for SnapKit version
-- Provide example of [self-sizing child VC](https://useyourloaf.com/blog/self-sizing-child-views/)
 - Provide example unit tests

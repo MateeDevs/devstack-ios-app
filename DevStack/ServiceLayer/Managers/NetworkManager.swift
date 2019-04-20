@@ -19,9 +19,10 @@ struct NetworkManager {
     /// Automatically filters out API errors.
     ///
     /// - parameter endpoint: TargetType from Moya which specify API endpoint to be called.
+    /// - parameter withInterceptor: Specify whether build-in interceptor should be enabled.
     /// - returns: Observable which emits Response of a network call.
     ///
-    func observableRequest(_ endpoint: TargetType) -> Observable<Response> {
-        return provider.request(MultiTarget(endpoint)).asObservable().filterSuccess()
+    func observableRequest(_ endpoint: TargetType, withInterceptor: Bool = true) -> Observable<Response> {
+        return provider.request(MultiTarget(endpoint), withInterceptor: withInterceptor).asObservable().filterSuccess()
     }
 }

@@ -238,9 +238,9 @@
 		45A3D59F2119B76000E39169 /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+Extensions.swift */; };
 		45A3D5A02119B76000E39169 /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+Extensions.swift */; };
 		45A3D5A12119B76000E39169 /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+Extensions.swift */; };
-		45A92DF621085864007579AC /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A92DF521085864007579AC /* AlertHandler.swift */; };
-		45A92DF721085864007579AC /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A92DF521085864007579AC /* AlertHandler.swift */; };
-		45A92DF821085864007579AC /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A92DF521085864007579AC /* AlertHandler.swift */; };
+		45A92DF621085864007579AC /* BaseViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A92DF521085864007579AC /* BaseViewController+Alerts.swift */; };
+		45A92DF721085864007579AC /* BaseViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A92DF521085864007579AC /* BaseViewController+Alerts.swift */; };
+		45A92DF821085864007579AC /* BaseViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A92DF521085864007579AC /* BaseViewController+Alerts.swift */; };
 		45A92DFD2109ABE9007579AC /* Lce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A92DFC2109ABE9007579AC /* Lce.swift */; };
 		45A92DFE2109ABE9007579AC /* Lce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A92DFC2109ABE9007579AC /* Lce.swift */; };
 		45A92DFF2109ABE9007579AC /* Lce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A92DFC2109ABE9007579AC /* Lce.swift */; };
@@ -280,6 +280,9 @@
 		45DA080E222E87780003D32A /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA0807222E87780003D32A /* RegistrationViewModel.swift */; };
 		45DA080F222E87780003D32A /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA0807222E87780003D32A /* RegistrationViewModel.swift */; };
 		45DA0810222E87780003D32A /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA0807222E87780003D32A /* RegistrationViewModel.swift */; };
+		45DB975B226A955700C3F234 /* WhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB975A226A955700C3F234 /* WhisperView.swift */; };
+		45DB975C226A955700C3F234 /* WhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB975A226A955700C3F234 /* WhisperView.swift */; };
+		45DB975D226A955700C3F234 /* WhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB975A226A955700C3F234 /* WhisperView.swift */; };
 		45DE1D9421CA9CA300C455C4 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DE1D9321CA9CA300C455C4 /* AuthAPI.swift */; };
 		45DE1D9521CA9CA300C455C4 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DE1D9321CA9CA300C455C4 /* AuthAPI.swift */; };
 		45DE1D9621CA9CA300C455C4 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DE1D9321CA9CA300C455C4 /* AuthAPI.swift */; };
@@ -498,7 +501,7 @@
 		45A388D2225F39EF00037FFA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		45A388D7225F5EF300037FFA /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		45A3D59E2119B76000E39169 /* Realm+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Extensions.swift"; sourceTree = "<group>"; };
-		45A92DF521085864007579AC /* AlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
+		45A92DF521085864007579AC /* BaseViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseViewController+Alerts.swift"; sourceTree = "<group>"; };
 		45A92DFC2109ABE9007579AC /* Lce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lce.swift; sourceTree = "<group>"; };
 		45B76D8A213590C5003BB997 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		45B76D9121359138003BB997 /* StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
@@ -513,6 +516,7 @@
 		45DA0805222E87780003D32A /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		45DA0806222E87780003D32A /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		45DA0807222E87780003D32A /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		45DB975A226A955700C3F234 /* WhisperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperView.swift; sourceTree = "<group>"; };
 		45DE1D9321CA9CA300C455C4 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		45DE1D9721CAACC300C455C4 /* UserList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserList.json; sourceTree = "<group>"; };
 		45E1E618221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
@@ -942,6 +946,7 @@
 		459762E920FE21CE0034DE29 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				45A92DF521085864007579AC /* BaseViewController+Alerts.swift */,
 				45890B5722087C5D00894255 /* Date+UIExtensions.swift */,
 				A82FEF96214650B5006204F3 /* Int+UIExtensions.swift */,
 				45A388C0225E06EF00037FFA /* Measurement+Extensions.swift */,
@@ -1033,6 +1038,7 @@
 				A869CEAA215A879100B05A12 /* DashedLineView.swift */,
 				A8A2E501217DD3C70006023F /* GradientView.swift */,
 				A82385D9213418B400CC941C /* ShadowView.swift */,
+				45DB975A226A955700C3F234 /* WhisperView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -1041,7 +1047,6 @@
 			isa = PBXGroup;
 			children = (
 				45E1E61C221D5C55006C84D1 /* LocationManager */,
-				45A92DF521085864007579AC /* AlertHandler.swift */,
 				45C089E72215C12200D0DD49 /* DatabaseManager.swift */,
 				450D3DEA2111F043008BAE71 /* KeychainStore.swift */,
 				4511A69F2138112B006AD4CC /* LanguageManager.swift */,
@@ -1779,6 +1784,7 @@
 				454FEE3922404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				45890B4322086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B5220AEF90003F7502 /* FlowController.swift in Sources */,
+				45DB975B226A955700C3F234 /* WhisperView.swift in Sources */,
 				45B76D99213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC32108CB2600BBA179 /* XIBView.swift in Sources */,
 				45E8A4ED220B0803003F7502 /* UsersFlowController.swift in Sources */,
@@ -1792,7 +1798,7 @@
 				45E8A55E220F6F2C003F7502 /* UserTableViewCell.swift in Sources */,
 				450E863421072D35001D3E54 /* AppDependency.swift in Sources */,
 				A8DDD0A0211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */,
-				45A92DF621085864007579AC /* AlertHandler.swift in Sources */,
+				45A92DF621085864007579AC /* BaseViewController+Alerts.swift in Sources */,
 				45ECA1C6216BFA90000B1124 /* UserService.swift in Sources */,
 				45ECA1AA216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
 			);
@@ -1895,6 +1901,7 @@
 				454FEE3A22404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				45890B4422086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B6220AEF90003F7502 /* FlowController.swift in Sources */,
+				45DB975C226A955700C3F234 /* WhisperView.swift in Sources */,
 				45B76D9A213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC42108CB2600BBA179 /* XIBView.swift in Sources */,
 				45E8A4EE220B0803003F7502 /* UsersFlowController.swift in Sources */,
@@ -1908,7 +1915,7 @@
 				45E8A55F220F6F2C003F7502 /* UserTableViewCell.swift in Sources */,
 				450E863521072D35001D3E54 /* AppDependency.swift in Sources */,
 				A8DDD0A1211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */,
-				45A92DF721085864007579AC /* AlertHandler.swift in Sources */,
+				45A92DF721085864007579AC /* BaseViewController+Alerts.swift in Sources */,
 				45ECA1C7216BFA90000B1124 /* UserService.swift in Sources */,
 				45ECA1AB216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
 			);
@@ -2011,6 +2018,7 @@
 				454FEE3B22404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				45890B4522086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B7220AEF90003F7502 /* FlowController.swift in Sources */,
+				45DB975D226A955700C3F234 /* WhisperView.swift in Sources */,
 				45B76D9B213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC52108CB2600BBA179 /* XIBView.swift in Sources */,
 				45E8A4EF220B0803003F7502 /* UsersFlowController.swift in Sources */,
@@ -2024,7 +2032,7 @@
 				45E8A560220F6F2C003F7502 /* UserTableViewCell.swift in Sources */,
 				450E863621072D35001D3E54 /* AppDependency.swift in Sources */,
 				A8DDD0A2211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */,
-				45A92DF821085864007579AC /* AlertHandler.swift in Sources */,
+				45A92DF821085864007579AC /* BaseViewController+Alerts.swift in Sources */,
 				45ECA1C8216BFA90000B1124 /* UserService.swift in Sources */,
 				45ECA1AC216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
 			);
