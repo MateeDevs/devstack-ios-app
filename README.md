@@ -78,7 +78,6 @@ FIXME
 - Used build branch should be merged back to the develop branch if any changes are made
 
 ## TODO
-- Provide example of [self-sizing child VC](https://useyourloaf.com/blog/self-sizing-child-views/)
 - Second version with [SnapKit](https://github.com/SnapKit/SnapKit) instead of xibs and storyboards
 - Implement [ViewStyles](https://felginep.github.io/2019-02-19/uiview-styling-with-functions) for SnapKit version
 - Setup [Xcode Injection](https://github.com/johnno1962/InjectionIII) for SnapKit version

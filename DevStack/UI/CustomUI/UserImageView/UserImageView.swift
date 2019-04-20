@@ -31,6 +31,7 @@ import AlamofireImage
         super.awakeFromNib()
         layoutIfNeeded()
         setDimensions()
+        backgroundColor = .clear
     }
     
     public func setupWithUser(_ user: User?) {

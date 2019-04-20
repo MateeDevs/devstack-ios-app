@@ -1,0 +1,100 @@
+// 
+//  ProfileWrapperViewController.swift
+//  DevStack
+//
+//  Created by Petr Chmelar on 20/04/2019.
+//  Copyright © 2019 Qest. All rights reserved.
+//
+
+import UIKit
+import RxSwift
+
+protocol ProfileWrapperFlowDelegate: class {
+
+}
+
+final class ProfileWrapperViewController: BaseViewController {
+
+    // MARK: FlowDelegate
+    weak var flowDelegate: ProfileWrapperFlowDelegate?
+
+    // MARK: ViewModels
+
+    // MARK: UI components
+    @IBOutlet weak var tabBarView: TabBarView!
+    @IBOutlet weak var containerView: UIView!
+    
+    // MARK: Stored properties
+    private var viewControllers: [BaseViewController] = []
+    private var currentViewController: BaseViewController?
+
+    // MARK: Inits
+    static func instantiate(viewControllers: [BaseViewController]) -> ProfileWrapperViewController {
+        let vc = StoryboardScene.ProfileWrapper.initialScene.instantiate()
+        vc.viewControllers = viewControllers
+        return vc
+    }
+
+    // MARK: Lifecycle methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tabBarView.delegate = self
+        tabBarView.select(0)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tabBarView.configureViews()
+    }
+
+    // MARK: Default methods
+    override func setupViewModel() {
+        super.setupViewModel()
+    }
+
+    override func setupUI() {
+        super.setupUI()
+        
+        navigationItem.title = L10n.profileViewToolbarTitle
+        
+        tabBarView.buttonBackgroundColor = ColorTheme.mainColor
+        tabBarView.buttonBackgroundColorHighlighted = ColorTheme.mainColor
+        tabBarView.buttonMainLabelColor = .white
+        tabBarView.buttonMainLabelColorHighlighted = .white
+        tabBarView.stripViewColor = .black
+        tabBarView.availableOptions = [L10n.profileViewTabBarProfileTitle, L10n.profileViewTabBarSettingsTitle]
+    }
+
+    // MARK: Additional methods
+
+}
+
+extension ProfileWrapperViewController: TabBarViewDelegate {
+    func didSelectViewController(tag: Int) {
+        if let controller = currentViewController {
+            removeViewController(controller: controller)
+        }
+        
+        currentViewController = viewControllers[tag]
+        
+        if let controller = currentViewController {
+            addViewController(controller: controller)
+        }
+    }
+    
+    func removeViewController(controller: BaseViewController) {
+        controller.willMove(toParent: nil)
+        controller.view.removeFromSuperview()
+        controller.removeFromParent()
+    }
+    
+    func addViewController(controller: BaseViewController) {
+        addChild(controller)
+        containerView.addSubview(controller.view)
+        controller.view.frame = containerView.bounds
+        controller.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        controller.didMove(toParent: self)
+    }
+}

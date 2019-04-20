@@ -68,8 +68,6 @@ final class ProfileViewController: BaseViewController {
 
     override func setupUI() {
         super.setupUI()
-        
-        navigationItem.title = L10n.profileViewToolbarTitle
     }
     
 }

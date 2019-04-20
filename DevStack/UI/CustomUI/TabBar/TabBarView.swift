@@ -19,14 +19,14 @@ public protocol TabBarViewDelegate: class {
     @IBInspectable public var buttonMainLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
     @IBInspectable public var buttonMainLabelFontHighlighted: UIFont = UIFont.systemFont(ofSize: 16)
     
-    @IBInspectable public var buttonMainLabelColor: UIColor = .white
-    @IBInspectable public var buttonMainLabelColorHighlighted: UIColor = .white
+    @IBInspectable public var buttonMainLabelColor: UIColor = .black
+    @IBInspectable public var buttonMainLabelColorHighlighted: UIColor = .black
     
     @IBInspectable public var buttonNumberLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
     @IBInspectable public var buttonNumberLabelFontHighlighted: UIFont = UIFont.systemFont(ofSize: 16)
     
-    @IBInspectable public var buttonNumberLabelColor: UIColor = .white
-    @IBInspectable public var buttonNumberLabelColorHighlighted: UIColor = .white
+    @IBInspectable public var buttonNumberLabelColor: UIColor = .black
+    @IBInspectable public var buttonNumberLabelColorHighlighted: UIColor = .black   
     
     @IBInspectable public var buttonNumberViewBackgroundColor: UIColor = .clear
     @IBInspectable public var buttonNumberViewBackgroundColorHighlighted: UIColor = .clear
@@ -67,13 +67,14 @@ public protocol TabBarViewDelegate: class {
     
     private var tabBarButtons: [TabBarButton] = []
     
-    override public func configureViews() {
-        widthConstraintStripView.constant = scrollView.contentSize.width / max(CGFloat(tabBarButtons.count), 1)
+    public var availableOptions: [String] = [] {
+        didSet {
+            addButtons(titles: availableOptions)
+        }
     }
     
-    /// Must be a last call on tab bar view initialization
-    public func setupAvailableOptions(_ options: [String]) {
-        addButtons(titles: options)
+    override public func configureViews() {
+        widthConstraintStripView.constant = scrollView.contentSize.width / max(CGFloat(tabBarButtons.count), 1)
     }
     
     public func select(_ index: Int, animated: Bool = false) {

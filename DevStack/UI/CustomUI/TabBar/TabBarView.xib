@@ -15,7 +15,7 @@
                 <outlet property="leadingConstraintStripView" destination="RwX-tQ-Fty" id="R7z-9X-Uao"/>
                 <outlet property="scrollView" destination="BOE-oW-bWD" id="tGy-xW-765"/>
                 <outlet property="stripView" destination="9Id-S4-Eqb" id="dfG-NX-iBP"/>
-                <outlet property="stripViewHeightConstratint" destination="VOR-xn-x5y" id="eBz-AU-P6G"/>
+                <outlet property="stripViewHeightConstraint" destination="VOR-xn-x5y" id="wKR-0B-2S2"/>
                 <outlet property="widthConstraintStripView" destination="8rh-6V-XaH" id="nvm-eD-gTz"/>
             </connections>
         </placeholder>

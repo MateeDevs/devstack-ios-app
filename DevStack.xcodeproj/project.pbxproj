@@ -283,6 +283,18 @@
 		45DB975B226A955700C3F234 /* WhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB975A226A955700C3F234 /* WhisperView.swift */; };
 		45DB975C226A955700C3F234 /* WhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB975A226A955700C3F234 /* WhisperView.swift */; };
 		45DB975D226A955700C3F234 /* WhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB975A226A955700C3F234 /* WhisperView.swift */; };
+		45DB9774226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DB9771226BA5B200C3F234 /* ProfileWrapper.storyboard */; };
+		45DB9775226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DB9771226BA5B200C3F234 /* ProfileWrapper.storyboard */; };
+		45DB9776226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DB9771226BA5B200C3F234 /* ProfileWrapper.storyboard */; };
+		45DB9777226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB9772226BA5B200C3F234 /* ProfileWrapperViewController.swift */; };
+		45DB9778226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB9772226BA5B200C3F234 /* ProfileWrapperViewController.swift */; };
+		45DB9779226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB9772226BA5B200C3F234 /* ProfileWrapperViewController.swift */; };
+		45DB9780226BA9D200C3F234 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DB977D226BA9D200C3F234 /* Settings.storyboard */; };
+		45DB9781226BA9D200C3F234 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DB977D226BA9D200C3F234 /* Settings.storyboard */; };
+		45DB9782226BA9D200C3F234 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DB977D226BA9D200C3F234 /* Settings.storyboard */; };
+		45DB9783226BA9D200C3F234 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB977E226BA9D200C3F234 /* SettingsViewController.swift */; };
+		45DB9784226BA9D200C3F234 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB977E226BA9D200C3F234 /* SettingsViewController.swift */; };
+		45DB9785226BA9D200C3F234 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB977E226BA9D200C3F234 /* SettingsViewController.swift */; };
 		45DE1D9421CA9CA300C455C4 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DE1D9321CA9CA300C455C4 /* AuthAPI.swift */; };
 		45DE1D9521CA9CA300C455C4 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DE1D9321CA9CA300C455C4 /* AuthAPI.swift */; };
 		45DE1D9621CA9CA300C455C4 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DE1D9321CA9CA300C455C4 /* AuthAPI.swift */; };
@@ -517,6 +529,10 @@
 		45DA0806222E87780003D32A /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		45DA0807222E87780003D32A /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		45DB975A226A955700C3F234 /* WhisperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperView.swift; sourceTree = "<group>"; };
+		45DB9771226BA5B200C3F234 /* ProfileWrapper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileWrapper.storyboard; sourceTree = "<group>"; };
+		45DB9772226BA5B200C3F234 /* ProfileWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWrapperViewController.swift; sourceTree = "<group>"; };
+		45DB977D226BA9D200C3F234 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		45DB977E226BA9D200C3F234 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		45DE1D9321CA9CA300C455C4 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		45DE1D9721CAACC300C455C4 /* UserList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserList.json; sourceTree = "<group>"; };
 		45E1E618221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
@@ -1068,10 +1084,30 @@
 		45DB9760226B871300C3F234 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				45DB9771226BA5B200C3F234 /* ProfileWrapper.storyboard */,
+				45DB9772226BA5B200C3F234 /* ProfileWrapperViewController.swift */,
+				45DB976F226BA58600C3F234 /* Tab1 - Profile */,
+				45DB9770226BA59A00C3F234 /* Tab2 - Settings */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		45DB976F226BA58600C3F234 /* Tab1 - Profile */ = {
+			isa = PBXGroup;
+			children = (
 				459EC5A32239895F0045BE3B /* Profile.storyboard */,
 				45E8A4BC220AF3C0003F7502 /* ProfileViewController.swift */,
 			);
-			path = Main;
+			path = "Tab1 - Profile";
+			sourceTree = "<group>";
+		};
+		45DB9770226BA59A00C3F234 /* Tab2 - Settings */ = {
+			isa = PBXGroup;
+			children = (
+				45DB977D226BA9D200C3F234 /* Settings.storyboard */,
+				45DB977E226BA9D200C3F234 /* SettingsViewController.swift */,
+			);
+			path = "Tab2 - Settings";
 			sourceTree = "<group>";
 		};
 		45E1E61C221D5C55006C84D1 /* LocationManager */ = {
@@ -1301,10 +1337,12 @@
 				4588FF0A2225A73C0014FC79 /* RatingView.xcassets in Resources */,
 				45E8A570220F7933003F7502 /* Users.storyboard in Resources */,
 				45DE1D9821CAACC300C455C4 /* UserList.json in Resources */,
+				45DB9780226BA9D200C3F234 /* Settings.storyboard in Resources */,
 				453CEAB321553E1F00A94BAC /* RatingView.xib in Resources */,
 				4511A6EA213D2677006AD4CC /* TabBarView.xib in Resources */,
 				A83F0EBE21490F1100313067 /* UserImageView.xib in Resources */,
 				45890B2021FF5CD800894255 /* AuthToken.json in Resources */,
+				45DB9774226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
 				45128B792142A627007B6B47 /* TabBarButton.xib in Resources */,
 				456852382105BD20006D3618 /* User.json in Resources */,
 				45DA0808222E87780003D32A /* Registration.storyboard in Resources */,
@@ -1330,10 +1368,12 @@
 				4588FF0B2225A73C0014FC79 /* RatingView.xcassets in Resources */,
 				45E8A571220F7933003F7502 /* Users.storyboard in Resources */,
 				45DE1D9921CAACC300C455C4 /* UserList.json in Resources */,
+				45DB9781226BA9D200C3F234 /* Settings.storyboard in Resources */,
 				453CEAB421553E1F00A94BAC /* RatingView.xib in Resources */,
 				4511A6EB213D2677006AD4CC /* TabBarView.xib in Resources */,
 				A83F0EBF21490F1100313067 /* UserImageView.xib in Resources */,
 				45890B2121FF5CD800894255 /* AuthToken.json in Resources */,
+				45DB9775226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
 				45128B7A2142A627007B6B47 /* TabBarButton.xib in Resources */,
 				450392852256B29D0037BF42 /* GoogleService-Info-Alpha.plist in Resources */,
 				456852392105BD20006D3618 /* User.json in Resources */,
@@ -1359,10 +1399,12 @@
 				4588FF0C2225A73C0014FC79 /* RatingView.xcassets in Resources */,
 				45E8A572220F7933003F7502 /* Users.storyboard in Resources */,
 				45DE1D9A21CAACC300C455C4 /* UserList.json in Resources */,
+				45DB9782226BA9D200C3F234 /* Settings.storyboard in Resources */,
 				453CEAB521553E1F00A94BAC /* RatingView.xib in Resources */,
 				4511A6EC213D2677006AD4CC /* TabBarView.xib in Resources */,
 				45128B7B2142A627007B6B47 /* TabBarButton.xib in Resources */,
 				45890B2221FF5CD800894255 /* AuthToken.json in Resources */,
+				45DB9776226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
 				4568523A2105BD20006D3618 /* User.json in Resources */,
 				A83F0EC021490F1100313067 /* UserImageView.xib in Resources */,
 				45DA080A222E87780003D32A /* Registration.storyboard in Resources */,
@@ -1714,6 +1756,7 @@
 				45E8A576220F7933003F7502 /* UsersViewModel.swift in Sources */,
 				45E8A573220F7933003F7502 /* UsersViewController.swift in Sources */,
 				4558D30B20FCC8FF005BC325 /* AppDelegate.swift in Sources */,
+				45DB9783226BA9D200C3F234 /* SettingsViewController.swift in Sources */,
 				A82386862138AF1700CC941C /* ColoredImageView.swift in Sources */,
 				4588FF2D22282D000014FC79 /* UserDetailViewModel.swift in Sources */,
 				45DE1D9421CA9CA300C455C4 /* AuthAPI.swift in Sources */,
@@ -1722,6 +1765,7 @@
 				45ECA1B1216BF761000B1124 /* UserAPI.swift in Sources */,
 				A8DDD0CF2121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F0213D2677006AD4CC /* TabBarView.swift in Sources */,
+				45DB9777226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BC210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				45F4AE422180B88400E75B4A /* LocalizedImageView.swift in Sources */,
 				45E8A4BE220AF3C0003F7502 /* ProfileViewController.swift in Sources */,
@@ -1831,6 +1875,7 @@
 				45E8A577220F7933003F7502 /* UsersViewModel.swift in Sources */,
 				45E8A574220F7933003F7502 /* UsersViewController.swift in Sources */,
 				459761CE20FDD60A0034DE29 /* AppDelegate.swift in Sources */,
+				45DB9784226BA9D200C3F234 /* SettingsViewController.swift in Sources */,
 				A82386872138AF1700CC941C /* ColoredImageView.swift in Sources */,
 				4588FF2E22282D000014FC79 /* UserDetailViewModel.swift in Sources */,
 				459762DF20FE21290034DE29 /* Storyboards.swift in Sources */,
@@ -1839,6 +1884,7 @@
 				A8DDD0D02121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				45ECA1B2216BF761000B1124 /* UserAPI.swift in Sources */,
 				4511A6F1213D2677006AD4CC /* TabBarView.swift in Sources */,
+				45DB9778226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BD210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				459762E420FE21BC0034DE29 /* ViewModelType.swift in Sources */,
 				45E8A4BF220AF3C0003F7502 /* ProfileViewController.swift in Sources */,
@@ -1948,6 +1994,7 @@
 				45E8A578220F7933003F7502 /* UsersViewModel.swift in Sources */,
 				45E8A575220F7933003F7502 /* UsersViewController.swift in Sources */,
 				459761DC20FDD61E0034DE29 /* AppDelegate.swift in Sources */,
+				45DB9785226BA9D200C3F234 /* SettingsViewController.swift in Sources */,
 				A82386882138AF1700CC941C /* ColoredImageView.swift in Sources */,
 				4588FF2F22282D000014FC79 /* UserDetailViewModel.swift in Sources */,
 				45DE1D9621CA9CA300C455C4 /* AuthAPI.swift in Sources */,
@@ -1956,6 +2003,7 @@
 				45ECA1B3216BF761000B1124 /* UserAPI.swift in Sources */,
 				A8DDD0D12121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F2213D2677006AD4CC /* TabBarView.swift in Sources */,
+				45DB9779226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BE210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				45F4AE442180B88400E75B4A /* LocalizedImageView.swift in Sources */,
 				45E8A4C0220AF3C0003F7502 /* ProfileViewController.swift in Sources */,

@@ -337,6 +337,10 @@ public enum L10n {
   /// Logout
   public static let profileViewLogoutButton = L10n.tr("Localizable", "profile_view_logout_button")
   /// Profile
+  public static let profileViewTabBarProfileTitle = L10n.tr("Localizable", "profile_view_tab_bar_profile_title")
+  /// Settings
+  public static let profileViewTabBarSettingsTitle = L10n.tr("Localizable", "profile_view_tab_bar_settings_title")
+  /// Profile
   public static let profileViewToolbarTitle = L10n.tr("Localizable", "profile_view_toolbar_title")
   /// User with specified email already exists.
   public static let registerViewEmailAlreadyExists = L10n.tr("Localizable", "register_view_email_already_exists")

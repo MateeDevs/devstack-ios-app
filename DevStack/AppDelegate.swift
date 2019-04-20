@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Logger.info("PRODUCTION environment", category: .app)
         #endif
         
-        #warning("FIXME: Remove after Crashlytics are fully integrated into Firebase. (Also remove the Pods and Build Phase script)")
+        #warning("FIXME: Remove after Crashlytics are fully integrated into Firebase. (Also remove Pods and Build Phase script)")
         Fabric.with([Crashlytics.self])
 
         clearKeychain()
