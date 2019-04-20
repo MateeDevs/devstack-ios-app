@@ -20,8 +20,6 @@ extension BaseViewController {
     ///
     public func showAlert(title: String, message: String? = nil,
                                  primaryAction: UIAlertAction? = nil, secondaryAction: UIAlertAction? = nil) {
-        guard let vc = UIApplication.topViewController() else { return }
-        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         if let primaryAction = primaryAction {
@@ -34,7 +32,7 @@ extension BaseViewController {
             alert.addAction(secondaryAction)
         }
         
-        vc.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     ///
@@ -58,15 +56,13 @@ extension BaseViewController {
     /// - parameter hideAfter: Automatically hide WhisperView after a given interval (0 for permanent whisper).
     ///
     public func showWhisper(message: String, style: WhisperStyle = .info, hideAfter: TimeInterval = 0.0) {
-        guard let vc = UIApplication.topViewController() else { return }
-        
-        let whisper = WhisperView(frame: CGRect(x: 0, y: -vc.view.safeAreaInsets.top - 25,
-                                                width: vc.view.bounds.width, height: vc.view.safeAreaInsets.top + 25))
+        let whisper = WhisperView(frame: CGRect(x: 0, y: -view.safeAreaInsets.top - 25,
+                                                width: view.bounds.width, height: view.safeAreaInsets.top + 25))
         whisper.message = message
         whisper.backgroundColor = style.color
         
         hideWhisper()
-        vc.view.addSubview(whisper)
+        view.addSubview(whisper)
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
             whisper.frame.origin.y = 0
         }, completion: nil)
@@ -90,12 +86,10 @@ extension BaseViewController {
     
     /// Hide and remove WhisperView from current top ViewController.
     public func hideWhisper() {
-        guard let vc = UIApplication.topViewController() else { return }
-        
-        for view in vc.view.subviews {
+        for view in view.subviews {
             if view.isKind(of: WhisperView.self) {
                 UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
-                    view.frame.origin.y = -vc.view.safeAreaInsets.top - 30
+                    view.frame.origin.y = -view.safeAreaInsets.top - 30
                 }, completion: { finished in
                     view.removeFromSuperview()
                 })

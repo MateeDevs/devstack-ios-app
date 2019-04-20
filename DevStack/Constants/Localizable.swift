@@ -74,6 +74,12 @@ public enum L10n {
   public static let dialogErrorCloseText = L10n.tr("Localizable", "dialog_error_close_text")
   /// Error
   public static let dialogErrorTitle = L10n.tr("Localizable", "dialog_error_title")
+  /// Sign in
+  public static let dialogInterceptorButtonTitle = L10n.tr("Localizable", "dialog_interceptor_button_title")
+  /// You must sign in again to continue.
+  public static let dialogInterceptorText = L10n.tr("Localizable", "dialog_interceptor_text")
+  /// Error
+  public static let dialogInterceptorTitle = L10n.tr("Localizable", "dialog_interceptor_title")
   /// Done
   public static let done = L10n.tr("Localizable", "done")
   /// Email client

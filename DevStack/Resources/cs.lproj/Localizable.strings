@@ -240,6 +240,12 @@
 
 "dialog_error_close_text" = "Zavřít";
 
+"dialog_interceptor_title" = "Chyba";
+
+"dialog_interceptor_text" = "Pro pokračování je nutné se znovu přihlásit.";
+
+"dialog_interceptor_button_title" = "Přihlásit se";
+
 
 /********** Plurals **********/
 

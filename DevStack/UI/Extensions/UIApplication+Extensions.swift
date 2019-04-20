@@ -10,11 +10,6 @@ import UIKit
 
 extension UIApplication {
     
-    public var safeAreaInsets: UIEdgeInsets? {
-        guard #available(iOS 11.0, *), let window = UIApplication.shared.keyWindow else { return nil }
-        return window.safeAreaInsets
-    }
-    
     @nonobjc static func rootTabBarController(base: UIViewController? = (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController) -> UITabBarController? {
         guard let nav = base as? UINavigationController, let tab = nav.viewControllers.first as? UITabBarController else { return nil }
         return tab

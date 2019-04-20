@@ -240,6 +240,12 @@
 
 "dialog_error_close_text" = "Close";
 
+"dialog_interceptor_title" = "Error";
+
+"dialog_interceptor_text" = "You must sign in again to continue.";
+
+"dialog_interceptor_button_title" = "Sign in";
+
 
 /********** Plurals **********/
 

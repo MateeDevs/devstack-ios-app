@@ -79,13 +79,16 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
     func request(_ target: MultiTarget, withInterceptor: Bool = true) -> Single<Moya.Response> {
         let actualRequest = provider.rx.request(target).flatMap { (response) -> PrimitiveSequence<SingleTrait, Response> in
             if response.statusCode == 401 {
-                guard withInterceptor else { return Single.just(response) }
+                guard withInterceptor, let vc = UIApplication.topViewController() as? BaseViewController else { return Single.just(response) }
+
+                let action = UIAlertAction(title: L10n.dialogInterceptorButtonTitle, style: .default, handler: { action in
+                    // Perform logout and present login screen
+                    LoginService.logout()
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.flowController?.presentOnboarding()
+                })
                 
-                // Perform logout and present login screen
-                LoginService.logout()
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.flowController?.presentOnboarding()
-                
+                vc.showAlert(title: L10n.dialogInterceptorTitle, message: L10n.dialogInterceptorText, primaryAction: action)
                 return Single.error(MoyaError.statusCode(response))
             } else {
                 return Single.just(response)

@@ -820,7 +820,7 @@
 			isa = PBXGroup;
 			children = (
 				45E8A4B8220AF3A3003F7502 /* ProfileFlowController.swift */,
-				45E8A52D220DDDF0003F7502 /* Main */,
+				45DB9760226B871300C3F234 /* Main */,
 			);
 			path = "Tab2 - Profile";
 			sourceTree = "<group>";
@@ -1065,6 +1065,15 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		45DB9760226B871300C3F234 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				459EC5A32239895F0045BE3B /* Profile.storyboard */,
+				45E8A4BC220AF3C0003F7502 /* ProfileViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		45E1E61C221D5C55006C84D1 /* LocationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1083,15 +1092,6 @@
 				4588FF2322282CE20014FC79 /* Detail */,
 			);
 			path = "Tab1 - Users";
-			sourceTree = "<group>";
-		};
-		45E8A52D220DDDF0003F7502 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				459EC5A32239895F0045BE3B /* Profile.storyboard */,
-				45E8A4BC220AF3C0003F7502 /* ProfileViewController.swift */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		45E8A52E220DDE04003F7502 /* Main */ = {

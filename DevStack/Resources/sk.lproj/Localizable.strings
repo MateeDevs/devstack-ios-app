@@ -240,6 +240,12 @@
 
 "dialog_error_close_text" = "Zavrieť";
 
+"dialog_interceptor_title" = "Chyba";
+
+"dialog_interceptor_text" = "Pre pokračovanie je nutné sa znovu prihlásiť.";
+
+"dialog_interceptor_button_title" = "Prihlásiť sa";
+
 
 /********** Plurals **********/
 
