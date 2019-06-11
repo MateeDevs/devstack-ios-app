@@ -34,6 +34,7 @@ FIXME
 FIXME
 
 ## RubyGems + CocoaPods
+- First of all you should have installed Ruby version 2.5.3 or newer (you can easily manage your Ruby versions with [rbenv](https://github.com/rbenv/rbenv))
 - All ruby gems used in the project (cocoapods, twine, fastlane, ..) are installed via [Bundler](http://bundler.io/)
 - Individual gems are specified in the `Gemfile` and `Gemfile.lock` and can be installed with `bundle install --path vendor/bundle`
 - Any of the installed gems can be started with `bundle exec` (for example `bundle exec pod install --repo-update` for CocoaPods)
@@ -63,7 +64,8 @@ FIXME
 ## Localization
 - All strings in the application are localized and shared with the Android team via [Twine](https://github.com/scelis/twine)
 - Strings are stored in the file `strings.txt` in the separate repository [twine-localization](https://qest.visualstudio.com/Qest/_git/twine-localization)
-- Path to the `twine-localization` folder is loaded from the bash variable `TWINE_FOLDER` (must be added into `~/.bash_profile`)
+- Path to the `twine-localization` folder is loaded from the bash variable `TWINE_FOLDER`
+- Add this line `export TWINE_FOLDER=<PATH_TO_TWINE_FOLDER>` into your `~/.bash_profile`
 - The build phase script then generates appropriate `Localizable.strings` files from the mentioned `strings.txt` file
 - When modifying `strings.txt` it is required to comply with the specified syntax and to pull/push all the changes frequently
 
@@ -81,4 +83,5 @@ FIXME
 - Second version with [SnapKit](https://github.com/SnapKit/SnapKit) instead of xibs and storyboards
 - Implement [ViewStyles](https://felginep.github.io/2019-02-19/uiview-styling-with-functions) for SnapKit version
 - Setup [Xcode Injection](https://github.com/johnno1962/InjectionIII) for SnapKit version
+- Make SwiftGen's L10n in the same format as twine (with underscores) for easy searching
 - Provide example unit tests
