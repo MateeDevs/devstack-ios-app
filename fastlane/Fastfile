@@ -159,8 +159,7 @@ platform :ios do
       app_identifier: config[:app_identifier],
       groups: config[:testflight_groups],
       distribute_external: true,
-      changelog: "#{config[:output_name]} #{version} build #{build}",
-      wait_for_uploaded_build: true
+      changelog: "#{config[:output_name]} #{version} build #{build}"
     )
     slack(
       message: "[iOS #{config[:output_name]}] #{version} build #{build} released via TestFlight\nLink: #{config[:testflight_link]}",
