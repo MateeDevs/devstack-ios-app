@@ -36,7 +36,7 @@ final class LoginViewModel: ViewModel, ViewModelType {
         
         let loginEvent = input.loginButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Driver<Lce<Void>> in
             if inputs.email.isEmpty || inputs.password.isEmpty {
-                return Driver.just(Lce(error: ValidationError(L10n.invalidCredentials)))
+				return Driver.just(Lce(error: ValidationError(L10n.invalid_credentials)))
             } else {
                 return self.dependencies.loginService.login(email: inputs.email, password: inputs.password)
                     .trackActivity(activity)

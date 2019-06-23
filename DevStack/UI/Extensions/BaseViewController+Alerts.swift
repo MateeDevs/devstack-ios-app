@@ -25,7 +25,7 @@ extension BaseViewController {
         if let primaryAction = primaryAction {
             alert.addAction(primaryAction)
         } else {
-            alert.addAction(UIAlertAction(title: L10n.dialogErrorCloseText, style: .default, handler: nil))
+			alert.addAction(UIAlertAction(title: L10n.dialog_error_close_text, style: .default, handler: nil))
         }
         
         if let secondaryAction = secondaryAction {
@@ -43,7 +43,7 @@ extension BaseViewController {
     /// - parameter primaryAction: Primary action for UIAlertController. If not specified, default action will be added.
     /// - parameter secondaryAction: Secondary action for UIAlertController.
     ///
-    public func showAlertWithError(_ error: Error, title: String = L10n.dialogErrorTitle,
+	public func showAlertWithError(_ error: Error, title: String = L10n.dialog_error_title,
                                           primaryAction: UIAlertAction? = nil, secondaryAction: UIAlertAction? = nil) {
         showAlert(title: title, message: error.localizedDescription, primaryAction: primaryAction, secondaryAction: secondaryAction)
     }

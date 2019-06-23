@@ -57,14 +57,14 @@ final class ProfileWrapperViewController: BaseViewController {
     override func setupUI() {
         super.setupUI()
         
-        navigationItem.title = L10n.profileViewToolbarTitle
+		navigationItem.title = L10n.profile_view_toolbar_title
         
         tabBarView.buttonBackgroundColor = ColorTheme.mainColor
         tabBarView.buttonBackgroundColorHighlighted = ColorTheme.mainColor
         tabBarView.buttonMainLabelColor = .white
         tabBarView.buttonMainLabelColorHighlighted = .white
         tabBarView.stripViewColor = .black
-        tabBarView.availableOptions = [L10n.profileViewTabBarProfileTitle, L10n.profileViewTabBarSettingsTitle]
+        tabBarView.availableOptions = [L10n.profile_view_tab_bar_profile_title, L10n.profile_view_tab_bar_settings_title]
     }
 
     // MARK: Additional methods

@@ -58,7 +58,7 @@ final class RegistrationViewController: InputViewController {
         
         output.registrationEvent.drive(onNext: { [weak self] event in
             if event.isLoading {
-                self?.showWhisper(message: L10n.signingUp)
+                self?.showWhisper(message: L10n.signing_up)
             } else if let error = event.error {
                 self?.showWhisperWithError(error)
             } else {

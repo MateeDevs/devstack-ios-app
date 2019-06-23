@@ -67,7 +67,7 @@ final class LoginViewController: InputViewController {
         
         output.loginEvent.drive(onNext: { [weak self] event in
             if event.isLoading {
-                self?.showWhisper(message: L10n.signingIn)
+                self?.showWhisper(message: L10n.signing_in)
             } else if let error = event.error {
                 self?.showWhisperWithError(error)
             } else {

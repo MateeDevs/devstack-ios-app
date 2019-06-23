@@ -64,7 +64,7 @@ final class UserDetailViewController: BaseViewController {
     override func setupUI() {
         super.setupUI()
         
-        navigationItem.title = L10n.userDetailViewToolbarTitle
+        navigationItem.title = L10n.user_detail_view_toolbar_title
     }
 
     // MARK: Additional methods

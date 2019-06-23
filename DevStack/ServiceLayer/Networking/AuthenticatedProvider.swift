@@ -81,14 +81,14 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
             if response.statusCode == 401 {
                 guard withInterceptor, let vc = UIApplication.topViewController() as? BaseViewController else { return Single.just(response) }
 
-                let action = UIAlertAction(title: L10n.dialogInterceptorButtonTitle, style: .default, handler: { action in
+				let action = UIAlertAction(title: L10n.dialog_interceptor_button_title, style: .default, handler: { action in
                     // Perform logout and present login screen
                     LoginService.logout()
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.flowController?.presentOnboarding()
                 })
                 
-                vc.showAlert(title: L10n.dialogInterceptorTitle, message: L10n.dialogInterceptorText, primaryAction: action)
+				vc.showAlert(title: L10n.dialog_interceptor_title, message: L10n.dialog_interceptor_text, primaryAction: action)
                 return Single.error(MoyaError.statusCode(response))
             } else {
                 return Single.just(response)

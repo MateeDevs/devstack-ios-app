@@ -82,5 +82,4 @@ FIXME
 ## TODO
 - Update Pods after [Moya 14.0.0 release](https://github.com/Moya/Moya/releases)
 - Migrate to SwiftUI + Combine when the time is right (not before iOS 14.0 official release)
-- Make SwiftGen's L10n in the same format as twine (with underscores) for easy searching
 - Provide example unit tests

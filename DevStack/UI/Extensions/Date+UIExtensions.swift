@@ -54,7 +54,7 @@ extension Date {
         if elapsedTime < 0 {
             return nil
         } else if elapsedTime < 60 {
-            return L10n.timeEventsNow
+			return L10n.time_events_now
         } else if elapsedTime < 60 * 60 {
             return Plurals.minutes_before.stringForCount(Int(ceil(elapsedTime / 60)))
         } else if elapsedTime < 60 * 60 * 24 {

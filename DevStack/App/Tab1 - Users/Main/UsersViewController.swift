@@ -58,7 +58,7 @@ final class UsersViewController: BaseTableViewController<User> {
     override func setupUI() {
         super.setupUI()
         
-        navigationItem.title = L10n.usersViewToolbarTitle
+		navigationItem.title = L10n.users_view_toolbar_title
     }
 
     // MARK: TableView methods

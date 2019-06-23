@@ -35,9 +35,9 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
         
         let registrationEvent = input.registerButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Driver<Lce<User>> in
             if inputs.email.isEmpty || inputs.password.isEmpty {
-                return Driver.just(Lce(error: ValidationError(L10n.invalidCredentials)))
+				return Driver.just(Lce(error: ValidationError(L10n.invalid_credentials)))
             } else if !DataValidator.validateEmail(inputs.email) {
-                return Driver.just(Lce(error: ValidationError(L10n.invalidEmail)))
+				return Driver.just(Lce(error: ValidationError(L10n.invalid_email)))
             } else {
                 return self.dependencies.loginService.registration(email: inputs.email, password: inputs.password, firstName: "Anonymous", lastName: "")
                     .trackActivity(activity)
