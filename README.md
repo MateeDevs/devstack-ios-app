@@ -80,8 +80,7 @@ FIXME
 - Used build branch should be merged back to the develop branch if any changes are made
 
 ## TODO
-- Second version with [SnapKit](https://github.com/SnapKit/SnapKit) instead of xibs and storyboards
-- Implement [ViewStyles](https://felginep.github.io/2019-02-19/uiview-styling-with-functions) for SnapKit version
-- Setup [Xcode Injection](https://github.com/johnno1962/InjectionIII) for SnapKit version
+- Update Pods after [Moya 14.0.0 release](https://github.com/Moya/Moya/releases)
+- Migrate to SwiftUI + Combine when the time is right (not before iOS 14.0 official release)
 - Make SwiftGen's L10n in the same format as twine (with underscores) for easy searching
 - Provide example unit tests
