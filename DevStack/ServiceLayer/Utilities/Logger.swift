@@ -24,7 +24,7 @@ public enum LoggerCategory {
     }
 }
 
-/// Wrapper class for os_log function
+/// Wrapper for os_log function
 /// - Idea taken from [Unified Logging Wrapper](https://gist.github.com/smosko/6b8c161a7ae092e7b72e891a5050deaa)
 public struct Logger {
     

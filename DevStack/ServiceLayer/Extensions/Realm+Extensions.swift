@@ -76,15 +76,15 @@ extension ObservableType {
 }
 
 extension Reactive where Base: Realm {
-    func save<T: Object>(_ object: T, update: Bool = true, withApiModel: Bool = true) -> Observable<T> {
+    func save<T: Object>(_ object: T, withApiModel: Bool = true) -> Observable<T> {
         return Observable.create { observer in
             do {
                 try self.base.write {
                     // Create new object if it doesn't exists or partially update existing one
                     if !object.exists() {
-                        self.base.add(object, update: update)
+                        self.base.add(object, update: .modified)
                     } else {
-                        self.base.create(T.self, value: withApiModel ? object.apiModel() : object.fullModel(), update: update)
+                        self.base.create(T.self, value: withApiModel ? object.apiModel() : object.fullModel(), update: .modified)
                     }
                 }
                 observer.onNext(object)
@@ -96,16 +96,16 @@ extension Reactive where Base: Realm {
         }
     }
     
-    func save<T: Object>(_ objects: [T], update: Bool = true, withApiModel: Bool = true) -> Observable<[T]> {
+    func save<T: Object>(_ objects: [T], withApiModel: Bool = true) -> Observable<[T]> {
         return Observable.create { observer in
             do {
                 try self.base.write {
                     for object in objects {
                         // Create new object if it doesn't exists or partially update existing one
                         if !object.exists() {
-                            self.base.add(object, update: update)
+                            self.base.add(object, update: .modified)
                         } else {
-                            self.base.create(T.self, value: withApiModel ? object.apiModel() : object.fullModel(), update: update)
+                            self.base.create(T.self, value: withApiModel ? object.apiModel() : object.fullModel(), update: .modified)
                         }
                     }
                 }
@@ -118,7 +118,7 @@ extension Reactive where Base: Realm {
         }
     }
     
-    func appendToList<T: Object>(_ list: List<T>, objects: [T], update: Bool = true, withApiModel: Bool = true) -> Observable<[T]> {
+    func appendToList<T: Object>(_ list: List<T>, objects: [T], withApiModel: Bool = true) -> Observable<[T]> {
         return Observable.create { observer in
             do {
                 try self.base.write {
@@ -128,14 +128,14 @@ extension Reactive where Base: Realm {
                     for object in objects {
                         // Create new object if it doesn't exists or partially update existing one
                         if !object.exists() {
-                            self.base.add(object, update: update)
+                            self.base.add(object, update: .modified)
                         } else {
-                            self.base.create(T.self, value: withApiModel ? object.apiModel() : object.fullModel(), update: update)
+                            self.base.create(T.self, value: withApiModel ? object.apiModel() : object.fullModel(), update: .modified)
                         }
                         // Append reference if it isn't already in the list
                         if let objectReference = self.base.object(ofType: T.self, forPrimaryKey: object["id"]) {
-                            let listIds = list.toArray().map { $0["id"] as! Int }
-                            if !listIds.contains(object["id"] as! Int) {
+                            let listIds = list.toArray().map { $0["id"] as! String }
+                            if !listIds.contains(object["id"] as! String) {
                                 list.append(objectReference)
                             }
                         }
