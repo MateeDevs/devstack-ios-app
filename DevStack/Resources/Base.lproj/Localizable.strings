@@ -183,6 +183,19 @@
 "permission_camera_denied_msg" = "You need permission to take photos";
 
 
+/********** Password validation **********/
+
+"password_validation_length" = "Password must be at least 8 characters long";
+
+"password_validation_lowercase" = "Password must contain at least one lowercase letter";
+
+"password_validation_uppercase" = "Password must contain at least one uppercase letter";
+
+"password_validation_number" = "Password must contain at least one digit";
+
+"password_validation_symbol" = "Password must contain at least one special character";
+
+
 /********** Errors **********/
 
 "error_access_denied_title" = "Access denied";

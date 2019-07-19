@@ -183,6 +183,19 @@
 "permission_camera_denied_msg" = "Pro pořizování fotek potřebuješ oprávnění";
 
 
+/********** Password validation **********/
+
+"password_validation_length" = "Heslo musí být minimálně 8 znaků dlouhé";
+
+"password_validation_lowercase" = "Heslo musí obsahovat minimálně jedno malé písmeno";
+
+"password_validation_uppercase" = "Heslo musí obsahovat minimálně jedno velké písmeno";
+
+"password_validation_number" = "Heslo musí obsahovat minimálně jednu číslici";
+
+"password_validation_symbol" = "Heslo musí obsahovat minimálně jeden speciální znak";
+
+
 /********** Errors **********/
 
 "error_access_denied_title" = "Přístup zamítnut";

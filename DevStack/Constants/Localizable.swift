@@ -330,6 +330,16 @@ public enum L10n {
   public static func otherSecondsBefore(_ p1: Int) -> String {
     return L10n.tr("Localizable", "other_seconds_before", p1)
   }
+  /// Password must be at least 8 characters long
+  public static let password_validation_length = L10n.tr("Localizable", "password_validation_length")
+  /// Password must contain at least one lowercase letter
+  public static let password_validation_lowercase = L10n.tr("Localizable", "password_validation_lowercase")
+  /// Password must contain at least one digit
+  public static let password_validation_number = L10n.tr("Localizable", "password_validation_number")
+  /// Password must contain at least one special character
+  public static let password_validation_symbol = L10n.tr("Localizable", "password_validation_symbol")
+  /// Password must contain at least one uppercase letter
+  public static let password_validation_uppercase = L10n.tr("Localizable", "password_validation_uppercase")
   /// You need permission to take photos
   public static let permission_camera_denied_msg = L10n.tr("Localizable", "permission_camera_denied_msg")
   /// You need permission to upload photos

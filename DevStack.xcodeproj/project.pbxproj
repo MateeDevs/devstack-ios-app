@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -280,6 +280,9 @@
 		45DA080E222E87780003D32A /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA0807222E87780003D32A /* RegistrationViewModel.swift */; };
 		45DA080F222E87780003D32A /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA0807222E87780003D32A /* RegistrationViewModel.swift */; };
 		45DA0810222E87780003D32A /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA0807222E87780003D32A /* RegistrationViewModel.swift */; };
+		45DB140F22E26FA300093272 /* BiometricHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB140E22E26FA300093272 /* BiometricHelper.swift */; };
+		45DB141022E26FA300093272 /* BiometricHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB140E22E26FA300093272 /* BiometricHelper.swift */; };
+		45DB141122E26FA300093272 /* BiometricHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB140E22E26FA300093272 /* BiometricHelper.swift */; };
 		45DB975B226A955700C3F234 /* WhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB975A226A955700C3F234 /* WhisperView.swift */; };
 		45DB975C226A955700C3F234 /* WhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB975A226A955700C3F234 /* WhisperView.swift */; };
 		45DB975D226A955700C3F234 /* WhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB975A226A955700C3F234 /* WhisperView.swift */; };
@@ -528,6 +531,7 @@
 		45DA0805222E87780003D32A /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		45DA0806222E87780003D32A /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		45DA0807222E87780003D32A /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		45DB140E22E26FA300093272 /* BiometricHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricHelper.swift; sourceTree = "<group>"; };
 		45DB975A226A955700C3F234 /* WhisperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperView.swift; sourceTree = "<group>"; };
 		45DB9771226BA5B200C3F234 /* ProfileWrapper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileWrapper.storyboard; sourceTree = "<group>"; };
 		45DB9772226BA5B200C3F234 /* ProfileWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWrapperViewController.swift; sourceTree = "<group>"; };
@@ -950,6 +954,7 @@
 		459762E120FE21A80034DE29 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				45DB140E22E26FA300093272 /* BiometricHelper.swift */,
 				45890B2721FFB95D00894255 /* ColorTheme.swift */,
 				A8D348DC2163777200B7D08F /* DataValidator.swift */,
 				45E8A4B4220AEF90003F7502 /* FlowController.swift */,
@@ -1752,6 +1757,7 @@
 				450DED282261EF29002314E5 /* MainFlowController.swift in Sources */,
 				456851DC2100BC8B006D3618 /* LocalizedButton.swift in Sources */,
 				A82FEF97214650B5006204F3 /* Int+UIExtensions.swift in Sources */,
+				45DB140F22E26FA300093272 /* BiometricHelper.swift in Sources */,
 				45A92DFD2109ABE9007579AC /* Lce.swift in Sources */,
 				45890B4722086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2B22159EE90036919A /* NetworkManager.swift in Sources */,
@@ -1871,6 +1877,7 @@
 				450DED292261EF29002314E5 /* MainFlowController.swift in Sources */,
 				456851DD2100BC8B006D3618 /* LocalizedButton.swift in Sources */,
 				A82FEF98214650B5006204F3 /* Int+UIExtensions.swift in Sources */,
+				45DB141022E26FA300093272 /* BiometricHelper.swift in Sources */,
 				45A92DFE2109ABE9007579AC /* Lce.swift in Sources */,
 				45890B4822086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2C22159EE90036919A /* NetworkManager.swift in Sources */,
@@ -1990,6 +1997,7 @@
 				450DED2A2261EF29002314E5 /* MainFlowController.swift in Sources */,
 				456851DE2100BC8B006D3618 /* LocalizedButton.swift in Sources */,
 				A82FEF99214650B5006204F3 /* Int+UIExtensions.swift in Sources */,
+				45DB141122E26FA300093272 /* BiometricHelper.swift in Sources */,
 				45A92DFF2109ABE9007579AC /* Lce.swift in Sources */,
 				45890B4922086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2D22159EE90036919A /* NetworkManager.swift in Sources */,
