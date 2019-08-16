@@ -23,6 +23,6 @@ struct NetworkManager {
     /// - returns: Observable which emits Response of a network call.
     ///
     func observableRequest(_ endpoint: TargetType, withInterceptor: Bool = true) -> Observable<Response> {
-        return provider.request(MultiTarget(endpoint), withInterceptor: withInterceptor).asObservable().filterSuccess()
+        return provider.request(MultiTarget(endpoint), withInterceptor: withInterceptor).asObservable().filterSuccessfulStatusCodes()
     }
 }

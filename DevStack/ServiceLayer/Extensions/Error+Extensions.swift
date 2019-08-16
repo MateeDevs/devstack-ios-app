@@ -8,19 +8,18 @@
 
 import Foundation
 import RxSwift
+import Moya
 
 extension Error {
     
     func asLceError<T: Any>(_ errors: LceErrors? = nil) -> Observable<Lce<T>> {
-        
         Logger.error("%@", localizedDescription, category: .app)
         
-        guard let serviceError = self as? ServiceError else { return Observable.error(self) }
-        
-        if let message = errors?.messages[serviceError.statusCode] {
-            return Observable.just(Lce(error: ServiceError(statusCode: serviceError.statusCode, message: message)))
+        if let netError = self as? MoyaError, let statusCode = netError.response?.statusCode, let message = errors?.messages[statusCode] {
+            return Observable.just(Lce(error: ServiceError(statusCode: statusCode, message: message)))
         } else {
-            return Observable.just(Lce(error: ServiceError(statusCode: serviceError.statusCode, message: errors?.defaultMessage)))
+            return Observable.just(Lce(error: ServiceError(statusCode: StatusCode.networkError, message: errors?.defaultMessage)))
         }
     }
+    
 }

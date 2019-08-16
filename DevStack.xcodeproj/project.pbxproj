@@ -82,9 +82,6 @@
 		454FEE3D2240601E00EB7A54 /* LceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3C2240601E00EB7A54 /* LceErrors.swift */; };
 		454FEE3E2240601E00EB7A54 /* LceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3C2240601E00EB7A54 /* LceErrors.swift */; };
 		454FEE3F2240601E00EB7A54 /* LceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3C2240601E00EB7A54 /* LceErrors.swift */; };
-		455261B52109F36F00E5F1E1 /* Moya+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261B42109F36F00E5F1E1 /* Moya+Extensions.swift */; };
-		455261B62109F36F00E5F1E1 /* Moya+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261B42109F36F00E5F1E1 /* Moya+Extensions.swift */; };
-		455261B72109F36F00E5F1E1 /* Moya+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261B42109F36F00E5F1E1 /* Moya+Extensions.swift */; };
 		455261BC210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */; };
 		455261BD210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */; };
 		455261BE210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */; };
@@ -455,7 +452,6 @@
 		453CEAC021583A7C00A94BAC /* RatingViewSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewSmall.swift; sourceTree = "<group>"; };
 		454FEE3822404B2C00EB7A54 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		454FEE3C2240601E00EB7A54 /* LceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LceErrors.swift; sourceTree = "<group>"; };
-		455261B42109F36F00E5F1E1 /* Moya+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+Extensions.swift"; sourceTree = "<group>"; };
 		455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		455261C2210AFE1100E5F1E1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		455261C6210AFF1700E5F1E1 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -873,7 +869,6 @@
 				450D3DC6210F4A6C008BAE71 /* Date+Extensions.swift */,
 				45B76D98213591A9003BB997 /* Encodable+Extensions.swift */,
 				45B76D9F213591D0003BB997 /* Error+Extensions.swift */,
-				455261B42109F36F00E5F1E1 /* Moya+Extensions.swift */,
 				45B76DA6213591ED003BB997 /* Object+Extensions.swift */,
 				455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */,
 				45A3D59E2119B76000E39169 /* Realm+Extensions.swift */,
@@ -1774,7 +1769,6 @@
 				456851EA2100CAED006D3618 /* EnhancedLabel.swift in Sources */,
 				456852642105D805006D3618 /* String+Extensions.swift in Sources */,
 				459762DB20FE21290034DE29 /* Localizable.swift in Sources */,
-				455261B52109F36F00E5F1E1 /* Moya+Extensions.swift in Sources */,
 				4568522A2105BB52006D3618 /* NetworkingUtilities.swift in Sources */,
 				45E8A55E220F6F2C003F7502 /* UserTableViewCell.swift in Sources */,
 				450E863421072D35001D3E54 /* AppDependency.swift in Sources */,
@@ -1894,7 +1888,6 @@
 				456851EB2100CAED006D3618 /* EnhancedLabel.swift in Sources */,
 				456852652105D805006D3618 /* String+Extensions.swift in Sources */,
 				459762DC20FE21290034DE29 /* Localizable.swift in Sources */,
-				455261B62109F36F00E5F1E1 /* Moya+Extensions.swift in Sources */,
 				4568522B2105BB52006D3618 /* NetworkingUtilities.swift in Sources */,
 				45E8A55F220F6F2C003F7502 /* UserTableViewCell.swift in Sources */,
 				450E863521072D35001D3E54 /* AppDependency.swift in Sources */,
@@ -2014,7 +2007,6 @@
 				456851EC2100CAED006D3618 /* EnhancedLabel.swift in Sources */,
 				456852662105D805006D3618 /* String+Extensions.swift in Sources */,
 				459762DD20FE21290034DE29 /* Localizable.swift in Sources */,
-				455261B72109F36F00E5F1E1 /* Moya+Extensions.swift in Sources */,
 				4568522C2105BB52006D3618 /* NetworkingUtilities.swift in Sources */,
 				45E8A560220F6F2C003F7502 /* UserTableViewCell.swift in Sources */,
 				450E863621072D35001D3E54 /* AppDependency.swift in Sources */,
