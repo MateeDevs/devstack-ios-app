@@ -14,11 +14,11 @@
 # Project specific variables
 
 workspace = "DevStack.xcworkspace"
-slack_channel = "#testovani"
+slack_channel = "#ci"
 
 alpha = {
   output_name: "A-DevStack",
-  app_identifier: "cz.qest.devstack.alpha",
+  app_identifier: "cz.matee.devstack.alpha",
   scheme: "DevStack_Alpha",
   plist_path: "./DevStack/App/Config/Info-Alpha.plist",
   gsp_path: "./DevStack/App/Config/GoogleService-Info-Alpha.plist",
@@ -28,7 +28,7 @@ alpha = {
 
 beta = {
   output_name: "B-DevStack",
-  app_identifier: "cz.qest.devstack.beta",
+  app_identifier: "cz.matee.devstack.beta",
   scheme: "DevStack_Beta",
   plist_path: "./DevStack/App/Config/Info-Beta.plist",
   gsp_path: "./DevStack/App/Config/GoogleService-Info-Beta.plist",
@@ -38,7 +38,7 @@ beta = {
 
 production = {
   output_name: "DevStack",
-  app_identifier: "cz.qest.devstack",
+  app_identifier: "cz.matee.devstack",
   scheme: "DevStack",
   plist_path: "./DevStack/App/Config/Info.plist",
   gsp_path: "./DevStack/App/Config/GoogleService-Info.plist",
@@ -50,27 +50,27 @@ production = {
 
 # Variables shared among all projects (do not change unless necessary)
 
-qest = {
-  apple_id: "fastlaneqest@gmail.com",
-  team_id_dev: "5GVVJYAWEG",
-  team_id_connect: "117876876",
+matee = {
+  apple_id: "mateefastlane@gmail.com",
+  team_id_dev: "WNB34WBN42",
+  team_id_connect: "120470944",
   match_branch: "master",
-  certificate: "iPhone Distribution: Qest automation s.r.o."
+  certificate: "iPhone Distribution: Matee Devs s.r.o."
 }
 
-match_url = "ssh://qest@vs-ssh.visualstudio.com:22/DefaultCollection/Qest/_ssh/match-ios"
-slack_url = "https://hooks.slack.com/services/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"
+match_url = "git@github.com:MateeDevs/match.git"
+slack_url = "https://hooks.slack.com/services/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"
 
 #####
 
 # Variables to specify developer for production release
 
 client = {
-  apple_id: qest[:apple_id],
-  team_id_dev: qest[:team_id_dev],
-  team_id_connect: qest[:team_id_connect],
-  match_branch: qest[:match_branch],
-  certificate: qest[:certificate]
+  apple_id: matee[:apple_id],
+  team_id_dev: matee[:team_id_dev],
+  team_id_connect: matee[:team_id_connect],
+  match_branch: matee[:match_branch],
+  certificate: matee[:certificate]
 }
 
 #####
@@ -86,12 +86,12 @@ platform :ios do
 
   desc "Create a new Alpha build"
   lane :build_alpha do |options|
-    build(alpha.merge(qest).merge(options))
+    build(alpha.merge(matee).merge(options))
   end
 
   desc "Create a new Beta build"
   lane :build_beta do |options|
-    build(beta.merge(qest).merge(options))
+    build(beta.merge(matee).merge(options))
   end
 
   desc "Create a new Production build"
@@ -134,12 +134,12 @@ platform :ios do
 
   desc "Release the Alpha build via TestFlight"
   lane :release_alpha do
-    release_testflight(alpha.merge(qest))
+    release_testflight(alpha.merge(matee))
   end
 
   desc "Release the Beta build via TestFlight"
   lane :release_beta do
-    release_testflight(beta.merge(qest))
+    release_testflight(beta.merge(matee))
   end
 
   desc "Release the Production build via TestFlight"

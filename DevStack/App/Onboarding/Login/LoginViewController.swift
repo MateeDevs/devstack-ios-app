@@ -3,7 +3,7 @@
 //  DevStack
 //
 //  Created by Petr Chmelar on 04/02/2019.
-//  Copyright © 2019 Qest. All rights reserved.
+//  Copyright © 2019 Matee. All rights reserved.
 //
 
 import UIKit
@@ -44,10 +44,10 @@ final class LoginViewController: InputViewController {
         super.viewDidLoad()
         
         #if ALPHA
-        emailTextField.text = "petr.chmelar@qest.cz"
+        emailTextField.text = "petr.chmelar@matee.cz"
         passwordTextField.text = "11111111"
         #elseif BETA
-        emailTextField.text = "petr.chmelar@qest.cz"
+        emailTextField.text = "petr.chmelar@matee.cz"
         passwordTextField.text = "11111111"
         #endif
     }

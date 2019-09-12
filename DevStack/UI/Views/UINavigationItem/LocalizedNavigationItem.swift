@@ -3,7 +3,7 @@
 //  DevStack
 //
 //  Created by Viktor Kaderabek on 13/08/2018.
-//  Copyright © 2018 Qest. All rights reserved.
+//  Copyright © 2018 Matee. All rights reserved.
 //
 
 import UIKit

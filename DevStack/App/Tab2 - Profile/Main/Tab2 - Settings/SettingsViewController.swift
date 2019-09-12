@@ -3,7 +3,7 @@
 //  DevStack
 //
 //  Created by Petr Chmelar on 20/04/2019.
-//  Copyright © 2019 Qest. All rights reserved.
+//  Copyright © 2019 Matee. All rights reserved.
 //
 
 import UIKit

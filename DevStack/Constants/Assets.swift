@@ -26,7 +26,7 @@ public enum Asset {
     public static let mainRed = ColorAsset(name: "MainRed")
   }
   public enum Images {
-    public static let qestLogo = ImageAsset(name: "QestLogo")
+    public static let brandLogo = ImageAsset(name: "BrandLogo")
     public static let contactsTabBar = ImageAsset(name: "ContactsTabBar")
     public static let profileTabBar = ImageAsset(name: "ProfileTabBar")
   }

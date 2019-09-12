@@ -457,6 +457,7 @@
 		455261C6210AFF1700E5F1E1 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		4558D30720FCC8FF005BC325 /* DevStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4558D30A20FCC8FF005BC325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		456408B52333AF830080678A /* strings.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = strings.txt; path = "../../../../twine-localization/devstack/strings.txt"; sourceTree = "<group>"; };
 		456851B821008988006D3618 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		456851BF2100929E006D3618 /* LocalizedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTextField.swift; sourceTree = "<group>"; };
 		456851C6210095ED006D3618 /* LocalizedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLabel.swift; sourceTree = "<group>"; };
@@ -478,7 +479,6 @@
 		4588FF0E2226EF360014FC79 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		4588FF2522282D000014FC79 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		4588FF2622282D000014FC79 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
-		45890AF821FF4E1100894255 /* strings.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = strings.txt; path = "../../../../qest/twine-localization/devstack/strings.txt"; sourceTree = "<group>"; };
 		45890B1F21FF5CD800894255 /* AuthToken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AuthToken.json; sourceTree = "<group>"; };
 		45890B2321FF5E8F00894255 /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		45890B2721FFB95D00894255 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
@@ -693,7 +693,7 @@
 				455261C2210AFE1100E5F1E1 /* Colors.xcassets */,
 				450D3DD421105261008BAE71 /* Images.xcassets */,
 				45ECA08D21676A9D000B1124 /* Localizable.strings */,
-				45890AF821FF4E1100894255 /* strings.txt */,
+				456408B52333AF830080678A /* strings.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1297,7 +1297,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = Qest;
+				ORGANIZATIONNAME = Matee;
 				TargetAttributes = {
 					4558D30620FCC8FF005BC325 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -1512,7 +1512,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 18e1a50fbeb901050cdf2ec31d5b9728a4fd6ca7 26d21ec388f36b7bd4ebbbf41cf2e675d9d2d03e71277cdb201e18e95f65e87b\n";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 18416c25f4d528a6b659e59640846430e66929a9 4bdc302f16c985755a1641043c841d358e5019301023c16d7e7a8606e3223827\n";
 		};
 		459762F820FE26180034DE29 /* Script for SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1540,7 +1540,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 18e1a50fbeb901050cdf2ec31d5b9728a4fd6ca7 26d21ec388f36b7bd4ebbbf41cf2e675d9d2d03e71277cdb201e18e95f65e87b\n";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 18416c25f4d528a6b659e59640846430e66929a9 4bdc302f16c985755a1641043c841d358e5019301023c16d7e7a8606e3223827\n";
 		};
 		459762FB20FE265C0034DE29 /* Script for SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1568,7 +1568,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 18e1a50fbeb901050cdf2ec31d5b9728a4fd6ca7 26d21ec388f36b7bd4ebbbf41cf2e675d9d2d03e71277cdb201e18e95f65e87b\n";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 18416c25f4d528a6b659e59640846430e66929a9 4bdc302f16c985755a1641043c841d358e5019301023c16d7e7a8606e3223827\n";
 		};
 		591C1CB3B38410305BBE636A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2155,18 +2155,20 @@
 			baseConfigurationReference = DD1EE92A9740314059408958 /* Pods-DevStack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5GVVJYAWEG;
+				DEVELOPMENT_TEAM = WNB34WBN42;
 				INFOPLIST_FILE = DevStack/App/Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
-				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack;
 				PRODUCT_NAME = DevStack;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2178,18 +2180,20 @@
 			baseConfigurationReference = 3266EC7634F7BCD070190849 /* Pods-DevStack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5GVVJYAWEG;
+				DEVELOPMENT_TEAM = WNB34WBN42;
 				INFOPLIST_FILE = DevStack/App/Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
-				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack;
 				PRODUCT_NAME = DevStack;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2201,18 +2205,20 @@
 			baseConfigurationReference = A592C9E57154D698582F52F6 /* Pods-DevStack_Alpha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Alpha";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5GVVJYAWEG;
+				DEVELOPMENT_TEAM = WNB34WBN42;
 				INFOPLIST_FILE = "DevStack/App/Config/Info-Alpha.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DALPHA\"";
-				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack.alpha;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.alpha;
 				PRODUCT_NAME = "A-DevStack";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2224,18 +2230,20 @@
 			baseConfigurationReference = 3108F6D7CC6CF709865E9678 /* Pods-DevStack_Alpha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Alpha";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5GVVJYAWEG;
+				DEVELOPMENT_TEAM = WNB34WBN42;
 				INFOPLIST_FILE = "DevStack/App/Config/Info-Alpha.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DALPHA\"";
-				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack.alpha;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.alpha;
 				PRODUCT_NAME = "A-DevStack";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2247,18 +2255,20 @@
 			baseConfigurationReference = F50E336A748BE131E45BF8CF /* Pods-DevStack_Beta.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Beta";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5GVVJYAWEG;
+				DEVELOPMENT_TEAM = WNB34WBN42;
 				INFOPLIST_FILE = "DevStack/App/Config/Info-Beta.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DBETA\"";
-				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack.beta;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.beta;
 				PRODUCT_NAME = "B-DevStack";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2270,18 +2280,20 @@
 			baseConfigurationReference = AFEE2864E1EDF8F86BC7B391 /* Pods-DevStack_Beta.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Beta";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5GVVJYAWEG;
+				DEVELOPMENT_TEAM = WNB34WBN42;
 				INFOPLIST_FILE = "DevStack/App/Config/Info-Beta.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DBETA\"";
-				PRODUCT_BUNDLE_IDENTIFIER = cz.qest.devstack.beta;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.beta;
 				PRODUCT_NAME = "B-DevStack";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";

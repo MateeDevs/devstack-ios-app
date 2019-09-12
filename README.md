@@ -1,7 +1,7 @@
-# QEST iOS DevStack
+# Matee iOS DevStack
 
 ## Documents
-- **API Doc:** [Postmanerator](https://qest-devstack.herokuapp.com/apidoc.html)
+- **API Doc:** [Postmanerator](https://matee-devstack.herokuapp.com/apidoc.html)
 - **Specification:** FIXME
 - **Graphics:** FIXME
 - **Assets**: FIXME
@@ -9,7 +9,7 @@
 ## ALPHA
 
 ### Configuration
-- **BundleID:** cz.qest.devstack.alpha
+- **BundleID:** cz.matee.devstack.alpha
 - **API endpoint:** FIXME
 
 ### Test accounts
@@ -18,7 +18,7 @@ FIXME
 ## BETA
 
 ### Configuration
-- **BundleID:** cz.qest.devstack.beta
+- **BundleID:** cz.matee.devstack.beta
 - **API endpoint:** FIXME
 
 ### Test accounts
@@ -27,7 +27,7 @@ FIXME
 ## PRODUCTION
 
 ### Configuration
-- **BundleID:** cz.qest.devstack
+- **BundleID:** cz.matee.devstack
 - **API endpoint:** FIXME
 
 ### Test accounts
@@ -54,8 +54,8 @@ FIXME
 
 ## Style Guide
 - [Swift Style Guide](https://github.com/raywenderlich/swift-style-guide)
-- To ensure a uniform style, it is advisable to use the ready-made templates for ViewController / ViewModel / FlowController etc.
-- The templates are available from a separate repository [ios-templates](https://github.com/pchmelar/ios-templates)
+- To ensure a uniform style, it is advised to use the ready-made templates for ViewController / ViewModel / FlowController etc.
+- The templates are available from a separate repository [ios-templates](https://github.com/MateeDevs/devstack-ios-templates)
 - When using storyboards, strictly go with the rule `one view = one storyboard`!
 - Project structure in the Xcode should reflect the directory structure on your drive
 - Unfinished or broken code should be marked with `#warning("TODO:")` or `#warning("FIXME:")`
@@ -63,14 +63,14 @@ FIXME
 
 ## Localization
 - All strings in the application are localized and shared with the Android team via [Twine](https://github.com/scelis/twine)
-- Strings are stored in the file `strings.txt` in the separate repository [twine-localization](https://qest.visualstudio.com/Qest/_git/twine-localization)
+- Strings are stored in the file `strings.txt` in the separate repository [twine-localization](https://github.com/MateeDevs/twine-localization)
 - Path to the `twine-localization` folder is loaded from the bash variable `TWINE_FOLDER`
 - Add this line `export TWINE_FOLDER=<PATH_TO_TWINE_FOLDER>` into your `~/.bash_profile`
 - The build phase script then generates appropriate `Localizable.strings` files from the mentioned `strings.txt` file
 - When modifying `strings.txt` it is required to comply with the specified syntax and to pull/push all the changes frequently
 
 ## Build + Release
-- CI/CD process is based on Azure DevOps and [Fastlane](https://fastlane.tools/)
+- CI/CD process is based on [GitHub Actions](https://github.com/features/actions) and [Fastlane](https://fastlane.tools/)
 - Main configuration for Fastlane is in the `fastlane/Fastfile` file
 - Build branch should be created from the actual develop branch - `git checkout -b 'build/1.2.3'`
 - The build is started right after the push - `git push origin build/1.2.3`
