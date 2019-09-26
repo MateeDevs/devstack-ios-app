@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - build/*
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: SSH hack
+      run: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+    - name: Twine pull
+      run: git clone "git@github.com:MateeDevs/twine-localization.git" $TWINE_FOLDER
+      env: 
+        TWINE_FOLDER: ~/twine
+        
