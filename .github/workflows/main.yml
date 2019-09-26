@@ -1,4 +1,4 @@
-name: CI
+name: Build
 
 on:
   push:
@@ -7,15 +7,69 @@ on:
 
 jobs:
   build:
-
     runs-on: macOS-latest
-    
     steps:
     - uses: actions/checkout@v1
-    - name: SSH hack
-      run: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
-    - name: Twine pull
-      run: git clone "git@github.com:MateeDevs/twine-localization.git" $TWINE_FOLDER
-      env: 
+    - name: Generate build number
+      run: echo `date +"%y%m%d%H%M"` >> ~/build-number.txt
+    - name: Setup access to Twine repo and pull
+      env:
+        DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY_TWINE }}
+        GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
         TWINE_FOLDER: ~/twine
-        
+      run: |
+        eval "$(ssh-agent -s)"
+        ssh-add - <<< "${DEPLOY_KEY}"
+        git clone "git@github.com:MateeDevs/twine-localization.git" $TWINE_FOLDER
+    - name: Create a new Alpha build
+      env:
+        DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY_MATCH }}
+        GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+        TWINE_FOLDER: ~/twine
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+      run: |
+        eval "$(ssh-agent -s)"
+        ssh-add - <<< "${DEPLOY_KEY}"
+        bundle install --path vendor/bundle
+        bundle exec pod install --repo-update
+        bundle exec fastlane build_alpha git_branch:$GITHUB_REF build_number:`cat ~/build-number.txt`
+        bundle clean
+    - name: Upload the Alpha build to the TestFlight
+      env:
+        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+      run: bundle exec fastlane upload_testflight_alpha
+    - name: Create a new Beta build
+      env:
+        DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY_MATCH }}
+        GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+        TWINE_FOLDER: ~/twine
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+      run: |
+        eval "$(ssh-agent -s)"
+        ssh-add - <<< "${DEPLOY_KEY}"
+        bundle install --path vendor/bundle
+        bundle exec pod install --repo-update
+        bundle exec fastlane build_beta git_branch:$GITHUB_REF build_number:`cat ~/build-number.txt`
+        bundle clean
+    - name: Upload the Beta build to the TestFlight
+      env:
+        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+      run: bundle exec fastlane upload_testflight_beta
+    # - name: Create a new Production build
+    #   env:
+    #     DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY_MATCH }}
+    #     GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+    #     TWINE_FOLDER: ~/twine
+    #     MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+    #     BUILD_NUMBER: $(cat ~/build-number.txt)
+    #   run: |
+    #     eval "$(ssh-agent -s)"
+    #     ssh-add - <<< "${DEPLOY_KEY}"
+    #     bundle install --path vendor/bundle
+    #     bundle exec pod install --repo-update
+    #     bundle exec fastlane build_production git_branch:$GITHUB_REF build_number:`cat ~/build-number.txt`
+    #     bundle clean
+    # - name: Upload the Production build to the TestFlight
+    #   env:
+    #     FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+    #   run: bundle exec fastlane upload_testflight_production
