@@ -82,6 +82,35 @@ platform :ios do
     ENV["SLACK_URL"] = slack_url
   end
 
+  # CHECK PROVISIONING PROFILE
+
+  desc "Check Alpha provisiong profile"
+  lane :provision_alpha do |options|
+    provision(alpha.merge(matee).merge(options))
+  end
+
+  desc "Check Beta provisiong profile"
+  lane :provision_beta do |options|
+    provision(beta.merge(matee).merge(options))
+  end
+
+  desc "Check Production provisiong profile"
+  lane :provision_production do |options|
+    provision(production.merge(matee).merge(options))
+  end
+
+  desc "Check provisioning profile"
+  private_lane :provision do |config|
+    match(
+      username: config[:apple_id],
+      team_id: config[:team_id_dev],
+      app_identifier: config[:app_identifier],
+      git_url: match_url,
+      git_branch: config[:match_branch],
+      type: "appstore"
+    )
+  end
+
   # BUILD
 
   desc "Create a new Alpha build"
@@ -112,7 +141,8 @@ platform :ios do
       app_identifier: config[:app_identifier],
       git_url: match_url,
       git_branch: config[:match_branch],
-      type: "appstore"
+      type: "appstore",
+      readonly: true
     )
     gym(
       workspace: workspace,
