@@ -135,6 +135,16 @@ platform :ios do
     end
     increment_version_number(version_number: config[:git_branch].split('/').last)
     increment_build_number(build_number: config[:build_number])
+    keychain_name = "fastlane"
+    keychain_password = SecureRandom.base64
+    create_keychain(
+      name: keychain_name,
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      lock_when_sleeps: true,
+      password: keychain_password
+    )
     match(
       username: config[:apple_id],
       team_id: config[:team_id_dev],
@@ -142,6 +152,8 @@ platform :ios do
       git_url: match_url,
       git_branch: config[:match_branch],
       type: "appstore",
+      keychain_name: keychain_name,
+      keychain_password: keychain_password,
       readonly: true
     )
     gym(
