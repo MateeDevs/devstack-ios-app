@@ -16,21 +16,21 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
-### ios provision_alpha
+### ios signing_alpha
 ```
-fastlane ios provision_alpha
+fastlane ios signing_alpha
 ```
-Check Alpha provisiong profile
-### ios provision_beta
+Sync Alpha signing
+### ios signing_beta
 ```
-fastlane ios provision_beta
+fastlane ios signing_beta
 ```
-Check Beta provisiong profile
-### ios provision_production
+Sync Beta signing
+### ios signing_production
 ```
-fastlane ios provision_production
+fastlane ios signing_production
 ```
-Check Production provisiong profile
+Sync Production signing
 ### ios build_alpha
 ```
 fastlane ios build_alpha
@@ -46,26 +46,26 @@ Create a new Beta build
 fastlane ios build_production
 ```
 Create a new Production build
-### ios release_alpha
+### ios upload_testflight_alpha
 ```
-fastlane ios release_alpha
+fastlane ios upload_testflight_alpha
 ```
-Release the Alpha build via TestFlight
-### ios release_beta
+Upload the Alpha build to the TestFlight
+### ios upload_testflight_beta
 ```
-fastlane ios release_beta
+fastlane ios upload_testflight_beta
 ```
-Release the Beta build via TestFlight
-### ios release_production_testflight
+Upload the Beta build to the TestFlight
+### ios upload_testflight_production
 ```
-fastlane ios release_production_testflight
+fastlane ios upload_testflight_production
 ```
-Release the Production build via TestFlight
-### ios release_production_appstore
+Upload the Production build to the TestFlight
+### ios upload_appstore_production
 ```
-fastlane ios release_production_appstore
+fastlane ios upload_appstore_production
 ```
-Submit the Production build to the AppStore
+Upload the Production build to the AppStore
 
 ----
 
