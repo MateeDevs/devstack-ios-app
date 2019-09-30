@@ -21,7 +21,7 @@ import AlamofireImage
         }
     }
     
-    @IBInspectable public var placeholderBackgroundColor: UIColor = .lightGray {
+    @IBInspectable public var placeholderBackgroundColor: UIColor = ColorTheme.mainTheme {
         didSet {
             userPlaceHolderView.backgroundColor = placeholderBackgroundColor
         }

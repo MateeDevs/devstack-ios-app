@@ -14,7 +14,7 @@ class BaseButton: EnhancedButton {
         super.awakeFromNib()
         
         cornerRadius = 5.0
-        backgroundColor = ColorTheme.mainColor
+        backgroundColor = ColorTheme.mainTheme
         setTitleColor(UIColor.white, for: .normal)
         
         if let label = titleLabel {

@@ -96,7 +96,7 @@ final class LoginViewController: InputViewController {
         emailTextField.textContentType = UITextContentType(rawValue: "")
         passwordTextField.textContentType = UITextContentType(rawValue: "")
         
-        registerButton.tintColor = Asset.Colors.mainRed.color
+        registerButton.tintColor = ColorTheme.mainTheme
     }
     
     // MARK: Additional methods

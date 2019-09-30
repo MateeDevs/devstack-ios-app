@@ -23,7 +23,7 @@ public enum Asset {
     public static let alertInfo = ColorAsset(name: "AlertInfo")
     public static let alertSuccess = ColorAsset(name: "AlertSuccess")
     public static let mainBackground = ColorAsset(name: "MainBackground")
-    public static let mainRed = ColorAsset(name: "MainRed")
+    public static let mainTheme = ColorAsset(name: "MainTheme")
   }
   public enum Images {
     public static let brandLogo = ImageAsset(name: "BrandLogo")

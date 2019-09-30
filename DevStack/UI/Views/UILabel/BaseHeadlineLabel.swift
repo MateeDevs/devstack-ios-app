@@ -13,7 +13,7 @@ class BaseHeadlineLabel: LocalizedLabel {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        textColor = ColorTheme.mainColor
+        textColor = ColorTheme.mainTheme
         font = UIFont.systemFont(ofSize: 28.0, weight: .medium)
         numberOfLines = 1
         adjustsFontSizeToFitWidth = true
