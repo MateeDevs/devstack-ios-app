@@ -34,7 +34,8 @@ FIXME
 FIXME
 
 ## RubyGems + CocoaPods
-- First of all you should have installed Ruby version 2.5.3 or newer (you can easily manage your Ruby versions with [rbenv](https://github.com/rbenv/rbenv))
+- First of all you should have installed Ruby version 2.5.3 or higher (you can easily manage your Ruby versions with [rbenv](https://github.com/rbenv/rbenv))
+- You should also have installed rubygems version 3.0.0 or higher (you can update rubygems with `gem update --system`)
 - All ruby gems used in the project (cocoapods, twine, fastlane, ..) are installed via [Bundler](http://bundler.io/)
 - Individual gems are specified in the `Gemfile` and `Gemfile.lock` and can be installed with `bundle install --path vendor/bundle`
 - Any of the installed gems can be started with `bundle exec` (for example `bundle exec pod install --repo-update` for CocoaPods)
@@ -71,16 +72,16 @@ FIXME
 
 ## Build + Release
 - CI/CD process is based on [GitHub Actions](https://github.com/features/actions) and [Fastlane](https://fastlane.tools/)
+- Main configuration for GitHub Actions is in the `.github/workflows/main.yml` file
 - Main configuration for Fastlane is in the `fastlane/Fastfile` file
-- Build branch should be created from the actual develop branch - `git checkout -b 'build/1.2.3'`
+- Build branch should be created from the current develop branch - `git checkout -b 'build/1.2.3'`
 - The build is started right after the push - `git push origin build/1.2.3`
 - Version number is automatically set based on the branch name (for example `1.2.3` for the branch `build/1.2.3`)
 - Build number is generated on the CI server, the values set in the Xcode are ignored
-- The builds for all environments (alpha/beta/production) are produced and alpha version is released via TestFlight
-- Used build branch should be merged back to the develop branch if any changes are made
+- The builds for all environments (alpha/beta/production) are produced and uploaded to the TestFlight
+- Used build branch should be merged back to the develop branch if any changes was made
 
 ## TODO
-- Switch CocoaPods to CDN after [1.8.0 release](http://blog.cocoapods.org/CocoaPods-1.8.0-beta/)
-- Update Pods after [Moya 14.0.0 release](bundle exec pod install --repo-updatehttps://github.com/Moya/Moya/releases)
+- Update Pods after [Moya 14.0.0 release](https://github.com/Moya/Moya/releases)
 - Migrate to SwiftUI + Combine when the time is right (not before iOS 14.0 official release)
 - Provide example unit tests
