@@ -28,6 +28,7 @@ class AppFlowController: FlowController, MainFlowControllerDelegate, OnboardingF
     func presentOnboarding() {
         let nc = UINavigationController()
         let fc = OnboardingFlowController(navigationController: nc, dependencies: dependencies)
+        nc.modalPresentationStyle = .fullScreen
         navigationController.present(nc, animated: true, completion: nil)
         fc.delegate = self
         startChildFlow(fc)
