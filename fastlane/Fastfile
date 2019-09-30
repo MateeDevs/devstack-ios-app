@@ -54,7 +54,7 @@ matee = {
   apple_id: "mateefastlane@gmail.com",
   team_id_dev: "WNB34WBN42",
   team_id_connect: "120470944",
-  match_branch: "master",
+  match_branch: "matee",
   certificate: "iPhone Distribution: Matee Devs s.r.o."
 }
 
@@ -80,6 +80,36 @@ default_platform(:ios)
 platform :ios do
   before_all do
     ENV["SLACK_URL"] = slack_url
+    ENV["DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS"] = "-t DAV"
+  end
+
+  # SYNC SIGNING
+
+  desc "Sync Alpha signing"
+  lane :signing_alpha do |options|
+    signing(alpha.merge(matee).merge(options))
+  end
+
+  desc "Sync Beta signing"
+  lane :signing_beta do |options|
+    signing(beta.merge(matee).merge(options))
+  end
+
+  desc "Sync Production signing"
+  lane :signing_production do |options|
+    signing(production.merge(matee).merge(options))
+  end
+
+  desc "Sync signing"
+  private_lane :signing do |config|
+    sync_code_signing(
+      username: config[:apple_id],
+      team_id: config[:team_id_dev],
+      app_identifier: config[:app_identifier],
+      git_url: match_url,
+      git_branch: config[:match_branch],
+      type: "appstore"
+    )
   end
 
   # BUILD
@@ -106,15 +136,28 @@ platform :ios do
     end
     increment_version_number(version_number: config[:git_branch].split('/').last)
     increment_build_number(build_number: config[:build_number])
-    match(
+    keychain_name = "fastlane"
+    keychain_password = SecureRandom.base64
+    create_keychain(
+      name: keychain_name,
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      lock_when_sleeps: true,
+      password: keychain_password
+    )
+    sync_code_signing(
       username: config[:apple_id],
       team_id: config[:team_id_dev],
       app_identifier: config[:app_identifier],
       git_url: match_url,
       git_branch: config[:match_branch],
-      type: "appstore"
+      type: "appstore",
+      keychain_name: keychain_name,
+      keychain_password: keychain_password,
+      readonly: true
     )
-    gym(
+    build_ios_app(
       workspace: workspace,
       scheme: config[:scheme],
       clean: true,
@@ -130,57 +173,58 @@ platform :ios do
     )
   end
 
-  # RELEASE VIA TESTFLIGHT
+  # UPLOAD TO THE TESTFLIGHT
 
-  desc "Release the Alpha build via TestFlight"
-  lane :release_alpha do
-    release_testflight(alpha.merge(matee))
+  desc "Upload the Alpha build to the TestFlight"
+  lane :upload_testflight_alpha do
+    upload_testflight(alpha.merge(matee))
   end
 
-  desc "Release the Beta build via TestFlight"
-  lane :release_beta do
-    release_testflight(beta.merge(matee))
+  desc "Upload the Beta build to the TestFlight"
+  lane :upload_testflight_beta do
+    upload_testflight(beta.merge(matee))
   end
 
-  desc "Release the Production build via TestFlight"
-  lane :release_production_testflight do
-    release_testflight(production.merge(client))
+  desc "Upload the Production build to the TestFlight"
+  lane :upload_testflight_production do
+    upload_testflight(production.merge(client))
   end
 
-  desc "Release the build via TestFlight"
-  private_lane :release_testflight do |config|
+  desc "Upload the build to the TestFlight"
+  private_lane :upload_testflight do |config|
     version = get_info_plist_value(path: config[:plist_path], key: "CFBundleShortVersionString")
     build = get_info_plist_value(path: config[:plist_path], key: "CFBundleVersion")
-    pilot(
+    upload_to_testflight(
       ipa: "./#{config[:output_name]}.ipa",
       username: config[:apple_id],
       dev_portal_team_id: config[:team_id_dev],
       team_id: config[:team_id_connect],
       app_identifier: config[:app_identifier],
-      groups: config[:testflight_groups],
-      distribute_external: true,
-      changelog: "#{config[:output_name]} #{version} build #{build}"
+      skip_waiting_for_build_processing: true,
+      # distribute_external: true,
+      # groups: config[:testflight_groups],
+      # changelog: "#{config[:output_name]} #{version} build #{build}"
     )
     slack(
-      message: "[iOS #{config[:output_name]}] #{version} build #{build} released via TestFlight\nLink: #{config[:testflight_link]}",
+      message: "[iOS #{config[:output_name]}] #{version} build #{build} uploaded to the TestFlight\nLink: #{config[:testflight_link]}",
       channel: slack_channel,
       default_payloads: [],
       payload: {}
     )
   end
 
-  # SUBMIT TO APPSTORE
+  # UPLOAD TO THE APPSTORE
 
-  desc "Submit the Production build to the AppStore"
-  lane :release_production_appstore do
-    release_appstore(production.merge(client))
+  desc "Upload the Production build to the AppStore"
+  lane :upload_appstore_production do
+    upload_appstore(production.merge(client))
   end
 
-  desc "Submit the build to the AppStore"
-  private_lane :release_appstore do |config|
+  desc "Upload the build to the AppStore"
+  private_lane :upload_appstore do |config|
     version = get_info_plist_value(path: config[:plist_path], key: "CFBundleShortVersionString")
     build = get_info_plist_value(path: config[:plist_path], key: "CFBundleVersion")
-    deliver(
+    upload_to_app_store(
       ipa: "./#{config[:output_name]}.ipa",
       username: config[:apple_id],
       dev_portal_team_id: config[:team_id_dev],
@@ -191,7 +235,7 @@ platform :ios do
       skip_metadata: true
     )
     slack(
-      message: "[iOS #{config[:output_name]}] #{version} build #{build} submitted to the AppStore",
+      message: "[iOS #{config[:output_name]}] #{version} build #{build} uploaded to the AppStore",
       channel: slack_channel,
       default_payloads: [],
       payload: {}

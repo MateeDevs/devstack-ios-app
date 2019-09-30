@@ -16,106 +16,56 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
-### ios build_customer_alpha_fabric
+### ios signing_alpha
 ```
-fastlane ios build_customer_alpha_fabric
+fastlane ios signing_alpha
 ```
-Create a new Shipvio Customer Alpha build for Fabric
-### ios build_driver_alpha_fabric
+Sync Alpha signing
+### ios signing_beta
 ```
-fastlane ios build_driver_alpha_fabric
+fastlane ios signing_beta
 ```
-Create a new Shipvio Driver Alpha build for Fabric
-### ios build_customer_beta_fabric
+Sync Beta signing
+### ios signing_production
 ```
-fastlane ios build_customer_beta_fabric
+fastlane ios signing_production
 ```
-Create a new Shipvio Customer Beta build for Fabric
-### ios build_driver_beta_fabric
+Sync Production signing
+### ios build_alpha
 ```
-fastlane ios build_driver_beta_fabric
+fastlane ios build_alpha
 ```
-Create a new Shipvio Driver Beta build for Fabric
-### ios release_customer_alpha_fabric
+Create a new Alpha build
+### ios build_beta
 ```
-fastlane ios release_customer_alpha_fabric
+fastlane ios build_beta
 ```
-Release the Shipvio Customer Alpha build via Fabric
-### ios release_driver_alpha_fabric
+Create a new Beta build
+### ios build_production
 ```
-fastlane ios release_driver_alpha_fabric
+fastlane ios build_production
 ```
-Release the Shipvio Driver Alpha build via Fabric
-### ios release_customer_beta_fabric
+Create a new Production build
+### ios upload_testflight_alpha
 ```
-fastlane ios release_customer_beta_fabric
+fastlane ios upload_testflight_alpha
 ```
-Release the Shipvio Customer Beta build via Fabric
-### ios release_driver_beta_fabric
+Upload the Alpha build to the TestFlight
+### ios upload_testflight_beta
 ```
-fastlane ios release_driver_beta_fabric
+fastlane ios upload_testflight_beta
 ```
-Release the Shipvio Driver Beta build via Fabric
-### ios build_customer_alpha_testflight
+Upload the Beta build to the TestFlight
+### ios upload_testflight_production
 ```
-fastlane ios build_customer_alpha_testflight
+fastlane ios upload_testflight_production
 ```
-Create a new Shipvio Customer Alpha build for TestFlight
-### ios build_driver_alpha_testflight
+Upload the Production build to the TestFlight
+### ios upload_appstore_production
 ```
-fastlane ios build_driver_alpha_testflight
+fastlane ios upload_appstore_production
 ```
-Create a new Shipvio Driver Alpha build for TestFlight
-### ios build_customer_beta_testflight
-```
-fastlane ios build_customer_beta_testflight
-```
-Create a new Shipvio Customer Beta build for TestFlight
-### ios build_driver_beta_testflight
-```
-fastlane ios build_driver_beta_testflight
-```
-Create a new Shipvio Driver Beta build for TestFlight
-### ios release_customer_alpha_testflight
-```
-fastlane ios release_customer_alpha_testflight
-```
-Release the Shipvio Customer Alpha build via TestFlight
-### ios release_driver_alpha_testflight
-```
-fastlane ios release_driver_alpha_testflight
-```
-Release the Shipvio Driver Alpha build via TestFlight
-### ios release_customer_beta_testflight
-```
-fastlane ios release_customer_beta_testflight
-```
-Release the Shipvio Customer Beta build via TestFlight
-### ios release_driver_beta_testflight
-```
-fastlane ios release_driver_beta_testflight
-```
-Release the Shipvio Driver Beta build via TestFlight
-### ios build_customer_production
-```
-fastlane ios build_customer_production
-```
-Create a new Shipvio Customer Production build for AppStore
-### ios build_driver_production
-```
-fastlane ios build_driver_production
-```
-Create a new Shipvio Driver Production build for AppStore
-### ios release_customer_production
-```
-fastlane ios release_customer_production
-```
-Submit the Shipvio Customer Production build to AppStore
-### ios release_driver_production
-```
-fastlane ios release_driver_production
-```
-Create a new Shipvio Driver Production build for AppStore
+Upload the Production build to the AppStore
 
 ----
 

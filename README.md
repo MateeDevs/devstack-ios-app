@@ -81,6 +81,6 @@ FIXME
 
 ## TODO
 - Switch CocoaPods to CDN after [1.8.0 release](http://blog.cocoapods.org/CocoaPods-1.8.0-beta/)
-- Update Pods after [Moya 14.0.0 release](https://github.com/Moya/Moya/releases)
+- Update Pods after [Moya 14.0.0 release](bundle exec pod install --repo-updatehttps://github.com/Moya/Moya/releases)
 - Migrate to SwiftUI + Combine when the time is right (not before iOS 14.0 official release)
 - Provide example unit tests
