@@ -10,8 +10,8 @@
 		450384752170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
 		450384762170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
 		450384772170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
-		450392852256B29D0037BF42 /* GoogleService-Info-Alpha.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450392842256B29D0037BF42 /* GoogleService-Info-Alpha.plist */; };
-		450392872256B35E0037BF42 /* GoogleService-Info-Beta.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450392862256B35E0037BF42 /* GoogleService-Info-Beta.plist */; };
+		450392852256B29D0037BF42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450392842256B29D0037BF42 /* GoogleService-Info.plist */; };
+		450392872256B35E0037BF42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450392862256B35E0037BF42 /* GoogleService-Info.plist */; };
 		450392892256B3C60037BF42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450392882256B3C60037BF42 /* GoogleService-Info.plist */; };
 		450D3DC7210F4A6C008BAE71 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450D3DC6210F4A6C008BAE71 /* Date+Extensions.swift */; };
 		450D3DC8210F4A6C008BAE71 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450D3DC6210F4A6C008BAE71 /* Date+Extensions.swift */; };
@@ -424,8 +424,8 @@
 		3108F6D7CC6CF709865E9678 /* Pods-DevStack_Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Alpha.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha.release.xcconfig"; sourceTree = "<group>"; };
 		3266EC7634F7BCD070190849 /* Pods-DevStack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack/Pods-DevStack.release.xcconfig"; sourceTree = "<group>"; };
 		450384742170E4FC004F43DC /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
-		450392842256B29D0037BF42 /* GoogleService-Info-Alpha.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Alpha.plist"; sourceTree = "<group>"; };
-		450392862256B35E0037BF42 /* GoogleService-Info-Beta.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Beta.plist"; sourceTree = "<group>"; };
+		450392842256B29D0037BF42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		450392862256B35E0037BF42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		450392882256B3C60037BF42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		450D3DC6210F4A6C008BAE71 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		450D3DD421105261008BAE71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -491,8 +491,8 @@
 		4589DDF3213FF93700800E67 /* PreviewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewObject.swift; sourceTree = "<group>"; };
 		459761D720FDD60A0034DE29 /* A-DevStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A-DevStack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		459761E520FDD61E0034DE29 /* B-DevStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "B-DevStack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4597621120FDD8E10034DE29 /* Info-Alpha.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Alpha.plist"; sourceTree = "<group>"; };
-		4597621220FDD8E10034DE29 /* Info-Beta.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Beta.plist"; sourceTree = "<group>"; };
+		4597621120FDD8E10034DE29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4597621220FDD8E10034DE29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4597621320FDD8E10034DE29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4597621920FDE4360034DE29 /* AppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
 		4597624D20FDEBC80034DE29 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -625,12 +625,9 @@
 		450392832256B14C0037BF42 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				4597621120FDD8E10034DE29 /* Info-Alpha.plist */,
-				4597621220FDD8E10034DE29 /* Info-Beta.plist */,
-				4597621320FDD8E10034DE29 /* Info.plist */,
-				450392842256B29D0037BF42 /* GoogleService-Info-Alpha.plist */,
-				450392862256B35E0037BF42 /* GoogleService-Info-Beta.plist */,
-				450392882256B3C60037BF42 /* GoogleService-Info.plist */,
+				45CF3CAA2343F24400015EF5 /* Alpha */,
+				45CF3CAB2343F25600015EF5 /* Beta */,
+				45CF3CAC2343F26400015EF5 /* Production */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1071,6 +1068,33 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		45CF3CAA2343F24400015EF5 /* Alpha */ = {
+			isa = PBXGroup;
+			children = (
+				4597621120FDD8E10034DE29 /* Info.plist */,
+				450392842256B29D0037BF42 /* GoogleService-Info.plist */,
+			);
+			path = Alpha;
+			sourceTree = "<group>";
+		};
+		45CF3CAB2343F25600015EF5 /* Beta */ = {
+			isa = PBXGroup;
+			children = (
+				4597621220FDD8E10034DE29 /* Info.plist */,
+				450392862256B35E0037BF42 /* GoogleService-Info.plist */,
+			);
+			path = Beta;
+			sourceTree = "<group>";
+		};
+		45CF3CAC2343F26400015EF5 /* Production */ = {
+			isa = PBXGroup;
+			children = (
+				4597621320FDD8E10034DE29 /* Info.plist */,
+				450392882256B3C60037BF42 /* GoogleService-Info.plist */,
+			);
+			path = Production;
+			sourceTree = "<group>";
+		};
 		45DA0804222E87680003D32A /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -1375,7 +1399,7 @@
 				45890B2121FF5CD800894255 /* AuthToken.json in Resources */,
 				45DB9775226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
 				45128B7A2142A627007B6B47 /* TabBarButton.xib in Resources */,
-				450392852256B29D0037BF42 /* GoogleService-Info-Alpha.plist in Resources */,
+				450392852256B29D0037BF42 /* GoogleService-Info.plist in Resources */,
 				456852392105BD20006D3618 /* User.json in Resources */,
 				45DA0809222E87780003D32A /* Registration.storyboard in Resources */,
 				45890B4022086C9C00894255 /* Login.storyboard in Resources */,
@@ -1415,7 +1439,7 @@
 				453CEAC321583A7D00A94BAC /* RatingViewSmall.xib in Resources */,
 				45ECA09121676A9D000B1124 /* Localizable.strings in Resources */,
 				450D3DD721105261008BAE71 /* Images.xcassets in Resources */,
-				450392872256B35E0037BF42 /* GoogleService-Info-Beta.plist in Resources */,
+				450392872256B35E0037BF42 /* GoogleService-Info.plist in Resources */,
 				459EC5A222396ED60045BE3B /* UserDetail.storyboard in Resources */,
 				4597625020FDEBC80034DE29 /* Main.storyboard in Resources */,
 				455261C5210AFE1100E5F1E1 /* Colors.xcassets in Resources */,
@@ -2160,7 +2184,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WNB34WBN42;
-				INFOPLIST_FILE = DevStack/App/Config/Info.plist;
+				INFOPLIST_FILE = DevStack/App/Config/Production/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2185,7 +2209,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WNB34WBN42;
-				INFOPLIST_FILE = DevStack/App/Config/Info.plist;
+				INFOPLIST_FILE = DevStack/App/Config/Production/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2210,7 +2234,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WNB34WBN42;
-				INFOPLIST_FILE = "DevStack/App/Config/Info-Alpha.plist";
+				INFOPLIST_FILE = DevStack/App/Config/Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2235,7 +2259,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "DevStack/App/Config/Info-Alpha.plist";
+				INFOPLIST_FILE = DevStack/App/Config/Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2260,7 +2284,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WNB34WBN42;
-				INFOPLIST_FILE = "DevStack/App/Config/Info-Beta.plist";
+				INFOPLIST_FILE = DevStack/App/Config/Beta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2285,7 +2309,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WNB34WBN42;
-				INFOPLIST_FILE = "DevStack/App/Config/Info-Beta.plist";
+				INFOPLIST_FILE = DevStack/App/Config/Beta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

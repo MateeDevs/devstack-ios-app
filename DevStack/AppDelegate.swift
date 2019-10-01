@@ -116,18 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Firebase
     private func firebaseSetup() {
-        var filePath: String?
-        #if ALPHA
-        filePath = Bundle.main.path(forResource: "GoogleService-Info-Alpha", ofType: "plist")
-        #elseif BETA
-        filePath = Bundle.main.path(forResource: "GoogleService-Info-Beta", ofType: "plist")
-        #else
-        filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")
-        #endif
-        
-        if let filePath = filePath, let options = FirebaseOptions(contentsOfFile: filePath) {
-            FirebaseApp.configure(options: options)
-        }
+        FirebaseApp.configure()
     }
     
     // MARK: Appearance

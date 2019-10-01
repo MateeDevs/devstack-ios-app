@@ -21,8 +21,8 @@ alpha = {
   output_name: "A-DevStack",
   app_identifier: "cz.matee.devstack.alpha",
   scheme: "DevStack_Alpha",
-  plist_path: "./DevStack/App/Config/Info-Alpha.plist",
-  gsp_path: "./DevStack/App/Config/GoogleService-Info-Alpha.plist",
+  plist_path: "./DevStack/App/Config/Alpha/Info.plist",
+  gsp_path: "./DevStack/App/Config/Alpha/GoogleService-Info.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
   testflight_link: "NOT AVAILABLE"
 }
@@ -32,8 +32,8 @@ beta = {
   output_name: "B-DevStack",
   app_identifier: "cz.matee.devstack.beta",
   scheme: "DevStack_Beta",
-  plist_path: "./DevStack/App/Config/Info-Beta.plist",
-  gsp_path: "./DevStack/App/Config/GoogleService-Info-Beta.plist",
+  plist_path: "./DevStack/App/Config/Beta/Info.plist",
+  gsp_path: "./DevStack/App/Config/Beta/GoogleService-Info.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
   testflight_link: "NOT AVAILABLE"
 }
@@ -43,8 +43,8 @@ production = {
   output_name: "DevStack",
   app_identifier: "cz.matee.devstack",
   scheme: "DevStack",
-  plist_path: "./DevStack/App/Config/Info.plist",
-  gsp_path: "./DevStack/App/Config/GoogleService-Info.plist",
+  plist_path: "./DevStack/App/Config/Production/Info.plist",
+  gsp_path: "./DevStack/App/Config/Production/GoogleService-Info.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
   testflight_link: "NOT AVAILABLE"
 }
