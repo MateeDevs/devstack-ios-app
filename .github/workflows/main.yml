@@ -6,70 +6,186 @@ on:
       - build/*
 
 jobs:
-  build:
+
+  build-number:
+    name: Generate build number
     runs-on: macOS-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Generate build number
-      run: echo `date +"%y%m%d%H%M"` >> ~/build-number.txt
-    - name: Setup access to Twine repo and pull
-      env:
-        DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY_TWINE }}
-        GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
-        TWINE_FOLDER: ~/twine
-      run: |
-        eval "$(ssh-agent -s)"
-        ssh-add - <<< "${DEPLOY_KEY}"
-        git clone "git@github.com:MateeDevs/twine-localization.git" $TWINE_FOLDER
-    - name: Create a new Alpha build
-      env:
-        DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY_MATCH }}
-        GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
-        TWINE_FOLDER: ~/twine
-        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-      run: |
-        eval "$(ssh-agent -s)"
-        ssh-add - <<< "${DEPLOY_KEY}"
-        bundle install --path vendor/bundle
-        bundle exec pod install --repo-update
-        bundle exec fastlane build_alpha git_branch:$GITHUB_REF build_number:`cat ~/build-number.txt`
-        bundle clean
-    - name: Upload the Alpha build to the TestFlight
-      env:
-        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-      run: bundle exec fastlane upload_testflight_alpha
-    - name: Create a new Beta build
-      env:
-        DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY_MATCH }}
-        GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
-        TWINE_FOLDER: ~/twine
-        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-      run: |
-        eval "$(ssh-agent -s)"
-        ssh-add - <<< "${DEPLOY_KEY}"
-        bundle install --path vendor/bundle
-        bundle exec pod install --repo-update
-        bundle exec fastlane build_beta git_branch:$GITHUB_REF build_number:`cat ~/build-number.txt`
-        bundle clean
-    - name: Upload the Beta build to the TestFlight
-      env:
-        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-      run: bundle exec fastlane upload_testflight_beta
-    # - name: Create a new Production build
-    #   env:
-    #     DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY_MATCH }}
-    #     GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
-    #     TWINE_FOLDER: ~/twine
-    #     MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-    #     BUILD_NUMBER: $(cat ~/build-number.txt)
-    #   run: |
-    #     eval "$(ssh-agent -s)"
-    #     ssh-add - <<< "${DEPLOY_KEY}"
-    #     bundle install --path vendor/bundle
-    #     bundle exec pod install --repo-update
-    #     bundle exec fastlane build_production git_branch:$GITHUB_REF build_number:`cat ~/build-number.txt`
-    #     bundle clean
-    # - name: Upload the Production build to the TestFlight
-    #   env:
-    #     FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-    #   run: bundle exec fastlane upload_testflight_production
+      - name: Generate build number
+        run: echo `date +"%y%m%d%H%M"` >> build-number.txt
+      - name: Upload artifact with build number
+        uses: actions/upload-artifact@v1
+        with:
+          name: build-number
+          path: build-number.txt
+
+  build-alpha:
+    name: Create Alpha build
+    needs: build-number
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v1
+      - name: Download artifact with build number
+        uses: actions/download-artifact@v1
+        with:
+          name: build-number
+      - name: Setup access to Twine repo and pull
+        env:
+          DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY_TWINE }}
+          GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+          TWINE_FOLDER: ~/twine
+        run: |
+          eval "$(ssh-agent -s)"
+          ssh-add - <<< "${DEPLOY_KEY}"
+          git clone "git@github.com:MateeDevs/twine-localization.git" $TWINE_FOLDER
+      - name: Create a new Alpha build
+        env:
+          DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY_MATCH }}
+          GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+          TWINE_FOLDER: ~/twine
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        run: |
+          eval "$(ssh-agent -s)"
+          ssh-add - <<< "${DEPLOY_KEY}"
+          bundle install --path vendor/bundle
+          bundle exec pod install --repo-update
+          bundle exec fastlane build_alpha git_branch:$GITHUB_REF build_number:`cat build-number/build-number.txt`
+      - name: Upload artifact with the Alpha build
+        uses: actions/upload-artifact@v1
+        with:
+          name: build-alpha
+          path: ipa
+
+  build-beta:
+    name: Create Beta build
+    needs: build-number
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v1
+      - name: Download artifact with build number
+        uses: actions/download-artifact@v1
+        with:
+          name: build-number
+      - name: Setup access to Twine repo and pull
+        env:
+          DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY_TWINE }}
+          GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+          TWINE_FOLDER: ~/twine
+        run: |
+          eval "$(ssh-agent -s)"
+          ssh-add - <<< "${DEPLOY_KEY}"
+          git clone "git@github.com:MateeDevs/twine-localization.git" $TWINE_FOLDER
+      - name: Create a new Beta build
+        env:
+          DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY_MATCH }}
+          GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+          TWINE_FOLDER: ~/twine
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        run: |
+          eval "$(ssh-agent -s)"
+          ssh-add - <<< "${DEPLOY_KEY}"
+          bundle install --path vendor/bundle
+          bundle exec pod install --repo-update
+          bundle exec fastlane build_beta git_branch:$GITHUB_REF build_number:`cat build-number/build-number.txt`
+      - name: Upload artifact with the Beta build
+        uses: actions/upload-artifact@v1
+        with:
+          name: build-beta
+          path: ipa
+
+  # build-production:
+  #   name: Create Production build
+  #   needs: build-number
+  #   runs-on: macOS-latest
+  #   steps:
+  #     - name: Checkout repo
+  #       uses: actions/checkout@v1
+  #     - name: Download artifact with build number
+  #       uses: actions/download-artifact@v1
+  #       with:
+  #         name: build-number
+  #     - name: Setup access to Twine repo and pull
+  #       env:
+  #         DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY_TWINE }}
+  #         GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+  #         TWINE_FOLDER: ~/twine
+  #       run: |
+  #         eval "$(ssh-agent -s)"
+  #         ssh-add - <<< "${DEPLOY_KEY}"
+  #         git clone "git@github.com:MateeDevs/twine-localization.git" $TWINE_FOLDER
+  #     - name: Create a new Production build
+  #       env:
+  #         DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY_MATCH }}
+  #         GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+  #         TWINE_FOLDER: ~/twine
+  #         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+  #       run: |
+  #         eval "$(ssh-agent -s)"
+  #         ssh-add - <<< "${DEPLOY_KEY}"
+  #         bundle install --path vendor/bundle
+  #         bundle exec pod install --repo-update
+  #         bundle exec fastlane build_production git_branch:$GITHUB_REF build_number:`cat build-number/build-number.txt`
+  #     - name: Upload artifact with the Production build
+  #       uses: actions/upload-artifact@v1
+  #       with:
+  #         name: build-alpha
+  #         path: ipa
+
+  upload-alpha:
+    name: Upload Alpha build
+    needs: build-alpha
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v1
+      - name: Download artifact with the Alpha build
+        uses: actions/download-artifact@v1
+        with:
+          name: build-alpha
+      - name: Upload the Alpha build to the TestFlight
+        env:
+          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+        run: |
+          mv build-alpha ipa
+          bundle install --path vendor/bundle
+          bundle exec fastlane upload_testflight_alpha
+
+  upload-beta:
+    name: Upload Beta build
+    needs: build-beta
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v1
+      - name: Download artifact with the Beta build
+        uses: actions/download-artifact@v1
+        with:
+          name: build-beta
+      - name: Upload the Beta build to the TestFlight
+        env:
+          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+        run: |
+          mv build-beta ipa
+          bundle install --path vendor/bundle
+          bundle exec fastlane upload_testflight_beta
+
+  # upload-production:
+  #   name: Upload Production build
+  #   needs: build-production
+  #   runs-on: macOS-latest
+  #   steps:
+  #     - name: Checkout repo
+  #       uses: actions/checkout@v1
+  #     - name: Download artifact with the Production build
+  #       uses: actions/download-artifact@v1
+  #       with:
+  #         name: build-production
+  #     - name: Upload the Production build to the TestFlight
+  #       env:
+  #         FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+  #       run: |
+  #         mv build-production ipa
+  #         bundle install --path vendor/bundle
+  #         bundle exec fastlane upload_testflight_production
