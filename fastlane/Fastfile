@@ -85,18 +85,18 @@ platform :ios do
   # SYNC SIGNING
 
   desc "Sync Alpha signing"
-  lane :signing_alpha do |options|
-    signing(alpha.merge(matee).merge(options))
+  lane :signing_alpha
+    signing(alpha.merge(matee))
   end
 
   desc "Sync Beta signing"
-  lane :signing_beta do |options|
-    signing(beta.merge(matee).merge(options))
+  lane :signing_beta
+    signing(beta.merge(matee))
   end
 
   desc "Sync Production signing"
-  lane :signing_production do |options|
-    signing(production.merge(matee).merge(options))
+  lane :signing_production
+    signing(production.merge(matee))
   end
 
   desc "Sync signing"
@@ -130,11 +130,17 @@ platform :ios do
 
   desc "Create a new build"
   private_lane :build do |config|
-    unless config[:git_branch] =~ /#{config[:build_branch]}\/+\d\.+\d?\.*\d$/
+
+    unless config[:git_branch] =~ /#{config[:build_branch]}\/\d+\.\d+(\.\d+)?$/
       UI.user_error!("Invalid git branch: \"#{config[:git_branch]}\". Expect: \"#{config[:build_branch]}/x.x.x\"")
     end
     increment_version_number(version_number: config[:git_branch].split('/').last)
+
+    unless config[:build_number] =~ /^\d{1,18}$/
+      UI.user_error!("Invalid build number: \"#{config[:build_number]}\". Expect 1-18 digits")
+    end
     increment_build_number(build_number: config[:build_number])
+
     keychain_name = "fastlane"
     keychain_password = SecureRandom.base64
     create_keychain(
@@ -241,18 +247,18 @@ platform :ios do
   # SYNC DSYM FILES
 
   desc "Sync Alpha dSYM files"
-  lane :dsym_alpha do |options|
-    dsym(alpha.merge(matee).merge(options))
+  lane :dsym_alpha
+    dsym(alpha.merge(matee))
   end
 
   desc "Sync Beta dSYM files"
-  lane :dsym_beta do |options|
-    dsym(beta.merge(matee).merge(options))
+  lane :dsym_beta
+    dsym(beta.merge(matee))
   end
 
   desc "Sync Production dSYM files"
-  lane :dsym_production do |options|
-    dsym(production.merge(matee).merge(options))
+  lane :dsym_production
+    dsym(production.merge(matee))
   end
 
   desc "Sync dSYM files"
