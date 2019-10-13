@@ -66,6 +66,21 @@ Upload the Production build to the TestFlight
 fastlane ios upload_appstore_production
 ```
 Upload the Production build to the AppStore
+### ios dsym_alpha
+```
+fastlane ios dsym_alpha
+```
+Sync Alpha dSYM files
+### ios dsym_beta
+```
+fastlane ios dsym_beta
+```
+Sync Beta dSYM files
+### ios dsym_production
+```
+fastlane ios dsym_production
+```
+Sync Production dSYM files
 
 ----
 
