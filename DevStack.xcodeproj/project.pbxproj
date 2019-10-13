@@ -1536,7 +1536,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 18416c25f4d528a6b659e59640846430e66929a9 4bdc302f16c985755a1641043c841d358e5019301023c16d7e7a8606e3223827\n";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
 		};
 		459762F820FE26180034DE29 /* Script for SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1564,7 +1564,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 18416c25f4d528a6b659e59640846430e66929a9 4bdc302f16c985755a1641043c841d358e5019301023c16d7e7a8606e3223827\n";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
 		};
 		459762FB20FE265C0034DE29 /* Script for SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1592,7 +1592,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 18416c25f4d528a6b659e59640846430e66929a9 4bdc302f16c985755a1641043c841d358e5019301023c16d7e7a8606e3223827\n";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
 		};
 		591C1CB3B38410305BBE636A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

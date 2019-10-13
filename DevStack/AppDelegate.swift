@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Fabric
-import Crashlytics
 import Firebase
 import RealmSwift
 
@@ -27,9 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #else
         Logger.info("PRODUCTION environment", category: .app)
         #endif
-        
-        #warning("FIXME: Remove after Crashlytics are fully integrated into Firebase. (Also remove Pods and Build Phase script)")
-        Fabric.with([Crashlytics.self])
 
         clearKeychain()
         realmSetup()
