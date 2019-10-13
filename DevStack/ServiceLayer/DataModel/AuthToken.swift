@@ -26,7 +26,7 @@ class AuthToken: Codable {
 //    }
 //
 //    // MARK: Decodable
-//    convenience required public init(from decoder: Decoder) throws {
+//    public convenience required init(from decoder: Decoder) throws {
 //        self.init()
 //        let container = try decoder.container(keyedBy: CodingKeys.self)
 //        userId = try container.decodeIfPresent(String.self, forKey: .userId) ?? ""

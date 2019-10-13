@@ -167,10 +167,6 @@ platform :ios do
       output_directory: "./ipa",
       output_name: config[:output_name]
     )
-    upload_symbols_to_crashlytics(
-      dsym_path: "./ipa/#{config[:output_name]}.app.dSYM.zip", 
-      gsp_path: config[:gsp_path]
-    )
   end
 
   # UPLOAD TO THE TESTFLIGHT
@@ -240,6 +236,37 @@ platform :ios do
       default_payloads: [],
       payload: {}
     )
+  end
+
+  # SYNC DSYM FILES
+
+  desc "Sync Alpha dSYM files"
+  lane :dsym_alpha do |options|
+    dsym(alpha.merge(matee).merge(options))
+  end
+
+  desc "Sync Beta dSYM files"
+  lane :dsym_beta do |options|
+    dsym(beta.merge(matee).merge(options))
+  end
+
+  desc "Sync Production dSYM files"
+  lane :dsym_production do |options|
+    dsym(production.merge(matee).merge(options))
+  end
+
+  desc "Sync dSYM files"
+  private_lane :dsym do |config|
+    download_dsyms(
+      username: config[:apple_id],
+      team_id: config[:team_id_connect],
+      app_identifier: config[:app_identifier],
+      version: 'latest'
+    )
+    upload_symbols_to_crashlytics(
+      gsp_path: config[:gsp_path]
+    )
+    clean_build_artifacts
   end
 
   # You can define as many lanes as you want
