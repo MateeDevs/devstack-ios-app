@@ -96,7 +96,7 @@ platform :ios do
 
   desc "Sync Production signing"
   lane :signing_production do
-    signing(production.merge(matee))
+    signing(production.merge(client))
   end
 
   desc "Sync signing"
@@ -258,7 +258,7 @@ platform :ios do
 
   desc "Sync Production dSYM files"
   lane :dsym_production do
-    dsym(production.merge(matee))
+    dsym(production.merge(client))
   end
 
   desc "Sync dSYM files"
