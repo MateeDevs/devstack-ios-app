@@ -85,17 +85,17 @@ platform :ios do
   # SYNC SIGNING
 
   desc "Sync Alpha signing"
-  lane :signing_alpha
+  lane :signing_alpha do
     signing(alpha.merge(matee))
   end
 
   desc "Sync Beta signing"
-  lane :signing_beta
+  lane :signing_beta do
     signing(beta.merge(matee))
   end
 
   desc "Sync Production signing"
-  lane :signing_production
+  lane :signing_production do
     signing(production.merge(matee))
   end
 
@@ -247,17 +247,17 @@ platform :ios do
   # SYNC DSYM FILES
 
   desc "Sync Alpha dSYM files"
-  lane :dsym_alpha
+  lane :dsym_alpha do
     dsym(alpha.merge(matee))
   end
 
   desc "Sync Beta dSYM files"
-  lane :dsym_beta
+  lane :dsym_beta do
     dsym(beta.merge(matee))
   end
 
   desc "Sync Production dSYM files"
-  lane :dsym_production
+  lane :dsym_production do
     dsym(production.merge(matee))
   end
 
