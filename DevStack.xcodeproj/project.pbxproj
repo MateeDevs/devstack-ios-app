@@ -13,6 +13,9 @@
 		450392852256B29D0037BF42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450392842256B29D0037BF42 /* GoogleService-Info.plist */; };
 		450392872256B35E0037BF42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450392862256B35E0037BF42 /* GoogleService-Info.plist */; };
 		450392892256B3C60037BF42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450392882256B3C60037BF42 /* GoogleService-Info.plist */; };
+		450C869123547D5A00DC5E49 /* UserDefaultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C869023547D5A00DC5E49 /* UserDefaultsStore.swift */; };
+		450C869223547D5A00DC5E49 /* UserDefaultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C869023547D5A00DC5E49 /* UserDefaultsStore.swift */; };
+		450C869323547D5A00DC5E49 /* UserDefaultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C869023547D5A00DC5E49 /* UserDefaultsStore.swift */; };
 		450D3DC7210F4A6C008BAE71 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450D3DC6210F4A6C008BAE71 /* Date+Extensions.swift */; };
 		450D3DC8210F4A6C008BAE71 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450D3DC6210F4A6C008BAE71 /* Date+Extensions.swift */; };
 		450D3DC9210F4A6C008BAE71 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450D3DC6210F4A6C008BAE71 /* Date+Extensions.swift */; };
@@ -427,6 +430,7 @@
 		450392842256B29D0037BF42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		450392862256B35E0037BF42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		450392882256B3C60037BF42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		450C869023547D5A00DC5E49 /* UserDefaultsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStore.swift; sourceTree = "<group>"; };
 		450D3DC6210F4A6C008BAE71 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		450D3DD421105261008BAE71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		450D3DDB21105F02008BAE71 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
@@ -1061,6 +1065,7 @@
 			children = (
 				45E1E61C221D5C55006C84D1 /* LocationManager */,
 				45C089E72215C12200D0DD49 /* DatabaseManager.swift */,
+				450C869023547D5A00DC5E49 /* UserDefaultsStore.swift */,
 				450D3DEA2111F043008BAE71 /* KeychainStore.swift */,
 				4511A69F2138112B006AD4CC /* LanguageManager.swift */,
 				4571DB2A22159EE90036919A /* NetworkManager.swift */,
@@ -1744,6 +1749,7 @@
 				45128B802142A634007B6B47 /* TabBarButton.swift in Sources */,
 				45E8A54E220F4BB5003F7502 /* BaseTableViewController.swift in Sources */,
 				4512341B2162326A00F85985 /* NSLayoutConstraint+Extensions.swift in Sources */,
+				450C869123547D5A00DC5E49 /* UserDefaultsStore.swift in Sources */,
 				45E8A49B220AD4CB003F7502 /* ViewModel.swift in Sources */,
 				453CEAC721583A7D00A94BAC /* RatingViewSmall.swift in Sources */,
 				4568523F2105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */,
@@ -1863,6 +1869,7 @@
 				45128B812142A634007B6B47 /* TabBarButton.swift in Sources */,
 				4512341C2162326A00F85985 /* NSLayoutConstraint+Extensions.swift in Sources */,
 				45E8A54F220F4BB5003F7502 /* BaseTableViewController.swift in Sources */,
+				450C869223547D5A00DC5E49 /* UserDefaultsStore.swift in Sources */,
 				45E8A49C220AD4CB003F7502 /* ViewModel.swift in Sources */,
 				453CEAC821583A7D00A94BAC /* RatingViewSmall.swift in Sources */,
 				456852402105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */,
@@ -1982,6 +1989,7 @@
 				45128B822142A634007B6B47 /* TabBarButton.swift in Sources */,
 				45E8A550220F4BB5003F7502 /* BaseTableViewController.swift in Sources */,
 				4512341D2162326A00F85985 /* NSLayoutConstraint+Extensions.swift in Sources */,
+				450C869323547D5A00DC5E49 /* UserDefaultsStore.swift in Sources */,
 				45E8A49D220AD4CB003F7502 /* ViewModel.swift in Sources */,
 				453CEAC921583A7D00A94BAC /* RatingViewSmall.swift in Sources */,
 				456852412105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */,
