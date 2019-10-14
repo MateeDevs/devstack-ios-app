@@ -19,18 +19,26 @@ public class LocationManager {
     private lazy var locationManager: CLLocationManager = {
         let locationMgr = CLLocationManager()
         locationMgr.requestWhenInUseAuthorization()
-        locationMgr.startUpdatingLocation()
         return locationMgr
     }()
     
     /// Function for observing current location
-    public func getCurrentLocation() -> Observable<CLLocation> {
-        return locationManager.rx.didUpdateLocations
-            .map { locations in
-                return locations[0]
-            }.filter { location in
-                return location.horizontalAccuracy < kCLLocationAccuracyHundredMeters
+    public func getCurrentLocation(withAccuracy accuracy: CLLocationAccuracy = kCLLocationAccuracyThreeKilometers) -> Observable<CLLocation> {
+        return locationManager.rx.didUpdateLocations.map({ locations in
+            return locations[0]
+        }).filter({ location in
+            return location.horizontalAccuracy < accuracy
+        }).do(
+            onCompleted: { [weak self] in
+                self?.locationManager.stopUpdatingLocation()
+            },
+            onSubscribed: { [weak self] in
+                self?.locationManager.startUpdatingLocation()
+            },
+            onDispose: { [weak self] in
+                self?.locationManager.stopUpdatingLocation()
             }
+        )
     }
 
 }
