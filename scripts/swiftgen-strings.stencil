@@ -31,7 +31,7 @@ import Foundation
   /// {{string.translation}}
   {% endif %}
   {% if string.types %}
-  {{accessModifier}} static func {{string.key|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}({% call parametersBlock string.types %}) -> String {
+  {{accessModifier}} static func {{string.key|swiftIdentifier|lowerFirstWord|escapeReservedKeywords}}({% call parametersBlock string.types %}) -> String {
     return {{enumName}}.tr("{{table}}", "{{string.key}}", {% call argumentsBlock string.types %})
   }
   {% else %}

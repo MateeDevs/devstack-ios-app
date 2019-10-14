@@ -27,7 +27,7 @@ public enum L10n {
   /// Cancel
   public static let cancel = L10n.tr("Localizable", "cancel")
   /// %1$d°C
-  public static func celsiusUnit(_ p1: Int) -> String {
+  public static func celsius_unit(_ p1: Int) -> String {
     return L10n.tr("Localizable", "celsius_unit", p1)
   }
   /// cm
@@ -101,49 +101,49 @@ public enum L10n {
   /// You are not connected to the internet.
   public static let error_no_internet_connection = L10n.tr("Localizable", "error_no_internet_connection")
   /// %1$d days
-  public static func fewDays(_ p1: Int) -> String {
+  public static func few_days(_ p1: Int) -> String {
     return L10n.tr("Localizable", "few_days", p1)
   }
   /// Before %1$d days
-  public static func fewDaysBefore(_ p1: Int) -> String {
+  public static func few_days_before(_ p1: Int) -> String {
     return L10n.tr("Localizable", "few_days_before", p1)
   }
   /// %1$d hours
-  public static func fewHours(_ p1: Int) -> String {
+  public static func few_hours(_ p1: Int) -> String {
     return L10n.tr("Localizable", "few_hours", p1)
   }
   /// Before %1$d hours
-  public static func fewHoursBefore(_ p1: Int) -> String {
+  public static func few_hours_before(_ p1: Int) -> String {
     return L10n.tr("Localizable", "few_hours_before", p1)
   }
   /// %1$d metres
-  public static func fewMeters(_ p1: Int) -> String {
+  public static func few_meters(_ p1: Int) -> String {
     return L10n.tr("Localizable", "few_meters", p1)
   }
   /// %1$d minutes
-  public static func fewMinutes(_ p1: Int) -> String {
+  public static func few_minutes(_ p1: Int) -> String {
     return L10n.tr("Localizable", "few_minutes", p1)
   }
   /// Before %1$d minutes
-  public static func fewMinutesBefore(_ p1: Int) -> String {
+  public static func few_minutes_before(_ p1: Int) -> String {
     return L10n.tr("Localizable", "few_minutes_before", p1)
   }
   /// %1$d points
-  public static func fewPoints(_ p1: Int) -> String {
+  public static func few_points(_ p1: Int) -> String {
     return L10n.tr("Localizable", "few_points", p1)
   }
   /// %1$d seconds
-  public static func fewSeconds(_ p1: Int) -> String {
+  public static func few_seconds(_ p1: Int) -> String {
     return L10n.tr("Localizable", "few_seconds", p1)
   }
   /// Before %1$d seconds
-  public static func fewSecondsBefore(_ p1: Int) -> String {
+  public static func few_seconds_before(_ p1: Int) -> String {
     return L10n.tr("Localizable", "few_seconds_before", p1)
   }
   /// Finish
   public static let finish = L10n.tr("Localizable", "finish")
   /// %1$s h
-  public static func hourUnit(_ p1: UnsafePointer<CChar>) -> String {
+  public static func hour_unit(_ p1: UnsafePointer<CChar>) -> String {
     return L10n.tr("Localizable", "hour_unit", p1)
   }
   /// Camera
@@ -169,13 +169,13 @@ public enum L10n {
   /// kg
   public static let kilogram_unit_label = L10n.tr("Localizable", "kilogram_unit_label")
   /// %1$s km
-  public static func kilometerUnit(_ p1: UnsafePointer<CChar>) -> String {
+  public static func kilometer_unit(_ p1: UnsafePointer<CChar>) -> String {
     return L10n.tr("Localizable", "kilometer_unit", p1)
   }
   /// km
   public static let kilometer_unit_label = L10n.tr("Localizable", "kilometer_unit_label")
   /// %1$d km
-  public static func kilometerUnitNumber(_ p1: Int) -> String {
+  public static func kilometer_unit_number(_ p1: Int) -> String {
     return L10n.tr("Localizable", "kilometer_unit_number", p1)
   }
   /// AR
@@ -213,43 +213,43 @@ public enum L10n {
   /// Required field
   public static let mandatory_field = L10n.tr("Localizable", "mandatory_field")
   /// %1$d days
-  public static func manyDays(_ p1: Int) -> String {
+  public static func many_days(_ p1: Int) -> String {
     return L10n.tr("Localizable", "many_days", p1)
   }
   /// Before %1$d days
-  public static func manyDaysBefore(_ p1: Int) -> String {
+  public static func many_days_before(_ p1: Int) -> String {
     return L10n.tr("Localizable", "many_days_before", p1)
   }
   /// %1$d hours
-  public static func manyHours(_ p1: Int) -> String {
+  public static func many_hours(_ p1: Int) -> String {
     return L10n.tr("Localizable", "many_hours", p1)
   }
   /// Before %1$d hours
-  public static func manyHoursBefore(_ p1: Int) -> String {
+  public static func many_hours_before(_ p1: Int) -> String {
     return L10n.tr("Localizable", "many_hours_before", p1)
   }
   /// %1$d meters
-  public static func manyMeters(_ p1: Int) -> String {
+  public static func many_meters(_ p1: Int) -> String {
     return L10n.tr("Localizable", "many_meters", p1)
   }
   /// %1$d minutes
-  public static func manyMinutes(_ p1: Int) -> String {
+  public static func many_minutes(_ p1: Int) -> String {
     return L10n.tr("Localizable", "many_minutes", p1)
   }
   /// Before %1$d minutes
-  public static func manyMinutesBefore(_ p1: Int) -> String {
+  public static func many_minutes_before(_ p1: Int) -> String {
     return L10n.tr("Localizable", "many_minutes_before", p1)
   }
   /// %1$d points
-  public static func manyPoints(_ p1: Int) -> String {
+  public static func many_points(_ p1: Int) -> String {
     return L10n.tr("Localizable", "many_points", p1)
   }
   /// %1$d seconds
-  public static func manySeconds(_ p1: Int) -> String {
+  public static func many_seconds(_ p1: Int) -> String {
     return L10n.tr("Localizable", "many_seconds", p1)
   }
   /// Before %1$d seconds
-  public static func manySecondsBefore(_ p1: Int) -> String {
+  public static func many_seconds_before(_ p1: Int) -> String {
     return L10n.tr("Localizable", "many_seconds_before", p1)
   }
   /// Mark all as read
@@ -291,43 +291,43 @@ public enum L10n {
   /// File cannot be opened
   public static let open_file_screen_failed = L10n.tr("Localizable", "open_file_screen_failed")
   /// %1$d days
-  public static func otherDays(_ p1: Int) -> String {
+  public static func other_days(_ p1: Int) -> String {
     return L10n.tr("Localizable", "other_days", p1)
   }
   /// Before %1$d days
-  public static func otherDaysBefore(_ p1: Int) -> String {
+  public static func other_days_before(_ p1: Int) -> String {
     return L10n.tr("Localizable", "other_days_before", p1)
   }
   /// %1$d hours
-  public static func otherHours(_ p1: Int) -> String {
+  public static func other_hours(_ p1: Int) -> String {
     return L10n.tr("Localizable", "other_hours", p1)
   }
   /// Before %1$d hours
-  public static func otherHoursBefore(_ p1: Int) -> String {
+  public static func other_hours_before(_ p1: Int) -> String {
     return L10n.tr("Localizable", "other_hours_before", p1)
   }
   /// %1$d meters
-  public static func otherMeters(_ p1: Int) -> String {
+  public static func other_meters(_ p1: Int) -> String {
     return L10n.tr("Localizable", "other_meters", p1)
   }
   /// %1$d minutes
-  public static func otherMinutes(_ p1: Int) -> String {
+  public static func other_minutes(_ p1: Int) -> String {
     return L10n.tr("Localizable", "other_minutes", p1)
   }
   /// Before %1$d minutes
-  public static func otherMinutesBefore(_ p1: Int) -> String {
+  public static func other_minutes_before(_ p1: Int) -> String {
     return L10n.tr("Localizable", "other_minutes_before", p1)
   }
   /// %1$d points
-  public static func otherPoints(_ p1: Int) -> String {
+  public static func other_points(_ p1: Int) -> String {
     return L10n.tr("Localizable", "other_points", p1)
   }
   /// %1$d seconds
-  public static func otherSeconds(_ p1: Int) -> String {
+  public static func other_seconds(_ p1: Int) -> String {
     return L10n.tr("Localizable", "other_seconds", p1)
   }
   /// Before %1$d seconds
-  public static func otherSecondsBefore(_ p1: Int) -> String {
+  public static func other_seconds_before(_ p1: Int) -> String {
     return L10n.tr("Localizable", "other_seconds_before", p1)
   }
   /// Password must be at least 8 characters long
