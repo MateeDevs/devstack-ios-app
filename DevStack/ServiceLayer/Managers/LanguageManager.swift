@@ -31,7 +31,7 @@ public class LanguageManager {
     public var selectedLanguage: Language {
         get {
             guard
-                let savedLanguage = UserDefaults.standard.string(forKey: UserDefaultsCoding.selectedLanguage.rawValue),
+                let savedLanguage = UserDefaultsStore.get(.selectedLanguage) as String?,
                 let language = Language(rawValue: savedLanguage) else {
                     Logger.info("LanguageManager: Default language not set, fallback to english applied.", category: .app)
                     return .en
@@ -39,7 +39,7 @@ public class LanguageManager {
             return language
         }
         set {
-            UserDefaults.standard.set(newValue.rawValue, forKey: UserDefaultsCoding.selectedLanguage.rawValue)
+            UserDefaultsStore.save(.selectedLanguage, value: newValue.rawValue)
         }
     }
     
@@ -55,11 +55,12 @@ public class LanguageManager {
     
     /// Set the default language that the app will run first time
     public func setDefaultLanguage(_ language: Language) {
-        guard UserDefaults.standard.string(forKey: UserDefaultsCoding.selectedLanguage.rawValue) == nil else { return }
+        guard UserDefaultsStore.get(.selectedLanguage) == nil else { return }
         selectedLanguage = language
     }
     
     /// Change language (and kill the app)
+    /// - Uses undocumented API and should not be used unless explicitly required by a client
     public func setLanguage(_ language: Language) {
         selectedLanguage = language
         UserDefaults.standard.set([language.rawValue], forKey: "AppleLanguages")
