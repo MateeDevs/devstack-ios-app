@@ -70,9 +70,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Clear keychain on first run
     private func clearKeychain() {
-        if !UserDefaults.standard.bool(forKey: "hasRunBefore") {
+        if !UserDefaults.standard.bool(forKey: UserDefaultsCoding.hasRunBefore.rawValue) {
             KeychainStore.deleteAll()
-            UserDefaults.standard.set(true, forKey: "hasRunBefore")
+            UserDefaults.standard.set(true, forKey: UserDefaultsCoding.hasRunBefore.rawValue)
         }
     }
     
