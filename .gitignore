@@ -9,6 +9,14 @@
 build/
 DerivedData/
 
+## Twine generated
+Localizable.strings
+
+## SwiftGen generated
+Assets.swift
+Localizable.swift
+Storyboards.swift
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
