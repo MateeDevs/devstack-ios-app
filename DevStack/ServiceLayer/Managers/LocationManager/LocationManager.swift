@@ -22,7 +22,21 @@ public class LocationManager {
         return locationMgr
     }()
     
-    /// Function for observing current location
+    /// Check whether the location services are enabled and authorized
+    public static func isLocationEnabled() -> Bool {
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .authorizedAlways, .authorizedWhenInUse:
+                return true
+            default:
+                return false
+            }
+        } else {
+            return false
+        }
+    }
+    
+    /// Observe current location
     public func getCurrentLocation(withAccuracy accuracy: CLLocationAccuracy = kCLLocationAccuracyThreeKilometers) -> Observable<CLLocation> {
         return locationManager.rx.didUpdateLocations.map({ locations in
             return locations[0]
