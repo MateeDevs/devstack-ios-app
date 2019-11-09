@@ -34,6 +34,7 @@ sed -i '' -e "s/${old_name_lowercase}/${new_name_lowercase}/g" scripts/twine.sh
 sed -i '' -e "s/${old_name}/${new_name}/g" scripts/swiftgen.sh
 sed -i '' -e "s/${old_name}/${new_name}/g" fastlane/Fastfile
 sed -i '' -e "s/${old_name_lowercase}/${new_name_lowercase}/g" fastlane/Fastfile
+sed -i '' -e "s/${old_name}/${new_name}/g" scripts/setup.sh
 
 echo "Renaming successful."
 echo "!!! Replace GoogleService-Info plists and ensure that twine directory exists !!!"
