@@ -10,6 +10,30 @@ import UIKit
 
 extension UIImage {
     
+    ///
+    /// Scale the image to fit inside a given CGRect. Useful when you need to combine .scaleAspectFit with .left/.right/.top/.bottom
+    /// - Idea taken from [Alignment UIImageView with Aspect Fit](https://stackoverflow.com/a/45793949)
+    ///
+    /// - parameter rect: CGRect to fit image into.
+    /// - returns: Scaled UIImage.
+    ///
+    public func scaleAspectToFitRect(_ rect: CGRect) -> UIImage? {
+        let width = size.width
+        let height = size.height
+        let aspectWidth = rect.width / width
+        let aspectHeight = rect.height / height
+        let scaleFactor = aspectWidth > aspectHeight ? rect.size.height / height : rect.size.width / width
+
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: width * scaleFactor, height: height * scaleFactor), false, 0.0)
+        draw(in: CGRect(x: 0.0, y: 0.0, width: width * scaleFactor, height: height * scaleFactor))
+
+        defer {
+            UIGraphicsEndImageContext()
+        }
+
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
+    
     /// Fix orientation of an UIImage without EXIF
     public func fixOrientation() -> UIImage {
         
