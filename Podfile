@@ -53,6 +53,14 @@ target 'DevStack_Beta' do
     shared_pods
 end
 
+target 'DevStackTests' do
+  inherit! :search_paths
+
+  pod 'Firebase'
+  pod 'SnapshotTesting', '~> 1.6.0'
+end
+
+
 # This will cause Flipper and it's dependencies to be built as a static library
 $static_framework = [
     'FlipperKit', 'Flipper', 'Flipper-Folly',
@@ -70,7 +78,6 @@ pre_install do |installer|
             end
         end
     end
-end
 
 post_install do |installer|
 

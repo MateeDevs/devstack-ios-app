@@ -22,7 +22,7 @@ public enum WhisperStyle {
 
 class WhisperView: UIView {
     
-    private let messageLabel = UILabel()
+    private(set) var messageLabel = UILabel()
     
     public var message: String = "" {
         didSet {

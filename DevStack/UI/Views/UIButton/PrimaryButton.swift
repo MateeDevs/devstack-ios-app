@@ -12,15 +12,15 @@ class PrimaryButton: EnhancedButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        setupButton()
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
+        setupButton()
     }
-
-    private func setup() {
+    
+    func setupButton() {
         cornerRadius = 5.0
         backgroundColor = AppTheme.Colors.primaryButtonBackground
         setTitleColor(AppTheme.Colors.primaryButtonTitle, for: .normal)
