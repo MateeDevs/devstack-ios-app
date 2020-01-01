@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		0211375123B90336007EABD9 /* BaseButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375023B90336007EABD9 /* BaseButtonTests.swift */; };
 		0211375323B90E99007EABD9 /* WhisperViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375223B90E99007EABD9 /* WhisperViewTests.swift */; };
+		0211375623BA38EE007EABD9 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375523BA38EE007EABD9 /* LoginViewControllerTests.swift */; };
+		0211375923BA4B4D007EABD9 /* LoginServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375823BA4B4D007EABD9 /* LoginServiceMock.swift */; };
+		0211375B23BBABC3007EABD9 /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375A23BBABC3007EABD9 /* UIWindow+Extensions.swift */; };
+		0211375C23BBABC3007EABD9 /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375A23BBABC3007EABD9 /* UIWindow+Extensions.swift */; };
+		0211375D23BBABC3007EABD9 /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375A23BBABC3007EABD9 /* UIWindow+Extensions.swift */; };
+		0211375E23BBABC3007EABD9 /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375A23BBABC3007EABD9 /* UIWindow+Extensions.swift */; };
+		02D5E44523BCAC82006ADA5C /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5E44423BCAC82006ADA5C /* LoginViewModelTests.swift */; };
 		450384752170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
 		450384762170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
 		450384772170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
@@ -456,6 +463,10 @@
 		0201434B23A5798C003EBC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0211375023B90336007EABD9 /* BaseButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButtonTests.swift; sourceTree = "<group>"; };
 		0211375223B90E99007EABD9 /* WhisperViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperViewTests.swift; sourceTree = "<group>"; };
+		0211375523BA38EE007EABD9 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
+		0211375823BA4B4D007EABD9 /* LoginServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceMock.swift; sourceTree = "<group>"; };
+		0211375A23BBABC3007EABD9 /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extensions.swift"; sourceTree = "<group>"; };
+		02D5E44423BCAC82006ADA5C /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		3108F6D7CC6CF709865E9678 /* Pods-DevStack_Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Alpha.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha.release.xcconfig"; sourceTree = "<group>"; };
 		3266EC7634F7BCD070190849 /* Pods-DevStack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack/Pods-DevStack.release.xcconfig"; sourceTree = "<group>"; };
 		450384742170E4FC004F43DC /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
@@ -671,6 +682,8 @@
 		0201434823A5798C003EBC56 /* DevStackTests */ = {
 			isa = PBXGroup;
 			children = (
+				0211375723BA4B1D007EABD9 /* Mocks */,
+				0211375423BA38CD007EABD9 /* Login and Registration */,
 				0211374F23B9028A007EABD9 /* UI Components */,
 				0201434B23A5798C003EBC56 /* Info.plist */,
 			);
@@ -684,6 +697,23 @@
 				0211375223B90E99007EABD9 /* WhisperViewTests.swift */,
 			);
 			path = "UI Components";
+			sourceTree = "<group>";
+		};
+		0211375423BA38CD007EABD9 /* Login and Registration */ = {
+			isa = PBXGroup;
+			children = (
+				0211375523BA38EE007EABD9 /* LoginViewControllerTests.swift */,
+				02D5E44423BCAC82006ADA5C /* LoginViewModelTests.swift */,
+			);
+			path = "Login and Registration";
+			sourceTree = "<group>";
+		};
+		0211375723BA4B1D007EABD9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				0211375823BA4B4D007EABD9 /* LoginServiceMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		450392832256B14C0037BF42 /* Config */ = {
@@ -1041,6 +1071,7 @@
 				45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */,
 				A83F0EC42149310600313067 /* UIStackView+Extensions.swift */,
 				4511A72C213DDCCB006AD4CC /* UIView+Extensions.swift */,
+				0211375A23BBABC3007EABD9 /* UIWindow+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1877,6 +1908,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0211375623BA38EE007EABD9 /* LoginViewControllerTests.swift in Sources */,
+				02D5E44523BCAC82006ADA5C /* LoginViewModelTests.swift in Sources */,
+				0211375E23BBABC3007EABD9 /* UIWindow+Extensions.swift in Sources */,
+				0211375923BA4B4D007EABD9 /* LoginServiceMock.swift in Sources */,
 				0211375123B90336007EABD9 /* BaseButtonTests.swift in Sources */,
 				0211375323B90E99007EABD9 /* WhisperViewTests.swift in Sources */,
 			);
@@ -1918,6 +1953,7 @@
 				A8DDD0CF2121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F0213D2677006AD4CC /* TabBarView.swift in Sources */,
 				45DB9777226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
+				0211375B23BBABC3007EABD9 /* UIWindow+Extensions.swift in Sources */,
 				455261BC210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				45F4AE422180B88400E75B4A /* LocalizedImageView.swift in Sources */,
 				45E8A4BE220AF3C0003F7502 /* ProfileViewController.swift in Sources */,
@@ -2042,6 +2078,7 @@
 				45ECA1B2216BF761000B1124 /* UserAPI.swift in Sources */,
 				4511A6F1213D2677006AD4CC /* TabBarView.swift in Sources */,
 				45DB9778226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
+				0211375C23BBABC3007EABD9 /* UIWindow+Extensions.swift in Sources */,
 				455261BD210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				459762E420FE21BC0034DE29 /* ViewModelType.swift in Sources */,
 				45E8A4BF220AF3C0003F7502 /* ProfileViewController.swift in Sources */,
@@ -2166,6 +2203,7 @@
 				A8DDD0D12121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F2213D2677006AD4CC /* TabBarView.swift in Sources */,
 				45DB9779226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
+				0211375D23BBABC3007EABD9 /* UIWindow+Extensions.swift in Sources */,
 				455261BE210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				45F4AE442180B88400E75B4A /* LocalizedImageView.swift in Sources */,
 				45E8A4C0220AF3C0003F7502 /* ProfileViewController.swift in Sources */,

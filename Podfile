@@ -57,7 +57,9 @@ target 'DevStackTests' do
   inherit! :search_paths
 
   pod 'Firebase'
-  pod 'SnapshotTesting', '~> 1.6.0'
+  pod 'SnapshotTesting'
+  pod 'RxTest'
+  pod 'RxCocoa'
 end
 
 

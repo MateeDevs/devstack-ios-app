@@ -16,6 +16,8 @@ class WhisperViewTests: XCTestCase {
     
     private let whisperView = WhisperView(frame: CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: 70)))
 
+    // MARK: - Public Methods
+    
     override func setUp() {
 //        record = true
     }
