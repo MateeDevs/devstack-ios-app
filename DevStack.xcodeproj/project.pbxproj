@@ -262,18 +262,24 @@
 		45C089E82215C12200D0DD49 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseManager.swift */; };
 		45C089E92215C12200D0DD49 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseManager.swift */; };
 		45C089EA2215C12200D0DD49 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseManager.swift */; };
+		45C3F50F23C114600091848D /* UIColorCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F50E23C114600091848D /* UIColorCompatible.swift */; };
+		45C3F51023C114600091848D /* UIColorCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F50E23C114600091848D /* UIColorCompatible.swift */; };
+		45C3F51123C114600091848D /* UIColorCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F50E23C114600091848D /* UIColorCompatible.swift */; };
+		45C3F51723C1249C0091848D /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F51623C1249C0091848D /* SecondaryButton.swift */; };
+		45C3F51823C1249C0091848D /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F51623C1249C0091848D /* SecondaryButton.swift */; };
+		45C3F51923C1249C0091848D /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F51623C1249C0091848D /* SecondaryButton.swift */; };
+		45C3F51B23C127E60091848D /* TextFieldWithHint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F51A23C127E50091848D /* TextFieldWithHint.swift */; };
+		45C3F51C23C127E60091848D /* TextFieldWithHint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F51A23C127E50091848D /* TextFieldWithHint.swift */; };
+		45C3F51D23C127E60091848D /* TextFieldWithHint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F51A23C127E50091848D /* TextFieldWithHint.swift */; };
 		45D0FD192147E3D100277C14 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */; };
 		45D0FD1A2147E3D100277C14 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */; };
 		45D0FD1B2147E3D100277C14 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */; };
-		45DA07F0222D7D800003D32A /* BaseHeadlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07EE222D7D7F0003D32A /* BaseHeadlineLabel.swift */; };
-		45DA07F1222D7D800003D32A /* BaseHeadlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07EE222D7D7F0003D32A /* BaseHeadlineLabel.swift */; };
-		45DA07F2222D7D800003D32A /* BaseHeadlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07EE222D7D7F0003D32A /* BaseHeadlineLabel.swift */; };
-		45DA07F3222D7D800003D32A /* BaseTextFieldHintLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07EF222D7D7F0003D32A /* BaseTextFieldHintLabel.swift */; };
-		45DA07F4222D7D800003D32A /* BaseTextFieldHintLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07EF222D7D7F0003D32A /* BaseTextFieldHintLabel.swift */; };
-		45DA07F5222D7D800003D32A /* BaseTextFieldHintLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07EF222D7D7F0003D32A /* BaseTextFieldHintLabel.swift */; };
-		45DA07F7222D7DA00003D32A /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07F6222D7DA00003D32A /* BaseButton.swift */; };
-		45DA07F8222D7DA00003D32A /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07F6222D7DA00003D32A /* BaseButton.swift */; };
-		45DA07F9222D7DA00003D32A /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07F6222D7DA00003D32A /* BaseButton.swift */; };
+		45DA07F0222D7D800003D32A /* HeadlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07EE222D7D7F0003D32A /* HeadlineLabel.swift */; };
+		45DA07F1222D7D800003D32A /* HeadlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07EE222D7D7F0003D32A /* HeadlineLabel.swift */; };
+		45DA07F2222D7D800003D32A /* HeadlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07EE222D7D7F0003D32A /* HeadlineLabel.swift */; };
+		45DA07F7222D7DA00003D32A /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07F6222D7DA00003D32A /* PrimaryButton.swift */; };
+		45DA07F8222D7DA00003D32A /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07F6222D7DA00003D32A /* PrimaryButton.swift */; };
+		45DA07F9222D7DA00003D32A /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA07F6222D7DA00003D32A /* PrimaryButton.swift */; };
 		45DA0808222E87780003D32A /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DA0805222E87780003D32A /* Registration.storyboard */; };
 		45DA0809222E87780003D32A /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DA0805222E87780003D32A /* Registration.storyboard */; };
 		45DA080A222E87780003D32A /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DA0805222E87780003D32A /* Registration.storyboard */; };
@@ -529,10 +535,12 @@
 		45B76D9F213591D0003BB997 /* Error+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
 		45B76DA6213591ED003BB997 /* Object+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Object+Extensions.swift"; sourceTree = "<group>"; };
 		45C089E72215C12200D0DD49 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		45C3F50E23C114600091848D /* UIColorCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorCompatible.swift; sourceTree = "<group>"; };
+		45C3F51623C1249C0091848D /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		45C3F51A23C127E50091848D /* TextFieldWithHint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithHint.swift; sourceTree = "<group>"; };
 		45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
-		45DA07EE222D7D7F0003D32A /* BaseHeadlineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHeadlineLabel.swift; sourceTree = "<group>"; };
-		45DA07EF222D7D7F0003D32A /* BaseTextFieldHintLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTextFieldHintLabel.swift; sourceTree = "<group>"; };
-		45DA07F6222D7DA00003D32A /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		45DA07EE222D7D7F0003D32A /* HeadlineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadlineLabel.swift; sourceTree = "<group>"; };
+		45DA07F6222D7DA00003D32A /* PrimaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		45DA0805222E87780003D32A /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		45DA0806222E87780003D32A /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		45DA0807222E87780003D32A /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -950,6 +958,7 @@
 				45E8A4B4220AEF90003F7502 /* FlowController.swift */,
 				A847B1AB210F4872002F9ED1 /* LocationHelper.swift */,
 				A8C79A9E2157FD71007A4339 /* Plurals.swift */,
+				45C3F50E23C114600091848D /* UIColorCompatible.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1017,8 +1026,7 @@
 		459762F420FE222F0034DE29 /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
-				45DA07EE222D7D7F0003D32A /* BaseHeadlineLabel.swift */,
-				45DA07EF222D7D7F0003D32A /* BaseTextFieldHintLabel.swift */,
+				45DA07EE222D7D7F0003D32A /* HeadlineLabel.swift */,
 				456851E92100CAED006D3618 /* EnhancedLabel.swift */,
 				456851C6210095ED006D3618 /* LocalizedLabel.swift */,
 			);
@@ -1028,7 +1036,8 @@
 		459762F520FE223B0034DE29 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
-				45DA07F6222D7DA00003D32A /* BaseButton.swift */,
+				45DA07F6222D7DA00003D32A /* PrimaryButton.swift */,
+				45C3F51623C1249C0091848D /* SecondaryButton.swift */,
 				456851E22100BC9A006D3618 /* EnhancedButton.swift */,
 				456851DB2100BC8B006D3618 /* LocalizedButton.swift */,
 			);
@@ -1038,6 +1047,7 @@
 		459762F620FE22630034DE29 /* UITextField */ = {
 			isa = PBXGroup;
 			children = (
+				45C3F51A23C127E50091848D /* TextFieldWithHint.swift */,
 				456851BF2100929E006D3618 /* LocalizedTextField.swift */,
 			);
 			path = UITextField;
@@ -1678,6 +1688,7 @@
 				45890B2421FF5E8F00894255 /* AuthToken.swift in Sources */,
 				A8A2E502217DD3C70006023F /* GradientView.swift in Sources */,
 				4589DDF4213FF93700800E67 /* PreviewObject.swift in Sources */,
+				45C3F51B23C127E60091848D /* TextFieldWithHint.swift in Sources */,
 				454FEE3D2240601E00EB7A54 /* LceErrors.swift in Sources */,
 				45976371210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A3216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
@@ -1689,12 +1700,13 @@
 				456852552105D024006D3618 /* ServiceError.swift in Sources */,
 				A891BDB72108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
 				45C089E82215C12200D0DD49 /* DatabaseManager.swift in Sources */,
-				45DA07F7222D7DA00003D32A /* BaseButton.swift in Sources */,
+				45DA07F7222D7DA00003D32A /* PrimaryButton.swift in Sources */,
 				45B76D8B213590C5003BB997 /* ActivityIndicator.swift in Sources */,
 				45890B3922086C6600894255 /* OnboardingFlowController.swift in Sources */,
 				45E8A576220F7933003F7502 /* UsersViewModel.swift in Sources */,
 				45E8A573220F7933003F7502 /* UsersViewController.swift in Sources */,
 				4558D30B20FCC8FF005BC325 /* AppDelegate.swift in Sources */,
+				45C3F50F23C114600091848D /* UIColorCompatible.swift in Sources */,
 				45DB9783226BA9D200C3F234 /* SettingsViewController.swift in Sources */,
 				A82386862138AF1700CC941C /* ColoredImageView.swift in Sources */,
 				4588FF2D22282D000014FC79 /* UserDetailViewModel.swift in Sources */,
@@ -1714,13 +1726,13 @@
 				45E1E619221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				45890B5C22087C8B00894255 /* String+UIExtensions.swift in Sources */,
 				456852102101E432006D3618 /* User.swift in Sources */,
-				45DA07F3222D7D800003D32A /* BaseTextFieldHintLabel.swift in Sources */,
 				456852462105CF82006D3618 /* LoginService.swift in Sources */,
 				A82385DA213418B400CC941C /* ShadowView.swift in Sources */,
 				451233E3215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				456851B921008988006D3618 /* BaseViewController.swift in Sources */,
 				A847B1AC210F4872002F9ED1 /* LocationHelper.swift in Sources */,
 				A83F0EB721490EE200313067 /* UserImageView.swift in Sources */,
+				45C3F51723C1249C0091848D /* SecondaryButton.swift in Sources */,
 				45890B2821FFB95D00894255 /* ColorTheme.swift in Sources */,
 				450D3DDC21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C02100929E006D3618 /* LocalizedTextField.swift in Sources */,
@@ -1746,7 +1758,7 @@
 				455261C7210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8C79A9F2157FD71007A4339 /* Plurals.swift in Sources */,
 				A8D348DD2163777200B7D08F /* DataValidator.swift in Sources */,
-				45DA07F0222D7D800003D32A /* BaseHeadlineLabel.swift in Sources */,
+				45DA07F0222D7D800003D32A /* HeadlineLabel.swift in Sources */,
 				45A388C7225E388B00037FFA /* FullscreenImageViewController.swift in Sources */,
 				4588FF2A22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C7210095ED006D3618 /* LocalizedLabel.swift in Sources */,
@@ -1799,6 +1811,7 @@
 				A8A2E503217DD3C70006023F /* GradientView.swift in Sources */,
 				45890B2521FF5E8F00894255 /* AuthToken.swift in Sources */,
 				4589DDF5213FF93700800E67 /* PreviewObject.swift in Sources */,
+				45C3F51C23C127E60091848D /* TextFieldWithHint.swift in Sources */,
 				454FEE3E2240601E00EB7A54 /* LceErrors.swift in Sources */,
 				45976372210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A4216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
@@ -1810,12 +1823,13 @@
 				456852562105D024006D3618 /* ServiceError.swift in Sources */,
 				A891BDB82108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
 				45C089E92215C12200D0DD49 /* DatabaseManager.swift in Sources */,
-				45DA07F8222D7DA00003D32A /* BaseButton.swift in Sources */,
+				45DA07F8222D7DA00003D32A /* PrimaryButton.swift in Sources */,
 				45B76D8C213590C5003BB997 /* ActivityIndicator.swift in Sources */,
 				45890B3A22086C6600894255 /* OnboardingFlowController.swift in Sources */,
 				45E8A577220F7933003F7502 /* UsersViewModel.swift in Sources */,
 				45E8A574220F7933003F7502 /* UsersViewController.swift in Sources */,
 				459761CE20FDD60A0034DE29 /* AppDelegate.swift in Sources */,
+				45C3F51023C114600091848D /* UIColorCompatible.swift in Sources */,
 				45DB9784226BA9D200C3F234 /* SettingsViewController.swift in Sources */,
 				A82386872138AF1700CC941C /* ColoredImageView.swift in Sources */,
 				4588FF2E22282D000014FC79 /* UserDetailViewModel.swift in Sources */,
@@ -1835,13 +1849,13 @@
 				45E1E61A221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				45890B5D22087C8B00894255 /* String+UIExtensions.swift in Sources */,
 				456852112101E432006D3618 /* User.swift in Sources */,
-				45DA07F4222D7D800003D32A /* BaseTextFieldHintLabel.swift in Sources */,
 				456852472105CF82006D3618 /* LoginService.swift in Sources */,
 				451233E4215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				A82385DB213418B400CC941C /* ShadowView.swift in Sources */,
 				456851BA21008988006D3618 /* BaseViewController.swift in Sources */,
 				A83F0EB821490EE200313067 /* UserImageView.swift in Sources */,
 				A847B1AD210F4872002F9ED1 /* LocationHelper.swift in Sources */,
+				45C3F51823C1249C0091848D /* SecondaryButton.swift in Sources */,
 				45890B2921FFB95D00894255 /* ColorTheme.swift in Sources */,
 				450D3DDD21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C12100929E006D3618 /* LocalizedTextField.swift in Sources */,
@@ -1867,7 +1881,7 @@
 				456852242105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
 				455261C8210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8D348DE2163777200B7D08F /* DataValidator.swift in Sources */,
-				45DA07F1222D7D800003D32A /* BaseHeadlineLabel.swift in Sources */,
+				45DA07F1222D7D800003D32A /* HeadlineLabel.swift in Sources */,
 				45A388C8225E388B00037FFA /* FullscreenImageViewController.swift in Sources */,
 				4588FF2B22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C8210095ED006D3618 /* LocalizedLabel.swift in Sources */,
@@ -1920,6 +1934,7 @@
 				45890B2621FF5E8F00894255 /* AuthToken.swift in Sources */,
 				A8A2E504217DD3C70006023F /* GradientView.swift in Sources */,
 				4589DDF6213FF93700800E67 /* PreviewObject.swift in Sources */,
+				45C3F51D23C127E60091848D /* TextFieldWithHint.swift in Sources */,
 				454FEE3F2240601E00EB7A54 /* LceErrors.swift in Sources */,
 				45976373210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A5216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
@@ -1931,12 +1946,13 @@
 				456852572105D024006D3618 /* ServiceError.swift in Sources */,
 				A891BDB92108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
 				45C089EA2215C12200D0DD49 /* DatabaseManager.swift in Sources */,
-				45DA07F9222D7DA00003D32A /* BaseButton.swift in Sources */,
+				45DA07F9222D7DA00003D32A /* PrimaryButton.swift in Sources */,
 				45B76D8D213590C5003BB997 /* ActivityIndicator.swift in Sources */,
 				45890B3B22086C6600894255 /* OnboardingFlowController.swift in Sources */,
 				45E8A578220F7933003F7502 /* UsersViewModel.swift in Sources */,
 				45E8A575220F7933003F7502 /* UsersViewController.swift in Sources */,
 				459761DC20FDD61E0034DE29 /* AppDelegate.swift in Sources */,
+				45C3F51123C114600091848D /* UIColorCompatible.swift in Sources */,
 				45DB9785226BA9D200C3F234 /* SettingsViewController.swift in Sources */,
 				A82386882138AF1700CC941C /* ColoredImageView.swift in Sources */,
 				4588FF2F22282D000014FC79 /* UserDetailViewModel.swift in Sources */,
@@ -1956,13 +1972,13 @@
 				45E1E61B221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				45890B5E22087C8B00894255 /* String+UIExtensions.swift in Sources */,
 				456852122101E432006D3618 /* User.swift in Sources */,
-				45DA07F5222D7D800003D32A /* BaseTextFieldHintLabel.swift in Sources */,
 				456852482105CF82006D3618 /* LoginService.swift in Sources */,
 				A82385DC213418B400CC941C /* ShadowView.swift in Sources */,
 				451233E5215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				456851BB21008988006D3618 /* BaseViewController.swift in Sources */,
 				A847B1AE210F4872002F9ED1 /* LocationHelper.swift in Sources */,
 				A83F0EB921490EE200313067 /* UserImageView.swift in Sources */,
+				45C3F51923C1249C0091848D /* SecondaryButton.swift in Sources */,
 				45890B2A21FFB95D00894255 /* ColorTheme.swift in Sources */,
 				450D3DDE21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C22100929E006D3618 /* LocalizedTextField.swift in Sources */,
@@ -1988,7 +2004,7 @@
 				455261C9210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8C79AA12157FD71007A4339 /* Plurals.swift in Sources */,
 				A8D348DF2163777200B7D08F /* DataValidator.swift in Sources */,
-				45DA07F2222D7D800003D32A /* BaseHeadlineLabel.swift in Sources */,
+				45DA07F2222D7D800003D32A /* HeadlineLabel.swift in Sources */,
 				45A388C9225E388B00037FFA /* FullscreenImageViewController.swift in Sources */,
 				4588FF2C22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C9210095ED006D3618 /* LocalizedLabel.swift in Sources */,

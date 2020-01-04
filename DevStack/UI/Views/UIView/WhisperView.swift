@@ -13,9 +13,9 @@ public enum WhisperStyle {
     
     public var color: UIColor {
         switch self {
-        case .info: return Asset.Colors.alertInfo.color
-        case .success: return Asset.Colors.alertSuccess.color
-        case .error: return Asset.Colors.alertError.color
+        case .info: return ColorTheme.alertBackgroundInfo
+        case .success: return ColorTheme.alertBackgroundSuccess
+        case .error: return ColorTheme.alertBackgroundError
         }
     }
 }
@@ -34,7 +34,7 @@ class WhisperView: UIView {
         super.init(frame: frame)
         
         messageLabel.textAlignment = .center
-        messageLabel.textColor = .white
+        messageLabel.textColor = ColorTheme.alertMessage
         messageLabel.font = .systemFont(ofSize: 13.0, weight: .medium)
         
         addSubview(messageLabel)

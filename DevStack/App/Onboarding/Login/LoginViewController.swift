@@ -23,12 +23,10 @@ final class LoginViewController: InputViewController {
     private var viewModel: LoginViewModel!
     
     // MARK: UI components
-    @IBOutlet private weak var emailTextFieldView: UIView!
-    @IBOutlet private weak var emailTextField: UITextField!
-    @IBOutlet private weak var passwordTextFieldView: UIView!
-    @IBOutlet private weak var passwordTextField: UITextField!
-    @IBOutlet private weak var loginButton: BaseButton!
-    @IBOutlet private weak var registerButton: LocalizedButton!
+    @IBOutlet private weak var emailTextField: TextFieldWithHint!
+    @IBOutlet private weak var passwordTextField: TextFieldWithHint!
+    @IBOutlet private weak var loginButton: PrimaryButton!
+    @IBOutlet private weak var registerButton: SecondaryButton!
     
     // MARK: Stored properties
     
@@ -44,11 +42,11 @@ final class LoginViewController: InputViewController {
         super.viewDidLoad()
         
         #if ALPHA
-        emailTextField.text = "petr.chmelar@matee.cz"
-        passwordTextField.text = "11111111"
+        emailTextField.textField.text = "petr.chmelar@matee.cz"
+        passwordTextField.textField.text = "11111111"
         #elseif BETA
-        emailTextField.text = "petr.chmelar@matee.cz"
-        passwordTextField.text = "11111111"
+        emailTextField.textField.text = "petr.chmelar@matee.cz"
+        passwordTextField.textField.text = "11111111"
         #endif
     }
     
@@ -60,8 +58,8 @@ final class LoginViewController: InputViewController {
     override func setupViewModel() {
         super.setupViewModel()
         
-        let input = LoginViewModel.Input(email: emailTextField.rx.text.orEmpty.asDriver(),
-                                         password: passwordTextField.rx.text.orEmpty.asDriver(),
+        let input = LoginViewModel.Input(email: emailTextField.textField.rx.text.orEmpty.asDriver(),
+                                         password: passwordTextField.textField.rx.text.orEmpty.asDriver(),
                                          loginButtonTaps: loginButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
         
@@ -88,15 +86,8 @@ final class LoginViewController: InputViewController {
     override func setupUI() {
         super.setupUI()
         
-        emailTextFieldView.layer.borderWidth = 2.0
-        emailTextFieldView.layer.borderColor = UIColor.lightGray.cgColor
-        passwordTextFieldView.layer.borderWidth = 2.0
-        passwordTextFieldView.layer.borderColor = UIColor.lightGray.cgColor
-        
-        emailTextField.textContentType = UITextContentType(rawValue: "")
-        passwordTextField.textContentType = UITextContentType(rawValue: "")
-        
-        registerButton.tintColor = ColorTheme.mainTheme
+        emailTextField.textField.keyboardType = .emailAddress
+        passwordTextField.textField.keyboardType = .asciiCapable
     }
     
     // MARK: Additional methods

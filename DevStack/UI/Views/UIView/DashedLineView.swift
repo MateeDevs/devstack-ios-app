@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable open class DashedLineView: UIView {
     
-    @IBInspectable public var lineColor: UIColor = .black
+    @IBInspectable public var lineColor: UIColor = ColorTheme.separator
     @IBInspectable public var lineLength: CGFloat = 6
     @IBInspectable public var lineGap: CGFloat = 3
     

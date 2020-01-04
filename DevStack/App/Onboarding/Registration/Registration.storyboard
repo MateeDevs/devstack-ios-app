@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CkE-Zn-ye5">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CkE-Zn-ye5">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,12 +17,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krv-hf-ahq">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCI-sH-Aaw">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="registration_view_headline_title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sq-eU-l7S" customClass="BaseHeadlineLabel" customModule="A_DevStack" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="registration_view_headline_title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sq-eU-l7S" customClass="HeadlineLabel" customModule="A_DevStack" customModuleProvider="target">
                                                 <rect key="frame" x="24" y="64" width="327" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -33,98 +31,38 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rxg-rD-JWD">
                                                 <rect key="frame" x="24" y="116.5" width="327" height="160"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZy-dd-Blo">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZy-dd-Blo" customClass="TextFieldWithHint" customModule="A_DevStack" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="327" height="72"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="registration_view_email_field_hint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWl-f1-jt5" customClass="BaseTextFieldHintLabel" customModule="A_DevStack" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="327" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFk-du-VtZ">
-                                                                <rect key="frame" x="0.0" y="24.5" width="327" height="47.5"/>
-                                                                <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="chA-h5-aPp">
-                                                                        <rect key="frame" x="8" y="0.0" width="311" height="47.5"/>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
-                                                                        <connections>
-                                                                            <outlet property="delegate" destination="CkE-Zn-ye5" id="rXC-SL-0LO"/>
-                                                                        </connections>
-                                                                    </textField>
-                                                                </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstItem="chA-h5-aPp" firstAttribute="top" secondItem="QFk-du-VtZ" secondAttribute="top" id="5VZ-fL-f9l"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="chA-h5-aPp" secondAttribute="trailing" constant="8" id="U9W-kS-zAS"/>
-                                                                    <constraint firstItem="chA-h5-aPp" firstAttribute="leading" secondItem="QFk-du-VtZ" secondAttribute="leading" constant="8" id="iXd-2A-FwI"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="chA-h5-aPp" secondAttribute="bottom" id="rsR-wc-uv7"/>
-                                                                </constraints>
-                                                            </view>
-                                                        </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="SWl-f1-jt5" firstAttribute="leading" secondItem="pZy-dd-Blo" secondAttribute="leading" id="1K9-Lu-KqQ"/>
-                                                            <constraint firstAttribute="trailing" secondItem="QFk-du-VtZ" secondAttribute="trailing" id="1hQ-3V-rZV"/>
-                                                            <constraint firstAttribute="trailing" secondItem="SWl-f1-jt5" secondAttribute="trailing" id="7SM-jL-8Nc"/>
-                                                            <constraint firstItem="QFk-du-VtZ" firstAttribute="leading" secondItem="pZy-dd-Blo" secondAttribute="leading" id="GL0-T1-ECS"/>
-                                                            <constraint firstItem="SWl-f1-jt5" firstAttribute="top" secondItem="pZy-dd-Blo" secondAttribute="top" id="K5q-Wm-wEY"/>
                                                             <constraint firstAttribute="height" constant="72" id="Yzg-26-Cgm"/>
-                                                            <constraint firstAttribute="bottom" secondItem="QFk-du-VtZ" secondAttribute="bottom" id="Zla-uq-x9a"/>
-                                                            <constraint firstItem="QFk-du-VtZ" firstAttribute="top" secondItem="SWl-f1-jt5" secondAttribute="bottom" constant="4" id="v3z-XW-Ozp"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autocorrectionType" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="spellCheckingType" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="hint" value="registration_view_email_field_hint"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2S-L2-sPw">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2S-L2-sPw" customClass="TextFieldWithHint" customModule="A_DevStack" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="88" width="327" height="72"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="registration_view_password_field_hint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofK-rg-cad" customClass="BaseTextFieldHintLabel" customModule="A_DevStack" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="327" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rBS-XL-gjx">
-                                                                <rect key="frame" x="0.0" y="24.5" width="327" height="47.5"/>
-                                                                <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tnZ-Nn-wiQ">
-                                                                        <rect key="frame" x="8" y="0.0" width="311" height="47.5"/>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="done" secureTextEntry="YES"/>
-                                                                        <connections>
-                                                                            <outlet property="delegate" destination="CkE-Zn-ye5" id="xER-Z9-02M"/>
-                                                                        </connections>
-                                                                    </textField>
-                                                                </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstItem="tnZ-Nn-wiQ" firstAttribute="top" secondItem="rBS-XL-gjx" secondAttribute="top" id="45Q-fx-Etw"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="tnZ-Nn-wiQ" secondAttribute="bottom" id="7Hz-cG-aOa"/>
-                                                                    <constraint firstItem="tnZ-Nn-wiQ" firstAttribute="leading" secondItem="rBS-XL-gjx" secondAttribute="leading" constant="8" id="b2I-zA-PIr"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="tnZ-Nn-wiQ" secondAttribute="trailing" constant="8" id="ftn-Dg-wF2"/>
-                                                                </constraints>
-                                                            </view>
-                                                        </subviews>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="72" id="M6L-jG-Vwl"/>
-                                                            <constraint firstAttribute="trailing" secondItem="ofK-rg-cad" secondAttribute="trailing" id="T0w-nS-FXh"/>
-                                                            <constraint firstItem="ofK-rg-cad" firstAttribute="leading" secondItem="l2S-L2-sPw" secondAttribute="leading" id="Wer-BY-tla"/>
-                                                            <constraint firstAttribute="trailing" secondItem="rBS-XL-gjx" secondAttribute="trailing" id="cxh-2g-i3P"/>
-                                                            <constraint firstItem="rBS-XL-gjx" firstAttribute="leading" secondItem="l2S-L2-sPw" secondAttribute="leading" id="exw-7o-4Ru"/>
-                                                            <constraint firstItem="rBS-XL-gjx" firstAttribute="top" secondItem="ofK-rg-cad" secondAttribute="bottom" constant="4" id="lE3-Qo-uUH"/>
-                                                            <constraint firstAttribute="bottom" secondItem="rBS-XL-gjx" secondAttribute="bottom" id="mjf-ou-Ofn"/>
-                                                            <constraint firstItem="ofK-rg-cad" firstAttribute="top" secondItem="l2S-L2-sPw" secondAttribute="top" id="zT5-Mu-Zd0"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="hint" value="registration_view_password_field_hint"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autocorrectionType" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="spellCheckingType" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJa-eW-ggv" customClass="BaseButton" customModule="A_DevStack" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="553" width="327" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJa-eW-ggv" customClass="PrimaryButton" customModule="A_DevStack" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="573" width="327" height="30"/>
                                                 <state key="normal" title="registration_view_register_button_title"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weo-Oy-1Aj" customClass="LocalizedButton" customModule="A_DevStack" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="591" width="327" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weo-Oy-1Aj" customClass="SecondaryButton" customModule="A_DevStack" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="611" width="327" height="30"/>
                                                 <state key="normal" title="registration_view_login_button_title"/>
                                             </button>
                                         </subviews>
@@ -164,17 +102,16 @@
                         <viewLayoutGuide key="safeArea" id="qdr-Ev-KLG"/>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="chA-h5-aPp" id="skY-Vc-7IS"/>
-                        <outlet property="emailTextFieldView" destination="QFk-du-VtZ" id="feh-pv-QEY"/>
+                        <outlet property="emailTextField" destination="pZy-dd-Blo" id="MKg-F1-ImQ"/>
                         <outlet property="loginButton" destination="weo-Oy-1Aj" id="cJB-dc-g9n"/>
-                        <outlet property="passwordTextField" destination="tnZ-Nn-wiQ" id="gen-3n-455"/>
-                        <outlet property="passwordTextFieldView" destination="rBS-XL-gjx" id="SxZ-UC-e4K"/>
+                        <outlet property="passwordTextField" destination="l2S-L2-sPw" id="uLM-1d-BvN"/>
                         <outlet property="registerButton" destination="QJa-eW-ggv" id="Ybp-VW-BTv"/>
                         <outlet property="scrollView" destination="krv-hf-ahq" id="oz5-0I-KwL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SbZ-rD-OKs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138" y="134"/>
         </scene>
     </scenes>
 </document>

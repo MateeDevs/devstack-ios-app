@@ -23,7 +23,7 @@ import UIKit
         }
     }
     
-    @IBInspectable public var borderColor: UIColor = .black {
+    @IBInspectable public var borderColor: UIColor = ColorTheme.primaryColor {
         didSet {
             layer.borderColor = borderColor.cgColor
         }
@@ -77,7 +77,7 @@ import UIKit
         }
     }
     
-    @IBInspectable public var imageColor: UIColor = .black {
+    @IBInspectable public var imageColor: UIColor = ColorTheme.primaryColor {
         didSet {
             if currentImage != nil {
                 setImage(currentImage?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate), for: .normal)
@@ -93,10 +93,10 @@ import UIKit
     @IBInspectable public var enableGradientBackground: Bool = false
     @IBInspectable public var enableGradientStyleHorizontal: Bool = false
     
-    @IBInspectable public var gradientColor1: UIColor = .black
-    @IBInspectable public var gradientColor2: UIColor = .white
-    @IBInspectable public var gradientColorDisabled1: UIColor = .black
-    @IBInspectable public var gradientColorDisabled2: UIColor = .white
+    @IBInspectable public var gradientColor1: UIColor = .systemRed
+    @IBInspectable public var gradientColor2: UIColor = .systemBlue
+    @IBInspectable public var gradientColorDisabled1: UIColor = .systemRed
+    @IBInspectable public var gradientColorDisabled2: UIColor = .systemBlue
     
     override open func layoutSubviews() {
         super.layoutSubviews()

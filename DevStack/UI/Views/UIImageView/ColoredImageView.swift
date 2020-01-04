@@ -23,13 +23,13 @@ import UIKit
         }
     }
     
-    @IBInspectable public var borderColor: UIColor = .black {
+    @IBInspectable public var borderColor: UIColor = ColorTheme.primaryColor {
         didSet {
             layer.borderColor = borderColor.cgColor
         }
     }
     
-    @IBInspectable public var imageColor: UIColor = .black {
+    @IBInspectable public var imageColor: UIColor = ColorTheme.primaryColor {
         didSet {
             if image != nil {
                 image = image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)

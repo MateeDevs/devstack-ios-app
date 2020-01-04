@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     
-    public func startActivityIndicator(style: UIActivityIndicatorView.Style = .whiteLarge, color: UIColor = ColorTheme.mainTheme, backgroundColor: UIColor = .clear) {
+    public func startActivityIndicator(style: UIActivityIndicatorView.Style = .whiteLarge, color: UIColor = ColorTheme.activityIndicator, backgroundColor: UIColor = .clear) {
         endEditing(true)
         stopActivityIndicator()
         

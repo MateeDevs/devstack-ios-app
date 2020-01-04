@@ -22,12 +22,10 @@ final class RegistrationViewController: InputViewController {
     var viewModel: RegistrationViewModel!
 
     // MARK: UI components
-    @IBOutlet private weak var emailTextFieldView: UIView!
-    @IBOutlet private weak var emailTextField: UITextField!
-    @IBOutlet private weak var passwordTextFieldView: UIView!
-    @IBOutlet private weak var passwordTextField: UITextField!
-    @IBOutlet private weak var registerButton: BaseButton!
-    @IBOutlet private weak var loginButton: LocalizedButton!
+    @IBOutlet private weak var emailTextField: TextFieldWithHint!
+    @IBOutlet private weak var passwordTextField: TextFieldWithHint!
+    @IBOutlet private weak var registerButton: PrimaryButton!
+    @IBOutlet private weak var loginButton: SecondaryButton!
 
     // MARK: Stored properties
 
@@ -51,8 +49,8 @@ final class RegistrationViewController: InputViewController {
     override func setupViewModel() {
         super.setupViewModel()
         
-        let input = RegistrationViewModel.Input(email: emailTextField.rx.text.orEmpty.asDriver(),
-                                                password: passwordTextField.rx.text.orEmpty.asDriver(),
+        let input = RegistrationViewModel.Input(email: emailTextField.textField.rx.text.orEmpty.asDriver(),
+                                                password: passwordTextField.textField.rx.text.orEmpty.asDriver(),
                                                 registerButtonTaps: registerButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
         
@@ -79,15 +77,8 @@ final class RegistrationViewController: InputViewController {
     override func setupUI() {
         super.setupUI()
         
-        emailTextFieldView.layer.borderWidth = 2.0
-        emailTextFieldView.layer.borderColor = UIColor.lightGray.cgColor
-        passwordTextFieldView.layer.borderWidth = 2.0
-        passwordTextFieldView.layer.borderColor = UIColor.lightGray.cgColor
-        
-        emailTextField.textContentType = UITextContentType(rawValue: "")
-        passwordTextField.textContentType = UITextContentType(rawValue: "")
-        
-        loginButton.tintColor = ColorTheme.mainTheme
+        emailTextField.textField.keyboardType = .emailAddress
+        passwordTextField.textField.keyboardType = .asciiCapable
     }
 
     // MARK: Additional methods

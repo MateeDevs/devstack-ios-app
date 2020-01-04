@@ -43,8 +43,8 @@ public class FullscreenImageViewController: BaseViewController {
     override public func setupUI() {
         super.setupUI()
         
-        view.backgroundColor = UIColor.white
-        activityIndicator.color = ColorTheme.mainTheme
+        view.backgroundColor = ColorTheme.background
+        activityIndicator.color = ColorTheme.activityIndicator
         imageView.contentMode = .scaleAspectFit
         scrollView.maximumZoomScale = 10.0
         

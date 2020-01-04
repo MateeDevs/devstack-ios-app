@@ -10,8 +10,8 @@ import UIKit
 
 @IBDesignable open class GradientView: UIView {
     
-    @IBInspectable public var color1: UIColor = .black
-    @IBInspectable public var color2: UIColor = .white
+    @IBInspectable public var color1: UIColor = .systemRed
+    @IBInspectable public var color2: UIColor = .systemBlue
     
     @IBInspectable public var location1: CGFloat = 0.0
     @IBInspectable public var location2: CGFloat = 1.0
@@ -22,7 +22,7 @@ import UIKit
         applyGradientLayer()
     }
 
-    func applyGradientLayer() {
+    private func applyGradientLayer() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
         gradientLayer.colors = [color1.cgColor, color2.cgColor]
