@@ -83,5 +83,6 @@ FIXME
 
 ## TODO
 - Update Pods after [Moya 14.0.0 release](https://github.com/Moya/Moya/releases)
+- Migrate to SwiftPM when all used frameworks are available (waiting for [Firebase](https://github.com/firebase/firebase-ios-sdk/issues/3136))
 - Migrate to SwiftUI + Combine when the time is right (not before iOS 14.0 official release)
 - Provide example unit tests
