@@ -167,9 +167,9 @@
 		45890B2421FF5E8F00894255 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45890B2321FF5E8F00894255 /* AuthToken.swift */; };
 		45890B2521FF5E8F00894255 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45890B2321FF5E8F00894255 /* AuthToken.swift */; };
 		45890B2621FF5E8F00894255 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45890B2321FF5E8F00894255 /* AuthToken.swift */; };
-		45890B2821FFB95D00894255 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45890B2721FFB95D00894255 /* ColorTheme.swift */; };
-		45890B2921FFB95D00894255 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45890B2721FFB95D00894255 /* ColorTheme.swift */; };
-		45890B2A21FFB95D00894255 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45890B2721FFB95D00894255 /* ColorTheme.swift */; };
+		45890B2821FFB95D00894255 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45890B2721FFB95D00894255 /* AppTheme.swift */; };
+		45890B2921FFB95D00894255 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45890B2721FFB95D00894255 /* AppTheme.swift */; };
+		45890B2A21FFB95D00894255 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45890B2721FFB95D00894255 /* AppTheme.swift */; };
 		45890B3922086C6600894255 /* OnboardingFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45890B3822086C6600894255 /* OnboardingFlowController.swift */; };
 		45890B3A22086C6600894255 /* OnboardingFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45890B3822086C6600894255 /* OnboardingFlowController.swift */; };
 		45890B3B22086C6600894255 /* OnboardingFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45890B3822086C6600894255 /* OnboardingFlowController.swift */; };
@@ -496,7 +496,7 @@
 		4588FF2622282D000014FC79 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		45890B1F21FF5CD800894255 /* AuthToken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AuthToken.json; sourceTree = "<group>"; };
 		45890B2321FF5E8F00894255 /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
-		45890B2721FFB95D00894255 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		45890B2721FFB95D00894255 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		45890B3822086C6600894255 /* OnboardingFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowController.swift; sourceTree = "<group>"; };
 		45890B3E22086C9C00894255 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		45890B4222086CA700894255 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -952,8 +952,8 @@
 		459762E120FE21A80034DE29 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				45890B2721FFB95D00894255 /* AppTheme.swift */,
 				45DB140E22E26FA300093272 /* BiometricHelper.swift */,
-				45890B2721FFB95D00894255 /* ColorTheme.swift */,
 				A8D348DC2163777200B7D08F /* DataValidator.swift */,
 				45E8A4B4220AEF90003F7502 /* FlowController.swift */,
 				A847B1AB210F4872002F9ED1 /* LocationHelper.swift */,
@@ -1733,7 +1733,7 @@
 				A847B1AC210F4872002F9ED1 /* LocationHelper.swift in Sources */,
 				A83F0EB721490EE200313067 /* UserImageView.swift in Sources */,
 				45C3F51723C1249C0091848D /* SecondaryButton.swift in Sources */,
-				45890B2821FFB95D00894255 /* ColorTheme.swift in Sources */,
+				45890B2821FFB95D00894255 /* AppTheme.swift in Sources */,
 				450D3DDC21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C02100929E006D3618 /* LocalizedTextField.swift in Sources */,
 				450384752170E4FC004F43DC /* Bool+Extensions.swift in Sources */,
@@ -1856,7 +1856,7 @@
 				A83F0EB821490EE200313067 /* UserImageView.swift in Sources */,
 				A847B1AD210F4872002F9ED1 /* LocationHelper.swift in Sources */,
 				45C3F51823C1249C0091848D /* SecondaryButton.swift in Sources */,
-				45890B2921FFB95D00894255 /* ColorTheme.swift in Sources */,
+				45890B2921FFB95D00894255 /* AppTheme.swift in Sources */,
 				450D3DDD21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C12100929E006D3618 /* LocalizedTextField.swift in Sources */,
 				450384762170E4FC004F43DC /* Bool+Extensions.swift in Sources */,
@@ -1979,7 +1979,7 @@
 				A847B1AE210F4872002F9ED1 /* LocationHelper.swift in Sources */,
 				A83F0EB921490EE200313067 /* UserImageView.swift in Sources */,
 				45C3F51923C1249C0091848D /* SecondaryButton.swift in Sources */,
-				45890B2A21FFB95D00894255 /* ColorTheme.swift in Sources */,
+				45890B2A21FFB95D00894255 /* AppTheme.swift in Sources */,
 				450D3DDE21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C22100929E006D3618 /* LocalizedTextField.swift in Sources */,
 				450384772170E4FC004F43DC /* Bool+Extensions.swift in Sources */,

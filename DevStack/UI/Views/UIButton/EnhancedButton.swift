@@ -23,7 +23,7 @@ import UIKit
         }
     }
     
-    @IBInspectable public var borderColor: UIColor = ColorTheme.primaryColor {
+    @IBInspectable public var borderColor: UIColor = AppTheme.Colors.primaryColor {
         didSet {
             layer.borderColor = borderColor.cgColor
         }
@@ -77,7 +77,7 @@ import UIKit
         }
     }
     
-    @IBInspectable public var imageColor: UIColor = ColorTheme.primaryColor {
+    @IBInspectable public var imageColor: UIColor = AppTheme.Colors.primaryColor {
         didSet {
             if currentImage != nil {
                 setImage(currentImage?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate), for: .normal)

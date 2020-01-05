@@ -144,14 +144,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Navigation bar
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().tintColor = ColorTheme.navBarTitle
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: ColorTheme.navBarTitle]
-        UINavigationBar.appearance().barTintColor = ColorTheme.navBarBackground
+        UINavigationBar.appearance().tintColor = AppTheme.Colors.navBarTitle
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: AppTheme.Colors.navBarTitle]
+        UINavigationBar.appearance().barTintColor = AppTheme.Colors.navBarBackground
         
         // Tab bar
-        UITabBar.appearance().tintColor = ColorTheme.primaryColor
+        UITabBar.appearance().tintColor = AppTheme.Colors.primaryColor
         
         // UITextField
-        UITextField.appearance().tintColor = ColorTheme.primaryColor
+        UITextField.appearance().tintColor = AppTheme.Colors.primaryColor
     }
 }

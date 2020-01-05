@@ -14,11 +14,11 @@ class PrimaryButton: EnhancedButton {
         super.awakeFromNib()
         
         cornerRadius = 5.0
-        backgroundColor = ColorTheme.primaryButtonBackground
-        setTitleColor(ColorTheme.primaryButtonTitle, for: .normal)
+        backgroundColor = AppTheme.Colors.primaryButtonBackground
+        setTitleColor(AppTheme.Colors.primaryButtonTitle, for: .normal)
         
         if let label = titleLabel {
-            label.font = UIFont.systemFont(ofSize: 20.0, weight: .regular)
+            label.font = AppTheme.Fonts.primaryButton
             label.numberOfLines = 1
             label.adjustsFontSizeToFitWidth = true
             label.minimumScaleFactor = 0.75

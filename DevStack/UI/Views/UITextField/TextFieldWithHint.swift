@@ -44,8 +44,8 @@ import UIKit
         super.awakeFromNib()
         
         // Setup a hint label
-        hintLabel.textColor = ColorTheme.textFieldHint
-        hintLabel.font = .systemFont(ofSize: 14.0, weight: .regular)
+        hintLabel.textColor = AppTheme.Colors.textFieldHint
+        hintLabel.font = AppTheme.Fonts.textFieldHint
         
         addSubview(hintLabel)
         hintLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -56,7 +56,7 @@ import UIKit
         // Setup a view with a border around the text field
         let textFieldView = UIView()
         textFieldView.layer.borderWidth = 2.0
-        textFieldView.layer.borderColor = ColorTheme.textFieldBorder.cgColor
+        textFieldView.layer.borderColor = AppTheme.Colors.textFieldBorder.cgColor
         
         addSubview(textFieldView)
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
@@ -66,7 +66,7 @@ import UIKit
         textFieldView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
         
         // Setup a text field
-        textField.font = .systemFont(ofSize: 17.0, weight: .regular)
+        textField.font = AppTheme.Fonts.textField
         textField.borderStyle = .none
         textField.clearButtonMode = .whileEditing
         textField.returnKeyType = .done

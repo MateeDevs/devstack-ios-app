@@ -13,7 +13,7 @@ class SecondaryButton: LocalizedButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        tintColor = ColorTheme.secondaryButtonTitle
+        tintColor = AppTheme.Colors.secondaryButtonTitle
     }
     
 }
