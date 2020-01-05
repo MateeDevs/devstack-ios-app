@@ -70,6 +70,11 @@ FIXME
 - The build phase script then generates appropriate `Localizable.strings` files from the mentioned `strings.txt` file
 - When modifying `strings.txt` it is required to comply with the specified syntax and to pull/push all the changes frequently
 
+## Debug
+- All important information should be logged using the default `os_log` (there is `Logger` wrapper for convenience)
+- All network requests going through the `AuthenticatedProvider` are printed into the console
+- [Flipper](https://fbflipper.com/) with layout and network plugins is enabled for debug builds
+
 ## Build + Release
 - CI/CD process is based on [GitHub Actions](https://github.com/features/actions) and [Fastlane](https://fastlane.tools/)
 - Main configuration for GitHub Actions is in the `.github/workflows/main.yml` file

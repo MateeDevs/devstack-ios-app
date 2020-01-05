@@ -10,6 +10,10 @@ import UIKit
 import Firebase
 import RealmSwift
 
+#if DEBUG
+import FlipperKit
+#endif
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -17,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private(set) var flowController: AppFlowController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        #if DEBUG
+        flipperSetup(for: application)
+        #endif
         
         #if ALPHA
         Logger.info("ALPHA environment", category: .app)
@@ -66,6 +74,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    // MARK: Flipper
+    private func flipperSetup(for application: UIApplication) {
+        let client = FlipperClient.shared()
+        
+        // Add [layout plugin](https://fbflipper.com/docs/setup/layout-plugin.html)
+        let layoutDescriptorMapper = SKDescriptorMapper(defaults: ())
+        FlipperKitLayoutComponentKitSupport.setUpWith(layoutDescriptorMapper)
+        client?.add(FlipperKitLayoutPlugin(rootNode: application, with: layoutDescriptorMapper!))
+        
+        // Add [network plugin](https://fbflipper.com/docs/setup/network-plugin.html)
+        client?.add(FlipperKitNetworkPlugin(networkAdapter: SKIOSNetworkAdapter()))
+        
+        client?.start()
     }
     
     // MARK: Clear keychain on first run
