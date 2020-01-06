@@ -21,7 +21,7 @@ struct NetworkingConstants {
     static let baseURL = "https://matee-devstack.herokuapp.com"
     #elseif BETA
     static let baseURL = "https://matee-devstack.herokuapp.com"
-    #else
+    #elseif PRODUCTION
     static let baseURL = "https://matee-devstack.herokuapp.com"
     #endif
     

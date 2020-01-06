@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Logger.info("ALPHA environment", category: .app)
         #elseif BETA
         Logger.info("BETA environment", category: .app)
-        #else
+        #elseif PRODUCTION
         Logger.info("PRODUCTION environment", category: .app)
         #endif
 

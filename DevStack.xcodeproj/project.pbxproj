@@ -2197,7 +2197,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DPRODUCTION\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack;
 				PRODUCT_NAME = DevStack;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2222,7 +2222,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DPRODUCTION\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack;
 				PRODUCT_NAME = DevStack;
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -131,6 +131,8 @@ platform :ios do
   desc "Create a new build"
   private_lane :build do |config|
 
+    xcversion(version: "11.2.1")
+
     unless config[:git_branch] =~ /#{config[:build_branch]}\/\d+\.\d+(\.\d+)?$/
       UI.user_error!("Invalid git branch: \"#{config[:git_branch]}\". Expect: \"#{config[:build_branch]}/x.x.x\"")
     end
