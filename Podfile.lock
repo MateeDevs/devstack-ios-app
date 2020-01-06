@@ -2,8 +2,14 @@ PODS:
   - Alamofire (4.9.0)
   - AlamofireImage (3.5.2):
     - Alamofire (~> 4.8)
+  - boost-for-react-native (1.63.0)
+  - CocoaAsyncSocket (7.6.3)
+  - CocoaLibEvent (1.0.0)
+  - ComponentKit (0.29):
+    - Yoga (~> 1.14)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
+  - DoubleConversion (1.1.5)
   - Fabric (1.10.2)
   - Firebase (6.9.0):
     - Firebase/Core (= 6.9.0)
@@ -36,6 +42,55 @@ PODS:
     - FirebaseCore (~> 6.0)
     - GoogleUtilities/Environment (~> 6.0)
     - GoogleUtilities/UserDefaults (~> 6.0)
+  - Flipper (0.30.1):
+    - Flipper-Folly (~> 2.1)
+    - Flipper-RSocket (~> 1.0)
+  - Flipper-Folly (2.1.0):
+    - boost-for-react-native
+    - CocoaLibEvent (~> 1.0)
+    - DoubleConversion
+    - glog
+    - OpenSSL-Universal (= 1.0.2.19)
+  - Flipper-PeerTalk (0.0.4)
+  - Flipper-RSocket (1.0.0):
+    - Flipper-Folly (~> 2.0)
+  - FlipperKit (0.30.1):
+    - FlipperKit/Core (= 0.30.1)
+  - FlipperKit/Core (0.30.1):
+    - Flipper (~> 0.30.1)
+    - FlipperKit/CppBridge
+    - FlipperKit/FBCxxFollyDynamicConvert
+    - FlipperKit/FBDefines
+    - FlipperKit/FKPortForwarding
+  - FlipperKit/CppBridge (0.30.1):
+    - Flipper (~> 0.30.1)
+  - FlipperKit/FBCxxFollyDynamicConvert (0.30.1):
+    - Flipper-Folly (~> 2.1)
+  - FlipperKit/FBDefines (0.30.1)
+  - FlipperKit/FKPortForwarding (0.30.1):
+    - CocoaAsyncSocket (~> 7.6)
+    - Flipper-PeerTalk (~> 0.0.4)
+  - FlipperKit/FlipperKitHighlightOverlay (0.30.1)
+  - FlipperKit/FlipperKitLayoutComponentKitSupport (0.30.1):
+    - ComponentKit (~> 0.0)
+    - FlipperKit/Core
+    - FlipperKit/FlipperKitHighlightOverlay
+    - FlipperKit/FlipperKitLayoutPlugin
+    - FlipperKit/FlipperKitLayoutTextSearchable
+  - FlipperKit/FlipperKitLayoutPlugin (0.30.1):
+    - FlipperKit/Core
+    - FlipperKit/FlipperKitHighlightOverlay
+    - FlipperKit/FlipperKitLayoutTextSearchable
+    - YogaKit (~> 1.18)
+  - FlipperKit/FlipperKitLayoutTextSearchable (0.30.1)
+  - FlipperKit/FlipperKitNetworkPlugin (0.30.1):
+    - FlipperKit/Core
+  - FlipperKit/FlipperKitUserDefaultsPlugin (0.30.1):
+    - FlipperKit/Core
+  - FlipperKit/SKIOSNetworkPlugin (0.30.1):
+    - FlipperKit/Core
+    - FlipperKit/FlipperKitNetworkPlugin
+  - glog (0.3.4)
   - GoogleAppMeasurement (6.1.2):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -76,6 +131,9 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - OpenSSL-Universal (1.0.2.19):
+    - OpenSSL-Universal/Static (= 1.0.2.19)
+  - OpenSSL-Universal/Static (1.0.2.19)
   - Realm (3.19.0):
     - Realm/Headers (= 3.19.0)
   - Realm/Headers (3.19.0)
@@ -89,12 +147,19 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.5.0)
   - SwiftGen (6.1.0)
+  - Yoga (1.14.0)
+  - YogaKit (1.18.1):
+    - Yoga (~> 1.14)
 
 DEPENDENCIES:
   - AlamofireImage
   - Crashlytics
   - Fabric
   - Firebase
+  - FlipperKit
+  - FlipperKit/FlipperKitLayoutComponentKitSupport
+  - FlipperKit/FlipperKitUserDefaultsPlugin
+  - FlipperKit/SKIOSNetworkPlugin
   - KeychainAccess
   - Moya/RxSwift
   - RealmSwift
@@ -107,7 +172,12 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
+    - boost-for-react-native
+    - CocoaAsyncSocket
+    - CocoaLibEvent
+    - ComponentKit
     - Crashlytics
+    - DoubleConversion
     - Fabric
     - Firebase
     - FirebaseAnalytics
@@ -115,6 +185,12 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseCoreDiagnosticsInterop
     - FirebaseInstanceID
+    - Flipper
+    - Flipper-Folly
+    - Flipper-PeerTalk
+    - Flipper-RSocket
+    - FlipperKit
+    - glog
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
@@ -122,6 +198,7 @@ SPEC REPOS:
     - KeychainAccess
     - Moya
     - nanopb
+    - OpenSSL-Universal
     - Realm
     - RealmSwift
     - Result
@@ -129,11 +206,18 @@ SPEC REPOS:
     - RxRealm
     - RxSwift
     - SwiftGen
+    - Yoga
+    - YogaKit
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
+  CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
+  ComponentKit: f8ceb6ffdf33e0c229eac8aadac5df2329902d41
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
+  DoubleConversion: e22e0762848812a87afd67ffda3998d9ef29170c
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: 2d750c54cda57d5a6ae31212cfe5cc813c6be7e4
   FirebaseAnalytics: 5d9ccbf46ed25d3ec9304d263f85bddf1e93e2d2
@@ -141,6 +225,12 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: be4f7a09d02ab305f18de59a470412caddb64c2a
   FirebaseCoreDiagnosticsInterop: 6829da2b8d1fc795ff1bd99df751d3788035d2cb
   FirebaseInstanceID: 550df9be1f99f751d8fcde3ac342a1e21a0e6c42
+  Flipper: d591b88245dc8c8147819aa249f911923c7417fc
+  Flipper-Folly: bcae82405dafd18ac9f8d9d4902fd1c2ef2a7e77
+  Flipper-PeerTalk: 116d8f857dc6ef55c7a5a75ea3ceaafe878aadc9
+  Flipper-RSocket: 1260a31c05c238eabfa9bb8a64e3983049048371
+  FlipperKit: 3e13631bca7c5ec0dd54ee1d096f5e5d32a5d784
+  glog: 1de0bb937dccdc981596d3b5825ebfb765017ded
   GoogleAppMeasurement: 0ae90be1cc4dad40f4a27fc767ef59fa032ec87b
   GoogleDataTransport: c8617c00e4f3eb9418e42ac0e8ac5241a9d555dd
   GoogleDataTransportCCTSupport: 9f352523e8785a71f6754f51eeff09f49ec19268
@@ -148,6 +238,7 @@ SPEC CHECKSUMS:
   KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  OpenSSL-Universal: 8b48cc0d10c1b2923617dfe5c178aa9ed2689355
   Realm: 995d585bcf699aaff226715886c849a29dd3d07f
   RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
@@ -155,7 +246,9 @@ SPEC CHECKSUMS:
   RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
+  Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
+  YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 59ffad023fc02ccdac33c65d612c26c2c517457a
+PODFILE CHECKSUM: 8592c0297afcc60aa4ca52b0a15abd0cd26842e0
 
 COCOAPODS: 1.8.1
