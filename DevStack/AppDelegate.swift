@@ -76,6 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    #if DEBUG
     // MARK: Flipper
     private func flipperSetup(for application: UIApplication) {
         let client = FlipperClient.shared()
@@ -90,6 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         client?.start()
     }
+    #endif
     
     // MARK: Clear keychain on first run
     private func clearKeychain() {
