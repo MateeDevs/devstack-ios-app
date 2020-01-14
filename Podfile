@@ -80,7 +80,11 @@ post_install do |installer|
             config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS'] = 'NO'
 
             # Update the Swift version if necessary
-            config.build_settings['SWIFT_VERSION'] = '5.0'
+            if target.name == 'YogaKit'
+                config.build_settings['SWIFT_VERSION'] = '4.1'
+            else
+                config.build_settings['SWIFT_VERSION'] = '5.0'
+            end
 
             # Turn on Whole Module Optimization
             if config.name == 'Release'
@@ -90,35 +94,5 @@ post_install do |installer|
             end
         end
     end
-
-    # This adds the -DFB_SONARKIT_ENABLED flag to OTHER_SWIFT_FLAGS, necessary to build Flipper swift target
-    installer.pods_project.targets.each do |target|
-      if target.name == 'YogaKit'
-        target.build_configurations.each do |config|
-          config.build_settings['SWIFT_VERSION'] = '4.1'
-        end
-      end
-    end
-    file_name = Dir.glob("*.xcodeproj")[0]
-    app_project = Xcodeproj::Project.open(file_name)
-    app_project.native_targets.each do |target|
-        target.build_configurations.each do |config|
-          if (config.build_settings['OTHER_SWIFT_FLAGS'])
-            unless config.build_settings['OTHER_SWIFT_FLAGS'].include? '-DFB_SONARKIT_ENABLED'
-              puts 'Adding -DFB_SONARKIT_ENABLED ...'
-              swift_flags = config.build_settings['OTHER_SWIFT_FLAGS']
-              if swift_flags.split.last != '-Xcc'
-                config.build_settings['OTHER_SWIFT_FLAGS'] << ' -Xcc'
-              end
-              config.build_settings['OTHER_SWIFT_FLAGS'] << ' -DFB_SONARKIT_ENABLED'
-            end
-          else
-            puts 'OTHER_SWIFT_FLAGS does not exist thus assigning it to `$(inherited) -Xcc -DFB_SONARKIT_ENABLED`'
-            config.build_settings['OTHER_SWIFT_FLAGS'] = '$(inherited) -Xcc -DFB_SONARKIT_ENABLED'
-          end
-          app_project.save
-        end
-    end
-    installer.pods_project.save
 
 end
