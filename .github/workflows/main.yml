@@ -45,6 +45,7 @@ jobs:
           GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
           TWINE_FOLDER: ~/twine
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          CI: ${{ true }}
         run: |
           eval "$(ssh-agent -s)"
           ssh-add - <<< "${DEPLOY_KEY}"
@@ -82,6 +83,7 @@ jobs:
           GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
           TWINE_FOLDER: ~/twine
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          CI: ${{ true }}
         run: |
           eval "$(ssh-agent -s)"
           ssh-add - <<< "${DEPLOY_KEY}"
@@ -119,6 +121,7 @@ jobs:
   #         GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
   #         TWINE_FOLDER: ~/twine
   #         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+  #         CI: ${{ true }}
   #       run: |
   #         eval "$(ssh-agent -s)"
   #         ssh-add - <<< "${DEPLOY_KEY}"

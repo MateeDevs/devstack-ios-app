@@ -25,10 +25,12 @@ def shared_pods
     pod 'SwiftGen'
 
     # Flipper
-    pod 'FlipperKit', :configurations => ['Debug']
-    pod 'FlipperKit/FlipperKitLayoutComponentKitSupport', :configurations => ['Debug']
-    pod 'FlipperKit/SKIOSNetworkPlugin', :configurations => ['Debug']
-    pod 'FlipperKit/FlipperKitUserDefaultsPlugin', :configurations => ['Debug']
+    if ENV['CI'] == nil
+        pod 'FlipperKit', :configurations => ['Debug']
+        pod 'FlipperKit/FlipperKitLayoutComponentKitSupport', :configurations => ['Debug']
+        pod 'FlipperKit/SKIOSNetworkPlugin', :configurations => ['Debug']
+        pod 'FlipperKit/FlipperKitUserDefaultsPlugin', :configurations => ['Debug']
+    end
 end
 
 workspace 'DevStack'
