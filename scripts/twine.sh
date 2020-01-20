@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/zsh -i
 
 echo "Generating Localizable files for specified languages..."
 bundle exec twine generate-localization-file $TWINE_FOLDER/devstack/strings.txt ./DevStack/Resources/Base.lproj/Localizable.strings --lang en
