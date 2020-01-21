@@ -29,6 +29,11 @@ sed -i '' -e "s/${old_name}/${new_name}/g" ../${new_name}.xcodeproj/xcshareddata
 mv ../${new_name}.xcodeproj/xcshareddata/xcschemes/${old_name}.xcscheme ../${new_name}.xcodeproj/xcshareddata/xcschemes/${new_name}.xcscheme
 sed -i '' -e "s/${old_name}/${new_name}/g" ../${new_name}.xcodeproj/xcshareddata/xcschemes/${new_name}.xcscheme
 
+echo "Renaming entitlements..."
+mv ../${new_name}/App/Config/Alpha/${old_name}.entitlements ../${new_name}/App/Config/Alpha/${new_name}.entitlements
+mv ../${new_name}/App/Config/Beta/${old_name}.entitlements ../${new_name}/App/Config/Beta/${new_name}.entitlements
+mv ../${new_name}/App/Config/Production/${old_name}.entitlements ../${new_name}/App/Config/Production/${new_name}.entitlements
+
 echo "Renaming support files..."
 sed -i '' -e "s/${old_name}/${new_name}/g" ../Podfile
 sed -i '' -e "s/${old_name}/${new_name}/g" ../scripts/twine.sh
