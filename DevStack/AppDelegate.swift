@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import RealmSwift
+import UserNotifications
 
 #if DEBUG
 import FlipperKit
@@ -36,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         clearKeychain()
         realmSetup()
-        firebaseSetup()
+        firebaseSetup(for: application)
         
         appAppearance()
         LanguageManager.shared.setDefaultLanguage(Language(rawValue: NSLocale.current.languageCode ?? "en") ?? .en)
@@ -135,8 +136,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: Firebase
-    private func firebaseSetup() {
+    private func firebaseSetup(for application: UIApplication) {
         FirebaseApp.configure()
+        
+        // Setup APNs
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: {_, _ in })
+        UNUserNotificationCenter.current().delegate = self
+        application.registerForRemoteNotifications()
     }
     
     // MARK: Appearance
