@@ -85,9 +85,9 @@
 		454FEE3D2240601E00EB7A54 /* LceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3C2240601E00EB7A54 /* LceErrors.swift */; };
 		454FEE3E2240601E00EB7A54 /* LceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3C2240601E00EB7A54 /* LceErrors.swift */; };
 		454FEE3F2240601E00EB7A54 /* LceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3C2240601E00EB7A54 /* LceErrors.swift */; };
-		454FFC9423D72B040062FF4B /* AppDelegate+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9323D72B040062FF4B /* AppDelegate+Notifications.swift */; };
-		454FFC9523D72B040062FF4B /* AppDelegate+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9323D72B040062FF4B /* AppDelegate+Notifications.swift */; };
-		454FFC9623D72B040062FF4B /* AppDelegate+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9323D72B040062FF4B /* AppDelegate+Notifications.swift */; };
+		454FFC9823D74C760062FF4B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9723D74C760062FF4B /* FirebaseManager.swift */; };
+		454FFC9923D74C760062FF4B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9723D74C760062FF4B /* FirebaseManager.swift */; };
+		454FFC9A23D74C760062FF4B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9723D74C760062FF4B /* FirebaseManager.swift */; };
 		455261BC210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */; };
 		455261BD210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */; };
 		455261BE210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */; };
@@ -462,7 +462,7 @@
 		454FFC9023D70E7A0062FF4B /* DevStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevStack.entitlements; sourceTree = "<group>"; };
 		454FFC9123D70E800062FF4B /* DevStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevStack.entitlements; sourceTree = "<group>"; };
 		454FFC9223D70E840062FF4B /* DevStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevStack.entitlements; sourceTree = "<group>"; };
-		454FFC9323D72B040062FF4B /* AppDelegate+Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Notifications.swift"; sourceTree = "<group>"; };
+		454FFC9723D74C760062FF4B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		455261C2210AFE1100E5F1E1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		455261C6210AFF1700E5F1E1 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -736,7 +736,6 @@
 				4597626520FDEC350034DE29 /* UI */,
 				459761C820FDD4050034DE29 /* App */,
 				4558D30A20FCC8FF005BC325 /* AppDelegate.swift */,
-				454FFC9323D72B040062FF4B /* AppDelegate+Notifications.swift */,
 			);
 			path = DevStack;
 			sourceTree = "<group>";
@@ -1073,10 +1072,11 @@
 			children = (
 				45E1E61C221D5C55006C84D1 /* LocationManager */,
 				45C089E72215C12200D0DD49 /* DatabaseManager.swift */,
-				450C869023547D5A00DC5E49 /* UserDefaultsStore.swift */,
+				454FFC9723D74C760062FF4B /* FirebaseManager.swift */,
 				450D3DEA2111F043008BAE71 /* KeychainStore.swift */,
 				4511A69F2138112B006AD4CC /* LanguageManager.swift */,
 				4571DB2A22159EE90036919A /* NetworkManager.swift */,
+				450C869023547D5A00DC5E49 /* UserDefaultsStore.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1805,7 +1805,6 @@
 				45B76D99213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC32108CB2600BBA179 /* XIBView.swift in Sources */,
 				45E8A4ED220B0803003F7502 /* UsersFlowController.swift in Sources */,
-				454FFC9423D72B040062FF4B /* AppDelegate+Notifications.swift in Sources */,
 				4585A15D214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
 				4597625220FDEBDF0034DE29 /* MainTabBarController.swift in Sources */,
 				456851EA2100CAED006D3618 /* EnhancedLabel.swift in Sources */,
@@ -1816,6 +1815,7 @@
 				450E863421072D35001D3E54 /* AppDependency.swift in Sources */,
 				A8DDD0A0211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */,
 				45A92DF621085864007579AC /* BaseViewController+Alerts.swift in Sources */,
+				454FFC9823D74C760062FF4B /* FirebaseManager.swift in Sources */,
 				45ECA1C6216BFA90000B1124 /* UserService.swift in Sources */,
 				45ECA1AA216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
 			);
@@ -1926,7 +1926,6 @@
 				45B76D9A213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC42108CB2600BBA179 /* XIBView.swift in Sources */,
 				45E8A4EE220B0803003F7502 /* UsersFlowController.swift in Sources */,
-				454FFC9523D72B040062FF4B /* AppDelegate+Notifications.swift in Sources */,
 				4585A15E214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
 				4597625320FDEBDF0034DE29 /* MainTabBarController.swift in Sources */,
 				456851EB2100CAED006D3618 /* EnhancedLabel.swift in Sources */,
@@ -1937,6 +1936,7 @@
 				450E863521072D35001D3E54 /* AppDependency.swift in Sources */,
 				A8DDD0A1211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */,
 				45A92DF721085864007579AC /* BaseViewController+Alerts.swift in Sources */,
+				454FFC9923D74C760062FF4B /* FirebaseManager.swift in Sources */,
 				45ECA1C7216BFA90000B1124 /* UserService.swift in Sources */,
 				45ECA1AB216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
 			);
@@ -2047,7 +2047,6 @@
 				45B76D9B213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC52108CB2600BBA179 /* XIBView.swift in Sources */,
 				45E8A4EF220B0803003F7502 /* UsersFlowController.swift in Sources */,
-				454FFC9623D72B040062FF4B /* AppDelegate+Notifications.swift in Sources */,
 				4585A15F214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
 				4597625420FDEBDF0034DE29 /* MainTabBarController.swift in Sources */,
 				456851EC2100CAED006D3618 /* EnhancedLabel.swift in Sources */,
@@ -2058,6 +2057,7 @@
 				450E863621072D35001D3E54 /* AppDependency.swift in Sources */,
 				A8DDD0A2211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */,
 				45A92DF821085864007579AC /* BaseViewController+Alerts.swift in Sources */,
+				454FFC9A23D74C760062FF4B /* FirebaseManager.swift in Sources */,
 				45ECA1C8216BFA90000B1124 /* UserService.swift in Sources */,
 				45ECA1AC216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
 			);
