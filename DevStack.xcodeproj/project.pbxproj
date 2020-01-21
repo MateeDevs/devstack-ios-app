@@ -85,6 +85,9 @@
 		454FEE3D2240601E00EB7A54 /* LceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3C2240601E00EB7A54 /* LceErrors.swift */; };
 		454FEE3E2240601E00EB7A54 /* LceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3C2240601E00EB7A54 /* LceErrors.swift */; };
 		454FEE3F2240601E00EB7A54 /* LceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3C2240601E00EB7A54 /* LceErrors.swift */; };
+		454FFC9423D72B040062FF4B /* AppDelegate+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9323D72B040062FF4B /* AppDelegate+Notifications.swift */; };
+		454FFC9523D72B040062FF4B /* AppDelegate+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9323D72B040062FF4B /* AppDelegate+Notifications.swift */; };
+		454FFC9623D72B040062FF4B /* AppDelegate+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9323D72B040062FF4B /* AppDelegate+Notifications.swift */; };
 		455261BC210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */; };
 		455261BD210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */; };
 		455261BE210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */; };
@@ -456,6 +459,10 @@
 		453CEAC021583A7C00A94BAC /* RatingViewSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewSmall.swift; sourceTree = "<group>"; };
 		454FEE3822404B2C00EB7A54 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		454FEE3C2240601E00EB7A54 /* LceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LceErrors.swift; sourceTree = "<group>"; };
+		454FFC9023D70E7A0062FF4B /* DevStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevStack.entitlements; sourceTree = "<group>"; };
+		454FFC9123D70E800062FF4B /* DevStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevStack.entitlements; sourceTree = "<group>"; };
+		454FFC9223D70E840062FF4B /* DevStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevStack.entitlements; sourceTree = "<group>"; };
+		454FFC9323D72B040062FF4B /* AppDelegate+Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Notifications.swift"; sourceTree = "<group>"; };
 		455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		455261C2210AFE1100E5F1E1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		455261C6210AFF1700E5F1E1 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -729,6 +736,7 @@
 				4597626520FDEC350034DE29 /* UI */,
 				459761C820FDD4050034DE29 /* App */,
 				4558D30A20FCC8FF005BC325 /* AppDelegate.swift */,
+				454FFC9323D72B040062FF4B /* AppDelegate+Notifications.swift */,
 			);
 			path = DevStack;
 			sourceTree = "<group>";
@@ -1076,6 +1084,7 @@
 		45CF3CAA2343F24400015EF5 /* Alpha */ = {
 			isa = PBXGroup;
 			children = (
+				454FFC9023D70E7A0062FF4B /* DevStack.entitlements */,
 				4597621120FDD8E10034DE29 /* Info.plist */,
 				450392842256B29D0037BF42 /* GoogleService-Info.plist */,
 			);
@@ -1085,6 +1094,7 @@
 		45CF3CAB2343F25600015EF5 /* Beta */ = {
 			isa = PBXGroup;
 			children = (
+				454FFC9123D70E800062FF4B /* DevStack.entitlements */,
 				4597621220FDD8E10034DE29 /* Info.plist */,
 				450392862256B35E0037BF42 /* GoogleService-Info.plist */,
 			);
@@ -1094,6 +1104,7 @@
 		45CF3CAC2343F26400015EF5 /* Production */ = {
 			isa = PBXGroup;
 			children = (
+				454FFC9223D70E840062FF4B /* DevStack.entitlements */,
 				4597621320FDD8E10034DE29 /* Info.plist */,
 				450392882256B3C60037BF42 /* GoogleService-Info.plist */,
 			);
@@ -1794,6 +1805,7 @@
 				45B76D99213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC32108CB2600BBA179 /* XIBView.swift in Sources */,
 				45E8A4ED220B0803003F7502 /* UsersFlowController.swift in Sources */,
+				454FFC9423D72B040062FF4B /* AppDelegate+Notifications.swift in Sources */,
 				4585A15D214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
 				4597625220FDEBDF0034DE29 /* MainTabBarController.swift in Sources */,
 				456851EA2100CAED006D3618 /* EnhancedLabel.swift in Sources */,
@@ -1914,6 +1926,7 @@
 				45B76D9A213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC42108CB2600BBA179 /* XIBView.swift in Sources */,
 				45E8A4EE220B0803003F7502 /* UsersFlowController.swift in Sources */,
+				454FFC9523D72B040062FF4B /* AppDelegate+Notifications.swift in Sources */,
 				4585A15E214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
 				4597625320FDEBDF0034DE29 /* MainTabBarController.swift in Sources */,
 				456851EB2100CAED006D3618 /* EnhancedLabel.swift in Sources */,
@@ -2034,6 +2047,7 @@
 				45B76D9B213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC52108CB2600BBA179 /* XIBView.swift in Sources */,
 				45E8A4EF220B0803003F7502 /* UsersFlowController.swift in Sources */,
+				454FFC9623D72B040062FF4B /* AppDelegate+Notifications.swift in Sources */,
 				4585A15F214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
 				4597625420FDEBDF0034DE29 /* MainTabBarController.swift in Sources */,
 				456851EC2100CAED006D3618 /* EnhancedLabel.swift in Sources */,
@@ -2187,6 +2201,7 @@
 			baseConfigurationReference = DD1EE92A9740314059408958 /* Pods-DevStack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DevStack/App/Config/Production/DevStack.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2213,6 +2228,7 @@
 			baseConfigurationReference = 3266EC7634F7BCD070190849 /* Pods-DevStack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DevStack/App/Config/Production/DevStack.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2238,6 +2254,7 @@
 			baseConfigurationReference = A592C9E57154D698582F52F6 /* Pods-DevStack_Alpha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Alpha";
+				CODE_SIGN_ENTITLEMENTS = DevStack/App/Config/Alpha/DevStack.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2264,6 +2281,7 @@
 			baseConfigurationReference = 3108F6D7CC6CF709865E9678 /* Pods-DevStack_Alpha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Alpha";
+				CODE_SIGN_ENTITLEMENTS = DevStack/App/Config/Alpha/DevStack.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2289,6 +2307,7 @@
 			baseConfigurationReference = F50E336A748BE131E45BF8CF /* Pods-DevStack_Beta.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Beta";
+				CODE_SIGN_ENTITLEMENTS = DevStack/App/Config/Beta/DevStack.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2315,6 +2334,7 @@
 			baseConfigurationReference = AFEE2864E1EDF8F86BC7B391 /* Pods-DevStack_Beta.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Beta";
+				CODE_SIGN_ENTITLEMENTS = DevStack/App/Config/Beta/DevStack.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
