@@ -131,7 +131,7 @@ platform :ios do
   desc "Create a new build"
   private_lane :build do |config|
 
-    xcversion(version: "11.2.1")
+    xcversion(version: "11.3.1")
 
     unless config[:git_branch] =~ /#{config[:build_branch]}\/\d+\.\d+(\.\d+)?$/
       UI.user_error!("Invalid git branch: \"#{config[:git_branch]}\". Expect: \"#{config[:build_branch]}/x.x.x\"")
@@ -145,9 +145,9 @@ platform :ios do
 
     keychain_name = "fastlane"
     keychain_password = SecureRandom.base64
+    delete_keychain(name: keychain_name) if File.exist?(File.expand_path("~/Library/Keychains/fastlane-db"))
     create_keychain(
       name: keychain_name,
-      default_keychain: true,
       unlock: true,
       timeout: 3600,
       lock_when_sleeps: true,
@@ -204,10 +204,10 @@ platform :ios do
       dev_portal_team_id: config[:team_id_dev],
       team_id: config[:team_id_connect],
       app_identifier: config[:app_identifier],
-      skip_waiting_for_build_processing: true,
-      # distribute_external: true,
-      # groups: config[:testflight_groups],
-      # changelog: "#{config[:output_name]} #{version} build #{build}"
+      skip_waiting_for_build_processing: false,
+      distribute_external: true,
+      groups: config[:testflight_groups],
+      changelog: "#{config[:output_name]} #{version} build #{build}"
     )
     slack(
       message: "[iOS #{config[:output_name]}] #{version} build #{build} uploaded to the TestFlight\nLink: #{config[:testflight_link]}",

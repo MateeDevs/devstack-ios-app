@@ -1,4 +1,4 @@
-#!/bin/zsh -i
+#!/bin/zsh -l
 
 echo "Generating identifiers for Colors and Images..."
 $PODS_ROOT/SwiftGen/bin/swiftgen xcassets "DevStack/Resources/Colors.xcassets" "DevStack/Resources/Images.xcassets" -t swift4 --param publicAccess --output "DevStack/Constants/Assets.swift"
