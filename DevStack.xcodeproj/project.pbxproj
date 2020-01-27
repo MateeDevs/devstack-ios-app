@@ -441,8 +441,6 @@
 		450DED272261EF29002314E5 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		450E863321072D35001D3E54 /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
 		4511A69F2138112B006AD4CC /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
-		4511A6BB213948EB006AD4CC /* Demand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demand.swift; sourceTree = "<group>"; };
-		4511A6C221398349006AD4CC /* DemandBestOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemandBestOffer.swift; sourceTree = "<group>"; };
 		4511A6E8213D2677006AD4CC /* TabBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarView.xib; sourceTree = "<group>"; };
 		4511A6E9213D2677006AD4CC /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		4511A716213D73C7006AD4CC /* ActivityIndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityIndicatorView.xib; sourceTree = "<group>"; };
@@ -572,16 +570,6 @@
 		45F4AE412180B88400E75B4A /* LocalizedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedImageView.swift; sourceTree = "<group>"; };
 		7226BBC8D76CB9A545614575 /* Pods_DevStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A71598D309E35AF6F901FEE /* Pods_DevStack_Beta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevStack_Beta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		841509852166483B003E4779 /* DashboardActualTransportCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardActualTransportCollectionViewCell.swift; sourceTree = "<group>"; };
-		841509862166483B003E4779 /* DashboardActualTransportCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardActualTransportCollectionViewCell.xib; sourceTree = "<group>"; };
-		8415099521665FD8003E4779 /* DashboardCurrentJobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCurrentJobTableViewCell.swift; sourceTree = "<group>"; };
-		8415099621665FD8003E4779 /* DashboardCurrentJobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardCurrentJobTableViewCell.xib; sourceTree = "<group>"; };
-		841509A121665FF9003E4779 /* DashboardNextJobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNextJobTableViewCell.swift; sourceTree = "<group>"; };
-		841509A221665FF9003E4779 /* DashboardNextJobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardNextJobTableViewCell.xib; sourceTree = "<group>"; };
-		841509A921666750003E4779 /* DashboardNextJobCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNextJobCollectionViewCell.swift; sourceTree = "<group>"; };
-		841509AA21666750003E4779 /* DashboardNextJobCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardNextJobCollectionViewCell.xib; sourceTree = "<group>"; };
-		84D8C6912166437700BD07AF /* DashboardActualTransportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardActualTransportTableViewCell.swift; sourceTree = "<group>"; };
-		84D8C6922166437700BD07AF /* DashboardActualTransportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardActualTransportTableViewCell.xib; sourceTree = "<group>"; };
 		A592C9E57154D698582F52F6 /* Pods-DevStack_Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Alpha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha.debug.xcconfig"; sourceTree = "<group>"; };
 		A82385D9213418B400CC941C /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		A82386852138AF1700CC941C /* ColoredImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredImageView.swift; sourceTree = "<group>"; };
@@ -713,7 +701,6 @@
 				4558D30820FCC8FF005BC325 /* Products */,
 				5BF3E3FE6D7D49981E7A931F /* Pods */,
 				6F197C24FB7B3AFC8FF9EA45 /* Frameworks */,
-				A8238691213D5A0500CC941C /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1211,25 +1198,6 @@
 				7A71598D309E35AF6F901FEE /* Pods_DevStack_Beta.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A8238691213D5A0500CC941C /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				4511A6C221398349006AD4CC /* DemandBestOffer.swift */,
-				4511A6BB213948EB006AD4CC /* Demand.swift */,
-				841509852166483B003E4779 /* DashboardActualTransportCollectionViewCell.swift */,
-				84D8C6912166437700BD07AF /* DashboardActualTransportTableViewCell.swift */,
-				84D8C6922166437700BD07AF /* DashboardActualTransportTableViewCell.xib */,
-				841509862166483B003E4779 /* DashboardActualTransportCollectionViewCell.xib */,
-				841509A121665FF9003E4779 /* DashboardNextJobTableViewCell.swift */,
-				8415099521665FD8003E4779 /* DashboardCurrentJobTableViewCell.swift */,
-				841509A921666750003E4779 /* DashboardNextJobCollectionViewCell.swift */,
-				841509AA21666750003E4779 /* DashboardNextJobCollectionViewCell.xib */,
-				8415099621665FD8003E4779 /* DashboardCurrentJobTableViewCell.xib */,
-				841509A221665FF9003E4779 /* DashboardNextJobTableViewCell.xib */,
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		A891BDB52108C4B900BBA179 /* UIBarButtonItem */ = {
