@@ -10,8 +10,7 @@ import UIKit
 
 class AppFlowController: FlowController, MainFlowControllerDelegate, OnboardingFlowControllerDelegate {
     
-    override func start() {
-        super.start()
+    func start() {
         if KeychainStore.get(.userId) != nil {
             setupMain()
         } else {
@@ -22,15 +21,18 @@ class AppFlowController: FlowController, MainFlowControllerDelegate, OnboardingF
     func setupMain() {
         let fc = MainFlowController(navigationController: navigationController, dependencies: dependencies)
         fc.delegate = self
-        startChildFlow(fc)
+        let rootVc = startChildFlow(fc)
+        navigationController.viewControllers = [rootVc]
     }
     
     func presentOnboarding() {
         let nc = UINavigationController()
         let fc = OnboardingFlowController(navigationController: nc, dependencies: dependencies)
-        nc.modalPresentationStyle = .fullScreen
-        navigationController.present(nc, animated: true, completion: nil)
         fc.delegate = self
-        startChildFlow(fc)
+        let rootVc = startChildFlow(fc)
+        nc.viewControllers = [rootVc]
+        nc.modalPresentationStyle = .fullScreen
+        nc.navigationBar.isHidden = true
+        navigationController.present(nc, animated: true, completion: nil)
     }
 }

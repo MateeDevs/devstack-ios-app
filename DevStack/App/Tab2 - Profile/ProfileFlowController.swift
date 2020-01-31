@@ -16,10 +16,8 @@ class ProfileFlowController: FlowController, ProfileFlowDelegate, SettingsFlowDe
     
     weak var delegate: ProfileFlowControllerDelegate?
     
-    override func start() {
-        super.start()
-        
-        guard let userId = KeychainStore.get(.userId) else { return }
+    override func setup() -> UIViewController {
+        guard let userId = KeychainStore.get(.userId) else { return UIViewController() }
         let profileVm = UserDetailViewModel(dependencies: dependencies, userId: userId)
         let profileVc = ProfileViewController.instantiate(viewModel: profileVm)
         profileVc.flowDelegate = self
@@ -28,7 +26,7 @@ class ProfileFlowController: FlowController, ProfileFlowDelegate, SettingsFlowDe
         settingsVc.flowDelegate = self
         
         let wrapperVc = ProfileWrapperViewController.instantiate(viewControllers: [profileVc, settingsVc])
-        navigationController.viewControllers = [wrapperVc]
+        return wrapperVc
     }
     
     func presentOnboarding() {
