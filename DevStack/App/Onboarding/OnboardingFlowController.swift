@@ -16,13 +16,11 @@ class OnboardingFlowController: FlowController, LoginFlowDelegate, RegistrationF
     
     weak var delegate: OnboardingFlowControllerDelegate?
     
-    override func start() {
-        super.start()
+    override func setup() -> UIViewController {
         let vm = LoginViewModel(dependencies: dependencies)
         let vc = LoginViewController.instantiate(viewModel: vm)
         vc.flowDelegate = self
-        navigationController.viewControllers = [vc]
-        navigationController.navigationBar.isHidden = true
+        return vc
     }
     
     func dismiss() {

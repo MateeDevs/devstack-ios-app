@@ -16,25 +16,25 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
     
     weak var delegate: MainFlowControllerDelegate?
     
-    override func start() {
-        super.start()
-        
+    override func setup() -> UIViewController {
         let main = MainTabBarController.instantiate()
         
         let usersNc = UINavigationController()
 		usersNc.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_1, image: Asset.Images.contactsTabBar.image, tag: 0)
         let usersFc = UsersFlowController(navigationController: usersNc, dependencies: dependencies)
-        startChildFlow(usersFc)
+        let usersRootVc = startChildFlow(usersFc)
+        usersNc.viewControllers = [usersRootVc]
         
         let profileNc = UINavigationController()
 		profileNc.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_2, image: Asset.Images.profileTabBar.image, tag: 1)
         let profileFc = ProfileFlowController(navigationController: profileNc, dependencies: dependencies)
         profileFc.delegate = self
-        startChildFlow(profileFc)
+        let profileRootVc = startChildFlow(profileFc)
+        profileNc.viewControllers = [profileRootVc]
         
         main.viewControllers = [usersNc, profileNc]
         navigationController.navigationBar.isHidden = true
-        navigationController.viewControllers = [main]
+        return main
     }
     
     func presentOnboarding() {
