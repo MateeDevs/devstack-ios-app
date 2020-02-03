@@ -12,7 +12,7 @@ public enum Language: String {
     case ar,cs,en,sk
     
     public var fullName: String {
-        return NSLocalizedString("language_\(rawValue)_fullname", comment: "")
+        NSLocalizedString("language_\(rawValue)_fullname", comment: "")
     }
 }
 
@@ -45,12 +45,12 @@ public class LanguageManager {
     
     /// Returns the direction of the language
     public var isRightToLeft: Bool {
-        return selectedLanguage == .ar ? true : false
+        selectedLanguage == .ar ? true : false
     }
     
     /// Returns the app locale for use in dates and currencies
     public var appLocale: Locale {
-        return Locale(identifier: selectedLanguage.rawValue)
+        Locale(identifier: selectedLanguage.rawValue)
     }
     
     /// Set the default language that the app will run first time

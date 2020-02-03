@@ -44,7 +44,7 @@ final class RegistrationViewController: InputViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
+        .default
     }
 
     // MARK: Default methods

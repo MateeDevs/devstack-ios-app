@@ -11,5 +11,5 @@ import UIKit
 /// Helper for easy app branding.
 /// - For example to set a different theme for customer and seller apps etc.
 public struct ColorTheme {
-    public static var mainTheme: UIColor { return Asset.Colors.mainTheme.color }
+    public static var mainTheme: UIColor { Asset.Colors.mainTheme.color }
 }

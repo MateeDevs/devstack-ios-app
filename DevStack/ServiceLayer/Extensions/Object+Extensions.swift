@@ -29,7 +29,7 @@ extension Object {
     }
     
     @objc func apiModel() -> [String : Any] {
-        return fullModel()
+        fullModel()
     }
     
     func exists() -> Bool {

@@ -45,7 +45,7 @@ final class LoginViewModel: ViewModel, ViewModelType {
         }
         
         let loginButtonEnabled = activity.asDriver().map({ (activity) -> Bool in
-            return !activity
+            !activity
         })
         
         return Output(loginEvent: loginEvent, loginButtonEnabled: loginButtonEnabled)

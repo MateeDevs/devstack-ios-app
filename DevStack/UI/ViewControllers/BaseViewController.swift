@@ -19,7 +19,7 @@ open class BaseViewController: UIViewController {
     private var bag: DisposeBag = DisposeBag()
     private(set) var disposeBag: DisposeBag {
         get {
-            return bag
+            bag
         }
         set(value) {
             if allowRecyclingBag {
@@ -65,7 +65,7 @@ open class BaseViewController: UIViewController {
     }
     
     override open var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        .lightContent
     }
     
     // MARK: Default methods

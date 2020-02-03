@@ -19,6 +19,6 @@ struct ServiceError: LocalizedError {
     }
     
     public var errorDescription: String? {
-		return message ?? L10n.unknown_error
+		message ?? L10n.unknown_error
     }
 }

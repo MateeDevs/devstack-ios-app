@@ -20,7 +20,7 @@ struct UserDefaultsStore {
     }
     
     static func get<T>(_ key: UserDefaultsCoding) -> T? {
-        return UserDefaults.standard.object(forKey: key.rawValue) as? T
+        UserDefaults.standard.object(forKey: key.rawValue) as? T
     }
     
     static func delete(_ key: UserDefaultsCoding) {

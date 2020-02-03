@@ -16,7 +16,7 @@ enum UserAPI {
 }
 
 extension UserAPI: TargetType {
-    var baseURL: URL { return URL(string: "\(NetworkingConstants.baseURL)/api")! }
+    var baseURL: URL { URL(string: "\(NetworkingConstants.baseURL)/api")! }
     var path: String {
         switch self {
         case .getUsersForPage:
@@ -36,7 +36,7 @@ extension UserAPI: TargetType {
         }
     }
     var headers: [String: String]? {
-        return nil
+        nil
     }
     var task: Task {
         switch self {

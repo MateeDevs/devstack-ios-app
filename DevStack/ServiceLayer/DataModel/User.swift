@@ -22,7 +22,7 @@ import RealmSwift
     
     // MARK: Realm API
     override public static func primaryKey() -> String? {
-        return "id"
+        "id"
     }
     
     // Commented code below is just for show case purpose
@@ -65,6 +65,6 @@ import RealmSwift
 
 extension User {
     public var fullName: String {
-        return "\(firstName) \(lastName)"
+        "\(firstName) \(lastName)"
     }
 }

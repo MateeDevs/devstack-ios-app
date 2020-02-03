@@ -72,7 +72,7 @@ public class FullscreenImageViewController: BaseViewController {
 
 extension FullscreenImageViewController: UIScrollViewDelegate {
     public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
+        imageView
     }
     
     public func scrollViewDidZoom(_ scrollView: UIScrollView) {
