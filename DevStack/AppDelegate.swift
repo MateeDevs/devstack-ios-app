@@ -17,7 +17,7 @@ import FlipperKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    private(set) var flowController: AppFlowController?
+    private(set) var flowController: AppFlowController!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Init main flow controller and start the flow
         flowController = AppFlowController(navigationController: navController, dependencies: makeDependencies())
-        flowController?.start()
+        flowController.start()
         
         return true
     }
@@ -105,7 +105,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppDependency(
             loginService: LoginService(),
             userService: UserService(),
-            locationManager: LocationManager()
+            locationManager: LocationManager(),
+            firebaseManager: FirebaseManager()
         )
     }
     
@@ -135,8 +136,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Firebase
     private func firebaseSetup(for application: UIApplication) {
-        let firebaseManager = FirebaseManager()
-        firebaseManager.start(for: application, appDelegate: self)
+        flowController.dependencies.firebaseManager.start(for: application, appDelegate: self)
     }
     
     // MARK: Appearance

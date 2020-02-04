@@ -14,9 +14,9 @@ open class FlowController: NSObject {
     public let dependencies: AppDependency
     
     private weak var parentController: FlowController?
-    private var childControllers: [FlowController] = []
+    private(set) var childControllers: [FlowController] = []
     
-    private var rootViewController: UIViewController?
+    private(set) var rootViewController: UIViewController?
     
     public init(navigationController: UINavigationController, dependencies: AppDependency) {
         self.navigationController = navigationController
