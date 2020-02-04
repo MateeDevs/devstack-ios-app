@@ -10,7 +10,11 @@ import UIKit
 import UserNotifications
 import Firebase
 
-class FirebaseManager: NSObject {
+public protocol HasFirebaseManager {
+    var firebaseManager: FirebaseManager { get }
+}
+
+public class FirebaseManager: NSObject {
 
     func start(for application: UIApplication, appDelegate: AppDelegate) {
         // Start Firebase
@@ -23,16 +27,20 @@ class FirebaseManager: NSObject {
         Messaging.messaging().delegate = appDelegate
         application.registerForRemoteNotifications()
     }
+    
+    func handleNotification(_ notification: [AnyHashable : Any], appDelegate: AppDelegate) {
+        #if DEBUG
+        print(notification)
+        #endif
+    }
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        #if DEBUG
-        print(notification.request.content.userInfo)
-        #endif
-        
+        flowController.dependencies.firebaseManager.handleNotification(notification.request.content.userInfo, appDelegate: self)
+
         // Show system notification
         completionHandler([.alert, .badge, .sound])
     }
@@ -40,9 +48,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable : Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        #if DEBUG
-        print(userInfo)
-        #endif
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.flowController.dependencies.firebaseManager.handleNotification(userInfo, appDelegate: self)
+        }
     }
 }
 

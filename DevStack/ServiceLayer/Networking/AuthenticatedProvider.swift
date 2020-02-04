@@ -84,8 +84,10 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
 				let action = UIAlertAction(title: L10n.dialog_interceptor_button_title, style: .default, handler: { action in
                     // Perform logout and present login screen
                     LoginService.logout()
-                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                    appDelegate.flowController?.presentOnboarding()
+                    if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+                        let mainFlow = appDelegate.flowController.childControllers.first as? MainFlowController {
+                        mainFlow.presentOnboarding()
+                    }
                 })
                 
 				vc.showAlert(title: L10n.dialog_interceptor_title, message: L10n.dialog_interceptor_text, primaryAction: action)
