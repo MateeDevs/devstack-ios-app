@@ -11,7 +11,7 @@ import Foundation
 extension String {
     
     public var secured: String {
-        return String(map { _ in return "*" })
+        String(map { _ in "*" })
     }
     
     public var initials: String {

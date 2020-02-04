@@ -95,16 +95,16 @@ open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollVi
     
     // MARK: UITableViewDataSource methods
     open func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        1
     }
     
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        items.count
     }
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Override this method in a subclass and setup the cells
-        return UITableViewCell()
+        UITableViewCell()
     }
     
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -113,6 +113,6 @@ open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollVi
     
     // MARK: UITableViewDelegate methods
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        UITableView.automaticDimension
     }
 }

@@ -11,11 +11,11 @@ import UIKit
 extension UIScrollView {
     
     public func isNearBottomEdge(edgeOffset: CGFloat = 100.0) -> Bool {
-        return contentOffset.y + frame.size.height + edgeOffset > contentSize.height
+        contentOffset.y + frame.size.height + edgeOffset > contentSize.height
     }
     
     public func isOverTopEdge(edgeOffset: CGFloat = -10.0) -> Bool {
-        return contentOffset.y < edgeOffset
+        contentOffset.y < edgeOffset
     }
     
 }

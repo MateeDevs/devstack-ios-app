@@ -21,7 +21,7 @@ extension ObservableType {
     /// - returns: Observable which emits saved object.
     ///
     func save<T: Object>(setPrimaryKey: String? = nil, primaryKeyName: String = "id") -> Observable<T> where E == T {
-        return flatMap({ (object) -> Observable<T> in
+        flatMap({ (object) -> Observable<T> in
             if let id = setPrimaryKey {
                 object[primaryKeyName] = id
             }
@@ -36,7 +36,7 @@ extension ObservableType {
     /// - returns: Observable which emits saved array.
     ///
     func save<T: Object>() -> Observable<[T]> where E == [T] {
-        return flatMap({ (objects) -> Observable<[T]> in
+        flatMap({ (objects) -> Observable<[T]> in
             let realm = try! Realm()
             return realm.rx.save(objects)
         })
@@ -51,7 +51,7 @@ extension ObservableType {
     /// - returns: Observable which emits saved object.
     ///
     func appendToList<T: Object>(_ list: List<T>, setPrimaryKey: String? = nil, primaryKeyName: String = "id") -> Observable<T> where E == T {
-        return flatMap({ (object) -> Observable<T> in
+        flatMap({ (object) -> Observable<T> in
             if let id = setPrimaryKey {
                 object[primaryKeyName] = id
             }
@@ -67,7 +67,7 @@ extension ObservableType {
     /// - returns: Observable which emits saved array.
     ///
     func appendToList<T: Object>(_ list: List<T>) -> Observable<[T]> where E == [T] {
-        return flatMap({ (objects) -> Observable<[T]> in
+        flatMap({ (objects) -> Observable<[T]> in
             let realm = try! Realm()
             return realm.rx.appendToList(list, objects: objects).map({ _ in objects })
         })
@@ -77,7 +77,7 @@ extension ObservableType {
 
 extension Reactive where Base: Realm {
     func save<T: Object>(_ object: T, withApiModel: Bool = true) -> Observable<T> {
-        return Observable.create { observer in
+        Observable.create { observer in
             do {
                 try self.base.write {
                     // Create new object if it doesn't exists or partially update existing one
@@ -97,7 +97,7 @@ extension Reactive where Base: Realm {
     }
     
     func save<T: Object>(_ objects: [T], withApiModel: Bool = true) -> Observable<[T]> {
-        return Observable.create { observer in
+        Observable.create { observer in
             do {
                 try self.base.write {
                     for object in objects {
@@ -119,7 +119,7 @@ extension Reactive where Base: Realm {
     }
     
     func appendToList<T: Object>(_ list: List<T>, objects: [T], withApiModel: Bool = true) -> Observable<[T]> {
-        return Observable.create { observer in
+        Observable.create { observer in
             do {
                 try self.base.write {
                     // It's not possible to append objects directly (nested objects won't be updated)
@@ -151,7 +151,7 @@ extension Reactive where Base: Realm {
     }
     
     func delete<T: Object>(_ object: T) -> Observable<Void> {
-        return Observable.create { observer in
+        Observable.create { observer in
             do {
                 try self.base.write {
                     self.base.delete(object)

@@ -15,7 +15,7 @@ enum AuthAPI {
 }
 
 extension AuthAPI: TargetType {
-    var baseURL: URL { return URL(string: "\(NetworkingConstants.baseURL)/api")! }
+    var baseURL: URL { URL(string: "\(NetworkingConstants.baseURL)/api")! }
     var path: String {
         switch self {
         case .login:
@@ -31,7 +31,7 @@ extension AuthAPI: TargetType {
         }
     }
     var headers: [String: String]? {
-        return nil
+        nil
     }
     var task: Task {
         switch self {

@@ -12,7 +12,7 @@ extension UIImageView {
     
     public var rounded: Bool {
         get {
-            return layer.cornerRadius == frame.height / 2 ? true : false
+            layer.cornerRadius == frame.height / 2 ? true : false
         }
         set(newValue) {
             layer.cornerRadius = newValue ? frame.height / 2 : 0

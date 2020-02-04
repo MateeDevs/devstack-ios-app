@@ -30,7 +30,7 @@ open class FlowController: NSObject {
     
     /// Override this method in a subclass and return initial ViewController of the flow.
     open func setup() -> UIViewController {
-        return UIViewController()
+        UIViewController()
     }
     
     /// Starts child flow controller and returns initial ViewController.

@@ -39,9 +39,9 @@ public class LocationManager {
     /// Observe current location
     public func getCurrentLocation(withAccuracy accuracy: CLLocationAccuracy = kCLLocationAccuracyThreeKilometers) -> Observable<CLLocation> {
         return locationManager.rx.didUpdateLocations.map({ locations in
-            return locations[0]
+            locations[0]
         }).filter({ location in
-            return location.horizontalAccuracy < accuracy
+            location.horizontalAccuracy < accuracy
         }).do(
             onCompleted: { [weak self] in
                 self?.locationManager.stopUpdatingLocation()

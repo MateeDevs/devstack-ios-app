@@ -11,6 +11,6 @@ import Foundation
 extension Bool {
     
     public func toString() -> String? {
-        return self ? "true" : "false"
+        self ? "true" : "false"
     }
 }

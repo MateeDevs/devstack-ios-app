@@ -46,7 +46,7 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
         }
         
         let registerButtonEnabled = activity.asDriver().map({ (activity) -> Bool in
-            return !activity
+            !activity
         })
         
         return Output(registrationEvent: registrationEvent, registerButtonEnabled: registerButtonEnabled)

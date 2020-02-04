@@ -16,8 +16,7 @@ enum MainTab: Int {
 class MainTabBarController: UITabBarController {
     
     static func instantiate() -> MainTabBarController {
-        let vc = StoryboardScene.Main.initialScene.instantiate()
-        return vc
+        return StoryboardScene.Main.initialScene.instantiate()
     }
     
     override func viewDidLoad() {
@@ -25,7 +24,7 @@ class MainTabBarController: UITabBarController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        .lightContent
     }
 
 }

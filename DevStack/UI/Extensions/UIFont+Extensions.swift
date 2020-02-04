@@ -17,7 +17,7 @@ extension UIFont {
     /// - returns: Custom font of a defined size.
     ///
     public static func customFont(ofSize size: CGFloat) -> UIFont? {
-        return UIFont(name: "CustomFont", size: size)
+        UIFont(name: "CustomFont", size: size)
     }
     
     ///
@@ -27,7 +27,7 @@ extension UIFont {
     /// - returns: Font size scaled for real screen size.
     ///
     public static func scalableFontSize(_ baseSize: CGFloat) -> CGFloat {
-        return ((UIScreen.main.bounds.size.height * baseSize / 568.0) * (320.0 / UIScreen.main.bounds.size.width))
+        ((UIScreen.main.bounds.size.height * baseSize / 568.0) * (320.0 / UIScreen.main.bounds.size.width))
     }
     
 }

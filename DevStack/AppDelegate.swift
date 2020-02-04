@@ -102,7 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Dependencies
     private func makeDependencies() -> AppDependency {
-        return AppDependency(
+        AppDependency(
             loginService: LoginService(),
             userService: UserService(),
             locationManager: LocationManager()

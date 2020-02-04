@@ -13,6 +13,6 @@ extension UINavigationController {
     /// Apply preferredStatusBarStyle when in navigation controller
     /// - Idea taken from [Preferred status bar in navigation controller](https://stackoverflow.com/a/41026726)
     open override var preferredStatusBarStyle: UIStatusBarStyle {
-        return topViewController?.preferredStatusBarStyle ?? .lightContent
+        topViewController?.preferredStatusBarStyle ?? .lightContent
     }
 }
