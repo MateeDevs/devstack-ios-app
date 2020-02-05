@@ -45,7 +45,7 @@ open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollVi
         
         // Setup pull to refresh
         refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
-        refreshControl.tintColor = ColorTheme.mainTheme
+        refreshControl.tintColor = AppTheme.Colors.activityIndicator
         tableView?.refreshControl = refreshControl
     }
     

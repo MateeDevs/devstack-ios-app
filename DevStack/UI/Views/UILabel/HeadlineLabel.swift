@@ -1,5 +1,5 @@
 //
-//  BaseHeadlineLabel.swift
+//  HeadlineLabel.swift
 //  DevStack
 //
 //  Created by Petr Chmelar on 19/07/2018.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class BaseHeadlineLabel: LocalizedLabel {
+class HeadlineLabel: LocalizedLabel {
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        textColor = ColorTheme.mainTheme
-        font = UIFont.systemFont(ofSize: 28.0, weight: .medium)
+        textColor = AppTheme.Colors.headlineLabel
+        font = AppTheme.Fonts.headlineLabel
         numberOfLines = 1
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.75

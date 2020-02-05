@@ -18,7 +18,7 @@ import UIKit
         }
     }
     
-    @IBInspectable public var separatorColor: UIColor = .lightGray {
+    @IBInspectable public var separatorColor: UIColor = AppTheme.Colors.separator {
         didSet {
             separator.backgroundColor = separatorColor
         }

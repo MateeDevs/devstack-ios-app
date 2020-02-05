@@ -1,5 +1,5 @@
 //
-//  BaseButton.swift
+//  PrimaryButton.swift
 //  DevStack
 //
 //  Created by Petr Chmelar on 19/07/2018.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-class BaseButton: EnhancedButton {
+class PrimaryButton: EnhancedButton {
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         cornerRadius = 5.0
-        backgroundColor = ColorTheme.mainTheme
-        setTitleColor(UIColor.white, for: .normal)
+        backgroundColor = AppTheme.Colors.primaryButtonBackground
+        setTitleColor(AppTheme.Colors.primaryButtonTitle, for: .normal)
         
         if let label = titleLabel {
-            label.font = UIFont.systemFont(ofSize: 20.0, weight: .regular)
+            label.font = AppTheme.Fonts.primaryButton
             label.numberOfLines = 1
             label.adjustsFontSizeToFitWidth = true
             label.minimumScaleFactor = 0.75

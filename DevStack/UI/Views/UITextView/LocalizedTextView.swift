@@ -12,7 +12,7 @@ import UIKit
     
     private(set) var placeholder: String?
     private(set) var defaultColor: UIColor?
-    @IBInspectable public var placeholderColor: UIColor = .black
+    @IBInspectable public var placeholderColor: UIColor = AppTheme.Colors.placeholder
     
     override open func awakeFromNib() {
         super.awakeFromNib()

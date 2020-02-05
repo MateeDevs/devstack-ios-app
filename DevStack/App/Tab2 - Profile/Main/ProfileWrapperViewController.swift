@@ -59,8 +59,8 @@ final class ProfileWrapperViewController: BaseViewController {
         
 		navigationItem.title = L10n.profile_view_toolbar_title
         
-        tabBarView.buttonBackgroundColor = ColorTheme.mainTheme
-        tabBarView.buttonBackgroundColorHighlighted = ColorTheme.mainTheme
+        tabBarView.buttonBackgroundColor = AppTheme.Colors.primaryColor
+        tabBarView.buttonBackgroundColorHighlighted = AppTheme.Colors.primaryColor
         tabBarView.buttonMainLabelColor = .white
         tabBarView.buttonMainLabelColorHighlighted = .white
         tabBarView.stripViewColor = .black

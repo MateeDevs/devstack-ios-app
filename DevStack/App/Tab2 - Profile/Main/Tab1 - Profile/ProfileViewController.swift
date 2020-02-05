@@ -25,7 +25,7 @@ final class ProfileViewController: BaseViewController {
     // MARK: UI components
     @IBOutlet private weak var userImageView: UserImageView!
     @IBOutlet private weak var userNameLabel: UILabel!
-    @IBOutlet private weak var logoutButton: BaseButton!
+    @IBOutlet private weak var logoutButton: PrimaryButton!
     
     // MARK: Stored properties
     private var user: User? {

@@ -22,7 +22,7 @@ public class SafariViewController: SFSafariViewController {
     // MARK: Lifecycle methods
     override public func viewDidLoad() {
         super.viewDidLoad()
-        preferredControlTintColor = ColorTheme.mainTheme
+        preferredControlTintColor = AppTheme.Colors.primaryColor
     }
     
     ///
