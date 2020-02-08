@@ -33,6 +33,13 @@ open class FlowController: NSObject {
         UIViewController()
     }
     
+    /// Default implementation for dismissing a modal flow. Override in a subclass if you want a custom behavior.
+    open func dismiss() {
+        navigationController.dismiss(animated: true, completion: { [weak self] in
+            self?.stopFlow()
+        })
+    }
+    
     /// Starts child flow controller and returns initial ViewController.
     public func startChildFlow(_ flowController: FlowController) -> UIViewController {
         childControllers.append(flowController)
@@ -42,8 +49,8 @@ open class FlowController: NSObject {
         return flowController.rootViewController ?? UIViewController()
     }
     
-    /// Stops child flow controller. Must be called when returning to a parent flow controller.
-    public func stopChildFlow() {
+    /// Stops flow controller. Must be called when returning to a parent flow controller.
+    public func stopFlow() {
         parentController?.removeChild(self)
     }
     
@@ -62,6 +69,6 @@ extension FlowController: UINavigationControllerDelegate {
         guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from),
             !navigationController.viewControllers.contains(fromViewController),
             fromViewController == rootViewController else { return }
-        stopChildFlow()
+        stopFlow()
     }
 }

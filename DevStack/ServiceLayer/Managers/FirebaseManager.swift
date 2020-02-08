@@ -39,18 +39,17 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        flowController.dependencies.firebaseManager.handleNotification(notification.request.content.userInfo, appDelegate: self)
-
         // Show system notification
         completionHandler([.alert, .badge, .sound])
     }
-
-    func application(_ application: UIApplication,
-                     didReceiveRemoteNotification userInfo: [AnyHashable : Any],
-                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        let notification = response.notification.request.content.userInfo
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.flowController.dependencies.firebaseManager.handleNotification(userInfo, appDelegate: self)
+            self.flowController.dependencies.firebaseManager.handleNotification(notification, appDelegate: self)
         }
     }
 }

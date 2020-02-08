@@ -23,10 +23,9 @@ class OnboardingFlowController: FlowController, LoginFlowDelegate, RegistrationF
         return vc
     }
     
-    func dismiss() {
+    override func dismiss() {
+        super.dismiss()
         delegate?.setupMain()
-        navigationController.dismiss(animated: true, completion: nil)
-        stopChildFlow()
     }
     
     func showRegistration() {

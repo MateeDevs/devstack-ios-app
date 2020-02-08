@@ -35,7 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         clearKeychain()
         realmSetup()
-        firebaseSetup(for: application)
         
         appAppearance()
         LanguageManager.shared.setDefaultLanguage(Language(rawValue: NSLocale.current.languageCode ?? "en") ?? .en)
@@ -49,6 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Init main flow controller and start the flow
         flowController = AppFlowController(navigationController: navController, dependencies: makeDependencies())
         flowController.start()
+        
+        firebaseSetup(for: application)
         
         return true
     }

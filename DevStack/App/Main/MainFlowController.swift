@@ -38,8 +38,8 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
     }
     
     func presentOnboarding() {
-        delegate?.presentOnboarding()
         navigationController.viewControllers = []
-        stopChildFlow()
+        stopFlow()
+        delegate?.presentOnboarding()
     }
 }
