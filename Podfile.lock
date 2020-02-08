@@ -160,6 +160,7 @@ PODS:
     - RealmSwift (~> 3.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.5.0)
+  - SkeletonView (1.8.3)
   - SwiftGen (6.1.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -181,6 +182,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxRealm
   - RxSwift
+  - SkeletonView
   - SwiftGen
 
 SPEC REPOS:
@@ -223,6 +225,7 @@ SPEC REPOS:
     - RxCocoa
     - RxRealm
     - RxSwift
+    - SkeletonView
     - SwiftGen
     - Yoga
     - YogaKit
@@ -266,10 +269,11 @@ SPEC CHECKSUMS:
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SkeletonView: ce0c2a2e8154c57b32f5b31b65f4cb92ca119861
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 3899800d4996a648222da34dd3bec11460d38b13
+PODFILE CHECKSUM: dc21761153c408572b5bef56c931c0d12fd41e9d
 
 COCOAPODS: 1.8.1

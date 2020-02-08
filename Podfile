@@ -24,6 +24,9 @@ def shared_pods
     pod 'RealmSwift'
     pod 'RxRealm'
     pod 'KeychainAccess'
+
+    # UI
+    pod 'SkeletonView'
       
     # Other utilities
     pod 'SwiftGen'
