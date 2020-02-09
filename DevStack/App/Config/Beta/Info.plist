@@ -24,14 +24,14 @@
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSCameraUsageDescription</key>
-	<string>You need to grant access to the camera so you can take a photo.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>You need to grant access to location services in order to fully benefit from all the features.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>You need to grant access to add photos to your photo library</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>You need to grant access to your photo library so you can pick a photo.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>You need to grant access to the camera so you can take a photo.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>You need to grant access to your photo library so you can pick a photo.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>You need to grant access to add photos to your photo library.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>You need to grant access to location services in order to fully benefit from all the features.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen_Beta</string>
 	<key>UIMainStoryboardFile</key>

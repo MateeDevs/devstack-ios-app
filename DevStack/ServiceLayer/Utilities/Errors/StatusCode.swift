@@ -14,8 +14,9 @@ struct StatusCode {
     
     static let unknown = 0
     static let networkError = 900
-    static let realmError = 901
+    static let databaseError = 901
     static let fileError = 902
     static let userDefaultsError = 903
+    static let keychainError = 904
     
 }

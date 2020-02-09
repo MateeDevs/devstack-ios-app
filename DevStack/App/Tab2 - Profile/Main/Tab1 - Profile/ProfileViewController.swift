@@ -21,11 +21,12 @@ final class ProfileViewController: BaseViewController {
     weak var flowDelegate: ProfileFlowDelegate?
 
     // MARK: ViewModels
-    private var viewModel: UserDetailViewModel!
+    private var viewModel: ProfileViewModel!
 
     // MARK: UI components
     @IBOutlet private weak var userImageView: UserImageView!
     @IBOutlet private weak var userNameLabel: UILabel!
+    @IBOutlet private weak var locationLabel: UILabel!
     @IBOutlet private weak var logoutButton: PrimaryButton!
     
     // MARK: Stored properties
@@ -37,7 +38,7 @@ final class ProfileViewController: BaseViewController {
     }
     
     // MARK: Inits
-    static func instantiate(viewModel: UserDetailViewModel) -> ProfileViewController {
+    static func instantiate(viewModel: ProfileViewModel) -> ProfileViewController {
         let vc = StoryboardScene.Profile.initialScene.instantiate()
         vc.viewModel = viewModel
         return vc
@@ -52,21 +53,25 @@ final class ProfileViewController: BaseViewController {
     override func setupViewModel() {
         super.setupViewModel()
         
-        let input = UserDetailViewModel.Input()
+        let input = ProfileViewModel.Input()
         let output = viewModel.transform(input: input)
         
-        output.getUserDetailEvent.drive(onNext: { [weak self] event in
+        output.getProfileEvent.drive(onNext: { [weak self] event in
             if event.isLoading {
                 self?.view.showAnimatedGradientSkeleton(animation: GradientDirection.topLeftBottomRight.slidingAnimation())
-            } else if let userDetail = event.data {
+            } else if let user = event.data {
                 // Delay is just for a skeleton show case purpose
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                     self?.view.hideSkeleton()
-                    self?.user = userDetail
+                    self?.user = user
                 }
             } else {
                 self?.view.hideSkeleton()
             }
+        }).disposed(by: disposeBag)
+
+        output.currentLocation.take(1).subscribe(onNext: { [weak self] location in
+            self?.locationLabel.text = location.coordinate.toString()
         }).disposed(by: disposeBag)
         
         logoutButton.rx.tap.bind { [weak self] in

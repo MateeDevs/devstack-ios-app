@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct CommonError {
+    public static let noUserId = ServiceError(statusCode: StatusCode.keychainError, message: "Can't retrieve user's id")
+}
+
 struct ServiceError: LocalizedError {
     
     let statusCode: Int
