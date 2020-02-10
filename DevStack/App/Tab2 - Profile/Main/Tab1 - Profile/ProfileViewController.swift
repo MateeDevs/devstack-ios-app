@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SkeletonView
 
 protocol ProfileFlowDelegate: class {
     func presentOnboarding()
@@ -55,8 +56,16 @@ final class ProfileViewController: BaseViewController {
         let output = viewModel.transform(input: input)
         
         output.getUserDetailEvent.drive(onNext: { [weak self] event in
-            if let userDetail = event.data {
-                self?.user = userDetail
+            if event.isLoading {
+                self?.view.showAnimatedGradientSkeleton(animation: GradientDirection.topLeftBottomRight.slidingAnimation())
+            } else if let userDetail = event.data {
+                // Delay is just for a skeleton show case purpose
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                    self?.view.hideSkeleton()
+                    self?.user = userDetail
+                }
+            } else {
+                self?.view.hideSkeleton()
             }
         }).disposed(by: disposeBag)
         
@@ -68,6 +77,9 @@ final class ProfileViewController: BaseViewController {
 
     override func setupUI() {
         super.setupUI()
+        view.isSkeletonable = true
+        userImageView.isSkeletonable = true
+        userNameLabel.isSkeletonable = true
     }
     
 }

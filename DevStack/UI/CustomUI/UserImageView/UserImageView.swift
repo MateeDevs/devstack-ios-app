@@ -32,6 +32,9 @@ import AlamofireImage
         layoutIfNeeded()
         setDimensions()
         backgroundColor = .clear
+        
+        view.isSkeletonable = true
+        userPlaceHolderView.isSkeletonable = true
     }
     
     public func setupWithUser(_ user: User?) {
