@@ -9,9 +9,7 @@ inhibit_all_warnings!
 
 def shared_pods
     # App analytics and push notifications
-    pod 'Fabric'
-    pod 'Crashlytics'
-    pod 'Firebase'
+    pod 'Firebase/Crashlytics'
     pod 'Firebase/Messaging'
     
     # Functional reactive programming

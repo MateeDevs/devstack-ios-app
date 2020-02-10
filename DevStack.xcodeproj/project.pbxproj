@@ -1252,7 +1252,7 @@
 				4558D30420FCC8FF005BC325 /* Frameworks */,
 				4558D30520FCC8FF005BC325 /* Resources */,
 				591C1CB3B38410305BBE636A /* [CP] Embed Pods Frameworks */,
-				4597628220FE17930034DE29 /* Script for Fabric */,
+				4597628220FE17930034DE29 /* Script for Firebase Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -1274,7 +1274,7 @@
 				459761CF20FDD60A0034DE29 /* Frameworks */,
 				459761D020FDD60A0034DE29 /* Resources */,
 				78E6FDB10F4506CE89EF4F3D /* [CP] Embed Pods Frameworks */,
-				459762FA20FE26470034DE29 /* Script for Fabric */,
+				459762FA20FE26470034DE29 /* Script for Firebase Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -1296,7 +1296,7 @@
 				459761DD20FDD61E0034DE29 /* Frameworks */,
 				459761DE20FDD61E0034DE29 /* Resources */,
 				9CBD496F5127F12DADF7B760 /* [CP] Embed Pods Frameworks */,
-				459762FD20FE268C0034DE29 /* Script for Fabric */,
+				459762FD20FE268C0034DE29 /* Script for Firebase Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -1518,19 +1518,19 @@
 			shellPath = /bin/sh;
 			shellScript = "scripts/swiftgen.sh\n";
 		};
-		4597628220FE17930034DE29 /* Script for Fabric */ = {
+		4597628220FE17930034DE29 /* Script for Firebase Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Script for Fabric";
+			name = "Script for Firebase Crashlytics";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		459762F820FE26180034DE29 /* Script for SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1546,19 +1546,19 @@
 			shellPath = /bin/sh;
 			shellScript = "scripts/swiftgen.sh\n";
 		};
-		459762FA20FE26470034DE29 /* Script for Fabric */ = {
+		459762FA20FE26470034DE29 /* Script for Firebase Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Script for Fabric";
+			name = "Script for Firebase Crashlytics";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		459762FB20FE265C0034DE29 /* Script for SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1574,19 +1574,19 @@
 			shellPath = /bin/sh;
 			shellScript = "scripts/swiftgen.sh\n";
 		};
-		459762FD20FE268C0034DE29 /* Script for Fabric */ = {
+		459762FD20FE268C0034DE29 /* Script for Firebase Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Script for Fabric";
+			name = "Script for Firebase Crashlytics";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		591C1CB3B38410305BBE636A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
