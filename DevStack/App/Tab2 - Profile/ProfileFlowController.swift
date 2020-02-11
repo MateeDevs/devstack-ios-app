@@ -17,8 +17,7 @@ class ProfileFlowController: FlowController, ProfileFlowDelegate, SettingsFlowDe
     weak var delegate: ProfileFlowControllerDelegate?
     
     override func setup() -> UIViewController {
-        guard let userId = KeychainStore.get(.userId) else { return UIViewController() }
-        let profileVm = UserDetailViewModel(dependencies: dependencies, userId: userId)
+        let profileVm = ProfileViewModel(dependencies: dependencies)
         let profileVc = ProfileViewController.instantiate(viewModel: profileVm)
         profileVc.flowDelegate = self
         

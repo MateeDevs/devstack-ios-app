@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 
 echo "Setup git to ignore generated files..."
 git update-index --skip-worktree ../DevStack/Constants/*
-find ../DevStack/Resources/*.lproj -type f -exec sh -c 'git update-index --skip-worktree $0' {} \;
+find ../DevStack/Resources -name 'Localizable.strings' -exec sh -c 'git update-index --skip-worktree $0' {} \;
 
 echo "Installing gems..."
 bundle config --local path vendor/bundle

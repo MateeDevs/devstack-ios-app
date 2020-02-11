@@ -40,4 +40,12 @@ public class UserService {
         return network.observableRequest(endpoint).map(User.self).save().mapToLce()
     }
     
+    public func getProfile() -> Observable<Lce<User>> {
+        if let userId = KeychainStore.get(.userId) {
+            return getUserById(userId)
+        } else {
+            return Observable.just(Lce(error: CommonError.noUserId))
+        }
+    }
+    
 }
