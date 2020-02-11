@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         // Init main flow controller and start the flow
-        flowController = AppFlowController(navigationController: navController, dependencies: makeDependencies())
+        flowController = AppFlowController(navigationController: navController, dependencies: AppDependency())
         flowController.start()
         
         firebaseSetup(for: application)
@@ -99,16 +99,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             KeychainStore.deleteAll()
             UserDefaultsStore.save(.hasRunBefore, value: true)
         }
-    }
-    
-    // MARK: Dependencies
-    private func makeDependencies() -> AppDependency {
-        AppDependency(
-            loginService: LoginService(),
-            userService: UserService(),
-            locationManager: LocationManager(),
-            firebaseManager: FirebaseManager()
-        )
     }
     
     // MARK: Realm
