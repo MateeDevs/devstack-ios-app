@@ -21,6 +21,7 @@ final class WeatherViewModel: ViewModel, ViewModelType {
     }
     
     struct Input {
+        let woeid: Int
     }
     
     struct Output {

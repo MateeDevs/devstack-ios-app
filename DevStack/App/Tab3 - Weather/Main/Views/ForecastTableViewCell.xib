@@ -4,37 +4,42 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastTableViewCell" id="I83-Y9-BrC" customClass="ForecastTableViewCell" customModule="A_DevStack" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" id="I83-Y9-BrC" customClass="ForecastTableViewCell" customModule="A_DevStack" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I83-Y9-BrC" id="FTi-Df-7nL">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDm-vd-Ndt">
-                        <rect key="frame" x="35" y="2" width="305" height="40"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWN-0V-cDk">
+                        <rect key="frame" x="27" y="12" width="315" height="22"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="textColor" name="MateeYellow"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="gDm-vd-Ndt" firstAttribute="top" secondItem="FTi-Df-7nL" secondAttribute="top" constant="2" id="1WU-yA-dFO"/>
-                    <constraint firstItem="gDm-vd-Ndt" firstAttribute="leading" secondItem="FTi-Df-7nL" secondAttribute="leadingMargin" constant="20" id="DqL-wV-Svd"/>
-                    <constraint firstAttribute="bottom" secondItem="gDm-vd-Ndt" secondAttribute="bottom" constant="2" id="Eeo-jw-Zxf"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="gDm-vd-Ndt" secondAttribute="bottom" constant="3" id="iIX-DT-sCL"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="gDm-vd-Ndt" secondAttribute="trailing" constant="20" id="wYf-FX-S4E"/>
+                    <constraint firstItem="eWN-0V-cDk" firstAttribute="bottom" secondItem="FTi-Df-7nL" secondAttribute="bottomMargin" constant="1" id="GaL-Dd-siq"/>
+                    <constraint firstItem="eWN-0V-cDk" firstAttribute="leading" secondItem="FTi-Df-7nL" secondAttribute="leadingMargin" constant="12" id="HNW-CL-6hy"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eWN-0V-cDk" secondAttribute="trailing" constant="18" id="fng-yy-6Bp"/>
+                    <constraint firstItem="eWN-0V-cDk" firstAttribute="top" secondItem="FTi-Df-7nL" secondAttribute="topMargin" constant="1" id="rXO-Qj-OZ3"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="nameLabel" destination="gDm-vd-Ndt" id="pb6-Rd-Ojr"/>
+                <outlet property="locationLabel" destination="eWN-0V-cDk" id="R7q-bt-1Vg"/>
             </connections>
-            <point key="canvasLocation" x="172" y="45"/>
+            <point key="canvasLocation" x="172" y="44.977511244377816"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="MateeYellow">
+            <color red="0.88235294117647056" green="0.74509803921568629" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -8,12 +8,23 @@
 
 import UIKit
 
-class ForecastTableViewCell: BaseTableViewCell {
+class ForecastTableViewCell: UITableViewCell {
+        
+    @IBOutlet weak var locationLabel: UILabel!
     
-    @IBOutlet weak var nameLabel: UILabel!
-    
-    func setup(_ name: String) {
-//        print("clima", clima)
-        nameLabel.text = name
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.selectionStyle = .none
+        self.backgroundColor = .red
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
+    }
+    
+    func setupCell(_ location: String) {
+        locationLabel.text = location
+    }
+    
 }

@@ -11,21 +11,26 @@ import RxCocoa
 
 final class LocationDetailViewModel: ViewModel, ViewModelType {
     
-    typealias Dependencies = HasNoService
+    typealias Dependencies = HasWeatherService
     fileprivate let dependencies: Dependencies
     
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
+        
         super.init()
     }
     
     struct Input {
+        let woeid: Int
     }
-    
+       
     struct Output {
+        let getClimaByWOEID: Driver<Lce<[Clima]>>
     }
-    
+       
     func transform(input: Input) -> Output {
-        return Output()
+        let WOEID = input.woeid
+        let getClimaByWOEID: Driver<Lce<[Clima]>> = dependencies.weatherService.getWeatherDataWOEID(WOEID).asDriverOnErrorJustComplete()
+        return Output(getClimaByWOEID: getClimaByWOEID)
     }
 }

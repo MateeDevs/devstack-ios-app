@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0756DD23F453B900543CAF /* DesignableXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0756DC23F453B900543CAF /* DesignableXibView.swift */; };
+		0C0756DF23F456A900543CAF /* DesignableXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C0756DE23F456A900543CAF /* DesignableXibView.xib */; };
+		0C0756E023F456A900543CAF /* DesignableXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C0756DE23F456A900543CAF /* DesignableXibView.xib */; };
+		0C0756E123F456A900543CAF /* DesignableXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C0756DE23F456A900543CAF /* DesignableXibView.xib */; };
 		0C14A7FF23F2918D00043D48 /* WeatherFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A7FE23F2918D00043D48 /* WeatherFlowController.swift */; };
 		0C14A80023F2918D00043D48 /* WeatherFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A7FE23F2918D00043D48 /* WeatherFlowController.swift */; };
 		0C14A80123F2918D00043D48 /* WeatherFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A7FE23F2918D00043D48 /* WeatherFlowController.swift */; };
@@ -34,6 +38,15 @@
 		0C14A83C23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A83823F2F55600043D48 /* ForecastTableViewCell.swift */; };
 		0C14A83D23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A83823F2F55600043D48 /* ForecastTableViewCell.swift */; };
 		0C14A83E23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A83823F2F55600043D48 /* ForecastTableViewCell.swift */; };
+		0CD8673123F3E9DB0073FA2B /* LocationDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD8672E23F3E9DB0073FA2B /* LocationDetail.storyboard */; };
+		0CD8673223F3E9DB0073FA2B /* LocationDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD8672E23F3E9DB0073FA2B /* LocationDetail.storyboard */; };
+		0CD8673323F3E9DB0073FA2B /* LocationDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD8672E23F3E9DB0073FA2B /* LocationDetail.storyboard */; };
+		0CD8673423F3E9DB0073FA2B /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD8672F23F3E9DB0073FA2B /* LocationDetailViewController.swift */; };
+		0CD8673523F3E9DB0073FA2B /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD8672F23F3E9DB0073FA2B /* LocationDetailViewController.swift */; };
+		0CD8673623F3E9DB0073FA2B /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD8672F23F3E9DB0073FA2B /* LocationDetailViewController.swift */; };
+		0CD8673723F3E9DB0073FA2B /* LocationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD8673023F3E9DB0073FA2B /* LocationDetailViewModel.swift */; };
+		0CD8673823F3E9DB0073FA2B /* LocationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD8673023F3E9DB0073FA2B /* LocationDetailViewModel.swift */; };
+		0CD8673923F3E9DB0073FA2B /* LocationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD8673023F3E9DB0073FA2B /* LocationDetailViewModel.swift */; };
 		450384752170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
 		450384762170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
 		450384772170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
@@ -460,6 +473,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C0756DC23F453B900543CAF /* DesignableXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableXibView.swift; sourceTree = "<group>"; };
+		0C0756DE23F456A900543CAF /* DesignableXibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DesignableXibView.xib; sourceTree = "<group>"; };
 		0C14A7FE23F2918D00043D48 /* WeatherFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherFlowController.swift; path = ../../../../../../Documents/WeatherFlowController.swift; sourceTree = "<group>"; };
 		0C14A81223F292C600043D48 /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
 		0C14A81323F292C600043D48 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -469,6 +484,9 @@
 		0C14A83223F2AB5E00043D48 /* Clima.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clima.swift; sourceTree = "<group>"; };
 		0C14A83723F2F55600043D48 /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
 		0C14A83823F2F55600043D48 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		0CD8672E23F3E9DB0073FA2B /* LocationDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationDetail.storyboard; sourceTree = "<group>"; };
+		0CD8672F23F3E9DB0073FA2B /* LocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
+		0CD8673023F3E9DB0073FA2B /* LocationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewModel.swift; sourceTree = "<group>"; };
 		3108F6D7CC6CF709865E9678 /* Pods-DevStack_Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Alpha.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha.release.xcconfig"; sourceTree = "<group>"; };
 		3266EC7634F7BCD070190849 /* Pods-DevStack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack/Pods-DevStack.release.xcconfig"; sourceTree = "<group>"; };
 		450384742170E4FC004F43DC /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
@@ -665,11 +683,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C0756D923F4533700543CAF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0C0756DC23F453B900543CAF /* DesignableXibView.swift */,
+				0C0756DE23F456A900543CAF /* DesignableXibView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0C14A7F923F28E5700043D48 /* Tab3 - Weather */ = {
 			isa = PBXGroup;
 			children = (
 				0C14A7FE23F2918D00043D48 /* WeatherFlowController.swift */,
 				0C14A80E23F291EE00043D48 /* Main */,
+				0CD8672D23F3E9950073FA2B /* Detail */,
 			);
 			path = "Tab3 - Weather";
 			sourceTree = "<group>";
@@ -692,6 +720,17 @@
 				0C14A83823F2F55600043D48 /* ForecastTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0CD8672D23F3E9950073FA2B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0C0756D923F4533700543CAF /* Views */,
+				0CD8672E23F3E9DB0073FA2B /* LocationDetail.storyboard */,
+				0CD8672F23F3E9DB0073FA2B /* LocationDetailViewController.swift */,
+				0CD8673023F3E9DB0073FA2B /* LocationDetailViewModel.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		450392832256B14C0037BF42 /* Config */ = {
@@ -1427,11 +1466,13 @@
 				45DE1D9821CAACC300C455C4 /* UserList.json in Resources */,
 				45DB9780226BA9D200C3F234 /* Settings.storyboard in Resources */,
 				453CEAB321553E1F00A94BAC /* RatingView.xib in Resources */,
+				0C0756DF23F456A900543CAF /* DesignableXibView.xib in Resources */,
 				4511A6EA213D2677006AD4CC /* TabBarView.xib in Resources */,
 				0C14A81523F292C600043D48 /* Weather.storyboard in Resources */,
 				A83F0EBE21490F1100313067 /* UserImageView.xib in Resources */,
 				45890B2021FF5CD800894255 /* AuthToken.json in Resources */,
 				45DB9774226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
+				0CD8673123F3E9DB0073FA2B /* LocationDetail.storyboard in Resources */,
 				45128B792142A627007B6B47 /* TabBarButton.xib in Resources */,
 				456852382105BD20006D3618 /* User.json in Resources */,
 				45DA0808222E87780003D32A /* Registration.storyboard in Resources */,
@@ -1460,11 +1501,13 @@
 				45DE1D9921CAACC300C455C4 /* UserList.json in Resources */,
 				45DB9781226BA9D200C3F234 /* Settings.storyboard in Resources */,
 				453CEAB421553E1F00A94BAC /* RatingView.xib in Resources */,
+				0C0756E023F456A900543CAF /* DesignableXibView.xib in Resources */,
 				4511A6EB213D2677006AD4CC /* TabBarView.xib in Resources */,
 				0C14A81623F292C600043D48 /* Weather.storyboard in Resources */,
 				A83F0EBF21490F1100313067 /* UserImageView.xib in Resources */,
 				45890B2121FF5CD800894255 /* AuthToken.json in Resources */,
 				45DB9775226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
+				0CD8673223F3E9DB0073FA2B /* LocationDetail.storyboard in Resources */,
 				45128B7A2142A627007B6B47 /* TabBarButton.xib in Resources */,
 				450392852256B29D0037BF42 /* GoogleService-Info.plist in Resources */,
 				456852392105BD20006D3618 /* User.json in Resources */,
@@ -1493,11 +1536,13 @@
 				45DE1D9A21CAACC300C455C4 /* UserList.json in Resources */,
 				45DB9782226BA9D200C3F234 /* Settings.storyboard in Resources */,
 				453CEAB521553E1F00A94BAC /* RatingView.xib in Resources */,
+				0C0756E123F456A900543CAF /* DesignableXibView.xib in Resources */,
 				4511A6EC213D2677006AD4CC /* TabBarView.xib in Resources */,
 				0C14A81723F292C600043D48 /* Weather.storyboard in Resources */,
 				45128B7B2142A627007B6B47 /* TabBarButton.xib in Resources */,
 				45890B2221FF5CD800894255 /* AuthToken.json in Resources */,
 				45DB9776226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
+				0CD8673323F3E9DB0073FA2B /* LocationDetail.storyboard in Resources */,
 				4568523A2105BD20006D3618 /* User.json in Resources */,
 				A83F0EC021490F1100313067 /* UserImageView.xib in Resources */,
 				45DA080A222E87780003D32A /* Registration.storyboard in Resources */,
@@ -1781,6 +1826,7 @@
 				45E8A576220F7933003F7502 /* UsersViewModel.swift in Sources */,
 				45E8A573220F7933003F7502 /* UsersViewController.swift in Sources */,
 				4558D30B20FCC8FF005BC325 /* AppDelegate.swift in Sources */,
+				0CD8673723F3E9DB0073FA2B /* LocationDetailViewModel.swift in Sources */,
 				45C3F50F23C114600091848D /* UIColorCompatible.swift in Sources */,
 				45DB9783226BA9D200C3F234 /* SettingsViewController.swift in Sources */,
 				A82386862138AF1700CC941C /* ColoredImageView.swift in Sources */,
@@ -1813,6 +1859,7 @@
 				A83F0EB721490EE200313067 /* UserImageView.swift in Sources */,
 				45C3F51723C1249C0091848D /* SecondaryButton.swift in Sources */,
 				45890B2821FFB95D00894255 /* AppTheme.swift in Sources */,
+				0CD8673423F3E9DB0073FA2B /* LocationDetailViewController.swift in Sources */,
 				450D3DDC21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C02100929E006D3618 /* LocalizedTextField.swift in Sources */,
 				450384752170E4FC004F43DC /* Bool+Extensions.swift in Sources */,
@@ -1825,6 +1872,7 @@
 				4568523F2105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */,
 				A8E5D3E2213596FD00515312 /* StatusCode.swift in Sources */,
 				459762EB20FE21F70034DE29 /* UIApplication+Extensions.swift in Sources */,
+				0C0756DD23F453B900543CAF /* DesignableXibView.swift in Sources */,
 				45B76DA0213591D0003BB997 /* Error+Extensions.swift in Sources */,
 				0C14A83C23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */,
 				45890B5822087C5D00894255 /* Date+UIExtensions.swift in Sources */,
@@ -1911,6 +1959,7 @@
 				45E8A577220F7933003F7502 /* UsersViewModel.swift in Sources */,
 				45E8A574220F7933003F7502 /* UsersViewController.swift in Sources */,
 				459761CE20FDD60A0034DE29 /* AppDelegate.swift in Sources */,
+				0CD8673823F3E9DB0073FA2B /* LocationDetailViewModel.swift in Sources */,
 				45C3F51023C114600091848D /* UIColorCompatible.swift in Sources */,
 				45DB9784226BA9D200C3F234 /* SettingsViewController.swift in Sources */,
 				A82386872138AF1700CC941C /* ColoredImageView.swift in Sources */,
@@ -1943,6 +1992,7 @@
 				A847B1AD210F4872002F9ED1 /* LocationHelper.swift in Sources */,
 				45C3F51823C1249C0091848D /* SecondaryButton.swift in Sources */,
 				45890B2921FFB95D00894255 /* AppTheme.swift in Sources */,
+				0CD8673523F3E9DB0073FA2B /* LocationDetailViewController.swift in Sources */,
 				450D3DDD21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C12100929E006D3618 /* LocalizedTextField.swift in Sources */,
 				450384762170E4FC004F43DC /* Bool+Extensions.swift in Sources */,
@@ -2041,6 +2091,7 @@
 				45E8A578220F7933003F7502 /* UsersViewModel.swift in Sources */,
 				45E8A575220F7933003F7502 /* UsersViewController.swift in Sources */,
 				459761DC20FDD61E0034DE29 /* AppDelegate.swift in Sources */,
+				0CD8673923F3E9DB0073FA2B /* LocationDetailViewModel.swift in Sources */,
 				45C3F51123C114600091848D /* UIColorCompatible.swift in Sources */,
 				45DB9785226BA9D200C3F234 /* SettingsViewController.swift in Sources */,
 				A82386882138AF1700CC941C /* ColoredImageView.swift in Sources */,
@@ -2073,6 +2124,7 @@
 				A83F0EB921490EE200313067 /* UserImageView.swift in Sources */,
 				45C3F51923C1249C0091848D /* SecondaryButton.swift in Sources */,
 				45890B2A21FFB95D00894255 /* AppTheme.swift in Sources */,
+				0CD8673623F3E9DB0073FA2B /* LocationDetailViewController.swift in Sources */,
 				450D3DDE21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C22100929E006D3618 /* LocalizedTextField.swift in Sources */,
 				450384772170E4FC004F43DC /* Bool+Extensions.swift in Sources */,
