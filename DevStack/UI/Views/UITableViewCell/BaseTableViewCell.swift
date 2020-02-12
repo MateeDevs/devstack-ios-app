@@ -26,9 +26,13 @@ import UIKit
     
     private var separator = UIView()
     
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-        
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addSeparator()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         addSeparator()
     }
     

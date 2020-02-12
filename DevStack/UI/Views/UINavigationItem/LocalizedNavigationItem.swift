@@ -10,9 +10,17 @@ import UIKit
 
 open class LocalizedNavigationItem: UINavigationItem {
 
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-        
+    override init(title: String) {
+        super.init(title: title)
+        setup()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    private func setup() {
         if let title = title {
             self.title = NSLocalizedString(title, comment: "")
         }

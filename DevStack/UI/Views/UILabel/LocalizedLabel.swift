@@ -13,9 +13,17 @@ import UIKit
     @IBInspectable public var requiredSymbol: String?
     @IBInspectable public var uppercased: Bool = false
 
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    private func setup() {
         if let text = text {
             if uppercased {
                 self.text = NSLocalizedString(text, comment: "").uppercased()
