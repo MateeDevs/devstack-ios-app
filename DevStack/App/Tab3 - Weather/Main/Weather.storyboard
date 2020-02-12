@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CkE-Zn-ye5">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather View Controller-->
+        <scene sceneID="y7m-UU-Pkg">
+            <objects>
+                <viewController id="CkE-Zn-ye5" customClass="WeatherViewController" customModule="A_DevStack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NqY-lr-Xhd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="temperatureLabel" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nce-gD-ZPm">
+                                <rect key="frame" x="40" y="83" width="295" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvl-FE-Ixi">
+                                <rect key="frame" x="54" y="38" width="267" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXX-P9-kPq">
+                                <rect key="frame" x="40" y="125.5" width="295" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="Vvl-FE-Ixi" secondAttribute="trailing" constant="54" id="If3-t6-eBp"/>
+                            <constraint firstItem="Vvl-FE-Ixi" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="54" id="SgG-iw-sa7"/>
+                            <constraint firstItem="EXX-P9-kPq" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="40" id="Xfv-iG-M9n"/>
+                            <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="Nce-gD-ZPm" secondAttribute="trailing" constant="40" id="hoU-TD-Luy"/>
+                            <constraint firstItem="EXX-P9-kPq" firstAttribute="top" secondItem="Nce-gD-ZPm" secondAttribute="bottom" constant="16" id="ivc-QL-4Gf"/>
+                            <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="EXX-P9-kPq" secondAttribute="trailing" constant="40" id="jKL-dD-p4b"/>
+                            <constraint firstItem="Nce-gD-ZPm" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="40" id="mxx-eU-74e"/>
+                            <constraint firstItem="Nce-gD-ZPm" firstAttribute="top" secondItem="Vvl-FE-Ixi" secondAttribute="bottom" constant="12" id="yZi-OB-J5H"/>
+                            <constraint firstItem="Vvl-FE-Ixi" firstAttribute="top" secondItem="qdr-Ev-KLG" secondAttribute="top" constant="38" id="zSw-f7-02L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qdr-Ev-KLG"/>
+                    </view>
+                    <connections>
+                        <outlet property="locationLabel" destination="Vvl-FE-Ixi" id="Yfc-YP-UbL"/>
+                        <outlet property="messageLabel" destination="EXX-P9-kPq" id="Xh2-aS-P5W"/>
+                        <outlet property="temperatureLabel" destination="Nce-gD-ZPm" id="EBC-MU-uWF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SbZ-rD-OKs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="134"/>
+        </scene>
+    </scenes>
+</document>

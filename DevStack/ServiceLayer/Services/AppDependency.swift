@@ -9,15 +9,17 @@
 public protocol HasNoService {
 }
 
-public struct AppDependency: HasNoService, HasLoginService, HasUserService, HasLocationManager, HasFirebaseManager {
+public struct AppDependency: HasNoService, HasLoginService, HasUserService, HasWeatherService, HasLocationManager, HasFirebaseManager {
     public let loginService: LoginService
     public let userService: UserService
+    public let weatherService: WeatherService
     public let locationManager: LocationManager
     public let firebaseManager: FirebaseManager
     
-    public init(loginService: LoginService, userService: UserService, locationManager: LocationManager, firebaseManager: FirebaseManager) {
+    public init(loginService: LoginService, userService: UserService, weatherService: WeatherService, locationManager: LocationManager, firebaseManager: FirebaseManager) {
         self.loginService = loginService
         self.userService = userService
+        self.weatherService = weatherService
         self.locationManager = locationManager
         self.firebaseManager = firebaseManager
     }

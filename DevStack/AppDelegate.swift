@@ -106,6 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppDependency(
             loginService: LoginService(),
             userService: UserService(),
+            weatherService: WeatherService(),
             locationManager: LocationManager(),
             firebaseManager: FirebaseManager()
         )

@@ -32,7 +32,15 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
         let profileRootVc = startChildFlow(profileFc)
         profileNc.viewControllers = [profileRootVc]
         
-        main.viewControllers = [usersNc, profileNc]
+        
+        let weatherNc = UINavigationController()
+        weatherNc.tabBarItem = UITabBarItem(title: "Počasí", image: Asset.Images.contactsTabBar.image, tag: 2)
+        let weatherFc = WeatherFlowController(navigationController: weatherNc, dependencies: dependencies)
+        let weatherRootVc = startChildFlow(weatherFc)
+        weatherNc.viewControllers = [weatherRootVc]
+        
+        
+        main.viewControllers = [usersNc, profileNc, weatherNc]
         navigationController.navigationBar.isHidden = true
         return main
     }

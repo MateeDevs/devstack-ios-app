@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C14A7FF23F2918D00043D48 /* WeatherFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A7FE23F2918D00043D48 /* WeatherFlowController.swift */; };
+		0C14A80023F2918D00043D48 /* WeatherFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A7FE23F2918D00043D48 /* WeatherFlowController.swift */; };
+		0C14A80123F2918D00043D48 /* WeatherFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A7FE23F2918D00043D48 /* WeatherFlowController.swift */; };
+		0C14A81523F292C600043D48 /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C14A81223F292C600043D48 /* Weather.storyboard */; };
+		0C14A81623F292C600043D48 /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C14A81223F292C600043D48 /* Weather.storyboard */; };
+		0C14A81723F292C600043D48 /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C14A81223F292C600043D48 /* Weather.storyboard */; };
+		0C14A81823F292C600043D48 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A81323F292C600043D48 /* WeatherViewController.swift */; };
+		0C14A81923F292C600043D48 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A81323F292C600043D48 /* WeatherViewController.swift */; };
+		0C14A81A23F292C600043D48 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A81323F292C600043D48 /* WeatherViewController.swift */; };
+		0C14A81B23F292C600043D48 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A81423F292C600043D48 /* WeatherViewModel.swift */; };
+		0C14A81C23F292C600043D48 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A81423F292C600043D48 /* WeatherViewModel.swift */; };
+		0C14A81D23F292C600043D48 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A81423F292C600043D48 /* WeatherViewModel.swift */; };
+		0C14A82B23F29E5700043D48 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A82A23F29E5700043D48 /* WeatherService.swift */; };
+		0C14A82C23F29E5700043D48 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A82A23F29E5700043D48 /* WeatherService.swift */; };
+		0C14A82D23F29E5700043D48 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A82A23F29E5700043D48 /* WeatherService.swift */; };
+		0C14A82F23F2A03400043D48 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A82E23F2A03400043D48 /* WeatherAPI.swift */; };
+		0C14A83023F2A03400043D48 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A82E23F2A03400043D48 /* WeatherAPI.swift */; };
+		0C14A83123F2A03400043D48 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A82E23F2A03400043D48 /* WeatherAPI.swift */; };
+		0C14A83323F2AB5E00043D48 /* Clima.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A83223F2AB5E00043D48 /* Clima.swift */; };
+		0C14A83423F2AB5E00043D48 /* Clima.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A83223F2AB5E00043D48 /* Clima.swift */; };
+		0C14A83523F2AB5E00043D48 /* Clima.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A83223F2AB5E00043D48 /* Clima.swift */; };
+		0C14A83923F2F55600043D48 /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C14A83723F2F55600043D48 /* ForecastTableViewCell.xib */; };
+		0C14A83A23F2F55600043D48 /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C14A83723F2F55600043D48 /* ForecastTableViewCell.xib */; };
+		0C14A83B23F2F55600043D48 /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C14A83723F2F55600043D48 /* ForecastTableViewCell.xib */; };
+		0C14A83C23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A83823F2F55600043D48 /* ForecastTableViewCell.swift */; };
+		0C14A83D23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A83823F2F55600043D48 /* ForecastTableViewCell.swift */; };
+		0C14A83E23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A83823F2F55600043D48 /* ForecastTableViewCell.swift */; };
 		450384752170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
 		450384762170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
 		450384772170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
@@ -433,6 +460,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C14A7FE23F2918D00043D48 /* WeatherFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherFlowController.swift; path = ../../../../../../Documents/WeatherFlowController.swift; sourceTree = "<group>"; };
+		0C14A81223F292C600043D48 /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
+		0C14A81323F292C600043D48 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		0C14A81423F292C600043D48 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		0C14A82A23F29E5700043D48 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		0C14A82E23F2A03400043D48 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		0C14A83223F2AB5E00043D48 /* Clima.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clima.swift; sourceTree = "<group>"; };
+		0C14A83723F2F55600043D48 /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
+		0C14A83823F2F55600043D48 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 		3108F6D7CC6CF709865E9678 /* Pods-DevStack_Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Alpha.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha.release.xcconfig"; sourceTree = "<group>"; };
 		3266EC7634F7BCD070190849 /* Pods-DevStack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack/Pods-DevStack.release.xcconfig"; sourceTree = "<group>"; };
 		450384742170E4FC004F43DC /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
@@ -629,6 +665,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C14A7F923F28E5700043D48 /* Tab3 - Weather */ = {
+			isa = PBXGroup;
+			children = (
+				0C14A7FE23F2918D00043D48 /* WeatherFlowController.swift */,
+				0C14A80E23F291EE00043D48 /* Main */,
+			);
+			path = "Tab3 - Weather";
+			sourceTree = "<group>";
+		};
+		0C14A80E23F291EE00043D48 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0C14A83623F2F53E00043D48 /* Views */,
+				0C14A81223F292C600043D48 /* Weather.storyboard */,
+				0C14A81323F292C600043D48 /* WeatherViewController.swift */,
+				0C14A81423F292C600043D48 /* WeatherViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0C14A83623F2F53E00043D48 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0C14A83723F2F55600043D48 /* ForecastTableViewCell.xib */,
+				0C14A83823F2F55600043D48 /* ForecastTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		450392832256B14C0037BF42 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -740,6 +805,7 @@
 			children = (
 				45890B2321FF5E8F00894255 /* AuthToken.swift */,
 				4568520F2101E432006D3618 /* User.swift */,
+				0C14A83223F2AB5E00043D48 /* Clima.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -763,6 +829,7 @@
 				450E863321072D35001D3E54 /* AppDependency.swift */,
 				456852452105CF82006D3618 /* LoginService.swift */,
 				45ECA1C5216BFA90000B1124 /* UserService.swift */,
+				0C14A82A23F29E5700043D48 /* WeatherService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -790,6 +857,7 @@
 			children = (
 				45DE1D9321CA9CA300C455C4 /* AuthAPI.swift */,
 				45ECA1B0216BF761000B1124 /* UserAPI.swift */,
+				0C14A82E23F2A03400043D48 /* WeatherAPI.swift */,
 			);
 			path = Targets;
 			sourceTree = "<group>";
@@ -887,6 +955,7 @@
 				4597621720FDDE270034DE29 /* Main */,
 				45E8A4E2220B0803003F7502 /* Tab1 - Users */,
 				45890AFA21FF515800894255 /* Tab2 - Profile */,
+				0C14A7F923F28E5700043D48 /* Tab3 - Weather */,
 				4597622220FDE5440034DE29 /* LaunchScreen */,
 				450392832256B14C0037BF42 /* Config */,
 				4597621920FDE4360034DE29 /* AppFlowController.swift */,
@@ -1352,12 +1421,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C14A83923F2F55600043D48 /* ForecastTableViewCell.xib in Resources */,
 				4588FF0A2225A73C0014FC79 /* RatingView.xcassets in Resources */,
 				45E8A570220F7933003F7502 /* Users.storyboard in Resources */,
 				45DE1D9821CAACC300C455C4 /* UserList.json in Resources */,
 				45DB9780226BA9D200C3F234 /* Settings.storyboard in Resources */,
 				453CEAB321553E1F00A94BAC /* RatingView.xib in Resources */,
 				4511A6EA213D2677006AD4CC /* TabBarView.xib in Resources */,
+				0C14A81523F292C600043D48 /* Weather.storyboard in Resources */,
 				A83F0EBE21490F1100313067 /* UserImageView.xib in Resources */,
 				45890B2021FF5CD800894255 /* AuthToken.json in Resources */,
 				45DB9774226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
@@ -1383,12 +1454,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C14A83A23F2F55600043D48 /* ForecastTableViewCell.xib in Resources */,
 				4588FF0B2225A73C0014FC79 /* RatingView.xcassets in Resources */,
 				45E8A571220F7933003F7502 /* Users.storyboard in Resources */,
 				45DE1D9921CAACC300C455C4 /* UserList.json in Resources */,
 				45DB9781226BA9D200C3F234 /* Settings.storyboard in Resources */,
 				453CEAB421553E1F00A94BAC /* RatingView.xib in Resources */,
 				4511A6EB213D2677006AD4CC /* TabBarView.xib in Resources */,
+				0C14A81623F292C600043D48 /* Weather.storyboard in Resources */,
 				A83F0EBF21490F1100313067 /* UserImageView.xib in Resources */,
 				45890B2121FF5CD800894255 /* AuthToken.json in Resources */,
 				45DB9775226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
@@ -1414,12 +1487,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C14A83B23F2F55600043D48 /* ForecastTableViewCell.xib in Resources */,
 				4588FF0C2225A73C0014FC79 /* RatingView.xcassets in Resources */,
 				45E8A572220F7933003F7502 /* Users.storyboard in Resources */,
 				45DE1D9A21CAACC300C455C4 /* UserList.json in Resources */,
 				45DB9782226BA9D200C3F234 /* Settings.storyboard in Resources */,
 				453CEAB521553E1F00A94BAC /* RatingView.xib in Resources */,
 				4511A6EC213D2677006AD4CC /* TabBarView.xib in Resources */,
+				0C14A81723F292C600043D48 /* Weather.storyboard in Resources */,
 				45128B7B2142A627007B6B47 /* TabBarButton.xib in Resources */,
 				45890B2221FF5CD800894255 /* AuthToken.json in Resources */,
 				45DB9776226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
@@ -1715,17 +1790,21 @@
 				459762DE20FE21290034DE29 /* Storyboards.swift in Sources */,
 				45ECA1B1216BF761000B1124 /* UserAPI.swift in Sources */,
 				A8DDD0CF2121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
+				0C14A82F23F2A03400043D48 /* WeatherAPI.swift in Sources */,
 				4511A6F0213D2677006AD4CC /* TabBarView.swift in Sources */,
 				45DB9777226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BC210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				45F4AE422180B88400E75B4A /* LocalizedImageView.swift in Sources */,
 				45E8A4BE220AF3C0003F7502 /* ProfileViewController.swift in Sources */,
 				459762E320FE21BC0034DE29 /* ViewModelType.swift in Sources */,
+				0C14A81823F292C600043D48 /* WeatherViewController.swift in Sources */,
+				0C14A82B23F29E5700043D48 /* WeatherService.swift in Sources */,
 				45EBB309217600360080D179 /* UINavigationController+Extensions.swift in Sources */,
 				4511A71E213D73C8006AD4CC /* ActivityIndicatorView.swift in Sources */,
 				45E1E619221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				45890B5C22087C8B00894255 /* String+UIExtensions.swift in Sources */,
 				456852102101E432006D3618 /* User.swift in Sources */,
+				0C14A81B23F292C600043D48 /* WeatherViewModel.swift in Sources */,
 				456852462105CF82006D3618 /* LoginService.swift in Sources */,
 				A82385DA213418B400CC941C /* ShadowView.swift in Sources */,
 				451233E3215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
@@ -1747,6 +1826,7 @@
 				A8E5D3E2213596FD00515312 /* StatusCode.swift in Sources */,
 				459762EB20FE21F70034DE29 /* UIApplication+Extensions.swift in Sources */,
 				45B76DA0213591D0003BB997 /* Error+Extensions.swift in Sources */,
+				0C14A83C23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */,
 				45890B5822087C5D00894255 /* Date+UIExtensions.swift in Sources */,
 				45DA080E222E87780003D32A /* RegistrationViewModel.swift in Sources */,
 				45A388D8225F5EF300037FFA /* UIFont+Extensions.swift in Sources */,
@@ -1776,11 +1856,13 @@
 				45DB140F22E26FA300093272 /* BiometricHelper.swift in Sources */,
 				45A92DFD2109ABE9007579AC /* Lce.swift in Sources */,
 				45890B4722086CAF00894255 /* LoginViewModel.swift in Sources */,
+				0C14A7FF23F2918D00043D48 /* WeatherFlowController.swift in Sources */,
 				4571DB2B22159EE90036919A /* NetworkManager.swift in Sources */,
 				45A3D59F2119B76000E39169 /* Realm+Extensions.swift in Sources */,
 				454FEE3922404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				45890B4322086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B5220AEF90003F7502 /* FlowController.swift in Sources */,
+				0C14A83323F2AB5E00043D48 /* Clima.swift in Sources */,
 				45DB975B226A955700C3F234 /* WhisperView.swift in Sources */,
 				45B76D99213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC32108CB2600BBA179 /* XIBView.swift in Sources */,
@@ -1838,17 +1920,21 @@
 				45E8A4AA220AEBAE003F7502 /* Logger.swift in Sources */,
 				A8DDD0D02121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				45ECA1B2216BF761000B1124 /* UserAPI.swift in Sources */,
+				0C14A83023F2A03400043D48 /* WeatherAPI.swift in Sources */,
 				4511A6F1213D2677006AD4CC /* TabBarView.swift in Sources */,
 				45DB9778226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BD210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				459762E420FE21BC0034DE29 /* ViewModelType.swift in Sources */,
 				45E8A4BF220AF3C0003F7502 /* ProfileViewController.swift in Sources */,
 				45F4AE432180B88400E75B4A /* LocalizedImageView.swift in Sources */,
+				0C14A81923F292C600043D48 /* WeatherViewController.swift in Sources */,
+				0C14A82C23F29E5700043D48 /* WeatherService.swift in Sources */,
 				45EBB30A217600390080D179 /* UINavigationController+Extensions.swift in Sources */,
 				4511A71F213D73C8006AD4CC /* ActivityIndicatorView.swift in Sources */,
 				45E1E61A221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				45890B5D22087C8B00894255 /* String+UIExtensions.swift in Sources */,
 				456852112101E432006D3618 /* User.swift in Sources */,
+				0C14A81C23F292C600043D48 /* WeatherViewModel.swift in Sources */,
 				456852472105CF82006D3618 /* LoginService.swift in Sources */,
 				451233E4215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				A82385DB213418B400CC941C /* ShadowView.swift in Sources */,
@@ -1870,6 +1956,7 @@
 				A8E5D3E3213596FD00515312 /* StatusCode.swift in Sources */,
 				459762EC20FE21F70034DE29 /* UIApplication+Extensions.swift in Sources */,
 				45B76DA1213591D0003BB997 /* Error+Extensions.swift in Sources */,
+				0C14A83D23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */,
 				45890B5922087C5D00894255 /* Date+UIExtensions.swift in Sources */,
 				45DA080F222E87780003D32A /* RegistrationViewModel.swift in Sources */,
 				45A388D9225F5EF300037FFA /* UIFont+Extensions.swift in Sources */,
@@ -1899,11 +1986,13 @@
 				45DB141022E26FA300093272 /* BiometricHelper.swift in Sources */,
 				45A92DFE2109ABE9007579AC /* Lce.swift in Sources */,
 				45890B4822086CAF00894255 /* LoginViewModel.swift in Sources */,
+				0C14A80023F2918D00043D48 /* WeatherFlowController.swift in Sources */,
 				4571DB2C22159EE90036919A /* NetworkManager.swift in Sources */,
 				45A3D5A02119B76000E39169 /* Realm+Extensions.swift in Sources */,
 				454FEE3A22404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				45890B4422086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B6220AEF90003F7502 /* FlowController.swift in Sources */,
+				0C14A83423F2AB5E00043D48 /* Clima.swift in Sources */,
 				45DB975C226A955700C3F234 /* WhisperView.swift in Sources */,
 				45B76D9A213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC42108CB2600BBA179 /* XIBView.swift in Sources */,
@@ -1961,17 +2050,21 @@
 				459762E020FE21290034DE29 /* Storyboards.swift in Sources */,
 				45ECA1B3216BF761000B1124 /* UserAPI.swift in Sources */,
 				A8DDD0D12121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
+				0C14A83123F2A03400043D48 /* WeatherAPI.swift in Sources */,
 				4511A6F2213D2677006AD4CC /* TabBarView.swift in Sources */,
 				45DB9779226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BE210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				45F4AE442180B88400E75B4A /* LocalizedImageView.swift in Sources */,
 				45E8A4C0220AF3C0003F7502 /* ProfileViewController.swift in Sources */,
 				459762E520FE21BC0034DE29 /* ViewModelType.swift in Sources */,
+				0C14A81A23F292C600043D48 /* WeatherViewController.swift in Sources */,
+				0C14A82D23F29E5700043D48 /* WeatherService.swift in Sources */,
 				45EBB30B217600390080D179 /* UINavigationController+Extensions.swift in Sources */,
 				4511A720213D73C8006AD4CC /* ActivityIndicatorView.swift in Sources */,
 				45E1E61B221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				45890B5E22087C8B00894255 /* String+UIExtensions.swift in Sources */,
 				456852122101E432006D3618 /* User.swift in Sources */,
+				0C14A81D23F292C600043D48 /* WeatherViewModel.swift in Sources */,
 				456852482105CF82006D3618 /* LoginService.swift in Sources */,
 				A82385DC213418B400CC941C /* ShadowView.swift in Sources */,
 				451233E5215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
@@ -1993,6 +2086,7 @@
 				A8E5D3E4213596FD00515312 /* StatusCode.swift in Sources */,
 				459762ED20FE21F70034DE29 /* UIApplication+Extensions.swift in Sources */,
 				45B76DA2213591D0003BB997 /* Error+Extensions.swift in Sources */,
+				0C14A83E23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */,
 				45890B5A22087C5D00894255 /* Date+UIExtensions.swift in Sources */,
 				45DA0810222E87780003D32A /* RegistrationViewModel.swift in Sources */,
 				45A388DA225F5EF300037FFA /* UIFont+Extensions.swift in Sources */,
@@ -2022,11 +2116,13 @@
 				45DB141122E26FA300093272 /* BiometricHelper.swift in Sources */,
 				45A92DFF2109ABE9007579AC /* Lce.swift in Sources */,
 				45890B4922086CAF00894255 /* LoginViewModel.swift in Sources */,
+				0C14A80123F2918D00043D48 /* WeatherFlowController.swift in Sources */,
 				4571DB2D22159EE90036919A /* NetworkManager.swift in Sources */,
 				45A3D5A12119B76000E39169 /* Realm+Extensions.swift in Sources */,
 				454FEE3B22404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				45890B4522086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B7220AEF90003F7502 /* FlowController.swift in Sources */,
+				0C14A83523F2AB5E00043D48 /* Clima.swift in Sources */,
 				45DB975D226A955700C3F234 /* WhisperView.swift in Sources */,
 				45B76D9B213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC52108CB2600BBA179 /* XIBView.swift in Sources */,
