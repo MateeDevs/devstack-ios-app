@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C0756DD23F453B900543CAF /* DesignableXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0756DC23F453B900543CAF /* DesignableXibView.swift */; };
 		0C0756DF23F456A900543CAF /* DesignableXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C0756DE23F456A900543CAF /* DesignableXibView.xib */; };
 		0C0756E023F456A900543CAF /* DesignableXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C0756DE23F456A900543CAF /* DesignableXibView.xib */; };
 		0C0756E123F456A900543CAF /* DesignableXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C0756DE23F456A900543CAF /* DesignableXibView.xib */; };
@@ -38,6 +37,9 @@
 		0C14A83C23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A83823F2F55600043D48 /* ForecastTableViewCell.swift */; };
 		0C14A83D23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A83823F2F55600043D48 /* ForecastTableViewCell.swift */; };
 		0C14A83E23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14A83823F2F55600043D48 /* ForecastTableViewCell.swift */; };
+		0C2123BC23F5360600A7AAB7 /* DesignableXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2123BB23F5360600A7AAB7 /* DesignableXibView.swift */; };
+		0C2123BD23F5360600A7AAB7 /* DesignableXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2123BB23F5360600A7AAB7 /* DesignableXibView.swift */; };
+		0C2123BE23F5360600A7AAB7 /* DesignableXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2123BB23F5360600A7AAB7 /* DesignableXibView.swift */; };
 		0CD8673123F3E9DB0073FA2B /* LocationDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD8672E23F3E9DB0073FA2B /* LocationDetail.storyboard */; };
 		0CD8673223F3E9DB0073FA2B /* LocationDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD8672E23F3E9DB0073FA2B /* LocationDetail.storyboard */; };
 		0CD8673323F3E9DB0073FA2B /* LocationDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD8672E23F3E9DB0073FA2B /* LocationDetail.storyboard */; };
@@ -473,7 +475,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C0756DC23F453B900543CAF /* DesignableXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableXibView.swift; sourceTree = "<group>"; };
 		0C0756DE23F456A900543CAF /* DesignableXibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DesignableXibView.xib; sourceTree = "<group>"; };
 		0C14A7FE23F2918D00043D48 /* WeatherFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherFlowController.swift; path = ../../../../../../Documents/WeatherFlowController.swift; sourceTree = "<group>"; };
 		0C14A81223F292C600043D48 /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
@@ -484,6 +485,7 @@
 		0C14A83223F2AB5E00043D48 /* Clima.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clima.swift; sourceTree = "<group>"; };
 		0C14A83723F2F55600043D48 /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
 		0C14A83823F2F55600043D48 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		0C2123BB23F5360600A7AAB7 /* DesignableXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableXibView.swift; sourceTree = "<group>"; };
 		0CD8672E23F3E9DB0073FA2B /* LocationDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationDetail.storyboard; sourceTree = "<group>"; };
 		0CD8672F23F3E9DB0073FA2B /* LocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		0CD8673023F3E9DB0073FA2B /* LocationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewModel.swift; sourceTree = "<group>"; };
@@ -686,8 +688,8 @@
 		0C0756D923F4533700543CAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0C0756DC23F453B900543CAF /* DesignableXibView.swift */,
 				0C0756DE23F456A900543CAF /* DesignableXibView.xib */,
+				0C2123BB23F5360600A7AAB7 /* DesignableXibView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1872,7 +1874,7 @@
 				4568523F2105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */,
 				A8E5D3E2213596FD00515312 /* StatusCode.swift in Sources */,
 				459762EB20FE21F70034DE29 /* UIApplication+Extensions.swift in Sources */,
-				0C0756DD23F453B900543CAF /* DesignableXibView.swift in Sources */,
+				0C2123BC23F5360600A7AAB7 /* DesignableXibView.swift in Sources */,
 				45B76DA0213591D0003BB997 /* Error+Extensions.swift in Sources */,
 				0C14A83C23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */,
 				45890B5822087C5D00894255 /* Date+UIExtensions.swift in Sources */,
@@ -2005,6 +2007,7 @@
 				456852402105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */,
 				A8E5D3E3213596FD00515312 /* StatusCode.swift in Sources */,
 				459762EC20FE21F70034DE29 /* UIApplication+Extensions.swift in Sources */,
+				0C2123BD23F5360600A7AAB7 /* DesignableXibView.swift in Sources */,
 				45B76DA1213591D0003BB997 /* Error+Extensions.swift in Sources */,
 				0C14A83D23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */,
 				45890B5922087C5D00894255 /* Date+UIExtensions.swift in Sources */,
@@ -2137,6 +2140,7 @@
 				456852412105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */,
 				A8E5D3E4213596FD00515312 /* StatusCode.swift in Sources */,
 				459762ED20FE21F70034DE29 /* UIApplication+Extensions.swift in Sources */,
+				0C2123BE23F5360600A7AAB7 /* DesignableXibView.swift in Sources */,
 				45B76DA2213591D0003BB997 /* Error+Extensions.swift in Sources */,
 				0C14A83E23F2F55600043D48 /* ForecastTableViewCell.swift in Sources */,
 				45890B5A22087C5D00894255 /* Date+UIExtensions.swift in Sources */,

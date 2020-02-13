@@ -20,9 +20,10 @@ public class WeatherService {
 
 
     public func getWeatherDataWOEID(_ woeid: Int) -> Observable<Lce<[Clima]>> {
-        let db = database.observableCollection(Clima.self)
+        //let db = database.observableCollection(Clima.self)
         let endpoint = WeatherAPI.getWeatherByLocation(woeid)
-        let net = network.observableRequest(endpoint).map([Clima].self, atKeyPath: "consolidated_weather").save().mapToLce().filter({ $0.hasError })
-        return Observable.merge(db, net).startWith(Lce(loading: true))
+        let net = network.observableRequest(endpoint).map([Clima].self, atKeyPath: "consolidated_weather").save().mapToLce()
+        return net
+        //return Observable.merge(db, net).startWith(Lce(loading: true))
     }
 }

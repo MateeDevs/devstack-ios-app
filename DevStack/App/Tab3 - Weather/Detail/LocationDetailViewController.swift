@@ -26,23 +26,13 @@ final class LocationDetailViewController: BaseViewController {
     @IBOutlet weak var weatherStateLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     
+    @IBOutlet weak var forecastDay1: DesignableXibView!
+    @IBOutlet weak var forecastDay2: DesignableXibView!
+    @IBOutlet weak var forecastDay3: DesignableXibView!
+    @IBOutlet weak var forecastDay4: DesignableXibView!
+    @IBOutlet weak var forecastDay5: DesignableXibView!
     
     @IBOutlet weak var dayToday: UILabel!
-    @IBOutlet weak var day2: UILabel!
-    @IBOutlet weak var day2temp: UILabel!
-    @IBOutlet weak var day2icon: UIImageView!
-    @IBOutlet weak var day3: UILabel!
-    @IBOutlet weak var day3temp: UILabel!
-    @IBOutlet weak var day3icon: UIImageView!
-    @IBOutlet weak var day4: UILabel!
-    @IBOutlet weak var day4temp: UILabel!
-    @IBOutlet weak var day4icon: UIImageView!
-    @IBOutlet weak var day5: UILabel!
-    @IBOutlet weak var day5temp: UILabel!
-    @IBOutlet weak var day5icon: UIImageView!
-    @IBOutlet weak var day6: UILabel!
-    @IBOutlet weak var day6temp: UILabel!
-    @IBOutlet weak var day6icon: UIImageView!
     
     // MARK: Stored properties
     private var woeid: Int!
@@ -51,21 +41,13 @@ final class LocationDetailViewController: BaseViewController {
     private var forecast: [Clima?] = [] {
         didSet {
             if let currentTemp = forecast[0]?.theTemp,
-                let message = forecast[0]?.weatherStateName,
-                let applicableDate = forecast[0]?.applicableDate {
+                let message = forecast[0]?.weatherStateName {
                 weatherStateLabel.text = message
                 temperatureLabel.text = "\(currentTemp.rounded()) °C"
             }
             
             for var (index, item) in forecast.enumerated() {
                 if let strDate = item?.applicableDate, let temperature = item?.theTemp.rounded(), let iconName = item?.weatherStateAbbr {
-                    
-
-                    
-                    
-                    
-                    
-                    
                     
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -75,29 +57,31 @@ final class LocationDetailViewController: BaseViewController {
                         let dayInWeek = dateFormatter.string(from: foo)
                         
                         switch index {
-                        case 1:
-                            self.day2.text = dayInWeek
-                            self.day2temp.text = "\(temperature) °C"
-                            self.day2icon.image = self.setIcon(iconName)
-                        case 2:
-                            self.day3.text = dayInWeek
-                            self.day3temp.text = "\(temperature) °C"
-                            self.day3icon.image = self.setIcon(iconName)
-                        case 3:
-                            self.day4.text = dayInWeek
-                            self.day4temp.text = "\(temperature) °C"
-                            self.day4icon.image = self.setIcon(iconName)
-                        case 4:
-                            self.day5.text = dayInWeek
-                            self.day5temp.text = "\(temperature) °C"
-                            self.day5icon.image = self.setIcon(iconName)
-                        case 5:
-                            self.day6.text = dayInWeek
-                            self.day6temp.text = "\(temperature) °C"
-                            self.day6icon.image = self.setIcon(iconName)
-                        default:
+                        case 0:
                             self.dayToday.text = dayInWeek
                             temperatureLabel.text = "\(temperature) °C"
+                        case 1:
+                            forecastDay1.image.image = self.setIcon(iconName)
+                            forecastDay1.tempLabel.text = "\(temperature) °C"
+                            forecastDay1.dayLabel.text = dayInWeek
+                        case 2:
+                            forecastDay2.image.image = self.setIcon(iconName)
+                            forecastDay2.tempLabel.text = "\(temperature) °C"
+                            forecastDay2.dayLabel.text = dayInWeek
+                        case 3:
+                            forecastDay3.image.image = self.setIcon(iconName)
+                            forecastDay3.tempLabel.text = "\(temperature) °C"
+                            forecastDay3.dayLabel.text = dayInWeek
+                        case 4:
+                            forecastDay4.image.image = self.setIcon(iconName)
+                            forecastDay4.tempLabel.text = "\(temperature) °C"
+                            forecastDay4.dayLabel.text = dayInWeek
+                        case 5:
+                            forecastDay5.image.image = self.setIcon(iconName)
+                            forecastDay5.tempLabel.text = "\(temperature) °C"
+                            forecastDay5.dayLabel.text = dayInWeek
+                        default:
+                           return
                         }
                     }
                 }
@@ -128,9 +112,11 @@ final class LocationDetailViewController: BaseViewController {
         let output = viewModel.transform(input: input)
         output.getClimaByWOEID.drive(onNext: { [weak self] event in
             if event.isLoading {
+                self?.handleLoadingUI(true)
                 self?.view.startActivityIndicator()
             } else if let climaData = event.data {
                 self?.view.stopActivityIndicator()
+                self?.handleLoadingUI(false)
                 self?.forecast = climaData
             }
         }).disposed(by: disposeBag)
@@ -144,27 +130,33 @@ final class LocationDetailViewController: BaseViewController {
     }
 
     // MARK: Additional methods
-    
     fileprivate func setIcon(_ iconName: String) -> UIImage {
-        print("iconName", iconName)
         switch iconName {
             case "lc":
-                return UIImage(named: "010-light-clouds")! // Assets TODO 
+                return Asset.Images._010LightClouds.image
             case "hc": // Heavy cloud
-                return UIImage(named: "009-heavy-clouds")!
+                return Asset.Images._009HeavyClouds.image
             case "hr":
-                return UIImage(named: "008-heavy-rain")!
+                return Asset.Images._008HeavyRain.image
             case "lr": // Light rain
-                return UIImage(named: "004-rainy")!
+                return Asset.Images._004Rainy.image
             case "sn":
-                return UIImage(named: "002-snow")!
+                return Asset.Images._002Snow.image
             case "s": // Showers
-                return UIImage(named: "006-drop")!
+                return Asset.Images._006Drop.image
             case "c":
-                return UIImage(named: "001-sunny")!
+                return Asset.Images._001Sunny.image
             default:
                 return UIImage()
         }
     }
     
+    fileprivate func handleLoadingUI(_ shouldHide: Bool) {
+        for element in self.view.subviews {
+            UIView.animate(withDuration: 0.23, animations: {
+                element.isHidden = shouldHide ? true : false
+                element.alpha = shouldHide ? 0 : 1
+            })
+        }
+    }
 }
