@@ -12,15 +12,12 @@ import RxCocoa
 final class UsersViewModel: ViewModel, ViewModelType {
     
     typealias Dependencies = HasUserService
-    fileprivate let dependencies: Dependencies
-    
-    init(dependencies: Dependencies) {
-        self.dependencies = dependencies
-        super.init()
-    }
+
+    let input: Input
+    let output: Output
     
     struct Input {
-        let page: PublishSubject<Int>
+        let page: AnyObserver<Int>
     }
     
     struct Output {
@@ -28,14 +25,18 @@ final class UsersViewModel: ViewModel, ViewModelType {
         let downloadUsersEvent: Driver<Lce<[User]>>
     }
     
-    func transform(input: Input) -> Output {
+    init(dependencies: Dependencies) {
+        let page = PublishSubject<Int>()
         
         let getUsersEvent: Driver<Lce<[User]>> = dependencies.userService.getUsers().asDriverOnErrorJustComplete()
         
-        let downloadUsersEvent = input.page.flatMap({ (page) -> Observable<Lce<[User]>> in
-            self.dependencies.userService.downloadUsersForPage(page)
+        let downloadUsersEvent = page.flatMap({ (page) -> Observable<Lce<[User]>> in
+            dependencies.userService.downloadUsersForPage(page)
         }).asDriverOnErrorJustComplete()
         
-        return Output(getUsersEvent: getUsersEvent, downloadUsersEvent: downloadUsersEvent)
+        self.input = Input(page: page.asObserver())
+        self.output = Output(getUsersEvent: getUsersEvent, downloadUsersEvent: downloadUsersEvent)
+        
+        super.init()
     }
 }

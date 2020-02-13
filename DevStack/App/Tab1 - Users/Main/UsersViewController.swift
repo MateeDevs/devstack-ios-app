@@ -43,14 +43,13 @@ final class UsersViewController: BaseTableViewController<User> {
     override func setupViewModel() {
         super.setupViewModel()
         
-        let input = UsersViewModel.Input(page: page)
-        let output = viewModel.transform(input: input)
+        page.bind(to: viewModel.input.page).disposed(by: disposeBag)
         
-        output.getUsersEvent.drive(onNext: { [weak self] event in
+        viewModel.output.getUsersEvent.drive(onNext: { [weak self] event in
             self?.handleDatabaseData(event)
         }).disposed(by: disposeBag)
         
-        output.downloadUsersEvent.drive(onNext: { [weak self] event in
+        viewModel.output.downloadUsersEvent.drive(onNext: { [weak self] event in
             self?.handleNetworkData(event)
         }).disposed(by: disposeBag)
     }

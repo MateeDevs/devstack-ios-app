@@ -51,10 +51,7 @@ final class UserDetailViewController: BaseViewController {
     override func setupViewModel() {
         super.setupViewModel()
         
-        let input = UserDetailViewModel.Input()
-        let output = viewModel.transform(input: input)
-        
-        output.getUserDetailEvent.drive(onNext: { [weak self] event in
+        viewModel.output.getUserDetailEvent.drive(onNext: { [weak self] event in
             if let userDetail = event.data {
                 self?.user = userDetail
             }

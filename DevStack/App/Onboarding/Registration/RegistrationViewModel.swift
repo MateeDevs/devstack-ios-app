@@ -12,16 +12,14 @@ import RxCocoa
 final class RegistrationViewModel: ViewModel, ViewModelType {
     
     typealias Dependencies = HasLoginService
-    fileprivate let dependencies: Dependencies
     
-    init(dependencies: Dependencies) {
-        self.dependencies = dependencies
-    }
+    let input: Input
+    let output: Output
     
     struct Input {
-        let email: Driver<String>
-        let password: Driver<String>
-        let registerButtonTaps: Signal<()>
+        let email: AnyObserver<String>
+        let password: AnyObserver<String>
+        let registerButtonTaps: AnyObserver<Void>
     }
     
     struct Output {
@@ -29,26 +27,33 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
         let registerButtonEnabled: Driver<Bool>
     }
     
-    func transform(input: Input) -> Output {
-        let activity = ActivityIndicator()
-        let inputs = Driver.combineLatest(input.email, input.password) { (email: $0, password: $1) }
+    init(dependencies: Dependencies) {
+        let email = ReplaySubject<String>.create(bufferSize: 1)
+        let password = ReplaySubject<String>.create(bufferSize: 1)
+        let registerButtonTaps = PublishSubject<Void>()
         
-        let registrationEvent = input.registerButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Driver<Lce<User>> in
+        let activity = ActivityIndicator()
+        let inputs = Observable.combineLatest(email, password) { (email: $0, password: $1) }
+        
+        let registrationEvent = registerButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Observable<Lce<User>> in
             if inputs.email.isEmpty || inputs.password.isEmpty {
-				return Driver.just(Lce(error: ValidationError(L10n.invalid_credentials)))
+                return Observable.just(Lce(error: ValidationError(L10n.invalid_credentials)))
             } else if !DataValidator.validateEmail(inputs.email) {
-				return Driver.just(Lce(error: ValidationError(L10n.invalid_email)))
+                return Observable.just(Lce(error: ValidationError(L10n.invalid_email)))
             } else {
-                return self.dependencies.loginService.registration(email: inputs.email, password: inputs.password, firstName: "Anonymous", lastName: "")
+                return dependencies.loginService
+                    .registration(email: inputs.email, password: inputs.password, firstName: "Anonymous", lastName: "")
                     .trackActivity(activity)
-                    .asDriverOnErrorJustComplete()
             }
-        }
+        }.asDriverOnErrorJustComplete()
         
         let registerButtonEnabled = activity.asDriver().map({ (activity) -> Bool in
             !activity
         })
         
-        return Output(registrationEvent: registrationEvent, registerButtonEnabled: registerButtonEnabled)
+        self.input = Input(email: email.asObserver(), password: password.asObserver(), registerButtonTaps: registerButtonTaps.asObserver())
+        self.output = Output(registrationEvent: registrationEvent, registerButtonEnabled: registerButtonEnabled)
+        
+        super.init()
     }
 }

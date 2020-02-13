@@ -12,15 +12,11 @@ import RxCocoa
 final class UserDetailViewModel: ViewModel, ViewModelType {
     
     typealias Dependencies = HasUserService
-    fileprivate let dependencies: Dependencies
     
     private var userId: String
     
-    init(dependencies: Dependencies, userId: String) {
-        self.dependencies = dependencies
-        self.userId = userId
-        super.init()
-    }
+    let input: Input
+    let output: Output
     
     struct Input {
     }
@@ -29,8 +25,14 @@ final class UserDetailViewModel: ViewModel, ViewModelType {
         let getUserDetailEvent: Driver<Lce<User>>
     }
     
-    func transform(input: Input) -> Output {
+    init(dependencies: Dependencies, userId: String) {
+        self.userId = userId
+        
         let getUserDetailEvent: Driver<Lce<User>> = dependencies.userService.getUserById(userId).asDriverOnErrorJustComplete()
-        return Output(getUserDetailEvent: getUserDetailEvent)
+        
+        self.input = Input()
+        self.output = Output(getUserDetailEvent: getUserDetailEvent)
+        
+        super.init()
     }
 }

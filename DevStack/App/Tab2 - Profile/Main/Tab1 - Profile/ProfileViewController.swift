@@ -53,10 +53,7 @@ final class ProfileViewController: BaseViewController {
     override func setupViewModel() {
         super.setupViewModel()
         
-        let input = ProfileViewModel.Input()
-        let output = viewModel.transform(input: input)
-        
-        output.getProfileEvent.drive(onNext: { [weak self] event in
+        viewModel.output.getProfileEvent.drive(onNext: { [weak self] event in
             if event.isLoading {
                 self?.view.showAnimatedGradientSkeleton(animation: GradientDirection.topLeftBottomRight.slidingAnimation())
             } else if let user = event.data {
@@ -69,8 +66,8 @@ final class ProfileViewController: BaseViewController {
                 self?.view.hideSkeleton()
             }
         }).disposed(by: disposeBag)
-
-        output.currentLocation.take(1).subscribe(onNext: { [weak self] location in
+        
+        viewModel.output.currentLocation.drive(onNext: { [weak self] location in
             self?.locationLabel.text = location.coordinate.toString()
         }).disposed(by: disposeBag)
         
