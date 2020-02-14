@@ -28,7 +28,7 @@ extension Object {
         return model
     }
     
-    @objc func apiModel() -> [String : Any] {
+    @objc func apiModel() -> [String: Any] {
         fullModel()
     }
     

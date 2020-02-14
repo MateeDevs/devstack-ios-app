@@ -25,7 +25,7 @@ public struct LocationHelper {
             countriesAndCodes.append((text: name, data: code as AnyObject?))
         }
         
-        return sorted ? countriesAndCodes.sorted(by: {$0.text < $1.text}) : countriesAndCodes
+        return sorted ? countriesAndCodes.sorted(by: { $0.text < $1.text }) : countriesAndCodes
     }
     
     ///

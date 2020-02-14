@@ -121,7 +121,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // Set the block which will be called automatically when opening a Realm with
             // a schema version lower than the one set above
-            migrationBlock: { migration, oldSchemaVersion in
+            migrationBlock: { _, oldSchemaVersion in
                 // We haven’t migrated anything yet, so oldSchemaVersion == 0
                 if oldSchemaVersion < 1 {
                     // Nothing to do!

@@ -90,7 +90,7 @@ extension BaseViewController {
             if view.isKind(of: WhisperView.self) {
                 UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
                     view.frame.origin.y = -view.safeAreaInsets.top - 30
-                }, completion: { finished in
+                }, completion: { _ in
                     view.removeFromSuperview()
                 })
             }

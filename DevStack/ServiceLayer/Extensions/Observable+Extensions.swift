@@ -13,7 +13,7 @@ import RxCocoa
 extension ObservableType {
     
     public func asDriverOnErrorJustComplete() -> Driver<E> {
-        asDriver { error in
+        asDriver { _ in
             Driver.empty()
         }
     }

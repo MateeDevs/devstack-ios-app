@@ -16,7 +16,7 @@ extension String {
     
     public var initials: String {
         let words: [Substring] = split(separator: " ")
-        let initials = words.map({String($0.first ?? Character(""))})
+        let initials = words.map({ String($0.first ?? Character("")) })
         let userInitials = initials.joined()
         return userInitials
     }
