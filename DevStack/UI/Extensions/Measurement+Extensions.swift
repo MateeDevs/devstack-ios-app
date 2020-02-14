@@ -9,7 +9,7 @@
 import Foundation
 
 extension Measurement where UnitType == Dimension {
-    
+
     /// Predefined default unit for selected dimensions
     public var defaultUnit: Measurement {
         switch unit {
@@ -21,7 +21,7 @@ extension Measurement where UnitType == Dimension {
         default: return self
         }
     }
-    
+
     /// Predefined default minimum/maximum fraction digits for selected dimensions
     private var defaultFractionDigits: (minimum: Int, maximum: Int) {
         switch unit {
@@ -33,7 +33,7 @@ extension Measurement where UnitType == Dimension {
         default: return (0, 0)
         }
     }
-    
+
     ///
     /// Dimension formatting based on user's locale/preferences
     ///

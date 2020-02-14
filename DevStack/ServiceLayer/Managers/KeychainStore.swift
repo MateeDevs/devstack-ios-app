@@ -15,18 +15,18 @@ enum KeychainCoding: String, CaseIterable {
 }
 
 struct KeychainStore {
-    
+
     static func save(_ key: KeychainCoding, value: String) {
         let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")
         keychain[key.rawValue] = value
     }
-    
+
     static func get(_ key: KeychainCoding) -> String? {
         let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")
         guard let value = keychain[key.rawValue] else { return nil }
         return value
     }
-    
+
     static func delete(_ key: KeychainCoding) {
         do {
             let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")
@@ -35,7 +35,7 @@ struct KeychainStore {
             Logger.error("Error during KeychainStore delete operation:\n%@", "\(error)", category: .app)
         }
     }
-    
+
     static func deleteAll() {
         for key in KeychainCoding.allCases {
             delete(key)

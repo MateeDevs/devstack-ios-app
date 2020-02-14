@@ -19,16 +19,16 @@ public class FirebaseManager: NSObject {
     func start(for application: UIApplication, appDelegate: AppDelegate) {
         // Start Firebase
         FirebaseApp.configure()
-        
+
         // Setup APNs
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: {_, _ in })
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: { _, _ in })
         UNUserNotificationCenter.current().delegate = appDelegate
         Messaging.messaging().delegate = appDelegate
         application.registerForRemoteNotifications()
     }
-    
-    func handleNotification(_ notification: [AnyHashable : Any], appDelegate: AppDelegate) {
+
+    func handleNotification(_ notification: [AnyHashable: Any], appDelegate: AppDelegate) {
         #if DEBUG
         print(notification)
         #endif
@@ -42,7 +42,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         // Show system notification
         completionHandler([.alert, .badge, .sound])
     }
-    
+
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {

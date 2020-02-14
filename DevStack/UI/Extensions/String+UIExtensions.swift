@@ -9,18 +9,18 @@
 import Foundation
 
 extension String {
-    
+
     public var secured: String {
         String(map { _ in "*" })
     }
-    
+
     public var initials: String {
         let words: [Substring] = split(separator: " ")
-        let initials = words.map({String($0.first ?? Character(""))})
+        let initials = words.map({ String($0.first ?? Character("")) })
         let userInitials = initials.joined()
         return userInitials
     }
-    
+
     public func toDate(dateFormat: String = DateFormat.ddMMyyyyHHmm.rawValue) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat

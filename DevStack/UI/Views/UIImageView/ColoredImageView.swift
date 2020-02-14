@@ -9,26 +9,26 @@
 import UIKit
 
 @IBDesignable open class ColoredImageView: UIImageView {
-    
+
     @IBInspectable public var cornerRadius: CGFloat = 0.0 {
         didSet {
             layer.cornerRadius = cornerRadius
             layer.masksToBounds = cornerRadius > 0
         }
     }
-    
+
     @IBInspectable public var borderWidth: CGFloat = 0.0 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
-    
+
     @IBInspectable public var borderColor: UIColor = AppTheme.Colors.primaryColor {
         didSet {
             layer.borderColor = borderColor.cgColor
         }
     }
-    
+
     @IBInspectable public var imageColor: UIColor = AppTheme.Colors.primaryColor {
         didSet {
             if image != nil {
@@ -39,5 +39,5 @@ import UIKit
             }
         }
     }
-    
+
 }

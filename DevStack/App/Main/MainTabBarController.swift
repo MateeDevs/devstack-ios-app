@@ -14,15 +14,15 @@ enum MainTab: Int {
 }
 
 class MainTabBarController: UITabBarController {
-    
+
     static func instantiate() -> MainTabBarController {
         return StoryboardScene.Main.initialScene.instantiate()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
     }

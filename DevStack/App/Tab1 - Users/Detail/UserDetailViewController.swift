@@ -24,7 +24,7 @@ final class UserDetailViewController: BaseViewController {
     // MARK: UI components
     @IBOutlet private weak var userImageView: UserImageView!
     @IBOutlet private weak var userNameLabel: UILabel!
-    
+
     // MARK: Stored properties
     private var userId: String!
     private var user: User? {
@@ -33,7 +33,7 @@ final class UserDetailViewController: BaseViewController {
             userNameLabel.text = user?.fullName
         }
     }
-    
+
     // MARK: Inits
     static func instantiate(viewModel: UserDetailViewModel, userId: String) -> UserDetailViewController {
         let vc = StoryboardScene.UserDetail.initialScene.instantiate()
@@ -50,10 +50,10 @@ final class UserDetailViewController: BaseViewController {
     // MARK: Default methods
     override func setupViewModel() {
         super.setupViewModel()
-        
+
         let input = UserDetailViewModel.Input()
         let output = viewModel.transform(input: input)
-        
+
         output.getUserDetailEvent.drive(onNext: { [weak self] event in
             if let userDetail = event.data {
                 self?.user = userDetail
@@ -63,7 +63,7 @@ final class UserDetailViewController: BaseViewController {
 
     override func setupUI() {
         super.setupUI()
-        
+
         navigationItem.title = L10n.user_detail_view_toolbar_title
     }
 

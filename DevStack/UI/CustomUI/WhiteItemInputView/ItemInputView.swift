@@ -9,11 +9,11 @@
 import UIKit
 
 class ItemInputView: XIBView {
-    
+
     override var nibName: String {
         return ItemInputView.nameOfClass
     }
-    
+
     @IBOutlet weak var titleLabel: LocalizedLabel!
     @IBOutlet weak var backgroundEnabledView: UIView! {
         didSet {
@@ -26,14 +26,14 @@ class ItemInputView: XIBView {
             backgroundDisabledView.layer.borderWidth = 0.0
         }
     }
-    
+
     @IBOutlet weak var inputTextField: LocalizedTextField! {
         didSet {
             inputTextField.pasteActionEnabled = false
         }
     }
-    
-    var isEnabled : Bool = true {
+
+    var isEnabled: Bool = true {
         didSet {
             backgroundEnabledView.isHidden = !isEnabled
             backgroundDisabledView.isHidden = isEnabled

@@ -9,10 +9,10 @@
 import UIKit
 
 open class LocalizedImageView: UIImageView {
-    
+
     override open func awakeFromNib() {
         super.awakeFromNib()
         image = image?.imageFlippedForRightToLeftLayoutDirection()
     }
-    
+
 }

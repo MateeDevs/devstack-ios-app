@@ -11,13 +11,13 @@ import RxSwift
 import RxCocoa
 
 extension ObservableType {
-    
+
     public func asDriverOnErrorJustComplete() -> Driver<E> {
-        asDriver { error in
+        asDriver { _ in
             Driver.empty()
         }
     }
-    
+
     func mapToLce<T: Any>(_ errors: LceErrors? = nil) -> Observable<Lce<T>> where E == T {
         return flatMap({ object -> Observable<Lce<T>> in
             Observable.just(Lce<T>(data: object))
@@ -25,7 +25,7 @@ extension ObservableType {
             error.asLceError(errors)
         }).startWith(Lce(loading: true))
     }
-    
+
     func mapToLce<T: Any>(_ errors: LceErrors? = nil) -> Observable<Lce<[T]>> where E == [T] {
         return flatMap({ objects -> Observable<Lce<[T]>> in
             Observable.just(Lce<[T]>(data: objects))
@@ -33,7 +33,7 @@ extension ObservableType {
             error.asLceError(errors)
         }).startWith(Lce(loading: true))
     }
-    
+
     func mapToLceVoid(_ errors: LceErrors? = nil) -> Observable<Lce<Void>> {
         return map { _ in
             Lce(data: Void())
@@ -41,5 +41,5 @@ extension ObservableType {
             error.asLceError(errors)
         }).startWith(Lce(loading: true))
     }
-    
+
 }

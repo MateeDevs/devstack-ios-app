@@ -9,62 +9,62 @@
 import UIKit
 
 @IBDesignable open class TextFieldWithHint: UIView {
-    
+
     public let textField = UITextField()
-    
+
     @IBOutlet public weak var delegate: UITextFieldDelegate?
-    
+
     private let hintLabel = UILabel()
-    
+
     @IBInspectable public var hint: String = "" {
         didSet {
             hintLabel.text = NSLocalizedString(hint, comment: "")
         }
     }
-    
+
     @IBInspectable public var autocorrectionType: Bool = true {
         didSet {
             textField.autocorrectionType = autocorrectionType ? .yes : .no
         }
     }
-    
+
     @IBInspectable public var spellCheckingType: Bool = true {
         didSet {
             textField.spellCheckingType = spellCheckingType ? .yes : .no
         }
     }
-    
+
     @IBInspectable public var isSecureTextEntry: Bool = false {
         didSet {
             textField.isSecureTextEntry = isSecureTextEntry
         }
     }
-    
+
     override open func awakeFromNib() {
         super.awakeFromNib()
-        
+
         // Setup a hint label
         hintLabel.textColor = AppTheme.Colors.textFieldHint
         hintLabel.font = AppTheme.Fonts.textFieldHint
-        
+
         addSubview(hintLabel)
         hintLabel.translatesAutoresizingMaskIntoConstraints = false
         hintLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
         hintLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
         hintLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
-        
+
         // Setup a view with a border around the text field
         let textFieldView = UIView()
         textFieldView.layer.borderWidth = 2.0
         textFieldView.layer.borderColor = AppTheme.Colors.textFieldBorder.cgColor
-        
+
         addSubview(textFieldView)
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
         textFieldView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
         textFieldView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
         textFieldView.topAnchor.constraint(equalTo: hintLabel.bottomAnchor, constant: 4).isActive = true
         textFieldView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
+
         // Setup a text field
         textField.font = AppTheme.Fonts.textField
         textField.borderStyle = .none
@@ -72,7 +72,7 @@ import UIKit
         textField.returnKeyType = .done
         textField.textContentType = UITextContentType(rawValue: "")
         delegate = textField.delegate
-        
+
         textFieldView.addSubview(textField)
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.leadingAnchor.constraint(equalTo: textFieldView.leadingAnchor, constant: 8).isActive = true
@@ -80,5 +80,5 @@ import UIKit
         textField.topAnchor.constraint(equalTo: textFieldView.topAnchor).isActive = true
         textField.bottomAnchor.constraint(equalTo: textFieldView.bottomAnchor).isActive = true
     }
-    
+
 }

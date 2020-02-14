@@ -9,7 +9,7 @@
 import UIKit
 
 class WhiteItemInputView: ItemInputView {
-    
+
     override var nibName: String {
         return WhiteItemInputView.nameOfClass
     }

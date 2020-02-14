@@ -9,7 +9,7 @@
 import Foundation
 
 extension Bool {
-    
+
     public func toString() -> String? {
         self ? "true" : "false"
     }

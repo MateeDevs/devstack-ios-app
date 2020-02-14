@@ -9,25 +9,25 @@
 import UIKit
 
 open class InputViewController: BaseViewController {
-    
+
     // MARK: UI components
     @IBOutlet public weak var scrollView: UIScrollView?
-    
+
     // MARK: Lifecycle methods
     override open func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if let scrollView = scrollView {
             scrollView.keyboardDismissMode = .interactive
         }
     }
-    
+
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
+
     // MARK: Additional methods
     @objc private func keyboardWillShow(notification: NSNotification) {
         guard let scrollView = scrollView,
@@ -38,7 +38,7 @@ open class InputViewController: BaseViewController {
         contentInset.bottom = keyboardFrame.size.height + 50
         scrollView.contentInset = contentInset
     }
-    
+
     @objc private func keyboardWillHide(notification: NSNotification) {
         guard let scrollView = scrollView else { return }
         let contentInset: UIEdgeInsets = UIEdgeInsets.zero
@@ -62,7 +62,7 @@ extension InputViewController: UITextViewDelegate {
             }
         }
     }
-    
+
     open func textViewDidEndEditing(_ textView: UITextView) {
         if let localizedTextView = textView as? LocalizedTextView {
             if textView.text == "" {

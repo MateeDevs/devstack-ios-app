@@ -9,19 +9,19 @@
 import UIKit
 
 class UsersFlowController: FlowController, UsersFlowDelegate, UserDetailFlowDelegate {
-    
+
     override func setup() -> UIViewController {
         let vm = UsersViewModel(dependencies: dependencies)
         let vc = UsersViewController.instantiate(viewModel: vm)
         vc.flowDelegate = self
         return vc
     }
-    
+
     func showUserDetail(userId: String) {
         let vm = UserDetailViewModel(dependencies: dependencies, userId: userId)
         let vc = UserDetailViewController.instantiate(viewModel: vm, userId: userId)
         vc.flowDelegate = self
         navigationController.show(vc, sender: nil)
     }
-    
+
 }

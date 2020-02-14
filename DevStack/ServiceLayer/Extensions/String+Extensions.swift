@@ -9,11 +9,11 @@
 import Foundation
 
 extension String {
-    
+
     var utf8Encoded: Data {
         data(using: .utf8)!
     }
-    
+
     func convertFromISO8601(dateFormat: String = NetworkingConstants.iso8601DefaultFormat, timeZone: TimeZone? = TimeZone.current) -> Date {
         let formatter = DateFormatter()
         formatter.calendar = Calendar(identifier: .iso8601)

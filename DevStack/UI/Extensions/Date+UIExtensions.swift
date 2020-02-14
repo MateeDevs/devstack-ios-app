@@ -21,7 +21,7 @@ public enum DateFormat: String {
 }
 
 extension Date {
-    
+
     /// Basic conversion from Date to String using native date and time styles.
     public func toString(dateStyle: DateFormatter.Style = .medium, timeStyle: DateFormatter.Style = .short) -> String {
         let formatter = DateFormatter()
@@ -30,7 +30,7 @@ extension Date {
         formatter.doesRelativeDateFormatting = true
         return formatter.string(from: self)
     }
-    
+
     /// Conversion from Date to String based on a given template.
     public func toStringWithTemplate(_ template: DateTemplate) -> String {
         let formatter = DateFormatter()
@@ -38,7 +38,7 @@ extension Date {
         formatter.doesRelativeDateFormatting = true
         return formatter.string(from: self)
     }
-    
+
     /// Conversion from Date to String based on a given date format.   
     /// - Please note that this conversion does not respect user's locale/preferences.
     public func toStringWithFormat(_ dateFormat: DateFormat) -> String {
@@ -46,7 +46,7 @@ extension Date {
         formatter.dateFormat = dateFormat.rawValue
         return formatter.string(from: self)
     }
-    
+
     /// Elapsed time between date and now (nil for future dates).
     /// - Converted into localized String "Before xyz days/hours/minutes"
     public var elapsedTimeString: String? {

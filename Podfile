@@ -28,6 +28,7 @@ def shared_pods
       
     # Other utilities
     pod 'SwiftGen'
+    pod 'SwiftLint'
 
     # Flipper
     if ENV['CI'] == nil

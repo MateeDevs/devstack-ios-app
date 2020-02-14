@@ -19,12 +19,12 @@ public struct DataValidator {
     public static func validateEmail(_ email: String) -> Bool {
         do {
             let regex = try NSRegularExpression(pattern: "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$", options: [NSRegularExpression.Options.caseInsensitive])
-            return regex.firstMatch(in: email, options: [], range: NSMakeRange(0, email.count)) != nil
+            return regex.firstMatch(in: email, options: [], range: NSRange(location: 0, length: email.count)) != nil
         } catch _ as NSError {
             return false
         }
     }
-    
+
     ///
     /// Checks whether a given password meets requirements
     ///
@@ -53,5 +53,5 @@ public struct DataValidator {
             return nil
         }
     }
-    
+
 }

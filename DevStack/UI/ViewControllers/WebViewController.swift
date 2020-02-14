@@ -10,22 +10,22 @@ import UIKit
 import WebKit
 
 public class WebViewController: BaseViewController {
-    
+
     // MARK: Stored properties
     private var url: URL
     private var shouldAddCookies: Bool = false
-    
+
     // MARK: Inits
     public init(url: URL, shouldAddCookies: Bool = false) {
         self.url = url
         self.shouldAddCookies = shouldAddCookies
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: Lifecycle methods
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +35,14 @@ public class WebViewController: BaseViewController {
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         webView.navigationDelegate = self
         view.addSubview(webView)
-        
+
         // Add cookies
         if shouldAddCookies, let cookies = HTTPCookieStorage.shared.cookies {
             for cookie in cookies {
                 webView.configuration.websiteDataStore.httpCookieStore.setCookie(cookie, completionHandler: nil)
             }
         }
-        
+
         webView.load(URLRequest(url: url))
     }
 }

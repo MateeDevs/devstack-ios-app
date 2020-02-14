@@ -12,8 +12,8 @@ import os.log
 /// Predefined OSLog categories
 /// - Idea taken from [AckeeCZ iOS-MVVM-ProjectTemplate](https://github.com/AckeeCZ/iOS-MVVM-ProjectTemplate)
 public enum LoggerCategory {
-    case app,networking,lifecycle
-    
+    case app, networking, lifecycle
+
     /// OSLogs for predefined categories
     public var log: OSLog {
         switch self {
@@ -27,7 +27,7 @@ public enum LoggerCategory {
 /// Wrapper for os_log function
 /// - Idea taken from [Unified Logging Wrapper](https://gist.github.com/smosko/6b8c161a7ae092e7b72e891a5050deaa)
 public struct Logger {
-    
+
     private static func log(_ message: StaticString, _ a: [CVarArg], category: LoggerCategory, type: OSLogType) {
         // The Swift overlay of os_log prevents from accepting an unbounded number of args
         // Related issue: http://www.openradar.me/33203955
@@ -41,27 +41,27 @@ public struct Logger {
         default: os_log("Can't log message. Wrong number of arguments!", log: category.log, type: type)
         }
     }
-    
+
     /// Log OSLogType.default message
     public static func `default`(_ message: StaticString, _ args: CVarArg..., category: LoggerCategory) {
         log(message, args, category: category, type: .default)
     }
-    
+
     /// Log OSLogType.info message
     public static func info(_ message: StaticString, _ args: CVarArg..., category: LoggerCategory) {
         log(message, args, category: category, type: .info)
     }
-    
+
     /// Log OSLogType.debug message
     public static func debug(_ message: StaticString, _ args: CVarArg..., category: LoggerCategory) {
         log(message, args, category: category, type: .debug)
     }
-    
+
     /// Log OSLogType.error message
     public static func error(_ message: StaticString, _ args: CVarArg..., category: LoggerCategory) {
         log(message, args, category: category, type: .error)
     }
-    
+
     /// Log OSLogType.fault message
     public static func fault(_ message: StaticString, _ args: CVarArg..., category: LoggerCategory) {
         log(message, args, category: category, type: .fault)

@@ -12,7 +12,7 @@ import RxSwift
 import RxRealm
 
 extension ObservableType {
-    
+
     ///
     /// Transformation that saves an object to the database.
     ///
@@ -29,7 +29,7 @@ extension ObservableType {
             return realm.rx.save(object)
         })
     }
-    
+
     ///
     /// Transformation that saves an array of objects to the database.
     ///
@@ -41,7 +41,7 @@ extension ObservableType {
             return realm.rx.save(objects)
         })
     }
-    
+
     ///
     /// Transformation that append an object to a given list and saves it to the database.
     ///
@@ -59,7 +59,7 @@ extension ObservableType {
             return realm.rx.appendToList(list, objects: [object]).map({ _ in object })
         })
     }
-    
+
     ///
     /// Transformation that append all objects from an array to a given list and saves it to the database.
     ///
@@ -72,7 +72,7 @@ extension ObservableType {
             return realm.rx.appendToList(list, objects: objects).map({ _ in objects })
         })
     }
-    
+
 }
 
 extension Reactive where Base: Realm {
@@ -95,7 +95,7 @@ extension Reactive where Base: Realm {
             return Disposables.create()
         }
     }
-    
+
     func save<T: Object>(_ objects: [T], withApiModel: Bool = true) -> Observable<[T]> {
         Observable.create { observer in
             do {
@@ -117,7 +117,7 @@ extension Reactive where Base: Realm {
             return Disposables.create()
         }
     }
-    
+
     func appendToList<T: Object>(_ list: List<T>, objects: [T], withApiModel: Bool = true) -> Observable<[T]> {
         Observable.create { observer in
             do {
@@ -149,7 +149,7 @@ extension Reactive where Base: Realm {
             return Disposables.create()
         }
     }
-    
+
     func delete<T: Object>(_ object: T) -> Observable<Void> {
         Observable.create { observer in
             do {

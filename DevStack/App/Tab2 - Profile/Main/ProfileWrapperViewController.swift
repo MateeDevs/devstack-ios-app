@@ -23,7 +23,7 @@ final class ProfileWrapperViewController: BaseViewController {
     // MARK: UI components
     @IBOutlet weak var tabBarView: TabBarView!
     @IBOutlet weak var containerView: UIView!
-    
+
     // MARK: Stored properties
     private var viewControllers: [BaseViewController] = []
     private var currentViewController: BaseViewController?
@@ -38,14 +38,14 @@ final class ProfileWrapperViewController: BaseViewController {
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tabBarView.delegate = self
         tabBarView.select(0)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         tabBarView.configureViews()
     }
 
@@ -56,9 +56,9 @@ final class ProfileWrapperViewController: BaseViewController {
 
     override func setupUI() {
         super.setupUI()
-        
+
 		navigationItem.title = L10n.profile_view_toolbar_title
-        
+
         tabBarView.buttonBackgroundColor = AppTheme.Colors.primaryColor
         tabBarView.buttonBackgroundColorHighlighted = AppTheme.Colors.primaryColor
         tabBarView.buttonMainLabelColor = .white
@@ -76,20 +76,20 @@ extension ProfileWrapperViewController: TabBarViewDelegate {
         if let controller = currentViewController {
             removeViewController(controller: controller)
         }
-        
+
         currentViewController = viewControllers[tag]
-        
+
         if let controller = currentViewController {
             addViewController(controller: controller)
         }
     }
-    
+
     func removeViewController(controller: BaseViewController) {
         controller.willMove(toParent: nil)
         controller.view.removeFromSuperview()
         controller.removeFromParent()
     }
-    
+
     func addViewController(controller: BaseViewController) {
         addChild(controller)
         containerView.addSubview(controller.view)

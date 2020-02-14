@@ -9,9 +9,9 @@
 import UIKit
 
 class UserTableViewCell: BaseTableViewCell {
-    
+
     @IBOutlet private weak var nameLabel: UILabel!
-    
+
     func setupWithUser(_ user: User) {
         nameLabel.text = user.fullName
     }

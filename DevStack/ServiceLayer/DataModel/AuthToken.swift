@@ -9,15 +9,15 @@
 import Foundation
 
 class AuthToken: Codable {
-    
+
     // MARK: API properties
     var userId: String = ""
     var email: String = ""
     var token: String = ""
-    
+
     // Commented code below is just for show case purpose
     // It is synthesized automatically and therefore should be omitted if you don't need to change it
-    
+
 //    // MARK: Mapping
 //    enum CodingKeys: String, CodingKey {
 //        case userId

@@ -9,7 +9,7 @@
 import UIKit
 
 class AppFlowController: FlowController, MainFlowControllerDelegate, OnboardingFlowControllerDelegate {
-    
+
     func start() {
         if KeychainStore.get(.userId) != nil {
             setupMain()
@@ -17,14 +17,14 @@ class AppFlowController: FlowController, MainFlowControllerDelegate, OnboardingF
             presentOnboarding()
         }
     }
-    
+
     func setupMain() {
         let fc = MainFlowController(navigationController: navigationController, dependencies: dependencies)
         fc.delegate = self
         let rootVc = startChildFlow(fc)
         navigationController.viewControllers = [rootVc]
     }
-    
+
     func presentOnboarding() {
         let nc = UINavigationController()
         let fc = OnboardingFlowController(navigationController: nc, dependencies: dependencies)

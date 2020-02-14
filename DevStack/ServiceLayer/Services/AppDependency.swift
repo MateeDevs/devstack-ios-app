@@ -14,7 +14,7 @@ public struct AppDependency: HasNoService, HasLoginService, HasUserService, HasL
     public let userService: UserService
     public let locationManager: LocationManager
     public let firebaseManager: FirebaseManager
-    
+
     public init(loginService: LoginService, userService: UserService, locationManager: LocationManager, firebaseManager: FirebaseManager) {
         self.loginService = loginService
         self.userService = userService

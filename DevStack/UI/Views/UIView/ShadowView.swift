@@ -9,10 +9,10 @@
 import UIKit
 
 open class ShadowView: UIView {
-    
+
     override open func awakeFromNib() {
         super.awakeFromNib()
-        
+
         layer.shadowColor = UIColorCompatible.systemGray4.cgColor
         layer.shadowOpacity = 0.5
         layer.shadowOffset = CGSize(width: 0, height: 2)

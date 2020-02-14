@@ -9,9 +9,9 @@
 import Foundation
 
 struct StatusCode {
-    
+
     // Codes 100 - 599 are reserved for HTTP status codes
-    
+
     static let unknown = 0
     static let networkError = 900
     static let databaseError = 901

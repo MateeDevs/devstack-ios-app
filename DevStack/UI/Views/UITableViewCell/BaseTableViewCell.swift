@@ -9,29 +9,29 @@
 import UIKit
 
 @IBDesignable open class BaseTableViewCell: UITableViewCell {
-    
+
     public static let prefferedHeight: CGFloat = 44.0
-    
+
     @IBInspectable public var showDefaultSeparator: Bool = true {
         didSet {
             separator.isHidden = showDefaultSeparator
         }
     }
-    
+
     @IBInspectable public var separatorColor: UIColor = AppTheme.Colors.separator {
         didSet {
             separator.backgroundColor = separatorColor
         }
     }
-    
+
     private var separator = UIView()
-    
+
     override open func awakeFromNib() {
         super.awakeFromNib()
-        
+
         addSeparator()
     }
-    
+
     private func addSeparator() {
         contentView.addSubview(separator)
         separator.translatesAutoresizingMaskIntoConstraints = false

@@ -9,13 +9,13 @@
 import UIKit
 
 open class LocalizedTextField: UITextField {
-    
+
     override open func awakeFromNib() {
         super.awakeFromNib()
-        
+
         if let placeholder = placeholder {
             self.placeholder = NSLocalizedString(placeholder, comment: "")
         }
     }
-    
+
 }

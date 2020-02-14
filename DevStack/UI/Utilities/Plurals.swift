@@ -19,7 +19,7 @@ public enum Plurals: String {
     case seconds_before
     case meters
     case points
-    
+
     public func stringForCount(_ count: Int) -> String {
         if count == 0 {
             return String(format: NSLocalizedString("zero_\(rawValue)", comment: ""), count)

@@ -11,7 +11,7 @@ import RealmSwift
 import RxSwift
 
 struct DatabaseManager {
-    
+
     ///
     /// Generic function for observing on a specified object from database.
     ///
@@ -21,16 +21,16 @@ struct DatabaseManager {
     /// - returns: Observable which emits Lce of a given type.
     ///
     func observableObject<T: Object>(_ type: T.Type, id: String, primaryKeyName: String = "id") -> Observable<Lce<T>> {
-        
+
         let realm = try! Realm()
         let dbObjects = realm.objects(T.self).filter(NSPredicate(format: "\(primaryKeyName) == %@", id))
-        
+
         return Observable.collection(from: dbObjects).flatMap { (objects) -> Observable<Lce<T>> in
             guard let object = objects.first else { return Observable.empty() }
             return Observable.just(Lce(data: object))
         }
     }
-    
+
     ///
     /// Generic function for observing on a specified collection of objects from database.
     ///
@@ -41,22 +41,22 @@ struct DatabaseManager {
     /// - returns: Observable which emits Lce with Array of a given type.
     ///
     func observableCollection<T: Object>(_ type: T.Type, predicate: NSPredicate? = nil, sortBy: String? = nil, ascending: Bool? = nil) -> Observable<Lce<[T]>> {
-        
+
         let realm = try! Realm()
         var dbObjects = realm.objects(T.self)
-        
+
         if let predicate = predicate {
             dbObjects = dbObjects.filter(predicate)
         }
-        
+
         if let sortBy = sortBy, let ascending = ascending {
             dbObjects = dbObjects.sorted(byKeyPath: sortBy, ascending: ascending)
         }
-        
+
         return Observable.array(from: dbObjects).flatMap { (objects) -> Observable<Lce<[T]>> in
             guard objects.count > 0 else { return Observable.just(Lce(data: [])) }
             return Observable.just(Lce(data: objects))
         }
     }
-    
+
 }

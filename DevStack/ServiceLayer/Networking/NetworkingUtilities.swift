@@ -9,7 +9,7 @@
 import Foundation
 
 struct NetworkingUtilities {
-    
+
     static func stubbedResponse(_ filename: String) -> Data! {
         @objc class TestClass: NSObject { }
         let bundle = Bundle(for: TestClass.self)

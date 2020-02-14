@@ -9,13 +9,13 @@
 import UIKit
 
 open class LocalizedBarButtonItem: UIBarButtonItem {
-    
+
     override open func awakeFromNib() {
         super.awakeFromNib()
-        
+
         if let title = self.title {
             self.title = NSLocalizedString(title, comment: "")
         }
     }
-    
+
 }

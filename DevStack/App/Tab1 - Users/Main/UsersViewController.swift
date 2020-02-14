@@ -24,7 +24,7 @@ final class UsersViewController: BaseTableViewController<User> {
     // MARK: UI components
 
     // MARK: Stored properties
-    
+
     // MARK: Inits
     static func instantiate(viewModel: UsersViewModel) -> UsersViewController {
         let vc = StoryboardScene.Users.initialScene.instantiate()
@@ -35,21 +35,21 @@ final class UsersViewController: BaseTableViewController<User> {
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         registerCells([UserTableViewCell.nameOfClass])
     }
 
     // MARK: Default methods
     override func setupViewModel() {
         super.setupViewModel()
-        
+
         let input = UsersViewModel.Input(page: page)
         let output = viewModel.transform(input: input)
-        
+
         output.getUsersEvent.drive(onNext: { [weak self] event in
             self?.handleDatabaseData(event)
         }).disposed(by: disposeBag)
-        
+
         output.downloadUsersEvent.drive(onNext: { [weak self] event in
             self?.handleNetworkData(event)
         }).disposed(by: disposeBag)
@@ -57,20 +57,20 @@ final class UsersViewController: BaseTableViewController<User> {
 
     override func setupUI() {
         super.setupUI()
-        
+
 		navigationItem.title = L10n.users_view_toolbar_title
     }
 
     // MARK: TableView methods
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.nameOfClass, for: indexPath) as? UserTableViewCell else { return UITableViewCell() }
-        
+
         let user = items[indexPath.row]
         cell.setupWithUser(user)
-        
+
         return cell
     }
-    
+
     override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = items[indexPath.row]
         flowDelegate?.showUserDetail(userId: user.id)

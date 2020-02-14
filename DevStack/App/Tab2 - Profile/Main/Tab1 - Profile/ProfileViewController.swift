@@ -28,7 +28,7 @@ final class ProfileViewController: BaseViewController {
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var locationLabel: UILabel!
     @IBOutlet private weak var logoutButton: PrimaryButton!
-    
+
     // MARK: Stored properties
     private var user: User? {
         didSet {
@@ -36,7 +36,7 @@ final class ProfileViewController: BaseViewController {
             userNameLabel.text = user?.fullName
         }
     }
-    
+
     // MARK: Inits
     static func instantiate(viewModel: ProfileViewModel) -> ProfileViewController {
         let vc = StoryboardScene.Profile.initialScene.instantiate()
@@ -86,5 +86,5 @@ final class ProfileViewController: BaseViewController {
         userImageView.isSkeletonable = true
         userNameLabel.isSkeletonable = true
     }
-    
+
 }

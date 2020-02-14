@@ -40,7 +40,7 @@ final class RegistrationViewController: InputViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .default
     }
@@ -48,12 +48,12 @@ final class RegistrationViewController: InputViewController {
     // MARK: Default methods
     override func setupViewModel() {
         super.setupViewModel()
-        
+
         let input = RegistrationViewModel.Input(email: emailTextField.textField.rx.text.orEmpty.asDriver(),
                                                 password: passwordTextField.textField.rx.text.orEmpty.asDriver(),
                                                 registerButtonTaps: registerButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
-        
+
         output.registrationEvent.drive(onNext: { [weak self] event in
             if event.isLoading {
                 self?.showWhisper(message: L10n.signing_up)
@@ -64,11 +64,11 @@ final class RegistrationViewController: InputViewController {
                 self?.flowDelegate?.popRegistration()
             }
         }).disposed(by: disposeBag)
-        
+
         output.registerButtonEnabled.drive(onNext: { [weak self] enabled in
             self?.registerButton.isEnabled = enabled
         }).disposed(by: disposeBag)
-        
+
         loginButton.rx.tap.bind { [weak self] in
             self?.flowDelegate?.popRegistration()
         }.disposed(by: disposeBag)
@@ -76,7 +76,7 @@ final class RegistrationViewController: InputViewController {
 
     override func setupUI() {
         super.setupUI()
-        
+
         emailTextField.textField.keyboardType = .emailAddress
         passwordTextField.textField.keyboardType = .asciiCapable
     }

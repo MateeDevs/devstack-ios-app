@@ -12,18 +12,18 @@ open class LocalizedNavigationItem: UINavigationItem {
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        
+
         if let title = title {
             self.title = NSLocalizedString(title, comment: "")
         }
-        
+
         if let backButtonTitle = backBarButtonItem?.title {
             self.backBarButtonItem?.title = NSLocalizedString(backButtonTitle, comment: "")
         }
-        
+
         if let prompt = prompt {
             self.prompt = NSLocalizedString(prompt, comment: "")
         }
     }
-    
+
 }

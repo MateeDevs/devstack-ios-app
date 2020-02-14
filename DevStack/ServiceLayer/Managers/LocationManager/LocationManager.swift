@@ -15,13 +15,13 @@ public protocol HasLocationManager {
 }
 
 public class LocationManager {
-    
+
     private lazy var locationManager: CLLocationManager = {
         let locationMgr = CLLocationManager()
         locationMgr.requestWhenInUseAuthorization()
         return locationMgr
     }()
-    
+
     /// Check whether the location services are enabled and authorized
     public static func isLocationEnabled() -> Bool {
         if CLLocationManager.locationServicesEnabled() {
@@ -35,7 +35,7 @@ public class LocationManager {
             return false
         }
     }
-    
+
     /// Observe current location
     public func getCurrentLocation(withAccuracy accuracy: CLLocationAccuracy = kCLLocationAccuracyThreeKilometers) -> Observable<CLLocation> {
         return locationManager.rx.didUpdateLocations.map({ locations in

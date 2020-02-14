@@ -9,15 +9,15 @@
 import UIKit
 
 class HeadlineLabel: LocalizedLabel {
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         textColor = AppTheme.Colors.headlineLabel
         font = AppTheme.Fonts.headlineLabel
         numberOfLines = 1
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.75
     }
-    
+
 }

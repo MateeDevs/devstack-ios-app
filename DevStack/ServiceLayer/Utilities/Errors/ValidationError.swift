@@ -9,13 +9,13 @@
 import Foundation
 
 public struct ValidationError: LocalizedError {
-    
+
     private let message: String
-    
+
     public init(_ message: String) {
         self.message = message
     }
-    
+
     public var errorDescription: String? {
         message
     }

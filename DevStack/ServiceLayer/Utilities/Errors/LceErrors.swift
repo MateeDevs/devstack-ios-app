@@ -9,10 +9,10 @@
 import Foundation
 
 struct LceErrors {
-    
+
     let messages: [Int: String]
     let defaultMessage: String
-    
+
     init(messages: [Int: String], defaultMessage: String) {
         self.messages = messages
         self.defaultMessage = defaultMessage

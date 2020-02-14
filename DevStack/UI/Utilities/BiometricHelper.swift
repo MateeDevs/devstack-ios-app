@@ -15,7 +15,7 @@ public enum BiometricType {
 }
 
 public struct Biometric {
-    
+
     ///
     /// Checks which type of biometric is supported
     ///
@@ -24,7 +24,7 @@ public struct Biometric {
     public static func biometricType() -> BiometricType {
         let authContext = LAContext()
         if #available(iOS 11, *) {
-            let _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+            _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
             switch(authContext.biometryType) {
             case .touchID:
                 return .touch

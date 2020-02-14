@@ -12,7 +12,7 @@ open class ViewModel {
     init() {
         Logger.info("%@ initialized", "\(type(of: self))", category: .lifecycle)
     }
-    
+
     deinit {
         Logger.info("%@ deinitialized", "\(type(of: self))", category: .lifecycle)
     }

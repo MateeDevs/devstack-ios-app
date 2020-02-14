@@ -24,7 +24,7 @@ final class SettingsViewController: BaseViewController {
     @IBOutlet weak var topViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var smallButton: UIButton!
     @IBOutlet weak var largeButton: UIButton!
-    
+
     // MARK: Stored properties
 
     // MARK: Inits
@@ -41,11 +41,11 @@ final class SettingsViewController: BaseViewController {
     // MARK: Default methods
     override func setupViewModel() {
         super.setupViewModel()
-        
+
         smallButton.rx.tap.bind { [weak self] in
             self?.topViewHeightConstraint.constant = 300.0
         }.disposed(by: disposeBag)
-        
+
         largeButton.rx.tap.bind { [weak self] in
             self?.topViewHeightConstraint.constant = 1200.0
         }.disposed(by: disposeBag)

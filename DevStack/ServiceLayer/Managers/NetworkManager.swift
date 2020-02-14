@@ -11,9 +11,9 @@ import Moya
 import RxSwift
 
 struct NetworkManager {
-    
+
     private let provider = AuthenticatedProvider<MultiTarget>()
-    
+
     ///
     /// Function for observing on a specified network call.
     /// Automatically filters out API errors.

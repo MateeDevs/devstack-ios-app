@@ -9,7 +9,7 @@
 import Foundation
 
 public struct LocationHelper {
-    
+
     ///
     /// Countries and ISO codes from system
     ///
@@ -18,16 +18,16 @@ public struct LocationHelper {
     ///
     public static func getCountriesAndCodes(sorted: Bool = true) -> [(text: String, data: AnyObject?)] {
         var countriesAndCodes: [(text: String, data: AnyObject?)] = []
-        
+
         for code in NSLocale.isoCountryCodes as [String] {
             let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: code])
             let name = NSLocale(localeIdentifier: LanguageManager.shared.selectedLanguage.rawValue).displayName(forKey: NSLocale.Key.identifier, value: id) ?? code
             countriesAndCodes.append((text: name, data: code as AnyObject?))
         }
-        
-        return sorted ? countriesAndCodes.sorted(by: {$0.text < $1.text}) : countriesAndCodes
+
+        return sorted ? countriesAndCodes.sorted(by: { $0.text < $1.text }) : countriesAndCodes
     }
-    
+
     ///
     /// Convert ISO country code to full country name
     ///

@@ -14,27 +14,27 @@ public protocol HasUserService {
 }
 
 public class UserService {
-    
+
     private let database = DatabaseManager()
     private let network = NetworkManager()
-    
+
     public func getUsers() -> Observable<Lce<[User]>> {
         let db = database.observableCollection(User.self)
         return db
     }
-    
+
     public func downloadUsersForPage(_ page: Int) -> Observable<Lce<[User]>> {
         let endpoint = UserAPI.getUsersForPage(page)
         return network.observableRequest(endpoint).map([User].self, atKeyPath: "data").save().mapToLce()
     }
-    
+
     public func getUserById(_ id: String) -> Observable<Lce<User>> {
         let db = database.observableObject(User.self, id: id)
         let endpoint = UserAPI.getUserById(id)
         let net = network.observableRequest(endpoint).map(User.self).save().mapToLce().filter({ $0.hasError })
         return Observable.merge(db, net).startWith(Lce(loading: true))
     }
-    
+
     public func updateUser(_ user: User) -> Observable<Lce<User>> {
         let endpoint = UserAPI.updateUser(user)
         return network.observableRequest(endpoint).map(User.self).save().mapToLce()

@@ -9,22 +9,22 @@
 import SafariServices
 
 public class SafariViewController: SFSafariViewController {
-    
+
     // MARK: Stored properties
     private let url: URL
-    
+
     // MARK: Inits
     override public init(url URL: URL, configuration: SFSafariViewController.Configuration = SFSafariViewController.Configuration()) {
         self.url = URL
         super.init(url: URL, configuration: configuration)
     }
-    
+
     // MARK: Lifecycle methods
     override public func viewDidLoad() {
         super.viewDidLoad()
         preferredControlTintColor = AppTheme.Colors.primaryColor
     }
-    
+
     ///
     /// Try to open universal link
     ///

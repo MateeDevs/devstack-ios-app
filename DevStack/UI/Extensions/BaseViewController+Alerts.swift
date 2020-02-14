@@ -9,7 +9,7 @@
 import UIKit
 
 extension BaseViewController {
-    
+
     ///
     /// Present UIAlertController on current top ViewController.
     ///
@@ -21,20 +21,20 @@ extension BaseViewController {
     public func showAlert(title: String, message: String? = nil,
                                  primaryAction: UIAlertAction? = nil, secondaryAction: UIAlertAction? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
+
         if let primaryAction = primaryAction {
             alert.addAction(primaryAction)
         } else {
 			alert.addAction(UIAlertAction(title: L10n.dialog_error_close_text, style: .default, handler: nil))
         }
-        
+
         if let secondaryAction = secondaryAction {
             alert.addAction(secondaryAction)
         }
-        
+
         present(alert, animated: true, completion: nil)
     }
-    
+
     ///
     /// Present UIAlertController on current top ViewController. Message is based on a given error.
     ///
@@ -47,7 +47,7 @@ extension BaseViewController {
                                           primaryAction: UIAlertAction? = nil, secondaryAction: UIAlertAction? = nil) {
         showAlert(title: title, message: error.localizedDescription, primaryAction: primaryAction, secondaryAction: secondaryAction)
     }
-    
+
     ///
     /// Present WhisperView on current top ViewController.
     ///
@@ -60,20 +60,20 @@ extension BaseViewController {
                                                 width: view.bounds.width, height: view.safeAreaInsets.top + 25))
         whisper.message = message
         whisper.backgroundColor = style.color
-        
+
         hideWhisper()
         view.addSubview(whisper)
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
             whisper.frame.origin.y = 0
         }, completion: nil)
-        
+
         if hideAfter > 0 {
             DispatchQueue.main.asyncAfter(deadline: .now() + hideAfter) { [weak self] in
                 self?.hideWhisper()
             }
         }
     }
-    
+
     ///
     /// Present WhisperView on current top ViewController. Message is based on a given error.
     ///
@@ -83,18 +83,18 @@ extension BaseViewController {
     public func showWhisperWithError(_ error: Error, hideAfter: TimeInterval = 2.5) {
         showWhisper(message: error.localizedDescription, style: .error, hideAfter: hideAfter)
     }
-    
+
     /// Hide and remove WhisperView from current top ViewController.
     public func hideWhisper() {
         for view in view.subviews {
             if view.isKind(of: WhisperView.self) {
                 UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
                     view.frame.origin.y = -view.safeAreaInsets.top - 30
-                }, completion: { finished in
+                }, completion: { _ in
                     view.removeFromSuperview()
                 })
             }
         }
     }
-    
+
 }

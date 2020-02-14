@@ -9,10 +9,10 @@
 import UIKit
 
 class TabBarButton: XIBView {
-    
+
     @IBOutlet weak var button: LocalizedButton!
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var numberView: UIView!
     @IBOutlet weak var numberLabel: UILabel!
-    
+
 }

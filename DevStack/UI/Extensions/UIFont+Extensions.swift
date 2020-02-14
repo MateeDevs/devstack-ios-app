@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIFont {
-    
+
     ///
     /// Helper for easy access to custom font.
     ///
@@ -19,7 +19,7 @@ extension UIFont {
     public static func customFont(ofSize size: CGFloat) -> UIFont? {
         UIFont(name: "CustomFont", size: size)
     }
-    
+
     ///
     /// Helper for font size scaling.
     ///
@@ -29,5 +29,5 @@ extension UIFont {
     public static func scalableFontSize(_ baseSize: CGFloat) -> CGFloat {
         ((UIScreen.main.bounds.size.height * baseSize / 568.0) * (320.0 / UIScreen.main.bounds.size.width))
     }
-    
+
 }

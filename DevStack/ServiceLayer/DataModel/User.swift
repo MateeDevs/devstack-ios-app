@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 @objcMembers public class User: Object, Codable {
-    
+
     // MARK: API properties
     public dynamic var id: String = ""
     public dynamic var email: String = ""
@@ -19,15 +19,15 @@ import RealmSwift
     public dynamic var phone: String?
     public dynamic var bio: String?
     public dynamic var pictureUrl: String?
-    
+
     // MARK: Realm API
     override public static func primaryKey() -> String? {
         "id"
     }
-    
+
     // Commented code below is just for show case purpose
     // It is synthesized automatically and therefore should be omitted if you don't need to change it
-    
+
 //    // MARK: Mapping
 //    enum CodingKeys: String, CodingKey {
 //        case id
@@ -51,7 +51,7 @@ import RealmSwift
 //        bio = try container.decodeIfPresent(String.self, forKey: .bio)
 //        pictureUrl = try container.decodeIfPresent(String.self, forKey: .pictureUrl)
 //    }
-    
+
     // MARK: Encodable
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)

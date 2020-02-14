@@ -9,11 +9,11 @@
 import UIKit
 
 class SecondaryButton: LocalizedButton {
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         tintColor = AppTheme.Colors.secondaryButtonTitle
     }
-    
+
 }

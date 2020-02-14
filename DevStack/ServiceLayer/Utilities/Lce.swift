@@ -15,21 +15,21 @@ public class Lce<T> {
     public let hasError: Bool
     public let error: Error?
     public let data: T?
-    
+
     public init(loading: Bool) {
         self.isLoading = loading
         self.hasError = false
         self.error = nil
         self.data = nil
     }
-    
+
     public init(data: T) {
         self.isLoading = false
         self.hasError = false
         self.error = nil
         self.data = data
     }
-    
+
     public init(error: Error) {
         self.isLoading = false
         self.hasError = true

@@ -15,32 +15,32 @@ protocol LoginFlowDelegate: class {
 }
 
 final class LoginViewController: InputViewController {
-    
+
     // MARK: FlowDelegate
     weak var flowDelegate: LoginFlowDelegate?
-    
+
     // MARK: ViewModels
     private var viewModel: LoginViewModel!
-    
+
     // MARK: UI components
     @IBOutlet private weak var emailTextField: TextFieldWithHint!
     @IBOutlet private weak var passwordTextField: TextFieldWithHint!
     @IBOutlet private weak var loginButton: PrimaryButton!
     @IBOutlet private weak var registerButton: SecondaryButton!
-    
+
     // MARK: Stored properties
-    
+
     // MARK: Inits
     static func instantiate(viewModel: LoginViewModel) -> LoginViewController {
         let vc = StoryboardScene.Login.initialScene.instantiate()
         vc.viewModel = viewModel
         return vc
     }
-    
+
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         #if ALPHA
         emailTextField.textField.text = "petr.chmelar@matee.cz"
         passwordTextField.textField.text = "11111111"
@@ -49,20 +49,20 @@ final class LoginViewController: InputViewController {
         passwordTextField.textField.text = "11111111"
         #endif
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .default
     }
-    
+
     // MARK: Default methods
     override func setupViewModel() {
         super.setupViewModel()
-        
+
         let input = LoginViewModel.Input(email: emailTextField.textField.rx.text.orEmpty.asDriver(),
                                          password: passwordTextField.textField.rx.text.orEmpty.asDriver(),
                                          loginButtonTaps: loginButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
-        
+
         output.loginEvent.drive(onNext: { [weak self] event in
             if event.isLoading {
                 self?.showWhisper(message: L10n.signing_in)
@@ -73,23 +73,23 @@ final class LoginViewController: InputViewController {
                 self?.flowDelegate?.dismiss()
             }
         }).disposed(by: disposeBag)
-        
+
         output.loginButtonEnabled.drive(onNext: { [weak self] enabled in
             self?.loginButton.isEnabled = enabled
         }).disposed(by: disposeBag)
-        
+
         registerButton.rx.tap.bind { [weak self] in
             self?.flowDelegate?.showRegistration()
         }.disposed(by: disposeBag)
     }
-    
+
     override func setupUI() {
         super.setupUI()
-        
+
         emailTextField.textField.keyboardType = .emailAddress
         passwordTextField.textField.keyboardType = .asciiCapable
     }
-    
+
     // MARK: Additional methods
-    
+
 }

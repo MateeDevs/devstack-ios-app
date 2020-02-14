@@ -14,12 +14,12 @@ import Realm
 /// - Just decode to your preview object during decoding phase.
 /// - Then call createFullObject() to obtain full object updated with values from preview object.
 class PreviewObject: Object {
-    
+
     func createFullObject<T: Object>() -> T {
-        
+
         // Create a new empty instance of full object
         var object = T()
-        
+
         // Try to populate with values from db
         let realm = try! Realm()
         if let id = value(forKey: "id"), let dbObject = realm.object(ofType: T.self, forPrimaryKey: id) {
@@ -27,7 +27,7 @@ class PreviewObject: Object {
             // Related issue: https://github.com/realm/realm-cocoa/issues/5714
             object = T(value: dbObject, schema: .partialPrivateShared())
         }
-        
+
         // Update with values from preview object
         let schema = RLMSchema.partialShared().schema(forClassName: String(describing: type(of: self).self))
         if let schema = schema {
@@ -35,8 +35,8 @@ class PreviewObject: Object {
                 object.setValue(value(forKey: property.name), forKey: property.name)
             }
         }
-        
+
         return object
     }
-    
+
 }

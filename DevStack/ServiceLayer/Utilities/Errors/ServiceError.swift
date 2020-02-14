@@ -13,15 +13,15 @@ struct CommonError {
 }
 
 struct ServiceError: LocalizedError {
-    
+
     let statusCode: Int
     let message: String?
-    
+
     init(statusCode: Int, message: String?) {
         self.statusCode = statusCode
         self.message = message
     }
-    
+
     public var errorDescription: String? {
 		message ?? L10n.unknown_error
     }

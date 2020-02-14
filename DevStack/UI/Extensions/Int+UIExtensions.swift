@@ -9,7 +9,7 @@
 import Foundation
 
 extension Int {
-    
+
     public func stringFormattedWithSeparator(_ separator: String = "\u{2008}") -> String {
         let formatter = NumberFormatter()
         formatter.groupingSeparator = separator

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CE2224623F598E6002D4431 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE2223123F5609B002D4431 /* NotificationCenter.framework */; };
+		0CE2224923F598E6002D4431 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE2224823F598E6002D4431 /* TodayViewController.swift */; };
+		0CE2224C23F598E6002D4431 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE2224A23F598E6002D4431 /* MainInterface.storyboard */; };
+		0CE2225023F598E6002D4431 /* DevStackToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0CE2224523F598E5002D4431 /* DevStackToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		450384752170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
 		450384762170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
 		450384772170E4FC004F43DC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450384742170E4FC004F43DC /* Bool+Extensions.swift */; };
@@ -444,7 +448,36 @@
 		E7181D24EEDED349D9549B78 /* Pods_DevStack_Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7BCD130DBE3DF8A33EE847 /* Pods_DevStack_Alpha.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0CE2224E23F598E6002D4431 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0CE2224423F598E5002D4431;
+			remoteInfo = DevStackToday;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0CE2223D23F5609B002D4431 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0CE2225023F598E6002D4431 /* DevStackToday.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0CE2223123F5609B002D4431 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		0CE2224523F598E5002D4431 /* DevStackToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DevStackToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CE2224823F598E6002D4431 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		0CE2224B23F598E6002D4431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		0CE2224D23F598E6002D4431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3108F6D7CC6CF709865E9678 /* Pods-DevStack_Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Alpha.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha.release.xcconfig"; sourceTree = "<group>"; };
 		3266EC7634F7BCD070190849 /* Pods-DevStack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack/Pods-DevStack.release.xcconfig"; sourceTree = "<group>"; };
 		450384742170E4FC004F43DC /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
@@ -621,6 +654,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0CE2224223F598E5002D4431 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CE2224623F598E6002D4431 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4558D30420FCC8FF005BC325 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -648,6 +689,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CE2224723F598E6002D4431 /* DevStackToday */ = {
+			isa = PBXGroup;
+			children = (
+				0CE2224823F598E6002D4431 /* TodayViewController.swift */,
+				0CE2224A23F598E6002D4431 /* MainInterface.storyboard */,
+				0CE2224D23F598E6002D4431 /* Info.plist */,
+			);
+			path = DevStackToday;
+			sourceTree = "<group>";
+		};
 		450392832256B14C0037BF42 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -726,6 +777,7 @@
 			isa = PBXGroup;
 			children = (
 				4558D30920FCC8FF005BC325 /* DevStack */,
+				0CE2224723F598E6002D4431 /* DevStackToday */,
 				4558D30820FCC8FF005BC325 /* Products */,
 				5BF3E3FE6D7D49981E7A931F /* Pods */,
 				6F197C24FB7B3AFC8FF9EA45 /* Frameworks */,
@@ -738,6 +790,7 @@
 				4558D30720FCC8FF005BC325 /* DevStack.app */,
 				459761D720FDD60A0034DE29 /* A-DevStack.app */,
 				459761E520FDD61E0034DE29 /* B-DevStack.app */,
+				0CE2224523F598E5002D4431 /* DevStackToday.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1229,6 +1282,7 @@
 				7226BBC8D76CB9A545614575 /* Pods_DevStack.framework */,
 				DA7BCD130DBE3DF8A33EE847 /* Pods_DevStack_Alpha.framework */,
 				7A71598D309E35AF6F901FEE /* Pods_DevStack_Beta.framework */,
+				0CE2223123F5609B002D4431 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1264,6 +1318,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0CE2224423F598E5002D4431 /* DevStackToday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0CE2225123F598E6002D4431 /* Build configuration list for PBXNativeTarget "DevStackToday" */;
+			buildPhases = (
+				0CE2224123F598E5002D4431 /* Sources */,
+				0CE2224223F598E5002D4431 /* Frameworks */,
+				0CE2224323F598E5002D4431 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DevStackToday;
+			productName = DevStackToday;
+			productReference = 0CE2224523F598E5002D4431 /* DevStackToday.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		4558D30620FCC8FF005BC325 /* DevStack */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4558D31920FCC900005BC325 /* Build configuration list for PBXNativeTarget "DevStack" */;
@@ -1271,15 +1342,19 @@
 				C41C8A2EE11E16B2E3D7151C /* [CP] Check Pods Manifest.lock */,
 				4597627A20FE13D20034DE29 /* Script for Twine */,
 				4597628020FE15250034DE29 /* Script for SwiftGen */,
+				0CC5106B23F68D19008ECB64 /* Script for SwiftLint  */,
 				4558D30320FCC8FF005BC325 /* Sources */,
 				4558D30420FCC8FF005BC325 /* Frameworks */,
 				4558D30520FCC8FF005BC325 /* Resources */,
 				591C1CB3B38410305BBE636A /* [CP] Embed Pods Frameworks */,
 				4597628220FE17930034DE29 /* Script for Firebase Crashlytics */,
+				4597628220FE17930034DE29 /* Script for Fabric */,
+				0CE2223D23F5609B002D4431 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0CE2224F23F598E6002D4431 /* PBXTargetDependency */,
 			);
 			name = DevStack;
 			productName = DevStack;
@@ -1293,6 +1368,7 @@
 				968C7269E3BACFD41354FCA7 /* [CP] Check Pods Manifest.lock */,
 				4597627B20FE14880034DE29 /* Script for Twine */,
 				459762F820FE26180034DE29 /* Script for SwiftGen */,
+				0CC5106C23F68E80008ECB64 /* Script for SwiftLint  */,
 				459761CC20FDD60A0034DE29 /* Sources */,
 				459761CF20FDD60A0034DE29 /* Frameworks */,
 				459761D020FDD60A0034DE29 /* Resources */,
@@ -1315,6 +1391,7 @@
 				0427211BE311A69B5413DF07 /* [CP] Check Pods Manifest.lock */,
 				4597627C20FE14960034DE29 /* Script for Twine */,
 				459762FB20FE265C0034DE29 /* Script for SwiftGen */,
+				0CC5106D23F6A29A008ECB64 /* Script for SwiftLint  */,
 				459761DA20FDD61E0034DE29 /* Sources */,
 				459761DD20FDD61E0034DE29 /* Frameworks */,
 				459761DE20FDD61E0034DE29 /* Resources */,
@@ -1336,10 +1413,13 @@
 		4558D2FF20FCC8FF005BC325 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Matee;
 				TargetAttributes = {
+					0CE2224423F598E5002D4431 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					4558D30620FCC8FF005BC325 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -1366,11 +1446,20 @@
 				4558D30620FCC8FF005BC325 /* DevStack */,
 				459761CB20FDD60A0034DE29 /* DevStack_Alpha */,
 				459761D920FDD61E0034DE29 /* DevStack_Beta */,
+				0CE2224423F598E5002D4431 /* DevStackToday */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0CE2224323F598E5002D4431 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CE2224C23F598E6002D4431 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4558D30520FCC8FF005BC325 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1487,6 +1576,60 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		0CC5106B23F68D19008ECB64 /* Script for SwiftLint  */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Script for SwiftLint ";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nsh \"./scripts/swiftlint.sh\"\n";
+		};
+		0CC5106C23F68E80008ECB64 /* Script for SwiftLint  */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Script for SwiftLint ";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nsh \"./scripts/swiftlint.sh\"\n";
+		};
+		0CC5106D23F6A29A008ECB64 /* Script for SwiftLint  */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Script for SwiftLint ";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nsh \"./scripts/swiftlint.sh\"\n";
 		};
 		4597627A20FE13D20034DE29 /* Script for Twine */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1704,6 +1847,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0CE2224123F598E5002D4431 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CE2224923F598E6002D4431 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4558D30320FCC8FF005BC325 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2084,6 +2235,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0CE2224F23F598E6002D4431 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0CE2224423F598E5002D4431 /* DevStackToday */;
+			targetProxy = 0CE2224E23F598E6002D4431 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		4527329823F0A4480067C712 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -2094,6 +2253,12 @@
 				4527329E23F0A5F00067C712 /* sk */,
 			);
 			name = InfoPlist.strings;
+		0CE2224A23F598E6002D4431 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0CE2224B23F598E6002D4431 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		45ECA08D21676A9D000B1124 /* Localizable.strings */ = {
@@ -2110,6 +2275,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0CE2225223F598E6002D4431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WNB34WBN42;
+				INFOPLIST_FILE = DevStackToday/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DevStackToday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0CE2225323F598E6002D4431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WNB34WBN42;
+				INFOPLIST_FILE = DevStackToday/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DevStackToday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		4558D31720FCC900005BC325 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2230,6 +2440,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DD1EE92A9740314059408958 /* Pods-DevStack.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DevStack/App/Config/Production/DevStack.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2257,6 +2468,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3266EC7634F7BCD070190849 /* Pods-DevStack.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DevStack/App/Config/Production/DevStack.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2388,6 +2600,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0CE2225123F598E6002D4431 /* Build configuration list for PBXNativeTarget "DevStackToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CE2225223F598E6002D4431 /* Debug */,
+				0CE2225323F598E6002D4431 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4558D30220FCC8FF005BC325 /* Build configuration list for PBXProject "DevStack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

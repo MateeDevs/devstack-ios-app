@@ -13,77 +13,77 @@ public protocol TabBarViewDelegate: class {
 }
 
 @IBDesignable public class TabBarView: XIBView {
-    
+
     @IBInspectable public var shouldShowNumbers: Bool = false
-    
+
     @IBInspectable public var buttonMainLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
     @IBInspectable public var buttonMainLabelFontHighlighted: UIFont = UIFont.systemFont(ofSize: 16)
-    
+
     @IBInspectable public var buttonMainLabelColor: UIColor = AppTheme.Colors.label
     @IBInspectable public var buttonMainLabelColorHighlighted: UIColor = AppTheme.Colors.label
-    
+
     @IBInspectable public var buttonNumberLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
     @IBInspectable public var buttonNumberLabelFontHighlighted: UIFont = UIFont.systemFont(ofSize: 16)
-    
+
     @IBInspectable public var buttonNumberLabelColor: UIColor = AppTheme.Colors.label
     @IBInspectable public var buttonNumberLabelColorHighlighted: UIColor = AppTheme.Colors.label
-    
+
     @IBInspectable public var buttonNumberViewBackgroundColor: UIColor = .clear
     @IBInspectable public var buttonNumberViewBackgroundColorHighlighted: UIColor = .clear
-    
+
     @IBInspectable public var buttonBackgroundColor: UIColor = .clear
     @IBInspectable public var buttonBackgroundColorHighlighted: UIColor = .clear
-    
+
     @IBInspectable public var stripViewColor: UIColor = AppTheme.Colors.primaryColor {
         didSet {
             stripView?.backgroundColor = stripViewColor
         }
     }
-    
+
     @IBOutlet private weak var stripView: UIView! {
         didSet {
             stripView.backgroundColor = stripViewColor
         }
     }
-    
+
     @IBInspectable public var stripViewHeight: CGFloat = 4 {
         didSet {
             stripViewHeightConstraint?.constant = stripViewHeight
         }
     }
-    
+
     @IBOutlet private weak var stripViewHeightConstraint: NSLayoutConstraint! {
         didSet {
             stripViewHeightConstraint.constant = stripViewHeight
         }
     }
-    
+
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var buttonsStackView: UIStackView!
     @IBOutlet private weak var leadingConstraintStripView: NSLayoutConstraint!
     @IBOutlet private weak var widthConstraintStripView: NSLayoutConstraint!
-    
+
     public weak var delegate: TabBarViewDelegate?
-    
+
     private var tabBarButtons: [TabBarButton] = []
-    
+
     public var availableOptions: [String] = [] {
         didSet {
             addButtons(titles: availableOptions)
         }
     }
-    
+
     override public func configureViews() {
         widthConstraintStripView.constant = scrollView.contentSize.width / max(CGFloat(tabBarButtons.count), 1)
     }
-    
+
     public func select(_ index: Int, animated: Bool = false) {
         guard tabBarButtons.count > index else { return }
         selectViewController(tabBarButtons[index], animated: animated)
     }
-    
+
     public func updateNumbers(_ numbers: [Int]) {
-        for index in 0...tabBarButtons.count-1 {
+        for index in 0...tabBarButtons.count - 1 {
             if numbers.count > index {
                 tabBarButtons[index].numberLabel.text = numbers[index] <= 999 ? "\(numbers[index])" : "999"
             }
@@ -91,7 +91,7 @@ public protocol TabBarViewDelegate: class {
         layoutIfNeeded()
         widthConstraintStripView.constant = scrollView.contentSize.width / max(CGFloat(tabBarButtons.count), 1)
     }
-    
+
     private func addButtons(titles: [String]) {
         removeButtonsFromStackView()
         for (index, title) in titles.enumerated() {
@@ -110,7 +110,7 @@ public protocol TabBarViewDelegate: class {
             tabBarButtons.append(btn)
         }
     }
-    
+
     private func removeButtonsFromStackView() {
         for view in buttonsStackView.arrangedSubviews {
             buttonsStackView.removeArrangedSubview(view)
@@ -118,12 +118,12 @@ public protocol TabBarViewDelegate: class {
         }
         tabBarButtons = []
     }
-    
+
     @objc private func btnSelected(_ sender: UITapGestureRecognizer? = nil) {
         guard let btn = sender?.view as? TabBarButton, !btn.button.isSelected else { return }
         selectViewController(btn, animated: true)
     }
-    
+
     private func selectViewController(_ sender: TabBarButton, animated: Bool) {
         for btn in tabBarButtons {
             if btn == sender {
@@ -152,16 +152,16 @@ public protocol TabBarViewDelegate: class {
                 btn.numberView.isHidden = shouldShowNumbers ? false : true
             }
         }
-        
+
         if animated {
             UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseIn, animations: { [weak self] in
                 self?.layoutIfNeeded()
             }, completion: nil)
         }
-        
+
         delegate?.didSelectViewController(tag: sender.tag)
     }
-    
+
     private func scrollToButton(_ btn: TabBarButton) {
         var x = btn.frame.origin.x + btn.frame.width / 2 - UIScreen.main.bounds.width / 2
         if x < 0 {
