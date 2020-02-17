@@ -13,24 +13,26 @@ import CoreLocation
 final class ProfileViewModel: ViewModel, ViewModelType {
     
     typealias Dependencies = HasUserService & HasLocationManager
-    fileprivate let dependencies: Dependencies
     
-    init(dependencies: Dependencies) {
-        self.dependencies = dependencies
-        super.init()
-    }
+    let input: Input
+    let output: Output
     
     struct Input {
     }
     
     struct Output {
         let getProfileEvent: Driver<Lce<User>>
-        let currentLocation: Observable<CLLocation>
+        let currentLocation: Driver<CLLocation>
     }
     
-    func transform(input: Input) -> Output {
+    init(dependencies: Dependencies) {
+        
         let getProfileEvent = dependencies.userService.getProfile().asDriverOnErrorJustComplete()
-        let currentLocation = dependencies.locationManager.getCurrentLocation()
-        return Output(getProfileEvent: getProfileEvent, currentLocation: currentLocation)
+        let currentLocation = dependencies.locationManager.getCurrentLocation().take(1).asDriverOnErrorJustComplete()
+        
+        self.input = Input()
+        self.output = Output(getProfileEvent: getProfileEvent, currentLocation: currentLocation)
+        
+        super.init()
     }
 }

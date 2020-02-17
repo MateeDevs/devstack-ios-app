@@ -58,12 +58,11 @@ final class LoginViewController: InputViewController {
     override func setupViewModel() {
         super.setupViewModel()
         
-        let input = LoginViewModel.Input(email: emailTextField.textField.rx.text.orEmpty.asDriver(),
-                                         password: passwordTextField.textField.rx.text.orEmpty.asDriver(),
-                                         loginButtonTaps: loginButton.rx.tap.asSignal())
-        let output = viewModel.transform(input: input)
+        emailTextField.textField.rx.text.orEmpty.bind(to: viewModel.input.email).disposed(by: disposeBag)
+        passwordTextField.textField.rx.text.orEmpty.bind(to: viewModel.input.password).disposed(by: disposeBag)
+        loginButton.rx.tap.bind(to: viewModel.input.loginButtonTaps).disposed(by: disposeBag)
         
-        output.loginEvent.drive(onNext: { [weak self] event in
+        viewModel.output.loginEvent.drive(onNext: { [weak self] event in
             if event.isLoading {
                 self?.showWhisper(message: L10n.signing_in)
             } else if let error = event.error {
@@ -74,7 +73,7 @@ final class LoginViewController: InputViewController {
             }
         }).disposed(by: disposeBag)
         
-        output.loginButtonEnabled.drive(onNext: { [weak self] enabled in
+        viewModel.output.loginButtonEnabled.drive(onNext: { [weak self] enabled in
             self?.loginButton.isEnabled = enabled
         }).disposed(by: disposeBag)
         
