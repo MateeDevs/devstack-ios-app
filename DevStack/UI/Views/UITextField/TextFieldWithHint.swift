@@ -40,9 +40,17 @@ import UIKit
         }
     }
     
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    private func setup() {
         // Setup a hint label
         hintLabel.textColor = AppTheme.Colors.textFieldHint
         hintLabel.font = AppTheme.Fonts.textFieldHint

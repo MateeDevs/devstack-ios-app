@@ -10,9 +10,17 @@ import UIKit
 
 open class LocalizedBarButtonItem: UIBarButtonItem {
     
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-        
+    override init() {
+        super.init()
+        setup()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    private func setup() {
         if let title = self.title {
             self.title = NSLocalizedString(title, comment: "")
         }

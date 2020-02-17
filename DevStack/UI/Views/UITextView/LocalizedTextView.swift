@@ -14,9 +14,17 @@ import UIKit
     private(set) var defaultColor: UIColor?
     @IBInspectable public var placeholderColor: UIColor = AppTheme.Colors.placeholder
     
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-        
+    override init(frame: CGRect, textContainer: NSTextContainer?) {
+        super.init(frame: frame, textContainer: textContainer)
+        setup()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    private func setup() {
         placeholder = NSLocalizedString(text, comment: "")
         text = placeholder
         

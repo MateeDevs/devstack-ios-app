@@ -10,9 +10,17 @@ import UIKit
 
 class HeadlineLabel: LocalizedLabel {
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    private func setup() {
         textColor = AppTheme.Colors.headlineLabel
         font = AppTheme.Fonts.headlineLabel
         numberOfLines = 1

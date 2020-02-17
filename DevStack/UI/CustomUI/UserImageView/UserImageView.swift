@@ -27,8 +27,17 @@ import AlamofireImage
         }
     }
     
-    override public func awakeFromNib() {
-        super.awakeFromNib()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    private func setup() {
         layoutIfNeeded()
         setDimensions()
         backgroundColor = .clear

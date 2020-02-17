@@ -10,9 +10,17 @@ import UIKit
 
 open class LocalizedButton: UIButton {
     
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    private func setup() {
         for state in [UIControl.State.normal, UIControl.State.highlighted, UIControl.State.selected, UIControl.State.disabled] {
             if let title = title(for: state) {
                 setTitle(NSLocalizedString(title, comment: ""), for: state)

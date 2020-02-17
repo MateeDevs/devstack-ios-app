@@ -10,9 +10,17 @@ import UIKit
 
 class PrimaryButton: EnhancedButton {
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    private func setup() {
         cornerRadius = 5.0
         backgroundColor = AppTheme.Colors.primaryButtonBackground
         setTitleColor(AppTheme.Colors.primaryButtonTitle, for: .normal)

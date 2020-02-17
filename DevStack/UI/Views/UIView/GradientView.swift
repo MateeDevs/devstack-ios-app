@@ -16,9 +16,13 @@ import UIKit
     @IBInspectable public var location1: CGFloat = 0.0
     @IBInspectable public var location2: CGFloat = 1.0
     
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        applyGradientLayer()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         applyGradientLayer()
     }
 

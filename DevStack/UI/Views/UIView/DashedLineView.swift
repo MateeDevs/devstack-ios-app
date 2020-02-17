@@ -14,10 +14,6 @@ import UIKit
     @IBInspectable public var lineLength: CGFloat = 6
     @IBInspectable public var lineGap: CGFloat = 3
     
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     override open func draw(_ rect: CGRect) {
         // Graphics context
         guard let context = UIGraphicsGetCurrentContext() else { return }

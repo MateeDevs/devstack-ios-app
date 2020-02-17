@@ -10,9 +10,17 @@ import UIKit
 
 class SecondaryButton: LocalizedButton {
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    private func setup() {
         tintColor = AppTheme.Colors.secondaryButtonTitle
     }
     
