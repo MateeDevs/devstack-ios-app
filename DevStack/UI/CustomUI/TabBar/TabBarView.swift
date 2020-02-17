@@ -83,7 +83,7 @@ public protocol TabBarViewDelegate: class {
     }
     
     public func updateNumbers(_ numbers: [Int]) {
-        for index in 0...tabBarButtons.count-1 {
+        for index in 0...tabBarButtons.count - 1 {
             if numbers.count > index {
                 tabBarButtons[index].numberLabel.text = numbers[index] <= 999 ? "\(numbers[index])" : "999"
             }

@@ -50,7 +50,7 @@ public protocol RatingViewDelegate: class {
     private var starArray: [ColoredImageView] = []
     private var starEmptyArray: [ColoredImageView] = []
     
-    public weak var ratingDelegate : RatingViewDelegate?
+    public weak var ratingDelegate: RatingViewDelegate?
     
     override public func configureViews() {
         starArray = [star1, star2, star3, star4, star5]

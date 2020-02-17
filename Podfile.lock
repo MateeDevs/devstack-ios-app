@@ -152,6 +152,7 @@ PODS:
   - RxSwift (4.5.0)
   - SkeletonView (1.8.3)
   - SwiftGen (6.1.0)
+  - SwiftLint (0.39.1)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -172,6 +173,7 @@ DEPENDENCIES:
   - RxSwift
   - SkeletonView
   - SwiftGen
+  - SwiftLint
 
 SPEC REPOS:
   trunk:
@@ -214,6 +216,7 @@ SPEC REPOS:
     - RxSwift
     - SkeletonView
     - SwiftGen
+    - SwiftLint
     - Yoga
     - YogaKit
 
@@ -257,9 +260,10 @@ SPEC CHECKSUMS:
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SkeletonView: ce0c2a2e8154c57b32f5b31b65f4cb92ca119861
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
+  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
   Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: e040f590e581b1cf58759cc4f2a8cc010d05e736
+PODFILE CHECKSUM: f9243e7d7fee5628c3ba30bf628a9c84fefcdc04
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.8.4

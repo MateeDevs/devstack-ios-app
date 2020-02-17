@@ -42,8 +42,8 @@ extension UserAPI: TargetType {
         switch self {
         case .getUsersForPage(let page):
             let params: [String: Any] = [
-                "page" : page,
-                "limit" : NetworkingConstants.paginationCount
+                "page": page,
+                "limit": NetworkingConstants.paginationCount
             ]
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
         case .updateUser(let user):

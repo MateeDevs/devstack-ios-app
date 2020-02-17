@@ -33,7 +33,7 @@ class ItemInputView: XIBView {
         }
     }
     
-    var isEnabled : Bool = true {
+    var isEnabled: Bool = true {
         didSet {
             backgroundEnabledView.isHidden = !isEnabled
             backgroundDisabledView.isHidden = isEnabled

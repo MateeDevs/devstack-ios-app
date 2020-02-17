@@ -22,13 +22,13 @@ public class FirebaseManager: NSObject {
         
         // Setup APNs
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: {_, _ in })
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: { _, _ in })
         UNUserNotificationCenter.current().delegate = appDelegate
         Messaging.messaging().delegate = appDelegate
         application.registerForRemoteNotifications()
     }
     
-    func handleNotification(_ notification: [AnyHashable : Any], appDelegate: AppDelegate) {
+    func handleNotification(_ notification: [AnyHashable: Any], appDelegate: AppDelegate) {
         #if DEBUG
         print(notification)
         #endif
