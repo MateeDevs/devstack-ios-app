@@ -10,10 +10,8 @@ import Foundation
 
 extension Int {
     
-    public func stringFormattedWithSeparator(_ separator: String = "\u{2008}") -> String {
-        let formatter = NumberFormatter()
-        formatter.groupingSeparator = separator
-        formatter.numberStyle = .decimal
-        return formatter.string(from: NSNumber(value: self)) ?? ""
+    /// Conversion from Int to String using a given formatter.
+    public func toString(formatter: NumberFormatter = Formatter.numberDefault) -> String {
+        formatter.string(from: NSNumber(value: self)) ?? ""
     }
 }

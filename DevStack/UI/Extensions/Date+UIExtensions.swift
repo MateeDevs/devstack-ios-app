@@ -8,43 +8,11 @@
 
 import Foundation
 
-public enum DateTemplate: String {
-    case ddMMyyyyHHmm
-    case ddMMyyyy
-    case HHmm
-}
-
-public enum DateFormat: String {
-    case ddMMyyyyHHmm = "dd. MM. yyyy, HH:mm"
-    case ddMMyyyy = "dd. MM. yyyy"
-    case HHmm = "HH:mm"
-}
-
 extension Date {
     
-    /// Basic conversion from Date to String using native date and time styles.
-    public func toString(dateStyle: DateFormatter.Style = .medium, timeStyle: DateFormatter.Style = .short) -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = dateStyle
-        formatter.timeStyle = timeStyle
-        formatter.doesRelativeDateFormatting = true
-        return formatter.string(from: self)
-    }
-    
-    /// Conversion from Date to String based on a given template.
-    public func toStringWithTemplate(_ template: DateTemplate) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: template.rawValue, options: 0, locale: formatter.locale)
-        formatter.doesRelativeDateFormatting = true
-        return formatter.string(from: self)
-    }
-    
-    /// Conversion from Date to String based on a given date format.   
-    /// - Please note that this conversion does not respect user's locale/preferences.
-    public func toStringWithFormat(_ dateFormat: DateFormat) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = dateFormat.rawValue
-        return formatter.string(from: self)
+    /// Conversion from Date to String using a given formatter.
+    public func toString(formatter: DateFormatter = Formatter.dateDefault) -> String {
+        formatter.string(from: self)
     }
     
     /// Elapsed time between date and now (nil for future dates).

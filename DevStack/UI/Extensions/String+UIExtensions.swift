@@ -21,9 +21,8 @@ extension String {
         return userInitials
     }
     
-    public func toDate(dateFormat: String = DateFormat.ddMMyyyyHHmm.rawValue) -> Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = dateFormat
-        return dateFormatter.date(from: self)
+    /// Conversion from String to Date using a given formatter.
+    public func toDate(formatter: DateFormatter = Formatter.dateDefault) -> Date? {
+        formatter.date(from: self)
     }
 }
