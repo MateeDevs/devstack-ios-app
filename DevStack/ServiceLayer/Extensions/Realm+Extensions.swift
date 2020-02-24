@@ -20,7 +20,7 @@ extension ObservableType {
     /// - parameter primaryKeyName: Optional parameter to set alternate primary key name (default is "id").
     /// - returns: Observable which emits saved object.
     ///
-    func save<T: Object>(setPrimaryKey: String? = nil, primaryKeyName: String = "id") -> Observable<T> where E == T {
+    func save<T: Object>(setPrimaryKey: String? = nil, primaryKeyName: String = "id") -> Observable<T> where Element == T {
         flatMap({ (object) -> Observable<T> in
             if let id = setPrimaryKey {
                 object[primaryKeyName] = id
@@ -35,7 +35,7 @@ extension ObservableType {
     ///
     /// - returns: Observable which emits saved array.
     ///
-    func save<T: Object>() -> Observable<[T]> where E == [T] {
+    func save<T: Object>() -> Observable<[T]> where Element == [T] {
         flatMap({ (objects) -> Observable<[T]> in
             let realm = try! Realm()
             return realm.rx.save(objects)
@@ -50,7 +50,7 @@ extension ObservableType {
     /// - parameter primaryKeyName: Optional parameter to set alternate primary key name (default is "id").
     /// - returns: Observable which emits saved object.
     ///
-    func appendToList<T: Object>(_ list: List<T>, setPrimaryKey: String? = nil, primaryKeyName: String = "id") -> Observable<T> where E == T {
+    func appendToList<T: Object>(_ list: List<T>, setPrimaryKey: String? = nil, primaryKeyName: String = "id") -> Observable<T> where Element == T {
         flatMap({ (object) -> Observable<T> in
             if let id = setPrimaryKey {
                 object[primaryKeyName] = id
@@ -66,7 +66,7 @@ extension ObservableType {
     /// - parameter list: List that will be extented with new objects.
     /// - returns: Observable which emits saved array.
     ///
-    func appendToList<T: Object>(_ list: List<T>) -> Observable<[T]> where E == [T] {
+    func appendToList<T: Object>(_ list: List<T>) -> Observable<[T]> where Element == [T] {
         flatMap({ (objects) -> Observable<[T]> in
             let realm = try! Realm()
             return realm.rx.appendToList(list, objects: objects).map({ _ in objects })
@@ -75,7 +75,7 @@ extension ObservableType {
     
 }
 
-extension Reactive where Base: Realm {
+extension Reactive where Base == Realm {
     func save<T: Object>(_ object: T, withApiModel: Bool = true) -> Observable<T> {
         Observable.create { observer in
             do {

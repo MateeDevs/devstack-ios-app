@@ -12,13 +12,13 @@ import RxCocoa
 
 extension ObservableType {
     
-    public func asDriverOnErrorJustComplete() -> Driver<E> {
+    public func asDriverOnErrorJustComplete() -> Driver<Element> {
         asDriver { _ in
             Driver.empty()
         }
     }
     
-    func mapToLce<T: Any>(_ errors: LceErrors? = nil) -> Observable<Lce<T>> where E == T {
+    func mapToLce<T: Any>(_ errors: LceErrors? = nil) -> Observable<Lce<T>> where Element == T {
         return flatMap({ object -> Observable<Lce<T>> in
             Observable.just(Lce<T>(data: object))
         }).catchError({ error in
@@ -26,7 +26,7 @@ extension ObservableType {
         }).startWith(Lce(loading: true))
     }
     
-    func mapToLce<T: Any>(_ errors: LceErrors? = nil) -> Observable<Lce<[T]>> where E == [T] {
+    func mapToLce<T: Any>(_ errors: LceErrors? = nil) -> Observable<Lce<[T]>> where Element == [T] {
         return flatMap({ objects -> Observable<Lce<[T]>> in
             Observable.just(Lce<[T]>(data: objects))
         }).catchError({ error in

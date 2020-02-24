@@ -36,7 +36,7 @@ public class FullscreenImageViewController: BaseViewController {
     
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        imageView.af_setImage(withURL: url)
+        imageView.af.setImage(withURL: url)
     }
     
     // MARK: Default methods
