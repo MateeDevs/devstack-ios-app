@@ -1,35 +1,34 @@
 PODS:
-  - Alamofire (4.9.0)
-  - AlamofireImage (3.5.2):
-    - Alamofire (~> 4.8)
+  - Alamofire (5.0.2)
+  - AlamofireImage (4.0.1):
+    - Alamofire (< 6.0.0, >= 5.0.2)
   - boost-for-react-native (1.63.0)
-  - CocoaAsyncSocket (7.6.3)
+  - CocoaAsyncSocket (7.6.4)
   - CocoaLibEvent (1.0.0)
   - ComponentKit (0.29):
     - Yoga (~> 1.14)
-  - DoubleConversion (1.1.5)
-  - Firebase/CoreOnly (6.16.0):
-    - FirebaseCore (= 6.6.1)
-  - Firebase/Crashlytics (6.16.0):
+  - Firebase/CoreOnly (6.18.0):
+    - FirebaseCore (= 6.6.3)
+  - Firebase/Crashlytics (6.18.0):
     - Firebase/CoreOnly
-    - FirebaseCrashlytics (~> 4.0.0-beta.2)
-  - Firebase/Messaging (6.16.0):
+    - FirebaseCrashlytics (~> 4.0.0-beta.4)
+  - Firebase/Messaging (6.18.0):
     - Firebase/CoreOnly
-    - FirebaseMessaging (~> 4.2.0)
+    - FirebaseMessaging (~> 4.3.0)
   - FirebaseAnalyticsInterop (1.5.0)
-  - FirebaseCore (6.6.1):
+  - FirebaseCore (6.6.3):
     - FirebaseCoreDiagnostics (~> 1.2)
     - FirebaseCoreDiagnosticsInterop (~> 1.2)
     - GoogleUtilities/Environment (~> 6.5)
     - GoogleUtilities/Logger (~> 6.5)
-  - FirebaseCoreDiagnostics (1.2.0):
+  - FirebaseCoreDiagnostics (1.2.1):
     - FirebaseCoreDiagnosticsInterop (~> 1.2)
     - GoogleDataTransportCCTSupport (~> 1.3)
     - GoogleUtilities/Environment (~> 6.5)
     - GoogleUtilities/Logger (~> 6.5)
     - nanopb (~> 0.3.901)
   - FirebaseCoreDiagnosticsInterop (1.2.0)
-  - FirebaseCrashlytics (4.0.0-beta.3):
+  - FirebaseCrashlytics (4.0.0-beta.4):
     - FirebaseAnalyticsInterop (~> 1.2)
     - FirebaseCore (~> 6.6)
     - FirebaseInstanceID (~> 4.3)
@@ -38,12 +37,12 @@ PODS:
     - FirebaseCore (~> 6.6)
     - GoogleUtilities/UserDefaults (~> 6.5)
     - PromisesObjC (~> 1.2)
-  - FirebaseInstanceID (4.3.0):
+  - FirebaseInstanceID (4.3.2):
     - FirebaseCore (~> 6.6)
     - FirebaseInstallations (~> 1.0)
     - GoogleUtilities/Environment (~> 6.5)
     - GoogleUtilities/UserDefaults (~> 6.5)
-  - FirebaseMessaging (4.2.0):
+  - FirebaseMessaging (4.3.0):
     - FirebaseAnalyticsInterop (~> 1.5)
     - FirebaseCore (~> 6.6)
     - FirebaseInstanceID (~> 4.3)
@@ -52,58 +51,59 @@ PODS:
     - GoogleUtilities/Reachability (~> 6.5)
     - GoogleUtilities/UserDefaults (~> 6.5)
     - Protobuf (>= 3.9.2, ~> 3.9)
-  - Flipper (0.30.1):
+  - Flipper (0.31.2):
     - Flipper-Folly (~> 2.1)
     - Flipper-RSocket (~> 1.0)
-  - Flipper-Folly (2.1.0):
+  - Flipper-DoubleConversion (1.1.7)
+  - Flipper-Folly (2.1.1):
     - boost-for-react-native
     - CocoaLibEvent (~> 1.0)
-    - DoubleConversion
-    - glog
+    - Flipper-DoubleConversion
+    - Flipper-Glog
     - OpenSSL-Universal (= 1.0.2.19)
+  - Flipper-Glog (0.3.6)
   - Flipper-PeerTalk (0.0.4)
   - Flipper-RSocket (1.0.0):
     - Flipper-Folly (~> 2.0)
-  - FlipperKit (0.30.1):
-    - FlipperKit/Core (= 0.30.1)
-  - FlipperKit/Core (0.30.1):
-    - Flipper (~> 0.30.1)
+  - FlipperKit (0.31.2):
+    - FlipperKit/Core (= 0.31.2)
+  - FlipperKit/Core (0.31.2):
+    - Flipper (~> 0.31.2)
     - FlipperKit/CppBridge
     - FlipperKit/FBCxxFollyDynamicConvert
     - FlipperKit/FBDefines
     - FlipperKit/FKPortForwarding
-  - FlipperKit/CppBridge (0.30.1):
-    - Flipper (~> 0.30.1)
-  - FlipperKit/FBCxxFollyDynamicConvert (0.30.1):
+  - FlipperKit/CppBridge (0.31.2):
+    - Flipper (~> 0.31.2)
+  - FlipperKit/FBCxxFollyDynamicConvert (0.31.2):
     - Flipper-Folly (~> 2.1)
-  - FlipperKit/FBDefines (0.30.1)
-  - FlipperKit/FKPortForwarding (0.30.1):
+  - FlipperKit/FBDefines (0.31.2)
+  - FlipperKit/FKPortForwarding (0.31.2):
     - CocoaAsyncSocket (~> 7.6)
     - Flipper-PeerTalk (~> 0.0.4)
-  - FlipperKit/FlipperKitHighlightOverlay (0.30.1)
-  - FlipperKit/FlipperKitLayoutComponentKitSupport (0.30.1):
+  - FlipperKit/FlipperKitHighlightOverlay (0.31.2)
+  - FlipperKit/FlipperKitLayoutComponentKitSupport (0.31.2):
     - ComponentKit (~> 0.0)
     - FlipperKit/Core
     - FlipperKit/FlipperKitHighlightOverlay
     - FlipperKit/FlipperKitLayoutPlugin
     - FlipperKit/FlipperKitLayoutTextSearchable
-  - FlipperKit/FlipperKitLayoutPlugin (0.30.1):
+  - FlipperKit/FlipperKitLayoutPlugin (0.31.2):
     - FlipperKit/Core
     - FlipperKit/FlipperKitHighlightOverlay
     - FlipperKit/FlipperKitLayoutTextSearchable
     - YogaKit (~> 1.18)
-  - FlipperKit/FlipperKitLayoutTextSearchable (0.30.1)
-  - FlipperKit/FlipperKitNetworkPlugin (0.30.1):
+  - FlipperKit/FlipperKitLayoutTextSearchable (0.31.2)
+  - FlipperKit/FlipperKitNetworkPlugin (0.31.2):
     - FlipperKit/Core
-  - FlipperKit/FlipperKitUserDefaultsPlugin (0.30.1):
+  - FlipperKit/FlipperKitUserDefaultsPlugin (0.31.2):
     - FlipperKit/Core
-  - FlipperKit/SKIOSNetworkPlugin (0.30.1):
+  - FlipperKit/SKIOSNetworkPlugin (0.31.2):
     - FlipperKit/Core
     - FlipperKit/FlipperKitNetworkPlugin
-  - glog (0.3.4)
-  - GoogleDataTransport (3.3.1)
-  - GoogleDataTransportCCTSupport (1.3.1):
-    - GoogleDataTransport (~> 3.3)
+  - GoogleDataTransport (4.0.1)
+  - GoogleDataTransportCCTSupport (1.4.1):
+    - GoogleDataTransport (~> 4.0)
     - nanopb (~> 0.3.901)
   - GoogleUtilities/AppDelegateSwizzler (6.5.1):
     - GoogleUtilities/Environment
@@ -121,13 +121,12 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.5.1):
     - GoogleUtilities/Logger
-  - KeychainAccess (3.2.0)
-  - Moya/Core (13.0.1):
-    - Alamofire (~> 4.1)
-    - Result (~> 4.1)
-  - Moya/RxSwift (13.0.1):
+  - KeychainAccess (4.1.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
     - Moya/Core
-    - RxSwift (~> 4.0)
+    - RxSwift (~> 5.0)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
     - nanopb/encode (= 0.3.9011)
@@ -137,20 +136,22 @@ PODS:
     - OpenSSL-Universal/Static (= 1.0.2.19)
   - OpenSSL-Universal/Static (1.0.2.19)
   - PromisesObjC (1.2.8)
-  - Protobuf (3.11.3)
-  - Realm (3.19.0):
-    - Realm/Headers (= 3.19.0)
-  - Realm/Headers (3.19.0)
-  - RealmSwift (3.19.0):
-    - Realm (= 3.19.0)
-  - Result (4.1.0)
-  - RxCocoa (4.5.0):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxRealm (0.7.6):
-    - RealmSwift (~> 3.0)
-    - RxSwift (~> 4.0)
-  - RxSwift (4.5.0)
-  - SkeletonView (1.8.3)
+  - Protobuf (3.11.4)
+  - Realm (4.3.2):
+    - Realm/Headers (= 4.3.2)
+  - Realm/Headers (4.3.2)
+  - RealmSwift (4.3.2):
+    - Realm (= 4.3.2)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRealm (2.0.0):
+    - RealmSwift (~> 4.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
+  - SkeletonView (1.8.6)
   - SwiftGen (6.1.0)
   - SwiftLint (0.39.1)
   - Yoga (1.14.0)
@@ -183,7 +184,6 @@ SPEC REPOS:
     - CocoaAsyncSocket
     - CocoaLibEvent
     - ComponentKit
-    - DoubleConversion
     - Firebase
     - FirebaseAnalyticsInterop
     - FirebaseCore
@@ -194,11 +194,12 @@ SPEC REPOS:
     - FirebaseInstanceID
     - FirebaseMessaging
     - Flipper
+    - Flipper-DoubleConversion
     - Flipper-Folly
+    - Flipper-Glog
     - Flipper-PeerTalk
     - Flipper-RSocket
     - FlipperKit
-    - glog
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
@@ -210,9 +211,9 @@ SPEC REPOS:
     - Protobuf
     - Realm
     - RealmSwift
-    - Result
     - RxCocoa
     - RxRealm
+    - RxRelay
     - RxSwift
     - SkeletonView
     - SwiftGen
@@ -221,49 +222,49 @@ SPEC REPOS:
     - YogaKit
 
 SPEC CHECKSUMS:
-  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
-  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  AlamofireImage: a8a5289046ac46b4d0183bcf73ce12ce30564cb7
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
-  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
+  CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
   ComponentKit: f8ceb6ffdf33e0c229eac8aadac5df2329902d41
-  DoubleConversion: e22e0762848812a87afd67ffda3998d9ef29170c
-  Firebase: 497158b816d0a86fc31babbd05546fcd7e6083ff
+  Firebase: 0490eca762a72e4f1582319539153897f1508dee
   FirebaseAnalyticsInterop: 3f86269c38ae41f47afeb43ebf32a001f58fcdae
-  FirebaseCore: 85064903ed6c28e47fec9c7bd149d94ba1b6b6e7
-  FirebaseCoreDiagnostics: 5e78803ab276bc5b50340e3c539c06c3de35c649
+  FirebaseCore: 78276943ad85e616dfa54dafa6c89512987d9d60
+  FirebaseCoreDiagnostics: 2109d10c35e8289b1ee6cabf44d9ffb055620194
   FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
-  FirebaseCrashlytics: 81ac4950302353dc6b5f8d5cc287397725b54c97
+  FirebaseCrashlytics: 1dff71c846a3a138f524f79d4740ffed5fdd0c04
   FirebaseInstallations: 575cd32f2aec0feeb0e44f5d0110a09e5e60b47b
-  FirebaseInstanceID: 6668efc1655a4052c083f287a7141f1ead12f9c2
-  FirebaseMessaging: 448cf4c727f3c95f4f90816907d67306ba785cfe
-  Flipper: d591b88245dc8c8147819aa249f911923c7417fc
-  Flipper-Folly: bcae82405dafd18ac9f8d9d4902fd1c2ef2a7e77
+  FirebaseInstanceID: 7ee0d6777013bb952f377b41965bf132b6a075be
+  FirebaseMessaging: 4ec33842d36b3319e062e51fb8b35a74f726950d
+  Flipper: 7a99ee17366a45a2c89567bf5bd393ccb9486bd2
+  Flipper-DoubleConversion: 38631e41ef4f9b12861c67d17cb5518d06badc41
+  Flipper-Folly: 2de3d03e0acc7064d5e4ed9f730e2f217486f162
+  Flipper-Glog: 1dfd6abf1e922806c52ceb8701a3599a79a200a6
   Flipper-PeerTalk: 116d8f857dc6ef55c7a5a75ea3ceaafe878aadc9
   Flipper-RSocket: 1260a31c05c238eabfa9bb8a64e3983049048371
-  FlipperKit: 3e13631bca7c5ec0dd54ee1d096f5e5d32a5d784
-  glog: 1de0bb937dccdc981596d3b5825ebfb765017ded
-  GoogleDataTransport: 0048df6388dab1c254799f2a30365b1dffe20422
-  GoogleDataTransportCCTSupport: f880d70972efa2ed1be4e9173a0f4c5f3dc2d176
+  FlipperKit: 0730530396cb6a3879353fd204220ae1258d4f77
+  GoogleDataTransport: 653963cf5be60fb59cf051e070f0836fdc305f81
+  GoogleDataTransportCCTSupport: 84e4d4bbab642f2e9d83ee65d78aca2b5527d314
   GoogleUtilities: 06eb53bb579efe7099152735900dd04bf09e7275
-  KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
-  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   OpenSSL-Universal: 8b48cc0d10c1b2923617dfe5c178aa9ed2689355
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
-  Protobuf: 0e94afe3b47cb11876eb6aee296638711a24bf75
-  Realm: 995d585bcf699aaff226715886c849a29dd3d07f
-  RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
-  RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
-  SkeletonView: ce0c2a2e8154c57b32f5b31b65f4cb92ca119861
+  Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
+  Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
+  RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRealm: 900f5c7e6f0a2d6527b56eaf7283f3035ec1e8ba
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SkeletonView: 0bf463145522c0c551b76a829b397e2a15a16d46
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
   Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: f9243e7d7fee5628c3ba30bf628a9c84fefcdc04
+PODFILE CHECKSUM: 36cd14b652524a88bc9d63592a28e1aeb3bd1f1c
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.9.0

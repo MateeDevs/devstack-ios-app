@@ -197,9 +197,6 @@
 		45890B5C22087C8B00894255 /* String+UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45890B5B22087C8B00894255 /* String+UIExtensions.swift */; };
 		45890B5D22087C8B00894255 /* String+UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45890B5B22087C8B00894255 /* String+UIExtensions.swift */; };
 		45890B5E22087C8B00894255 /* String+UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45890B5B22087C8B00894255 /* String+UIExtensions.swift */; };
-		4589DDF4213FF93700800E67 /* PreviewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589DDF3213FF93700800E67 /* PreviewObject.swift */; };
-		4589DDF5213FF93700800E67 /* PreviewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589DDF3213FF93700800E67 /* PreviewObject.swift */; };
-		4589DDF6213FF93700800E67 /* PreviewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589DDF3213FF93700800E67 /* PreviewObject.swift */; };
 		459761CE20FDD60A0034DE29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4558D30A20FCC8FF005BC325 /* AppDelegate.swift */; };
 		459761DC20FDD61E0034DE29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4558D30A20FCC8FF005BC325 /* AppDelegate.swift */; };
 		4597621A20FDE4360034DE29 /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597621920FDE4360034DE29 /* AppFlowController.swift */; };
@@ -521,7 +518,6 @@
 		45890B4622086CAF00894255 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		45890B5722087C5D00894255 /* Date+UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+UIExtensions.swift"; sourceTree = "<group>"; };
 		45890B5B22087C8B00894255 /* String+UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UIExtensions.swift"; sourceTree = "<group>"; };
-		4589DDF3213FF93700800E67 /* PreviewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewObject.swift; sourceTree = "<group>"; };
 		459761D720FDD60A0034DE29 /* A-DevStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A-DevStack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		459761E520FDD61E0034DE29 /* B-DevStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "B-DevStack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4597621120FDD8E10034DE29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -821,7 +817,6 @@
 				45B76D8A213590C5003BB997 /* ActivityIndicator.swift */,
 				45A92DFC2109ABE9007579AC /* Lce.swift */,
 				45E8A4A8220AEBAE003F7502 /* Logger.swift */,
-				4589DDF3213FF93700800E67 /* PreviewObject.swift */,
 				45E8A49A220AD4CB003F7502 /* ViewModel.swift */,
 				459762E220FE21BC0034DE29 /* ViewModelType.swift */,
 			);
@@ -1769,7 +1764,6 @@
 				456851E32100BC9A006D3618 /* EnhancedButton.swift in Sources */,
 				45890B2421FF5E8F00894255 /* AuthToken.swift in Sources */,
 				A8A2E502217DD3C70006023F /* GradientView.swift in Sources */,
-				4589DDF4213FF93700800E67 /* PreviewObject.swift in Sources */,
 				45C3F51B23C127E60091848D /* TextFieldWithHint.swift in Sources */,
 				454FEE3D2240601E00EB7A54 /* LceErrors.swift in Sources */,
 				452732A423F0C6ED0067C712 /* Double+UIExtensions.swift in Sources */,
@@ -1895,7 +1889,6 @@
 				456851E42100BC9A006D3618 /* EnhancedButton.swift in Sources */,
 				A8A2E503217DD3C70006023F /* GradientView.swift in Sources */,
 				45890B2521FF5E8F00894255 /* AuthToken.swift in Sources */,
-				4589DDF5213FF93700800E67 /* PreviewObject.swift in Sources */,
 				45C3F51C23C127E60091848D /* TextFieldWithHint.swift in Sources */,
 				454FEE3E2240601E00EB7A54 /* LceErrors.swift in Sources */,
 				452732A523F0C6ED0067C712 /* Double+UIExtensions.swift in Sources */,
@@ -2021,7 +2014,6 @@
 				456851E52100BC9A006D3618 /* EnhancedButton.swift in Sources */,
 				45890B2621FF5E8F00894255 /* AuthToken.swift in Sources */,
 				A8A2E504217DD3C70006023F /* GradientView.swift in Sources */,
-				4589DDF6213FF93700800E67 /* PreviewObject.swift in Sources */,
 				45C3F51D23C127E60091848D /* TextFieldWithHint.swift in Sources */,
 				454FEE3F2240601E00EB7A54 /* LceErrors.swift in Sources */,
 				452732A623F0C6ED0067C712 /* Double+UIExtensions.swift in Sources */,

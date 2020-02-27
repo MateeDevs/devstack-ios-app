@@ -53,27 +53,26 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
             }
         }
         
-        // Configure manager
-        let configuration = URLSessionConfiguration.default
-        let manager = Alamofire.SessionManager(configuration: configuration)
-        
         // Configure plugins
         var plugins: [PluginType] = []
         plugins.append(CustomNetworkActivityPlugin())
         #if DEBUG
-        plugins.append(NetworkLoggerPlugin(verbose: true, cURL: true, responseDataFormatter: { (_ data: Data) -> Data in
-            do {
-                let dataAsJSON = try JSONSerialization.jsonObject(with: data)
-                let prettyData = try JSONSerialization.data(withJSONObject: dataAsJSON, options: .prettyPrinted)
-                return prettyData
-            } catch {
-                // Fallback to original data if it can't be serialized
-                return data
-            }
-        }))
+        let loggerConfig = NetworkLoggerPlugin.Configuration(
+            formatter: NetworkLoggerPlugin.Configuration.Formatter(responseData: { (_ data: Data) -> String in
+                do {
+                    let dataAsJSON = try JSONSerialization.jsonObject(with: data)
+                    let prettyData = try JSONSerialization.data(withJSONObject: dataAsJSON, options: .prettyPrinted)
+                    return String(data: prettyData, encoding: .utf8) ?? String(data: data, encoding: .utf8) ?? ""
+                } catch {
+                    return String(data: data, encoding: .utf8) ?? ""
+                }
+            }),
+            logOptions: [.verbose, .formatRequestAscURL]
+        )
+        plugins.append(NetworkLoggerPlugin(configuration: loggerConfig))
         #endif
         
-        provider = MoyaProvider<MultiTarget>(endpointClosure: endpointClosure, requestClosure: requestClosure, manager: manager, plugins: plugins)
+        provider = MoyaProvider<MultiTarget>(endpointClosure: endpointClosure, requestClosure: requestClosure, plugins: plugins)
     }
     
     func request(_ target: MultiTarget, withInterceptor: Bool = true) -> Single<Moya.Response> {

@@ -56,8 +56,8 @@ end
 # This will cause Flipper and it's dependencies to be built as a static library
 $static_framework = [
     'FlipperKit', 'Flipper', 'Flipper-Folly',
-    'CocoaAsyncSocket', 'ComponentKit', 'DoubleConversion',
-    'glog', 'Flipper-PeerTalk', 'Flipper-RSocket', 'Yoga', 'YogaKit',
+    'CocoaAsyncSocket', 'ComponentKit', 'Flipper-DoubleConversion',
+    'Flipper-Glog', 'Flipper-PeerTalk', 'Flipper-RSocket', 'Yoga', 'YogaKit',
     'CocoaLibEvent', 'OpenSSL-Universal', 'boost-for-react-native'
 ]
 
@@ -66,7 +66,7 @@ pre_install do |installer|
     installer.pod_targets.each do |pod|
         if $static_framework.include?(pod.name)
             def pod.build_type;
-            Pod::Target::BuildType.static_library
+            Pod::BuildType.static_library
             end
         end
     end

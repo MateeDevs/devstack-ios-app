@@ -7,7 +7,6 @@
 //
 
 import Moya
-import Result
 
 final class CustomNetworkActivityPlugin: PluginType {
     

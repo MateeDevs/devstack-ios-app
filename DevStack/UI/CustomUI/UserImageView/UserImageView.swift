@@ -50,7 +50,7 @@ import AlamofireImage
         guard let user = user else { return }
         initialsLabel.text = user.fullName.initials
         if let pictureUrl = user.pictureUrl, let url = URL(string: pictureUrl) {
-            userImageView.af_setImage(withURL: url)
+            userImageView.af.setImage(withURL: url)
         }
     }
     

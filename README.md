@@ -87,7 +87,6 @@ FIXME
 - Used build branch should be merged back to the develop branch if any changes was made
 
 ## TODO
-- Update Pods after [Moya 14.0.0 release](https://github.com/Moya/Moya/releases)
 - Provide example push notifications after [Xcode 11.4 releases](https://developer.apple.com/documentation/xcode_release_notes/xcode_11_4_beta_release_notes)
 - Migrate to SwiftPM when all used frameworks are available (waiting for [Firebase](https://github.com/firebase/firebase-ios-sdk/issues/3136))
 - Migrate to SwiftUI + Combine when the time is right (not before iOS 14.0 official release)
