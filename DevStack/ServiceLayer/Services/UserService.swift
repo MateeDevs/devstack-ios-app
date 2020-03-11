@@ -31,7 +31,7 @@ public class UserService {
     public func getUserById(_ id: String) -> Observable<Lce<User>> {
         let db = database.observableObject(User.self, id: id)
         let endpoint = UserAPI.getUserById(id)
-        let net = network.observableRequest(endpoint).map(User.self).save().mapToLce().filter({ $0.hasError })
+        let net = network.observableRequest(endpoint).map(User.self).save().mapToLce().filter({ $0.error != nil })
         return Observable.merge(db, net).startWith(Lce(loading: true))
     }
     

@@ -18,4 +18,10 @@ extension UIScrollView {
         contentOffset.y < edgeOffset
     }
     
+    public func addRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = AppTheme.Colors.activityIndicator
+        self.refreshControl = refreshControl
+    }
+    
 }

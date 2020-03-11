@@ -42,11 +42,6 @@ open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollVi
     // MARK: Lifecycle methods
     override open func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Setup pull to refresh
-        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
-        refreshControl.tintColor = AppTheme.Colors.activityIndicator
-        tableView?.refreshControl = refreshControl
     }
     
     override open func viewDidAppear(_ animated: Bool) {
@@ -56,12 +51,22 @@ open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollVi
         page.onNext(currentPage)
     }
     
-    // MARK: Additional methods
-    @objc private func pullToRefresh(sender: AnyObject) {
-        page.onNext(0)
-        refreshControl.endRefreshing()
+    // MARK: Default methods
+    override open func setupViewModel() {
+        super.setupViewModel()
+        
+        tableView.refreshControl?.rx.controlEvent(.valueChanged).bind(onNext: { [weak self] in
+            self?.page.onNext(0)
+        }).disposed(by: disposeBag)
     }
     
+    override open func setupUI() {
+        super.setupUI()
+        
+        tableView.addRefreshControl()
+    }
+    
+    // MARK: Additional methods
     public func registerCells(_ identifiers: [String]) {
         for identifier in identifiers {
             let cellNib = UINib(nibName: identifier, bundle: nil)
@@ -77,10 +82,12 @@ open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollVi
     public func handleNetworkData(_ event: Lce<[T]>) {
         if event.isLoading, items.count == 0 {
             view.startActivityIndicator()
-        } else if event.hasError {
+        } else if event.error != nil {
             view.stopActivityIndicator()
+            tableView?.refreshControl?.endRefreshing()
         } else if let items = event.data {
             view.stopActivityIndicator()
+            tableView?.refreshControl?.endRefreshing()
             currentPage += 1
             shouldFetchMore = items.count == perPage ? true : false
         }
