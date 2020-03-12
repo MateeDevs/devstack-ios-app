@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CkE-Zn-ye5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CkE-Zn-ye5">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -58,11 +58,11 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJa-eW-ggv" customClass="PrimaryButton" customModule="A_DevStack" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="573" width="327" height="30"/>
+                                                <rect key="frame" x="24" y="567" width="327" height="30"/>
                                                 <state key="normal" title="registration_view_register_button_title"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weo-Oy-1Aj" customClass="SecondaryButton" customModule="A_DevStack" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="611" width="327" height="30"/>
+                                                <rect key="frame" x="24" y="605" width="327" height="30"/>
                                                 <state key="normal" title="registration_view_login_button_title"/>
                                             </button>
                                         </subviews>
@@ -71,25 +71,27 @@
                                             <constraint firstAttribute="trailing" secondItem="rxg-rD-JWD" secondAttribute="trailing" constant="24" id="3YJ-LI-pFT"/>
                                             <constraint firstAttribute="trailing" secondItem="QJa-eW-ggv" secondAttribute="trailing" constant="24" id="8ZZ-MM-bPz"/>
                                             <constraint firstItem="QJa-eW-ggv" firstAttribute="leading" secondItem="bCI-sH-Aaw" secondAttribute="leading" constant="24" id="gcz-cW-vRs"/>
-                                            <constraint firstAttribute="bottom" secondItem="QJa-eW-ggv" secondAttribute="bottom" constant="64" id="i0w-jW-KBr"/>
                                             <constraint firstItem="rxg-rD-JWD" firstAttribute="leading" secondItem="bCI-sH-Aaw" secondAttribute="leading" constant="24" id="ndg-X2-vgH"/>
                                             <constraint firstAttribute="trailing" secondItem="weo-Oy-1Aj" secondAttribute="trailing" constant="24" id="o32-Ku-QEr"/>
                                             <constraint firstItem="weo-Oy-1Aj" firstAttribute="leading" secondItem="bCI-sH-Aaw" secondAttribute="leading" constant="24" id="oPf-IY-EsB"/>
                                             <constraint firstItem="rxg-rD-JWD" firstAttribute="top" secondItem="9Sq-eU-l7S" secondAttribute="bottom" constant="32" id="qp4-8m-lCo"/>
                                             <constraint firstItem="9Sq-eU-l7S" firstAttribute="top" secondItem="bCI-sH-Aaw" secondAttribute="top" constant="64" id="qyh-dl-BV0"/>
                                             <constraint firstItem="9Sq-eU-l7S" firstAttribute="leading" secondItem="bCI-sH-Aaw" secondAttribute="leading" constant="24" id="uZe-xy-ZAQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="weo-Oy-1Aj" secondAttribute="bottom" constant="32" id="vFQ-LW-HdI"/>
                                             <constraint firstItem="weo-Oy-1Aj" firstAttribute="top" secondItem="QJa-eW-ggv" secondAttribute="bottom" constant="8" id="yMz-X9-3tB"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="bCI-sH-Aaw" firstAttribute="top" secondItem="krv-hf-ahq" secondAttribute="top" id="ONN-Jk-xqR"/>
-                                    <constraint firstItem="bCI-sH-Aaw" firstAttribute="height" secondItem="krv-hf-ahq" secondAttribute="height" id="Q03-TR-afJ"/>
-                                    <constraint firstItem="bCI-sH-Aaw" firstAttribute="leading" secondItem="krv-hf-ahq" secondAttribute="leading" id="Zvq-BK-VdL"/>
-                                    <constraint firstAttribute="trailing" secondItem="bCI-sH-Aaw" secondAttribute="trailing" id="cvZ-3W-Ygx"/>
-                                    <constraint firstItem="bCI-sH-Aaw" firstAttribute="width" secondItem="krv-hf-ahq" secondAttribute="width" id="eHD-5e-VpD"/>
-                                    <constraint firstAttribute="bottom" secondItem="bCI-sH-Aaw" secondAttribute="bottom" id="ggI-sw-FTG"/>
+                                    <constraint firstItem="bCI-sH-Aaw" firstAttribute="trailing" secondItem="YdS-6s-1Ij" secondAttribute="trailing" id="26W-eH-3Df"/>
+                                    <constraint firstItem="bCI-sH-Aaw" firstAttribute="bottom" secondItem="YdS-6s-1Ij" secondAttribute="bottom" id="9tx-tZ-f4S"/>
+                                    <constraint firstItem="bCI-sH-Aaw" firstAttribute="leading" secondItem="YdS-6s-1Ij" secondAttribute="leading" id="K4r-9f-HON"/>
+                                    <constraint firstItem="bCI-sH-Aaw" firstAttribute="top" secondItem="YdS-6s-1Ij" secondAttribute="top" id="N1s-Oh-4f9"/>
+                                    <constraint firstItem="bCI-sH-Aaw" firstAttribute="width" secondItem="m1i-sE-sdq" secondAttribute="width" id="QPI-yQ-Uze"/>
+                                    <constraint firstItem="bCI-sH-Aaw" firstAttribute="height" secondItem="m1i-sE-sdq" secondAttribute="height" id="u0k-MB-F0t"/>
                                 </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="YdS-6s-1Ij"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="m1i-sE-sdq"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

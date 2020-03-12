@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZcH-Db-QSc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZcH-Db-QSc">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -64,11 +64,11 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yZ-xb-K3F" customClass="PrimaryButton" customModule="A_DevStack" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="573" width="327" height="30"/>
+                                                <rect key="frame" x="24" y="567" width="327" height="30"/>
                                                 <state key="normal" title="login_view_login_button_title"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8h-Ws-6nH" customClass="SecondaryButton" customModule="A_DevStack" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="611" width="327" height="30"/>
+                                                <rect key="frame" x="24" y="605" width="327" height="30"/>
                                                 <state key="normal" title="login_view_register_button_title"/>
                                             </button>
                                         </subviews>
@@ -80,32 +80,34 @@
                                             <constraint firstItem="PGK-yN-1Ou" firstAttribute="leading" secondItem="ZQm-U7-xrj" secondAttribute="leading" constant="24" id="Au3-gd-KUj"/>
                                             <constraint firstAttribute="trailing" secondItem="S8h-Ws-6nH" secondAttribute="trailing" constant="24" id="Bz2-JB-sih"/>
                                             <constraint firstItem="S8h-Ws-6nH" firstAttribute="leading" secondItem="ZQm-U7-xrj" secondAttribute="leading" constant="24" id="CSK-vH-y9X"/>
-                                            <constraint firstAttribute="bottom" secondItem="6yZ-xb-K3F" secondAttribute="bottom" constant="64" id="Dz2-5J-fR6"/>
                                             <constraint firstAttribute="trailing" secondItem="WB7-Ew-rrp" secondAttribute="trailing" constant="24" id="HdM-kZ-SZn"/>
                                             <constraint firstItem="WB7-Ew-rrp" firstAttribute="leading" secondItem="ZQm-U7-xrj" secondAttribute="leading" constant="24" id="XnZ-Cs-iH9"/>
                                             <constraint firstAttribute="trailing" secondItem="6yZ-xb-K3F" secondAttribute="trailing" constant="24" id="bk8-RT-3Kp"/>
                                             <constraint firstItem="S8h-Ws-6nH" firstAttribute="top" secondItem="6yZ-xb-K3F" secondAttribute="bottom" constant="8" id="kUe-Bp-jzR"/>
+                                            <constraint firstAttribute="bottom" secondItem="S8h-Ws-6nH" secondAttribute="bottom" constant="32" id="saf-mp-4Or"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ZQm-U7-xrj" firstAttribute="top" secondItem="obQ-ZS-x3F" secondAttribute="top" id="FSy-np-Cos"/>
-                                    <constraint firstItem="ZQm-U7-xrj" firstAttribute="leading" secondItem="obQ-ZS-x3F" secondAttribute="leading" id="Hd2-rJ-Fks"/>
-                                    <constraint firstItem="ZQm-U7-xrj" firstAttribute="height" secondItem="obQ-ZS-x3F" secondAttribute="height" id="Sma-D8-LEl"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZQm-U7-xrj" secondAttribute="bottom" id="X24-XX-ylr"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZQm-U7-xrj" secondAttribute="trailing" id="dNn-mJ-QdD"/>
-                                    <constraint firstItem="ZQm-U7-xrj" firstAttribute="width" secondItem="obQ-ZS-x3F" secondAttribute="width" id="zBi-gg-LOW"/>
+                                    <constraint firstItem="ZQm-U7-xrj" firstAttribute="bottom" secondItem="9bb-Qf-cvW" secondAttribute="bottom" id="1Rr-zH-ENH"/>
+                                    <constraint firstItem="ZQm-U7-xrj" firstAttribute="width" secondItem="DHP-2K-tNy" secondAttribute="width" id="J26-JK-gDb"/>
+                                    <constraint firstItem="ZQm-U7-xrj" firstAttribute="height" secondItem="DHP-2K-tNy" secondAttribute="height" id="agQ-Ww-QP8"/>
+                                    <constraint firstItem="ZQm-U7-xrj" firstAttribute="leading" secondItem="9bb-Qf-cvW" secondAttribute="leading" id="bPd-l3-ylu"/>
+                                    <constraint firstItem="ZQm-U7-xrj" firstAttribute="trailing" secondItem="9bb-Qf-cvW" secondAttribute="trailing" id="k39-QN-NiD"/>
+                                    <constraint firstItem="ZQm-U7-xrj" firstAttribute="top" secondItem="9bb-Qf-cvW" secondAttribute="top" id="mLF-YA-MIa"/>
                                 </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="9bb-Qf-cvW"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="DHP-2K-tNy"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="adv-CA-ssR" firstAttribute="trailing" secondItem="obQ-ZS-x3F" secondAttribute="trailing" id="1bv-d5-YPl"/>
-                            <constraint firstItem="obQ-ZS-x3F" firstAttribute="top" secondItem="adv-CA-ssR" secondAttribute="top" id="VkW-S5-wkc"/>
-                            <constraint firstItem="adv-CA-ssR" firstAttribute="bottom" secondItem="obQ-ZS-x3F" secondAttribute="bottom" id="a24-HJ-yIW"/>
-                            <constraint firstItem="obQ-ZS-x3F" firstAttribute="leading" secondItem="adv-CA-ssR" secondAttribute="leading" id="eAP-VB-ENU"/>
+                            <constraint firstItem="lmn-Lr-eoW" firstAttribute="bottom" secondItem="obQ-ZS-x3F" secondAttribute="bottom" id="34v-DB-HN9"/>
+                            <constraint firstItem="obQ-ZS-x3F" firstAttribute="leading" secondItem="lmn-Lr-eoW" secondAttribute="leading" id="Gzl-jV-V3x"/>
+                            <constraint firstItem="lmn-Lr-eoW" firstAttribute="trailing" secondItem="obQ-ZS-x3F" secondAttribute="trailing" id="K9p-Zg-7sU"/>
+                            <constraint firstItem="obQ-ZS-x3F" firstAttribute="top" secondItem="lmn-Lr-eoW" secondAttribute="top" id="Px8-bu-FGa"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="adv-CA-ssR"/>
+                        <viewLayoutGuide key="safeArea" id="lmn-Lr-eoW"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="dPM-XN-bSq" id="zoT-Zd-0Pg"/>
