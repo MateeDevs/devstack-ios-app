@@ -44,7 +44,9 @@ jobs:
       - name: Upload the Alpha build to the TestFlight
         env:
           FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-        run: bundle exec fastlane upload_testflight_alpha
+        run: |
+          bundle exec fastlane upload_testflight_alpha
+          bundle exec fastlane dsym_alpha
 
   deploy-beta:
     name: Deploy beta
@@ -55,7 +57,9 @@ jobs:
       - name: Upload the Beta build to the TestFlight
         env:
           FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-        run: bundle exec fastlane upload_testflight_beta
+        run: |
+          bundle exec fastlane upload_testflight_beta
+          bundle exec fastlane dsym_beta
 
   # deploy-production:
   #   name: Deploy production
@@ -66,4 +70,6 @@ jobs:
   #     - name: Upload the Production build to the TestFlight
   #       env:
   #         FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-  #       run: bundle exec fastlane upload_testflight_production
+  #       run: |
+  #         bundle exec fastlane upload_testflight_production
+  #         bundle exec fastlane dsym_production
