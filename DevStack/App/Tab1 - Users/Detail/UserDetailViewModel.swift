@@ -19,19 +19,27 @@ final class UserDetailViewModel: ViewModel, ViewModelType {
     let output: Output
     
     struct Input {
+        let refreshTrigger: AnyObserver<Void>
     }
     
     struct Output {
-        let getUserDetailEvent: Driver<Lce<User>>
+        let getUserEvent: Driver<Lce<User>>
+        let downloadUserEvent: Driver<Lce<User>>
     }
     
     init(dependencies: Dependencies, userId: String) {
         self.userId = userId
         
-        let getUserDetailEvent: Driver<Lce<User>> = dependencies.userService.getUserById(userId).asDriverOnErrorJustComplete()
+        let refreshTrigger = PublishSubject<Void>()
         
-        self.input = Input()
-        self.output = Output(getUserDetailEvent: getUserDetailEvent)
+        let getUserEvent: Driver<Lce<User>> = dependencies.userService.getUserById(userId).asDriverOnErrorJustComplete()
+        
+        let downloadUserEvent = refreshTrigger.flatMap({ _ -> Observable<Lce<User>> in
+            dependencies.userService.downloadUserById(userId)
+        }).asDriverOnErrorJustComplete()
+        
+        self.input = Input(refreshTrigger: refreshTrigger.asObserver())
+        self.output = Output(getUserEvent: getUserEvent, downloadUserEvent: downloadUserEvent)
         
         super.init()
     }

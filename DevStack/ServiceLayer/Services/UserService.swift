@@ -19,8 +19,7 @@ public class UserService {
     private let network = NetworkManager()
     
     public func getUsers() -> Observable<Lce<[User]>> {
-        let db = database.observableCollection(User.self)
-        return db
+        return database.observableCollection(User.self)
     }
     
     public func downloadUsersForPage(_ page: Int) -> Observable<Lce<[User]>> {
@@ -29,10 +28,12 @@ public class UserService {
     }
     
     public func getUserById(_ id: String) -> Observable<Lce<User>> {
-        let db = database.observableObject(User.self, id: id)
+        return database.observableObject(User.self, id: id)
+    }
+    
+    public func downloadUserById(_ id: String) -> Observable<Lce<User>> {
         let endpoint = UserAPI.getUserById(id)
-        let net = network.observableRequest(endpoint).map(User.self).save().mapToLce().filter({ $0.error != nil })
-        return Observable.merge(db, net).startWith(Lce(loading: true))
+        return network.observableRequest(endpoint).map(User.self).save().mapToLce()
     }
     
     public func updateUser(_ user: User) -> Observable<Lce<User>> {

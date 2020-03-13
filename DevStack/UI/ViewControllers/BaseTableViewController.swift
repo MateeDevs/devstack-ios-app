@@ -37,7 +37,6 @@ open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollVi
             return (currentPage * perPage) > items.count ? items.count : (currentPage * perPage)
         }
     }
-    private var refreshControl = UIRefreshControl()
     
     // MARK: Lifecycle methods
     override open func viewDidLoad() {

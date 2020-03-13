@@ -22,6 +22,7 @@ final class UserDetailViewController: BaseViewController {
     private var viewModel: UserDetailViewModel!
 
     // MARK: UI components
+    @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var userImageView: UserImageView!
     @IBOutlet private weak var userNameLabel: UILabel!
     
@@ -33,6 +34,7 @@ final class UserDetailViewController: BaseViewController {
             userNameLabel.text = user?.fullName
         }
     }
+    private var refreshTrigger = PublishSubject<Void>()
     
     // MARK: Inits
     static func instantiate(viewModel: UserDetailViewModel, userId: String) -> UserDetailViewController {
@@ -51,16 +53,30 @@ final class UserDetailViewController: BaseViewController {
     override func setupViewModel() {
         super.setupViewModel()
         
-        viewModel.output.getUserDetailEvent.drive(onNext: { [weak self] event in
-            if let userDetail = event.data {
-                self?.user = userDetail
+        refreshTrigger.bind(to: viewModel.input.refreshTrigger).disposed(by: disposeBag)
+        
+        viewModel.output.getUserEvent.drive(onNext: { [weak self] event in
+            guard let user = event.data else { return }
+            self?.user = user
+        }).disposed(by: disposeBag)
+        
+        viewModel.output.downloadUserEvent.drive(onNext: { [weak self] event in
+            if !event.isLoading {
+                self?.scrollView.refreshControl?.endRefreshing()
             }
         }).disposed(by: disposeBag)
+        
+        scrollView.refreshControl?.rx.controlEvent(.valueChanged).bind(onNext: { [weak self] in
+            self?.refreshTrigger.onNext(())
+        }).disposed(by: disposeBag)
+        
+        refreshTrigger.onNext(())
     }
 
     override func setupUI() {
         super.setupUI()
         
+        scrollView.addRefreshControl()
         navigationItem.title = L10n.user_detail_view_toolbar_title
     }
 
