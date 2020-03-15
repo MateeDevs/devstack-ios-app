@@ -12,13 +12,13 @@ import Moya
 
 extension Error {
     
-    func asLceError<T: Any>(_ errors: LceErrors? = nil) -> Observable<Lce<T>> {
+    func asServiceError<T: Any>(_ messages: ErrorMessages? = nil) -> Observable<Lce<T>> {
         Logger.error("%@", localizedDescription, category: .app)
         
-        if let netError = self as? MoyaError, let statusCode = netError.response?.statusCode, let message = errors?.messages[statusCode] {
-            return Observable.just(Lce(error: ServiceError(statusCode: statusCode, message: message)))
+        if let netError = self as? MoyaError, let code = netError.response?.statusCode, let message = messages?.statusCodes[code] {
+            return Observable.just(.error(ServiceError(statusCode: code, message: message)))
         } else {
-            return Observable.just(Lce(error: ServiceError(statusCode: StatusCode.networkError, message: errors?.defaultMessage)))
+            return Observable.just(.error(ServiceError(statusCode: StatusCode.networkError, message: messages?.defaultMessage)))
         }
     }
     

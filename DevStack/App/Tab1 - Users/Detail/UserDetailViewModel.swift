@@ -23,8 +23,8 @@ final class UserDetailViewModel: ViewModel, ViewModelType {
     }
     
     struct Output {
-        let getUserEvent: Driver<Lce<User>>
-        let downloadUserEvent: Driver<Lce<User>>
+        let getUser: Driver<User>
+        let downloadUser: Driver<Lce<User>>
     }
     
     init(dependencies: Dependencies, userId: String) {
@@ -32,14 +32,14 @@ final class UserDetailViewModel: ViewModel, ViewModelType {
         
         let refreshTrigger = PublishSubject<Void>()
         
-        let getUserEvent: Driver<Lce<User>> = dependencies.userService.getUserById(userId).asDriverOnErrorJustComplete()
+        let getUser: Driver<User> = dependencies.userService.getUserById(userId).asDriverOnErrorJustComplete()
         
-        let downloadUserEvent = refreshTrigger.flatMap({ _ -> Observable<Lce<User>> in
+        let downloadUser = refreshTrigger.flatMap({ _ -> Observable<Lce<User>> in
             dependencies.userService.downloadUserById(userId)
         }).asDriverOnErrorJustComplete()
         
         self.input = Input(refreshTrigger: refreshTrigger.asObserver())
-        self.output = Output(getUserEvent: getUserEvent, downloadUserEvent: downloadUserEvent)
+        self.output = Output(getUser: getUser, downloadUser: downloadUser)
         
         super.init()
     }

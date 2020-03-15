@@ -55,13 +55,15 @@ final class UserDetailViewController: BaseViewController {
         
         refreshTrigger.bind(to: viewModel.input.refreshTrigger).disposed(by: disposeBag)
         
-        viewModel.output.getUserEvent.drive(onNext: { [weak self] event in
-            guard let user = event.data else { return }
+        viewModel.output.getUser.drive(onNext: { [weak self] user in
             self?.user = user
         }).disposed(by: disposeBag)
         
-        viewModel.output.downloadUserEvent.drive(onNext: { [weak self] event in
-            if !event.isLoading {
+        viewModel.output.downloadUser.drive(onNext: { [weak self] lce in
+            switch lce {
+            case .loading:
+                break
+            case .content, .error:
                 self?.scrollView.refreshControl?.endRefreshing()
             }
         }).disposed(by: disposeBag)

@@ -53,16 +53,17 @@ final class ProfileViewController: BaseViewController {
     override func setupViewModel() {
         super.setupViewModel()
         
-        viewModel.output.getProfileEvent.drive(onNext: { [weak self] event in
-            if event.isLoading {
+        viewModel.output.getProfile.drive(onNext: { [weak self] lce in
+            switch lce {
+            case .loading:
                 self?.view.showAnimatedGradientSkeleton(animation: GradientDirection.topLeftBottomRight.slidingAnimation())
-            } else if let user = event.data {
+            case .content(let user):
                 // Delay is just for a skeleton show case purpose
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                     self?.view.hideSkeleton()
                     self?.user = user
                 }
-            } else {
+            case .error:
                 self?.view.hideSkeleton()
             }
         }).disposed(by: disposeBag)

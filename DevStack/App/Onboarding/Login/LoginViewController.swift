@@ -62,19 +62,19 @@ final class LoginViewController: InputViewController {
         passwordTextField.textField.rx.text.orEmpty.bind(to: viewModel.input.password).disposed(by: disposeBag)
         loginButton.rx.tap.bind(to: viewModel.input.loginButtonTaps).disposed(by: disposeBag)
         
-        viewModel.output.loginEvent.drive(onNext: { [weak self] event in
-            if event.isLoading {
+        viewModel.output.login.drive(onNext: { [weak self] lce in
+            switch lce {
+            case .loading:
                 self?.showWhisper(message: L10n.signing_in)
-            } else if let error = event.error {
-                self?.showWhisperWithError(error)
-            } else {
+                self?.loginButton.isEnabled = false
+            case .content:
                 self?.hideWhisper()
+                self?.loginButton.isEnabled = true
                 self?.flowDelegate?.dismiss()
+            case .error(let error):
+                self?.showWhisperWithError(error)
+                self?.loginButton.isEnabled = true
             }
-        }).disposed(by: disposeBag)
-        
-        viewModel.output.loginButtonEnabled.drive(onNext: { [weak self] enabled in
-            self?.loginButton.isEnabled = enabled
         }).disposed(by: disposeBag)
         
         registerButton.rx.tap.bind { [weak self] in

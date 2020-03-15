@@ -18,16 +18,16 @@ struct DatabaseManager {
     /// - parameter type: Type of object.
     /// - parameter id: Primary key to specify an object.
     /// - parameter primaryKeyName: Optional parameter to set alternate primary key name (default is "id").
-    /// - returns: Observable which emits Lce of a given type.
+    /// - returns: Observable which emits an object of a given type.
     ///
-    func observableObject<T: Object>(_ type: T.Type, id: String, primaryKeyName: String = "id") -> Observable<Lce<T>> {
+    func observableObject<T: Object>(_ type: T.Type, id: String, primaryKeyName: String = "id") -> Observable<T> {
         
         let realm = try! Realm()
         let dbObjects = realm.objects(T.self).filter(NSPredicate(format: "\(primaryKeyName) == %@", id))
         
-        return Observable.collection(from: dbObjects).flatMap { (objects) -> Observable<Lce<T>> in
+        return Observable.collection(from: dbObjects).flatMap { (objects) -> Observable<T> in
             guard let object = objects.first else { return Observable.empty() }
-            return Observable.just(Lce(data: object))
+            return Observable.just(object)
         }
     }
     
@@ -38,9 +38,9 @@ struct DatabaseManager {
     /// - parameter predicate: NSPredicate for optional objects filtering.
     /// - parameter sortBy: Optional parameter for sorting.
     /// - parameter ascending: Optional parameter for sorting in ascending or descending order.
-    /// - returns: Observable which emits Lce with Array of a given type.
+    /// - returns: Observable which emits an Array of objects of a given type.
     ///
-    func observableCollection<T: Object>(_ type: T.Type, predicate: NSPredicate? = nil, sortBy: String? = nil, ascending: Bool? = nil) -> Observable<Lce<[T]>> {
+    func observableCollection<T: Object>(_ type: T.Type, predicate: NSPredicate? = nil, sortBy: String? = nil, ascending: Bool? = nil) -> Observable<[T]> {
         
         let realm = try! Realm()
         var dbObjects = realm.objects(T.self)
@@ -53,9 +53,9 @@ struct DatabaseManager {
             dbObjects = dbObjects.sorted(byKeyPath: sortBy, ascending: ascending)
         }
         
-        return Observable.array(from: dbObjects).flatMap { (objects) -> Observable<Lce<[T]>> in
-            guard objects.count > 0 else { return Observable.just(Lce(data: [])) }
-            return Observable.just(Lce(data: objects))
+        return Observable.array(from: dbObjects).flatMap { (objects) -> Observable<[T]> in
+            guard objects.count > 0 else { return Observable.just([]) }
+            return Observable.just(objects)
         }
     }
     

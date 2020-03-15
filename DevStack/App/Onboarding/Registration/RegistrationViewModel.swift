@@ -23,8 +23,7 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
     }
     
     struct Output {
-        let registrationEvent: Driver<Lce<User>>
-        let registerButtonEnabled: Driver<Bool>
+        let registration: Driver<Lce<User>>
     }
     
     init(dependencies: Dependencies) {
@@ -32,27 +31,21 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
         let password = ReplaySubject<String>.create(bufferSize: 1)
         let registerButtonTaps = PublishSubject<Void>()
         
-        let activity = ActivityIndicator()
         let inputs = Observable.combineLatest(email, password) { (email: $0, password: $1) }
         
-        let registrationEvent = registerButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Observable<Lce<User>> in
+        let registration = registerButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Observable<Lce<User>> in
             if inputs.email.isEmpty || inputs.password.isEmpty {
-                return Observable.just(Lce(error: ValidationError(L10n.invalid_credentials)))
+                return Observable.just(.error(ValidationError(L10n.invalid_credentials)))
             } else if !DataValidator.validateEmail(inputs.email) {
-                return Observable.just(Lce(error: ValidationError(L10n.invalid_email)))
+                return Observable.just(.error(ValidationError(L10n.invalid_email)))
             } else {
                 return dependencies.loginService
                     .registration(email: inputs.email, password: inputs.password, firstName: "Anonymous", lastName: "")
-                    .trackActivity(activity)
             }
         }.asDriverOnErrorJustComplete()
         
-        let registerButtonEnabled = activity.asDriver().map({ (activity) -> Bool in
-            !activity
-        })
-        
         self.input = Input(email: email.asObserver(), password: password.asObserver(), registerButtonTaps: registerButtonTaps.asObserver())
-        self.output = Output(registrationEvent: registrationEvent, registerButtonEnabled: registerButtonEnabled)
+        self.output = Output(registration: registration)
         
         super.init()
     }
