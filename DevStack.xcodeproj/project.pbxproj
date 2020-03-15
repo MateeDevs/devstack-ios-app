@@ -845,13 +845,13 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
-		45890AFA21FF515800894255 /* Tab2 - Profile */ = {
+		45890AFA21FF515800894255 /* Tab2-Profile */ = {
 			isa = PBXGroup;
 			children = (
 				45E8A4B8220AF3A3003F7502 /* ProfileFlowController.swift */,
 				45DB9760226B871300C3F234 /* Main */,
 			);
-			path = "Tab2 - Profile";
+			path = "Tab2-Profile";
 			sourceTree = "<group>";
 		};
 		45890B3322086BC000894255 /* Onboarding */ = {
@@ -894,8 +894,8 @@
 			children = (
 				45890B3322086BC000894255 /* Onboarding */,
 				4597621720FDDE270034DE29 /* Main */,
-				45E8A4E2220B0803003F7502 /* Tab1 - Users */,
-				45890AFA21FF515800894255 /* Tab2 - Profile */,
+				45E8A4E2220B0803003F7502 /* Tab1-Users */,
+				45890AFA21FF515800894255 /* Tab2-Profile */,
 				4597622220FDE5440034DE29 /* LaunchScreen */,
 				450392832256B14C0037BF42 /* Config */,
 				4597621920FDE4360034DE29 /* AppFlowController.swift */,
@@ -1135,29 +1135,29 @@
 			children = (
 				45DB9771226BA5B200C3F234 /* ProfileWrapper.storyboard */,
 				45DB9772226BA5B200C3F234 /* ProfileWrapperViewController.swift */,
-				45DB976F226BA58600C3F234 /* Tab1 - Profile */,
-				45DB9770226BA59A00C3F234 /* Tab2 - Settings */,
+				45DB976F226BA58600C3F234 /* Tab1-Profile */,
+				45DB9770226BA59A00C3F234 /* Tab2-Settings */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		45DB976F226BA58600C3F234 /* Tab1 - Profile */ = {
+		45DB976F226BA58600C3F234 /* Tab1-Profile */ = {
 			isa = PBXGroup;
 			children = (
 				459EC5A32239895F0045BE3B /* Profile.storyboard */,
 				45E8A4BC220AF3C0003F7502 /* ProfileViewController.swift */,
 				4527329F23F0ACD70067C712 /* ProfileViewModel.swift */,
 			);
-			path = "Tab1 - Profile";
+			path = "Tab1-Profile";
 			sourceTree = "<group>";
 		};
-		45DB9770226BA59A00C3F234 /* Tab2 - Settings */ = {
+		45DB9770226BA59A00C3F234 /* Tab2-Settings */ = {
 			isa = PBXGroup;
 			children = (
 				45DB977D226BA9D200C3F234 /* Settings.storyboard */,
 				45DB977E226BA9D200C3F234 /* SettingsViewController.swift */,
 			);
-			path = "Tab2 - Settings";
+			path = "Tab2-Settings";
 			sourceTree = "<group>";
 		};
 		45E1E61C221D5C55006C84D1 /* LocationManager */ = {
@@ -1170,14 +1170,14 @@
 			path = LocationManager;
 			sourceTree = "<group>";
 		};
-		45E8A4E2220B0803003F7502 /* Tab1 - Users */ = {
+		45E8A4E2220B0803003F7502 /* Tab1-Users */ = {
 			isa = PBXGroup;
 			children = (
 				45E8A4E5220B0803003F7502 /* UsersFlowController.swift */,
 				45E8A52E220DDE04003F7502 /* Main */,
 				4588FF2322282CE20014FC79 /* Detail */,
 			);
-			path = "Tab1 - Users";
+			path = "Tab1-Users";
 			sourceTree = "<group>";
 		};
 		45E8A52E220DDE04003F7502 /* Main */ = {
