@@ -18,7 +18,7 @@ public class UserService {
     private let database = DatabaseManager()
     private let network = NetworkManager()
     
-    public func getUsers() -> Observable<Lce<[User]>> {
+    public func getUsers() -> Observable<[User]> {
         return database.observableCollection(User.self)
     }
     
@@ -27,7 +27,7 @@ public class UserService {
         return network.observableRequest(endpoint).map([User].self, atKeyPath: "data").save().mapToLce()
     }
     
-    public func getUserById(_ id: String) -> Observable<Lce<User>> {
+    public func getUserById(_ id: String) -> Observable<User> {
         return database.observableObject(User.self, id: id)
     }
     
@@ -43,9 +43,11 @@ public class UserService {
     
     public func getProfile() -> Observable<Lce<User>> {
         if let userId = KeychainStore.get(.userId) {
-            return getUserById(userId)
+            let db = getUserById(userId).mapToLce()
+            let net = downloadUserById(userId).filterErrors()
+            return Observable.merge(db, net)
         } else {
-            return Observable.just(Lce(error: CommonError.noUserId))
+            return Observable.just(.error(CommonError.noUserId))
         }
     }
     

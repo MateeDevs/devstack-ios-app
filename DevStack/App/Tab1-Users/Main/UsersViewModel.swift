@@ -21,21 +21,21 @@ final class UsersViewModel: ViewModel, ViewModelType {
     }
     
     struct Output {
-        let getUsersEvent: Driver<Lce<[User]>>
-        let downloadUsersEvent: Driver<Lce<[User]>>
+        let getUsers: Driver<[User]>
+        let downloadUsers: Driver<Lce<[User]>>
     }
     
     init(dependencies: Dependencies) {
         let page = PublishSubject<Int>()
         
-        let getUsersEvent: Driver<Lce<[User]>> = dependencies.userService.getUsers().asDriverOnErrorJustComplete()
+        let getUsers: Driver<[User]> = dependencies.userService.getUsers().asDriverOnErrorJustComplete()
         
-        let downloadUsersEvent = page.flatMap({ (page) -> Observable<Lce<[User]>> in
+        let downloadUsers = page.flatMap({ (page) -> Observable<Lce<[User]>> in
             dependencies.userService.downloadUsersForPage(page)
         }).asDriverOnErrorJustComplete()
         
         self.input = Input(page: page.asObserver())
-        self.output = Output(getUsersEvent: getUsersEvent, downloadUsersEvent: downloadUsersEvent)
+        self.output = Output(getUsers: getUsers, downloadUsers: downloadUsers)
         
         super.init()
     }

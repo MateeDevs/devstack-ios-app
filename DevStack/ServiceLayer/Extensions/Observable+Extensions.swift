@@ -18,28 +18,30 @@ extension ObservableType {
         }
     }
     
-    func mapToLce<T: Any>(_ errors: LceErrors? = nil) -> Observable<Lce<T>> where Element == T {
+    func mapToLce<T: Any>(_ messages: ErrorMessages? = nil) -> Observable<Lce<T>> where Element == T {
         return flatMap({ object -> Observable<Lce<T>> in
-            Observable.just(Lce<T>(data: object))
+            Observable.just(.content(object))
         }).catchError({ error in
-            error.asLceError(errors)
-        }).startWith(Lce(loading: true))
+            error.asServiceError(messages)
+        }).startWith(.loading)
     }
     
-    func mapToLce<T: Any>(_ errors: LceErrors? = nil) -> Observable<Lce<[T]>> where Element == [T] {
-        return flatMap({ objects -> Observable<Lce<[T]>> in
-            Observable.just(Lce<[T]>(data: objects))
-        }).catchError({ error in
-            error.asLceError(errors)
-        }).startWith(Lce(loading: true))
-    }
-    
-    func mapToLceVoid(_ errors: LceErrors? = nil) -> Observable<Lce<Void>> {
+    func mapToLceVoid(_ messages: ErrorMessages? = nil) -> Observable<Lce<Void>> {
         return map { _ in
-            Lce(data: Void())
+            .content(Void())
         }.catchError({ error in
-            error.asLceError(errors)
-        }).startWith(Lce(loading: true))
+            error.asServiceError(messages)
+        }).startWith(.loading)
+    }
+    
+    func filterErrors<T: Any>() -> Observable<Lce<T>> where Element == Lce<T> {
+        return filter { (lce) -> Bool in
+            if case .error = lce {
+                return true
+            } else {
+                return false
+            }
+        }
     }
     
 }

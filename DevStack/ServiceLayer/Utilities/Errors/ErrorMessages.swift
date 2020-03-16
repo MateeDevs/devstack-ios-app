@@ -1,5 +1,5 @@
 //
-//  LceErrors.swift
+//  ErrorMessages.swift
 //  DevStack
 //
 //  Created by Petr Chmelar on 19/03/2019.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct LceErrors {
+struct ErrorMessages {
     
-    let messages: [Int: String]
+    let statusCodes: [Int: String]
     let defaultMessage: String
     
-    init(messages: [Int: String], defaultMessage: String) {
-        self.messages = messages
+    init(_ statusCodes: [Int: String], defaultMessage: String) {
+        self.statusCodes = statusCodes
         self.defaultMessage = defaultMessage
     }
 }

@@ -73,22 +73,24 @@ open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollVi
         }
     }
     
-    public func handleDatabaseData(_ event: Lce<[T]>) {
-        guard let items = event.data else { return }
-        self.items = items
+    public func handleDatabaseData(_ data: [T]) {
+        self.items = data
     }
     
-    public func handleNetworkData(_ event: Lce<[T]>) {
-        if event.isLoading, items.count == 0 {
-            view.startActivityIndicator()
-        } else if event.error != nil {
-            view.stopActivityIndicator()
-            tableView?.refreshControl?.endRefreshing()
-        } else if let items = event.data {
+    public func handleNetworkData(_ lce: Lce<[T]>) {
+        switch lce {
+        case .loading:
+            if items.count == 0 {
+               view.startActivityIndicator()
+            }
+        case .content(let data):
             view.stopActivityIndicator()
             tableView?.refreshControl?.endRefreshing()
             currentPage += 1
-            shouldFetchMore = items.count == perPage ? true : false
+            shouldFetchMore = data.count == perPage ? true : false
+        case .error:
+            view.stopActivityIndicator()
+            tableView?.refreshControl?.endRefreshing()
         }
     }
     

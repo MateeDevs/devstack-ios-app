@@ -21,17 +21,17 @@ final class ProfileViewModel: ViewModel, ViewModelType {
     }
     
     struct Output {
-        let getProfileEvent: Driver<Lce<User>>
+        let getProfile: Driver<Lce<User>>
         let currentLocation: Driver<CLLocation>
     }
     
     init(dependencies: Dependencies) {
         
-        let getProfileEvent = dependencies.userService.getProfile().asDriverOnErrorJustComplete()
+        let getProfile = dependencies.userService.getProfile().asDriverOnErrorJustComplete()
         let currentLocation = dependencies.locationManager.getCurrentLocation().take(1).asDriverOnErrorJustComplete()
         
         self.input = Input()
-        self.output = Output(getProfileEvent: getProfileEvent, currentLocation: currentLocation)
+        self.output = Output(getProfile: getProfile, currentLocation: currentLocation)
         
         super.init()
     }

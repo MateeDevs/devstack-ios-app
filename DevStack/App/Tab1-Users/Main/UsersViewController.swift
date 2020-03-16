@@ -45,12 +45,12 @@ final class UsersViewController: BaseTableViewController<User> {
         
         page.bind(to: viewModel.input.page).disposed(by: disposeBag)
         
-        viewModel.output.getUsersEvent.drive(onNext: { [weak self] event in
-            self?.handleDatabaseData(event)
+        viewModel.output.getUsers.drive(onNext: { [weak self] users in
+            self?.handleDatabaseData(users)
         }).disposed(by: disposeBag)
         
-        viewModel.output.downloadUsersEvent.drive(onNext: { [weak self] event in
-            self?.handleNetworkData(event)
+        viewModel.output.downloadUsers.drive(onNext: { [weak self] lce in
+            self?.handleNetworkData(lce)
         }).disposed(by: disposeBag)
     }
 
