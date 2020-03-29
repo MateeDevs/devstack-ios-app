@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16095" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16084.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,11 +13,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I83-Y9-BrC" id="FTi-Df-7nL">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df9-ju-hKn">
-                        <rect key="frame" x="16" y="22" width="343" height="0.0"/>
+                        <rect key="frame" x="16" y="12" width="343" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -27,14 +25,15 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="Df9-ju-hKn" firstAttribute="leading" secondItem="FTi-Df-7nL" secondAttribute="leading" constant="16" id="UfU-cw-zGX"/>
-                    <constraint firstItem="Df9-ju-hKn" firstAttribute="centerY" secondItem="FTi-Df-7nL" secondAttribute="centerY" id="guT-fO-AAq"/>
+                    <constraint firstItem="Df9-ju-hKn" firstAttribute="top" secondItem="FTi-Df-7nL" secondAttribute="top" constant="12" id="mip-9V-Ejw"/>
+                    <constraint firstAttribute="bottom" secondItem="Df9-ju-hKn" secondAttribute="bottom" constant="12" id="oR9-Lc-AJg"/>
                     <constraint firstAttribute="trailing" secondItem="Df9-ju-hKn" secondAttribute="trailing" constant="16" id="uf4-DR-lSO"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="nameLabel" destination="Df9-ju-hKn" id="cXf-EL-C7K"/>
             </connections>
-            <point key="canvasLocation" x="172" y="45"/>
+            <point key="canvasLocation" x="172" y="44.977511244377816"/>
         </tableViewCell>
     </objects>
 </document>

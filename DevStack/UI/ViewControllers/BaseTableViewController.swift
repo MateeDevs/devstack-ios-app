@@ -123,4 +123,9 @@ open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollVi
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
+    
+    open func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        // Override this method in a subclass and set the estimated height
+        BaseTableViewCell.estimatedHeight
+    }
 }
