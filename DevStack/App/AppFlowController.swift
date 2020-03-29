@@ -22,6 +22,7 @@ class AppFlowController: FlowController, MainFlowControllerDelegate, OnboardingF
         let fc = MainFlowController(navigationController: navigationController, dependencies: dependencies)
         fc.delegate = self
         let rootVc = startChildFlow(fc)
+        navigationController.navigationBar.barStyle = .black
         navigationController.viewControllers = [rootVc]
     }
     

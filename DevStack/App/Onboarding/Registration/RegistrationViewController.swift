@@ -40,10 +40,6 @@ final class RegistrationViewController: InputViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .default
-    }
 
     // MARK: Default methods
     override func setupViewModel() {

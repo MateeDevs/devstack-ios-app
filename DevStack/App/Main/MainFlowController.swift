@@ -33,7 +33,6 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
         profileNc.viewControllers = [profileRootVc]
         
         main.viewControllers = [usersNc, profileNc]
-        navigationController.navigationBar.isHidden = true
         return main
     }
     
