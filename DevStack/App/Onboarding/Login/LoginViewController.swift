@@ -50,10 +50,6 @@ final class LoginViewController: InputViewController {
         #endif
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .default
-    }
-    
     // MARK: Default methods
     override func setupViewModel() {
         super.setupViewModel()

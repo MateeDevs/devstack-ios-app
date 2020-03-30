@@ -64,10 +64,6 @@ open class BaseViewController: UIViewController {
         hideWhisper()
     }
     
-    override open var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
-    }
-    
     // MARK: Default methods
     
     /// Override this method in a subclass and setup the view model

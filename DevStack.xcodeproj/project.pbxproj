@@ -361,9 +361,6 @@
 		45E8A576220F7933003F7502 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8A56F220F7933003F7502 /* UsersViewModel.swift */; };
 		45E8A577220F7933003F7502 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8A56F220F7933003F7502 /* UsersViewModel.swift */; };
 		45E8A578220F7933003F7502 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8A56F220F7933003F7502 /* UsersViewModel.swift */; };
-		45EBB309217600360080D179 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EBB308217600360080D179 /* UINavigationController+Extensions.swift */; };
-		45EBB30A217600390080D179 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EBB308217600360080D179 /* UINavigationController+Extensions.swift */; };
-		45EBB30B217600390080D179 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EBB308217600360080D179 /* UINavigationController+Extensions.swift */; };
 		45ECA08F21676A9D000B1124 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45ECA08D21676A9D000B1124 /* Localizable.strings */; };
 		45ECA09021676A9D000B1124 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45ECA08D21676A9D000B1124 /* Localizable.strings */; };
 		45ECA09121676A9D000B1124 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45ECA08D21676A9D000B1124 /* Localizable.strings */; };
@@ -577,7 +574,6 @@
 		45E8A56D220F7933003F7502 /* Users.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Users.storyboard; sourceTree = "<group>"; };
 		45E8A56E220F7933003F7502 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		45E8A56F220F7933003F7502 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
-		45EBB308217600360080D179 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		45ECA09521676AA3000B1124 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		45ECA09621676AA8000B1124 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		45ECA09721676AAE000B1124 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -989,7 +985,6 @@
 				45A388D7225F5EF300037FFA /* UIFont+Extensions.swift */,
 				45ECA1A9216B9BE2000B1124 /* UIImage+Extensions.swift */,
 				451233E2215D18BA00F85985 /* UIImageView+Extensions.swift */,
-				45EBB308217600360080D179 /* UINavigationController+Extensions.swift */,
 				45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */,
 				A83F0EC42149310600313067 /* UIStackView+Extensions.swift */,
 				4511A72C213DDCCB006AD4CC /* UIView+Extensions.swift */,
@@ -1791,7 +1786,6 @@
 				45F4AE422180B88400E75B4A /* LocalizedImageView.swift in Sources */,
 				45E8A4BE220AF3C0003F7502 /* ProfileViewController.swift in Sources */,
 				459762E320FE21BC0034DE29 /* ViewModelType.swift in Sources */,
-				45EBB309217600360080D179 /* UINavigationController+Extensions.swift in Sources */,
 				4511A71E213D73C8006AD4CC /* ActivityIndicatorView.swift in Sources */,
 				45E1E619221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				45890B5C22087C8B00894255 /* String+UIExtensions.swift in Sources */,
@@ -1915,7 +1909,6 @@
 				459762E420FE21BC0034DE29 /* ViewModelType.swift in Sources */,
 				45E8A4BF220AF3C0003F7502 /* ProfileViewController.swift in Sources */,
 				45F4AE432180B88400E75B4A /* LocalizedImageView.swift in Sources */,
-				45EBB30A217600390080D179 /* UINavigationController+Extensions.swift in Sources */,
 				4511A71F213D73C8006AD4CC /* ActivityIndicatorView.swift in Sources */,
 				45E1E61A221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				45890B5D22087C8B00894255 /* String+UIExtensions.swift in Sources */,
@@ -2039,7 +2032,6 @@
 				45F4AE442180B88400E75B4A /* LocalizedImageView.swift in Sources */,
 				45E8A4C0220AF3C0003F7502 /* ProfileViewController.swift in Sources */,
 				459762E520FE21BC0034DE29 /* ViewModelType.swift in Sources */,
-				45EBB30B217600390080D179 /* UINavigationController+Extensions.swift in Sources */,
 				4511A720213D73C8006AD4CC /* ActivityIndicatorView.swift in Sources */,
 				45E1E61B221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				45890B5E22087C8B00894255 /* String+UIExtensions.swift in Sources */,
