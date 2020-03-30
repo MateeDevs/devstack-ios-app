@@ -74,6 +74,10 @@ final class UsersViewController: BaseTableViewController<User> {
         let user = items[indexPath.row]
         flowDelegate?.showUserDetail(userId: user.id)
     }
+    
+    override public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        UserTableViewCell.estimatedHeight
+    }
 
     // MARK: Additional methods
 }

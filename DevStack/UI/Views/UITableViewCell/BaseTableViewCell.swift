@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable open class BaseTableViewCell: UITableViewCell {
     
-    public static let prefferedHeight: CGFloat = 44.0
+    public static let estimatedHeight: CGFloat = 44.0
     
     @IBInspectable public var showDefaultSeparator: Bool = true {
         didSet {
