@@ -8,7 +8,7 @@
 
 import XCTest
 
-class LoginScreen: Screen {
+class LoginScreen: BaseScreen {
 
     // MARK: - Private Properties
     
@@ -16,7 +16,6 @@ class LoginScreen: Screen {
     private let password = "11111111"
     private(set) lazy var emailTextField: XCUIElement = app.textFields["emailTextField"]
     private(set) lazy var passwordTextField: XCUIElement = app.secureTextFields["passwordTextField"]
-    //private(set) lazy var keyboardDoneButton: XCUIElement = app.keyboards.element.buttons["Hotovo"]
     private(set) lazy var loginButton: XCUIElement = app.buttons["loginButton"]
     private(set) lazy var registerButton: XCUIElement = app.buttons["registerButton"]
     
@@ -36,13 +35,11 @@ class LoginScreen: Screen {
         waitForElement(element: emailTextField)
         emailTextField.tap()
         emailTextField.typeText(email)
-        emailTextField.typeText("\n")
     }
     
     func enterPassword() {
         waitForElement(element: passwordTextField)
-        passwordTextField.tap()
+        passwordTextField.doubleTap()
         passwordTextField.typeText(password)
-        passwordTextField.typeText("\n")
     }
 }

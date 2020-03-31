@@ -25,12 +25,12 @@ final class LoginViewController: InputViewController {
     // MARK: UI components
     @IBOutlet private weak var emailTextField: TextFieldWithHint! {
         didSet {
-            emailTextField.accessibilityIdentifier = "emailTextField"
+            emailTextField.textField.accessibilityIdentifier = "emailTextField"
         }
     }
     @IBOutlet private weak var passwordTextField: TextFieldWithHint! {
         didSet {
-            passwordTextField.accessibilityIdentifier = "passwordTextField"
+            passwordTextField.textField.accessibilityIdentifier = "passwordTextField"
         }
     }
     @IBOutlet private weak var loginButton: PrimaryButton! {
@@ -58,8 +58,8 @@ final class LoginViewController: InputViewController {
         super.viewDidLoad()
         
         #if ALPHA
-        emailTextField.textField.text = "petr.chmelar@matee.cz"
-        passwordTextField.textField.text = "11111111"
+       // emailTextField.textField.text = "petr.chmelar@matee.cz"
+       //passwordTextField.textField.text = "11111111"
         #elseif BETA
         emailTextField.textField.text = "petr.chmelar@matee.cz"
         passwordTextField.textField.text = "11111111"

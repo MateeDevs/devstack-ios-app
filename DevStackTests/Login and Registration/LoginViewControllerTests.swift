@@ -15,12 +15,13 @@ class LoginViewControllerTests: XCTestCase {
     
     private var loginViewController: LoginViewController!
     private var viewModel: LoginViewModel!
-    private var dependencies: LoginServiceMock!
+    private var dependencies: AppDependency!
 
     // MARK: - Public Methods
     
     override func setUp() {
-        dependencies = LoginServiceMock()
+        super.setUp()
+        dependencies = AppDependency()
         viewModel = LoginViewModel(dependencies: dependencies)
         loginViewController = LoginViewController.instantiate(viewModel: viewModel)
         
@@ -29,36 +30,37 @@ class LoginViewControllerTests: XCTestCase {
     }
 
     override func tearDown() {
+        super.tearDown()
         loginViewController = nil
         viewModel = nil
         dependencies = nil
-        
-        super.tearDown()
     }
 
     func testValidInputAppearance() {
-        loginViewController.emailTextField.text = "petr.chmelar@matee.cz"
-        loginViewController.emailTextField.sendActions(for: .editingChanged)
-        loginViewController.passwordTextField.text = "11111111"
-        loginViewController.passwordTextField.sendActions(for: .editingChanged)
+        loginViewController.emailTextField.textField.text = "petr.chmelar@matee.cz"
+        loginViewController.emailTextField.textField.sendActions(for: .editingChanged)
+        loginViewController.passwordTextField.textField.text = "11111111"
+        loginViewController.passwordTextField.textField.sendActions(for: .editingChanged)
         
         loginViewController.loginButton.sendActions(for: .touchUpInside)
-        let whisperView = loginViewController.view?.subviews.filter({ $0 is WhisperView}).first ?? UIView()
 
-        XCTAssertTrue(loginViewController.view?.subviews.contains(whisperView) ?? false)
-        XCTAssertEqual((whisperView as? WhisperView)?.messageLabel.text, L10n.signing_in)
+        if let whisperView = loginViewController.view.subviews.filter({ $0 is WhisperView}).first as? WhisperView {
+            XCTAssertEqual(whisperView.messageLabel.text, L10n.signing_in)
+        } else {
+            XCTFail()
+        }
     }
 
     func testInvalidInputAppearance() {
-        loginViewController.emailTextField.text = "petr.chmelar@matee.cz"
-        loginViewController.emailTextField.sendActions(for: .editingChanged)
+        loginViewController.emailTextField.textField.text = "petr.chmelar@matee.cz"
+        loginViewController.emailTextField.textField.sendActions(for: .editingChanged)
         
         loginViewController.loginButton.sendActions(for: .touchUpInside)
-        let whisperView = loginViewController.view?.subviews.filter({ $0 is WhisperView}).first ?? UIView()
 
-        XCTAssertTrue(loginViewController.view?.subviews.contains(whisperView) ?? false)
-        XCTAssertEqual((whisperView as? WhisperView)?.backgroundColor, Asset.Colors.alertError.color)
+        if let whisperView = loginViewController.view.subviews.filter({ $0 is WhisperView}).first as? WhisperView {
+            XCTAssertEqual(whisperView.messageLabel.backgroundColor, AppTheme.Colors.alertBackgroundSuccess)
+        } else {
+            XCTFail()
+        }
     }
-
-
 }

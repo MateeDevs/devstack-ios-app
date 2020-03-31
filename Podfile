@@ -55,6 +55,7 @@ end
 
 target 'DevStackTests' do
   inherit! :search_paths
+  shared_pods
 
   pod 'Firebase'
   pod 'SnapshotTesting'
@@ -92,6 +93,8 @@ post_install do |installer|
 
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
+          
+            config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = 'YES'
 
             # Ignore documentation warnings
             config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS'] = 'NO'

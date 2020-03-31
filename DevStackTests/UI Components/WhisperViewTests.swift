@@ -13,13 +13,12 @@ import XCTest
 class WhisperViewTests: XCTestCase {
     
     // MARK: - Private Properties
-    
     private let whisperView = WhisperView(frame: CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: 70)))
 
     // MARK: - Public Methods
-    
     override func setUp() {
-//        record = true
+        super.setUp()
+        record = false
     }
 
     func testInfoAppearance() {
@@ -27,7 +26,7 @@ class WhisperViewTests: XCTestCase {
         XCTAssertEqual(whisperView.messageLabel.font, .systemFont(ofSize: 13.0, weight: .medium))
         XCTAssertEqual(whisperView.messageLabel.textColor.cgColor, UIColor.white.cgColor)
         XCTAssertEqual(whisperView.messageLabel.textAlignment, NSTextAlignment.center)
-        XCTAssertEqual(whisperView.backgroundColor, Asset.Colors.alertInfo.color)
+        XCTAssertEqual(whisperView.backgroundColor, AppTheme.Colors.alertBackgroundInfo)
         whisperView.messageLabel.text = "Default test message"
         assertSnapshot(matching: whisperView, as: .image)
     }
@@ -37,7 +36,7 @@ class WhisperViewTests: XCTestCase {
         XCTAssertEqual(whisperView.messageLabel.font, .systemFont(ofSize: 13.0, weight: .medium))
         XCTAssertEqual(whisperView.messageLabel.textColor.cgColor, UIColor.white.cgColor)
         XCTAssertEqual(whisperView.messageLabel.textAlignment, NSTextAlignment.center)
-        XCTAssertEqual(whisperView.backgroundColor, Asset.Colors.alertSuccess.color)
+        XCTAssertEqual(whisperView.backgroundColor, AppTheme.Colors.alertBackgroundSuccess)
         whisperView.messageLabel.text = "Default success message"
         assertSnapshot(matching: whisperView, as: .image)
     }
@@ -47,7 +46,7 @@ class WhisperViewTests: XCTestCase {
         XCTAssertEqual(whisperView.messageLabel.font, .systemFont(ofSize: 13.0, weight: .medium))
         XCTAssertEqual(whisperView.messageLabel.textColor.cgColor, UIColor.white.cgColor)
         XCTAssertEqual(whisperView.messageLabel.textAlignment, NSTextAlignment.center)
-        XCTAssertEqual(whisperView.backgroundColor, Asset.Colors.alertError.color)
+        XCTAssertEqual(whisperView.backgroundColor, AppTheme.Colors.alertBackgroundError)
         whisperView.messageLabel.text = "Default error message"
         assertSnapshot(matching: whisperView, as: .image)
     }

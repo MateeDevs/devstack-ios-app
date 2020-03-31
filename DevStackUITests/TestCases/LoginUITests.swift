@@ -11,11 +11,8 @@ import XCTest
 class LoginUITests: TestConfig {
 
     override func setUp() {
+        super.setUp()
         continueAfterFailure = false
-    }
-
-    override func tearDown() {
-        super.tearDown()
     }
 
     func testLogin() {

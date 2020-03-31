@@ -10,11 +10,13 @@
 		0211375123B90336007EABD9 /* BaseButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375023B90336007EABD9 /* BaseButtonTests.swift */; };
 		0211375323B90E99007EABD9 /* WhisperViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375223B90E99007EABD9 /* WhisperViewTests.swift */; };
 		0211375623BA38EE007EABD9 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375523BA38EE007EABD9 /* LoginViewControllerTests.swift */; };
-		0211375923BA4B4D007EABD9 /* LoginServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375823BA4B4D007EABD9 /* LoginServiceMock.swift */; };
 		0211375B23BBABC3007EABD9 /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375A23BBABC3007EABD9 /* UIWindow+Extensions.swift */; };
 		0211375C23BBABC3007EABD9 /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375A23BBABC3007EABD9 /* UIWindow+Extensions.swift */; };
 		0211375D23BBABC3007EABD9 /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375A23BBABC3007EABD9 /* UIWindow+Extensions.swift */; };
 		0211375E23BBABC3007EABD9 /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211375A23BBABC3007EABD9 /* UIWindow+Extensions.swift */; };
+		021759DE241BE48200F18290 /* RegistrationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021759DD241BE48200F18290 /* RegistrationViewModelTests.swift */; };
+		026BA174241E71BE005F5B78 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459762D320FE21290034DE29 /* Localizable.swift */; };
+		026BA175241E71C1005F5B78 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459762D320FE21290034DE29 /* Localizable.swift */; };
 		02D5E44523BCAC82006ADA5C /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5E44423BCAC82006ADA5C /* LoginViewModelTests.swift */; };
 		02D5E44D23BCF5D9006ADA5C /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5E44C23BCF5D9006ADA5C /* LoginUITests.swift */; };
 		02D5E45623BCF6FF006ADA5C /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5E45523BCF6FF006ADA5C /* LoginScreen.swift */; };
@@ -475,8 +477,8 @@
 		0211375023B90336007EABD9 /* BaseButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButtonTests.swift; sourceTree = "<group>"; };
 		0211375223B90E99007EABD9 /* WhisperViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperViewTests.swift; sourceTree = "<group>"; };
 		0211375523BA38EE007EABD9 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
-		0211375823BA4B4D007EABD9 /* LoginServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceMock.swift; sourceTree = "<group>"; };
 		0211375A23BBABC3007EABD9 /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extensions.swift"; sourceTree = "<group>"; };
+		021759DD241BE48200F18290 /* RegistrationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModelTests.swift; sourceTree = "<group>"; };
 		02D5E44423BCAC82006ADA5C /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		02D5E44A23BCF5D9006ADA5C /* DevStackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevStackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D5E44C23BCF5D9006ADA5C /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
@@ -728,6 +730,7 @@
 			children = (
 				0211375523BA38EE007EABD9 /* LoginViewControllerTests.swift */,
 				02D5E44423BCAC82006ADA5C /* LoginViewModelTests.swift */,
+				021759DD241BE48200F18290 /* RegistrationViewModelTests.swift */,
 			);
 			path = "Login and Registration";
 			sourceTree = "<group>";
@@ -735,7 +738,6 @@
 		0211375723BA4B1D007EABD9 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				0211375823BA4B4D007EABD9 /* LoginServiceMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1993,11 +1995,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0211375623BA38EE007EABD9 /* LoginViewControllerTests.swift in Sources */,
+				026BA175241E71C1005F5B78 /* Localizable.swift in Sources */,
 				02D5E44523BCAC82006ADA5C /* LoginViewModelTests.swift in Sources */,
 				0211375E23BBABC3007EABD9 /* UIWindow+Extensions.swift in Sources */,
-				0211375923BA4B4D007EABD9 /* LoginServiceMock.swift in Sources */,
 				0211375123B90336007EABD9 /* BaseButtonTests.swift in Sources */,
 				0211375323B90E99007EABD9 /* WhisperViewTests.swift in Sources */,
+				021759DE241BE48200F18290 /* RegistrationViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2007,6 +2010,7 @@
 			files = (
 				02D5E44D23BCF5D9006ADA5C /* LoginUITests.swift in Sources */,
 				02D5E45B23BCFBE5006ADA5C /* TestConfig.swift in Sources */,
+				026BA174241E71BE005F5B78 /* Localizable.swift in Sources */,
 				02D5E45623BCF6FF006ADA5C /* LoginScreen.swift in Sources */,
 				02D5E45823BCF72D006ADA5C /* Screen.swift in Sources */,
 			);

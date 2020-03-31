@@ -8,7 +8,7 @@
 
 import XCTest
 
-class Screen {
+class BaseScreen {
     // MARK: - Public Properties
 
     let app: XCUIApplication!
