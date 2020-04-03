@@ -1492,7 +1492,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nsh \"./scripts/swiftlint.sh\"\n";
+			shellScript = "./scripts/swiftlint.sh\n";
 		};
 		0C3E096323F6B3BC0051287D /* Script for SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1510,7 +1510,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nsh \"./scripts/swiftlint.sh\"\n";
+			shellScript = "./scripts/swiftlint.sh\n";
 		};
 		0C3E096423F6B3C70051287D /* Script for SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1528,7 +1528,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nsh \"./scripts/swiftlint.sh\"\n";
+			shellScript = "./scripts/swiftlint.sh\n";
 		};
 		4597627A20FE13D20034DE29 /* Script for Twine */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -6,11 +6,6 @@
 #     https://docs.fastlane.tools/actions
 #
 
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
-#####
-
 # Project specific variables
 
 workspace = "DevStack.xcworkspace"
@@ -131,7 +126,8 @@ platform :ios do
   desc "Create a new build"
   private_lane :build do |config|
 
-    xcversion(version: "11.3.1")
+    # Uncomment the next line if you want to use a specific Xcode version
+    # xcversion(version: "11.3.1")
 
     unless config[:git_branch] =~ /#{config[:build_branch]}\/\d+\.\d+(\.\d+)?$/
       UI.user_error!("Invalid git branch: \"#{config[:git_branch]}\". Expect: \"#{config[:build_branch]}/x.x.x\"")

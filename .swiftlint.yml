@@ -21,5 +21,6 @@ whitelist_rules:
 excluded:
   - Carthage
   - Pods
+  - vendor
 
 indentation: 2
