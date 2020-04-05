@@ -41,4 +41,25 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
         stopFlow()
         delegate?.presentOnboarding()
     }
+    
+    @discardableResult private func switchTab(_ index: MainTab) -> FlowController? {
+        guard let tabController = rootViewController as? MainTabBarController,
+            let tabs = tabController.viewControllers, index.rawValue < tabs.count else { return nil }
+        tabController.selectedIndex = index.rawValue
+        return childControllers[index.rawValue]
+    }
+    
+    func handleDeeplink(for notification: PushNotification) {
+        switch notification.type {
+        case .userDetail:
+            handleUserDetailDeeplink(userId: notification.entityId)
+        default:
+            return
+        }
+    }
+    
+    private func handleUserDetailDeeplink(userId: String) {
+        guard let usersFlowController = switchTab(.users) as? UsersFlowController else { return }
+        usersFlowController.showUserDetail(userId: userId)
+    }
 }

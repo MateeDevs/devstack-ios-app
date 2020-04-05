@@ -36,4 +36,9 @@ class AppFlowController: FlowController, MainFlowControllerDelegate, OnboardingF
         nc.navigationBar.isHidden = true
         navigationController.present(nc, animated: true, completion: nil)
     }
+    
+    func handleDeeplink(for notification: PushNotification) {
+        guard let main = childControllers.first as? MainFlowController else { return }
+        main.handleDeeplink(for: notification)
+    }
 }

@@ -28,10 +28,15 @@ public class FirebaseManager: NSObject {
         application.registerForRemoteNotifications()
     }
     
-    func handleNotification(_ notification: [AnyHashable: Any], appDelegate: AppDelegate) {
-        #if DEBUG
-        print(notification)
-        #endif
+    func handleNotification(_ notificationData: [AnyHashable: Any], appDelegate: AppDelegate) {
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: notificationData, options: [])
+            let notification = try JSONDecoder().decode(PushNotification.self, from: jsonData)
+            Logger.info("FirebaseManager: Notification with type=%d received", notification.type.rawValue, category: .networking)
+            appDelegate.flowController.handleDeeplink(for: notification)
+        } catch let error {
+            Logger.error("FirebaseManager: Error during notification decoding:\n%@", "\(error)", category: .networking)
+        }
     }
 }
 
@@ -56,8 +61,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
 extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        #if DEBUG
-        print("FirebaseMessaging registration token: \(fcmToken)")
-        #endif
+        Logger.debug("FirebaseManager: FirebaseMessaging registration token:\n%@", fcmToken, category: .networking)
     }
 }
