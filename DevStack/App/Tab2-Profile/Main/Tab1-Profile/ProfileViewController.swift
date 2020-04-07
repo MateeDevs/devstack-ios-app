@@ -53,7 +53,7 @@ final class ProfileViewController: BaseViewController {
     override func setupViewModel() {
         super.setupViewModel()
         
-        viewModel.output.getProfile.drive(onNext: { [weak self] lce in
+        viewModel.output.profile.drive(onNext: { [weak self] lce in
             switch lce {
             case .loading:
                 self?.view.showAnimatedGradientSkeleton(animation: GradientDirection.topLeftBottomRight.slidingAnimation())

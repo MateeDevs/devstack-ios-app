@@ -34,7 +34,6 @@ final class UserDetailViewController: BaseViewController {
             userNameLabel.text = user?.fullName
         }
     }
-    private var refreshTrigger = PublishSubject<Void>()
     
     // MARK: Inits
     static func instantiate(viewModel: UserDetailViewModel, userId: String) -> UserDetailViewController {
@@ -53,8 +52,6 @@ final class UserDetailViewController: BaseViewController {
     override func setupViewModel() {
         super.setupViewModel()
         
-        refreshTrigger.bind(to: viewModel.input.refreshTrigger).disposed(by: disposeBag)
-        
         viewModel.output.getUser.drive(onNext: { [weak self] user in
             self?.user = user
         }).disposed(by: disposeBag)
@@ -68,11 +65,9 @@ final class UserDetailViewController: BaseViewController {
             }
         }).disposed(by: disposeBag)
         
-        scrollView.refreshControl?.rx.controlEvent(.valueChanged).bind(onNext: { [weak self] in
-            self?.refreshTrigger.onNext(())
-        }).disposed(by: disposeBag)
+        scrollView.refreshControl?.rx.controlEvent(.valueChanged).bind(to: viewModel.input.refreshTrigger).disposed(by: disposeBag)
         
-        refreshTrigger.onNext(())
+        viewModel.input.refreshTrigger.onNext(())
     }
 
     override func setupUI() {

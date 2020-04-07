@@ -41,13 +41,19 @@ public class UserService {
         return network.observableRequest(endpoint).map(User.self).save().mapToLce()
     }
     
-    public func getProfile() -> Observable<Lce<User>> {
+    public func getProfile() -> Observable<User> {
         if let userId = KeychainStore.get(.userId) {
-            let db = getUserById(userId).mapToLce()
-            let net = downloadUserById(userId).filterErrors()
-            return Observable.merge(db, net)
+            return getUserById(userId)
         } else {
-            return Observable.just(.error(CommonError.noUserId))
+            return Observable.error(CommonError.noUserId)
+        }
+    }
+    
+    public func downloadProfile() -> Observable<Lce<User>> {
+        if let userId = KeychainStore.get(.userId) {
+            return downloadUserById(userId)
+        } else {
+            return Observable.error(CommonError.noUserId)
         }
     }
     

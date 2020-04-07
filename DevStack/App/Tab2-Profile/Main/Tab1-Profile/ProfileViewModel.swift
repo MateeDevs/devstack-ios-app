@@ -21,17 +21,20 @@ final class ProfileViewModel: ViewModel, ViewModelType {
     }
     
     struct Output {
-        let getProfile: Driver<Lce<User>>
+        let profile: Driver<Lce<User>>
         let currentLocation: Driver<CLLocation>
     }
     
     init(dependencies: Dependencies) {
+        // Merge db and network stream
+        let getProfile = dependencies.userService.getProfile().mapToLce()
+        let downloadProfile = dependencies.userService.downloadProfile().filterErrors()
+        let profile = Observable.merge(getProfile, downloadProfile).asDriverOnErrorJustComplete()
         
-        let getProfile = dependencies.userService.getProfile().asDriverOnErrorJustComplete()
         let currentLocation = dependencies.locationManager.getCurrentLocation().take(1).asDriverOnErrorJustComplete()
         
         self.input = Input()
-        self.output = Output(getProfile: getProfile, currentLocation: currentLocation)
+        self.output = Output(profile: profile, currentLocation: currentLocation)
         
         super.init()
     }
