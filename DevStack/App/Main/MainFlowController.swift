@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MainFlowControllerDelegate: class {
-    func presentOnboarding()
+    func presentOnboarding(animated: Bool, completion: (() -> Void)?)
 }
 
 class MainFlowController: FlowController, ProfileFlowControllerDelegate {
@@ -37,9 +37,10 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
     }
     
     func presentOnboarding() {
-        navigationController.viewControllers = []
-        stopFlow()
-        delegate?.presentOnboarding()
+        delegate?.presentOnboarding(animated: true, completion: { [weak self] in
+            self?.navigationController.viewControllers = []
+            self?.stopFlow()
+        })
     }
     
     @discardableResult private func switchTab(_ index: MainTab) -> FlowController? {

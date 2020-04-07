@@ -14,7 +14,7 @@ class AppFlowController: FlowController, MainFlowControllerDelegate, OnboardingF
         if KeychainStore.get(.userId) != nil {
             setupMain()
         } else {
-            presentOnboarding()
+            presentOnboarding(animated: false, completion: nil)
         }
     }
     
@@ -26,7 +26,7 @@ class AppFlowController: FlowController, MainFlowControllerDelegate, OnboardingF
         navigationController.viewControllers = [rootVc]
     }
     
-    func presentOnboarding() {
+    func presentOnboarding(animated: Bool, completion: (() -> Void)?) {
         let nc = UINavigationController()
         let fc = OnboardingFlowController(navigationController: nc, dependencies: dependencies)
         fc.delegate = self
@@ -34,11 +34,11 @@ class AppFlowController: FlowController, MainFlowControllerDelegate, OnboardingF
         nc.viewControllers = [rootVc]
         nc.modalPresentationStyle = .fullScreen
         nc.navigationBar.isHidden = true
-        navigationController.present(nc, animated: true, completion: nil)
+        navigationController.present(nc, animated: animated, completion: completion)
     }
     
     func handleDeeplink(for notification: PushNotification) {
-        guard let main = childControllers.first as? MainFlowController else { return }
+        guard let main = childControllers.first(where: { $0 is MainFlowController }) as? MainFlowController else { return }
         main.handleDeeplink(for: notification)
     }
 }
