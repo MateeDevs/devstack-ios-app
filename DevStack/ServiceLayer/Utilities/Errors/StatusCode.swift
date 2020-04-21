@@ -6,8 +6,6 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
-import Foundation
-
 struct StatusCode {
     
     // Codes 100 - 599 are reserved for HTTP status codes

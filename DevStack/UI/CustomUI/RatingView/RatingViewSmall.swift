@@ -6,8 +6,6 @@
 //  Copyright © 2017 Matee. All rights reserved.
 //
 
-import UIKit
-
 @IBDesignable public class RatingViewSmall: RatingView {
 
 }

@@ -6,8 +6,6 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import Foundation
-
 open class ViewModel {
     init() {
         Logger.info("%@ initialized", "\(type(of: self))", category: .lifecycle)

@@ -6,8 +6,6 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
-import Foundation
-
 extension Bool {
     
     public func toString() -> String? {

@@ -8,6 +8,7 @@
 ## Build generated
 build/
 DerivedData/
+xcodebuild.log
 
 ## Twine generated
 Localizable.strings

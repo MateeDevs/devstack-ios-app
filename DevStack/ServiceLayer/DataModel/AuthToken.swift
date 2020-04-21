@@ -6,9 +6,7 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import Foundation
-
-class AuthToken: Codable {
+final class AuthToken: Codable {
     
     // MARK: API properties
     var userId: String = ""

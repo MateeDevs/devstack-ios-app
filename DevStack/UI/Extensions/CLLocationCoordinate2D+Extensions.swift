@@ -6,7 +6,6 @@
 //  Copyright © 2020 Matee. All rights reserved.
 //
 
-import Foundation
 import CoreLocation
 
 extension CLLocationCoordinate2D {

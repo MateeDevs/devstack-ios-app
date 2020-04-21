@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RxSwift
 
 protocol ProfileWrapperFlowDelegate: class {
 
