@@ -13,6 +13,9 @@
 		450392852256B29D0037BF42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450392842256B29D0037BF42 /* GoogleService-Info.plist */; };
 		450392872256B35E0037BF42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450392862256B35E0037BF42 /* GoogleService-Info.plist */; };
 		450392892256B3C60037BF42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450392882256B3C60037BF42 /* GoogleService-Info.plist */; };
+		450A62892439FC9500B43049 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A62882439FC9500B43049 /* PushNotification.swift */; };
+		450A628A2439FC9500B43049 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A62882439FC9500B43049 /* PushNotification.swift */; };
+		450A628B2439FC9500B43049 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A62882439FC9500B43049 /* PushNotification.swift */; };
 		450C869123547D5A00DC5E49 /* UserDefaultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C869023547D5A00DC5E49 /* UserDefaultsStore.swift */; };
 		450C869223547D5A00DC5E49 /* UserDefaultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C869023547D5A00DC5E49 /* UserDefaultsStore.swift */; };
 		450C869323547D5A00DC5E49 /* UserDefaultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C869023547D5A00DC5E49 /* UserDefaultsStore.swift */; };
@@ -442,6 +445,7 @@
 		450392842256B29D0037BF42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		450392862256B35E0037BF42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		450392882256B3C60037BF42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		450A62882439FC9500B43049 /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		450C869023547D5A00DC5E49 /* UserDefaultsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStore.swift; sourceTree = "<group>"; };
 		450D3DD421105261008BAE71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		450D3DDB21105F02008BAE71 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
@@ -747,6 +751,7 @@
 			isa = PBXGroup;
 			children = (
 				45890B2321FF5E8F00894255 /* AuthToken.swift */,
+				450A62882439FC9500B43049 /* PushNotification.swift */,
 				4568520F2101E432006D3618 /* User.swift */,
 			);
 			path = DataModel;
@@ -1792,6 +1797,7 @@
 				456852102101E432006D3618 /* User.swift in Sources */,
 				456852462105CF82006D3618 /* LoginService.swift in Sources */,
 				A82385DA213418B400CC941C /* ShadowView.swift in Sources */,
+				450A62892439FC9500B43049 /* PushNotification.swift in Sources */,
 				451233E3215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				456851B921008988006D3618 /* BaseViewController.swift in Sources */,
 				A847B1AC210F4872002F9ED1 /* LocationHelper.swift in Sources */,
@@ -1915,6 +1921,7 @@
 				456852112101E432006D3618 /* User.swift in Sources */,
 				456852472105CF82006D3618 /* LoginService.swift in Sources */,
 				451233E4215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
+				450A628A2439FC9500B43049 /* PushNotification.swift in Sources */,
 				A82385DB213418B400CC941C /* ShadowView.swift in Sources */,
 				456851BA21008988006D3618 /* BaseViewController.swift in Sources */,
 				A83F0EB821490EE200313067 /* UserImageView.swift in Sources */,
@@ -2038,6 +2045,7 @@
 				456852122101E432006D3618 /* User.swift in Sources */,
 				456852482105CF82006D3618 /* LoginService.swift in Sources */,
 				A82385DC213418B400CC941C /* ShadowView.swift in Sources */,
+				450A628B2439FC9500B43049 /* PushNotification.swift in Sources */,
 				451233E5215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				456851BB21008988006D3618 /* BaseViewController.swift in Sources */,
 				A847B1AE210F4872002F9ED1 /* LocationHelper.swift in Sources */,

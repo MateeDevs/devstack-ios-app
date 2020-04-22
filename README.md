@@ -70,6 +70,11 @@ FIXME
 - The build phase script then generates appropriate `Localizable.strings` files from the mentioned `strings.txt` file
 - When modifying `strings.txt` it is required to comply with the specified syntax and to pull/push all the changes frequently
 
+## Push Notifications
+- Push Notifications are sent via [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging)
+- All received notifications are handled inside the FirebaseManager
+- Notifications can be easily tested with scripts from the [ios-push-tester](https://github.com/MateeDevs/ios-push-tester) repository
+
 ## Debug
 - All important information should be logged using the default `os_log` (there is `Logger` wrapper for convenience)
 - All network requests going through the `AuthenticatedProvider` are printed into the console
@@ -87,7 +92,6 @@ FIXME
 - Used build branch should be merged back to the develop branch if any changes was made
 
 ## TODO
-- Provide example push notifications after [Xcode 11.4 releases](https://developer.apple.com/documentation/xcode_release_notes/xcode_11_4_beta_release_notes)
 - Migrate to SwiftPM when all used frameworks are available (waiting for [Firebase](https://github.com/firebase/firebase-ios-sdk/issues/3136))
 - Migrate to SwiftUI + Combine when the time is right (not before iOS 14.0 official release)
 - Provide example unit tests

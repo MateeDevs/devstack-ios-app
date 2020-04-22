@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MainFlowControllerDelegate: class {
-    func presentOnboarding()
+    func presentOnboarding(animated: Bool, completion: (() -> Void)?)
 }
 
 class MainFlowController: FlowController, ProfileFlowControllerDelegate {
@@ -37,8 +37,30 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
     }
     
     func presentOnboarding() {
-        navigationController.viewControllers = []
-        stopFlow()
-        delegate?.presentOnboarding()
+        delegate?.presentOnboarding(animated: true, completion: { [weak self] in
+            self?.navigationController.viewControllers = []
+            self?.stopFlow()
+        })
+    }
+    
+    @discardableResult private func switchTab(_ index: MainTab) -> FlowController? {
+        guard let tabController = rootViewController as? MainTabBarController,
+            let tabs = tabController.viewControllers, index.rawValue < tabs.count else { return nil }
+        tabController.selectedIndex = index.rawValue
+        return childControllers[index.rawValue]
+    }
+    
+    func handleDeeplink(for notification: PushNotification) {
+        switch notification.type {
+        case .userDetail:
+            handleUserDetailDeeplink(userId: notification.entityId)
+        default:
+            return
+        }
+    }
+    
+    private func handleUserDetailDeeplink(userId: String) {
+        guard let usersFlowController = switchTab(.users) as? UsersFlowController else { return }
+        usersFlowController.showUserDetail(userId: userId)
     }
 }
