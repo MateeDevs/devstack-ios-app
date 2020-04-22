@@ -16,7 +16,6 @@ public protocol HasLoginService {
 
 public class LoginService {
     
-    private let database = DatabaseManager()
     private let network = NetworkManager()
     
     public func login(email: String, password: String) -> Observable<Lce<Void>> {

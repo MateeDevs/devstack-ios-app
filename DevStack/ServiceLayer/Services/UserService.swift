@@ -6,7 +6,6 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 
 public protocol HasUserService {

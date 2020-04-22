@@ -18,6 +18,10 @@ whitelist_rules:
   - void_return
   - custom_rules
 
+analyzer_rules:
+  - unused_import
+  - unused_declaration
+
 excluded:
   - Carthage
   - Pods

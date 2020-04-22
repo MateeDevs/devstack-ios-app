@@ -30,13 +30,6 @@ open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollVi
     private var shouldFetchMore = false
     private var currentPage: Int = 0
     private var perPage: Int = NetworkingConstants.paginationCount
-    private var loadedItems: Int {
-        if currentPage == 0 {
-            return items.count
-        } else {
-            return (currentPage * perPage) > items.count ? items.count : (currentPage * perPage)
-        }
-    }
     
     // MARK: Lifecycle methods
     override open func viewDidLoad() {

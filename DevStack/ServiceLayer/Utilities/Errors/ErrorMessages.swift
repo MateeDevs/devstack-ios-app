@@ -6,8 +6,6 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import Foundation
-
 struct ErrorMessages {
     
     let statusCodes: [Int: String]
