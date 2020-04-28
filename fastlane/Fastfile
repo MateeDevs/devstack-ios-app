@@ -17,6 +17,8 @@ alpha = {
   app_identifier: "cz.matee.devstack.alpha",
   scheme: "DevStack_Alpha",
   gsp_path: "./DevStack/App/Config/Alpha/GoogleService-Info.plist",
+  testflight_demo_acc_name: "petr.chmelar@matee.cz",
+  testflight_demo_acc_pass: "11111111",
   testflight_groups: ['App Store Connect Users', 'Public'],
   testflight_link: "NOT AVAILABLE"
 }
@@ -27,6 +29,8 @@ beta = {
   app_identifier: "cz.matee.devstack.beta",
   scheme: "DevStack_Beta",
   gsp_path: "./DevStack/App/Config/Beta/GoogleService-Info.plist",
+  testflight_demo_acc_name: "petr.chmelar@matee.cz",
+  testflight_demo_acc_pass: "11111111",
   testflight_groups: ['App Store Connect Users', 'Public'],
   testflight_link: "NOT AVAILABLE"
 }
@@ -37,6 +41,8 @@ production = {
   app_identifier: "cz.matee.devstack",
   scheme: "DevStack",
   gsp_path: "./DevStack/App/Config/Production/GoogleService-Info.plist",
+  testflight_demo_acc_name: "",
+  testflight_demo_acc_pass: "",
   testflight_groups: ['App Store Connect Users', 'Public'],
   testflight_link: "NOT AVAILABLE"
 }
@@ -51,6 +57,13 @@ matee = {
   team_id_connect: "120470944",
   match_branch: "matee",
   certificate: "iPhone Distribution: Matee Devs s.r.o."
+}
+
+testflight_contact = {
+  first_name: "Petr",
+  last_name: "Chmelar",
+  email: "petr.chmelar@matee.cz",
+  phone: "+420724229167"
 }
 
 match_url = "git@github.com:MateeDevs/match.git"
@@ -203,7 +216,15 @@ platform :ios do
       skip_waiting_for_build_processing: false,
       distribute_external: true,
       groups: config[:testflight_groups],
-      changelog: "#{config[:output_name]} #{version} build #{build}"
+      changelog: "#{config[:output_name]} #{version} build #{build}",
+      beta_app_review_info: {
+        contact_first_name: testflight_contact[:first_name],
+        contact_last_name: testflight_contact[:last_name],
+        contact_email: testflight_contact[:email],
+        contact_phone: testflight_contact[:phone],
+        demo_account_name: config[:testflight_demo_acc_name],
+        demo_account_password: config[:testflight_demo_acc_pass]
+      }
     )
     slack(
       message: "[iOS #{config[:output_name]}] #{version} build #{build} uploaded to the TestFlight\nLink: #{config[:testflight_link]}",
