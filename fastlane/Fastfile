@@ -53,6 +53,13 @@ matee = {
   certificate: "iPhone Distribution: Matee Devs s.r.o."
 }
 
+testflight_contact = {
+  first_name: "Petr",
+  last_name: "Chmelar",
+  email: "petr.chmelar@matee.cz",
+  phone: "+420724229167"
+}
+
 match_url = "git@github.com:MateeDevs/match.git"
 slack_url = "https://hooks.slack.com/services/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"
 
@@ -203,7 +210,13 @@ platform :ios do
       skip_waiting_for_build_processing: false,
       distribute_external: true,
       groups: config[:testflight_groups],
-      changelog: "#{config[:output_name]} #{version} build #{build}"
+      changelog: "#{config[:output_name]} #{version} build #{build}",
+      beta_app_review_info: {
+        contact_first_name: testflight_contact[:first_name],
+        contact_last_name: testflight_contact[:last_name],
+        contact_email: testflight_contact[:email],
+        contact_phone: testflight_contact[:phone]
+      }
     )
     slack(
       message: "[iOS #{config[:output_name]}] #{version} build #{build} uploaded to the TestFlight\nLink: #{config[:testflight_link]}",
