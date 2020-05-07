@@ -37,12 +37,24 @@ final class LoginViewModel: ViewModel, ViewModelType {
             if inputs.email.isEmpty || inputs.password.isEmpty {
                 return Observable.just(.error(ValidationError(L10n.invalid_credentials)))
             } else {
-                return dependencies.loginService.login(email: inputs.email, password: inputs.password)
+                let errors = ErrorMessages([401: L10n.invalid_credentials], defaultMessage: L10n.signing_failed)
+                
+                return dependencies.loginService.login(
+                    email: inputs.email,
+                    password: inputs.password
+                ).mapToLce(errors)
             }
         }.asDriverOnErrorJustComplete()
         
-        self.input = Input(email: email.asObserver(), password: password.asObserver(), loginButtonTaps: loginButtonTaps.asObserver())
-        self.output = Output(login: login)
+        self.input = Input(
+            email: email.asObserver(),
+            password: password.asObserver(),
+            loginButtonTaps: loginButtonTaps.asObserver()
+        )
+        
+        self.output = Output(
+            login: login
+        )
         
         super.init()
     }

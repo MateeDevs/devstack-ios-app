@@ -31,11 +31,17 @@ final class UsersViewModel: ViewModel, ViewModelType {
         let getUsers: Driver<[User]> = dependencies.userService.getUsers().asDriverOnErrorJustComplete()
         
         let downloadUsers = page.flatMap({ (page) -> Observable<Lce<[User]>> in
-            dependencies.userService.downloadUsersForPage(page)
+            dependencies.userService.downloadUsersForPage(page).mapToLce()
         }).asDriverOnErrorJustComplete()
         
-        self.input = Input(page: page.asObserver())
-        self.output = Output(getUsers: getUsers, downloadUsers: downloadUsers)
+        self.input = Input(
+            page: page.asObserver()
+        )
+        
+        self.output = Output(
+            getUsers: getUsers,
+            downloadUsers: downloadUsers
+        )
         
         super.init()
     }

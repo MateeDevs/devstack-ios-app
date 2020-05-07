@@ -35,11 +35,17 @@ final class UserDetailViewModel: ViewModel, ViewModelType {
         let getUser: Driver<User> = dependencies.userService.getUserById(userId).asDriverOnErrorJustComplete()
         
         let downloadUser = refreshTrigger.flatMap({ _ -> Observable<Lce<User>> in
-            dependencies.userService.downloadUserById(userId)
+            dependencies.userService.downloadUserById(userId).mapToLce()
         }).asDriverOnErrorJustComplete()
         
-        self.input = Input(refreshTrigger: refreshTrigger.asObserver())
-        self.output = Output(getUser: getUser, downloadUser: downloadUser)
+        self.input = Input(
+            refreshTrigger: refreshTrigger.asObserver()
+        )
+        
+        self.output = Output(
+            getUser: getUser,
+            downloadUser: downloadUser
+        )
         
         super.init()
     }

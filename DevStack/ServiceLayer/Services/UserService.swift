@@ -21,23 +21,23 @@ public class UserService {
         return database.observableCollection(User.self)
     }
     
-    public func downloadUsersForPage(_ page: Int) -> Observable<Lce<[User]>> {
+    public func downloadUsersForPage(_ page: Int) -> Observable<[User]> {
         let endpoint = UserAPI.getUsersForPage(page)
-        return network.observableRequest(endpoint).map([User].self, atKeyPath: "data").save().mapToLce()
+        return network.observableRequest(endpoint).map([User].self, atKeyPath: "data").save()
     }
     
     public func getUserById(_ id: String) -> Observable<User> {
         return database.observableObject(User.self, id: id)
     }
     
-    public func downloadUserById(_ id: String) -> Observable<Lce<User>> {
+    public func downloadUserById(_ id: String) -> Observable<User> {
         let endpoint = UserAPI.getUserById(id)
-        return network.observableRequest(endpoint).map(User.self).save().mapToLce()
+        return network.observableRequest(endpoint).map(User.self).save()
     }
     
-    public func updateUser(_ user: User) -> Observable<Lce<User>> {
+    public func updateUser(_ user: User) -> Observable<User> {
         let endpoint = UserAPI.updateUser(user)
-        return network.observableRequest(endpoint).map(User.self).save().mapToLce()
+        return network.observableRequest(endpoint).map(User.self).save()
     }
     
     public func getProfile() -> Observable<User> {
@@ -48,7 +48,7 @@ public class UserService {
         }
     }
     
-    public func downloadProfile() -> Observable<Lce<User>> {
+    public func downloadProfile() -> Observable<User> {
         if let userId = KeychainStore.get(.userId) {
             return downloadUserById(userId)
         } else {

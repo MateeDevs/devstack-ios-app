@@ -6,7 +6,7 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-struct ErrorMessages {
+public struct ErrorMessages {
     
     let statusCodes: [Int: String]
     let defaultMessage: String

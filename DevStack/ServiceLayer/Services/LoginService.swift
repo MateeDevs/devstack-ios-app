@@ -18,20 +18,18 @@ public class LoginService {
     
     private let network = NetworkManager()
     
-    public func login(email: String, password: String) -> Observable<Lce<Void>> {
+    public func login(email: String, password: String) -> Observable<Void> {
         let endpoint = AuthAPI.login(email: email, password: password)
-        let errors = ErrorMessages([401: L10n.invalid_credentials], defaultMessage: L10n.signing_failed)
         return network.observableRequest(endpoint, withInterceptor: false).map(AuthToken.self).do(onNext: { authToken in
             KeychainStore.save(.authToken, value: authToken.token)
             KeychainStore.save(.userId, value: authToken.userId)
-        }).mapToLceVoid(errors)
+        }).mapToVoid()
     }
     
-    public func registration(email: String, password: String, firstName: String, lastName: String) -> Observable<Lce<User>> {
+    public func registration(email: String, password: String, firstName: String, lastName: String) -> Observable<User> {
         let user = User(value: ["firstName": firstName, "lastName": lastName])
         let endpoint = AuthAPI.registration(email: email, password: password, user: user)
-        let errors = ErrorMessages([409: L10n.register_view_email_already_exists], defaultMessage: L10n.signing_up_failed)
-        return network.observableRequest(endpoint).map(User.self).save().mapToLce(errors)
+        return network.observableRequest(endpoint).map(User.self).save()
     }
     
     public static func logout() {
