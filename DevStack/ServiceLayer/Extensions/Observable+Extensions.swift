@@ -11,13 +11,17 @@ import RxCocoa
 
 extension ObservableType {
     
+    public func mapToVoid() -> Observable<Void> {
+        return map { _ in Void() }
+    }
+    
     public func asDriverOnErrorJustComplete() -> Driver<Element> {
         asDriver { _ in
             Driver.empty()
         }
     }
     
-    func mapToLce<T: Any>(_ messages: ErrorMessages? = nil) -> Observable<Lce<T>> where Element == T {
+    public func mapToLce<T: Any>(_ messages: ErrorMessages? = nil) -> Observable<Lce<T>> where Element == T {
         return flatMap({ object -> Observable<Lce<T>> in
             Observable.just(.content(object))
         }).catchError({ error in
@@ -25,15 +29,7 @@ extension ObservableType {
         }).startWith(.loading)
     }
     
-    func mapToLceVoid(_ messages: ErrorMessages? = nil) -> Observable<Lce<Void>> {
-        return map { _ in
-            .content(Void())
-        }.catchError({ error in
-            error.asServiceError(messages)
-        }).startWith(.loading)
-    }
-    
-    func filterErrors<T: Any>() -> Observable<Lce<T>> where Element == Lce<T> {
+    public func filterErrors<T: Any>() -> Observable<Lce<T>> where Element == Lce<T> {
         return filter { (lce) -> Bool in
             if case .error = lce {
                 return true

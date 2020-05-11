@@ -39,13 +39,26 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
             } else if !DataValidator.validateEmail(inputs.email) {
                 return Observable.just(.error(ValidationError(L10n.invalid_email)))
             } else {
-                return dependencies.loginService
-                    .registration(email: inputs.email, password: inputs.password, firstName: "Anonymous", lastName: "")
+                let errors = ErrorMessages([409: L10n.register_view_email_already_exists], defaultMessage: L10n.signing_up_failed)
+                
+                return dependencies.loginService.registration(
+                    email: inputs.email,
+                    password: inputs.password,
+                    firstName: "Anonymous",
+                    lastName: ""
+                ).mapToLce(errors)
             }
         }.asDriverOnErrorJustComplete()
         
-        self.input = Input(email: email.asObserver(), password: password.asObserver(), registerButtonTaps: registerButtonTaps.asObserver())
-        self.output = Output(registration: registration)
+        self.input = Input(
+            email: email.asObserver(),
+            password: password.asObserver(),
+            registerButtonTaps: registerButtonTaps.asObserver()
+        )
+        
+        self.output = Output(
+            registration: registration
+        )
         
         super.init()
     }
