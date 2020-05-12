@@ -1,5 +1,5 @@
 //
-//  UserDefaultsStore.swift
+//  UserDefaultsProvider.swift
 //  DevStack
 //
 //  Created by Petr Chmelar on 14/10/2019.
@@ -13,7 +13,7 @@ enum UserDefaultsCoding: String, CaseIterable {
     case selectedLanguage
 }
 
-struct UserDefaultsStore {
+struct UserDefaultsProvider {
     
     static func save<T>(_ key: UserDefaultsCoding, value: T) {
         UserDefaults.standard.set(value, forKey: key.rawValue)

@@ -37,7 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         realmSetup()
         
         appAppearance()
-        LanguageManager.shared.setDefaultLanguage(Language(rawValue: NSLocale.current.languageCode ?? "en") ?? .en)
         
         // Init main window with navigation controller
         let navController = UINavigationController()
@@ -96,10 +95,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Clear keychain on first run
     private func clearKeychain() {
-        if let hasRunBefore = UserDefaultsStore.get(.hasRunBefore) as Bool?, !hasRunBefore {
-            KeychainStore.deleteAll()
-            UserDefaultsStore.save(.hasRunBefore, value: true)
-        }
+        guard let hasRunBefore = UserDefaultsProvider.get(.hasRunBefore) as Bool?, !hasRunBefore else { return }
+        KeychainProvider.deleteAll()
+        UserDefaultsProvider.save(.hasRunBefore, value: true)
     }
     
     // MARK: Realm
@@ -128,7 +126,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Firebase
     private func firebaseSetup(for application: UIApplication) {
-        flowController.dependencies.firebaseManager.start(for: application, appDelegate: self)
+        flowController.dependencies.firebaseService.start(for: application, appDelegate: self)
     }
     
     // MARK: Appearance

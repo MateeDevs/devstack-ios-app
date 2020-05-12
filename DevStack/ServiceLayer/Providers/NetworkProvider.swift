@@ -1,5 +1,5 @@
 //
-//  Network.swift
+//  NetworkProvider.swift
 //  DevStack
 //
 //  Created by Petr Chmelar on 14/02/2019.
@@ -9,7 +9,7 @@
 import Moya
 import RxSwift
 
-struct NetworkManager {
+struct NetworkProvider {
     
     private let provider = AuthenticatedProvider<MultiTarget>()
     

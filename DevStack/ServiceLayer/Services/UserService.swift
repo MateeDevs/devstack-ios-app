@@ -14,8 +14,13 @@ public protocol HasUserService {
 
 public class UserService {
     
-    private let database = DatabaseManager()
-    private let network = NetworkManager()
+    private let database: DatabaseProvider
+    private let network: NetworkProvider
+    
+    init(databaseProvider: DatabaseProvider, networkProvider: NetworkProvider) {
+        self.database = databaseProvider
+        self.network = networkProvider
+    }
     
     public func getUsers() -> Observable<[User]> {
         return database.observableCollection(User.self)
@@ -41,7 +46,7 @@ public class UserService {
     }
     
     public func getProfile() -> Observable<User> {
-        if let userId = KeychainStore.get(.userId) {
+        if let userId = KeychainProvider.get(.userId) {
             return getUserById(userId)
         } else {
             return Observable.error(CommonError.noUserId)
@@ -49,7 +54,7 @@ public class UserService {
     }
     
     public func downloadProfile() -> Observable<User> {
-        if let userId = KeychainStore.get(.userId) {
+        if let userId = KeychainProvider.get(.userId) {
             return downloadUserById(userId)
         } else {
             return Observable.error(CommonError.noUserId)

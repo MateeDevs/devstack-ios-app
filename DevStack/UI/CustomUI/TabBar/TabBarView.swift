@@ -135,7 +135,7 @@ public protocol TabBarViewDelegate: class {
                 btn.numberView.backgroundColor = buttonNumberViewBackgroundColorHighlighted
                 btn.view.backgroundColor = buttonBackgroundColorHighlighted
                 btn.numberView.isHidden = shouldShowNumbers ? false : true
-                if !LanguageManager.shared.isRightToLeft {
+                if !(UIView.userInterfaceLayoutDirection(for: semanticContentAttribute) == .rightToLeft) {
                     leadingConstraintStripView.constant = btn.frame.origin.x
                 } else {
                     leadingConstraintStripView.constant = scrollView.contentSize.width - btn.frame.origin.x - btn.frame.size.width

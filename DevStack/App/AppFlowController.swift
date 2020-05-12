@@ -11,7 +11,7 @@ import UIKit
 class AppFlowController: FlowController, MainFlowControllerDelegate, OnboardingFlowControllerDelegate {
     
     func start() {
-        if KeychainStore.get(.userId) != nil {
+        if KeychainProvider.get(.userId) != nil {
             setupMain()
         } else {
             presentOnboarding(animated: false, completion: nil)

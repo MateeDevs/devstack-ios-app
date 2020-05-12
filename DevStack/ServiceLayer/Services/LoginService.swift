@@ -16,13 +16,17 @@ public protocol HasLoginService {
 
 public class LoginService {
     
-    private let network = NetworkManager()
+    private let network: NetworkProvider
+    
+    init(networkProvider: NetworkProvider) {
+        self.network = networkProvider
+    }
     
     public func login(email: String, password: String) -> Observable<Void> {
         let endpoint = AuthAPI.login(email: email, password: password)
         return network.observableRequest(endpoint, withInterceptor: false).map(AuthToken.self).do(onNext: { authToken in
-            KeychainStore.save(.authToken, value: authToken.token)
-            KeychainStore.save(.userId, value: authToken.userId)
+            KeychainProvider.save(.authToken, value: authToken.token)
+            KeychainProvider.save(.userId, value: authToken.userId)
         }).mapToVoid()
     }
     
@@ -34,7 +38,7 @@ public class LoginService {
     
     public static func logout() {
         // Clear KeyChain
-        KeychainStore.deleteAll()
+        KeychainProvider.deleteAll()
         
         // Clear Realm
         let realm = try! Realm()

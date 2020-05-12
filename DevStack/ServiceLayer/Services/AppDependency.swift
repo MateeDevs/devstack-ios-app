@@ -9,9 +9,20 @@
 public protocol HasNoService {
 }
 
-public struct AppDependency: HasNoService, HasLoginService, HasUserService, HasLocationManager, HasFirebaseManager {
-    public let loginService = LoginService()
-    public let userService = UserService()
-    public let locationManager = LocationManager()
-    public let firebaseManager = FirebaseManager()
+public struct AppDependency: HasNoService, HasLoginService, HasUserService, HasLocationService, HasFirebaseService {
+    
+    public let loginService: LoginService
+    public let userService: UserService
+    public let locationService: LocationService
+    public let firebaseService: FirebaseService
+    
+    public init() {
+        let databaseProvider = DatabaseProvider()
+        let networkProvider = NetworkProvider()
+        
+        self.loginService = LoginService(networkProvider: networkProvider)
+        self.userService = UserService(databaseProvider: databaseProvider, networkProvider: networkProvider)
+        self.locationService = LocationService()
+        self.firebaseService = FirebaseService()
+    }
 }
