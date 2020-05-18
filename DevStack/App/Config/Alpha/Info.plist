@@ -51,6 +51,6 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>FirebaseAppDelegateProxyEnabled</key>
-	<string>NO</string>
+	<string>YES</string>
 </dict>
 </plist>

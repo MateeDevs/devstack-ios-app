@@ -455,19 +455,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0201434C23A5798C003EBC56 /* PBXContainerItemProxy */ = {
+		026A4CD3245C50910023241B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4558D30620FCC8FF005BC325;
-			remoteInfo = DevStack;
+			remoteGlobalIDString = 459761CB20FDD60A0034DE29;
+			remoteInfo = DevStack_Alpha;
 		};
-		02D5E44F23BCF5D9006ADA5C /* PBXContainerItemProxy */ = {
+		026A4CD5245C51770023241B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4558D30620FCC8FF005BC325;
-			remoteInfo = DevStack;
+			remoteGlobalIDString = 459761CB20FDD60A0034DE29;
+			remoteInfo = DevStack_Alpha;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -479,6 +479,7 @@
 		0211375523BA38EE007EABD9 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		0211375A23BBABC3007EABD9 /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extensions.swift"; sourceTree = "<group>"; };
 		021759DD241BE48200F18290 /* RegistrationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModelTests.swift; sourceTree = "<group>"; };
+		0229F1B8245D6E5F0004CC89 /* UnitTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UnitTests.xctestplan; sourceTree = "<group>"; };
 		02D5E44423BCAC82006ADA5C /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		02D5E44A23BCF5D9006ADA5C /* DevStackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevStackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D5E44C23BCF5D9006ADA5C /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
@@ -742,6 +743,14 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		0229F1B7245D6E3A0004CC89 /* TestPlans */ = {
+			isa = PBXGroup;
+			children = (
+				0229F1B8245D6E5F0004CC89 /* UnitTests.xctestplan */,
+			);
+			path = TestPlans;
+			sourceTree = "<group>";
+		};
 		02D5E44B23BCF5D9006ADA5C /* DevStackUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -850,6 +859,7 @@
 				4558D30920FCC8FF005BC325 /* DevStack */,
 				0201434823A5798C003EBC56 /* DevStackTests */,
 				02D5E44B23BCF5D9006ADA5C /* DevStackUITests */,
+				0229F1B7245D6E3A0004CC89 /* TestPlans */,
 				4558D30820FCC8FF005BC325 /* Products */,
 				5BF3E3FE6D7D49981E7A931F /* Pods */,
 				6F197C24FB7B3AFC8FF9EA45 /* Frameworks */,
@@ -1405,7 +1415,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				0201434D23A5798C003EBC56 /* PBXTargetDependency */,
+				026A4CD4245C50910023241B /* PBXTargetDependency */,
 			);
 			name = DevStackTests;
 			productName = DevStackTests;
@@ -1423,7 +1433,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				02D5E45023BCF5D9006ADA5C /* PBXTargetDependency */,
+				026A4CD6245C51770023241B /* PBXTargetDependency */,
 			);
 			name = DevStackUITests;
 			productName = DevStackUITests;
@@ -1511,11 +1521,11 @@
 				TargetAttributes = {
 					0201434623A5798C003EBC56 = {
 						CreatedOnToolsVersion = 11.2.1;
-						TestTargetID = 4558D30620FCC8FF005BC325;
+						TestTargetID = 459761CB20FDD60A0034DE29;
 					};
 					02D5E44923BCF5D9006ADA5C = {
 						CreatedOnToolsVersion = 11.3;
-						TestTargetID = 4558D30620FCC8FF005BC325;
+						TestTargetID = 459761CB20FDD60A0034DE29;
 					};
 					4558D30620FCC8FF005BC325 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -2394,15 +2404,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0201434D23A5798C003EBC56 /* PBXTargetDependency */ = {
+		026A4CD4245C50910023241B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4558D30620FCC8FF005BC325 /* DevStack */;
-			targetProxy = 0201434C23A5798C003EBC56 /* PBXContainerItemProxy */;
+			target = 459761CB20FDD60A0034DE29 /* DevStack_Alpha */;
+			targetProxy = 026A4CD3245C50910023241B /* PBXContainerItemProxy */;
 		};
-		02D5E45023BCF5D9006ADA5C /* PBXTargetDependency */ = {
+		026A4CD6245C51770023241B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4558D30620FCC8FF005BC325 /* DevStack */;
-			targetProxy = 02D5E44F23BCF5D9006ADA5C /* PBXContainerItemProxy */;
+			target = 459761CB20FDD60A0034DE29 /* DevStack_Alpha */;
+			targetProxy = 026A4CD5245C51770023241B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2436,7 +2446,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E9D554EC8CB089B7DB282EA /* Pods-DevStackTests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(EMBEDDED_CONTENT_CONTAINS_SWIFT)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WNB34WBN42;
 				INFOPLIST_FILE = DevStackTests/Info.plist;
@@ -2452,7 +2462,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevStack.app/DevStack";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/A-DevStack.app/A-DevStack";
 			};
 			name = Debug;
 		};
@@ -2460,7 +2470,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A84EC63C8CA400F4148AF9A3 /* Pods-DevStackTests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(EMBEDDED_CONTENT_CONTAINS_SWIFT)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WNB34WBN42;
 				INFOPLIST_FILE = DevStackTests/Info.plist;
@@ -2475,7 +2485,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevStack.app/DevStack";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/A-DevStack.app/A-DevStack";
 			};
 			name = Release;
 		};
@@ -2497,7 +2507,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DevStack;
+				TEST_TARGET_NAME = DevStack_Alpha;
 			};
 			name = Debug;
 		};
@@ -2518,7 +2528,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DevStack;
+				TEST_TARGET_NAME = DevStack_Alpha;
 			};
 			name = Release;
 		};

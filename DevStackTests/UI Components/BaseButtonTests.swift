@@ -7,7 +7,7 @@
 //
 
 import SnapshotTesting
-@testable import DevStack
+@testable import A_DevStack
 import XCTest
 
 class BaseButtonTests: XCTestCase {
@@ -28,7 +28,5 @@ class BaseButtonTests: XCTestCase {
         baseButton.setTitle("BUTTON", for: .normal)
         assertSnapshot(matching: baseButton, as: .image)
     }
-    
-    
 
 }

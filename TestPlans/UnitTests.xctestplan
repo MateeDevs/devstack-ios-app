@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "4CB59E65-EB1C-4C4B-8E1E-2AD3985EC610",
+      "name" : "Configuration 1",
+      "options" : {
+        "region" : ""
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "language" : "en",
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:DevStack.xcodeproj",
+      "identifier" : "459761CB20FDD60A0034DE29",
+      "name" : "DevStack_Alpha"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:DevStack.xcodeproj",
+        "identifier" : "0201434623A5798C003EBC56",
+        "name" : "DevStackTests"
+      }
+    }
+  ],
+  "version" : 1
+}

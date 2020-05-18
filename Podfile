@@ -63,7 +63,6 @@ target 'DevStackTests' do
   pod 'RxCocoa'
 end
 
-
 # This will cause Flipper and it's dependencies to be built as a static library
 $static_framework = [
     'FlipperKit', 'Flipper', 'Flipper-Folly',
@@ -81,6 +80,7 @@ pre_install do |installer|
             end
         end
     end
+end
 
 post_install do |installer|
 
@@ -93,7 +93,7 @@ post_install do |installer|
 
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
-          
+
             config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = 'YES'
 
             # Ignore documentation warnings

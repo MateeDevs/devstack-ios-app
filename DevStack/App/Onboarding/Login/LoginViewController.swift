@@ -23,22 +23,22 @@ final class LoginViewController: InputViewController {
     private var viewModel: LoginViewModel!
     
     // MARK: UI components
-    @IBOutlet private weak var emailTextField: TextFieldWithHint! {
+    @IBOutlet weak var emailTextField: TextFieldWithHint! {
         didSet {
             emailTextField.textField.accessibilityIdentifier = "emailTextField"
         }
     }
-    @IBOutlet private weak var passwordTextField: TextFieldWithHint! {
+    @IBOutlet weak var passwordTextField: TextFieldWithHint! {
         didSet {
             passwordTextField.textField.accessibilityIdentifier = "passwordTextField"
         }
     }
-    @IBOutlet private weak var loginButton: PrimaryButton! {
+    @IBOutlet weak var loginButton: PrimaryButton! {
         didSet {
             loginButton.accessibilityIdentifier = "loginButton"
         }
     }
-    @IBOutlet private weak var registerButton: SecondaryButton! {
+    @IBOutlet weak var registerButton: SecondaryButton! {
         didSet {
             registerButton.accessibilityIdentifier = "registerButton"
         }

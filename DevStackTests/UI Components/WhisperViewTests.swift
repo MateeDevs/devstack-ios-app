@@ -7,7 +7,7 @@
 //
 
 import SnapshotTesting
-@testable import DevStack
+@testable import A_DevStack
 import XCTest
 
 class WhisperViewTests: XCTestCase {

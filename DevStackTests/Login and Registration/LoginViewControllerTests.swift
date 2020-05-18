@@ -6,7 +6,7 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-@testable import DevStack
+@testable import A_DevStack
 import XCTest
 
 class LoginViewControllerTests: XCTestCase {
@@ -44,7 +44,7 @@ class LoginViewControllerTests: XCTestCase {
         
         loginViewController.loginButton.sendActions(for: .touchUpInside)
 
-        if let whisperView = loginViewController.view.subviews.filter({ $0 is WhisperView}).first as? WhisperView {
+        if let whisperView = loginViewController.view.subviews.filter({ $0 is WhisperView }).first as? WhisperView {
             XCTAssertEqual(whisperView.messageLabel.text, L10n.signing_in)
         } else {
             XCTFail()
@@ -57,7 +57,7 @@ class LoginViewControllerTests: XCTestCase {
         
         loginViewController.loginButton.sendActions(for: .touchUpInside)
 
-        if let whisperView = loginViewController.view.subviews.filter({ $0 is WhisperView}).first as? WhisperView {
+        if let whisperView = loginViewController.view.subviews.filter({ $0 is WhisperView }).first as? WhisperView {
             XCTAssertEqual(whisperView.messageLabel.backgroundColor, AppTheme.Colors.alertBackgroundSuccess)
         } else {
             XCTFail()
