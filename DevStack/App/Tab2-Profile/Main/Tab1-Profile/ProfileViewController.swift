@@ -50,8 +50,8 @@ final class ProfileViewController: BaseViewController {
     }
 
     // MARK: Default methods
-    override func setupViewModel() {
-        super.setupViewModel()
+    override func setupBindings() {
+        super.setupBindings()
         
         viewModel.output.profile.drive(onNext: { [weak self] lce in
             switch lce {

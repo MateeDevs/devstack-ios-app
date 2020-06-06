@@ -49,8 +49,8 @@ final class UserDetailViewController: BaseViewController {
     }
 
     // MARK: Default methods
-    override func setupViewModel() {
-        super.setupViewModel()
+    override func setupBindings() {
+        super.setupBindings()
         
         viewModel.output.getUser.drive(onNext: { [weak self] user in
             self?.user = user

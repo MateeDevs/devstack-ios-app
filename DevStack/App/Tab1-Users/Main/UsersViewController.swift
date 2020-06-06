@@ -40,8 +40,8 @@ final class UsersViewController: BaseTableViewController<User> {
     }
 
     // MARK: Default methods
-    override func setupViewModel() {
-        super.setupViewModel()
+    override func setupBindings() {
+        super.setupBindings()
         
         page.bind(to: viewModel.input.page).disposed(by: disposeBag)
         

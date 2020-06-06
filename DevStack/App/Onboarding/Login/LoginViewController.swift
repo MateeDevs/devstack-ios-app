@@ -51,8 +51,8 @@ final class LoginViewController: InputViewController {
     }
     
     // MARK: Default methods
-    override func setupViewModel() {
-        super.setupViewModel()
+    override func setupBindings() {
+        super.setupBindings()
         
         emailTextField.textField.rx.text.orEmpty.bind(to: viewModel.input.email).disposed(by: disposeBag)
         passwordTextField.textField.rx.text.orEmpty.bind(to: viewModel.input.password).disposed(by: disposeBag)
