@@ -1,5 +1,5 @@
 //
-//  KeychainStore.swift
+//  KeychainProvider.swift
 //  DevStack
 //
 //  Created by Petr Chmelar on 01/08/2018.
@@ -14,7 +14,7 @@ enum KeychainCoding: String, CaseIterable {
     case userId
 }
 
-struct KeychainStore {
+struct KeychainProvider {
     
     static func save(_ key: KeychainCoding, value: String) {
         let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")

@@ -1,5 +1,5 @@
 //
-//  LocationManager.swift
+//  LocationService.swift
 //  DevStack
 //
 //  Created by Viktor Kaderabek on 10/08/2018.
@@ -9,11 +9,11 @@
 import CoreLocation
 import RxSwift
 
-public protocol HasLocationManager {
-    var locationManager: LocationManager { get }
+public protocol HasLocationService {
+    var locationService: LocationService { get }
 }
 
-public class LocationManager {
+public class LocationService {
     
     private lazy var locationManager: CLLocationManager = {
         let locationMgr = CLLocationManager()

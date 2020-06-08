@@ -72,7 +72,7 @@ FIXME
 
 ## Push Notifications
 - Push Notifications are sent via [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging)
-- All received notifications are handled inside the FirebaseManager
+- All received notifications are handled inside the FirebaseService
 - Notifications can be easily tested with scripts from the [ios-push-tester](https://github.com/MateeDevs/ios-push-tester) repository
 
 ## Debug

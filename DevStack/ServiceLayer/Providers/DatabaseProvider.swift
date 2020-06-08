@@ -1,5 +1,5 @@
 //
-//  DatabaseManager.swift
+//  DatabaseProvider.swift
 //  DevStack
 //
 //  Created by Petr Chmelar on 14/02/2019.
@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 import RxSwift
 
-struct DatabaseManager {
+struct DatabaseProvider {
     
     ///
     /// Generic function for observing on a specified object from database.

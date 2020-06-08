@@ -12,7 +12,7 @@ import CoreLocation
 
 final class ProfileViewModel: ViewModel, ViewModelType {
     
-    typealias Dependencies = HasUserService & HasLocationManager
+    typealias Dependencies = HasUserService & HasLocationService
     
     let input: Input
     let output: Output
@@ -31,7 +31,7 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         let downloadProfile = dependencies.userService.downloadProfile().mapToLce().filterErrors()
         let profile = Observable.merge(getProfile, downloadProfile).asDriverOnErrorJustComplete()
         
-        let currentLocation = dependencies.locationManager.getCurrentLocation().take(1).asDriverOnErrorJustComplete()
+        let currentLocation = dependencies.locationService.getCurrentLocation().take(1).asDriverOnErrorJustComplete()
         
         self.input = Input()
         
