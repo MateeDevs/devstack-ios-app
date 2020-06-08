@@ -39,8 +39,8 @@ final class SettingsViewController: BaseViewController {
     }
 
     // MARK: Default methods
-    override func setupViewModel() {
-        super.setupViewModel()
+    override func setupBindings() {
+        super.setupBindings()
         
         smallButton.rx.tap.bind { [weak self] in
             self?.topViewHeightConstraint.constant = 300.0

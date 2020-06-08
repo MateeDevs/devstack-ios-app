@@ -49,8 +49,8 @@ final class ProfileWrapperViewController: BaseViewController {
     }
 
     // MARK: Default methods
-    override func setupViewModel() {
-        super.setupViewModel()
+    override func setupBindings() {
+        super.setupBindings()
     }
 
     override func setupUI() {

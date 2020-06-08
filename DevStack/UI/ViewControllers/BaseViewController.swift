@@ -51,8 +51,8 @@ open class BaseViewController: UIViewController {
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // As long as viewWillAppear make sure to setup your viewModel
-        setupViewModel()
+        // As long as viewWillAppear make sure to setup your reactive bindings
+        setupBindings()
     }
     
     override open func viewDidDisappear(_ animated: Bool) {
@@ -66,8 +66,8 @@ open class BaseViewController: UIViewController {
     
     // MARK: Default methods
     
-    /// Override this method in a subclass and setup the view model
-    open func setupViewModel() {
+    /// Override this method in a subclass and setup the reactive bindings
+    open func setupBindings() {
         // Fresh initializaton of DisposeBag whenever subscriptions are about to initialize
         disposeBag = DisposeBag()
     }

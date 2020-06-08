@@ -44,8 +44,8 @@ open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollVi
     }
     
     // MARK: Default methods
-    override open func setupViewModel() {
-        super.setupViewModel()
+    override open func setupBindings() {
+        super.setupBindings()
         
         tableView.refreshControl?.rx.controlEvent(.valueChanged).bind(onNext: { [weak self] in
             self?.page.onNext(0)
