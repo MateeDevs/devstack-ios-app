@@ -42,7 +42,7 @@ extension AuthAPI: TargetType {
             ]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         case .registration(let email, let password, let user):
-            var params = user.dictionary
+            guard var params = user.dictionary else { return .requestPlain }
             params["email"] = email
             params["pass"] = password
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)

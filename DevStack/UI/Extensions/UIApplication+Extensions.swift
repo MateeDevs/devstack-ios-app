@@ -10,12 +10,12 @@ import UIKit
 
 extension UIApplication {
     
-    @nonobjc static func rootTabBarController(base: UIViewController? = (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController) -> UITabBarController? {
+    @nonobjc static func rootTabBarController(base: UIViewController? = (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController) -> UITabBarController? {
         guard let nav = base as? UINavigationController, let tab = nav.viewControllers.first as? UITabBarController else { return nil }
         return tab
     }
     
-    @nonobjc static func topViewController(base: UIViewController? = (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController) -> UIViewController? {
+    @nonobjc static func topViewController(base: UIViewController? = (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController) -> UIViewController? {
         if let nav = base as? UINavigationController {
             return topViewController(base: nav.visibleViewController)
         } else if let tab = base as? UITabBarController, let selected = tab.selectedViewController {

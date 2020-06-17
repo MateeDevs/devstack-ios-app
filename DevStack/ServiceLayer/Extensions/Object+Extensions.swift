@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import RealmSwift
 import Realm
+import RealmSwift
 
 extension Object {
     
@@ -32,8 +32,7 @@ extension Object {
     }
     
     func exists() -> Bool {
-        guard let id = value(forKey: "id") else { return false }
-        let realm = try! Realm()
+        guard let realm = Realm.safeInit(), let id = value(forKey: "id") else { return false }
         return realm.object(ofType: type(of: self).self, forPrimaryKey: id) != nil
     }
 }

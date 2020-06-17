@@ -1,4 +1,4 @@
-// 
+//
 //  ProfileViewController.swift
 //  DevStack
 //
@@ -6,10 +6,10 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import UIKit
-import RxSwift
 import RxCocoa
+import RxSwift
 import SkeletonView
+import UIKit
 
 protocol ProfileFlowDelegate: class {
     func presentOnboarding()

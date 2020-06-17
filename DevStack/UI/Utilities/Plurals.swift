@@ -9,6 +9,9 @@
 import Foundation
 
 public enum Plurals: String {
+
+    // swiftlint:disable identifier_name
+
     case days
     case days_before
     case hours
@@ -20,8 +23,10 @@ public enum Plurals: String {
     case meters
     case points
     
+    // swiftlint:enable identifier_name
+    
     public func stringForCount(_ count: Int) -> String {
-        if count == 0 {
+        if count == 0 { // swiftlint:disable:this empty_count
             return String(format: NSLocalizedString("zero_\(rawValue)", comment: ""), count)
         } else if abs(count) == 1 {
             return String(format: NSLocalizedString("one_\(rawValue)", comment: ""), count)

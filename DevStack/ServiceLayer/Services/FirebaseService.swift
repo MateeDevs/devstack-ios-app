@@ -6,9 +6,9 @@
 //  Copyright © 2020 Matee. All rights reserved.
 //
 
+import Firebase
 import UIKit
 import UserNotifications
-import Firebase
 
 public protocol HasFirebaseService {
     var firebaseService: FirebaseService { get }

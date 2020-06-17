@@ -74,7 +74,7 @@ public protocol RatingViewDelegate: class {
         }
         
         for (index, star) in starArray.enumerated().reversed() {
-            if index >= starArray.count - starFullyHidden   {
+            if index >= starArray.count - starFullyHidden {
                 star.isHidden = true
             }
         }

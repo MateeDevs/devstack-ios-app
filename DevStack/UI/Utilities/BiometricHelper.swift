@@ -24,8 +24,8 @@ public struct Biometric {
     public static func biometricType() -> BiometricType {
         let authContext = LAContext()
         if #available(iOS 11, *) {
-            let _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
-            switch(authContext.biometryType) {
+            _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+            switch authContext.biometryType {
             case .touchID:
                 return .touch
             case .faceID:

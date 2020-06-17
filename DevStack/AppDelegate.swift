@@ -6,8 +6,8 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
-import UIKit
 import RealmSwift
+import UIKit
 
 #if DEBUG
 import FlipperKit
@@ -117,7 +117,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     // Realm will automatically detect new properties and removed properties
                     // And will update the schema on disk automatically
                 }
-        })
+            })
         // Delete old schema
         config.deleteRealmIfMigrationNeeded = true
         // Tell Realm to use this new configuration object for the default Realm

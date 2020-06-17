@@ -6,8 +6,8 @@
 //  Copyright © 2017 Matee. All rights reserved.
 //
 
-import UIKit
 import RxSwift
+import UIKit
 
 open class BaseViewController: UIViewController {
     
@@ -34,7 +34,7 @@ open class BaseViewController: UIViewController {
         Logger.info("%@ initialized", "\(type(of: self))", category: .lifecycle)
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         Logger.info("%@ initialized", "\(type(of: self))", category: .lifecycle)
     }

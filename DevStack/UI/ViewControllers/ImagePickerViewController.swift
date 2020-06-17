@@ -17,7 +17,7 @@ open class ImagePickerViewController: BaseViewController {
     // MARK: Stored properties
 	public var imagePickerTitle: String = L10n.image_picker_title
     public var imagePickerSubtitle: String = L10n.image_picker_subtitle
-    private var sender: UIButton? = nil
+    private var sender: UIButton?
     
     public weak var imagePickerDelegate: ImagePickerControllerDelegate?
     

@@ -6,8 +6,8 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import UIKit
 import RxSwift
+import UIKit
 
 open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
     
@@ -73,7 +73,7 @@ open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollVi
     public func handleNetworkData(_ lce: Lce<[T]>) {
         switch lce {
         case .loading:
-            if items.count == 0 {
+            if items.isEmpty {
                view.startActivityIndicator()
             }
         case .content(let data):

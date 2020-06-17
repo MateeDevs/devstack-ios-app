@@ -6,9 +6,11 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
+// swiftlint:disable all
+
 import CoreLocation
-import RxSwift
 import RxCocoa
+import RxSwift
 
 extension Reactive where Base: CLLocationManager {
     
@@ -194,11 +196,11 @@ extension Reactive where Base: CLLocationManager {
             .map { a in
                 let number = try castOrThrow(NSNumber.self, a[1])
                 return CLAuthorizationStatus(rawValue: Int32(number.intValue)) ?? .notDetermined
-        }
+            }
     }
 }
 
-fileprivate func castOrThrow<T>(_ resultType: T.Type, _ object: Any) throws -> T {
+private func castOrThrow<T>(_ resultType: T.Type, _ object: Any) throws -> T {
     guard let returnValue = object as? T else {
         throw RxCocoaError.castingError(object: object, targetType: resultType)
     }
@@ -206,7 +208,7 @@ fileprivate func castOrThrow<T>(_ resultType: T.Type, _ object: Any) throws -> T
     return returnValue
 }
 
-fileprivate func castOptionalOrThrow<T>(_ resultType: T.Type, _ object: Any) throws -> T? {
+private func castOptionalOrThrow<T>(_ resultType: T.Type, _ object: Any) throws -> T? {
     if NSNull().isEqual(object) {
         return nil
     }

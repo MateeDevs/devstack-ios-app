@@ -163,12 +163,12 @@ public protocol TabBarViewDelegate: class {
     }
     
     private func scrollToButton(_ btn: TabBarButton) {
-        var x = btn.frame.origin.x + btn.frame.width / 2 - UIScreen.main.bounds.width / 2
-        if x < 0 {
-            x = 0
-        } else if x > scrollView.contentSize.width - view.bounds.width {
-            x = scrollView.contentSize.width - view.bounds.width
+        var xOffset = btn.frame.origin.x + btn.frame.width / 2 - UIScreen.main.bounds.width / 2
+        if xOffset < 0 {
+            xOffset = 0
+        } else if xOffset > scrollView.contentSize.width - view.bounds.width {
+            xOffset = scrollView.contentSize.width - view.bounds.width
         }
-        scrollView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
+        scrollView.setContentOffset(CGPoint(x: xOffset, y: 0), animated: true)
     }
 }

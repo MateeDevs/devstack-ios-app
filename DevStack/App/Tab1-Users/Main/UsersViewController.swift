@@ -1,4 +1,4 @@
-// 
+//
 //  UsersViewController.swift
 //  DevStack
 //
@@ -6,8 +6,8 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import UIKit
 import RxSwift
+import UIKit
 
 protocol UsersFlowDelegate: class {
     func showUserDetail(userId: String)

@@ -6,9 +6,9 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
+import Alamofire
 import Foundation
 import Moya
-import Alamofire
 import RxSwift
 
 /// Custom Moya provider.
@@ -24,16 +24,19 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
             // Add custom headers and parameters
             var defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
             defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: headers)
-            if parameters.count > 0 {
+            if parameters.isEmpty {
                 defaultEndpoint = defaultEndpoint.replacing(task: .requestParameters(parameters: parameters, encoding: URLEncoding.default))
             }
             
             // Add service headers
-            defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: ["Client-Type": "ios"])
-            defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: ["Client-App": "\(Bundle.main.bundleIdentifier!)[\(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String)]"])
-            defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: ["Client-API": "\(NetworkingConstants.apiVersion)"])
-            defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: ["Client-OS": UIDevice.current.systemVersion])
-            defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: ["Client-HW": UIDevice.current.identifierForVendor!.uuidString])
+            defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: [
+                "Client-Type": "ios",
+                "Client-App": Bundle.main.bundleIdentifier ?? "undefined",
+                "Client-AppVersion": Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "undefined",
+                "Client-API": "\(NetworkingConstants.apiVersion)",
+                "Client-OS": UIDevice.current.systemVersion,
+                "Client-HW": UIDevice.current.identifierForVendor?.uuidString ?? "undefined"
+            ])
             
             // Add auth header to every request if available
             if let authToken = KeychainProvider.get(.authToken) {
@@ -76,7 +79,7 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
     }
     
     func request(_ target: MultiTarget, withInterceptor: Bool = true) -> Single<Moya.Response> {
-        let actualRequest = provider.rx.request(target).flatMap { (response) -> PrimitiveSequence<SingleTrait, Response> in
+        let actualRequest = provider.rx.request(target).flatMap { response -> PrimitiveSequence<SingleTrait, Response> in
             if response.statusCode == 401 {
                 guard withInterceptor, let vc = UIApplication.topViewController() as? BaseViewController else { return Single.just(response) }
 

@@ -6,8 +6,8 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
-import RxSwift
 import RxCocoa
+import RxSwift
 
 extension ObservableType {
     
@@ -30,7 +30,7 @@ extension ObservableType {
     }
     
     public func filterErrors<T: Any>() -> Observable<Lce<T>> where Element == Lce<T> {
-        return filter { (lce) -> Bool in
+        return filter { lce -> Bool in
             if case .error = lce {
                 return true
             } else {
