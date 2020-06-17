@@ -23,7 +23,7 @@ public class UserService {
     }
     
     public func getUsers() -> Observable<[User]> {
-        return database.observableCollection(User.self)
+        return database.observableCollection(User.self, sortBy: "id")
     }
     
     public func downloadUsersForPage(_ page: Int) -> Observable<[User]> {

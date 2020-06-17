@@ -6,11 +6,11 @@
 //  Copyright © 2020 Matee. All rights reserved.
 //
 
-// Idea taken from: https://stackoverflow.com/a/56218423
-
 import RealmSwift
 
 public extension Realm {
+    
+    // Idea taken from: https://stackoverflow.com/a/56218423
     static func safeInit() -> Realm? {
         do {
             let realm = try Realm()
@@ -19,13 +19,5 @@ public extension Realm {
             Logger.error("Error during Realm init:\n%@", "\(error)", category: .app)
         }
         return nil
-    }
-
-    func safeWrite(_ block: (() throws -> Void)) throws {
-        if isInWriteTransaction {
-            try block()
-        } else {
-            try write(block)
-        }
     }
 }

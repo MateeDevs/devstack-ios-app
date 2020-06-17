@@ -43,7 +43,7 @@ public class LoginService {
         // Clear Realm
         guard let realm = Realm.safeInit() else { return }
         do {
-            try realm.safeWrite {
+            try realm.write {
                 realm.deleteAll()
             }
         } catch let error as NSError {

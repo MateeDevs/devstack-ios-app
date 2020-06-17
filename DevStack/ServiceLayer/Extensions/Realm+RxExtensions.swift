@@ -82,7 +82,7 @@ extension Reactive where Base == Realm {
     func save<T: Object>(_ object: T, withApiModel: Bool = true) -> Observable<T> {
         Observable.create { observer in
             do {
-                try self.base.safeWrite {
+                try self.base.write {
                     // Create new object if it doesn't exists or partially update existing one
                     if !object.exists() {
                         self.base.add(object, update: .modified)
@@ -102,7 +102,7 @@ extension Reactive where Base == Realm {
     func save<T: Object>(_ objects: [T], withApiModel: Bool = true) -> Observable<[T]> {
         Observable.create { observer in
             do {
-                try self.base.safeWrite {
+                try self.base.write {
                     for object in objects {
                         // Create new object if it doesn't exists or partially update existing one
                         if !object.exists() {
@@ -124,7 +124,7 @@ extension Reactive where Base == Realm {
     func appendToList<T: Object>(_ list: List<T>, objects: [T], withApiModel: Bool = true) -> Observable<[T]> {
         Observable.create { observer in
             do {
-                try self.base.safeWrite {
+                try self.base.write {
                     // It's not possible to append objects directly (nested objects won't be updated)
                     // Instead we have to append a reference for every object
                     // Idea taken from: https://stackoverflow.com/a/40595430
@@ -156,7 +156,7 @@ extension Reactive where Base == Realm {
     func delete<T: Object>(_ object: T) -> Observable<Void> {
         Observable.create { observer in
             do {
-                try self.base.safeWrite {
+                try self.base.write {
                     self.base.delete(object)
                 }
                 observer.onNext(Void())
