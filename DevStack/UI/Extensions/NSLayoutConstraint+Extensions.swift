@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension NSLayoutConstraint {
+public extension NSLayoutConstraint {
 
     ///
     /// Change constraint's multiplier
@@ -16,7 +16,7 @@ extension NSLayoutConstraint {
     /// - parameter multiplier: CGFloat value of multiplier
     /// - returns: NSLayoutConstraint with a given multiplier
     ///
-    public func cloneWithMultiplier(_ multiplier: CGFloat) -> NSLayoutConstraint? {
+    func cloneWithMultiplier(_ multiplier: CGFloat) -> NSLayoutConstraint? {
         
         guard let firstItem = firstItem, let secondItem = secondItem else { return nil }
         

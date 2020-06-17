@@ -8,9 +8,9 @@
 
 import UIKit
 
-extension UIImageView {
+public extension UIImageView {
     
-    public var rounded: Bool {
+    var rounded: Bool {
         get {
             layer.cornerRadius == frame.height / 2 ? true : false
         }

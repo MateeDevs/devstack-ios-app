@@ -63,8 +63,8 @@ import RealmSwift
     }
 }
 
-extension User {
-    public var fullName: String {
+public extension User {
+    var fullName: String {
         "\(firstName) \(lastName)"
     }
 }

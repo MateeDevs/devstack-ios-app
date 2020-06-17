@@ -19,7 +19,7 @@ final class UsersViewController: BaseTableViewController<User> {
     weak var flowDelegate: UsersFlowDelegate?
 
     // MARK: ViewModels
-    private var viewModel: UsersViewModel!
+    private var viewModel: UsersViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
 
     // MARK: UI components
 
@@ -62,7 +62,10 @@ final class UsersViewController: BaseTableViewController<User> {
 
     // MARK: TableView methods
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.nameOfClass, for: indexPath) as? UserTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: UserTableViewCell.nameOfClass,
+            for: indexPath
+        ) as? UserTableViewCell else { return UITableViewCell() }
         
         let user = items[indexPath.row]
         cell.setupWithUser(user)

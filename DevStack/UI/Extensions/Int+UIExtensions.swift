@@ -8,10 +8,10 @@
 
 import Foundation
 
-extension Int {
+public extension Int {
     
     /// Conversion from Int to String using a given formatter.
-    public func toString(formatter: NumberFormatter = Formatter.numberDefault) -> String {
+    func toString(formatter: NumberFormatter = Formatter.numberDefault) -> String {
         formatter.string(from: NSNumber(value: self)) ?? ""
     }
 }

@@ -27,6 +27,7 @@ open class ImagePickerViewController: BaseViewController {
     }
     
     // MARK: Additional methods
+    // swiftlint:disable:next private_action
     @IBAction public func addPicture(_ sender: UIButton) {
         self.sender = sender
         view.endEditing(true)
@@ -49,7 +50,8 @@ open class ImagePickerViewController: BaseViewController {
         
         // Required for iPad
         actionSheetController.popoverPresentationController?.sourceView = view
-        actionSheetController.popoverPresentationController?.sourceRect = CGRect(x: view.bounds.midX, y: view.bounds.midY, width: 0, height: 0)
+        let sourceRect = CGRect(x: view.bounds.midX, y: view.bounds.midY, width: 0, height: 0)
+        actionSheetController.popoverPresentationController?.sourceRect = sourceRect
         actionSheetController.popoverPresentationController?.permittedArrowDirections = []
         
         present(actionSheetController, animated: true, completion: nil)
@@ -66,7 +68,10 @@ open class ImagePickerViewController: BaseViewController {
 }
 
 extension ImagePickerViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+    open func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
+    ) {
         guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
         
         // Save image to photo library if taken by camera

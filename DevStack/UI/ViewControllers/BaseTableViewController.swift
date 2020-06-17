@@ -12,6 +12,7 @@ import UIKit
 open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: UI components
+    // swiftlint:disable:next private_outlet
     @IBOutlet public weak var tableView: UITableView! {
         didSet {
             // If you need separator add it directly into the cell

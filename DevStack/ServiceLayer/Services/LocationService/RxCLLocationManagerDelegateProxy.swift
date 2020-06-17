@@ -14,8 +14,8 @@ extension CLLocationManager: HasDelegate {
     public typealias Delegate = CLLocationManagerDelegate
 }
 
-public class RxCLLocationManagerDelegateProxy: DelegateProxy<CLLocationManager, CLLocationManagerDelegate>, DelegateProxyType, CLLocationManagerDelegate {
-    
+public class RxCLLocationManagerDelegateProxy: DelegateProxy<CLLocationManager, CLLocationManagerDelegate>, DelegateProxyType {
+
     public init(locationManager: CLLocationManager) {
         super.init(parentObject: locationManager, delegateProxy: RxCLLocationManagerDelegateProxy.self)
     }
@@ -27,6 +27,14 @@ public class RxCLLocationManagerDelegateProxy: DelegateProxy<CLLocationManager, 
     internal lazy var didUpdateLocationsSubject = PublishSubject<[CLLocation]>()
     internal lazy var didFailWithErrorSubject = PublishSubject<Error>()
     
+    deinit {
+        self.didUpdateLocationsSubject.on(.completed)
+        self.didFailWithErrorSubject.on(.completed)
+    }
+}
+
+extension RxCLLocationManagerDelegateProxy: CLLocationManagerDelegate {
+    
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         _forwardToDelegate?.locationManager?(manager, didUpdateLocations: locations)
         didUpdateLocationsSubject.onNext(locations)
@@ -35,10 +43,5 @@ public class RxCLLocationManagerDelegateProxy: DelegateProxy<CLLocationManager, 
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         _forwardToDelegate?.locationManager?(manager, didFailWithError: error)
         didFailWithErrorSubject.onNext(error)
-    }
-    
-    deinit {
-        self.didUpdateLocationsSubject.on(.completed)
-        self.didFailWithErrorSubject.on(.completed)
     }
 }

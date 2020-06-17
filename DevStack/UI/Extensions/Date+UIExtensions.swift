@@ -8,16 +8,16 @@
 
 import Foundation
 
-extension Date {
+public extension Date {
     
     /// Conversion from Date to String using a given formatter.
-    public func toString(formatter: DateFormatter = Formatter.dateDefault) -> String {
+    func toString(formatter: DateFormatter = Formatter.dateDefault) -> String {
         formatter.string(from: self)
     }
     
     /// Elapsed time between date and now (nil for future dates).
     /// - Converted into localized String "Before xyz days/hours/minutes"
-    public var elapsedTimeString: String? {
+    var elapsedTimeString: String? {
         let elapsedTime = Date().timeIntervalSince(self)
         if elapsedTime < 0 {
             return nil

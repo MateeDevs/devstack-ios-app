@@ -8,10 +8,10 @@
 
 import CoreLocation
 
-extension CLLocationCoordinate2D {
+public extension CLLocationCoordinate2D {
 
     /// Conversion from CLLocationCoordinate2D to String.
-    public func toString(withPlaces places: Int = 4) -> String {
+    func toString(withPlaces places: Int = 4) -> String {
         return "\(latitude.rounded(toPlaces: places)); \(longitude.rounded(toPlaces: places))"
     }
 }

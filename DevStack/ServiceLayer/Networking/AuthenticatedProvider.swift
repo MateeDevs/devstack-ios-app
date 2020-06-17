@@ -24,8 +24,10 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
             // Add custom headers and parameters
             var defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
             defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: headers)
-            if parameters.isEmpty {
-                defaultEndpoint = defaultEndpoint.replacing(task: .requestParameters(parameters: parameters, encoding: URLEncoding.default))
+            if !parameters.isEmpty {
+                defaultEndpoint = defaultEndpoint.replacing(
+                    task: .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+                )
             }
             
             // Add service headers
@@ -81,13 +83,14 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
     func request(_ target: MultiTarget, withInterceptor: Bool = true) -> Single<Moya.Response> {
         let actualRequest = provider.rx.request(target).flatMap { response -> PrimitiveSequence<SingleTrait, Response> in
             if response.statusCode == 401 {
-                guard withInterceptor, let vc = UIApplication.topViewController() as? BaseViewController else { return Single.just(response) }
+                guard withInterceptor,
+                    let vc = UIApplication.topViewController() as? BaseViewController else { return Single.just(response) }
 
 				let action = UIAlertAction(title: L10n.dialog_interceptor_button_title, style: .default, handler: { _ in
                     // Perform logout and present login screen
                     LoginService.logout()
                     if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
-                        let mainFlow = appDelegate.flowController.childControllers.first as? MainFlowController {
+                        let mainFlow = appDelegate.flowController?.childControllers.first as? MainFlowController {
                         mainFlow.presentOnboarding()
                     }
                 })

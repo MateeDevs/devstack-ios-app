@@ -10,7 +10,7 @@
 
 import RealmSwift
 
-extension Realm {
+public extension Realm {
     static func safeInit() -> Realm? {
         do {
             let realm = try Realm()
@@ -21,7 +21,7 @@ extension Realm {
         return nil
     }
 
-    public func safeWrite(_ block: (() throws -> Void)) throws {
+    func safeWrite(_ block: (() throws -> Void)) throws {
         if isInWriteTransaction {
             try block()
         } else {

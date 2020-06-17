@@ -49,7 +49,11 @@ extension ObservableType {
     /// - parameter primaryKeyName: Optional parameter to set alternate primary key name (default is "id").
     /// - returns: Observable which emits saved object.
     ///
-    func appendToList<T: Object>(_ list: List<T>, setPrimaryKey: String? = nil, primaryKeyName: String = "id") -> Observable<T> where Element == T {
+    func appendToList<T: Object>(
+        _ list: List<T>,
+        setPrimaryKey: String? = nil,
+        primaryKeyName: String = "id"
+    ) -> Observable<T> where Element == T {
         flatMap({ object -> Observable<T> in
             if let id = setPrimaryKey {
                 object[primaryKeyName] = id

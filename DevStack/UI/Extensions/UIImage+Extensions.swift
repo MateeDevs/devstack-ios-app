@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIImage {
+public extension UIImage {
     
     ///
     /// Scale the image to fit inside a given CGRect. Useful when you need to combine .scaleAspectFit with .left/.right/.top/.bottom
@@ -17,7 +17,7 @@ extension UIImage {
     /// - parameter rect: CGRect to fit image into.
     /// - returns: Scaled UIImage.
     ///
-    public func scaleAspectToFitRect(_ rect: CGRect) -> UIImage? {
+    func scaleAspectToFitRect(_ rect: CGRect) -> UIImage? {
         let width = size.width
         let height = size.height
         let aspectWidth = rect.width / width
@@ -35,7 +35,7 @@ extension UIImage {
     }
     
     /// Fix orientation of an UIImage without EXIF
-    public func fixOrientation() -> UIImage {
+    func fixOrientation() -> UIImage { // swiftlint:disable:this cyclomatic_complexity
         
         guard let cgImage = cgImage else { return self }
         

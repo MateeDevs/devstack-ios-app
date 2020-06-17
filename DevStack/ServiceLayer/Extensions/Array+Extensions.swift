@@ -8,9 +8,9 @@
 
 import RealmSwift
 
-extension Array where Element: RealmCollectionValue {
+public extension Array where Element: RealmCollectionValue {
     
-    public func toList() -> List<Element> {
+    func toList() -> List<Element> {
         let list = List<Element>()
         list.append(objectsIn: self)
         return list

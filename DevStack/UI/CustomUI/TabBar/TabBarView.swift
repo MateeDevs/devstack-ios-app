@@ -16,14 +16,14 @@ public protocol TabBarViewDelegate: class {
     
     @IBInspectable public var shouldShowNumbers: Bool = false
     
-    @IBInspectable public var buttonMainLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
-    @IBInspectable public var buttonMainLabelFontHighlighted: UIFont = UIFont.systemFont(ofSize: 16)
+    public var buttonMainLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
+    public var buttonMainLabelFontHighlighted: UIFont = UIFont.systemFont(ofSize: 16)
     
     @IBInspectable public var buttonMainLabelColor: UIColor = AppTheme.Colors.label
     @IBInspectable public var buttonMainLabelColorHighlighted: UIColor = AppTheme.Colors.label
     
-    @IBInspectable public var buttonNumberLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
-    @IBInspectable public var buttonNumberLabelFontHighlighted: UIFont = UIFont.systemFont(ofSize: 16)
+    public var buttonNumberLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
+    public var buttonNumberLabelFontHighlighted: UIFont = UIFont.systemFont(ofSize: 16)
     
     @IBInspectable public var buttonNumberLabelColor: UIColor = AppTheme.Colors.label
     @IBInspectable public var buttonNumberLabelColorHighlighted: UIColor = AppTheme.Colors.label
@@ -83,10 +83,8 @@ public protocol TabBarViewDelegate: class {
     }
     
     public func updateNumbers(_ numbers: [Int]) {
-        for index in 0...tabBarButtons.count - 1 {
-            if numbers.count > index {
-                tabBarButtons[index].numberLabel.text = numbers[index] <= 999 ? "\(numbers[index])" : "999"
-            }
+        for index in 0...tabBarButtons.count - 1 where numbers.count > index {
+            tabBarButtons[index].numberLabel.text = numbers[index] <= 999 ? "\(numbers[index])" : "999"
         }
         layoutIfNeeded()
         widthConstraintStripView.constant = scrollView.contentSize.width / max(CGFloat(tabBarButtons.count), 1)
@@ -154,9 +152,15 @@ public protocol TabBarViewDelegate: class {
         }
         
         if animated {
-            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseIn, animations: { [weak self] in
-                self?.layoutIfNeeded()
-            }, completion: nil)
+            UIView.animate(
+                withDuration: 0.6,
+                delay: 0,
+                usingSpringWithDamping: 0.5,
+                initialSpringVelocity: 0,
+                options: .curveEaseIn,
+                animations: { [weak self] in self?.layoutIfNeeded() },
+                completion: nil
+            )
         }
         
         delegate?.didSelectViewController(tag: sender.tag)

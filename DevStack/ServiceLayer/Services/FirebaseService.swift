@@ -33,7 +33,7 @@ public class FirebaseService: NSObject {
             let jsonData = try JSONSerialization.data(withJSONObject: notificationData, options: [])
             let notification = try JSONDecoder().decode(PushNotification.self, from: jsonData)
             Logger.info("FirebaseService: Notification with type=%d received", notification.type.rawValue, category: .networking)
-            appDelegate.flowController.handleDeeplink(for: notification)
+            appDelegate.flowController?.handleDeeplink(for: notification)
         } catch let error {
             Logger.error("FirebaseService: Error during notification decoding:\n%@", "\(error)", category: .networking)
         }
@@ -41,20 +41,24 @@ public class FirebaseService: NSObject {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+    ) {
         // Show system notification
         completionHandler([.alert, .badge, .sound])
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse,
+        withCompletionHandler completionHandler: @escaping () -> Void
+    ) {
         let notification = response.notification.request.content.userInfo
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.flowController.dependencies.firebaseService.handleNotification(notification, appDelegate: self)
+            self.flowController?.dependencies.firebaseService.handleNotification(notification, appDelegate: self)
         }
     }
 }

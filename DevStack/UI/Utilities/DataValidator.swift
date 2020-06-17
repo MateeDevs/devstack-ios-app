@@ -18,7 +18,10 @@ public struct DataValidator {
     ///
     public static func validateEmail(_ email: String) -> Bool {
         do {
-            let regex = try NSRegularExpression(pattern: "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$", options: [NSRegularExpression.Options.caseInsensitive])
+            let regex = try NSRegularExpression(
+                pattern: "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$",
+                options: [NSRegularExpression.Options.caseInsensitive]
+            )
             return regex.firstMatch(in: email, options: [], range: NSRange(location: 0, length: email.count)) != nil
         } catch _ as NSError {
             return false
@@ -36,9 +39,14 @@ public struct DataValidator {
     /// - parameter special: Specify whether at least one special character is required
     /// - returns: Error message, nil in case of valid password
     ///
-    public static func validatePassword(_ password: String, length: Int = 8,
-                                        lowercase: Bool = false, uppercase: Bool = false,
-                                        number: Bool = false, special: Bool = false) -> String? {
+    public static func validatePassword(
+        _ password: String,
+        length: Int = 8,
+        lowercase: Bool = false,
+        uppercase: Bool = false,
+        number: Bool = false,
+        special: Bool = false
+    ) -> String? {
         if password.count < 8 {
             return L10n.password_validation_length
         } else if lowercase, password.range(of: #"[a-z]"#, options: .regularExpression) == nil {

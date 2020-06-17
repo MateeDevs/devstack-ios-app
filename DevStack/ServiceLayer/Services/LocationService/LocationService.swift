@@ -36,7 +36,9 @@ public class LocationService {
     }
     
     /// Observe current location
-    public func getCurrentLocation(withAccuracy accuracy: CLLocationAccuracy = kCLLocationAccuracyThreeKilometers) -> Observable<CLLocation> {
+    public func getCurrentLocation(
+        withAccuracy accuracy: CLLocationAccuracy = kCLLocationAccuracyThreeKilometers
+    ) -> Observable<CLLocation> {
         return locationManager.rx.didUpdateLocations.map({ locations in
             locations[0]
         }).filter({ location in

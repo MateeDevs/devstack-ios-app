@@ -8,13 +8,13 @@
 
 import Foundation
 
-extension String {
+public extension String {
     
-    public var secured: String {
+    var secured: String {
         String(map { _ in "*" })
     }
     
-    public var initials: String {
+    var initials: String {
         let words: [Substring] = split(separator: " ")
         let initials = words.map({ String($0.first ?? Character("")) })
         let userInitials = initials.joined()
@@ -22,7 +22,7 @@ extension String {
     }
     
     /// Conversion from String to Date using a given formatter.
-    public func toDate(formatter: DateFormatter = Formatter.dateDefault) -> Date? {
+    func toDate(formatter: DateFormatter = Formatter.dateDefault) -> Date? {
         formatter.date(from: self)
     }
 }

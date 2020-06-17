@@ -11,7 +11,6 @@ import Foundation
 public enum Plurals: String {
 
     // swiftlint:disable identifier_name
-
     case days
     case days_before
     case hours
@@ -22,7 +21,6 @@ public enum Plurals: String {
     case seconds_before
     case meters
     case points
-    
     // swiftlint:enable identifier_name
     
     public func stringForCount(_ count: Int) -> String {

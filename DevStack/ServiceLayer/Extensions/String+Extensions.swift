@@ -9,7 +9,6 @@
 import Foundation
 
 extension String {
-    
     var utf8Encoded: Data {
         data(using: .utf8)!
     }

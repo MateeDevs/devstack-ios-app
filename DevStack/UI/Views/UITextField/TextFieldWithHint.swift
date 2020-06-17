@@ -12,6 +12,7 @@ import UIKit
     
     public let textField = UITextField()
     
+    // swiftlint:disable:next private_outlet
     @IBOutlet public weak var delegate: UITextFieldDelegate?
     
     private let hintLabel = UILabel()

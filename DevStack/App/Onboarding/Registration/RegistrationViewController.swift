@@ -19,7 +19,7 @@ final class RegistrationViewController: InputViewController {
     weak var flowDelegate: RegistrationFlowDelegate?
 
     // MARK: ViewModels
-    var viewModel: RegistrationViewModel!
+    var viewModel: RegistrationViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
 
     // MARK: UI components
     @IBOutlet private weak var emailTextField: TextFieldWithHint!

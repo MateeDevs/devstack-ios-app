@@ -9,19 +9,19 @@
 import RxCocoa
 import RxSwift
 
-extension ObservableType {
+public extension ObservableType {
     
-    public func mapToVoid() -> Observable<Void> {
+    func mapToVoid() -> Observable<Void> {
         return map { _ in Void() }
     }
     
-    public func asDriverOnErrorJustComplete() -> Driver<Element> {
+    func asDriverOnErrorJustComplete() -> Driver<Element> {
         asDriver { _ in
             Driver.empty()
         }
     }
     
-    public func mapToLce<T: Any>(_ messages: ErrorMessages? = nil) -> Observable<Lce<T>> where Element == T {
+    func mapToLce<T: Any>(_ messages: ErrorMessages? = nil) -> Observable<Lce<T>> where Element == T {
         return flatMap({ object -> Observable<Lce<T>> in
             Observable.just(.content(object))
         }).catchError({ error in
@@ -29,7 +29,7 @@ extension ObservableType {
         }).startWith(.loading)
     }
     
-    public func filterErrors<T: Any>() -> Observable<Lce<T>> where Element == Lce<T> {
+    func filterErrors<T: Any>() -> Observable<Lce<T>> where Element == Lce<T> {
         return filter { lce -> Bool in
             if case .error = lce {
                 return true

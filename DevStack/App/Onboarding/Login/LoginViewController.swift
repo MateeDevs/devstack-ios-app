@@ -20,7 +20,7 @@ final class LoginViewController: InputViewController {
     weak var flowDelegate: LoginFlowDelegate?
     
     // MARK: ViewModels
-    private var viewModel: LoginViewModel!
+    private var viewModel: LoginViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
     
     // MARK: UI components
     @IBOutlet private weak var emailTextField: TextFieldWithHint!

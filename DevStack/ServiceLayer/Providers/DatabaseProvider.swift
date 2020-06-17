@@ -20,7 +20,11 @@ struct DatabaseProvider {
     /// - parameter primaryKeyName: Optional parameter to set alternate primary key name (default is "id").
     /// - returns: Observable which emits an object of a given type.
     ///
-    func observableObject<T: Object>(_ type: T.Type, id: String, primaryKeyName: String = "id") -> Observable<T> {
+    func observableObject<T: Object>(
+        _ type: T.Type,
+        id: String,
+        primaryKeyName: String = "id"
+    ) -> Observable<T> {
         guard let realm = Realm.safeInit() else { return Observable.error(CommonError.realmNotAvailable) }
         let dbObjects = realm.objects(T.self).filter(NSPredicate(format: "\(primaryKeyName) == %@", id))
         
@@ -39,7 +43,12 @@ struct DatabaseProvider {
     /// - parameter ascending: Optional parameter for sorting in ascending or descending order.
     /// - returns: Observable which emits an Array of objects of a given type.
     ///
-    func observableCollection<T: Object>(_ type: T.Type, predicate: NSPredicate? = nil, sortBy: String? = nil, ascending: Bool? = nil) -> Observable<[T]> {
+    func observableCollection<T: Object>(
+        _ type: T.Type,
+        predicate: NSPredicate? = nil,
+        sortBy: String? = nil,
+        ascending: Bool = true
+    ) -> Observable<[T]> {
         guard let realm = Realm.safeInit() else { return Observable.error(CommonError.realmNotAvailable) }
         var dbObjects = realm.objects(T.self)
         
@@ -47,12 +56,12 @@ struct DatabaseProvider {
             dbObjects = dbObjects.filter(predicate)
         }
         
-        if let sortBy = sortBy, let ascending = ascending {
+        if let sortBy = sortBy {
             dbObjects = dbObjects.sorted(byKeyPath: sortBy, ascending: ascending)
         }
         
         return Observable.array(from: dbObjects).flatMap { objects -> Observable<[T]> in
-            guard objects.isEmpty else { return Observable.just([]) }
+            guard !objects.isEmpty else { return Observable.just([]) }
             return Observable.just(objects)
         }
     }

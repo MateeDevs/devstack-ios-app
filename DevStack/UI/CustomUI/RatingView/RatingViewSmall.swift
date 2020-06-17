@@ -6,7 +6,6 @@
 //  Copyright © 2017 Matee. All rights reserved.
 //
 
-@IBDesignable
-public class RatingViewSmall: RatingView {
+@IBDesignable public class RatingViewSmall: RatingView {
 
 }
