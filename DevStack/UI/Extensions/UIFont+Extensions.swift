@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIFont {
+public extension UIFont {
     
     ///
     /// Helper for easy access to custom font.
@@ -16,7 +16,7 @@ extension UIFont {
     /// - parameter ofSize: Font size to be used.
     /// - returns: Custom font of a defined size.
     ///
-    public static func customFont(ofSize size: CGFloat) -> UIFont? {
+    static func customFont(ofSize size: CGFloat) -> UIFont? {
         UIFont(name: "CustomFont", size: size)
     }
     
@@ -26,7 +26,7 @@ extension UIFont {
     /// - parameter baseSize: Font size defined for 320x568 screen size.
     /// - returns: Font size scaled for real screen size.
     ///
-    public static func scalableFontSize(_ baseSize: CGFloat) -> CGFloat {
+    static func scalableFontSize(_ baseSize: CGFloat) -> CGFloat {
         ((UIScreen.main.bounds.size.height * baseSize / 568.0) * (320.0 / UIScreen.main.bounds.size.width))
     }
     

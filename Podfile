@@ -9,6 +9,7 @@ inhibit_all_warnings!
 
 def shared_pods
     # App analytics and push notifications
+    pod 'Firebase/Analytics'
     pod 'Firebase/Crashlytics'
     pod 'Firebase/Messaging'
     
@@ -86,13 +87,6 @@ post_install do |installer|
 
             # Ignore documentation warnings
             config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS'] = 'NO'
-
-            # Update the Swift version if necessary
-            if target.name == 'YogaKit'
-                config.build_settings['SWIFT_VERSION'] = '4.1'
-            else
-                config.build_settings['SWIFT_VERSION'] = '5.0'
-            end
 
             # Turn on Whole Module Optimization
             if config.name == 'Release'

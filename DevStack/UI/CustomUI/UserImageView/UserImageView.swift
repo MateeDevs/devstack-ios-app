@@ -6,8 +6,8 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
-import UIKit
 import AlamofireImage
+import UIKit
 
 @IBDesignable public class UserImageView: XIBView {
     
@@ -32,7 +32,7 @@ import AlamofireImage
         setup()
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }

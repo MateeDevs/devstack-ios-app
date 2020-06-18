@@ -8,9 +8,9 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     
-    public func startActivityIndicator(
+    func startActivityIndicator(
         style: UIActivityIndicatorView.Style = .whiteLarge,
         color: UIColor = AppTheme.Colors.activityIndicator,
         backgroundColor: UIColor = .clear
@@ -31,7 +31,7 @@ extension UIView {
         activityIndicatorView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
     }
     
-    public func stopActivityIndicator() {
+    func stopActivityIndicator() {
         for view in subviews {
             if view.isKind(of: ActivityIndicatorView.self) {
                 view.removeFromSuperview()
@@ -39,7 +39,7 @@ extension UIView {
         }
     }
     
-    public var isLoading: Bool {
+    var isLoading: Bool {
         for view in subviews {
             if view.isKind(of: ActivityIndicatorView.self) {
                 return true

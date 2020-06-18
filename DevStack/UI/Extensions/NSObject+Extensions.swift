@@ -8,10 +8,10 @@
 
 import Foundation
 
-extension NSObject {
+public extension NSObject {
 
     /// Class name literal
-    public class var nameOfClass: String {
+    class var nameOfClass: String {
         guard let className = NSStringFromClass(self).components(separatedBy: ".").last else { return "N/A" }
         return className
     }

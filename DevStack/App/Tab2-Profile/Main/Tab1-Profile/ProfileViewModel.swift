@@ -6,9 +6,9 @@
 //  Copyright © 2020 Matee. All rights reserved.
 //
 
-import RxSwift
-import RxCocoa
 import CoreLocation
+import RxCocoa
+import RxSwift
 
 final class ProfileViewModel: ViewModel, ViewModelType {
     

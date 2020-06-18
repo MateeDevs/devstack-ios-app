@@ -1,4 +1,4 @@
-// 
+//
 //  UserDetailViewController.swift
 //  DevStack
 //
@@ -6,8 +6,8 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import UIKit
 import RxSwift
+import UIKit
 
 protocol UserDetailFlowDelegate: class {
 
@@ -19,7 +19,7 @@ final class UserDetailViewController: BaseViewController {
     weak var flowDelegate: UserDetailFlowDelegate?
 
     // MARK: ViewModels
-    private var viewModel: UserDetailViewModel!
+    private var viewModel: UserDetailViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
 
     // MARK: UI components
     @IBOutlet private weak var scrollView: UIScrollView!
@@ -27,7 +27,7 @@ final class UserDetailViewController: BaseViewController {
     @IBOutlet private weak var userNameLabel: UILabel!
     
     // MARK: Stored properties
-    private var userId: String!
+    private var userId: String! // swiftlint:disable:this implicitly_unwrapped_optional
     private var user: User? {
         didSet {
             userImageView.setupWithUser(user)

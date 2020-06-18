@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension BaseViewController {
+public extension BaseViewController {
     
     ///
     /// Present UIAlertController on current top ViewController.
@@ -18,8 +18,12 @@ extension BaseViewController {
     /// - parameter primaryAction: Primary action for UIAlertController. If not specified, default action will be added.
     /// - parameter secondaryAction: Secondary action for UIAlertController.
     ///
-    public func showAlert(title: String, message: String? = nil,
-                                 primaryAction: UIAlertAction? = nil, secondaryAction: UIAlertAction? = nil) {
+    func showAlert(
+        title: String,
+        message: String? = nil,
+        primaryAction: UIAlertAction? = nil,
+        secondaryAction: UIAlertAction? = nil
+    ) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         if let primaryAction = primaryAction {
@@ -43,8 +47,12 @@ extension BaseViewController {
     /// - parameter primaryAction: Primary action for UIAlertController. If not specified, default action will be added.
     /// - parameter secondaryAction: Secondary action for UIAlertController.
     ///
-	public func showAlertWithError(_ error: Error, title: String = L10n.dialog_error_title,
-                                          primaryAction: UIAlertAction? = nil, secondaryAction: UIAlertAction? = nil) {
+	func showAlertWithError(
+        _ error: Error,
+        title: String = L10n.dialog_error_title,
+        primaryAction: UIAlertAction? = nil,
+        secondaryAction: UIAlertAction? = nil
+    ) {
         showAlert(title: title, message: error.localizedDescription, primaryAction: primaryAction, secondaryAction: secondaryAction)
     }
     
@@ -55,17 +63,29 @@ extension BaseViewController {
     /// - parameter style: Specifies style for WhisperView.
     /// - parameter hideAfter: Automatically hide WhisperView after a given interval (0 for permanent whisper).
     ///
-    public func showWhisper(message: String, style: WhisperStyle = .info, hideAfter: TimeInterval = 0.0) {
-        let whisper = WhisperView(frame: CGRect(x: 0, y: -view.safeAreaInsets.top - 25,
-                                                width: view.bounds.width, height: view.safeAreaInsets.top + 25))
+    func showWhisper(
+        message: String,
+        style: WhisperStyle = .info,
+        hideAfter: TimeInterval = 0.0
+    ) {
+        let whisper = WhisperView(frame: CGRect(
+            x: 0,
+            y: -view.safeAreaInsets.top - 25,
+            width: view.bounds.width,
+            height: view.safeAreaInsets.top + 25
+        ))
         whisper.message = message
         whisper.backgroundColor = style.color
         
         hideWhisper()
         view.addSubview(whisper)
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
-            whisper.frame.origin.y = 0
-        }, completion: nil)
+        UIView.animate(
+            withDuration: 0.2,
+            delay: 0,
+            options: .curveLinear,
+            animations: { whisper.frame.origin.y = 0 },
+            completion: nil
+        )
         
         if hideAfter > 0 {
             DispatchQueue.main.asyncAfter(deadline: .now() + hideAfter) { [weak self] in
@@ -80,20 +100,20 @@ extension BaseViewController {
     /// - parameter error: Error for which the alert will be presented.
     /// - parameter hideAfter: Automatically hide WhisperView after a given interval (0 for permanent whisper).
     ///
-    public func showWhisperWithError(_ error: Error, hideAfter: TimeInterval = 2.5) {
+    func showWhisperWithError(_ error: Error, hideAfter: TimeInterval = 2.5) {
         showWhisper(message: error.localizedDescription, style: .error, hideAfter: hideAfter)
     }
     
     /// Hide and remove WhisperView from current top ViewController.
-    public func hideWhisper() {
-        for view in view.subviews {
-            if view.isKind(of: WhisperView.self) {
-                UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
-                    view.frame.origin.y = -view.safeAreaInsets.top - 30
-                }, completion: { _ in
-                    view.removeFromSuperview()
-                })
-            }
+    func hideWhisper() {
+        for view in view.subviews where view.isKind(of: WhisperView.self) {
+            UIView.animate(
+                withDuration: 0.2,
+                delay: 0,
+                options: .curveLinear,
+                animations: { view.frame.origin.y = -view.safeAreaInsets.top - 30 },
+                completion: { _ in view.removeFromSuperview() }
+            )
         }
     }
     

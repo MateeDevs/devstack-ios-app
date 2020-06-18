@@ -1,4 +1,4 @@
-// 
+//
 //  RegistrationViewModel.swift
 //  DevStack
 //
@@ -6,8 +6,8 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import RxSwift
 import RxCocoa
+import RxSwift
 
 final class RegistrationViewModel: ViewModel, ViewModelType {
     

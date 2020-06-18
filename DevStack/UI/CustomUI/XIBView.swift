@@ -10,14 +10,14 @@ import UIKit
 
 open class XIBView: UIView {
     
-    public var view: UIView!
+    public var view: UIView! // swiftlint:disable:this implicitly_unwrapped_optional
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
     }

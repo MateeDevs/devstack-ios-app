@@ -10,7 +10,6 @@ import Foundation
 
 enum UserDefaultsCoding: String, CaseIterable {
     case hasRunBefore
-    case selectedLanguage
 }
 
 struct UserDefaultsProvider {

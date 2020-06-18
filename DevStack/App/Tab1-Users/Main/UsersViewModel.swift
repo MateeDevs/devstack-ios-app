@@ -1,4 +1,4 @@
-// 
+//
 //  UsersViewModel.swift
 //  DevStack
 //
@@ -6,8 +6,8 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import RxSwift
 import RxCocoa
+import RxSwift
 
 final class UsersViewModel: ViewModel, ViewModelType {
     
@@ -30,7 +30,7 @@ final class UsersViewModel: ViewModel, ViewModelType {
         
         let getUsers: Driver<[User]> = dependencies.userService.getUsers().asDriverOnErrorJustComplete()
         
-        let downloadUsers = page.flatMap({ (page) -> Observable<Lce<[User]>> in
+        let downloadUsers = page.flatMap({ page -> Observable<Lce<[User]>> in
             dependencies.userService.downloadUsersForPage(page).mapToLce()
         }).asDriverOnErrorJustComplete()
         

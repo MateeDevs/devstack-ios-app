@@ -6,12 +6,13 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import UIKit
 import RxSwift
+import UIKit
 
 open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: UI components
+    // swiftlint:disable:next private_outlet
     @IBOutlet public weak var tableView: UITableView! {
         didSet {
             // If you need separator add it directly into the cell
@@ -73,7 +74,7 @@ open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollVi
     public func handleNetworkData(_ lce: Lce<[T]>) {
         switch lce {
         case .loading:
-            if items.count == 0 {
+            if items.isEmpty {
                view.startActivityIndicator()
             }
         case .content(let data):

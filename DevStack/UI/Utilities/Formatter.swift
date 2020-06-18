@@ -30,7 +30,10 @@ public struct Formatter {
     public static let numberDefault = createNumberFormatter()
     
     /// Creates a DateFormatter based on a given date and time styles.
-    public static func createDateFormatter(dateStyle: DateFormatter.Style = .medium, timeStyle: DateFormatter.Style = .short) -> DateFormatter {
+    public static func createDateFormatter(
+        dateStyle: DateFormatter.Style = .medium,
+        timeStyle: DateFormatter.Style = .short
+    ) -> DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = dateStyle
         formatter.timeStyle = timeStyle
@@ -55,7 +58,10 @@ public struct Formatter {
     }
     
     /// Creates a NumberFormatter based on a given number style.
-    public static func createNumberFormatter(numberStyle: NumberFormatter.Style = .decimal, separator: String? = nil) -> NumberFormatter {
+    public static func createNumberFormatter(
+        numberStyle: NumberFormatter.Style = .decimal,
+        separator: String? = nil
+    ) -> NumberFormatter {
         let formatter = NumberFormatter()
         formatter.numberStyle = numberStyle
         formatter.groupingSeparator = separator

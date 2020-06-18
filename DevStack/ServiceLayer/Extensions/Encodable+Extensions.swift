@@ -10,11 +10,12 @@ import Foundation
 
 extension Encodable {
     
-    private var data: Data {
-        try! JSONEncoder().encode(self)
+    private var data: Data? {
+        try? JSONEncoder().encode(self)
     }
     
-    var dictionary: [String: Any] {
-        (try? JSONSerialization.jsonObject(with: data)) as? [String: Any] ?? [:]
+    var dictionary: [String: Any]? {
+        guard let data = self.data else { return nil }
+        return (try? JSONSerialization.jsonObject(with: data)) as? [String: Any]
     }
 }

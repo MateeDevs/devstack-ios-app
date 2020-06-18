@@ -35,14 +35,14 @@ extension AuthAPI: TargetType {
     }
     var task: Task {
         switch self {
-        case .login(let email, let password):
+        case let .login(email, password):
             let params: [String: Any] = [
                 "email": email,
                 "pass": password
             ]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
-        case .registration(let email, let password, let user):
-            var params = user.dictionary
+        case let .registration(email, password, user):
+            guard var params = user.dictionary else { return .requestPlain }
             params["email"] = email
             params["pass"] = password
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)

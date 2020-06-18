@@ -11,6 +11,7 @@ import UIKit
 open class InputViewController: BaseViewController {
     
     // MARK: UI components
+    // swiftlint:disable:next private_outlet
     @IBOutlet public weak var scrollView: UIScrollView?
     
     // MARK: Lifecycle methods
@@ -24,8 +25,18 @@ open class InputViewController: BaseViewController {
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
     
     // MARK: Additional methods
@@ -65,7 +76,7 @@ extension InputViewController: UITextViewDelegate {
     
     open func textViewDidEndEditing(_ textView: UITextView) {
         if let localizedTextView = textView as? LocalizedTextView {
-            if textView.text == "" {
+            if textView.text.isEmpty {
                 textView.text = localizedTextView.placeholder
                 textView.textColor = localizedTextView.placeholderColor
             }

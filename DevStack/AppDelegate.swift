@@ -6,8 +6,8 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
-import UIKit
 import RealmSwift
+import UIKit
 
 #if DEBUG
 import FlipperKit
@@ -17,9 +17,12 @@ import FlipperKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    private(set) var flowController: AppFlowController!
+    private(set) var flowController: AppFlowController?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
         
         #if DEBUG
         flipperSetup(for: application)
@@ -47,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Init main flow controller and start the flow
         flowController = AppFlowController(navigationController: navController, dependencies: AppDependency())
-        flowController.start()
+        flowController?.start()
         
         firebaseSetup(for: application)
         
@@ -117,7 +120,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     // Realm will automatically detect new properties and removed properties
                     // And will update the schema on disk automatically
                 }
-        })
+            })
         // Delete old schema
         config.deleteRealmIfMigrationNeeded = true
         // Tell Realm to use this new configuration object for the default Realm
@@ -126,7 +129,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Firebase
     private func firebaseSetup(for application: UIApplication) {
-        flowController.dependencies.firebaseService.start(for: application, appDelegate: self)
+        flowController?.dependencies.firebaseService.start(for: application, appDelegate: self)
     }
     
     // MARK: Appearance

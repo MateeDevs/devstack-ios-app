@@ -69,14 +69,17 @@ public protocol RatingViewDelegate: class {
         
         if remaining > 0 {
             let star = starArray[starArray.count - starFullyHidden]
-            star.frame = CGRect(x: star.frame.origin.x, y: star.frame.origin.y, width: star.frame.size.width * remaining, height: star.frame.size.height)
+            star.frame = CGRect(
+                x: star.frame.origin.x,
+                y: star.frame.origin.y,
+                width: star.frame.size.width * remaining,
+                height: star.frame.size.height
+            )
             starFullyHidden -= 1
         }
         
-        for (index, star) in starArray.enumerated().reversed() {
-            if index >= starArray.count - starFullyHidden   {
-                star.isHidden = true
-            }
+        for (index, star) in starArray.enumerated().reversed() where index >= starArray.count - starFullyHidden {
+            star.isHidden = true
         }
     }
     

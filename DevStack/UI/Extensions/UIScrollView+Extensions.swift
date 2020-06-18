@@ -8,17 +8,17 @@
 
 import UIKit
 
-extension UIScrollView {
+public extension UIScrollView {
     
-    public func isNearBottomEdge(edgeOffset: CGFloat = 100.0) -> Bool {
+    func isNearBottomEdge(edgeOffset: CGFloat = 100.0) -> Bool {
         contentOffset.y + frame.size.height + edgeOffset > contentSize.height
     }
     
-    public func isOverTopEdge(edgeOffset: CGFloat = -10.0) -> Bool {
+    func isOverTopEdge(edgeOffset: CGFloat = -10.0) -> Bool {
         contentOffset.y < edgeOffset
     }
     
-    public func addRefreshControl() {
+    func addRefreshControl() {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = AppTheme.Colors.activityIndicator
         self.refreshControl = refreshControl

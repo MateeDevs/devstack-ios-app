@@ -9,6 +9,7 @@
 import Foundation
 
 struct CommonError {
+    public static let realmNotAvailable = ServiceError(statusCode: StatusCode.databaseError, message: "Realm isn't available")
     public static let noUserId = ServiceError(statusCode: StatusCode.keychainError, message: "Can't retrieve user's id")
 }
 

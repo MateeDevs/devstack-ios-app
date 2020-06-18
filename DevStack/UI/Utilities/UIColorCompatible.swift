@@ -6,6 +6,8 @@
 //  Copyright © 2020 Matee. All rights reserved.
 //
 
+// swiftlint:disable object_literal
+
 import UIKit
 
 /// Helper that allow use of iOS 13 system colors on iOS 12 and older

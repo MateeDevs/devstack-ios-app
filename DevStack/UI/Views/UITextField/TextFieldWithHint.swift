@@ -12,6 +12,7 @@ import UIKit
     
     public let textField = UITextField()
     
+    // swiftlint:disable:next private_outlet
     @IBOutlet public weak var delegate: UITextFieldDelegate?
     
     private let hintLabel = UILabel()
@@ -45,7 +46,7 @@ import UIKit
         setup()
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }

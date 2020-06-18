@@ -63,7 +63,11 @@ open class FlowController: NSObject {
 }
 
 extension FlowController: UINavigationControllerDelegate {
-    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+    public func navigationController(
+        _ navigationController: UINavigationController,
+        didShow viewController: UIViewController,
+        animated: Bool
+    ) {
         // Stop a child flow controller when returning to a parent flow controller via back button
         // Idea taken from [Back Buttons and Coordinators](http://khanlou.com/2017/05/back-buttons-and-coordinators/)
         guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from),

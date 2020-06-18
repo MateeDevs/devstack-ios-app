@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import RxSwift
 import RealmSwift
+import RxSwift
 
 public protocol HasLoginService {
     var loginService: LoginService { get }
@@ -41,7 +41,7 @@ public class LoginService {
         KeychainProvider.deleteAll()
         
         // Clear Realm
-        let realm = try! Realm()
+        guard let realm = Realm.safeInit() else { return }
         do {
             try realm.write {
                 realm.deleteAll()

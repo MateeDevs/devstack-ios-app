@@ -1,4 +1,4 @@
-// 
+//
 //  SettingsViewController.swift
 //  DevStack
 //
@@ -6,8 +6,8 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import UIKit
 import RxSwift
+import UIKit
 
 protocol SettingsFlowDelegate: class {
 
@@ -21,9 +21,9 @@ final class SettingsViewController: BaseViewController {
     // MARK: ViewModels
 
     // MARK: UI components
-    @IBOutlet weak var topViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var smallButton: UIButton!
-    @IBOutlet weak var largeButton: UIButton!
+    @IBOutlet private weak var topViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var smallButton: UIButton!
+    @IBOutlet private weak var largeButton: UIButton!
     
     // MARK: Stored properties
 

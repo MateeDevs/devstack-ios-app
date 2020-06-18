@@ -21,7 +21,8 @@ public struct LocationHelper {
         
         for code in NSLocale.isoCountryCodes as [String] {
             let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: code])
-            let name = NSLocale(localeIdentifier: NSLocale.current.languageCode ?? "en").displayName(forKey: NSLocale.Key.identifier, value: id) ?? code
+            let name = NSLocale(localeIdentifier: NSLocale.current.languageCode ?? "en")
+                .displayName(forKey: NSLocale.Key.identifier, value: id) ?? code
             countriesAndCodes.append((text: name, data: code as AnyObject?))
         }
         

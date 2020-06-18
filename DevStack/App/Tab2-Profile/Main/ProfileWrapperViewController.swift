@@ -1,4 +1,4 @@
-// 
+//
 //  ProfileWrapperViewController.swift
 //  DevStack
 //
@@ -20,8 +20,8 @@ final class ProfileWrapperViewController: BaseViewController {
     // MARK: ViewModels
 
     // MARK: UI components
-    @IBOutlet weak var tabBarView: TabBarView!
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet private weak var tabBarView: TabBarView!
+    @IBOutlet private weak var containerView: UIView!
     
     // MARK: Stored properties
     private var viewControllers: [BaseViewController] = []

@@ -1,4 +1,4 @@
-// 
+//
 //  ProfileViewController.swift
 //  DevStack
 //
@@ -6,10 +6,10 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import UIKit
-import RxSwift
 import RxCocoa
+import RxSwift
 import SkeletonView
+import UIKit
 
 protocol ProfileFlowDelegate: class {
     func presentOnboarding()
@@ -21,7 +21,7 @@ final class ProfileViewController: BaseViewController {
     weak var flowDelegate: ProfileFlowDelegate?
 
     // MARK: ViewModels
-    private var viewModel: ProfileViewModel!
+    private var viewModel: ProfileViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
 
     // MARK: UI components
     @IBOutlet private weak var userImageView: UserImageView!

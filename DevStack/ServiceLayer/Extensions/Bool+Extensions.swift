@@ -6,9 +6,8 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
-extension Bool {
-    
-    public func toString() -> String? {
+public extension Bool {
+    func toString() -> String? {
         self ? "true" : "false"
     }
 }

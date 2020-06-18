@@ -11,7 +11,7 @@ import Foundation
 struct NetworkingUtilities {
     
     static func stubbedResponse(_ filename: String) -> Data! {
-        @objc class TestClass: NSObject { }
+        @objc class TestClass: NSObject { } // swiftlint:disable:this nesting
         let bundle = Bundle(for: TestClass.self)
         let path = bundle.path(forResource: filename, ofType: "json")
         return (try? Data(contentsOf: URL(fileURLWithPath: path!)))
