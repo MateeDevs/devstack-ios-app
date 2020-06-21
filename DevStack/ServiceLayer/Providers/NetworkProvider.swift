@@ -22,6 +22,8 @@ struct NetworkProvider {
     /// - returns: Observable which emits Response of a network call.
     ///
     func observableRequest(_ endpoint: TargetType, withInterceptor: Bool = true) -> Observable<Response> {
-        provider.request(MultiTarget(endpoint), withInterceptor: withInterceptor).asObservable().filterSuccessfulStatusCodes()
+        provider.request(MultiTarget(endpoint), withInterceptor: withInterceptor)
+            .asObservable()
+            .filterSuccessfulStatusCodes()
     }
 }

@@ -45,13 +45,9 @@ final class UsersViewController: BaseTableViewController<User> {
         
         page.bind(to: viewModel.input.page).disposed(by: disposeBag)
         
-        viewModel.output.getUsers.drive(onNext: { [weak self] users in
-            self?.handleDatabaseData(users)
-        }).disposed(by: disposeBag)
-        
-        viewModel.output.downloadUsers.drive(onNext: { [weak self] lce in
-            self?.handleNetworkData(lce)
-        }).disposed(by: disposeBag)
+        viewModel.output.users.drive(data).disposed(by: disposeBag)
+        viewModel.output.loadedCount.drive(loadedCount).disposed(by: disposeBag)
+        viewModel.output.isRefreshing.drive(isRefreshing).disposed(by: disposeBag)
     }
 
     override func setupUI() {

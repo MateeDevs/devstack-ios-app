@@ -49,12 +49,12 @@ FIXME
 - Network communication is based on [Moya](https://github.com/Moya/Moya) network framework
 - Model layer is represented via [Realm](https://github.com/realm/realm-cocoa) object models and native Decodable is used for mapping from JSON
 - Asynchronous functions in microservices are represented as observables with the [RxSwift](https://github.com/ReactiveX/RxSwift) framework
-- Those observables usually combines stream from the database and stream from a network call
 - Microservices are injected into ViewModels with the FlowController pattern
-- ViewModel has properties, methods to change them and observables which are then observed in relevant ViewControllers
+- ViewModel has its inputs and outputs which are then binded or observed in a relevant ViewController
 
 ## Style Guide
 - [Swift Style Guide](https://github.com/raywenderlich/swift-style-guide)
+- Swiftlint is enabled for whole codebase, you can find its configuration inside the `.swiftlint.yml`
 - To ensure a uniform style, it is advised to use the ready-made templates for ViewController / ViewModel / FlowController etc.
 - The templates are available from a separate repository [ios-templates](https://github.com/MateeDevs/devstack-ios-templates)
 - When using storyboards, strictly go with the rule `one view = one storyboard`!
@@ -76,8 +76,8 @@ FIXME
 - Notifications can be easily tested with scripts from the [ios-push-tester](https://github.com/MateeDevs/ios-push-tester) repository
 
 ## Debug
-- All important information should be logged using the default `os_log` (there is `Logger` wrapper for convenience)
-- All network requests going through the `AuthenticatedProvider` are printed into the console
+- All important information should be logged using the default `os_log` (wrapper `Logger` is available for convenience)
+- All network requests going through the `AuthenticatedProvider` are printed into the console in debug builds
 - [Flipper](https://fbflipper.com/) with layout and network plugins is enabled for debug builds
 
 ## Build + Release

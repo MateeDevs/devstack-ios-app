@@ -13,8 +13,6 @@ final class UserDetailViewModel: ViewModel, ViewModelType {
     
     typealias Dependencies = HasUserService
     
-    private var userId: String
-    
     let input: Input
     let output: Output
     
@@ -23,28 +21,39 @@ final class UserDetailViewModel: ViewModel, ViewModelType {
     }
     
     struct Output {
-        let getUser: Driver<User>
-        let downloadUser: Driver<Lce<User>>
+        let user: Driver<User>
+        let isRefreshing: Driver<Bool>
     }
     
     init(dependencies: Dependencies, userId: String) {
-        self.userId = userId
+        
+        // MARK: Setup inputs
         
         let refreshTrigger = PublishSubject<Void>()
-        
-        let getUser: Driver<User> = dependencies.userService.getUserById(userId).asDriverOnErrorJustComplete()
-        
-        let downloadUser = refreshTrigger.flatMap({ _ -> Observable<Lce<User>> in
-            dependencies.userService.downloadUserById(userId).mapToLce()
-        }).asDriverOnErrorJustComplete()
         
         self.input = Input(
             refreshTrigger: refreshTrigger.asObserver()
         )
         
+        // MARK: Setup outputs
+        
+        let user = dependencies.userService.getUserById(userId)
+        
+        let activity = ActivityIndicator()
+        
+        let refreshUser = refreshTrigger.flatMap({ _ -> Observable<Event<User>> in
+            dependencies.userService.downloadUserById(userId).trackActivity(activity).materialize()
+        }).share()
+        
+        let isRefreshing: Observable<Bool> = Observable.merge(
+            activity.asObservable(),
+            refreshUser.compactMap { $0.element }.map { _ in false },
+            refreshUser.compactMap { $0.error }.map { _ in false }
+        )
+        
         self.output = Output(
-            getUser: getUser,
-            downloadUser: downloadUser
+            user: user.asDriver(),
+            isRefreshing: isRefreshing.asDriver()
         )
         
         super.init()

@@ -8,10 +8,10 @@
 
 public struct ErrorMessages {
     
-    let statusCodes: [Int: String]
+    let statusCodes: [StatusCode: String]
     let defaultMessage: String
     
-    init(_ statusCodes: [Int: String], defaultMessage: String) {
+    init(_ statusCodes: [StatusCode: String], defaultMessage: String) {
         self.statusCodes = statusCodes
         self.defaultMessage = defaultMessage
     }

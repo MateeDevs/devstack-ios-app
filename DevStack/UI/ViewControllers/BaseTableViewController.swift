@@ -9,7 +9,7 @@
 import RxSwift
 import UIKit
 
-open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
+open class BaseTableViewController<T>: BaseViewController, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: UI components
     // swiftlint:disable:next private_outlet
@@ -67,25 +67,13 @@ open class BaseTableViewController<T: AnyObject>: BaseViewController, UIScrollVi
         }
     }
     
-    public func handleDatabaseData(_ data: [T]) {
+    public func setData(_ data: [T]) {
         self.items = data
     }
     
-    public func handleNetworkData(_ lce: Lce<[T]>) {
-        switch lce {
-        case .loading:
-            if items.isEmpty {
-               view.startActivityIndicator()
-            }
-        case .content(let data):
-            view.stopActivityIndicator()
-            tableView?.refreshControl?.endRefreshing()
-            currentPage += 1
-            shouldFetchMore = data.count == perPage ? true : false
-        case .error:
-            view.stopActivityIndicator()
-            tableView?.refreshControl?.endRefreshing()
-        }
+    public func updatePaging(_ loadedCount: Int) {
+        currentPage += 1
+        shouldFetchMore = loadedCount == perPage ? true : false
     }
     
     // MARK: UIScrollViewDelegate methods

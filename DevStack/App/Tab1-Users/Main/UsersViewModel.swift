@@ -21,26 +21,43 @@ final class UsersViewModel: ViewModel, ViewModelType {
     }
     
     struct Output {
-        let getUsers: Driver<[User]>
-        let downloadUsers: Driver<Lce<[User]>>
+        let users: Driver<[User]>
+        let loadedCount: Driver<Int>
+        let isRefreshing: Driver<Bool>
     }
     
     init(dependencies: Dependencies) {
+        
+        // MARK: Setup inputs
+        
         let page = PublishSubject<Int>()
-        
-        let getUsers: Driver<[User]> = dependencies.userService.getUsers().asDriverOnErrorJustComplete()
-        
-        let downloadUsers = page.flatMap({ page -> Observable<Lce<[User]>> in
-            dependencies.userService.downloadUsersForPage(page).mapToLce()
-        }).asDriverOnErrorJustComplete()
         
         self.input = Input(
             page: page.asObserver()
         )
         
+        // MARK: Setup outputs
+        
+        let users = dependencies.userService.getUsers()
+        
+        let activity = ActivityIndicator()
+        
+        let refreshUsers = page.flatMap({ page -> Observable<Event<[User]>> in
+            dependencies.userService.downloadUsersForPage(page).trackActivity(activity).materialize()
+        }).share()
+        
+        let loadedCount = refreshUsers.compactMap { $0.element }.map { $0.count }
+        
+        let isRefreshing: Observable<Bool> = Observable.merge(
+            activity.asObservable(),
+            refreshUsers.compactMap { $0.element }.map { _ in false },
+            refreshUsers.compactMap { $0.error }.map { _ in false }
+        )
+        
         self.output = Output(
-            getUsers: getUsers,
-            downloadUsers: downloadUsers
+            users: users.asDriver(),
+            loadedCount: loadedCount.asDriver(),
+            isRefreshing: isRefreshing.asDriver()
         )
         
         super.init()

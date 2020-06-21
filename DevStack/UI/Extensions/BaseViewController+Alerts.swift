@@ -8,6 +8,12 @@
 
 import UIKit
 
+public enum WhisperAction {
+    case showMessage(String)
+    case showError(String)
+    case hide
+}
+
 public extension BaseViewController {
     
     ///
@@ -57,6 +63,22 @@ public extension BaseViewController {
     }
     
     ///
+    /// Handle WhisperView on current top ViewController based on a given WhisperAction.
+    ///
+    /// - parameter action: Action for WhisperView.
+    ///
+    func handleWhisper(_ action: WhisperAction) {
+        switch action {
+        case .showMessage(let message):
+            showWhisper(message)
+        case .showError(let message):
+            showWhisper(message, style: .error, hideAfter: 2.5)
+        case .hide:
+            hideWhisper()
+        }
+    }
+    
+    ///
     /// Present WhisperView on current top ViewController.
     ///
     /// - parameter message: Message for WhisperView.
@@ -64,7 +86,7 @@ public extension BaseViewController {
     /// - parameter hideAfter: Automatically hide WhisperView after a given interval (0 for permanent whisper).
     ///
     func showWhisper(
-        message: String,
+        _ message: String,
         style: WhisperStyle = .info,
         hideAfter: TimeInterval = 0.0
     ) {
@@ -92,16 +114,6 @@ public extension BaseViewController {
                 self?.hideWhisper()
             }
         }
-    }
-    
-    ///
-    /// Present WhisperView on current top ViewController. Message is based on a given error.
-    ///
-    /// - parameter error: Error for which the alert will be presented.
-    /// - parameter hideAfter: Automatically hide WhisperView after a given interval (0 for permanent whisper).
-    ///
-    func showWhisperWithError(_ error: Error, hideAfter: TimeInterval = 2.5) {
-        showWhisper(message: error.localizedDescription, style: .error, hideAfter: hideAfter)
     }
     
     /// Hide and remove WhisperView from current top ViewController.

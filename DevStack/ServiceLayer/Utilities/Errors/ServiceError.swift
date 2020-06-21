@@ -9,21 +9,21 @@
 import Foundation
 
 struct CommonError {
-    public static let realmNotAvailable = ServiceError(statusCode: StatusCode.databaseError, message: "Realm isn't available")
-    public static let noUserId = ServiceError(statusCode: StatusCode.keychainError, message: "Can't retrieve user's id")
+    public static let realmNotAvailable = ServiceError(statusCode: .databaseError, message: "Realm isn't available")
+    public static let noUserId = ServiceError(statusCode: .keychainError, message: "Can't retrieve user's id")
 }
 
 struct ServiceError: LocalizedError {
     
-    let statusCode: Int
-    let message: String?
+    let statusCode: StatusCode
+    let message: String
     
-    init(statusCode: Int, message: String?) {
+    init(statusCode: StatusCode, message: String) {
         self.statusCode = statusCode
         self.message = message
     }
     
     public var errorDescription: String? {
-		message ?? L10n.unknown_error
+		message
     }
 }
