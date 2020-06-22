@@ -52,20 +52,14 @@ final class UserDetailViewController: BaseViewController {
     override func setupBindings() {
         super.setupBindings()
         
-        viewModel.output.getUser.drive(onNext: { [weak self] user in
+        if let refreshControl = scrollView.refreshControl {
+            refreshControl.rx.controlEvent(.valueChanged).bind(to: viewModel.input.refreshTrigger).disposed(by: disposeBag)
+            viewModel.output.isRefreshing.drive(refreshControl.rx.isRefreshing).disposed(by: disposeBag)
+        }
+        
+        viewModel.output.user.drive(onNext: { [weak self] user in
             self?.user = user
         }).disposed(by: disposeBag)
-        
-        viewModel.output.downloadUser.drive(onNext: { [weak self] lce in
-            switch lce {
-            case .loading:
-                break
-            case .content, .error:
-                self?.scrollView.refreshControl?.endRefreshing()
-            }
-        }).disposed(by: disposeBag)
-        
-        scrollView.refreshControl?.rx.controlEvent(.valueChanged).bind(to: viewModel.input.refreshTrigger).disposed(by: disposeBag)
         
         viewModel.input.refreshTrigger.onNext(())
     }

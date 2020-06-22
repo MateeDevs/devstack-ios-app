@@ -23,32 +23,18 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
     }
     
     struct Output {
-        let registration: Driver<Lce<User>>
+        let registrationSuccess: Driver<User>
+        let registerButtonEnabled: Driver<Bool>
+        let whisperAction: Driver<WhisperAction>
     }
     
     init(dependencies: Dependencies) {
+        
+        // MARK: Setup inputs
+        
         let email = ReplaySubject<String>.create(bufferSize: 1)
         let password = ReplaySubject<String>.create(bufferSize: 1)
         let registerButtonTaps = PublishSubject<Void>()
-        
-        let inputs = Observable.combineLatest(email, password) { (email: $0, password: $1) }
-        
-        let registration = registerButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Observable<Lce<User>> in
-            if inputs.email.isEmpty || inputs.password.isEmpty {
-                return Observable.just(.error(ValidationError(L10n.invalid_credentials)))
-            } else if !DataValidator.validateEmail(inputs.email) {
-                return Observable.just(.error(ValidationError(L10n.invalid_email)))
-            } else {
-                let errors = ErrorMessages([409: L10n.register_view_email_already_exists], defaultMessage: L10n.signing_up_failed)
-                
-                return dependencies.loginService.registration(
-                    email: inputs.email,
-                    password: inputs.password,
-                    firstName: "Anonymous",
-                    lastName: ""
-                ).mapToLce(errors)
-            }
-        }.asDriverOnErrorJustComplete()
         
         self.input = Input(
             email: email.asObserver(),
@@ -56,8 +42,39 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
             registerButtonTaps: registerButtonTaps.asObserver()
         )
         
+        // MARK: Setup outputs
+        
+        let activity = ActivityIndicator()
+        
+        let inputs = Observable.combineLatest(email, password) { (email: $0, password: $1) }
+        
+        let registration = registerButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Observable<Event<User>> in
+            if inputs.email.isEmpty || inputs.password.isEmpty {
+                return Observable.just(.error(ValidationError(L10n.invalid_credentials)))
+            } else if !DataValidator.validateEmail(inputs.email) {
+                return Observable.just(.error(ValidationError(L10n.invalid_email)))
+            } else {
+                return dependencies.loginService.registration(
+                    email: inputs.email,
+                    password: inputs.password,
+                    firstName: "Anonymous",
+                    lastName: ""
+                ).trackActivity(activity).materialize()
+            }
+        }.share()
+        
+    let messages = ErrorMessages([.httpConflict: L10n.register_view_email_already_exists], defaultMessage: L10n.signing_up_failed)
+        
+        let whisperAction: Observable<WhisperAction> = Observable.merge(
+            activity.mapToWhisperAction(L10n.signing_up),
+            registration.compactMap { $0.element }.map { _ in .hide },
+            registration.compactMap { $0.error }.map { .showError($0.toString(messages)) }
+        )
+        
         self.output = Output(
-            registration: registration
+            registrationSuccess: registration.compactMap { $0.element }.asDriver(),
+            registerButtonEnabled: activity.map { !$0 },
+            whisperAction: whisperAction.asDriver()
         )
         
         super.init()

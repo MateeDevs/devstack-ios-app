@@ -49,20 +49,13 @@ final class RegistrationViewController: InputViewController {
         passwordTextField.textField.rx.text.orEmpty.bind(to: viewModel.input.password).disposed(by: disposeBag)
         registerButton.rx.tap.bind(to: viewModel.input.registerButtonTaps).disposed(by: disposeBag)
         
-        viewModel.output.registration.drive(onNext: { [weak self] event in
-            switch event {
-            case .loading:
-                self?.showWhisper(message: L10n.signing_up)
-                self?.registerButton.isEnabled = false
-            case .content:
-                self?.hideWhisper()
-                self?.registerButton.isEnabled = true
-                self?.flowDelegate?.popRegistration()
-            case .error(let error):
-                self?.showWhisperWithError(error)
-                self?.registerButton.isEnabled = true
-            }
+        viewModel.output.registrationSuccess.drive(onNext: { [weak self] _ in
+            self?.flowDelegate?.popRegistration()
         }).disposed(by: disposeBag)
+        
+        viewModel.output.whisperAction.drive(self.rx.whisperAction).disposed(by: disposeBag)
+        
+        viewModel.output.registerButtonEnabled.drive(loginButton.rx.isEnabled).disposed(by: disposeBag)
         
         loginButton.rx.tap.bind { [weak self] in
             self?.flowDelegate?.popRegistration()

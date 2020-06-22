@@ -6,15 +6,20 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
-struct StatusCode {
+enum StatusCode: Int {
+    case unknown = 0
     
     // Codes 100 - 599 are reserved for HTTP status codes
+    case httpBadRequest = 400
+    case httpUnathorized = 401
+    case httpForbidden = 403
+    case httpNotFound = 404
+    case httpConflict = 409
+    case httpInternalServerError = 500
     
-    static let unknown = 0
-    static let networkError = 900
-    static let databaseError = 901
-    static let fileError = 902
-    static let userDefaultsError = 903
-    static let keychainError = 904
-    
+    case networkError = 900
+    case databaseError = 901
+    case fileError = 902
+    case userDefaultsError = 903
+    case keychainError = 904
 }

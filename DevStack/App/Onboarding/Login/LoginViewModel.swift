@@ -23,28 +23,18 @@ final class LoginViewModel: ViewModel, ViewModelType {
     }
     
     struct Output {
-        let login: Driver<Lce<Void>>
+        let loginSuccess: Driver<Void>
+        let loginButtonEnabled: Driver<Bool>
+        let whisperAction: Driver<WhisperAction>
     }
     
     init(dependencies: Dependencies) {
+        
+        // MARK: Setup inputs
+        
         let email = ReplaySubject<String>.create(bufferSize: 1)
         let password = ReplaySubject<String>.create(bufferSize: 1)
         let loginButtonTaps = PublishSubject<Void>()
-        
-        let inputs = Observable.combineLatest(email, password) { (email: $0, password: $1) }
-        
-        let login = loginButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Observable<Lce<Void>> in
-            if inputs.email.isEmpty || inputs.password.isEmpty {
-                return Observable.just(.error(ValidationError(L10n.invalid_credentials)))
-            } else {
-                let errors = ErrorMessages([401: L10n.invalid_credentials], defaultMessage: L10n.signing_failed)
-                
-                return dependencies.loginService.login(
-                    email: inputs.email,
-                    password: inputs.password
-                ).mapToLce(errors)
-            }
-        }.asDriverOnErrorJustComplete()
         
         self.input = Input(
             email: email.asObserver(),
@@ -52,8 +42,35 @@ final class LoginViewModel: ViewModel, ViewModelType {
             loginButtonTaps: loginButtonTaps.asObserver()
         )
         
+        // MARK: Setup outputs
+        
+        let activity = ActivityIndicator()
+        
+        let inputs = Observable.combineLatest(email, password) { (email: $0, password: $1) }
+        
+        let login = loginButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Observable<Event<Void>> in
+            if inputs.email.isEmpty || inputs.password.isEmpty {
+                return Observable.just(.error(ValidationError(L10n.invalid_credentials)))
+            } else {
+                return dependencies.loginService.login(
+                    email: inputs.email,
+                    password: inputs.password
+                ).trackActivity(activity).materialize()
+            }
+        }.share()
+        
+        let messages = ErrorMessages([.httpUnathorized: L10n.invalid_credentials], defaultMessage: L10n.signing_failed)
+        
+        let whisperAction: Observable<WhisperAction> = Observable.merge(
+            activity.mapToWhisperAction(L10n.signing_in),
+            login.compactMap { $0.element }.map { .hide },
+            login.compactMap { $0.error }.map { .showError($0.toString(messages)) }
+        )
+        
         self.output = Output(
-            login: login
+            loginSuccess: login.compactMap { $0.element }.asDriver(),
+            loginButtonEnabled: activity.map { !$0 },
+            whisperAction: whisperAction.asDriver()
         )
         
         super.init()

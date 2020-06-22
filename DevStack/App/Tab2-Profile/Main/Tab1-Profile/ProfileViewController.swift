@@ -8,7 +8,6 @@
 
 import RxCocoa
 import RxSwift
-import SkeletonView
 import UIKit
 
 protocol ProfileFlowDelegate: class {
@@ -53,24 +52,15 @@ final class ProfileViewController: BaseViewController {
     override func setupBindings() {
         super.setupBindings()
         
-        viewModel.output.profile.drive(onNext: { [weak self] lce in
-            switch lce {
-            case .loading:
-                self?.view.showAnimatedGradientSkeleton(animation: GradientDirection.topLeftBottomRight.slidingAnimation())
-            case .content(let user):
-                // Delay is just for a skeleton show case purpose
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-                    self?.view.hideSkeleton()
-                    self?.user = user
-                }
-            case .error:
-                self?.view.hideSkeleton()
-            }
+        viewModel.output.profile.drive(onNext: { [weak self] user in
+            self?.user = user
         }).disposed(by: disposeBag)
         
-        viewModel.output.currentLocation.drive(onNext: { [weak self] location in
-            self?.locationLabel.text = location.coordinate.toString()
-        }).disposed(by: disposeBag)
+        viewModel.output.isRefreshing.drive(view.rx.skeletonView).disposed(by: disposeBag)
+        
+        viewModel.output.currentLocation
+            .map { $0.coordinate.toString() }
+            .drive(locationLabel.rx.text).disposed(by: disposeBag)
         
         logoutButton.rx.tap.bind { [weak self] in
             LoginService.logout()

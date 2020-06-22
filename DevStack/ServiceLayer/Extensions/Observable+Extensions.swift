@@ -15,28 +15,10 @@ public extension ObservableType {
         return map { _ in Void() }
     }
     
-    func asDriverOnErrorJustComplete() -> Driver<Element> {
+    /// Helper that just completes on error
+    func asDriver() -> Driver<Element> {
         asDriver { _ in
             Driver.empty()
         }
     }
-    
-    func mapToLce<T: Any>(_ messages: ErrorMessages? = nil) -> Observable<Lce<T>> where Element == T {
-        return flatMap({ object -> Observable<Lce<T>> in
-            Observable.just(.content(object))
-        }).catchError({ error in
-            error.asServiceError(messages)
-        }).startWith(.loading)
-    }
-    
-    func filterErrors<T: Any>() -> Observable<Lce<T>> where Element == Lce<T> {
-        return filter { lce -> Bool in
-            if case .error = lce {
-                return true
-            } else {
-                return false
-            }
-        }
-    }
-    
 }

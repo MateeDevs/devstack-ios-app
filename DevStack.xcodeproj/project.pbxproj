@@ -46,9 +46,9 @@
 		4511A71E213D73C8006AD4CC /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511A717213D73C8006AD4CC /* ActivityIndicatorView.swift */; };
 		4511A71F213D73C8006AD4CC /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511A717213D73C8006AD4CC /* ActivityIndicatorView.swift */; };
 		4511A720213D73C8006AD4CC /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511A717213D73C8006AD4CC /* ActivityIndicatorView.swift */; };
-		4511A72D213DDCCB006AD4CC /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511A72C213DDCCB006AD4CC /* UIView+Extensions.swift */; };
-		4511A72E213DDCCB006AD4CC /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511A72C213DDCCB006AD4CC /* UIView+Extensions.swift */; };
-		4511A72F213DDCCB006AD4CC /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511A72C213DDCCB006AD4CC /* UIView+Extensions.swift */; };
+		4511A72D213DDCCB006AD4CC /* UIView+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511A72C213DDCCB006AD4CC /* UIView+ActivityIndicator.swift */; };
+		4511A72E213DDCCB006AD4CC /* UIView+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511A72C213DDCCB006AD4CC /* UIView+ActivityIndicator.swift */; };
+		4511A72F213DDCCB006AD4CC /* UIView+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511A72C213DDCCB006AD4CC /* UIView+ActivityIndicator.swift */; };
 		451233E3215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451233E2215D18BA00F85985 /* UIImageView+Extensions.swift */; };
 		451233E4215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451233E2215D18BA00F85985 /* UIImageView+Extensions.swift */; };
 		451233E5215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451233E2215D18BA00F85985 /* UIImageView+Extensions.swift */; };
@@ -106,6 +106,21 @@
 		455261C7210AFF1800E5F1E1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261C6210AFF1700E5F1E1 /* Assets.swift */; };
 		455261C8210AFF1800E5F1E1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261C6210AFF1700E5F1E1 /* Assets.swift */; };
 		455261C9210AFF1800E5F1E1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261C6210AFF1700E5F1E1 /* Assets.swift */; };
+		45571932249FE37F00FB24CA /* BaseViewController+Alerts+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571931249FE37F00FB24CA /* BaseViewController+Alerts+Rx.swift */; };
+		45571933249FE37F00FB24CA /* BaseViewController+Alerts+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571931249FE37F00FB24CA /* BaseViewController+Alerts+Rx.swift */; };
+		45571934249FE37F00FB24CA /* BaseViewController+Alerts+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571931249FE37F00FB24CA /* BaseViewController+Alerts+Rx.swift */; };
+		45571936249FE3CB00FB24CA /* Observable+Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571935249FE3CB00FB24CA /* Observable+Realm.swift */; };
+		45571937249FE3CB00FB24CA /* Observable+Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571935249FE3CB00FB24CA /* Observable+Realm.swift */; };
+		45571938249FE3CB00FB24CA /* Observable+Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571935249FE3CB00FB24CA /* Observable+Realm.swift */; };
+		4557193A249FE52100FB24CA /* UIView+ActivityIndicator+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571939249FE52100FB24CA /* UIView+ActivityIndicator+Rx.swift */; };
+		4557193B249FE52100FB24CA /* UIView+ActivityIndicator+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571939249FE52100FB24CA /* UIView+ActivityIndicator+Rx.swift */; };
+		4557193C249FE52100FB24CA /* UIView+ActivityIndicator+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571939249FE52100FB24CA /* UIView+ActivityIndicator+Rx.swift */; };
+		4557193E249FE58400FB24CA /* BaseTableViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557193D249FE58300FB24CA /* BaseTableViewController+Rx.swift */; };
+		4557193F249FE58400FB24CA /* BaseTableViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557193D249FE58300FB24CA /* BaseTableViewController+Rx.swift */; };
+		45571940249FE58400FB24CA /* BaseTableViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557193D249FE58300FB24CA /* BaseTableViewController+Rx.swift */; };
+		45571942249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571941249FF28900FB24CA /* UIView+SkeletonView+Rx.swift */; };
+		45571943249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571941249FF28900FB24CA /* UIView+SkeletonView+Rx.swift */; };
+		45571944249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571941249FF28900FB24CA /* UIView+SkeletonView+Rx.swift */; };
 		4558D30B20FCC8FF005BC325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4558D30A20FCC8FF005BC325 /* AppDelegate.swift */; };
 		456851B921008988006D3618 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456851B821008988006D3618 /* BaseViewController.swift */; };
 		456851BA21008988006D3618 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456851B821008988006D3618 /* BaseViewController.swift */; };
@@ -247,15 +262,12 @@
 		45A388D8225F5EF300037FFA /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388D7225F5EF300037FFA /* UIFont+Extensions.swift */; };
 		45A388D9225F5EF300037FFA /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388D7225F5EF300037FFA /* UIFont+Extensions.swift */; };
 		45A388DA225F5EF300037FFA /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388D7225F5EF300037FFA /* UIFont+Extensions.swift */; };
-		45A3D59F2119B76000E39169 /* Realm+RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+RxExtensions.swift */; };
-		45A3D5A02119B76000E39169 /* Realm+RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+RxExtensions.swift */; };
-		45A3D5A12119B76000E39169 /* Realm+RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+RxExtensions.swift */; };
+		45A3D59F2119B76000E39169 /* Realm+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+Rx.swift */; };
+		45A3D5A02119B76000E39169 /* Realm+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+Rx.swift */; };
+		45A3D5A12119B76000E39169 /* Realm+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3D59E2119B76000E39169 /* Realm+Rx.swift */; };
 		45A92DF621085864007579AC /* BaseViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A92DF521085864007579AC /* BaseViewController+Alerts.swift */; };
 		45A92DF721085864007579AC /* BaseViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A92DF521085864007579AC /* BaseViewController+Alerts.swift */; };
 		45A92DF821085864007579AC /* BaseViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A92DF521085864007579AC /* BaseViewController+Alerts.swift */; };
-		45A92DFD2109ABE9007579AC /* Lce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A92DFC2109ABE9007579AC /* Lce.swift */; };
-		45A92DFE2109ABE9007579AC /* Lce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A92DFC2109ABE9007579AC /* Lce.swift */; };
-		45A92DFF2109ABE9007579AC /* Lce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A92DFC2109ABE9007579AC /* Lce.swift */; };
 		45AF119923FFEDE100C63882 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF119823FFEDE100C63882 /* Formatter.swift */; };
 		45AF119A23FFEDE100C63882 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF119823FFEDE100C63882 /* Formatter.swift */; };
 		45AF119B23FFEDE100C63882 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF119823FFEDE100C63882 /* Formatter.swift */; };
@@ -379,6 +391,9 @@
 		45ECA1C6216BFA90000B1124 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ECA1C5216BFA90000B1124 /* UserService.swift */; };
 		45ECA1C7216BFA90000B1124 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ECA1C5216BFA90000B1124 /* UserService.swift */; };
 		45ECA1C8216BFA90000B1124 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ECA1C5216BFA90000B1124 /* UserService.swift */; };
+		45ED84AE249F64520055A19E /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED84AD249F64520055A19E /* ActivityIndicator.swift */; };
+		45ED84AF249F64520055A19E /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED84AD249F64520055A19E /* ActivityIndicator.swift */; };
+		45ED84B0249F64520055A19E /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED84AD249F64520055A19E /* ActivityIndicator.swift */; };
 		45F4AE422180B88400E75B4A /* LocalizedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F4AE412180B88400E75B4A /* LocalizedImageView.swift */; };
 		45F4AE432180B88400E75B4A /* LocalizedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F4AE412180B88400E75B4A /* LocalizedImageView.swift */; };
 		45F4AE442180B88400E75B4A /* LocalizedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F4AE412180B88400E75B4A /* LocalizedImageView.swift */; };
@@ -456,7 +471,7 @@
 		4511A6E9213D2677006AD4CC /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		4511A716213D73C7006AD4CC /* ActivityIndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityIndicatorView.xib; sourceTree = "<group>"; };
 		4511A717213D73C8006AD4CC /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
-		4511A72C213DDCCB006AD4CC /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		4511A72C213DDCCB006AD4CC /* UIView+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		451233E2215D18BA00F85985 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		4512341A2162326A00F85985 /* NSLayoutConstraint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extensions.swift"; sourceTree = "<group>"; };
 		45128B782142A627007B6B47 /* TabBarButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarButton.xib; sourceTree = "<group>"; };
@@ -482,6 +497,11 @@
 		455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		455261C2210AFE1100E5F1E1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		455261C6210AFF1700E5F1E1 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		45571931249FE37F00FB24CA /* BaseViewController+Alerts+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseViewController+Alerts+Rx.swift"; sourceTree = "<group>"; };
+		45571935249FE3CB00FB24CA /* Observable+Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Realm.swift"; sourceTree = "<group>"; };
+		45571939249FE52100FB24CA /* UIView+ActivityIndicator+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ActivityIndicator+Rx.swift"; sourceTree = "<group>"; };
+		4557193D249FE58300FB24CA /* BaseTableViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTableViewController+Rx.swift"; sourceTree = "<group>"; };
+		45571941249FF28900FB24CA /* UIView+SkeletonView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SkeletonView+Rx.swift"; sourceTree = "<group>"; };
 		4558D30720FCC8FF005BC325 /* DevStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4558D30A20FCC8FF005BC325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		456408B52333AF830080678A /* strings.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = strings.txt; path = "../../../../twine-localization/devstack/strings.txt"; sourceTree = "<group>"; };
@@ -538,9 +558,8 @@
 		45A388C6225E388B00037FFA /* FullscreenImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenImageViewController.swift; sourceTree = "<group>"; };
 		45A388D2225F39EF00037FFA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		45A388D7225F5EF300037FFA /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
-		45A3D59E2119B76000E39169 /* Realm+RxExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+RxExtensions.swift"; sourceTree = "<group>"; };
+		45A3D59E2119B76000E39169 /* Realm+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Rx.swift"; sourceTree = "<group>"; };
 		45A92DF521085864007579AC /* BaseViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseViewController+Alerts.swift"; sourceTree = "<group>"; };
-		45A92DFC2109ABE9007579AC /* Lce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lce.swift; sourceTree = "<group>"; };
 		45AF119823FFEDE100C63882 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		45B76D9121359138003BB997 /* StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
 		45B76D98213591A9003BB997 /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
@@ -586,6 +605,7 @@
 		45ECA1A9216B9BE2000B1124 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		45ECA1B0216BF761000B1124 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		45ECA1C5216BFA90000B1124 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		45ED84AD249F64520055A19E /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		45F4AE412180B88400E75B4A /* LocalizedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedImageView.swift; sourceTree = "<group>"; };
 		7226BBC8D76CB9A545614575 /* Pods_DevStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A71598D309E35AF6F901FEE /* Pods_DevStack_Beta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevStack_Beta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -813,7 +833,7 @@
 			isa = PBXGroup;
 			children = (
 				454FEE3722404B1400EB7A54 /* Errors */,
-				45A92DFC2109ABE9007579AC /* Lce.swift */,
+				45ED84AD249F64520055A19E /* ActivityIndicator.swift */,
 				45E8A4A8220AEBAE003F7502 /* Logger.swift */,
 				45E8A49A220AD4CB003F7502 /* ViewModel.swift */,
 				459762E220FE21BC0034DE29 /* ViewModelType.swift */,
@@ -886,8 +906,9 @@
 				45B76D9F213591D0003BB997 /* Error+Extensions.swift */,
 				45B76DA6213591ED003BB997 /* Object+Extensions.swift */,
 				455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */,
+				45571935249FE3CB00FB24CA /* Observable+Realm.swift */,
 				454AC03D249A724900D6F367 /* Realm+Extensions.swift */,
-				45A3D59E2119B76000E39169 /* Realm+RxExtensions.swift */,
+				45A3D59E2119B76000E39169 /* Realm+Rx.swift */,
 				456852632105D805006D3618 /* String+Extensions.swift */,
 			);
 			path = Extensions;
@@ -981,6 +1002,8 @@
 			isa = PBXGroup;
 			children = (
 				45A92DF521085864007579AC /* BaseViewController+Alerts.swift */,
+				45571931249FE37F00FB24CA /* BaseViewController+Alerts+Rx.swift */,
+				4557193D249FE58300FB24CA /* BaseTableViewController+Rx.swift */,
 				452732A723F0C7F80067C712 /* CLLocationCoordinate2D+Extensions.swift */,
 				45890B5722087C5D00894255 /* Date+UIExtensions.swift */,
 				452732A323F0C6ED0067C712 /* Double+UIExtensions.swift */,
@@ -995,7 +1018,9 @@
 				451233E2215D18BA00F85985 /* UIImageView+Extensions.swift */,
 				45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */,
 				A83F0EC42149310600313067 /* UIStackView+Extensions.swift */,
-				4511A72C213DDCCB006AD4CC /* UIView+Extensions.swift */,
+				4511A72C213DDCCB006AD4CC /* UIView+ActivityIndicator.swift */,
+				45571939249FE52100FB24CA /* UIView+ActivityIndicator+Rx.swift */,
+				45571941249FF28900FB24CA /* UIView+SkeletonView+Rx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1757,6 +1782,7 @@
 			files = (
 				A83F0EC52149310600313067 /* UIStackView+Extensions.swift in Sources */,
 				456851E32100BC9A006D3618 /* EnhancedButton.swift in Sources */,
+				45571936249FE3CB00FB24CA /* Observable+Realm.swift in Sources */,
 				45890B2421FF5E8F00894255 /* AuthToken.swift in Sources */,
 				A8A2E502217DD3C70006023F /* GradientView.swift in Sources */,
 				45C3F51B23C127E60091848D /* TextFieldWithHint.swift in Sources */,
@@ -1783,12 +1809,14 @@
 				45E8A4A9220AEBAE003F7502 /* Logger.swift in Sources */,
 				459762DE20FE21290034DE29 /* Storyboards.swift in Sources */,
 				45ECA1B1216BF761000B1124 /* UserAPI.swift in Sources */,
+				45ED84AE249F64520055A19E /* ActivityIndicator.swift in Sources */,
 				A8DDD0CF2121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F0213D2677006AD4CC /* TabBarView.swift in Sources */,
 				45DB9777226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BC210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				45F4AE422180B88400E75B4A /* LocalizedImageView.swift in Sources */,
 				45E8A4BE220AF3C0003F7502 /* ProfileViewController.swift in Sources */,
+				4557193A249FE52100FB24CA /* UIView+ActivityIndicator+Rx.swift in Sources */,
 				459762E320FE21BC0034DE29 /* ViewModelType.swift in Sources */,
 				4511A71E213D73C8006AD4CC /* ActivityIndicatorView.swift in Sources */,
 				45E1E619221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
@@ -1800,6 +1828,7 @@
 				451233E3215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				456851B921008988006D3618 /* BaseViewController.swift in Sources */,
 				A847B1AC210F4872002F9ED1 /* LocationHelper.swift in Sources */,
+				4557193E249FE58400FB24CA /* BaseTableViewController+Rx.swift in Sources */,
 				A83F0EB721490EE200313067 /* UserImageView.swift in Sources */,
 				45C3F51723C1249C0091848D /* SecondaryButton.swift in Sources */,
 				45890B2821FFB95D00894255 /* AppTheme.swift in Sources */,
@@ -1819,7 +1848,7 @@
 				45890B5822087C5D00894255 /* Date+UIExtensions.swift in Sources */,
 				45DA080E222E87780003D32A /* RegistrationViewModel.swift in Sources */,
 				45A388D8225F5EF300037FFA /* UIFont+Extensions.swift in Sources */,
-				4511A72D213DDCCB006AD4CC /* UIView+Extensions.swift in Sources */,
+				4511A72D213DDCCB006AD4CC /* UIView+ActivityIndicator.swift in Sources */,
 				A8DDD0BA211E3D6900EEB48F /* LocationService.swift in Sources */,
 				4588FF0F2226EF360014FC79 /* BaseTableViewCell.swift in Sources */,
 				456852232105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
@@ -1827,12 +1856,14 @@
 				455261C7210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8C79A9F2157FD71007A4339 /* Plurals.swift in Sources */,
 				452732A023F0ACD70067C712 /* ProfileViewModel.swift in Sources */,
+				45571932249FE37F00FB24CA /* BaseViewController+Alerts+Rx.swift in Sources */,
 				A8D348DD2163777200B7D08F /* DataValidator.swift in Sources */,
 				45DA07F0222D7D800003D32A /* HeadlineLabel.swift in Sources */,
 				45A388C7225E388B00037FFA /* FullscreenImageViewController.swift in Sources */,
 				4588FF2A22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C7210095ED006D3618 /* LocalizedLabel.swift in Sources */,
 				45DA080B222E87780003D32A /* RegistrationViewController.swift in Sources */,
+				45571942249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */,
 				45E8A4B9220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
 				45E1E61E221DA9EE006C84D1 /* LocalizedTextView.swift in Sources */,
 				456852312105BC83006D3618 /* AuthenticatedProvider.swift in Sources */,
@@ -1844,10 +1875,9 @@
 				456851DC2100BC8B006D3618 /* LocalizedButton.swift in Sources */,
 				A82FEF97214650B5006204F3 /* Int+UIExtensions.swift in Sources */,
 				45DB140F22E26FA300093272 /* BiometricHelper.swift in Sources */,
-				45A92DFD2109ABE9007579AC /* Lce.swift in Sources */,
 				45890B4722086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2B22159EE90036919A /* NetworkProvider.swift in Sources */,
-				45A3D59F2119B76000E39169 /* Realm+RxExtensions.swift in Sources */,
+				45A3D59F2119B76000E39169 /* Realm+Rx.swift in Sources */,
 				454FEE3922404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				45890B4322086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B5220AEF90003F7502 /* FlowController.swift in Sources */,
@@ -1881,6 +1911,7 @@
 			files = (
 				A83F0EC62149310600313067 /* UIStackView+Extensions.swift in Sources */,
 				456851E42100BC9A006D3618 /* EnhancedButton.swift in Sources */,
+				45571937249FE3CB00FB24CA /* Observable+Realm.swift in Sources */,
 				A8A2E503217DD3C70006023F /* GradientView.swift in Sources */,
 				45890B2521FF5E8F00894255 /* AuthToken.swift in Sources */,
 				45C3F51C23C127E60091848D /* TextFieldWithHint.swift in Sources */,
@@ -1907,12 +1938,14 @@
 				45DE1D9521CA9CA300C455C4 /* AuthAPI.swift in Sources */,
 				45E8A4AA220AEBAE003F7502 /* Logger.swift in Sources */,
 				A8DDD0D02121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
+				45ED84AF249F64520055A19E /* ActivityIndicator.swift in Sources */,
 				45ECA1B2216BF761000B1124 /* UserAPI.swift in Sources */,
 				4511A6F1213D2677006AD4CC /* TabBarView.swift in Sources */,
 				45DB9778226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BD210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				459762E420FE21BC0034DE29 /* ViewModelType.swift in Sources */,
 				45E8A4BF220AF3C0003F7502 /* ProfileViewController.swift in Sources */,
+				4557193B249FE52100FB24CA /* UIView+ActivityIndicator+Rx.swift in Sources */,
 				45F4AE432180B88400E75B4A /* LocalizedImageView.swift in Sources */,
 				4511A71F213D73C8006AD4CC /* ActivityIndicatorView.swift in Sources */,
 				45E1E61A221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
@@ -1924,6 +1957,7 @@
 				A82385DB213418B400CC941C /* ShadowView.swift in Sources */,
 				456851BA21008988006D3618 /* BaseViewController.swift in Sources */,
 				A83F0EB821490EE200313067 /* UserImageView.swift in Sources */,
+				4557193F249FE58400FB24CA /* BaseTableViewController+Rx.swift in Sources */,
 				A847B1AD210F4872002F9ED1 /* LocationHelper.swift in Sources */,
 				45C3F51823C1249C0091848D /* SecondaryButton.swift in Sources */,
 				45890B2921FFB95D00894255 /* AppTheme.swift in Sources */,
@@ -1943,7 +1977,7 @@
 				45890B5922087C5D00894255 /* Date+UIExtensions.swift in Sources */,
 				45DA080F222E87780003D32A /* RegistrationViewModel.swift in Sources */,
 				45A388D9225F5EF300037FFA /* UIFont+Extensions.swift in Sources */,
-				4511A72E213DDCCB006AD4CC /* UIView+Extensions.swift in Sources */,
+				4511A72E213DDCCB006AD4CC /* UIView+ActivityIndicator.swift in Sources */,
 				A8DDD0BB211E3D6900EEB48F /* LocationService.swift in Sources */,
 				4588FF102226EF360014FC79 /* BaseTableViewCell.swift in Sources */,
 				A8C79AA02157FD71007A4339 /* Plurals.swift in Sources */,
@@ -1951,12 +1985,14 @@
 				456852242105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
 				455261C8210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				452732A123F0ACD70067C712 /* ProfileViewModel.swift in Sources */,
+				45571933249FE37F00FB24CA /* BaseViewController+Alerts+Rx.swift in Sources */,
 				A8D348DE2163777200B7D08F /* DataValidator.swift in Sources */,
 				45DA07F1222D7D800003D32A /* HeadlineLabel.swift in Sources */,
 				45A388C8225E388B00037FFA /* FullscreenImageViewController.swift in Sources */,
 				4588FF2B22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C8210095ED006D3618 /* LocalizedLabel.swift in Sources */,
 				45DA080C222E87780003D32A /* RegistrationViewController.swift in Sources */,
+				45571943249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */,
 				45E8A4BA220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
 				45E1E61F221DA9EE006C84D1 /* LocalizedTextView.swift in Sources */,
 				456852322105BC83006D3618 /* AuthenticatedProvider.swift in Sources */,
@@ -1968,10 +2004,9 @@
 				456851DD2100BC8B006D3618 /* LocalizedButton.swift in Sources */,
 				A82FEF98214650B5006204F3 /* Int+UIExtensions.swift in Sources */,
 				45DB141022E26FA300093272 /* BiometricHelper.swift in Sources */,
-				45A92DFE2109ABE9007579AC /* Lce.swift in Sources */,
 				45890B4822086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2C22159EE90036919A /* NetworkProvider.swift in Sources */,
-				45A3D5A02119B76000E39169 /* Realm+RxExtensions.swift in Sources */,
+				45A3D5A02119B76000E39169 /* Realm+Rx.swift in Sources */,
 				454FEE3A22404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				45890B4422086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B6220AEF90003F7502 /* FlowController.swift in Sources */,
@@ -2005,6 +2040,7 @@
 			files = (
 				A83F0EC72149310600313067 /* UIStackView+Extensions.swift in Sources */,
 				456851E52100BC9A006D3618 /* EnhancedButton.swift in Sources */,
+				45571938249FE3CB00FB24CA /* Observable+Realm.swift in Sources */,
 				45890B2621FF5E8F00894255 /* AuthToken.swift in Sources */,
 				A8A2E504217DD3C70006023F /* GradientView.swift in Sources */,
 				45C3F51D23C127E60091848D /* TextFieldWithHint.swift in Sources */,
@@ -2031,12 +2067,14 @@
 				45E8A4AB220AEBAE003F7502 /* Logger.swift in Sources */,
 				459762E020FE21290034DE29 /* Storyboards.swift in Sources */,
 				45ECA1B3216BF761000B1124 /* UserAPI.swift in Sources */,
+				45ED84B0249F64520055A19E /* ActivityIndicator.swift in Sources */,
 				A8DDD0D12121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F2213D2677006AD4CC /* TabBarView.swift in Sources */,
 				45DB9779226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BE210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				45F4AE442180B88400E75B4A /* LocalizedImageView.swift in Sources */,
 				45E8A4C0220AF3C0003F7502 /* ProfileViewController.swift in Sources */,
+				4557193C249FE52100FB24CA /* UIView+ActivityIndicator+Rx.swift in Sources */,
 				459762E520FE21BC0034DE29 /* ViewModelType.swift in Sources */,
 				4511A720213D73C8006AD4CC /* ActivityIndicatorView.swift in Sources */,
 				45E1E61B221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
@@ -2048,6 +2086,7 @@
 				451233E5215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				456851BB21008988006D3618 /* BaseViewController.swift in Sources */,
 				A847B1AE210F4872002F9ED1 /* LocationHelper.swift in Sources */,
+				45571940249FE58400FB24CA /* BaseTableViewController+Rx.swift in Sources */,
 				A83F0EB921490EE200313067 /* UserImageView.swift in Sources */,
 				45C3F51923C1249C0091848D /* SecondaryButton.swift in Sources */,
 				45890B2A21FFB95D00894255 /* AppTheme.swift in Sources */,
@@ -2067,7 +2106,7 @@
 				45890B5A22087C5D00894255 /* Date+UIExtensions.swift in Sources */,
 				45DA0810222E87780003D32A /* RegistrationViewModel.swift in Sources */,
 				45A388DA225F5EF300037FFA /* UIFont+Extensions.swift in Sources */,
-				4511A72F213DDCCB006AD4CC /* UIView+Extensions.swift in Sources */,
+				4511A72F213DDCCB006AD4CC /* UIView+ActivityIndicator.swift in Sources */,
 				A8DDD0BC211E3D6900EEB48F /* LocationService.swift in Sources */,
 				4588FF112226EF360014FC79 /* BaseTableViewCell.swift in Sources */,
 				456852252105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
@@ -2075,12 +2114,14 @@
 				455261C9210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8C79AA12157FD71007A4339 /* Plurals.swift in Sources */,
 				452732A223F0ACD70067C712 /* ProfileViewModel.swift in Sources */,
+				45571934249FE37F00FB24CA /* BaseViewController+Alerts+Rx.swift in Sources */,
 				A8D348DF2163777200B7D08F /* DataValidator.swift in Sources */,
 				45DA07F2222D7D800003D32A /* HeadlineLabel.swift in Sources */,
 				45A388C9225E388B00037FFA /* FullscreenImageViewController.swift in Sources */,
 				4588FF2C22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C9210095ED006D3618 /* LocalizedLabel.swift in Sources */,
 				45DA080D222E87780003D32A /* RegistrationViewController.swift in Sources */,
+				45571944249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */,
 				45E8A4BB220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
 				45E1E620221DA9EE006C84D1 /* LocalizedTextView.swift in Sources */,
 				456852332105BC83006D3618 /* AuthenticatedProvider.swift in Sources */,
@@ -2092,10 +2133,9 @@
 				456851DE2100BC8B006D3618 /* LocalizedButton.swift in Sources */,
 				A82FEF99214650B5006204F3 /* Int+UIExtensions.swift in Sources */,
 				45DB141122E26FA300093272 /* BiometricHelper.swift in Sources */,
-				45A92DFF2109ABE9007579AC /* Lce.swift in Sources */,
 				45890B4922086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2D22159EE90036919A /* NetworkProvider.swift in Sources */,
-				45A3D5A12119B76000E39169 /* Realm+RxExtensions.swift in Sources */,
+				45A3D5A12119B76000E39169 /* Realm+Rx.swift in Sources */,
 				454FEE3B22404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				45890B4522086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B7220AEF90003F7502 /* FlowController.swift in Sources */,

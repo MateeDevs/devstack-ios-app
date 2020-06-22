@@ -1,5 +1,5 @@
 //
-//  UIView+Extensions.swift
+//  UIView+ActivityIndicator.swift
 //  DevStack
 //
 //  Created by Petr Chmelar on 03/09/2018.
