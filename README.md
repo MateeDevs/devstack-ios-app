@@ -44,17 +44,17 @@ FIXME
 - There is also `scripts/rename.sh` for quick renaming from DevStack to YourProject
 
 ## Architecture (MVVM)
-- Service Layer is composed from individual microservices (LoginService, UserService, etc.)
-- Individual microservices obtains data either from the database or from the API depending on the specific use case
+- Service Layer is composed from individual services (LoginService, UserService, etc.)
+- Services obtains data through the providers (DatabaseProvider, NetworkProvider, etc.)
 - Network communication is based on [Moya](https://github.com/Moya/Moya) network framework
-- Model layer is represented via [Realm](https://github.com/realm/realm-cocoa) object models and native Decodable is used for mapping from JSON
+- Data model is represented via [Realm](https://github.com/realm/realm-cocoa) object models and native Decodable is used for mapping from JSON
 - Asynchronous functions in microservices are represented as observables with the [RxSwift](https://github.com/ReactiveX/RxSwift) framework
-- Microservices are injected into ViewModels with the FlowController pattern
+- Services are "injected" into ViewModels during the init via Dependencies typealias
 - ViewModel has its inputs and outputs which are then binded or observed in a relevant ViewController
 
 ## Style Guide
 - [Swift Style Guide](https://github.com/raywenderlich/swift-style-guide)
-- Swiftlint is enabled for whole codebase, you can find its configuration inside the `.swiftlint.yml`
+- Swiftlint is enabled for the whole codebase, you can find its configuration inside the `.swiftlint.yml`
 - To ensure a uniform style, it is advised to use the ready-made templates for ViewController / ViewModel / FlowController etc.
 - The templates are available from a separate repository [ios-templates](https://github.com/MateeDevs/devstack-ios-templates)
 - When using storyboards, strictly go with the rule `one view = one storyboard`!
@@ -91,7 +91,9 @@ FIXME
 - The builds for all environments (alpha/beta/production) are produced and uploaded to the TestFlight
 - Used build branch should be merged back to the develop branch if any changes was made
 
+## Tests
+- All unit tests are in `DevStackTests`, just select the `DevStack` scheme and run them with CMD + U
+
 ## TODO
 - Migrate to SwiftPM when all used frameworks are available (waiting for [Firebase](https://github.com/firebase/firebase-ios-sdk/issues/3136))
 - Migrate to SwiftUI + Combine when the time is right (not before iOS 14.0 official release)
-- Provide example unit tests

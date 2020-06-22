@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     private(set) var flowController: AppFlowController?
+    private var providers: ProviderDependency?
     
     func application(
         _ application: UIApplication,
@@ -36,6 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Logger.info("PRODUCTION environment", category: .app)
         #endif
 
+        let providers = setupProviders()
+        self.providers = providers
+
         clearKeychain()
         realmSetup()
         
@@ -49,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         // Init main flow controller and start the flow
-        flowController = AppFlowController(navigationController: navController, dependencies: AppDependency())
+        flowController = AppFlowController(navigationController: navController, dependencies: ServiceDependency(dependencies: providers))
         flowController?.start()
         
         firebaseSetup(for: application)
@@ -79,6 +83,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    // MARK: Setup providers
+    private func setupProviders() -> ProviderDependency {
+        let databaseProvider = DatabaseProvider()
+        let keychainProvider = KeychainProvider()
+        let networkProvider = NetworkProvider(
+            keychainProvider: keychainProvider,
+            databaseProvider: databaseProvider
+        )
+        let userDefaultsProvider = UserDefaultsProvider()
+
+        return ProviderDependency(
+            databaseProvider: databaseProvider,
+            keychainProvider: keychainProvider,
+            networkProvider: networkProvider,
+            userDefaultsProvider: userDefaultsProvider
+        )
+    }
+    
     #if DEBUG
     // MARK: Flipper
     private func flipperSetup(for application: UIApplication) {
@@ -98,9 +120,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Clear keychain on first run
     private func clearKeychain() {
-        guard let hasRunBefore = UserDefaultsProvider.get(.hasRunBefore) as Bool?, !hasRunBefore else { return }
-        KeychainProvider.deleteAll()
-        UserDefaultsProvider.save(.hasRunBefore, value: true)
+        guard let providers = providers,
+            let hasRunBefore = providers.userDefaultsProvider.get(.hasRunBefore) as Bool?, !hasRunBefore else { return }
+        providers.keychainProvider.deleteAll()
+        providers.userDefaultsProvider.save(.hasRunBefore, value: true)
     }
     
     // MARK: Realm

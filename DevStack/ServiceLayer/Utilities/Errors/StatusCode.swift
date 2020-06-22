@@ -6,7 +6,7 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
-enum StatusCode: Int {
+public enum StatusCode: Int {
     case unknown = 0
     
     // Codes 100 - 599 are reserved for HTTP status codes

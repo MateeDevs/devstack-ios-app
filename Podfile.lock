@@ -175,6 +175,8 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - RxTest (5.1.1):
+    - RxSwift (~> 5)
   - SkeletonView (1.8.7)
   - SwiftGen (6.1.0)
   - SwiftLint (0.39.2)
@@ -197,6 +199,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxRealm
   - RxSwift
+  - RxTest
   - SkeletonView
   - SwiftGen
   - SwiftLint
@@ -241,6 +244,7 @@ SPEC REPOS:
     - RxRealm
     - RxRelay
     - RxSwift
+    - RxTest
     - SkeletonView
     - SwiftGen
     - SwiftLint
@@ -286,12 +290,13 @@ SPEC CHECKSUMS:
   RxRealm: af7a3c857efd5a711c176f6df0d67418ad48293b
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
   SkeletonView: ba5370f41280b2f0a76918bb143c1294232bb4f4
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
   Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: b8fe6f4beb569b8863f6e901afc34c102d184f51
+PODFILE CHECKSUM: 015ef34eb9dedf643c33f85e17c4f22c65b9918e
 
 COCOAPODS: 1.9.3

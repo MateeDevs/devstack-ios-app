@@ -14,11 +14,20 @@ import RxSwift
 /// Custom Moya provider.
 /// - Idea taken from [Moya - ComposingProvider](https://github.com/Moya/Moya/blob/master/docs/Examples/ComposingProvider.md)
 final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetType {
-    
-    private let provider: MoyaProvider<MultiTarget>
-    
-    init(headers: [String: String] = [:], parameters: [String: Any] = [:]) {
-        
+
+    private let keychain: KeychainProviderType
+    private let database: DatabaseProviderType
+    private let moyaProvider: MoyaProvider<MultiTarget>
+
+    init(
+        keychainProvider: KeychainProviderType,
+        databaseProvider: DatabaseProviderType,
+        headers: [String: String] = [:],
+        parameters: [String: Any] = [:]
+    ) {
+        self.keychain = keychainProvider
+        self.database = databaseProvider
+
         let endpointClosure = { (target: MultiTarget) -> Endpoint in
             
             // Add custom headers and parameters
@@ -41,7 +50,7 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
             ])
             
             // Add auth header to every request if available
-            if let authToken = KeychainProvider.get(.authToken) {
+            if let authToken = keychainProvider.get(.authToken) {
                 defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: ["Authorization": "Bearer \(authToken)"])
             }
             
@@ -77,18 +86,19 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
         plugins.append(NetworkLoggerPlugin(configuration: loggerConfig))
         #endif
         
-        provider = MoyaProvider<MultiTarget>(endpointClosure: endpointClosure, requestClosure: requestClosure, plugins: plugins)
+        moyaProvider = MoyaProvider<MultiTarget>(endpointClosure: endpointClosure, requestClosure: requestClosure, plugins: plugins)
     }
     
     func request(_ target: MultiTarget, withInterceptor: Bool = true) -> Single<Moya.Response> {
-        let actualRequest = provider.rx.request(target).flatMap { response -> PrimitiveSequence<SingleTrait, Response> in
+        let actualRequest = moyaProvider.rx.request(target).flatMap { response -> PrimitiveSequence<SingleTrait, Response> in
             if response.statusCode == 401 {
                 guard withInterceptor,
                     let vc = UIApplication.topViewController() as? BaseViewController else { return Single.just(response) }
 
 				let action = UIAlertAction(title: L10n.dialog_interceptor_button_title, style: .default, handler: { _ in
                     // Perform logout and present login screen
-                    LoginService.logout()
+                    self.keychain.deleteAll()
+                    self.database.deleteAll()
                     if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
                         let mainFlow = appDelegate.flowController?.childControllers.first as? MainFlowController {
                         mainFlow.presentOnboarding()

@@ -51,6 +51,8 @@ final class ProfileViewController: BaseViewController {
     // MARK: Default methods
     override func setupBindings() {
         super.setupBindings()
+
+        logoutButton.rx.tap.bind(to: viewModel.input.logoutButtonTaps).disposed(by: disposeBag)
         
         viewModel.output.profile.drive(onNext: { [weak self] user in
             self?.user = user
@@ -61,11 +63,10 @@ final class ProfileViewController: BaseViewController {
         viewModel.output.currentLocation
             .map { $0.coordinate.toString() }
             .drive(locationLabel.rx.text).disposed(by: disposeBag)
-        
-        logoutButton.rx.tap.bind { [weak self] in
-            LoginService.logout()
+
+        viewModel.output.logoutSuccess.drive(onNext: { [weak self] _ in
             self?.flowDelegate?.presentOnboarding()
-        }.disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     override func setupUI() {

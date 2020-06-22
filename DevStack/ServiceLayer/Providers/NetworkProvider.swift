@@ -9,10 +9,12 @@
 import Moya
 import RxSwift
 
-struct NetworkProvider {
-    
-    private let provider = AuthenticatedProvider<MultiTarget>()
-    
+protocol HasNetworkProvider {
+    var networkProvider: NetworkProviderType { get }
+}
+
+public protocol NetworkProviderType {
+
     ///
     /// Function for observing on a specified network call.
     /// Automatically filters out API errors.
@@ -21,9 +23,27 @@ struct NetworkProvider {
     /// - parameter withInterceptor: Specify whether build-in interceptor should be enabled.
     /// - returns: Observable which emits Response of a network call.
     ///
+    func observableRequest(_ endpoint: TargetType, withInterceptor: Bool) -> Observable<Response>
+}
+
+extension NetworkProviderType {
     func observableRequest(_ endpoint: TargetType, withInterceptor: Bool = true) -> Observable<Response> {
-        provider.request(MultiTarget(endpoint), withInterceptor: withInterceptor)
-            .asObservable()
-            .filterSuccessfulStatusCodes()
+        observableRequest(endpoint, withInterceptor: withInterceptor)
+    }
+}
+
+struct NetworkProvider: NetworkProviderType {
+
+    private let moyaProvider: AuthenticatedProvider<MultiTarget>
+
+    init(keychainProvider: KeychainProviderType, databaseProvider: DatabaseProviderType) {
+        self.moyaProvider = AuthenticatedProvider<MultiTarget>(
+            keychainProvider: keychainProvider,
+            databaseProvider: databaseProvider
+        )
+    }
+
+    func observableRequest(_ endpoint: TargetType, withInterceptor: Bool) -> Observable<Response> {
+        moyaProvider.request(MultiTarget(endpoint), withInterceptor: withInterceptor).asObservable().filterSuccessfulStatusCodes()
     }
 }

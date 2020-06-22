@@ -8,10 +8,23 @@
 
 import UIKit
 
-public enum WhisperAction {
+public enum WhisperAction: Equatable {
     case showMessage(String)
     case showError(String)
     case hide
+
+    public static func == (lhs: WhisperAction, rhs: WhisperAction) -> Bool {
+        switch (lhs, rhs) {
+        case let (.showMessage(lhsMessage), .showMessage(rhsMessage)):
+            return lhsMessage == rhsMessage
+        case let (.showError(lhsError), .showError(rhsError)):
+            return lhsError == rhsError
+        case (.hide, .hide):
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 public extension BaseViewController {
