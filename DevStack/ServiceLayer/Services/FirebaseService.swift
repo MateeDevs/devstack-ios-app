@@ -16,6 +16,10 @@ public protocol HasFirebaseService {
 
 public class FirebaseService: NSObject {
 
+    typealias Dependencies = HasNoProvider
+
+    init(dependencies: Dependencies) {}
+
     func start(for application: UIApplication, appDelegate: AppDelegate) {
         // Start Firebase
         FirebaseApp.configure()

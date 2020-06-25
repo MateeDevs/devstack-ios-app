@@ -8,28 +8,46 @@
 
 import Foundation
 
-enum UserDefaultsCoding: String, CaseIterable {
+protocol HasUserDefaultsProvider {
+    var userDefaultsProvider: UserDefaultsProviderType { get }
+}
+
+public enum UserDefaultsCoding: String, CaseIterable {
     case hasRunBefore
 }
 
-struct UserDefaultsProvider {
+public protocol UserDefaultsProviderType {
+
+    /// Save the given key/value combination
+    func save<T>(_ key: UserDefaultsCoding, value: T)
+
+    /// Try to retrieve a value for the given key
+    func get<T>(_ key: UserDefaultsCoding) -> T?
+
+    /// Delete value for the given key
+    func delete(_ key: UserDefaultsCoding)
+
+    /// Delete all records
+    func deleteAll()
+}
+
+struct UserDefaultsProvider: UserDefaultsProviderType {
     
-    static func save<T>(_ key: UserDefaultsCoding, value: T) {
+    func save<T>(_ key: UserDefaultsCoding, value: T) {
         UserDefaults.standard.set(value, forKey: key.rawValue)
     }
     
-    static func get<T>(_ key: UserDefaultsCoding) -> T? {
+    func get<T>(_ key: UserDefaultsCoding) -> T? {
         UserDefaults.standard.object(forKey: key.rawValue) as? T
     }
     
-    static func delete(_ key: UserDefaultsCoding) {
+    func delete(_ key: UserDefaultsCoding) {
         UserDefaults.standard.removeObject(forKey: key.rawValue)
     }
     
-    static func deleteAll() {
+    func deleteAll() {
         for key in UserDefaultsCoding.allCases {
             delete(key)
         }
     }
-
 }

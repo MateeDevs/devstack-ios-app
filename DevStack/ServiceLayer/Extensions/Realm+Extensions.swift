@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-public extension Realm {
+extension Realm {
     
     // Idea taken from: https://stackoverflow.com/a/56218423
     static func safeInit() -> Realm? {

@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct CommonError {
+public struct CommonError {
     public static let realmNotAvailable = ServiceError(statusCode: .databaseError, message: "Realm isn't available")
     public static let noUserId = ServiceError(statusCode: .keychainError, message: "Can't retrieve user's id")
 }
 
-struct ServiceError: LocalizedError {
+public struct ServiceError: LocalizedError {
     
     let statusCode: StatusCode
     let message: String

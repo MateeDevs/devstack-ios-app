@@ -54,6 +54,11 @@ target 'DevStack_Beta' do
     shared_pods
 end
 
+target 'DevStackTests' do
+    shared_pods
+    pod 'RxTest'
+end
+
 # This will cause Flipper and it's dependencies to be built as a static library
 $static_framework = [
     'FlipperKit', 'Flipper', 'Flipper-Folly',

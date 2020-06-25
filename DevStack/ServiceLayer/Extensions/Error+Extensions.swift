@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-extension Error {
+public extension Error {
     
     ///
     /// Transformation that tries to map an error to a message based on a given ruleset

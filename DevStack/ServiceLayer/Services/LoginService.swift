@@ -15,18 +15,24 @@ public protocol HasLoginService {
 }
 
 public class LoginService {
+
+    typealias Dependencies = HasDatabaseProvider & HasKeychainProvider & HasNetworkProvider
+
+    private let database: DatabaseProviderType
+    private let keychain: KeychainProviderType
+    private let network: NetworkProviderType
     
-    private let network: NetworkProvider
-    
-    init(networkProvider: NetworkProvider) {
-        self.network = networkProvider
+    init(dependencies: Dependencies) {
+        self.database = dependencies.databaseProvider
+        self.keychain = dependencies.keychainProvider
+        self.network = dependencies.networkProvider
     }
     
     public func login(email: String, password: String) -> Observable<Void> {
         let endpoint = AuthAPI.login(email: email, password: password)
         return network.observableRequest(endpoint, withInterceptor: false).map(AuthToken.self).do(onNext: { authToken in
-            KeychainProvider.save(.authToken, value: authToken.token)
-            KeychainProvider.save(.userId, value: authToken.userId)
+            self.keychain.save(.authToken, value: authToken.token)
+            self.keychain.save(.userId, value: authToken.userId)
         }).mapToVoid()
     }
     
@@ -36,19 +42,10 @@ public class LoginService {
         return network.observableRequest(endpoint).map(User.self).save()
     }
     
-    public static func logout() {
-        // Clear KeyChain
-        KeychainProvider.deleteAll()
-        
-        // Clear Realm
-        guard let realm = Realm.safeInit() else { return }
-        do {
-            try realm.write {
-                realm.deleteAll()
-            }
-        } catch let error as NSError {
-            Logger.error("Error during Realm deleteAll operation:\n%@", "\(error)", category: .app)
-        }
+    public func logout() -> Observable<Void> {
+        keychain.deleteAll()
+        database.deleteAll()
+        return Observable.just(())
     }
     
 }

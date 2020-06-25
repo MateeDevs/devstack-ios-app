@@ -12,25 +12,31 @@ import RxSwift
 
 final class ProfileViewModel: ViewModel, ViewModelType {
     
-    typealias Dependencies = HasUserService & HasLocationService
+    typealias Dependencies = HasUserService & HasLoginService & HasLocationService
     
     let input: Input
     let output: Output
     
     struct Input {
+        let logoutButtonTaps: AnyObserver<Void>
     }
     
     struct Output {
         let profile: Driver<User>
         let isRefreshing: Driver<Bool>
         let currentLocation: Driver<CLLocation>
+        let logoutSuccess: Driver<Void>
     }
     
     init(dependencies: Dependencies) {
         
         // MARK: Setup inputs
+
+        let logoutButtonTaps = PublishSubject<Void>()
         
-        self.input = Input()
+        self.input = Input(
+            logoutButtonTaps: logoutButtonTaps.asObserver()
+        )
         
         // MARK: Setup outputs
         
@@ -49,11 +55,16 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         )
         
         let currentLocation = dependencies.locationService.getCurrentLocation().take(1)
+
+        let logout = logoutButtonTaps.flatMapLatest { _ -> Observable<Event<Void>> in
+            return dependencies.loginService.logout().materialize()
+        }.share()
         
         self.output = Output(
             profile: profile.asDriver(),
             isRefreshing: isRefreshing.asDriver(),
-            currentLocation: currentLocation.asDriver()
+            currentLocation: currentLocation.asDriver(),
+            logoutSuccess: logout.compactMap { $0.element }.asDriver()
         )
         
         super.init()

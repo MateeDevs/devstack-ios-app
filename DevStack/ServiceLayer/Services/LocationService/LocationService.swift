@@ -14,6 +14,10 @@ public protocol HasLocationService {
 }
 
 public class LocationService {
+
+    typealias Dependencies = HasNoProvider
+
+    init(dependencies: Dependencies) {}
     
     private lazy var locationManager: CLLocationManager = {
         let locationMgr = CLLocationManager()

@@ -9,25 +9,44 @@
 import Foundation
 import KeychainAccess
 
-enum KeychainCoding: String, CaseIterable {
+protocol HasKeychainProvider {
+    var keychainProvider: KeychainProviderType { get }
+}
+
+public enum KeychainCoding: String, CaseIterable {
     case authToken
     case userId
 }
 
-struct KeychainProvider {
+public protocol KeychainProviderType {
+
+    /// Save the given key/value combination
+    func save(_ key: KeychainCoding, value: String)
+
+    /// Try to retrieve a value for the given key
+    func get(_ key: KeychainCoding) -> String?
+
+    /// Delete value for the given key
+    func delete(_ key: KeychainCoding)
+
+    /// Delete all records
+    func deleteAll()
+}
+
+struct KeychainProvider: KeychainProviderType {
     
-    static func save(_ key: KeychainCoding, value: String) {
+    func save(_ key: KeychainCoding, value: String) {
         let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")
         keychain[key.rawValue] = value
     }
     
-    static func get(_ key: KeychainCoding) -> String? {
+    func get(_ key: KeychainCoding) -> String? {
         let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")
         guard let value = keychain[key.rawValue] else { return nil }
         return value
     }
     
-    static func delete(_ key: KeychainCoding) {
+    func delete(_ key: KeychainCoding) {
         do {
             let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")
             try keychain.remove(key.rawValue)
@@ -36,10 +55,9 @@ struct KeychainProvider {
         }
     }
     
-    static func deleteAll() {
+    func deleteAll() {
         for key in KeychainCoding.allCases {
             delete(key)
         }
     }
-
 }
