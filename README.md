@@ -92,7 +92,9 @@ FIXME
 - Used build branch should be merged back to the develop branch if any changes was made
 
 ## Tests
-- All unit tests are in `DevStackTests`, just select the `DevStack` scheme and run them with CMD + U
+- Unit tests are in `DevStackTests`, you can run them on any scheme with `CMD + U`
+- All new features should have at least a basic test set for ViewModel's outputs and all newly created service methods
+- Mocking of network requests is based on [Moya stubbing provider](https://github.com/Moya/Moya/blob/master/docs/Testing.md)
 
 ## TODO
 - Migrate to SwiftPM when all used frameworks are available (waiting for [Firebase](https://github.com/firebase/firebase-ios-sdk/issues/3136))
