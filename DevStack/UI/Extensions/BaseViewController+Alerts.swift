@@ -9,16 +9,16 @@
 import UIKit
 
 public enum WhisperAction: Equatable {
-    case showMessage(String)
-    case showError(String)
+    case showMessage(_ message: String, hideAfter: TimeInterval = 0.0)
+    case showError(_ message: String, hideAfter: TimeInterval = 2.5)
     case hide
 
     public static func == (lhs: WhisperAction, rhs: WhisperAction) -> Bool {
         switch (lhs, rhs) {
-        case let (.showMessage(lhsMessage), .showMessage(rhsMessage)):
-            return lhsMessage == rhsMessage
-        case let (.showError(lhsError), .showError(rhsError)):
-            return lhsError == rhsError
+        case let (.showMessage(lhsMessage, lhsHide), .showMessage(rhsMessage, rhsHide)):
+            return lhsMessage == rhsMessage && lhsHide == rhsHide
+        case let (.showError(lhsError, lhsHide), .showError(rhsError, rhsHide)):
+            return lhsError == rhsError && lhsHide == rhsHide
         case (.hide, .hide):
             return true
         default:
@@ -82,10 +82,10 @@ public extension BaseViewController {
     ///
     func handleWhisper(_ action: WhisperAction) {
         switch action {
-        case .showMessage(let message):
-            showWhisper(message)
-        case .showError(let message):
-            showWhisper(message, style: .error, hideAfter: 2.5)
+        case let .showMessage(message, hideAfter):
+            showWhisper(message, hideAfter: hideAfter)
+        case let .showError(message, hideAfter):
+            showWhisper(message, style: .error, hideAfter: hideAfter)
         case .hide:
             hideWhisper()
         }

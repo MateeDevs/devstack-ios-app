@@ -14,6 +14,7 @@ public enum StatusCode: Int {
     case httpUnathorized = 401
     case httpForbidden = 403
     case httpNotFound = 404
+    case httpMethodNotAllowed = 405
     case httpConflict = 409
     case httpInternalServerError = 500
     
