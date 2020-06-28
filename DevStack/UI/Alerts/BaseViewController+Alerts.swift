@@ -31,6 +31,7 @@ public extension BaseViewController {
             alertController.addAction(secondaryAction)
         }
         
+        hideWhisper()
         present(alertController, animated: true, completion: nil)
     }
     
