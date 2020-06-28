@@ -53,7 +53,7 @@ final class RegistrationViewController: InputViewController {
             self?.flowDelegate?.popRegistration()
         }).disposed(by: disposeBag)
         
-        viewModel.output.whisperAction.drive(self.rx.whisperAction).disposed(by: disposeBag)
+        viewModel.output.alertAction.drive(self.rx.alertAction).disposed(by: disposeBag)
         
         viewModel.output.registerButtonEnabled.drive(loginButton.rx.isEnabled).disposed(by: disposeBag)
         

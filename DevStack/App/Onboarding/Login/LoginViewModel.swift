@@ -25,7 +25,7 @@ final class LoginViewModel: ViewModel, ViewModelType {
     struct Output {
         let loginSuccess: Driver<Void>
         let loginButtonEnabled: Driver<Bool>
-        let whisperAction: Driver<WhisperAction>
+        let alertAction: Driver<AlertAction>
     }
     
     init(dependencies: Dependencies) {
@@ -61,16 +61,16 @@ final class LoginViewModel: ViewModel, ViewModelType {
         
         let messages = ErrorMessages([.httpUnathorized: L10n.invalid_credentials], defaultMessage: L10n.signing_failed)
         
-        let whisperAction: Observable<WhisperAction> = Observable.merge(
-            activity.mapToWhisperAction(L10n.signing_in),
-            login.compactMap { $0.element }.map { .hide },
-            login.compactMap { $0.error }.map { .showError($0.toString(messages)) }
+        let alertAction: Observable<AlertAction> = Observable.merge(
+            activity.toWhisper(L10n.signing_in),
+            login.compactMap { $0.element }.map { .hideWhisper },
+            login.compactMap { $0.error }.map { .showWhisper(Whisper(error: $0.toString(messages))) }
         )
         
         self.output = Output(
             loginSuccess: login.compactMap { $0.element }.asDriver(),
             loginButtonEnabled: activity.map { !$0 },
-            whisperAction: whisperAction.asDriver()
+            alertAction: alertAction.asDriver()
         )
         
         super.init()

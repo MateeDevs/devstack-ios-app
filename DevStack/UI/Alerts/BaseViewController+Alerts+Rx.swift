@@ -10,10 +10,10 @@ import RxCocoa
 import RxSwift
 
 public extension Reactive where Base: BaseViewController {
-    /// Bindable sink for `handleWhisper()` method
-    var whisperAction: Binder<WhisperAction> {
+    /// Bindable sink for `handleAlertAction()` method
+    var alertAction: Binder<AlertAction> {
         return Binder(self.base) { base, action in
-            base.handleWhisper(action)
+            base.handleAlertAction(action)
         }
     }
 }

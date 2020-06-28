@@ -302,6 +302,15 @@
 		45C3F51B23C127E60091848D /* TextFieldWithHint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F51A23C127E50091848D /* TextFieldWithHint.swift */; };
 		45C3F51C23C127E60091848D /* TextFieldWithHint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F51A23C127E50091848D /* TextFieldWithHint.swift */; };
 		45C3F51D23C127E60091848D /* TextFieldWithHint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F51A23C127E50091848D /* TextFieldWithHint.swift */; };
+		45CDC3BB24A92F8100EF2368 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CDC3BA24A92F8100EF2368 /* Alert.swift */; };
+		45CDC3BC24A92F8100EF2368 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CDC3BA24A92F8100EF2368 /* Alert.swift */; };
+		45CDC3BD24A92F8100EF2368 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CDC3BA24A92F8100EF2368 /* Alert.swift */; };
+		45CDC3BF24A92FA200EF2368 /* Whisper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CDC3BE24A92FA200EF2368 /* Whisper.swift */; };
+		45CDC3C024A92FA200EF2368 /* Whisper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CDC3BE24A92FA200EF2368 /* Whisper.swift */; };
+		45CDC3C124A92FA200EF2368 /* Whisper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CDC3BE24A92FA200EF2368 /* Whisper.swift */; };
+		45CDC3C324A92FC200EF2368 /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CDC3C224A92FC200EF2368 /* AlertAction.swift */; };
+		45CDC3C424A92FC200EF2368 /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CDC3C224A92FC200EF2368 /* AlertAction.swift */; };
+		45CDC3C524A92FC200EF2368 /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CDC3C224A92FC200EF2368 /* AlertAction.swift */; };
 		45D0FD192147E3D100277C14 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */; };
 		45D0FD1A2147E3D100277C14 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */; };
 		45D0FD1B2147E3D100277C14 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */; };
@@ -603,6 +612,9 @@
 		45C3F50E23C114600091848D /* UIColorCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorCompatible.swift; sourceTree = "<group>"; };
 		45C3F51623C1249C0091848D /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		45C3F51A23C127E50091848D /* TextFieldWithHint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithHint.swift; sourceTree = "<group>"; };
+		45CDC3BA24A92F8100EF2368 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		45CDC3BE24A92FA200EF2368 /* Whisper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Whisper.swift; sourceTree = "<group>"; };
+		45CDC3C224A92FC200EF2368 /* AlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
 		45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
 		45DA07EE222D7D7F0003D32A /* HeadlineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadlineLabel.swift; sourceTree = "<group>"; };
 		45DA07F6222D7DA00003D32A /* PrimaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
@@ -1049,6 +1061,7 @@
 				459762F120FE220A0034DE29 /* ViewControllers */,
 				459762F220FE22140034DE29 /* Views */,
 				A8DDD082211DA38000EEB48F /* CustomUI */,
+				45CDC3B924A92F6D00EF2368 /* Alerts */,
 				459762E120FE21A80034DE29 /* Utilities */,
 				459762E920FE21CE0034DE29 /* Extensions */,
 			);
@@ -1086,8 +1099,6 @@
 		459762E920FE21CE0034DE29 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				45A92DF521085864007579AC /* BaseViewController+Alerts.swift */,
-				45571931249FE37F00FB24CA /* BaseViewController+Alerts+Rx.swift */,
 				4557193D249FE58300FB24CA /* BaseTableViewController+Rx.swift */,
 				452732A723F0C7F80067C712 /* CLLocationCoordinate2D+Extensions.swift */,
 				45890B5722087C5D00894255 /* Date+UIExtensions.swift */,
@@ -1199,6 +1210,18 @@
 				450C869023547D5A00DC5E49 /* UserDefaultsProvider.swift */,
 			);
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		45CDC3B924A92F6D00EF2368 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				45CDC3C224A92FC200EF2368 /* AlertAction.swift */,
+				45CDC3BA24A92F8100EF2368 /* Alert.swift */,
+				45CDC3BE24A92FA200EF2368 /* Whisper.swift */,
+				45A92DF521085864007579AC /* BaseViewController+Alerts.swift */,
+				45571931249FE37F00FB24CA /* BaseViewController+Alerts+Rx.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 		45CF3CAA2343F24400015EF5 /* Alpha */ = {
@@ -1398,7 +1421,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				4557195F24A15E0C00FB24CA /* PBXTargetDependency */,
 				45FB498524A3E8C000932918 /* PBXTargetDependency */,
 			);
 			name = DevStackTests;
@@ -2004,6 +2026,7 @@
 				459762DE20FE21290034DE29 /* Storyboards.swift in Sources */,
 				45ECA1B1216BF761000B1124 /* UserAPI.swift in Sources */,
 				45ED84AE249F64520055A19E /* ActivityIndicator.swift in Sources */,
+				45CDC3BF24A92FA200EF2368 /* Whisper.swift in Sources */,
 				A8DDD0CF2121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F0213D2677006AD4CC /* TabBarView.swift in Sources */,
 				45DB9777226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
@@ -2059,8 +2082,10 @@
 				45DA080B222E87780003D32A /* RegistrationViewController.swift in Sources */,
 				45571942249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */,
 				45E8A4B9220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
+				45CDC3BB24A92F8100EF2368 /* Alert.swift in Sources */,
 				45E1E61E221DA9EE006C84D1 /* LocalizedTextView.swift in Sources */,
 				456852312105BC83006D3618 /* AuthenticatedProvider.swift in Sources */,
+				45CDC3C324A92FC200EF2368 /* AlertAction.swift in Sources */,
 				45B76DA7213591ED003BB997 /* Object+Extensions.swift in Sources */,
 				45D0FD192147E3D100277C14 /* UIScrollView+Extensions.swift in Sources */,
 				4597621A20FDE4360034DE29 /* AppFlowController.swift in Sources */,
@@ -2134,6 +2159,7 @@
 				45E8A4AA220AEBAE003F7502 /* Logger.swift in Sources */,
 				A8DDD0D02121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				45ED84AF249F64520055A19E /* ActivityIndicator.swift in Sources */,
+				45CDC3C024A92FA200EF2368 /* Whisper.swift in Sources */,
 				45ECA1B2216BF761000B1124 /* UserAPI.swift in Sources */,
 				4511A6F1213D2677006AD4CC /* TabBarView.swift in Sources */,
 				45DB9778226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
@@ -2189,8 +2215,10 @@
 				45DA080C222E87780003D32A /* RegistrationViewController.swift in Sources */,
 				45571943249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */,
 				45E8A4BA220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
+				45CDC3BC24A92F8100EF2368 /* Alert.swift in Sources */,
 				45E1E61F221DA9EE006C84D1 /* LocalizedTextView.swift in Sources */,
 				456852322105BC83006D3618 /* AuthenticatedProvider.swift in Sources */,
+				45CDC3C424A92FC200EF2368 /* AlertAction.swift in Sources */,
 				45B76DA8213591ED003BB997 /* Object+Extensions.swift in Sources */,
 				45D0FD1A2147E3D100277C14 /* UIScrollView+Extensions.swift in Sources */,
 				4597621B20FDE4360034DE29 /* AppFlowController.swift in Sources */,
@@ -2264,6 +2292,7 @@
 				459762E020FE21290034DE29 /* Storyboards.swift in Sources */,
 				45ECA1B3216BF761000B1124 /* UserAPI.swift in Sources */,
 				45ED84B0249F64520055A19E /* ActivityIndicator.swift in Sources */,
+				45CDC3C124A92FA200EF2368 /* Whisper.swift in Sources */,
 				A8DDD0D12121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F2213D2677006AD4CC /* TabBarView.swift in Sources */,
 				45DB9779226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
@@ -2319,8 +2348,10 @@
 				45DA080D222E87780003D32A /* RegistrationViewController.swift in Sources */,
 				45571944249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */,
 				45E8A4BB220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
+				45CDC3BD24A92F8100EF2368 /* Alert.swift in Sources */,
 				45E1E620221DA9EE006C84D1 /* LocalizedTextView.swift in Sources */,
 				456852332105BC83006D3618 /* AuthenticatedProvider.swift in Sources */,
+				45CDC3C524A92FC200EF2368 /* AlertAction.swift in Sources */,
 				45B76DA9213591ED003BB997 /* Object+Extensions.swift in Sources */,
 				45D0FD1B2147E3D100277C14 /* UIScrollView+Extensions.swift in Sources */,
 				4597621C20FDE4360034DE29 /* AppFlowController.swift in Sources */,

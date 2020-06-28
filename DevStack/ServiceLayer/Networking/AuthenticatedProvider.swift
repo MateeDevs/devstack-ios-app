@@ -105,7 +105,8 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
                     }
                 })
                 
-				vc.showAlert(title: L10n.dialog_interceptor_title, message: L10n.dialog_interceptor_text, primaryAction: action)
+                let alert = Alert(title: L10n.dialog_interceptor_title, message: L10n.dialog_interceptor_text, primaryAction: action)
+                vc.handleAlertAction(.showAlert(alert))
                 return Single.error(MoyaError.statusCode(response))
             } else {
                 return Single.just(response)

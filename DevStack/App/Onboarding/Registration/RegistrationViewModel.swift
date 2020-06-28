@@ -25,7 +25,7 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
     struct Output {
         let registrationSuccess: Driver<User>
         let registerButtonEnabled: Driver<Bool>
-        let whisperAction: Driver<WhisperAction>
+        let alertAction: Driver<AlertAction>
     }
     
     init(dependencies: Dependencies) {
@@ -63,18 +63,18 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
             }
         }.share()
         
-    let messages = ErrorMessages([.httpConflict: L10n.register_view_email_already_exists], defaultMessage: L10n.signing_up_failed)
+        let messages = ErrorMessages([.httpConflict: L10n.register_view_email_already_exists], defaultMessage: L10n.signing_up_failed)
         
-        let whisperAction: Observable<WhisperAction> = Observable.merge(
-            activity.mapToWhisperAction(L10n.signing_up),
-            registration.compactMap { $0.element }.map { _ in .hide },
-            registration.compactMap { $0.error }.map { .showError($0.toString(messages)) }
+        let alertAction: Observable<AlertAction> = Observable.merge(
+            activity.toWhisper(L10n.signing_up),
+            registration.compactMap { $0.element }.map { _ in .hideWhisper },
+            registration.compactMap { $0.error }.map { .showWhisper(Whisper(error: $0.toString(messages))) }
         )
         
         self.output = Output(
             registrationSuccess: registration.compactMap { $0.element }.asDriver(),
             registerButtonEnabled: activity.map { !$0 },
-            whisperAction: whisperAction.asDriver()
+            alertAction: alertAction.asDriver()
         )
         
         super.init()
