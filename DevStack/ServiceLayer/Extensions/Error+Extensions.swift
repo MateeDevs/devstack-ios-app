@@ -32,4 +32,9 @@ public extension Error {
             return messages.defaultMessage
         }
     }
+    
+    func httpStatusCode() -> Int? {
+        guard let moyaError = self as? MoyaError, let response = moyaError.response else { return nil }
+        return response.statusCode
+    }
 }

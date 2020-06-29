@@ -29,7 +29,7 @@ class LoginViewModelTests: BaseTestCase {
     
     private struct Output {
         let loginSuccess: TestableObserver<Bool>
-        let whisperAction: TestableObserver<WhisperAction>
+        let alertAction: TestableObserver<AlertAction>
         let loginButtonEnabled: TestableObserver<Bool>
     }
 
@@ -47,7 +47,7 @@ class LoginViewModelTests: BaseTestCase {
         
         return Output(
             loginSuccess: testableOutput(from: viewModel.output.loginSuccess.map { true }),
-            whisperAction: testableOutput(from: viewModel.output.whisperAction),
+            alertAction: testableOutput(from: viewModel.output.alertAction),
             loginButtonEnabled: testableOutput(from: viewModel.output.loginButtonEnabled)
         )
     }
@@ -80,17 +80,17 @@ class LoginViewModelTests: BaseTestCase {
     func testWhisperActionOutputForNonEmptyInput() {
         let output = mockViewModel(for: Inputs.nonEmpty)
         scheduler.start()
-        XCTAssertEqual(output.whisperAction.events, [
-            .next(0, .showMessage(L10n.signing_in)),
-            .next(0, .hide)
+        XCTAssertEqual(output.alertAction.events, [
+            .next(0, .showWhisper(Whisper(L10n.signing_in))),
+            .next(0, .hideWhisper)
         ])
     }
 
     func testWhisperActionOutputForEmptyInput() {
         let output = mockViewModel(for: Inputs.empty)
         scheduler.start()
-        XCTAssertEqual(output.whisperAction.events, [
-            .next(0, .showError(L10n.invalid_credentials))
+        XCTAssertEqual(output.alertAction.events, [
+            .next(0, .showWhisper(Whisper(error: L10n.invalid_credentials)))
         ])
     }
 
@@ -98,9 +98,9 @@ class LoginViewModelTests: BaseTestCase {
         let providers: ProviderDependency = .mock(networkResponse: .unauthorized)
         let output = mockViewModel(for: Inputs.nonEmpty, providers: providers)
         scheduler.start()
-        XCTAssertEqual(output.whisperAction.events, [
-            .next(0, .showMessage(L10n.signing_in)),
-            .next(0, .showError(L10n.invalid_credentials))
+        XCTAssertEqual(output.alertAction.events, [
+            .next(0, .showWhisper(Whisper(L10n.signing_in))),
+            .next(0, .showWhisper(Whisper(error: L10n.invalid_credentials)))
         ])
     }
 

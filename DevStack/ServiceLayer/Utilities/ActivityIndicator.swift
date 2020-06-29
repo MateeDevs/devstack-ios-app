@@ -78,8 +78,8 @@ public extension ObservableConvertibleType {
 }
 
 public extension ActivityIndicator {
-    /// Transformation that maps true from ActivityIndicator to WhisperAction with a given message
-    func mapToWhisperAction(_ message: String) -> Observable<WhisperAction> {
-        return asObservable().filter { $0 }.map { _ in .showMessage(message) }
+    /// Transformation that maps true from ActivityIndicator to AlertAction.showWhisper with a given message
+    func toWhisper(_ message: String) -> Observable<AlertAction> {
+        return asObservable().filter { $0 }.map { _ in .showWhisper(Whisper(message)) }
     }
 }
