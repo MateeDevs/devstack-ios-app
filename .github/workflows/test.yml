@@ -1,0 +1,23 @@
+name: Test
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  test:
+    name: Run tests
+    runs-on: self-hosted
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Pull Twine repo
+        run: git -C $TWINE_FOLDER pull origin master
+      - name: Install Gems and Pods
+        env:
+          CI: ${{ true }}
+        run: ./scripts/setup.sh
+      - name: Run tests
+        run: bundle exec fastlane test_alpha

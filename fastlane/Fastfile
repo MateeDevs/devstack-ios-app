@@ -255,6 +255,35 @@ platform :ios do
     )
   end
 
+  # RUN TESTS
+
+  desc "Run tests on Alpha"
+  lane :test_alpha do
+    tests(alpha)
+  end
+
+  desc "Run tests on Beta"
+  lane :test_beta do
+    tests(beta)
+  end
+
+  desc "Run tests on Production"
+  lane :test_production do
+    tests(production)
+  end
+
+  desc "Run tests"
+  private_lane :tests do |config|
+  run_tests(
+    scheme: config[:scheme],
+    configuration: "Release",
+    slack_url: slack_url,
+    slack_channel: "#ci",
+    slack_only_on_failure: true,
+    slack_message: "Tests failed, please fix them and try it again."
+  )
+  end
+
   # SYNC DSYM FILES
 
   desc "Sync Alpha dSYM files"
