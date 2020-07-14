@@ -50,8 +50,7 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         
         let isRefreshing: Observable<Bool> = Observable.merge(
             activity.asObservable(),
-            refreshProfile.compactMap { $0.element }.map { _ in false },
-            refreshProfile.compactMap { $0.error }.map { _ in false }
+            refreshProfile.map { _ in false }
         )
         
         let currentLocation = dependencies.locationService.getCurrentLocation().take(1)
