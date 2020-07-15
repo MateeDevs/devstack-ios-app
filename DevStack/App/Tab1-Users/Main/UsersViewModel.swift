@@ -50,8 +50,7 @@ final class UsersViewModel: ViewModel, ViewModelType {
         
         let isRefreshing: Observable<Bool> = Observable.merge(
             activity.asObservable(),
-            refreshUsers.compactMap { $0.element }.map { _ in false },
-            refreshUsers.compactMap { $0.error }.map { _ in false }
+            refreshUsers.map { _ in false }
         )
         
         self.output = Output(

@@ -47,8 +47,7 @@ final class UserDetailViewModel: ViewModel, ViewModelType {
         
         let isRefreshing: Observable<Bool> = Observable.merge(
             activity.asObservable(),
-            refreshUser.compactMap { $0.element }.map { _ in false },
-            refreshUser.compactMap { $0.error }.map { _ in false }
+            refreshUser.map { _ in false }
         )
         
         self.output = Output(
