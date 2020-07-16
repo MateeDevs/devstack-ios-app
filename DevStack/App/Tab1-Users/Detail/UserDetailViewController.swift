@@ -54,7 +54,7 @@ final class UserDetailViewController: BaseViewController {
         
         if let refreshControl = scrollView.refreshControl {
             refreshControl.rx.controlEvent(.valueChanged).bind(to: viewModel.input.refreshTrigger).disposed(by: disposeBag)
-            viewModel.output.isRefreshing.drive(refreshControl.rx.isRefreshing).disposed(by: disposeBag)
+            viewModel.output.isRefreshing.filter { !$0 }.drive(refreshControl.rx.isRefreshing).disposed(by: disposeBag)
         }
         
         viewModel.output.user.drive(onNext: { [weak self] user in
