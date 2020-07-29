@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CkE-Zn-ye5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CkE-Zn-ye5">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,28 +45,59 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="y72-0v-fxa">
+                                <rect key="frame" x="64" y="348" width="247" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Kg-fR-Vpg" customClass="SecondaryButton" customModule="A_DevStack" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="91.5" height="30"/>
+                                        <state key="normal" title="profile_view_counter_increase_button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUA-a8-BUr" customClass="SecondaryButton" customModule="A_DevStack" customModuleProvider="target">
+                                        <rect key="frame" x="155.5" y="0.0" width="91.5" height="30"/>
+                                        <state key="normal" title="profile_view_counter_decrease_button"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="sUA-a8-BUr" firstAttribute="width" secondItem="3Kg-fR-Vpg" secondAttribute="width" id="5AQ-6Q-Cgu"/>
+                                </constraints>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bF-jg-b3i" customClass="PrimaryButton" customModule="A_DevStack" customModuleProvider="target">
                                 <rect key="frame" x="24" y="573" width="327" height="30"/>
                                 <state key="normal" title="profile_view_logout_button"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPI-XA-lfF">
+                                <rect key="frame" x="24" y="309" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="jPI-XA-lfF" firstAttribute="top" secondItem="iQV-RZ-amD" secondAttribute="bottom" constant="32" id="0HG-wc-pJD"/>
                             <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="1bF-jg-b3i" secondAttribute="trailing" constant="24" id="2FZ-by-nI7"/>
                             <constraint firstItem="1bF-jg-b3i" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="24" id="4aV-YQ-haS"/>
                             <constraint firstItem="iQV-RZ-amD" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="16" id="5AQ-0o-KxB"/>
                             <constraint firstItem="QgE-43-xes" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="24" id="AeF-PG-T3e"/>
+                            <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="jPI-XA-lfF" secondAttribute="trailing" constant="16" id="D66-5q-Yge"/>
                             <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="iQV-RZ-amD" secondAttribute="trailing" constant="16" id="Dxy-wi-m5j"/>
+                            <constraint firstItem="y72-0v-fxa" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="64" id="IHP-ED-Wb2"/>
                             <constraint firstItem="iQV-RZ-amD" firstAttribute="top" secondItem="QgE-43-xes" secondAttribute="bottom" constant="32" id="QFI-0e-0Al"/>
                             <constraint firstItem="QgE-43-xes" firstAttribute="top" secondItem="mOy-UN-9uA" secondAttribute="bottom" constant="32" id="ZFi-kY-v5r"/>
+                            <constraint firstItem="y72-0v-fxa" firstAttribute="top" secondItem="jPI-XA-lfF" secondAttribute="bottom" constant="16" id="aNT-Wm-QA8"/>
                             <constraint firstItem="qdr-Ev-KLG" firstAttribute="bottom" secondItem="1bF-jg-b3i" secondAttribute="bottom" constant="64" id="ayI-9I-SKR"/>
                             <constraint firstItem="mOy-UN-9uA" firstAttribute="top" secondItem="qdr-Ev-KLG" secondAttribute="top" constant="64" id="bcs-N7-QsU"/>
                             <constraint firstItem="mOy-UN-9uA" firstAttribute="centerX" secondItem="qdr-Ev-KLG" secondAttribute="centerX" id="ee3-lY-QOq"/>
+                            <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="y72-0v-fxa" secondAttribute="trailing" constant="64" id="gmw-w3-3hy"/>
+                            <constraint firstItem="jPI-XA-lfF" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="16" id="wua-lx-IXN"/>
                             <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="QgE-43-xes" secondAttribute="trailing" constant="24" id="zRM-Uf-ohf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qdr-Ev-KLG"/>
                     </view>
                     <connections>
+                        <outlet property="counterLabel" destination="jPI-XA-lfF" id="X8L-52-40I"/>
+                        <outlet property="decreaseButton" destination="sUA-a8-BUr" id="EzL-fF-Rek"/>
+                        <outlet property="increaseButton" destination="3Kg-fR-Vpg" id="MZd-43-lNx"/>
                         <outlet property="locationLabel" destination="iQV-RZ-amD" id="b8t-xD-5v5"/>
                         <outlet property="logoutButton" destination="1bF-jg-b3i" id="XuL-A9-MyD"/>
                         <outlet property="userImageView" destination="mOy-UN-9uA" id="ReL-lm-how"/>

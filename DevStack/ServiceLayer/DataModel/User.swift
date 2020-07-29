@@ -19,38 +19,45 @@ import RealmSwift
     public dynamic var phone: String?
     public dynamic var bio: String?
     public dynamic var pictureUrl: String?
+
+    // MARK: Local properties
+    public dynamic var counter: Int = 0
+
+    // MARK: API model for updating
+    override func apiModel() -> [String: Any] {
+        var model = super.apiModel()
+        model.removeValue(forKey: "counter")
+        return model
+    }
     
     // MARK: Realm API
     override public static func primaryKey() -> String? {
         "id"
     }
     
-    // Commented code below is just for show case purpose
-    // It is synthesized automatically and therefore should be omitted if you don't need to change it
-    
-//    // MARK: Mapping
-//    enum CodingKeys: String, CodingKey {
-//        case id
-//        case email
-//        case firstName
-//        case lastName
-//        case phone
-//        case bio
-//        case pictureUrl
-//    }
-//
-//    // MARK: Decodable
-//    public convenience required init(from decoder: Decoder) throws {
-//        self.init()
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
-//        email = try container.decodeIfPresent(String.self, forKey: .email) ?? ""
-//        firstName = try container.decodeIfPresent(String.self, forKey: .firstName) ?? ""
-//        lastName = try container.decodeIfPresent(String.self, forKey: .lastName) ?? ""
-//        phone = try container.decodeIfPresent(String.self, forKey: .phone)
-//        bio = try container.decodeIfPresent(String.self, forKey: .bio)
-//        pictureUrl = try container.decodeIfPresent(String.self, forKey: .pictureUrl)
-//    }
+    // MARK: Mapping
+    enum CodingKeys: String, CodingKey {
+        case id
+        case email
+        case firstName
+        case lastName
+        case phone
+        case bio
+        case pictureUrl
+    }
+
+    // MARK: Decodable
+    public required convenience init(from decoder: Decoder) throws {
+        self.init()
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
+        email = try container.decodeIfPresent(String.self, forKey: .email) ?? ""
+        firstName = try container.decodeIfPresent(String.self, forKey: .firstName) ?? ""
+        lastName = try container.decodeIfPresent(String.self, forKey: .lastName) ?? ""
+        phone = try container.decodeIfPresent(String.self, forKey: .phone)
+        bio = try container.decodeIfPresent(String.self, forKey: .bio)
+        pictureUrl = try container.decodeIfPresent(String.self, forKey: .pictureUrl)
+    }
     
     // MARK: Encodable
     public func encode(to encoder: Encoder) throws {

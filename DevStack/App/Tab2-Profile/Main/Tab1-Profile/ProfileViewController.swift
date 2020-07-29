@@ -26,6 +26,9 @@ final class ProfileViewController: BaseViewController {
     @IBOutlet private weak var userImageView: UserImageView!
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var locationLabel: UILabel!
+    @IBOutlet private weak var counterLabel: UILabel!
+    @IBOutlet private weak var increaseButton: SecondaryButton!
+    @IBOutlet private weak var decreaseButton: SecondaryButton!
     @IBOutlet private weak var logoutButton: PrimaryButton!
     
     // MARK: Stored properties
@@ -33,6 +36,7 @@ final class ProfileViewController: BaseViewController {
         didSet {
             userImageView.setupWithUser(user)
             userNameLabel.text = user?.fullName
+            counterLabel.text = L10n.profile_view_counter_label(user?.counter ?? 0)
         }
     }
     
@@ -53,6 +57,8 @@ final class ProfileViewController: BaseViewController {
         super.setupBindings()
 
         logoutButton.rx.tap.bind(to: viewModel.input.logoutButtonTaps).disposed(by: disposeBag)
+        increaseButton.rx.tap.bind(to: viewModel.input.increaseButtonTaps).disposed(by: disposeBag)
+        decreaseButton.rx.tap.bind(to: viewModel.input.decreaseButtonTaps).disposed(by: disposeBag)
         
         viewModel.output.profile.drive(onNext: { [weak self] user in
             self?.user = user
@@ -67,6 +73,9 @@ final class ProfileViewController: BaseViewController {
         viewModel.output.logoutSuccess.drive(onNext: { [weak self] _ in
             self?.flowDelegate?.presentOnboarding()
         }).disposed(by: disposeBag)
+
+        viewModel.output.increaseCounter.drive().disposed(by: disposeBag)
+        viewModel.output.decreaseCounter.drive().disposed(by: disposeBag)
     }
 
     override func setupUI() {

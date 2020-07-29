@@ -11,7 +11,7 @@ import RxRealm
 import RxSwift
 
 extension Reactive where Base == Realm {
-    func save<T: Object>(_ object: T, withApiModel: Bool = true) -> Observable<T> {
+    func save<T: Object>(_ object: T, model: UpdateModel = .apiModel) -> Observable<T> {
         Observable.create { observer in
             do {
                 try self.base.write {
@@ -19,7 +19,7 @@ extension Reactive where Base == Realm {
                     if !object.exists() {
                         self.base.add(object, update: .modified)
                     } else {
-                        self.base.create(T.self, value: withApiModel ? object.apiModel() : object.fullModel(), update: .modified)
+                        self.base.create(T.self, value: model.value(for: object), update: .modified)
                     }
                 }
                 observer.onNext(object)
@@ -31,7 +31,7 @@ extension Reactive where Base == Realm {
         }
     }
     
-    func save<T: Object>(_ objects: [T], withApiModel: Bool = true) -> Observable<[T]> {
+    func save<T: Object>(_ objects: [T], model: UpdateModel = .apiModel) -> Observable<[T]> {
         Observable.create { observer in
             do {
                 try self.base.write {
@@ -40,7 +40,7 @@ extension Reactive where Base == Realm {
                         if !object.exists() {
                             self.base.add(object, update: .modified)
                         } else {
-                            self.base.create(T.self, value: withApiModel ? object.apiModel() : object.fullModel(), update: .modified)
+                            self.base.create(T.self, value: model.value(for: object), update: .modified)
                         }
                     }
                 }
@@ -53,7 +53,7 @@ extension Reactive where Base == Realm {
         }
     }
     
-    func appendToList<T: Object>(_ list: List<T>, objects: [T], withApiModel: Bool = true) -> Observable<[T]> {
+    func appendToList<T: Object>(_ list: List<T>, objects: [T], model: UpdateModel = .apiModel) -> Observable<[T]> {
         Observable.create { observer in
             do {
                 try self.base.write {
@@ -65,7 +65,7 @@ extension Reactive where Base == Realm {
                         if !object.exists() {
                             self.base.add(object, update: .modified)
                         } else {
-                            self.base.create(T.self, value: withApiModel ? object.apiModel() : object.fullModel(), update: .modified)
+                            self.base.create(T.self, value: model.value(for: object), update: .modified)
                         }
                         // Append reference if it isn't already in the list
                         if let objectReference = self.base.object(ofType: T.self, forPrimaryKey: object["id"]) {
