@@ -120,8 +120,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Clear keychain on first run
     private func clearKeychain() {
-        guard let providers = providers,
-            let hasRunBefore = providers.userDefaultsProvider.get(.hasRunBefore) as Bool?, !hasRunBefore else { return }
+        guard let providers = providers, (providers.userDefaultsProvider.get(.hasRunBefore) as Bool?) == nil else { return }
         providers.keychainProvider.deleteAll()
         providers.userDefaultsProvider.save(.hasRunBefore, value: true)
     }
