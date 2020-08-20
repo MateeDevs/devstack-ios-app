@@ -49,12 +49,9 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         // MARK: Setup outputs
         
         let activity = ActivityIndicator()
-        
-        // Merge db and network stream for a showcase purpose
-        // Prefered way is to use them separately (see UserDetailViewModel)
+
         let getProfile = dependencies.userService.getProfile()
         let refreshProfile = dependencies.userService.downloadProfile().trackActivity(activity).materialize().share()
-        let profile = Observable.merge(getProfile, refreshProfile.compactMap { $0.element })
         
         let isRefreshing: Observable<Bool> = Observable.merge(
             activity.asObservable(),
@@ -76,7 +73,7 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         }.share()
         
         self.output = Output(
-            profile: profile.asDriver(),
+            profile: getProfile.asDriver(),
             isRefreshing: isRefreshing.asDriver(),
             currentLocation: currentLocation.asDriver(),
             logoutSuccess: logout.compactMap { $0.element }.asDriver(),

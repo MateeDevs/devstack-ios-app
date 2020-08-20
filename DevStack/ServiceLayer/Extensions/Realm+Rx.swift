@@ -15,12 +15,7 @@ extension Reactive where Base == Realm {
         Observable.create { observer in
             do {
                 try self.base.write {
-                    // Create new object if it doesn't exists or partially update existing one
-                    if !object.exists() {
-                        self.base.add(object, update: .modified)
-                    } else {
-                        self.base.create(T.self, value: model.value(for: object), update: .modified)
-                    }
+                    self.base.create(T.self, value: model.value(for: object), update: .modified)
                 }
                 observer.onNext(object)
                 observer.onCompleted()
@@ -36,12 +31,7 @@ extension Reactive where Base == Realm {
             do {
                 try self.base.write {
                     for object in objects {
-                        // Create new object if it doesn't exists or partially update existing one
-                        if !object.exists() {
-                            self.base.add(object, update: .modified)
-                        } else {
-                            self.base.create(T.self, value: model.value(for: object), update: .modified)
-                        }
+                        self.base.create(T.self, value: model.value(for: object), update: .modified)
                     }
                 }
                 observer.onNext(objects)
@@ -61,12 +51,8 @@ extension Reactive where Base == Realm {
                     // Instead we have to append a reference for every object
                     // Idea taken from: https://stackoverflow.com/a/40595430
                     for object in objects {
-                        // Create new object if it doesn't exists or partially update existing one
-                        if !object.exists() {
-                            self.base.add(object, update: .modified)
-                        } else {
-                            self.base.create(T.self, value: model.value(for: object), update: .modified)
-                        }
+                        self.base.create(T.self, value: model.value(for: object), update: .modified)
+                        
                         // Append reference if it isn't already in the list
                         if let objectReference = self.base.object(ofType: T.self, forPrimaryKey: object["id"]) {
                             let listIds = list.toArray().map { $0["id"] as? String }

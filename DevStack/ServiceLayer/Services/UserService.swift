@@ -50,7 +50,7 @@ public class UserService {
     }
 
     public func increaseCounter() -> Observable<User> {
-        return getProfile().flatMap { user -> Observable<User> in
+        return getProfile().take(1).flatMap { user -> Observable<User> in
             let userCopy = User(value: user)
             userCopy.counter += 1
             return Observable.just(userCopy)
@@ -58,7 +58,7 @@ public class UserService {
     }
 
     public func decreaseCounter() -> Observable<User> {
-        return getProfile().flatMap { user -> Observable<User> in
+        return getProfile().take(1).flatMap { user -> Observable<User> in
             let userCopy = User(value: user)
             userCopy.counter -= 1
             return Observable.just(userCopy)

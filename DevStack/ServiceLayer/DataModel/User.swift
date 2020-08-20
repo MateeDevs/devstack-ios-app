@@ -24,8 +24,8 @@ import RealmSwift
     public dynamic var counter: Int = 0
 
     // MARK: API model for updating
-    override func apiModel() -> [String: Any] {
-        var model = super.apiModel()
+    override var apiModel: [String: Any] {
+        var model = super.apiModel
         model.removeValue(forKey: "counter")
         return model
     }
