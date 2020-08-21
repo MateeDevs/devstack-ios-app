@@ -49,24 +49,34 @@ public class UserService {
         return network.observableRequest(endpoint).map(User.self).save()
     }
 
+    public func increaseCounter() -> Observable<User> {
+        return getProfile().take(1).flatMap { user -> Observable<User> in
+            let userCopy = User(value: user)
+            userCopy.counter += 1
+            return Observable.just(userCopy)
+        }.save(model: .fullModel)
+    }
+
+    public func decreaseCounter() -> Observable<User> {
+        return getProfile().take(1).flatMap { user -> Observable<User> in
+            let userCopy = User(value: user)
+            userCopy.counter -= 1
+            return Observable.just(userCopy)
+        }.save(model: .fullModel)
+    }
+
     public func getProfileId() -> String? {
         return keychain.get(.userId)
     }
     
     public func getProfile() -> Observable<User> {
-        if let userId = keychain.get(.userId) {
-            return getUserById(userId)
-        } else {
-            return Observable.error(CommonError.noUserId)
-        }
+        guard let userId = getProfileId() else { return Observable.error(CommonError.noUserId) }
+        return getUserById(userId)
     }
     
     public func downloadProfile() -> Observable<User> {
-        if let userId = keychain.get(.userId) {
-            return downloadUserById(userId)
-        } else {
-            return Observable.error(CommonError.noUserId)
-        }
+        guard let userId = getProfileId() else { return Observable.error(CommonError.noUserId) }
+        return downloadUserById(userId)
     }
     
 }

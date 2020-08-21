@@ -19,6 +19,8 @@ final class ProfileViewModel: ViewModel, ViewModelType {
     
     struct Input {
         let logoutButtonTaps: AnyObserver<Void>
+        let increaseButtonTaps: AnyObserver<Void>
+        let decreaseButtonTaps: AnyObserver<Void>
     }
     
     struct Output {
@@ -26,6 +28,8 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         let isRefreshing: Driver<Bool>
         let currentLocation: Driver<CLLocation>
         let logoutSuccess: Driver<Void>
+        let increaseCounter: Driver<User>
+        let decreaseCounter: Driver<User>
     }
     
     init(dependencies: Dependencies) {
@@ -33,20 +37,21 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         // MARK: Setup inputs
 
         let logoutButtonTaps = PublishSubject<Void>()
+        let increaseButtonTaps = PublishSubject<Void>()
+        let decreaseButtonTaps = PublishSubject<Void>()
         
         self.input = Input(
-            logoutButtonTaps: logoutButtonTaps.asObserver()
+            logoutButtonTaps: logoutButtonTaps.asObserver(),
+            increaseButtonTaps: increaseButtonTaps.asObserver(),
+            decreaseButtonTaps: decreaseButtonTaps.asObserver()
         )
         
         // MARK: Setup outputs
         
         let activity = ActivityIndicator()
-        
-        // Merge db and network stream for a showcase purpose
-        // Prefered way is to use them separately (see UserDetailViewModel)
+
         let getProfile = dependencies.userService.getProfile()
         let refreshProfile = dependencies.userService.downloadProfile().trackActivity(activity).materialize().share()
-        let profile = Observable.merge(getProfile, refreshProfile.compactMap { $0.element })
         
         let isRefreshing: Observable<Bool> = Observable.merge(
             activity.asObservable(),
@@ -58,12 +63,22 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         let logout = logoutButtonTaps.flatMapLatest { _ -> Observable<Event<Void>> in
             return dependencies.loginService.logout().materialize()
         }.share()
+
+        let increaseCounter = increaseButtonTaps.flatMapLatest { _ -> Observable<Event<User>> in
+            return dependencies.userService.increaseCounter().materialize()
+        }.share()
+
+        let decreaseCounter = decreaseButtonTaps.flatMapLatest { _ -> Observable<Event<User>> in
+            return dependencies.userService.decreaseCounter().materialize()
+        }.share()
         
         self.output = Output(
-            profile: profile.asDriver(),
+            profile: getProfile.asDriver(),
             isRefreshing: isRefreshing.asDriver(),
             currentLocation: currentLocation.asDriver(),
-            logoutSuccess: logout.compactMap { $0.element }.asDriver()
+            logoutSuccess: logout.compactMap { $0.element }.asDriver(),
+            increaseCounter: increaseCounter.compactMap { $0.element }.asDriver(),
+            decreaseCounter: decreaseCounter.compactMap { $0.element }.asDriver()
         )
         
         super.init()
