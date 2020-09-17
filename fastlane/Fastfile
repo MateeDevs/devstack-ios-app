@@ -50,7 +50,7 @@ matee = {
   team_id_dev: "WNB34WBN42",
   team_id_connect: "120470944",
   match_branch: "matee",
-  certificate: "iPhone Distribution: Matee Devs s.r.o."
+  certificate: "Apple Distribution: Matee Devs s.r.o."
 }
 
 testflight_contact = {
