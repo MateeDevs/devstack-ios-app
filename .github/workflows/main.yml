@@ -26,10 +26,10 @@ jobs:
         env:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
         run: bundle exec fastlane build_alpha git_branch:$GITHUB_REF build_number:`cat build-number.txt`
-      - name: Create a new Beta build
-        env:
-          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-        run: bundle exec fastlane build_beta git_branch:$GITHUB_REF build_number:`cat build-number.txt`
+      # - name: Create a new Beta build
+      #   env:
+      #     MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+      #   run: bundle exec fastlane build_beta git_branch:$GITHUB_REF build_number:`cat build-number.txt`
       # - name: Create a new Production build
       #   env:
       #     MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
@@ -48,18 +48,18 @@ jobs:
           bundle exec fastlane upload_testflight_alpha
           bundle exec fastlane dsym_alpha
 
-  deploy-beta:
-    name: Deploy beta
-    needs: build
-    runs-on: self-hosted
-    timeout-minutes: 600
-    steps:
-      - name: Upload the Beta build to the TestFlight
-        env:
-          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-        run: |
-          bundle exec fastlane upload_testflight_beta
-          bundle exec fastlane dsym_beta
+  # deploy-beta:
+  #   name: Deploy beta
+  #   needs: build
+  #   runs-on: self-hosted
+  #   timeout-minutes: 600
+  #   steps:
+  #     - name: Upload the Beta build to the TestFlight
+  #       env:
+  #         FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+  #       run: |
+  #         bundle exec fastlane upload_testflight_beta
+  #         bundle exec fastlane dsym_beta
 
   # deploy-production:
   #   name: Deploy production

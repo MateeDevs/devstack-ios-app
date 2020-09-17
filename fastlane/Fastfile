@@ -303,11 +303,12 @@ platform :ios do
 
   desc "Sync dSYM files"
   private_lane :dsym do |config|
+    version = get_ipa_info_plist_value(ipa: "./ipa/#{config[:output_name]}.ipa", key: "CFBundleShortVersionString")
     download_dsyms(
       username: config[:apple_id],
       team_id: config[:team_id_connect],
       app_identifier: config[:app_identifier],
-      version: 'latest'
+      version: version
     )
     upload_symbols_to_crashlytics(
       gsp_path: config[:gsp_path]
