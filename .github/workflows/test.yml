@@ -8,11 +8,13 @@ on:
 jobs:
   test:
     name: Run tests
-    runs-on: self-hosted
+    runs-on: [self-hosted, ios-build]
     timeout-minutes: 60
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v1
+        with:
+          clean: false
       - name: Pull Twine repo
         run: git -C $TWINE_FOLDER pull origin master
       - name: Install Gems and Pods

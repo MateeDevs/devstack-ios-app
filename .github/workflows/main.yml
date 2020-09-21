@@ -6,14 +6,15 @@ on:
       - build/*
 
 jobs:
-
   build:
     name: Create new builds
-    runs-on: self-hosted
+    runs-on: [self-hosted, ios-build]
     timeout-minutes: 60
     steps:
       - name: Checkout repo
         uses: actions/checkout@v1
+        with:
+          clean: false
       - name: Pull Twine repo
         run: git -C $TWINE_FOLDER pull origin master
       - name: Generate build number
@@ -38,7 +39,7 @@ jobs:
   deploy-alpha:
     name: Deploy alpha
     needs: build
-    runs-on: self-hosted
+    runs-on: [self-hosted, ios-alpha]
     timeout-minutes: 600
     steps:
       - name: Upload the Alpha build to the TestFlight
@@ -51,7 +52,7 @@ jobs:
   # deploy-beta:
   #   name: Deploy beta
   #   needs: build
-  #   runs-on: self-hosted
+  #   runs-on: [self-hosted, ios-beta]
   #   timeout-minutes: 600
   #   steps:
   #     - name: Upload the Beta build to the TestFlight
@@ -64,7 +65,7 @@ jobs:
   # deploy-production:
   #   name: Deploy production
   #   needs: build
-  #   runs-on: self-hosted
+  #   runs-on: [self-hosted, ios-prod]
   #   timeout-minutes: 600
   #   steps:
   #     - name: Upload the Production build to the TestFlight
