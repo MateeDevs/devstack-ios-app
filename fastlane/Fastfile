@@ -50,7 +50,7 @@ matee = {
   team_id_dev: "WNB34WBN42",
   team_id_connect: "120470944",
   match_branch: "matee",
-  certificate: "iPhone Distribution: Matee Devs s.r.o."
+  certificate: "Apple Distribution: Matee Devs s.r.o."
 }
 
 testflight_contact = {
@@ -207,7 +207,7 @@ platform :ios do
       dev_portal_team_id: config[:team_id_dev],
       team_id: config[:team_id_connect],
       app_identifier: config[:app_identifier],
-      skip_waiting_for_build_processing: false,
+      skip_waiting_for_build_processing: true, # Change to false, if you want to distribute the build for external testers
       distribute_external: true,
       groups: config[:testflight_groups],
       changelog: "#{config[:output_name]} #{version} build #{build}",
@@ -303,11 +303,12 @@ platform :ios do
 
   desc "Sync dSYM files"
   private_lane :dsym do |config|
+    version = get_ipa_info_plist_value(ipa: "./ipa/#{config[:output_name]}.ipa", key: "CFBundleShortVersionString")
     download_dsyms(
       username: config[:apple_id],
       team_id: config[:team_id_connect],
       app_identifier: config[:app_identifier],
-      version: 'latest'
+      version: version
     )
     upload_symbols_to_crashlytics(
       gsp_path: config[:gsp_path]

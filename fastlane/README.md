@@ -66,6 +66,21 @@ Upload the Production build to the TestFlight
 fastlane ios upload_appstore_production
 ```
 Upload the Production build to the AppStore
+### ios test_alpha
+```
+fastlane ios test_alpha
+```
+Run tests on Alpha
+### ios test_beta
+```
+fastlane ios test_beta
+```
+Run tests on Beta
+### ios test_production
+```
+fastlane ios test_production
+```
+Run tests on Production
 ### ios dsym_alpha
 ```
 fastlane ios dsym_alpha
