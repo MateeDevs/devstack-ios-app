@@ -207,7 +207,7 @@ platform :ios do
       dev_portal_team_id: config[:team_id_dev],
       team_id: config[:team_id_connect],
       app_identifier: config[:app_identifier],
-      skip_waiting_for_build_processing: false,
+      skip_waiting_for_build_processing: true, # Change to false, if you want to distribute the build for external testers
       distribute_external: true,
       groups: config[:testflight_groups],
       changelog: "#{config[:output_name]} #{version} build #{build}",
