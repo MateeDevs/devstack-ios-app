@@ -18,7 +18,7 @@ jobs:
       - name: Pull Twine repo
         run: git -C $TWINE_FOLDER pull origin master
       - name: Generate build number
-        run: echo `date +"%y%m%d%H%M"` >> build-number.txt
+        run: echo `date +"%y%m%d%H%M"` > build-number.txt
       - name: Install Gems and Pods
         env:
           CI: ${{ true }}
