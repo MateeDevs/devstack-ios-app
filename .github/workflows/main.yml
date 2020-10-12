@@ -17,24 +17,29 @@ jobs:
           clean: false
       - name: Pull Twine repo
         run: git -C $TWINE_FOLDER pull origin master
-      - name: Generate build number
-        run: echo `date +"%y%m%d%H%M"` > build-number.txt
       - name: Install Gems and Pods
         env:
           CI: ${{ true }}
         run: ./scripts/setup.sh
+      - name: Generate build number
+        run: |
+          echo "BUILD_NUMBER=$(echo `date +"%y%m%d%H%M"`)" >> $GITHUB_ENV
+          echo "GIT_BRANCH=$(echo $GITHUB_REF)" >> $GITHUB_ENV
       - name: Create a new Alpha build
         env:
-          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-        run: bundle exec fastlane build_alpha git_branch:$GITHUB_REF build_number:`cat build-number.txt`
+          MATCH_PASSWORD: ${{ secrets.FASTLANE_MATCH_PASSWORD }}
+          APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
+        run: bundle exec fastlane build_alpha
       # - name: Create a new Beta build
       #   env:
-      #     MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-      #   run: bundle exec fastlane build_beta git_branch:$GITHUB_REF build_number:`cat build-number.txt`
+      #     MATCH_PASSWORD: ${{ secrets.FASTLANE_MATCH_PASSWORD }}
+      #     APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
+      #   run: bundle exec fastlane build_beta
       # - name: Create a new Production build
       #   env:
-      #     MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-      #   run: bundle exec fastlane build_production git_branch:$GITHUB_REF build_number:`cat build-number.txt`
+      #     MATCH_PASSWORD: ${{ secrets.FASTLANE_MATCH_PASSWORD }}
+      #     APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
+      #   run: bundle exec fastlane build_production
 
   deploy-alpha:
     name: Deploy alpha
@@ -44,10 +49,9 @@ jobs:
     steps:
       - name: Upload the Alpha build to the TestFlight
         env:
-          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-        run: |
-          bundle exec fastlane upload_testflight_alpha
-          bundle exec fastlane dsym_alpha
+          APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
+          SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
+        run: bundle exec fastlane upload_testflight_alpha
 
   # deploy-beta:
   #   name: Deploy beta
@@ -57,10 +61,9 @@ jobs:
   #   steps:
   #     - name: Upload the Beta build to the TestFlight
   #       env:
-  #         FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-  #       run: |
-  #         bundle exec fastlane upload_testflight_beta
-  #         bundle exec fastlane dsym_beta
+  #         APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
+  #         SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
+  #       run: bundle exec fastlane upload_testflight_beta
 
   # deploy-production:
   #   name: Deploy production
@@ -70,7 +73,6 @@ jobs:
   #   steps:
   #     - name: Upload the Production build to the TestFlight
   #       env:
-  #         FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-  #       run: |
-  #         bundle exec fastlane upload_testflight_production
-  #         bundle exec fastlane dsym_production
+  #         APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
+  #         SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
+  #       run: bundle exec fastlane upload_testflight_production

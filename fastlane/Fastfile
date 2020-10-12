@@ -50,7 +50,9 @@ matee = {
   team_id_dev: "WNB34WBN42",
   team_id_connect: "120470944",
   match_branch: "matee",
-  certificate: "Apple Distribution: Matee Devs s.r.o."
+  certificate: "Apple Distribution: Matee Devs s.r.o.",
+  api_key_id: "CQT3ZM53U8",
+  api_key_issuer_id: "e85e5ea1-4316-4e79-a474-858ab98197e0"
 }
 
 testflight_contact = {
@@ -61,7 +63,6 @@ testflight_contact = {
 }
 
 match_url = "git@github.com:MateeDevs/match.git"
-slack_url = "https://hooks.slack.com/services/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"
 
 #####
 
@@ -72,7 +73,9 @@ client = {
   team_id_dev: matee[:team_id_dev],
   team_id_connect: matee[:team_id_connect],
   match_branch: matee[:match_branch],
-  certificate: matee[:certificate]
+  certificate: matee[:certificate],
+  api_key_id: matee[:api_key_id],
+  api_key_issuer_id: matee[:api_key_issuer_id]
 }
 
 #####
@@ -80,9 +83,6 @@ client = {
 default_platform(:ios)
 
 platform :ios do
-  before_all do
-    ENV["SLACK_URL"] = slack_url
-  end
 
   # SYNC SIGNING
 
@@ -133,18 +133,15 @@ platform :ios do
   desc "Create a new build"
   private_lane :build do |config|
 
-    # Uncomment the next line if you want to use a specific Xcode version
-    # xcversion(version: "11.3.1")
-
-    unless config[:git_branch] =~ /#{config[:build_branch]}\/\d+\.\d+(\.\d+)?$/
-      UI.user_error!("Invalid git branch: \"#{config[:git_branch]}\". Expect: \"#{config[:build_branch]}/x.x.x\"")
+    unless ENV["GIT_BRANCH"] =~ /#{config[:build_branch]}\/\d+\.\d+(\.\d+)?$/
+      UI.user_error!("Invalid git branch: \"#{ENV["GIT_BRANCH"]}\". Expect: \"#{config[:build_branch]}/x.x.x\"")
     end
-    increment_version_number(version_number: config[:git_branch].split('/').last)
+    increment_version_number(version_number: ENV["GIT_BRANCH"].split('/').last)
 
-    unless config[:build_number] =~ /^\d{1,18}$/
-      UI.user_error!("Invalid build number: \"#{config[:build_number]}\". Expect 1-18 digits")
+    unless ENV["BUILD_NUMBER"] =~ /^\d{1,18}$/
+      UI.user_error!("Invalid build number: \"#{ENV["BUILD_NUMBER"]}\". Expect 1-18 digits")
     end
-    increment_build_number(build_number: config[:build_number])
+    increment_build_number(build_number: ENV["BUILD_NUMBER"])
 
     keychain_name = "fastlane"
     keychain_password = SecureRandom.base64
@@ -155,6 +152,11 @@ platform :ios do
       timeout: 3600,
       lock_when_sleeps: true,
       password: keychain_password
+    )
+    app_store_connect_api_key(
+      key_id: config[:api_key_id],
+      issuer_id: config[:api_key_issuer_id],
+      key_content: ENV["APP_STORE_CONNECT_API_KEY"]
     )
     sync_code_signing(
       username: config[:apple_id],
@@ -201,11 +203,13 @@ platform :ios do
   private_lane :upload_testflight do |config|
     version = get_ipa_info_plist_value(ipa: "./ipa/#{config[:output_name]}.ipa", key: "CFBundleShortVersionString")
     build = get_ipa_info_plist_value(ipa: "./ipa/#{config[:output_name]}.ipa", key: "CFBundleVersion")
+    app_store_connect_api_key(
+      key_id: config[:api_key_id],
+      issuer_id: config[:api_key_issuer_id],
+      key_content: ENV["APP_STORE_CONNECT_API_KEY"]
+    )
     upload_to_testflight(
       ipa: "./ipa/#{config[:output_name]}.ipa",
-      username: config[:apple_id],
-      dev_portal_team_id: config[:team_id_dev],
-      team_id: config[:team_id_connect],
       app_identifier: config[:app_identifier],
       skip_waiting_for_build_processing: true, # Change to false, if you want to distribute the build for external testers
       distribute_external: true,
@@ -220,35 +224,6 @@ platform :ios do
     )
     slack(
       message: "[iOS #{config[:output_name]}] #{version} build #{build} uploaded to the TestFlight\nLink: #{config[:testflight_link]}",
-      channel: slack_channel,
-      default_payloads: [],
-      payload: {}
-    )
-  end
-
-  # UPLOAD TO THE APPSTORE
-
-  desc "Upload the Production build to the AppStore"
-  lane :upload_appstore_production do
-    upload_appstore(production.merge(client))
-  end
-
-  desc "Upload the build to the AppStore"
-  private_lane :upload_appstore do |config|
-    version = get_info_plist_value(path: config[:plist_path], key: "CFBundleShortVersionString")
-    build = get_info_plist_value(path: config[:plist_path], key: "CFBundleVersion")
-    upload_to_app_store(
-      ipa: "./ipa/#{config[:output_name]}.ipa",
-      username: config[:apple_id],
-      dev_portal_team_id: config[:team_id_dev],
-      team_id: config[:team_id_connect],
-      app_identifier: config[:app_identifier],
-      force: true,
-      skip_screenshots: true,
-      skip_metadata: true
-    )
-    slack(
-      message: "[iOS #{config[:output_name]}] #{version} build #{build} uploaded to the AppStore",
       channel: slack_channel,
       default_payloads: [],
       payload: {}
@@ -276,11 +251,7 @@ platform :ios do
   private_lane :tests do |config|
   run_tests(
     scheme: config[:scheme],
-    configuration: "Release",
-    slack_url: slack_url,
-    slack_channel: "#ci",
-    slack_only_on_failure: true,
-    slack_message: "Tests failed, please fix them and try it again."
+    configuration: "Release"
   )
   end
 
