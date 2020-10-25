@@ -12,7 +12,7 @@ Install _fastlane_ using
 ```
 [sudo] gem install fastlane -NV
 ```
-or alternatively using `brew cask install fastlane`
+or alternatively using `brew install fastlane`
 
 # Available Actions
 ## iOS
@@ -61,11 +61,6 @@ Upload the Beta build to the TestFlight
 fastlane ios upload_testflight_production
 ```
 Upload the Production build to the TestFlight
-### ios upload_appstore_production
-```
-fastlane ios upload_appstore_production
-```
-Upload the Production build to the AppStore
 ### ios test_alpha
 ```
 fastlane ios test_alpha
