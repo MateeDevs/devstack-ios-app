@@ -12,21 +12,7 @@ import UIKit
 open class BaseViewController: UIViewController {
     
     // MARK: Stored properties
-    
-    /// In case the DisposeBag not to be emptied. Thus keep the same subscriptions for whole life cycle.
-    public var allowRecyclingBag: Bool = true
-    
-    private var bag: DisposeBag = DisposeBag()
-    private(set) var disposeBag: DisposeBag {
-        get {
-            bag
-        }
-        set(value) {
-            if allowRecyclingBag {
-                bag = value
-            }
-        }
-    }
+    private(set) var disposeBag = DisposeBag()
     
     // MARK: Inits
     override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
