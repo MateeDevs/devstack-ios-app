@@ -129,6 +129,9 @@
 		456458DA255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */; };
 		456458DB255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */; };
 		456458DC255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */; };
+		456458DE255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458DD255B44B800BF97B6 /* TextFieldWithHint+Rx.swift */; };
+		456458DF255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458DD255B44B800BF97B6 /* TextFieldWithHint+Rx.swift */; };
+		456458E0255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458DD255B44B800BF97B6 /* TextFieldWithHint+Rx.swift */; };
 		456851B921008988006D3618 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456851B821008988006D3618 /* BaseViewController.swift */; };
 		456851BA21008988006D3618 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456851B821008988006D3618 /* BaseViewController.swift */; };
 		456851BB21008988006D3618 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456851B821008988006D3618 /* BaseViewController.swift */; };
@@ -548,6 +551,7 @@
 		4558D30A20FCC8FF005BC325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		456408B52333AF830080678A /* strings.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = strings.txt; path = "../../../../twine-localization/devstack/strings.txt"; sourceTree = "<group>"; };
 		456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		456458DD255B44B800BF97B6 /* TextFieldWithHint+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldWithHint+Rx.swift"; sourceTree = "<group>"; };
 		456851B821008988006D3618 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		456851BF2100929E006D3618 /* LocalizedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTextField.swift; sourceTree = "<group>"; };
 		456851C6210095ED006D3618 /* LocalizedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLabel.swift; sourceTree = "<group>"; };
@@ -1103,7 +1107,6 @@
 		459762E920FE21CE0034DE29 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4557193D249FE58300FB24CA /* BaseTableViewController+Rx.swift */,
 				452732A723F0C7F80067C712 /* CLLocationCoordinate2D+Extensions.swift */,
 				45890B5722087C5D00894255 /* Date+UIExtensions.swift */,
 				452732A323F0C6ED0067C712 /* Double+UIExtensions.swift */,
@@ -1131,6 +1134,7 @@
 			children = (
 				456851B821008988006D3618 /* BaseViewController.swift */,
 				45E8A54D220F4BB5003F7502 /* BaseTableViewController.swift */,
+				4557193D249FE58300FB24CA /* BaseTableViewController+Rx.swift */,
 				45A388C6225E388B00037FFA /* FullscreenImageViewController.swift */,
 				45ECA1A2216B919B000B1124 /* ImagePickerViewController.swift */,
 				45976370210087710034DE29 /* InputViewController.swift */,
@@ -1189,6 +1193,7 @@
 			isa = PBXGroup;
 			children = (
 				45C3F51A23C127E50091848D /* TextFieldWithHint.swift */,
+				456458DD255B44B800BF97B6 /* TextFieldWithHint+Rx.swift */,
 				456851BF2100929E006D3618 /* LocalizedTextField.swift */,
 			);
 			path = UITextField;
@@ -2034,6 +2039,7 @@
 				45CDC3BF24A92FA200EF2368 /* Whisper.swift in Sources */,
 				A8DDD0CF2121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F0213D2677006AD4CC /* TabBarView.swift in Sources */,
+				456458DE255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */,
 				45DB9777226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BC210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				45F4AE422180B88400E75B4A /* LocalizedImageView.swift in Sources */,
@@ -2168,6 +2174,7 @@
 				45CDC3C024A92FA200EF2368 /* Whisper.swift in Sources */,
 				45ECA1B2216BF761000B1124 /* UserAPI.swift in Sources */,
 				4511A6F1213D2677006AD4CC /* TabBarView.swift in Sources */,
+				456458DF255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */,
 				45DB9778226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BD210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				459762E420FE21BC0034DE29 /* ViewModelType.swift in Sources */,
@@ -2302,6 +2309,7 @@
 				45CDC3C124A92FA200EF2368 /* Whisper.swift in Sources */,
 				A8DDD0D12121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F2213D2677006AD4CC /* TabBarView.swift in Sources */,
+				456458E0255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */,
 				45DB9779226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BE210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				45F4AE442180B88400E75B4A /* LocalizedImageView.swift in Sources */,

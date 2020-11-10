@@ -17,8 +17,8 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
     let output: Output
     
     struct Input {
-        let email: AnyObserver<String>
-        let password: AnyObserver<String>
+        let email: BehaviorRelay<String>
+        let password: BehaviorRelay<String>
         let registerButtonTaps: AnyObserver<Void>
     }
     
@@ -32,17 +32,17 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
         
         // MARK: Setup inputs
         
-        let email = ReplaySubject<String>.create(bufferSize: 1)
-        let password = ReplaySubject<String>.create(bufferSize: 1)
+        let email = BehaviorRelay<String>(value: "")
+        let password = BehaviorRelay<String>(value: "")
         let registerButtonTaps = PublishSubject<Void>()
         
         self.input = Input(
-            email: email.asObserver(),
-            password: password.asObserver(),
+            email: email,
+            password: password,
             registerButtonTaps: registerButtonTaps.asObserver()
         )
-        
-        // MARK: Setup outputs
+
+        // MARK: Transformations
         
         let activity = ActivityIndicator()
         
@@ -70,6 +70,8 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
             registration.compactMap { $0.element }.map { _ in .hideWhisper },
             registration.compactMap { $0.error }.map { .showWhisper(Whisper(error: $0.toString(messages))) }
         )
+
+        // MARK: Setup outputs
         
         self.output = Output(
             registrationSuccess: registration.compactMap { $0.element }.asDriver(),

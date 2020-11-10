@@ -52,19 +52,20 @@ final class RegistrationViewController: InputViewController {
     // MARK: Default methods
     override func setupBindings() {
         super.setupBindings()
-        
-        emailTextField.textField.rx.text.orEmpty.bind(to: viewModel.input.email).disposed(by: disposeBag)
-        passwordTextField.textField.rx.text.orEmpty.bind(to: viewModel.input.password).disposed(by: disposeBag)
+
+        // Inputs
+        emailTextField.rx.text.bind(to: viewModel.input.email).disposed(by: disposeBag)
+        passwordTextField.rx.text.bind(to: viewModel.input.password).disposed(by: disposeBag)
         registerButton.rx.tap.bind(to: viewModel.input.registerButtonTaps).disposed(by: disposeBag)
-        
+
+        // Outputs
+        viewModel.output.registerButtonEnabled.drive(loginButton.rx.isEnabled).disposed(by: disposeBag)
+        viewModel.output.alertAction.drive(rx.alertAction).disposed(by: disposeBag)
         viewModel.output.registrationSuccess.drive(onNext: { [weak self] _ in
             self?.flowDelegate?.popRegistration()
         }).disposed(by: disposeBag)
-        
-        viewModel.output.alertAction.drive(self.rx.alertAction).disposed(by: disposeBag)
-        
-        viewModel.output.registerButtonEnabled.drive(loginButton.rx.isEnabled).disposed(by: disposeBag)
-        
+
+        // Other
         loginButton.rx.tap.bind { [weak self] in
             self?.flowDelegate?.popRegistration()
         }.disposed(by: disposeBag)
