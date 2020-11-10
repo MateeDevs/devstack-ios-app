@@ -138,6 +138,9 @@
 		456458E6255B4A6B00BF97B6 /* TickButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E5255B4A6B00BF97B6 /* TickButton+Rx.swift */; };
 		456458E7255B4A6B00BF97B6 /* TickButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E5255B4A6B00BF97B6 /* TickButton+Rx.swift */; };
 		456458E8255B4A6B00BF97B6 /* TickButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E5255B4A6B00BF97B6 /* TickButton+Rx.swift */; };
+		456458EA255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E9255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift */; };
+		456458EB255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E9255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift */; };
+		456458EC255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E9255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift */; };
 		456851B921008988006D3618 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456851B821008988006D3618 /* BaseViewController.swift */; };
 		456851BA21008988006D3618 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456851B821008988006D3618 /* BaseViewController.swift */; };
 		456851BB21008988006D3618 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456851B821008988006D3618 /* BaseViewController.swift */; };
@@ -560,6 +563,7 @@
 		456458DD255B44B800BF97B6 /* TextFieldWithHint+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldWithHint+Rx.swift"; sourceTree = "<group>"; };
 		456458E1255B48E600BF97B6 /* TickButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickButton.swift; sourceTree = "<group>"; };
 		456458E5255B4A6B00BF97B6 /* TickButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TickButton+Rx.swift"; sourceTree = "<group>"; };
+		456458E9255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImagePickerViewController+Rx.swift"; sourceTree = "<group>"; };
 		456851B821008988006D3618 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		456851BF2100929E006D3618 /* LocalizedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTextField.swift; sourceTree = "<group>"; };
 		456851C6210095ED006D3618 /* LocalizedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLabel.swift; sourceTree = "<group>"; };
@@ -1145,6 +1149,7 @@
 				4557193D249FE58300FB24CA /* BaseTableViewController+Rx.swift */,
 				45A388C6225E388B00037FFA /* FullscreenImageViewController.swift */,
 				45ECA1A2216B919B000B1124 /* ImagePickerViewController.swift */,
+				456458E9255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift */,
 				45976370210087710034DE29 /* InputViewController.swift */,
 				4515CC1C226158AE00204767 /* SafariViewController.swift */,
 				45A388D2225F39EF00037FFA /* WebViewController.swift */,
@@ -2060,6 +2065,7 @@
 				45E1E619221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				45890B5C22087C8B00894255 /* String+UIExtensions.swift in Sources */,
 				456852102101E432006D3618 /* User.swift in Sources */,
+				456458EA255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */,
 				456852462105CF82006D3618 /* LoginService.swift in Sources */,
 				A82385DA213418B400CC941C /* ShadowView.swift in Sources */,
 				450A62892439FC9500B43049 /* PushNotification.swift in Sources */,
@@ -2197,6 +2203,7 @@
 				45E1E61A221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				45890B5D22087C8B00894255 /* String+UIExtensions.swift in Sources */,
 				456852112101E432006D3618 /* User.swift in Sources */,
+				456458EB255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */,
 				456852472105CF82006D3618 /* LoginService.swift in Sources */,
 				451233E4215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				450A628A2439FC9500B43049 /* PushNotification.swift in Sources */,
@@ -2334,6 +2341,7 @@
 				45E1E61B221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				45890B5E22087C8B00894255 /* String+UIExtensions.swift in Sources */,
 				456852122101E432006D3618 /* User.swift in Sources */,
+				456458EC255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */,
 				456852482105CF82006D3618 /* LoginService.swift in Sources */,
 				A82385DC213418B400CC941C /* ShadowView.swift in Sources */,
 				450A628B2439FC9500B43049 /* PushNotification.swift in Sources */,
