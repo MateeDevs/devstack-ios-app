@@ -132,6 +132,12 @@
 		456458DE255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458DD255B44B800BF97B6 /* TextFieldWithHint+Rx.swift */; };
 		456458DF255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458DD255B44B800BF97B6 /* TextFieldWithHint+Rx.swift */; };
 		456458E0255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458DD255B44B800BF97B6 /* TextFieldWithHint+Rx.swift */; };
+		456458E2255B48E600BF97B6 /* TickButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E1255B48E600BF97B6 /* TickButton.swift */; };
+		456458E3255B48E600BF97B6 /* TickButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E1255B48E600BF97B6 /* TickButton.swift */; };
+		456458E4255B48E600BF97B6 /* TickButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E1255B48E600BF97B6 /* TickButton.swift */; };
+		456458E6255B4A6B00BF97B6 /* TickButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E5255B4A6B00BF97B6 /* TickButton+Rx.swift */; };
+		456458E7255B4A6B00BF97B6 /* TickButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E5255B4A6B00BF97B6 /* TickButton+Rx.swift */; };
+		456458E8255B4A6B00BF97B6 /* TickButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E5255B4A6B00BF97B6 /* TickButton+Rx.swift */; };
 		456851B921008988006D3618 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456851B821008988006D3618 /* BaseViewController.swift */; };
 		456851BA21008988006D3618 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456851B821008988006D3618 /* BaseViewController.swift */; };
 		456851BB21008988006D3618 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456851B821008988006D3618 /* BaseViewController.swift */; };
@@ -552,6 +558,8 @@
 		456408B52333AF830080678A /* strings.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = strings.txt; path = "../../../../twine-localization/devstack/strings.txt"; sourceTree = "<group>"; };
 		456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		456458DD255B44B800BF97B6 /* TextFieldWithHint+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldWithHint+Rx.swift"; sourceTree = "<group>"; };
+		456458E1255B48E600BF97B6 /* TickButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickButton.swift; sourceTree = "<group>"; };
+		456458E5255B4A6B00BF97B6 /* TickButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TickButton+Rx.swift"; sourceTree = "<group>"; };
 		456851B821008988006D3618 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		456851BF2100929E006D3618 /* LocalizedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTextField.swift; sourceTree = "<group>"; };
 		456851C6210095ED006D3618 /* LocalizedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLabel.swift; sourceTree = "<group>"; };
@@ -1185,6 +1193,8 @@
 				45C3F51623C1249C0091848D /* SecondaryButton.swift */,
 				456851E22100BC9A006D3618 /* EnhancedButton.swift */,
 				456851DB2100BC8B006D3618 /* LocalizedButton.swift */,
+				456458E1255B48E600BF97B6 /* TickButton.swift */,
+				456458E5255B4A6B00BF97B6 /* TickButton+Rx.swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -2066,6 +2076,7 @@
 				45128B802142A634007B6B47 /* TabBarButton.swift in Sources */,
 				45E8A54E220F4BB5003F7502 /* BaseTableViewController.swift in Sources */,
 				4512341B2162326A00F85985 /* NSLayoutConstraint+Extensions.swift in Sources */,
+				456458E2255B48E600BF97B6 /* TickButton.swift in Sources */,
 				450C869123547D5A00DC5E49 /* UserDefaultsProvider.swift in Sources */,
 				45E8A49B220AD4CB003F7502 /* ViewModel.swift in Sources */,
 				453CEAC721583A7D00A94BAC /* RatingViewSmall.swift in Sources */,
@@ -2108,6 +2119,7 @@
 				45890B4722086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2B22159EE90036919A /* NetworkProvider.swift in Sources */,
 				45A3D59F2119B76000E39169 /* Realm+Rx.swift in Sources */,
+				456458E6255B4A6B00BF97B6 /* TickButton+Rx.swift in Sources */,
 				454FEE3922404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				456458DA255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */,
 				45890B4322086CA700894255 /* LoginViewController.swift in Sources */,
@@ -2201,6 +2213,7 @@
 				45128B812142A634007B6B47 /* TabBarButton.swift in Sources */,
 				4512341C2162326A00F85985 /* NSLayoutConstraint+Extensions.swift in Sources */,
 				45E8A54F220F4BB5003F7502 /* BaseTableViewController.swift in Sources */,
+				456458E3255B48E600BF97B6 /* TickButton.swift in Sources */,
 				450C869223547D5A00DC5E49 /* UserDefaultsProvider.swift in Sources */,
 				45E8A49C220AD4CB003F7502 /* ViewModel.swift in Sources */,
 				453CEAC821583A7D00A94BAC /* RatingViewSmall.swift in Sources */,
@@ -2243,6 +2256,7 @@
 				45890B4822086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2C22159EE90036919A /* NetworkProvider.swift in Sources */,
 				45A3D5A02119B76000E39169 /* Realm+Rx.swift in Sources */,
+				456458E7255B4A6B00BF97B6 /* TickButton+Rx.swift in Sources */,
 				454FEE3A22404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				456458DB255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */,
 				45890B4422086CA700894255 /* LoginViewController.swift in Sources */,
@@ -2336,6 +2350,7 @@
 				45128B822142A634007B6B47 /* TabBarButton.swift in Sources */,
 				45E8A550220F4BB5003F7502 /* BaseTableViewController.swift in Sources */,
 				4512341D2162326A00F85985 /* NSLayoutConstraint+Extensions.swift in Sources */,
+				456458E4255B48E600BF97B6 /* TickButton.swift in Sources */,
 				450C869323547D5A00DC5E49 /* UserDefaultsProvider.swift in Sources */,
 				45E8A49D220AD4CB003F7502 /* ViewModel.swift in Sources */,
 				453CEAC921583A7D00A94BAC /* RatingViewSmall.swift in Sources */,
@@ -2378,6 +2393,7 @@
 				45890B4922086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2D22159EE90036919A /* NetworkProvider.swift in Sources */,
 				45A3D5A12119B76000E39169 /* Realm+Rx.swift in Sources */,
+				456458E8255B4A6B00BF97B6 /* TickButton+Rx.swift in Sources */,
 				454FEE3B22404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				456458DC255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */,
 				45890B4522086CA700894255 /* LoginViewController.swift in Sources */,
