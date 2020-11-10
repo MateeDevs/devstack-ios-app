@@ -32,7 +32,7 @@ public enum AppTheme {
         public static let headlineLabel = Asset.Colors.mateeYellow.color
         
         // Text fields
-        public static let textFieldHint = UIColor.systemGray
+        public static let textFieldTitle = UIColor.systemGray
         public static let textFieldBorder = UIColorCompatible.systemGray4
         
         // Placeholders
@@ -62,8 +62,9 @@ public enum AppTheme {
         public static let headlineLabel = UIFont.systemFont(ofSize: 28.0, weight: .medium)
         
         // Text fields
-        public static let textField = UIFont.systemFont(ofSize: 17.0, weight: .regular)
-        public static let textFieldHint = UIFont.systemFont(ofSize: 14.0, weight: .regular)
+        public static let textFieldText = UIFont.systemFont(ofSize: 17.0, weight: .regular)
+        public static let textFieldTitle = UIFont.systemFont(ofSize: 14.0, weight: .regular)
+        public static let textFieldHint = UIFont.systemFont(ofSize: 10.0, weight: .regular)
         
         // Buttons
         public static let primaryButton = UIFont.systemFont(ofSize: 20.0, weight: .regular)

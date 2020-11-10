@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CkE-Zn-ye5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CkE-Zn-ye5">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,10 +37,7 @@
                                                             <constraint firstAttribute="height" constant="72" id="Yzg-26-Cgm"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autocorrectionType" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="spellCheckingType" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="hint" value="registration_view_email_field_hint"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="registration_view_email_field_hint"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2S-L2-sPw" customClass="TextFieldWithHint" customModule="A_DevStack" customModuleProvider="target">
@@ -49,10 +46,7 @@
                                                             <constraint firstAttribute="height" constant="72" id="M6L-jG-Vwl"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="hint" value="registration_view_password_field_hint"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autocorrectionType" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="spellCheckingType" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="registration_view_password_field_hint"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>

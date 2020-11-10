@@ -22,8 +22,16 @@ final class RegistrationViewController: InputViewController {
     var viewModel: RegistrationViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
 
     // MARK: UI components
-    @IBOutlet private weak var emailTextField: TextFieldWithHint!
-    @IBOutlet private weak var passwordTextField: TextFieldWithHint!
+    @IBOutlet private weak var emailTextField: TextFieldWithHint! {
+        didSet {
+            emailTextField.type = .email
+        }
+    }
+    @IBOutlet private weak var passwordTextField: TextFieldWithHint! {
+        didSet {
+            passwordTextField.type = .password
+        }
+    }
     @IBOutlet private weak var registerButton: PrimaryButton!
     @IBOutlet private weak var loginButton: SecondaryButton!
 
@@ -60,13 +68,6 @@ final class RegistrationViewController: InputViewController {
         loginButton.rx.tap.bind { [weak self] in
             self?.flowDelegate?.popRegistration()
         }.disposed(by: disposeBag)
-    }
-
-    override func setupUI() {
-        super.setupUI()
-        
-        emailTextField.textField.keyboardType = .emailAddress
-        passwordTextField.textField.keyboardType = .asciiCapable
     }
 
     // MARK: Additional methods

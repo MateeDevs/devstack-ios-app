@@ -126,6 +126,9 @@
 		4557195824A15C0200FB24CA /* LoginServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195724A15C0200FB24CA /* LoginServiceTests.swift */; };
 		4557195D24A15C3200FB24CA /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */; };
 		4558D30B20FCC8FF005BC325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4558D30A20FCC8FF005BC325 /* AppDelegate.swift */; };
+		456458DA255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */; };
+		456458DB255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */; };
+		456458DC255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */; };
 		456851B921008988006D3618 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456851B821008988006D3618 /* BaseViewController.swift */; };
 		456851BA21008988006D3618 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456851B821008988006D3618 /* BaseViewController.swift */; };
 		456851BB21008988006D3618 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456851B821008988006D3618 /* BaseViewController.swift */; };
@@ -544,6 +547,7 @@
 		4558D30720FCC8FF005BC325 /* DevStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4558D30A20FCC8FF005BC325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		456408B52333AF830080678A /* strings.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = strings.txt; path = "../../../../twine-localization/devstack/strings.txt"; sourceTree = "<group>"; };
+		456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		456851B821008988006D3618 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		456851BF2100929E006D3618 /* LocalizedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTextField.swift; sourceTree = "<group>"; };
 		456851C6210095ED006D3618 /* LocalizedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLabel.swift; sourceTree = "<group>"; };
@@ -1114,6 +1118,7 @@
 				451233E2215D18BA00F85985 /* UIImageView+Extensions.swift */,
 				45D0FD182147E3D100277C14 /* UIScrollView+Extensions.swift */,
 				A83F0EC42149310600313067 /* UIStackView+Extensions.swift */,
+				456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */,
 				4511A72C213DDCCB006AD4CC /* UIView+ActivityIndicator.swift */,
 				45571939249FE52100FB24CA /* UIView+ActivityIndicator+Rx.swift */,
 				45571941249FF28900FB24CA /* UIView+SkeletonView+Rx.swift */,
@@ -2098,6 +2103,7 @@
 				4571DB2B22159EE90036919A /* NetworkProvider.swift in Sources */,
 				45A3D59F2119B76000E39169 /* Realm+Rx.swift in Sources */,
 				454FEE3922404B2C00EB7A54 /* ValidationError.swift in Sources */,
+				456458DA255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */,
 				45890B4322086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B5220AEF90003F7502 /* FlowController.swift in Sources */,
 				45DB975B226A955700C3F234 /* WhisperView.swift in Sources */,
@@ -2231,6 +2237,7 @@
 				4571DB2C22159EE90036919A /* NetworkProvider.swift in Sources */,
 				45A3D5A02119B76000E39169 /* Realm+Rx.swift in Sources */,
 				454FEE3A22404B2C00EB7A54 /* ValidationError.swift in Sources */,
+				456458DB255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */,
 				45890B4422086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B6220AEF90003F7502 /* FlowController.swift in Sources */,
 				45DB975C226A955700C3F234 /* WhisperView.swift in Sources */,
@@ -2364,6 +2371,7 @@
 				4571DB2D22159EE90036919A /* NetworkProvider.swift in Sources */,
 				45A3D5A12119B76000E39169 /* Realm+Rx.swift in Sources */,
 				454FEE3B22404B2C00EB7A54 /* ValidationError.swift in Sources */,
+				456458DC255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */,
 				45890B4522086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B7220AEF90003F7502 /* FlowController.swift in Sources */,
 				45DB975D226A955700C3F234 /* WhisperView.swift in Sources */,
