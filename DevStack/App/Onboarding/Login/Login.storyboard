@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZcH-Db-QSc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZcH-Db-QSc">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,14 +37,8 @@
                                                             <constraint firstAttribute="height" constant="72" id="SbZ-yr-Pch"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="hint" value="login_view_email_field_hint"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autocorrectionType" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="spellCheckingType" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="login_view_email_field_hint"/>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="ZcH-Db-QSc" id="qgd-u4-ncl"/>
-                                                        </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kV-1L-kH3" customClass="TextFieldWithHint" customModule="A_DevStack" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="88" width="327" height="72"/>
@@ -52,14 +46,8 @@
                                                             <constraint firstAttribute="height" constant="72" id="jFp-Ao-h8x"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="hint" value="login_view_password_field_hint"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autocorrectionType" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="spellCheckingType" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="login_view_password_field_hint"/>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="ZcH-Db-QSc" id="ZC7-VE-y1i"/>
-                                                        </connections>
                                                     </view>
                                                 </subviews>
                                             </stackView>

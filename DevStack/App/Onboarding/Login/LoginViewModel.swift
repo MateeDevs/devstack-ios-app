@@ -17,8 +17,8 @@ final class LoginViewModel: ViewModel, ViewModelType {
     let output: Output
     
     struct Input {
-        let email: AnyObserver<String>
-        let password: AnyObserver<String>
+        let email: BehaviorRelay<String>
+        let password: BehaviorRelay<String>
         let loginButtonTaps: AnyObserver<Void>
     }
     
@@ -32,17 +32,17 @@ final class LoginViewModel: ViewModel, ViewModelType {
         
         // MARK: Setup inputs
         
-        let email = ReplaySubject<String>.create(bufferSize: 1)
-        let password = ReplaySubject<String>.create(bufferSize: 1)
+        let email = BehaviorRelay<String>(value: "")
+        let password = BehaviorRelay<String>(value: "")
         let loginButtonTaps = PublishSubject<Void>()
         
         self.input = Input(
-            email: email.asObserver(),
-            password: password.asObserver(),
+            email: email,
+            password: password,
             loginButtonTaps: loginButtonTaps.asObserver()
         )
-        
-        // MARK: Setup outputs
+
+        // MARK: Transformations
         
         let activity = ActivityIndicator()
         
@@ -66,6 +66,8 @@ final class LoginViewModel: ViewModel, ViewModelType {
             login.compactMap { $0.element }.map { .hideWhisper },
             login.compactMap { $0.error }.map { .showWhisper(Whisper(error: $0.toString(messages))) }
         )
+
+        // MARK: Setup outputs
         
         self.output = Output(
             loginSuccess: login.compactMap { $0.element }.asDriver(),
