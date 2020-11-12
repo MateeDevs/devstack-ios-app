@@ -68,7 +68,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 }
 
 extension AppDelegate: MessagingDelegate {
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        Logger.debug("FirebaseService: FirebaseMessaging registration token:\n%@", fcmToken, category: .networking)
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        Logger.debug("FirebaseService: FirebaseMessaging registration token:\n%@", fcmToken ?? "", category: .networking)
     }
 }
