@@ -27,19 +27,11 @@ final class UserDetailViewController: BaseViewController {
     @IBOutlet private weak var userNameLabel: UILabel!
     
     // MARK: Stored properties
-    private var userId: String! // swiftlint:disable:this implicitly_unwrapped_optional
-    private var user: User? {
-        didSet {
-            userImageView.setupWithUser(user)
-            userNameLabel.text = user?.fullName
-        }
-    }
     
     // MARK: Inits
-    static func instantiate(viewModel: UserDetailViewModel, userId: String) -> UserDetailViewController {
+    static func instantiate(viewModel: UserDetailViewModel) -> UserDetailViewController {
         let vc = StoryboardScene.UserDetail.initialScene.instantiate()
         vc.viewModel = viewModel
-        vc.userId = userId
         return vc
     }
 
@@ -51,16 +43,17 @@ final class UserDetailViewController: BaseViewController {
     // MARK: Default methods
     override func setupBindings() {
         super.setupBindings()
-        
+
+        // Outputs
+        viewModel.output.user.fullName.drive(userNameLabel.rx.text).disposed(by: disposeBag)
+        viewModel.output.user.initials.drive(userImageView.rx.placeholder).disposed(by: disposeBag)
+        viewModel.output.user.imageURL.drive(userImageView.rx.imageURL).disposed(by: disposeBag)
+
+        // Refresh
         if let refreshControl = scrollView.refreshControl {
             refreshControl.rx.controlEvent(.valueChanged).bind(to: viewModel.input.refreshTrigger).disposed(by: disposeBag)
             viewModel.output.isRefreshing.filter { !$0 }.drive(refreshControl.rx.isRefreshing).disposed(by: disposeBag)
         }
-        
-        viewModel.output.user.drive(onNext: { [weak self] user in
-            self?.user = user
-        }).disposed(by: disposeBag)
-        
         viewModel.input.refreshTrigger.onNext(())
     }
 

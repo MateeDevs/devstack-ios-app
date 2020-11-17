@@ -21,8 +21,14 @@ final class UserDetailViewModel: ViewModel, ViewModelType {
     }
     
     struct Output {
-        let user: Driver<User>
+        let user: OutputUser
         let isRefreshing: Driver<Bool>
+    }
+
+    struct OutputUser {
+        let fullName: Driver<String>
+        let initials: Driver<String>
+        let imageURL: Driver<String?>
     }
     
     init(dependencies: Dependencies, userId: String) {
@@ -34,8 +40,8 @@ final class UserDetailViewModel: ViewModel, ViewModelType {
         self.input = Input(
             refreshTrigger: refreshTrigger.asObserver()
         )
-        
-        // MARK: Setup outputs
+
+        // MARK: Transformations
         
         let user = dependencies.userService.getUserById(userId)
         
@@ -49,9 +55,15 @@ final class UserDetailViewModel: ViewModel, ViewModelType {
             activity.asObservable(),
             refreshUser.map { _ in false }
         )
+
+        // MARK: Setup outputs
         
         self.output = Output(
-            user: user.asDriver(),
+            user: OutputUser(
+                fullName: user.map { $0.fullName }.asDriver(),
+                initials: user.map { $0.fullName.initials }.asDriver(),
+                imageURL: user.map { $0.pictureUrl }.asDriver()
+            ),
             isRefreshing: isRefreshing.asDriver()
         )
         

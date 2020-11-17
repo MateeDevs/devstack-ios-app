@@ -431,6 +431,9 @@
 		45F4AE422180B88400E75B4A /* LocalizedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F4AE412180B88400E75B4A /* LocalizedImageView.swift */; };
 		45F4AE432180B88400E75B4A /* LocalizedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F4AE412180B88400E75B4A /* LocalizedImageView.swift */; };
 		45F4AE442180B88400E75B4A /* LocalizedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F4AE412180B88400E75B4A /* LocalizedImageView.swift */; };
+		45F8498E2563410D00C42CDE /* UserImageView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F8498D2563410D00C42CDE /* UserImageView+Rx.swift */; };
+		45F8498F2563410D00C42CDE /* UserImageView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F8498D2563410D00C42CDE /* UserImageView+Rx.swift */; };
+		45F849902563410D00C42CDE /* UserImageView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F8498D2563410D00C42CDE /* UserImageView+Rx.swift */; };
 		45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB498224A3D7C000932918 /* BaseTestCase.swift */; };
 		6B2DCC23AD89AAD3079893A8 /* Pods_DevStackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE835FD7894EF2FF85E7AA3A /* Pods_DevStackTests.framework */; };
 		8F942B8CB2F14464CC197B9D /* Pods_DevStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7226BBC8D76CB9A545614575 /* Pods_DevStack.framework */; };
@@ -673,6 +676,7 @@
 		45ECA1C5216BFA90000B1124 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		45ED84AD249F64520055A19E /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		45F4AE412180B88400E75B4A /* LocalizedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedImageView.swift; sourceTree = "<group>"; };
+		45F8498D2563410D00C42CDE /* UserImageView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserImageView+Rx.swift"; sourceTree = "<group>"; };
 		45FB498224A3D7C000932918 /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		7226BBC8D76CB9A545614575 /* Pods_DevStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A71598D309E35AF6F901FEE /* Pods_DevStack_Beta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevStack_Beta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -963,6 +967,7 @@
 			children = (
 				A83F0EB621490EE200313067 /* UserImageView.swift */,
 				A83F0EBD21490F1000313067 /* UserImageView.xib */,
+				45F8498D2563410D00C42CDE /* UserImageView+Rx.swift */,
 			);
 			path = UserImageView;
 			sourceTree = "<group>";
@@ -2111,6 +2116,7 @@
 				45571942249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */,
 				45E8A4B9220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
 				45CDC3BB24A92F8100EF2368 /* Alert.swift in Sources */,
+				45F8498E2563410D00C42CDE /* UserImageView+Rx.swift in Sources */,
 				45E1E61E221DA9EE006C84D1 /* LocalizedTextView.swift in Sources */,
 				456852312105BC83006D3618 /* AuthenticatedProvider.swift in Sources */,
 				45CDC3C324A92FC200EF2368 /* AlertAction.swift in Sources */,
@@ -2249,6 +2255,7 @@
 				45571943249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */,
 				45E8A4BA220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
 				45CDC3BC24A92F8100EF2368 /* Alert.swift in Sources */,
+				45F8498F2563410D00C42CDE /* UserImageView+Rx.swift in Sources */,
 				45E1E61F221DA9EE006C84D1 /* LocalizedTextView.swift in Sources */,
 				456852322105BC83006D3618 /* AuthenticatedProvider.swift in Sources */,
 				45CDC3C424A92FC200EF2368 /* AlertAction.swift in Sources */,
@@ -2387,6 +2394,7 @@
 				45571944249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */,
 				45E8A4BB220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
 				45CDC3BD24A92F8100EF2368 /* Alert.swift in Sources */,
+				45F849902563410D00C42CDE /* UserImageView+Rx.swift in Sources */,
 				45E1E620221DA9EE006C84D1 /* LocalizedTextView.swift in Sources */,
 				456852332105BC83006D3618 /* AuthenticatedProvider.swift in Sources */,
 				45CDC3C524A92FC200EF2368 /* AlertAction.swift in Sources */,

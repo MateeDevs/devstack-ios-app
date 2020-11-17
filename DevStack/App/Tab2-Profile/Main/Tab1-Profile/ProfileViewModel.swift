@@ -24,12 +24,19 @@ final class ProfileViewModel: ViewModel, ViewModelType {
     }
     
     struct Output {
-        let profile: Driver<User>
+        let profile: Profile
         let isRefreshing: Driver<Bool>
         let currentLocation: Driver<CLLocation>
         let logoutSuccess: Driver<Void>
         let increaseCounter: Driver<User>
         let decreaseCounter: Driver<User>
+    }
+
+    struct Profile {
+        let fullName: Driver<String>
+        let initials: Driver<String>
+        let imageURL: Driver<String?>
+        let counterValue: Driver<String>
     }
     
     init(dependencies: Dependencies) {
@@ -46,11 +53,11 @@ final class ProfileViewModel: ViewModel, ViewModelType {
             decreaseButtonTaps: decreaseButtonTaps.asObserver()
         )
         
-        // MARK: Setup outputs
+        // MARK: Transformations
         
         let activity = ActivityIndicator()
 
-        let getProfile = dependencies.userService.getProfile()
+        let profile = dependencies.userService.getProfile()
         let refreshProfile = dependencies.userService.downloadProfile().trackActivity(activity).materialize().share()
         
         let isRefreshing: Observable<Bool> = Observable.merge(
@@ -71,9 +78,16 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         let decreaseCounter = decreaseButtonTaps.flatMapLatest { _ -> Observable<Event<User>> in
             return dependencies.userService.decreaseCounter().materialize()
         }.share()
+
+        // MARK: Setup outputs
         
         self.output = Output(
-            profile: getProfile.asDriver(),
+            profile: Profile(
+                fullName: profile.map { $0.fullName }.asDriver(),
+                initials: profile.map { $0.fullName.initials }.asDriver(),
+                imageURL: profile.map { $0.pictureUrl }.asDriver(),
+                counterValue: profile.map { "\($0.counter)" }.asDriver()
+            ),
             isRefreshing: isRefreshing.asDriver(),
             currentLocation: currentLocation.asDriver(),
             logoutSuccess: logout.compactMap { $0.element }.asDriver(),
