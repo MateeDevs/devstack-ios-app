@@ -97,5 +97,6 @@ FIXME
 - Mocking of network requests is based on [Moya stubbing provider](https://github.com/Moya/Moya/blob/master/docs/Testing.md)
 
 ## TODO
+- Use `latest` in dSYM sync when [fixed](https://github.com/fastlane/fastlane/issues/17474)
 - Migrate to SwiftPM when all used frameworks are available (waiting for [Firebase](https://github.com/firebase/firebase-ios-sdk/issues/3136))
 - Migrate to SwiftUI + Combine when the time is right (not before iOS 14.0 official release)
