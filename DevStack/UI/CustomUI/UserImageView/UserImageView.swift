@@ -10,23 +10,52 @@ import AlamofireImage
 import UIKit
 
 @IBDesignable public class UserImageView: XIBView {
-    
-    @IBOutlet private weak var userPlaceHolderView: UIView!
-    @IBOutlet private weak var initialsLabel: UILabel!
-    @IBOutlet private weak var userImageView: UIImageView!
-    
+
+    // MARK: Stored properties
+    public var placeholder: String? {
+        didSet {
+            placeholderLabel.text = placeholder
+        }
+    }
+
+    public var image: UIImage? {
+        didSet {
+            imageView.image = image
+            placeholderView.layer.borderWidth = 0
+        }
+    }
+
+    public var imageURL: String? {
+        didSet {
+            guard let imageURL = imageURL, let url = URL(string: imageURL) else { return }
+            imageView.af.setImage(withURL: url)
+            placeholderView.layer.borderWidth = 0
+        }
+    }
+
+    // MARK: UI components
+    @IBOutlet private weak var placeholderView: UIView! {
+        didSet {
+            placeholderView.layer.borderWidth = 3
+        }
+    }
+    @IBOutlet private weak var placeholderLabel: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
+
     @IBInspectable public var placeholderTextColor: UIColor = .white {
         didSet {
-            initialsLabel.textColor = placeholderTextColor
+            placeholderLabel.textColor = placeholderTextColor
+            placeholderView.layer.borderColor = placeholderTextColor.cgColor
         }
     }
-    
+
     @IBInspectable public var placeholderBackgroundColor: UIColor = AppTheme.Colors.primaryColor {
         didSet {
-            userPlaceHolderView.backgroundColor = placeholderBackgroundColor
+            placeholderView.backgroundColor = placeholderBackgroundColor
         }
     }
-    
+
+    // MARK: Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -37,26 +66,19 @@ import UIKit
         setup()
     }
 
+    // MARK: Default methods
     private func setup() {
         layoutIfNeeded()
         setDimensions()
         backgroundColor = .clear
-        
+
         view.isSkeletonable = true
-        userPlaceHolderView.isSkeletonable = true
+        placeholderView.isSkeletonable = true
     }
-    
-    public func setupWithUser(_ user: User?) {
-        guard let user = user else { return }
-        initialsLabel.text = user.fullName.initials
-        if let pictureUrl = user.pictureUrl, let url = URL(string: pictureUrl) {
-            userImageView.af.setImage(withURL: url)
-        }
-    }
-    
+
     private func setDimensions() {
-        userPlaceHolderView.layer.cornerRadius = userPlaceHolderView.frame.size.width / 2.0
-        initialsLabel.font = UIFont.systemFont(ofSize: userPlaceHolderView.frame.size.width / 2.85, weight: .medium)
+        placeholderView.layer.cornerRadius = placeholderView.frame.size.width / 2.0
+        placeholderLabel.font = UIFont.systemFont(ofSize: placeholderView.frame.size.width / 2.85, weight: .medium)
     }
 
 }

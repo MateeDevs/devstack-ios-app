@@ -35,8 +35,8 @@ final class UsersViewModel: ViewModel, ViewModelType {
         self.input = Input(
             page: page.asObserver()
         )
-        
-        // MARK: Setup outputs
+
+        // MARK: Transformations
         
         let users = dependencies.userService.getUsers()
         
@@ -52,6 +52,8 @@ final class UsersViewModel: ViewModel, ViewModelType {
             activity.asObservable(),
             refreshUsers.map { _ in false }
         )
+
+        // MARK: Setup outputs
         
         self.output = Output(
             users: users.asDriver(),

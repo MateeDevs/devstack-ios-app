@@ -42,9 +42,11 @@ final class UsersViewController: BaseTableViewController<User> {
     // MARK: Default methods
     override func setupBindings() {
         super.setupBindings()
-        
+
+        // Inputs
         page.bind(to: viewModel.input.page).disposed(by: disposeBag)
-        
+
+        // Outputs
         viewModel.output.users.drive(data).disposed(by: disposeBag)
         viewModel.output.loadedCount.drive(loadedCount).disposed(by: disposeBag)
         viewModel.output.isRefreshing.drive(isRefreshing).disposed(by: disposeBag)

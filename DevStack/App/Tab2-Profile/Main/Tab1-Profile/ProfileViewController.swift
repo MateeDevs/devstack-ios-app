@@ -32,13 +32,6 @@ final class ProfileViewController: BaseViewController {
     @IBOutlet private weak var logoutButton: PrimaryButton!
     
     // MARK: Stored properties
-    private var user: User? {
-        didSet {
-            userImageView.setupWithUser(user)
-            userNameLabel.text = user?.fullName
-            counterLabel.text = L10n.profile_view_counter_label(user?.counter ?? 0)
-        }
-    }
     
     // MARK: Inits
     static func instantiate(viewModel: ProfileViewModel) -> ProfileViewController {
@@ -56,13 +49,16 @@ final class ProfileViewController: BaseViewController {
     override func setupBindings() {
         super.setupBindings()
 
+        // Inputs
         logoutButton.rx.tap.bind(to: viewModel.input.logoutButtonTaps).disposed(by: disposeBag)
         increaseButton.rx.tap.bind(to: viewModel.input.increaseButtonTaps).disposed(by: disposeBag)
         decreaseButton.rx.tap.bind(to: viewModel.input.decreaseButtonTaps).disposed(by: disposeBag)
-        
-        viewModel.output.profile.drive(onNext: { [weak self] user in
-            self?.user = user
-        }).disposed(by: disposeBag)
+
+        // Outputs
+        viewModel.output.profile.fullName.drive(userNameLabel.rx.text).disposed(by: disposeBag)
+        viewModel.output.profile.initials.drive(userImageView.rx.placeholder).disposed(by: disposeBag)
+        viewModel.output.profile.imageURL.drive(userImageView.rx.imageURL).disposed(by: disposeBag)
+        viewModel.output.profile.counterValue.drive(counterLabel.rx.text).disposed(by: disposeBag)
         
         viewModel.output.isRefreshing.drive(view.rx.skeletonView).disposed(by: disposeBag)
         
