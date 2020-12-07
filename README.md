@@ -88,7 +88,7 @@ FIXME
 - Version number is automatically set based on the input in manual trigger
 - Build number is generated on the CI server, the values set in the Xcode are ignored
 - The builds for all environments (alpha/beta/production) are produced and uploaded to the TestFlight
-- After successfull build, a git tag with version and build numbers is created and pushed to the git
+- After successful build, a git tag with version and build numbers is created and pushed to the git
 
 ## Tests
 - Unit tests are in `DevStackTests`, you can run them on any scheme with `CMD + U`
