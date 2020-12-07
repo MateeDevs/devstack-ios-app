@@ -12,7 +12,6 @@ workspace = "DevStack.xcworkspace"
 slack_channel = "#ci"
 
 alpha = {
-  build_branch: "build",
   output_name: "A-DevStack",
   app_identifier: "cz.matee.devstack.alpha",
   scheme: "DevStack_Alpha",
@@ -22,7 +21,6 @@ alpha = {
 }
 
 beta = {
-  build_branch: "build",
   output_name: "B-DevStack",
   app_identifier: "cz.matee.devstack.beta",
   scheme: "DevStack_Beta",
@@ -32,7 +30,6 @@ beta = {
 }
 
 production = {
-  build_branch: "build",
   output_name: "DevStack",
   app_identifier: "cz.matee.devstack",
   scheme: "DevStack",
@@ -133,10 +130,10 @@ platform :ios do
   desc "Create a new build"
   private_lane :build do |config|
 
-    unless ENV["GIT_BRANCH"] =~ /#{config[:build_branch]}\/\d+\.\d+(\.\d+)?$/
-      UI.user_error!("Invalid git branch: \"#{ENV["GIT_BRANCH"]}\". Expect: \"#{config[:build_branch]}/x.x.x\"")
+    unless ENV["VERSION_NUMBER"] =~ /\d+\.\d+(\.\d+)?$/
+      UI.user_error!("Invalid version number: \"#{ENV["VERSION_NUMBER"]}\". Expect: \"x.x.x\"")
     end
-    increment_version_number(version_number: ENV["GIT_BRANCH"].split('/').last)
+    increment_version_number(version_number: ENV["VERSION_NUMBER"].split('/').last)
 
     unless ENV["BUILD_NUMBER"] =~ /^\d{1,18}$/
       UI.user_error!("Invalid build number: \"#{ENV["BUILD_NUMBER"]}\". Expect 1-18 digits")
