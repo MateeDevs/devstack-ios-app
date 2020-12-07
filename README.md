@@ -84,12 +84,11 @@ FIXME
 - CI/CD process is based on [GitHub Actions](https://github.com/features/actions) and [Fastlane](https://fastlane.tools/)
 - Main configuration for GitHub Actions is in the `.github/workflows/main.yml` file
 - Main configuration for Fastlane is in the `fastlane/Fastfile` file
-- Build branch should be created from the current develop branch - `git checkout -b 'build/1.2.3'`
-- The build is started right after the push - `git push origin build/1.2.3`
-- Version number is automatically set based on the branch name (for example `1.2.3` for the branch `build/1.2.3`)
+- Builds can be triggered manually on the GitHub website
+- Version number is automatically set based on the input in manual trigger
 - Build number is generated on the CI server, the values set in the Xcode are ignored
 - The builds for all environments (alpha/beta/production) are produced and uploaded to the TestFlight
-- Used build branch should be merged back to the develop branch if any changes was made
+- After successfull build, a git tag with version and build numbers is created and pushed to the git
 
 ## Tests
 - Unit tests are in `DevStackTests`, you can run them on any scheme with `CMD + U`

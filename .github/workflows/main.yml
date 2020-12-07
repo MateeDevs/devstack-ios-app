@@ -14,7 +14,7 @@ jobs:
     timeout-minutes: 60
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
           clean: false
       - name: Pull Twine repo
@@ -42,6 +42,10 @@ jobs:
       #     MATCH_PASSWORD: ${{ secrets.FASTLANE_MATCH_PASSWORD }}
       #     APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
       #   run: bundle exec fastlane build_production
+      - name: Create and push git tag
+        run: |
+          git tag "$VERSION_NUMBER.$BUILD_NUMBER"
+          git push origin "$VERSION_NUMBER.$BUILD_NUMBER"
 
   deploy-alpha:
     name: Deploy alpha
