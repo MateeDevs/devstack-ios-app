@@ -98,4 +98,5 @@ FIXME
 ## TODO
 - Use `latest` in dSYM sync when [fixed](https://github.com/fastlane/fastlane/issues/17474)
 - Migrate to SwiftPM when all used frameworks are available (waiting for [Firebase](https://github.com/firebase/firebase-ios-sdk/issues/3136))
+- Refactor project structure according to the Clean Architecture principles (UseCases + DTO)
 - Migrate to SwiftUI + Combine when the time is right (not before iOS 14.0 official release)
