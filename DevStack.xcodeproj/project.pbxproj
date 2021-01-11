@@ -256,10 +256,10 @@
 		4576CEEB25ACF55800218229 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CEEA25ACF55800218229 /* FirebaseAnalytics */; };
 		4576CEED25ACF55800218229 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CEEC25ACF55800218229 /* FirebaseCrashlytics */; };
 		4576CEEF25ACF55800218229 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CEEE25ACF55800218229 /* FirebaseMessaging */; };
+		4576CF2425AD180C00218229 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CF2325AD180C00218229 /* RxTest */; };
 		457FA18E241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
 		457FA18F241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
 		457FA190241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
-		45840C8E25ACE43E00DFC729 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C8D25ACE43E00DFC729 /* RxTest */; };
 		45840C9025ACE43E00DFC729 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C8F25ACE43E00DFC729 /* RxSwift */; };
 		45840C9225ACE43E00DFC729 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9125ACE43E00DFC729 /* RxCocoa */; };
 		45840C9525ACE44F00DFC729 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9425ACE44F00DFC729 /* RxCocoa */; };
@@ -903,7 +903,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45840C8E25ACE43E00DFC729 /* RxTest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -931,6 +930,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4576CF2425AD180C00218229 /* RxTest in Frameworks */,
 				45840CB625ACE7B300DFC729 /* Realm in Frameworks */,
 				45840C9725ACE44F00DFC729 /* RxSwift in Frameworks */,
 				45840CC825ACE89F00DFC729 /* KeychainAccess in Frameworks */,
@@ -1887,11 +1887,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4557195224A155ED00FB24CA /* Build configuration list for PBXNativeTarget "DevStackTests" */;
 			buildPhases = (
-				A1A0EDA7608B6A3BD3FB590A /* [CP] Check Pods Manifest.lock */,
 				4557194524A155ED00FB24CA /* Sources */,
 				4557194624A155ED00FB24CA /* Frameworks */,
 				4557194724A155ED00FB24CA /* Resources */,
-				E14160F9FB67AC55FD8BDE21 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1900,7 +1898,6 @@
 			);
 			name = DevStackTests;
 			packageProductDependencies = (
-				45840C8D25ACE43E00DFC729 /* RxTest */,
 			);
 			productName = DevStackTests;
 			productReference = 4557194924A155ED00FB24CA /* DevStackTests.xctest */;
@@ -1976,6 +1973,7 @@
 				457837E525BCF691008AB4B2 /* RxCocoa */,
 				457837E725BCF691008AB4B2 /* RxSwift */,
 				459EF41125BF6EEF00C9DAC0 /* Atlantis */,
+				4576CF2325AD180C00218229 /* RxTest */,
 			);
 			productName = "A-DevStack";
 			productReference = 459761D720FDD60A0034DE29 /* A-DevStack.app */;
@@ -2372,45 +2370,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${BUILD_DIR%Build/*}SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
-		};
-		A1A0EDA7608B6A3BD3FB590A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DevStackTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E14160F9FB67AC55FD8BDE21 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DevStackTests/Pods-DevStackTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DevStackTests/Pods-DevStackTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DevStackTests/Pods-DevStackTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -3220,6 +3179,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WNB34WBN42;
 				ENABLE_BITCODE = NO;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				INFOPLIST_FILE = DevStack/App/Config/Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3247,6 +3207,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				INFOPLIST_FILE = DevStack/App/Config/Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3496,7 +3457,7 @@
 			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
 		};
-		45840C8D25ACE43E00DFC729 /* RxTest */ = {
+		4576CF2325AD180C00218229 /* RxTest */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxTest;
