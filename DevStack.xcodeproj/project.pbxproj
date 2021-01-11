@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -247,6 +247,49 @@
 		4584E7F425D36481002335E3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584E7F325D36481002335E3 /* SettingsViewModel.swift */; };
 		4584E7F525D36481002335E3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584E7F325D36481002335E3 /* SettingsViewModel.swift */; };
 		4584E7F625D36481002335E3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584E7F325D36481002335E3 /* SettingsViewModel.swift */; };
+		4576CED625ACF50F00218229 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CED525ACF50F00218229 /* FirebaseAnalytics */; };
+		4576CED825ACF50F00218229 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CED725ACF50F00218229 /* FirebaseMessaging */; };
+		4576CEDA25ACF50F00218229 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CED925ACF50F00218229 /* FirebaseCrashlytics */; };
+		4576CEE125ACF54F00218229 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CEE025ACF54F00218229 /* FirebaseAnalytics */; };
+		4576CEE325ACF54F00218229 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CEE225ACF54F00218229 /* FirebaseCrashlytics */; };
+		4576CEE525ACF54F00218229 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CEE425ACF54F00218229 /* FirebaseMessaging */; };
+		4576CEEB25ACF55800218229 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CEEA25ACF55800218229 /* FirebaseAnalytics */; };
+		4576CEED25ACF55800218229 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CEEC25ACF55800218229 /* FirebaseCrashlytics */; };
+		4576CEEF25ACF55800218229 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CEEE25ACF55800218229 /* FirebaseMessaging */; };
+		457FA18E241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
+		457FA18F241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
+		457FA190241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
+		45840C8E25ACE43E00DFC729 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C8D25ACE43E00DFC729 /* RxTest */; };
+		45840C9025ACE43E00DFC729 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C8F25ACE43E00DFC729 /* RxSwift */; };
+		45840C9225ACE43E00DFC729 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9125ACE43E00DFC729 /* RxCocoa */; };
+		45840C9525ACE44F00DFC729 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9425ACE44F00DFC729 /* RxCocoa */; };
+		45840C9725ACE44F00DFC729 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9625ACE44F00DFC729 /* RxSwift */; };
+		45840C9925ACE45400DFC729 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9825ACE45400DFC729 /* RxCocoa */; };
+		45840C9B25ACE45400DFC729 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9A25ACE45400DFC729 /* RxSwift */; };
+		45840C9E25ACE5BB00DFC729 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9D25ACE5BB00DFC729 /* Moya */; };
+		45840CA025ACE5BB00DFC729 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9F25ACE5BB00DFC729 /* RxMoya */; };
+		45840CA225ACE5F900DFC729 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CA125ACE5F900DFC729 /* Moya */; };
+		45840CA425ACE5F900DFC729 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CA325ACE5F900DFC729 /* RxMoya */; };
+		45840CA625ACE5FD00DFC729 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CA525ACE5FD00DFC729 /* Moya */; };
+		45840CA825ACE5FD00DFC729 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CA725ACE5FD00DFC729 /* RxMoya */; };
+		45840CAB25ACE69A00DFC729 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CAA25ACE69A00DFC729 /* AlamofireImage */; };
+		45840CAD25ACE6A400DFC729 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CAC25ACE6A400DFC729 /* AlamofireImage */; };
+		45840CAF25ACE6A700DFC729 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CAE25ACE6A700DFC729 /* AlamofireImage */; };
+		45840CB225ACE7A800DFC729 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CB125ACE7A800DFC729 /* Realm */; };
+		45840CB425ACE7A800DFC729 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CB325ACE7A800DFC729 /* RealmSwift */; };
+		45840CB625ACE7B300DFC729 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CB525ACE7B300DFC729 /* Realm */; };
+		45840CB825ACE7B300DFC729 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CB725ACE7B300DFC729 /* RealmSwift */; };
+		45840CBA25ACE7B900DFC729 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CB925ACE7B900DFC729 /* Realm */; };
+		45840CBC25ACE7B900DFC729 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CBB25ACE7B900DFC729 /* RealmSwift */; };
+		45840CBF25ACE84900DFC729 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CBE25ACE84900DFC729 /* RxRealm */; };
+		45840CC125ACE85200DFC729 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CC025ACE85200DFC729 /* RxRealm */; };
+		45840CC325ACE85700DFC729 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CC225ACE85700DFC729 /* RxRealm */; };
+		45840CC625ACE89800DFC729 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CC525ACE89800DFC729 /* KeychainAccess */; };
+		45840CC825ACE89F00DFC729 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CC725ACE89F00DFC729 /* KeychainAccess */; };
+		45840CCA25ACE8A400DFC729 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CC925ACE8A400DFC729 /* KeychainAccess */; };
+		45840CCD25ACE8E900DFC729 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CCC25ACE8E900DFC729 /* SkeletonView */; };
+		45840CCF25ACE8F000DFC729 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CCE25ACE8F000DFC729 /* SkeletonView */; };
+		45840CD125ACE8F500DFC729 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CD025ACE8F500DFC729 /* SkeletonView */; };
 		4585A15D214FE3DE00186D7D /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4585A15C214FE3DE00186D7D /* Array+Extensions.swift */; };
 		4585A15E214FE3DE00186D7D /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4585A15C214FE3DE00186D7D /* Array+Extensions.swift */; };
 		4585A15F214FE3DE00186D7D /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4585A15C214FE3DE00186D7D /* Array+Extensions.swift */; };
@@ -329,6 +372,8 @@
 		459EC5A42239895F0045BE3B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459EC5A32239895F0045BE3B /* Profile.storyboard */; };
 		459EC5A52239895F0045BE3B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459EC5A32239895F0045BE3B /* Profile.storyboard */; };
 		459EC5A62239895F0045BE3B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459EC5A32239895F0045BE3B /* Profile.storyboard */; };
+		459EF41225BF6EEF00C9DAC0 /* Atlantis in Frameworks */ = {isa = PBXBuildFile; productRef = 459EF41125BF6EEF00C9DAC0 /* Atlantis */; };
+		459EF41825BF6F0200C9DAC0 /* Atlantis in Frameworks */ = {isa = PBXBuildFile; productRef = 459EF41725BF6F0200C9DAC0 /* Atlantis */; };
 		45A388C1225E06EF00037FFA /* Measurement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388C0225E06EF00037FFA /* Measurement+Extensions.swift */; };
 		45A388C2225E06EF00037FFA /* Measurement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388C0225E06EF00037FFA /* Measurement+Extensions.swift */; };
 		45A388C3225E06EF00037FFA /* Measurement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A388C0225E06EF00037FFA /* Measurement+Extensions.swift */; };
@@ -620,10 +665,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3108F6D7CC6CF709865E9678 /* Pods-DevStack_Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Alpha.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Alpha/Pods-DevStack_Alpha.release.xcconfig"; sourceTree = "<group>"; };
-		3266EC7634F7BCD070190849 /* Pods-DevStack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack/Pods-DevStack.release.xcconfig"; sourceTree = "<group>"; };
-		3A5C0F5D9E5E95405D8B1781 /* Pods-DevStackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevStackTests/Pods-DevStackTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4045E6F0515E1C59EA268F1D /* Pods-DevStackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStackTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStackTests/Pods-DevStackTests.release.xcconfig"; sourceTree = "<group>"; };
 		450384742170E4FC004F43DC /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
 		450392842256B29D0037BF42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		450392862256B35E0037BF42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -855,11 +896,6 @@
 		A8DDD09F211DFD6200EEB48F /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		A8DDD0B9211E3D6900EEB48F /* LocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
 		A8DDD0CE2121E2E400EEB48F /* LocalizedNavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedNavigationItem.swift; sourceTree = "<group>"; };
-		AFEE2864E1EDF8F86BC7B391 /* Pods-DevStack_Beta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Beta.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta.release.xcconfig"; sourceTree = "<group>"; };
-		BE835FD7894EF2FF85E7AA3A /* Pods_DevStackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevStackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA7BCD130DBE3DF8A33EE847 /* Pods_DevStack_Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevStack_Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD1EE92A9740314059408958 /* Pods-DevStack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack/Pods-DevStack.debug.xcconfig"; sourceTree = "<group>"; };
-		F50E336A748BE131E45BF8CF /* Pods-DevStack_Beta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Beta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -867,7 +903,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B2DCC23AD89AAD3079893A8 /* Pods_DevStackTests.framework in Frameworks */,
+				45840C8E25ACE43E00DFC729 /* RxTest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,6 +911,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4576CED825ACF50F00218229 /* FirebaseMessaging in Frameworks */,
+				45840CB225ACE7A800DFC729 /* Realm in Frameworks */,
+				45840C9225ACE43E00DFC729 /* RxCocoa in Frameworks */,
+				45840CC625ACE89800DFC729 /* KeychainAccess in Frameworks */,
+				45840CBF25ACE84900DFC729 /* RxRealm in Frameworks */,
+				45840CCD25ACE8E900DFC729 /* SkeletonView in Frameworks */,
+				45840CB425ACE7A800DFC729 /* RealmSwift in Frameworks */,
+				4576CED625ACF50F00218229 /* FirebaseAnalytics in Frameworks */,
+				45840C9025ACE43E00DFC729 /* RxSwift in Frameworks */,
+				4576CEDA25ACF50F00218229 /* FirebaseCrashlytics in Frameworks */,
+				45840CAB25ACE69A00DFC729 /* AlamofireImage in Frameworks */,
+				45840CA025ACE5BB00DFC729 /* RxMoya in Frameworks */,
+				45840C9E25ACE5BB00DFC729 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,6 +931,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45840CB625ACE7B300DFC729 /* Realm in Frameworks */,
+				45840C9725ACE44F00DFC729 /* RxSwift in Frameworks */,
+				45840CC825ACE89F00DFC729 /* KeychainAccess in Frameworks */,
+				45840CC125ACE85200DFC729 /* RxRealm in Frameworks */,
+				45840CCF25ACE8F000DFC729 /* SkeletonView in Frameworks */,
+				459EF41225BF6EEF00C9DAC0 /* Atlantis in Frameworks */,
+				45840CB825ACE7B300DFC729 /* RealmSwift in Frameworks */,
+				4576CEE125ACF54F00218229 /* FirebaseAnalytics in Frameworks */,
+				45840C9525ACE44F00DFC729 /* RxCocoa in Frameworks */,
+				4576CEE525ACF54F00218229 /* FirebaseMessaging in Frameworks */,
+				45840CAD25ACE6A400DFC729 /* AlamofireImage in Frameworks */,
+				4576CEE325ACF54F00218229 /* FirebaseCrashlytics in Frameworks */,
+				45840CA425ACE5F900DFC729 /* RxMoya in Frameworks */,
+				45840CA225ACE5F900DFC729 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,6 +952,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45840CBA25ACE7B900DFC729 /* Realm in Frameworks */,
+				45840C9B25ACE45400DFC729 /* RxSwift in Frameworks */,
+				45840CCA25ACE8A400DFC729 /* KeychainAccess in Frameworks */,
+				45840CC325ACE85700DFC729 /* RxRealm in Frameworks */,
+				45840CD125ACE8F500DFC729 /* SkeletonView in Frameworks */,
+				459EF41825BF6F0200C9DAC0 /* Atlantis in Frameworks */,
+				45840CBC25ACE7B900DFC729 /* RealmSwift in Frameworks */,
+				4576CEEB25ACF55800218229 /* FirebaseAnalytics in Frameworks */,
+				45840C9925ACE45400DFC729 /* RxCocoa in Frameworks */,
+				4576CEEF25ACF55800218229 /* FirebaseMessaging in Frameworks */,
+				45840CAF25ACE6A700DFC729 /* AlamofireImage in Frameworks */,
+				4576CEED25ACF55800218229 /* FirebaseCrashlytics in Frameworks */,
+				45840CA825ACE5FD00DFC729 /* RxMoya in Frameworks */,
+				45840CA625ACE5FD00DFC729 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1015,8 +1092,7 @@
 				4558D30920FCC8FF005BC325 /* DevStack */,
 				4557194A24A155ED00FB24CA /* DevStackTests */,
 				4558D30820FCC8FF005BC325 /* Products */,
-				5BF3E3FE6D7D49981E7A931F /* Pods */,
-				6F197C24FB7B3AFC8FF9EA45 /* Frameworks */,
+				4576CEDF25ACF54F00218229 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1186,6 +1262,11 @@
 				457250EB25E46C8100D1B745 /* GetCurrentLocationUseCase.swift */,
 			);
 			path = Location;
+		4576CEDF25ACF54F00218229 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		4585A1602151224800186D7D /* UserImageView */ = {
@@ -1818,6 +1899,9 @@
 				45FB498524A3E8C000932918 /* PBXTargetDependency */,
 			);
 			name = DevStackTests;
+			packageProductDependencies = (
+				45840C8D25ACE43E00DFC729 /* RxTest */,
+			);
 			productName = DevStackTests;
 			productReference = 4557194924A155ED00FB24CA /* DevStackTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -1839,6 +1923,21 @@
 			dependencies = (
 			);
 			name = DevStack;
+			packageProductDependencies = (
+				45840C8F25ACE43E00DFC729 /* RxSwift */,
+				45840C9125ACE43E00DFC729 /* RxCocoa */,
+				45840C9D25ACE5BB00DFC729 /* Moya */,
+				45840C9F25ACE5BB00DFC729 /* RxMoya */,
+				45840CAA25ACE69A00DFC729 /* AlamofireImage */,
+				45840CB125ACE7A800DFC729 /* Realm */,
+				45840CB325ACE7A800DFC729 /* RealmSwift */,
+				45840CBE25ACE84900DFC729 /* RxRealm */,
+				45840CC525ACE89800DFC729 /* KeychainAccess */,
+				45840CCC25ACE8E900DFC729 /* SkeletonView */,
+				4576CED525ACF50F00218229 /* FirebaseAnalytics */,
+				4576CED725ACF50F00218229 /* FirebaseMessaging */,
+				4576CED925ACF50F00218229 /* FirebaseCrashlytics */,
+			);
 			productName = DevStack;
 			productReference = 4558D30720FCC8FF005BC325 /* DevStack.app */;
 			productType = "com.apple.product-type.application";
@@ -1860,6 +1959,24 @@
 			dependencies = (
 			);
 			name = DevStack_Alpha;
+			packageProductDependencies = (
+				45840C9425ACE44F00DFC729 /* RxCocoa */,
+				45840C9625ACE44F00DFC729 /* RxSwift */,
+				45840CA125ACE5F900DFC729 /* Moya */,
+				45840CA325ACE5F900DFC729 /* RxMoya */,
+				45840CAC25ACE6A400DFC729 /* AlamofireImage */,
+				45840CB525ACE7B300DFC729 /* Realm */,
+				45840CB725ACE7B300DFC729 /* RealmSwift */,
+				45840CC025ACE85200DFC729 /* RxRealm */,
+				45840CC725ACE89F00DFC729 /* KeychainAccess */,
+				45840CCE25ACE8F000DFC729 /* SkeletonView */,
+				4576CEE025ACF54F00218229 /* FirebaseAnalytics */,
+				4576CEE225ACF54F00218229 /* FirebaseCrashlytics */,
+				4576CEE425ACF54F00218229 /* FirebaseMessaging */,
+				457837E525BCF691008AB4B2 /* RxCocoa */,
+				457837E725BCF691008AB4B2 /* RxSwift */,
+				459EF41125BF6EEF00C9DAC0 /* Atlantis */,
+			);
 			productName = "A-DevStack";
 			productReference = 459761D720FDD60A0034DE29 /* A-DevStack.app */;
 			productType = "com.apple.product-type.application";
@@ -1881,6 +1998,24 @@
 			dependencies = (
 			);
 			name = DevStack_Beta;
+			packageProductDependencies = (
+				45840C9825ACE45400DFC729 /* RxCocoa */,
+				45840C9A25ACE45400DFC729 /* RxSwift */,
+				45840CA525ACE5FD00DFC729 /* Moya */,
+				45840CA725ACE5FD00DFC729 /* RxMoya */,
+				45840CAE25ACE6A700DFC729 /* AlamofireImage */,
+				45840CB925ACE7B900DFC729 /* Realm */,
+				45840CBB25ACE7B900DFC729 /* RealmSwift */,
+				45840CC225ACE85700DFC729 /* RxRealm */,
+				45840CC925ACE8A400DFC729 /* KeychainAccess */,
+				45840CD025ACE8F500DFC729 /* SkeletonView */,
+				4576CEEA25ACF55800218229 /* FirebaseAnalytics */,
+				4576CEEC25ACF55800218229 /* FirebaseCrashlytics */,
+				4576CEEE25ACF55800218229 /* FirebaseMessaging */,
+				457837E925BCF6A0008AB4B2 /* RxCocoa */,
+				457837EB25BCF6A0008AB4B2 /* RxSwift */,
+				459EF41725BF6F0200C9DAC0 /* Atlantis */,
+			);
 			productName = "B-DevStack";
 			productReference = 459761E520FDD61E0034DE29 /* B-DevStack.app */;
 			productType = "com.apple.product-type.application";
@@ -1918,6 +2053,18 @@
 				sk,
 			);
 			mainGroup = 4558D2FE20FCC8FF005BC325;
+			packageReferences = (
+				45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */,
+				45840CA925ACE69A00DFC729 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				45840CB025ACE7A800DFC729 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				45840CBD25ACE84900DFC729 /* XCRemoteSwiftPackageReference "RxRealm" */,
+				45840CC425ACE89800DFC729 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				45840CCB25ACE8E900DFC729 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				457837DC25BCF3C5008AB4B2 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */,
+			);
 			productRefGroup = 4558D30820FCC8FF005BC325 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2080,7 +2227,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./scripts/swiftlint.sh\n";
+			shellScript = "#./scripts/swiftlint.sh\n";
 		};
 		0C3E096423F6B3C70051287D /* Script for SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2168,7 +2315,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+			shellScript = "\"${BUILD_DIR%Build/*}SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 		459762F820FE26180034DE29 /* Script for SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2182,7 +2329,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "scripts/swiftgen.sh\n";
+			shellScript = "#scripts/swiftgen.sh\n";
 		};
 		459762FA20FE26470034DE29 /* Script for Firebase Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2196,7 +2343,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+			shellScript = "\"${BUILD_DIR%Build/*}SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 		459762FB20FE265C0034DE29 /* Script for SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2224,7 +2371,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+			shellScript = "\"${BUILD_DIR%Build/*}SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 		A1A0EDA7608B6A3BD3FB590A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2849,7 +2996,6 @@
 /* Begin XCBuildConfiguration section */
 		4557195024A155ED00FB24CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A5C0F5D9E5E95405D8B1781 /* Pods-DevStackTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -2873,7 +3019,6 @@
 		};
 		4557195124A155ED00FB24CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4045E6F0515E1C59EA268F1D /* Pods-DevStackTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -3012,7 +3157,6 @@
 		};
 		4558D31A20FCC900005BC325 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD1EE92A9740314059408958 /* Pods-DevStack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DevStack/App/Config/Production/DevStack.entitlements;
@@ -3027,7 +3171,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DPRODUCTION\" -Xcc -DFB_SONARKIT_ENABLED";
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-DPRODUCTION\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack;
 				PRODUCT_NAME = DevStack;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3039,7 +3184,6 @@
 		};
 		4558D31B20FCC900005BC325 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3266EC7634F7BCD070190849 /* Pods-DevStack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DevStack/App/Config/Production/DevStack.entitlements;
@@ -3054,7 +3198,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DPRODUCTION\" -Xcc -DFB_SONARKIT_ENABLED";
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-DPRODUCTION\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack;
 				PRODUCT_NAME = DevStack;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3066,7 +3211,6 @@
 		};
 		459761D520FDD60A0034DE29 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A592C9E57154D698582F52F6 /* Pods-DevStack_Alpha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Alpha";
 				CODE_SIGN_ENTITLEMENTS = DevStack/App/Config/Alpha/DevStack.entitlements;
@@ -3081,7 +3225,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DALPHA\" -Xcc -DFB_SONARKIT_ENABLED";
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-DALPHA\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.alpha;
 				PRODUCT_NAME = "A-DevStack";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3093,7 +3238,6 @@
 		};
 		459761D620FDD60A0034DE29 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3108F6D7CC6CF709865E9678 /* Pods-DevStack_Alpha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Alpha";
 				CODE_SIGN_ENTITLEMENTS = DevStack/App/Config/Alpha/DevStack.entitlements;
@@ -3108,7 +3252,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DALPHA\" -Xcc -DFB_SONARKIT_ENABLED";
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-DALPHA\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.alpha;
 				PRODUCT_NAME = "A-DevStack";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3120,7 +3265,6 @@
 		};
 		459761E320FDD61E0034DE29 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F50E336A748BE131E45BF8CF /* Pods-DevStack_Beta.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Beta";
 				CODE_SIGN_ENTITLEMENTS = DevStack/App/Config/Beta/DevStack.entitlements;
@@ -3135,7 +3279,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DBETA\" -Xcc -DFB_SONARKIT_ENABLED";
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-DBETA\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.beta;
 				PRODUCT_NAME = "B-DevStack";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3147,7 +3292,6 @@
 		};
 		459761E420FDD61E0034DE29 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFEE2864E1EDF8F86BC7B391 /* Pods-DevStack_Beta.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Beta";
 				CODE_SIGN_ENTITLEMENTS = DevStack/App/Config/Beta/DevStack.entitlements;
@@ -3162,7 +3306,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DBETA\" -Xcc -DFB_SONARKIT_ENABLED";
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-DBETA\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.beta;
 				PRODUCT_NAME = "B-DevStack";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3221,6 +3366,337 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.3.1;
+			};
+		};
+		45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.0;
+			};
+		};
+		45840CA925ACE69A00DFC729 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+		45840CB025ACE7A800DFC729 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.5.0;
+			};
+		};
+		45840CBD25ACE84900DFC729 /* XCRemoteSwiftPackageReference "RxRealm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxRealm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		45840CC425ACE89800DFC729 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.1;
+			};
+		};
+		45840CCB25ACE8E900DFC729 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.11.0;
+			};
+		};
+		459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ProxymanApp/atlantis";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.1;
+			};
+		};
+		45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4576CED525ACF50F00218229 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		4576CED725ACF50F00218229 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		4576CED925ACF50F00218229 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		4576CEE025ACF54F00218229 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		4576CEE225ACF54F00218229 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		4576CEE425ACF54F00218229 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		4576CEEA25ACF55800218229 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		4576CEEC25ACF55800218229 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		4576CEEE25ACF55800218229 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		45840C8D25ACE43E00DFC729 /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
+		45840C8F25ACE43E00DFC729 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		45840C9125ACE43E00DFC729 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		45840C9425ACE44F00DFC729 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		45840C9625ACE44F00DFC729 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		45840C9825ACE45400DFC729 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		45840C9A25ACE45400DFC729 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		45840C9D25ACE5BB00DFC729 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		45840C9F25ACE5BB00DFC729 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		45840CA125ACE5F900DFC729 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		45840CA325ACE5F900DFC729 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		45840CA525ACE5FD00DFC729 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		45840CA725ACE5FD00DFC729 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		45840CAA25ACE69A00DFC729 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CA925ACE69A00DFC729 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+		45840CAC25ACE6A400DFC729 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CA925ACE69A00DFC729 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+		45840CAE25ACE6A700DFC729 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CA925ACE69A00DFC729 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+		45840CB125ACE7A800DFC729 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CB025ACE7A800DFC729 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		45840CB325ACE7A800DFC729 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CB025ACE7A800DFC729 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		45840CB525ACE7B300DFC729 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CB025ACE7A800DFC729 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		45840CB725ACE7B300DFC729 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CB025ACE7A800DFC729 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		45840CB925ACE7B900DFC729 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CB025ACE7A800DFC729 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		45840CBB25ACE7B900DFC729 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CB025ACE7A800DFC729 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		45840CBE25ACE84900DFC729 /* RxRealm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CBD25ACE84900DFC729 /* XCRemoteSwiftPackageReference "RxRealm" */;
+			productName = RxRealm;
+		};
+		45840CC025ACE85200DFC729 /* RxRealm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CBD25ACE84900DFC729 /* XCRemoteSwiftPackageReference "RxRealm" */;
+			productName = RxRealm;
+		};
+		45840CC225ACE85700DFC729 /* RxRealm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CBD25ACE84900DFC729 /* XCRemoteSwiftPackageReference "RxRealm" */;
+			productName = RxRealm;
+		};
+		45840CC525ACE89800DFC729 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CC425ACE89800DFC729 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		45840CC725ACE89F00DFC729 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CC425ACE89800DFC729 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		45840CC925ACE8A400DFC729 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CC425ACE89800DFC729 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		45840CCC25ACE8E900DFC729 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CCB25ACE8E900DFC729 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+		45840CCE25ACE8F000DFC729 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CCB25ACE8E900DFC729 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+		45840CD025ACE8F500DFC729 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840CCB25ACE8E900DFC729 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+		459EF41125BF6EEF00C9DAC0 /* Atlantis */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */;
+			productName = Atlantis;
+		};
+		459EF41725BF6F0200C9DAC0 /* Atlantis */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */;
+			productName = Atlantis;
+		};
+		45BA227C25AE83BF005FDF5F /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		45BA227E25AE83C3005FDF5F /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		45BA228025AE83CB005FDF5F /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		45BA228225AE83CE005FDF5F /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		45C2D6D625AE81E90025157B /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
+		45C2D6D825AE81E90025157B /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		45C2D6DA25AE81E90025157B /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4558D2FF20FCC8FF005BC325 /* Project object */;
 }
