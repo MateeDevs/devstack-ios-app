@@ -33,14 +33,10 @@ FIXME
 ### Test accounts
 FIXME
 
-## RubyGems + CocoaPods
-- First of all you should have installed Ruby version 2.5.3 or higher (you can easily manage your Ruby versions with [rbenv](https://github.com/rbenv/rbenv))
-- You should also have installed rubygems version 3.0.0 or higher (you can update rubygems with `gem update --system`)
-- All ruby gems used in the project (cocoapods, twine, fastlane, ..) are installed via [Bundler](http://bundler.io/)
-- Individual gems are specified in the `Gemfile` and `Gemfile.lock` and can be installed with `bundle install --path vendor/bundle`
-- Any of the installed gems can be started with `bundle exec` (for example `bundle exec pod install --repo-update` for CocoaPods)
-- Only the `Gemfile/Gemfile.lock` and `Podfile/Podfile.lock` should be committed (Do not commit `Pods` and `vendor` directories!)
-- You can use the `scripts/setup.sh` for quick setup of all required gems and pods
+## Dependencies
+- All code dependencies are managed via [Swift Package Manager](https://swift.org/package-manager/) directly in the Xcode
+- All tools (SwiftGen, SwiftLint, etc.) are managed via [Mint](https://github.com/yonaskolb/Mint)
+- You can use the `scripts/setup.sh` for quick setup of all required tools
 - There is also `scripts/rename.sh` for quick renaming from DevStack to YourProject
 
 ## Architecture (MVVM)

@@ -256,16 +256,9 @@
 		4576CEEB25ACF55800218229 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CEEA25ACF55800218229 /* FirebaseAnalytics */; };
 		4576CEED25ACF55800218229 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CEEC25ACF55800218229 /* FirebaseCrashlytics */; };
 		4576CEEF25ACF55800218229 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CEEE25ACF55800218229 /* FirebaseMessaging */; };
-		4576CF2425AD180C00218229 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 4576CF2325AD180C00218229 /* RxTest */; };
 		457FA18E241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
 		457FA18F241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
 		457FA190241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
-		45840C9025ACE43E00DFC729 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C8F25ACE43E00DFC729 /* RxSwift */; };
-		45840C9225ACE43E00DFC729 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9125ACE43E00DFC729 /* RxCocoa */; };
-		45840C9525ACE44F00DFC729 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9425ACE44F00DFC729 /* RxCocoa */; };
-		45840C9725ACE44F00DFC729 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9625ACE44F00DFC729 /* RxSwift */; };
-		45840C9925ACE45400DFC729 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9825ACE45400DFC729 /* RxCocoa */; };
-		45840C9B25ACE45400DFC729 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9A25ACE45400DFC729 /* RxSwift */; };
 		45840C9E25ACE5BB00DFC729 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9D25ACE5BB00DFC729 /* Moya */; };
 		45840CA025ACE5BB00DFC729 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9F25ACE5BB00DFC729 /* RxMoya */; };
 		45840CA225ACE5F900DFC729 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CA125ACE5F900DFC729 /* Moya */; };
@@ -437,9 +430,19 @@
 		45BFF38D25D3686D00813581 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BFF38C25D3686D00813581 /* Flow.swift */; };
 		45BFF38E25D3686D00813581 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BFF38C25D3686D00813581 /* Flow.swift */; };
 		45BFF38F25D3686D00813581 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BFF38C25D3686D00813581 /* Flow.swift */; };
+		45B76DA7213591ED003BB997 /* Object+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B76DA6213591ED003BB997 /* Object+Extensions.swift */; };
+		45B76DA8213591ED003BB997 /* Object+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B76DA6213591ED003BB997 /* Object+Extensions.swift */; };
+		45B76DA9213591ED003BB997 /* Object+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B76DA6213591ED003BB997 /* Object+Extensions.swift */; };
+		45BA227D25AE83BF005FDF5F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45BA227C25AE83BF005FDF5F /* RxSwift */; };
+		45BA227F25AE83C3005FDF5F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 45BA227E25AE83C3005FDF5F /* RxCocoa */; };
+		45BA228125AE83CB005FDF5F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45BA228025AE83CB005FDF5F /* RxSwift */; };
+		45BA228325AE83CE005FDF5F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 45BA228225AE83CE005FDF5F /* RxCocoa */; };
 		45C089E82215C12200D0DD49 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseProvider.swift */; };
 		45C089E92215C12200D0DD49 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseProvider.swift */; };
 		45C089EA2215C12200D0DD49 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseProvider.swift */; };
+		45C2D6D725AE81E90025157B /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 45C2D6D625AE81E90025157B /* RxTest */; };
+		45C2D6D925AE81E90025157B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 45C2D6D825AE81E90025157B /* RxCocoa */; };
+		45C2D6DB25AE81E90025157B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45C2D6DA25AE81E90025157B /* RxSwift */; };
 		45C3F50F23C114600091848D /* UIColorCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F50E23C114600091848D /* UIColorCompatible.swift */; };
 		45C3F51023C114600091848D /* UIColorCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F50E23C114600091848D /* UIColorCompatible.swift */; };
 		45C3F51123C114600091848D /* UIColorCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3F50E23C114600091848D /* UIColorCompatible.swift */; };
@@ -903,6 +906,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45C2D6D725AE81E90025157B /* RxTest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -912,13 +916,13 @@
 			files = (
 				4576CED825ACF50F00218229 /* FirebaseMessaging in Frameworks */,
 				45840CB225ACE7A800DFC729 /* Realm in Frameworks */,
-				45840C9225ACE43E00DFC729 /* RxCocoa in Frameworks */,
 				45840CC625ACE89800DFC729 /* KeychainAccess in Frameworks */,
 				45840CBF25ACE84900DFC729 /* RxRealm in Frameworks */,
 				45840CCD25ACE8E900DFC729 /* SkeletonView in Frameworks */,
 				45840CB425ACE7A800DFC729 /* RealmSwift in Frameworks */,
+				45C2D6DB25AE81E90025157B /* RxSwift in Frameworks */,
+				45C2D6D925AE81E90025157B /* RxCocoa in Frameworks */,
 				4576CED625ACF50F00218229 /* FirebaseAnalytics in Frameworks */,
-				45840C9025ACE43E00DFC729 /* RxSwift in Frameworks */,
 				4576CEDA25ACF50F00218229 /* FirebaseCrashlytics in Frameworks */,
 				45840CAB25ACE69A00DFC729 /* AlamofireImage in Frameworks */,
 				45840CA025ACE5BB00DFC729 /* RxMoya in Frameworks */,
@@ -930,16 +934,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4576CF2425AD180C00218229 /* RxTest in Frameworks */,
 				45840CB625ACE7B300DFC729 /* Realm in Frameworks */,
-				45840C9725ACE44F00DFC729 /* RxSwift in Frameworks */,
 				45840CC825ACE89F00DFC729 /* KeychainAccess in Frameworks */,
 				45840CC125ACE85200DFC729 /* RxRealm in Frameworks */,
+				45BA227F25AE83C3005FDF5F /* RxCocoa in Frameworks */,
 				45840CCF25ACE8F000DFC729 /* SkeletonView in Frameworks */,
 				459EF41225BF6EEF00C9DAC0 /* Atlantis in Frameworks */,
 				45840CB825ACE7B300DFC729 /* RealmSwift in Frameworks */,
 				4576CEE125ACF54F00218229 /* FirebaseAnalytics in Frameworks */,
-				45840C9525ACE44F00DFC729 /* RxCocoa in Frameworks */,
+				45BA227D25AE83BF005FDF5F /* RxSwift in Frameworks */,
 				4576CEE525ACF54F00218229 /* FirebaseMessaging in Frameworks */,
 				45840CAD25ACE6A400DFC729 /* AlamofireImage in Frameworks */,
 				4576CEE325ACF54F00218229 /* FirebaseCrashlytics in Frameworks */,
@@ -953,14 +956,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				45840CBA25ACE7B900DFC729 /* Realm in Frameworks */,
-				45840C9B25ACE45400DFC729 /* RxSwift in Frameworks */,
 				45840CCA25ACE8A400DFC729 /* KeychainAccess in Frameworks */,
 				45840CC325ACE85700DFC729 /* RxRealm in Frameworks */,
+				45BA228325AE83CE005FDF5F /* RxCocoa in Frameworks */,
 				45840CD125ACE8F500DFC729 /* SkeletonView in Frameworks */,
 				459EF41825BF6F0200C9DAC0 /* Atlantis in Frameworks */,
 				45840CBC25ACE7B900DFC729 /* RealmSwift in Frameworks */,
 				4576CEEB25ACF55800218229 /* FirebaseAnalytics in Frameworks */,
-				45840C9925ACE45400DFC729 /* RxCocoa in Frameworks */,
+				45BA228125AE83CB005FDF5F /* RxSwift in Frameworks */,
 				4576CEEF25ACF55800218229 /* FirebaseMessaging in Frameworks */,
 				45840CAF25ACE6A700DFC729 /* AlamofireImage in Frameworks */,
 				4576CEED25ACF55800218229 /* FirebaseCrashlytics in Frameworks */,
@@ -1898,6 +1901,7 @@
 			);
 			name = DevStackTests;
 			packageProductDependencies = (
+				45C2D6D625AE81E90025157B /* RxTest */,
 			);
 			productName = DevStackTests;
 			productReference = 4557194924A155ED00FB24CA /* DevStackTests.xctest */;
@@ -1921,8 +1925,6 @@
 			);
 			name = DevStack;
 			packageProductDependencies = (
-				45840C8F25ACE43E00DFC729 /* RxSwift */,
-				45840C9125ACE43E00DFC729 /* RxCocoa */,
 				45840C9D25ACE5BB00DFC729 /* Moya */,
 				45840C9F25ACE5BB00DFC729 /* RxMoya */,
 				45840CAA25ACE69A00DFC729 /* AlamofireImage */,
@@ -1934,6 +1936,8 @@
 				4576CED525ACF50F00218229 /* FirebaseAnalytics */,
 				4576CED725ACF50F00218229 /* FirebaseMessaging */,
 				4576CED925ACF50F00218229 /* FirebaseCrashlytics */,
+				45C2D6D825AE81E90025157B /* RxCocoa */,
+				45C2D6DA25AE81E90025157B /* RxSwift */,
 			);
 			productName = DevStack;
 			productReference = 4558D30720FCC8FF005BC325 /* DevStack.app */;
@@ -1957,8 +1961,6 @@
 			);
 			name = DevStack_Alpha;
 			packageProductDependencies = (
-				45840C9425ACE44F00DFC729 /* RxCocoa */,
-				45840C9625ACE44F00DFC729 /* RxSwift */,
 				45840CA125ACE5F900DFC729 /* Moya */,
 				45840CA325ACE5F900DFC729 /* RxMoya */,
 				45840CAC25ACE6A400DFC729 /* AlamofireImage */,
@@ -1974,6 +1976,8 @@
 				457837E725BCF691008AB4B2 /* RxSwift */,
 				459EF41125BF6EEF00C9DAC0 /* Atlantis */,
 				4576CF2325AD180C00218229 /* RxTest */,
+				45BA227C25AE83BF005FDF5F /* RxSwift */,
+				45BA227E25AE83C3005FDF5F /* RxCocoa */,
 			);
 			productName = "A-DevStack";
 			productReference = 459761D720FDD60A0034DE29 /* A-DevStack.app */;
@@ -1997,8 +2001,6 @@
 			);
 			name = DevStack_Beta;
 			packageProductDependencies = (
-				45840C9825ACE45400DFC729 /* RxCocoa */,
-				45840C9A25ACE45400DFC729 /* RxSwift */,
 				45840CA525ACE5FD00DFC729 /* Moya */,
 				45840CA725ACE5FD00DFC729 /* RxMoya */,
 				45840CAE25ACE6A700DFC729 /* AlamofireImage */,
@@ -2013,6 +2015,8 @@
 				457837E925BCF6A0008AB4B2 /* RxCocoa */,
 				457837EB25BCF6A0008AB4B2 /* RxSwift */,
 				459EF41725BF6F0200C9DAC0 /* Atlantis */,
+				45BA228025AE83CB005FDF5F /* RxSwift */,
+				45BA228225AE83CE005FDF5F /* RxCocoa */,
 			);
 			productName = "B-DevStack";
 			productReference = 459761E520FDD61E0034DE29 /* B-DevStack.app */;
@@ -2052,7 +2056,6 @@
 			);
 			mainGroup = 4558D2FE20FCC8FF005BC325;
 			packageReferences = (
-				45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */,
 				45840CA925ACE69A00DFC729 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 				45840CB025ACE7A800DFC729 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
@@ -2062,6 +2065,7 @@
 				4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				457837DC25BCF3C5008AB4B2 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */,
+				45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 4558D30820FCC8FF005BC325 /* Products */;
 			projectDirPath = "";
@@ -2207,7 +2211,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./scripts/swiftlint.sh\n";
+			shellScript = "scripts/swiftlint.sh\n";
 		};
 		0C3E096323F6B3BC0051287D /* Script for SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2225,7 +2229,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#./scripts/swiftlint.sh\n";
+			shellScript = "scripts/swiftlint.sh\n";
 		};
 		0C3E096423F6B3C70051287D /* Script for SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2243,7 +2247,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./scripts/swiftlint.sh\n";
+			shellScript = "scripts/swiftlint.sh\n";
 		};
 		4597627A20FE13D20034DE29 /* Script for Twine */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2327,7 +2331,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#scripts/swiftgen.sh\n";
+			shellScript = "scripts/swiftgen.sh\n";
 		};
 		459762FA20FE26470034DE29 /* Script for Firebase Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3337,14 +3341,6 @@
 				minimumVersion = 7.3.1;
 			};
 		};
-		45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya";
@@ -3399,6 +3395,12 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.7.1;
+		45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
 			};
 		};
 		45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
@@ -3456,41 +3458,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
-		};
-		4576CF2325AD180C00218229 /* RxTest */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxTest;
-		};
-		45840C8F25ACE43E00DFC729 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		45840C9125ACE43E00DFC729 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		45840C9425ACE44F00DFC729 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		45840C9625ACE44F00DFC729 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		45840C9825ACE45400DFC729 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		45840C9A25ACE45400DFC729 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840C8C25ACE43E00DFC729 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
 		};
 		45840C9D25ACE5BB00DFC729 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -3621,6 +3588,40 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */;
 			productName = Atlantis;
+		45BA227C25AE83BF005FDF5F /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		45BA227E25AE83C3005FDF5F /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		45BA228025AE83CB005FDF5F /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		45BA228225AE83CE005FDF5F /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		45C2D6D625AE81E90025157B /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
+		45C2D6D825AE81E90025157B /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		45C2D6DA25AE81E90025157B /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 		45BA227C25AE83BF005FDF5F /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
