@@ -3400,6 +3400,8 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.7.1;
+			};
+		};
 		45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -3623,6 +3625,7 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */;
 			productName = Atlantis;
+		};
 		45BA227C25AE83BF005FDF5F /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
