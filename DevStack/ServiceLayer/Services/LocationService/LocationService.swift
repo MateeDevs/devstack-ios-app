@@ -19,11 +19,7 @@ public class LocationService {
 
     init(dependencies: Dependencies) {}
     
-    private lazy var locationManager: CLLocationManager = {
-        let locationMgr = CLLocationManager()
-        locationMgr.requestWhenInUseAuthorization()
-        return locationMgr
-    }()
+    private let locationManager = CLLocationManager()
     
     /// Check whether the location services are enabled and authorized
     public static func isLocationEnabled() -> Bool {
@@ -43,21 +39,23 @@ public class LocationService {
     public func getCurrentLocation(
         withAccuracy accuracy: CLLocationAccuracy = kCLLocationAccuracyThreeKilometers
     ) -> Observable<CLLocation> {
-        return locationManager.rx.didUpdateLocations.map({ locations in
-            locations[0]
-        }).filter({ location in
-            location.horizontalAccuracy < accuracy
-        }).do(
-            onCompleted: { [weak self] in
-                self?.locationManager.stopUpdatingLocation()
-            },
-            onSubscribed: { [weak self] in
-                self?.locationManager.startUpdatingLocation()
-            },
-            onDispose: { [weak self] in
-                self?.locationManager.stopUpdatingLocation()
-            }
-        )
+        return locationManager.rx.didUpdateLocations
+            .map { locations in locations[0] }
+            .filter { location in location.horizontalAccuracy < accuracy }
+            .do(
+                onCompleted: { [weak self] in
+                    self?.locationManager.stopUpdatingLocation()
+                },
+                onSubscribed: { [weak self] in
+                    if !LocationService.isLocationEnabled() {
+                        self?.locationManager.requestWhenInUseAuthorization()
+                    }
+                    self?.locationManager.startUpdatingLocation()
+                },
+                onDispose: { [weak self] in
+                    self?.locationManager.stopUpdatingLocation()
+                }
+            )
     }
 
 }
