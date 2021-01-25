@@ -20,8 +20,6 @@ jobs:
       - name: Pull Twine repo
         run: git -C $TWINE_FOLDER pull origin master
       - name: Install Gems and Pods
-        env:
-          CI: ${{ true }}
         run: ./scripts/setup.sh
       - name: Generate version and build numbers
         run: |
