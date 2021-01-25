@@ -30,14 +30,7 @@ def shared_pods
     # Other utilities
     pod 'SwiftGen'
     pod 'SwiftLint'
-
-    # Flipper
-    if ENV['CI'] == nil
-        pod 'FlipperKit', :configurations => ['Debug']
-        pod 'FlipperKit/FlipperKitLayoutComponentKitSupport', :configurations => ['Debug']
-        pod 'FlipperKit/SKIOSNetworkPlugin', :configurations => ['Debug']
-        pod 'FlipperKit/FlipperKitUserDefaultsPlugin', :configurations => ['Debug']
-    end
+    pod 'atlantis-proxyman'
 end
 
 workspace 'DevStack'
@@ -57,25 +50,6 @@ end
 target 'DevStackTests' do
     shared_pods
     pod 'RxTest'
-end
-
-# This will cause Flipper and it's dependencies to be built as a static library
-$static_framework = [
-    'FlipperKit', 'Flipper', 'Flipper-Folly',
-    'CocoaAsyncSocket', 'ComponentKit', 'Flipper-DoubleConversion',
-    'Flipper-Glog', 'Flipper-PeerTalk', 'Flipper-RSocket', 'Yoga', 'YogaKit',
-    'CocoaLibEvent', 'OpenSSL-Universal', 'boost-for-react-native'
-]
-
-pre_install do |installer|
-    Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
-    installer.pod_targets.each do |pod|
-        if $static_framework.include?(pod.name)
-            def pod.build_type;
-            Pod::BuildType.static_library
-            end
-        end
-    end
 end
 
 post_install do |installer|

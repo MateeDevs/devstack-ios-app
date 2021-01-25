@@ -78,7 +78,7 @@ FIXME
 ## Debug
 - All important information should be logged using the default `os_log` (wrapper `Logger` is available for convenience)
 - All network requests going through the `AuthenticatedProvider` are printed into the console in debug builds
-- [Flipper](https://fbflipper.com/) with layout and network plugins is enabled for debug builds
+- [Proxyman](https://proxyman.io) for HTTP request/response debugging is enabled for alpha and beta build
 
 ## Build + Release
 - CI/CD process is based on [GitHub Actions](https://github.com/features/actions) and [Fastlane](https://fastlane.tools/)
