@@ -55,10 +55,14 @@ end
 post_install do |installer|
 
     installer.pods_project.build_configurations.each do |config|
+        
         # Prevent signing
         config.build_settings['PROVISIONING_PROFILE_SPECIFIER'] = ''
         config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
         config.build_settings['CODE_SIGNING_REQUIRED'] = 'NO'
+
+        # Exclude arm64 for simulator architecture
+        config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
     end
 
     installer.pods_project.targets.each do |target|
