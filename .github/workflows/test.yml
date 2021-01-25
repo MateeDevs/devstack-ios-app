@@ -12,14 +12,12 @@ jobs:
     timeout-minutes: 60
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
           clean: false
       - name: Pull Twine repo
         run: git -C $TWINE_FOLDER pull origin master
       - name: Install Gems and Pods
-        env:
-          CI: ${{ true }}
         run: ./scripts/setup.sh
       - name: Run tests
         run: bundle exec fastlane test_alpha

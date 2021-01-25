@@ -78,7 +78,7 @@ FIXME
 ## Debug
 - All important information should be logged using the default `os_log` (wrapper `Logger` is available for convenience)
 - All network requests going through the `AuthenticatedProvider` are printed into the console in debug builds
-- [Flipper](https://fbflipper.com/) with layout and network plugins is enabled for debug builds
+- [Proxyman](https://proxyman.io) for HTTP request/response debugging is enabled for alpha and beta build
 
 ## Build + Release
 - CI/CD process is based on [GitHub Actions](https://github.com/features/actions) and [Fastlane](https://fastlane.tools/)
@@ -97,6 +97,7 @@ FIXME
 
 ## TODO
 - Use `latest` in dSYM sync when [fixed](https://github.com/fastlane/fastlane/issues/17474)
-- Migrate to SwiftPM when all used frameworks are available (waiting for [Firebase](https://github.com/firebase/firebase-ios-sdk/issues/3136))
+- Use RxSwift 6 when Moya is ready - [PR](https://github.com/Moya/Moya/pull/2120)
+- Migrate to SPM when all used frameworks are ready - [PR](https://github.com/MateeDevs/devstack-ios-app/pull/85)
 - Refactor project structure according to the Clean Architecture principles (UseCases + DTO)
-- Migrate to SwiftUI + Combine when the time is right (not before iOS 14.0 official release)
+- Migrate to SwiftUI + Combine when the time is right

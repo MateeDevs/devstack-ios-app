@@ -9,8 +9,8 @@
 import RealmSwift
 import UIKit
 
-#if DEBUG
-import FlipperKit
+#if ALPHA || BETA
+import Atlantis
 #endif
 
 @UIApplicationMain
@@ -25,13 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         
-        #if DEBUG
-        flipperSetup(for: application)
-        #endif
-        
         #if ALPHA
+        Atlantis.start()
         Logger.info("ALPHA environment", category: .app)
         #elseif BETA
+        Atlantis.start()
         Logger.info("BETA environment", category: .app)
         #elseif PRODUCTION
         Logger.info("PRODUCTION environment", category: .app)
@@ -100,23 +98,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             userDefaultsProvider: userDefaultsProvider
         )
     }
-    
-    #if DEBUG
-    // MARK: Flipper
-    private func flipperSetup(for application: UIApplication) {
-        let client = FlipperClient.shared()
-        
-        // Add [layout plugin](https://fbflipper.com/docs/setup/layout-plugin.html)
-        let layoutDescriptorMapper = SKDescriptorMapper(defaults: ())
-        FlipperKitLayoutComponentKitSupport.setUpWith(layoutDescriptorMapper)
-        client?.add(FlipperKitLayoutPlugin(rootNode: application, with: layoutDescriptorMapper!))
-        
-        // Add [network plugin](https://fbflipper.com/docs/setup/network-plugin.html)
-        client?.add(FlipperKitNetworkPlugin(networkAdapter: SKIOSNetworkAdapter()))
-        
-        client?.start()
-    }
-    #endif
     
     // MARK: Clear keychain on first run
     private func clearKeychain() {
