@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class LocalizedButton: UIButton {
+open class LocalizedButton: StateButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

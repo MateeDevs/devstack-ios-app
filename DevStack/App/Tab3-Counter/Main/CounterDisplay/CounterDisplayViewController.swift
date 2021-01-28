@@ -49,10 +49,7 @@ final class CounterDisplayViewController: BaseViewController {
 
         // Outputs
         displayViewModel.output.counterValue.drive(counterLabel.rx.text).disposed(by: disposeBag)
-
-        sharedViewModel.output.hideCounterLabel
-            .map { !self.counterLabel.isHidden }
-            .drive(counterLabel.rx.isHidden).disposed(by: disposeBag)
+        sharedViewModel.output.isCounterHidden.drive(counterLabel.rx.isHidden).disposed(by: disposeBag)
     }
 
     override func setupUI() {

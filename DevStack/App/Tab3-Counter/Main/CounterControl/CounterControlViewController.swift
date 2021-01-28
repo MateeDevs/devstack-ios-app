@@ -50,7 +50,7 @@ final class CounterControlViewController: BaseViewController {
         // Inputs
         increaseButton.rx.tap.bind(to: controlViewModel.input.increaseButtonTaps).disposed(by: disposeBag)
         decreaseButton.rx.tap.bind(to: controlViewModel.input.decreaseButtonTaps).disposed(by: disposeBag)
-        hideButton.rx.tap.bind(to: sharedViewModel.input.hideButtonTaps).disposed(by: disposeBag)
+        hideButton.rx.isOn.bind(to: sharedViewModel.input.hideButtonIsOn).disposed(by: disposeBag)
 
         // Outputs
         controlViewModel.output.increaseCounter.drive().disposed(by: disposeBag)

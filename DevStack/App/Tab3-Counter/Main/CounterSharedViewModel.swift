@@ -17,27 +17,27 @@ final class CounterSharedViewModel: ViewModel, ViewModelType {
     let output: Output
 
     struct Input {
-        let hideButtonTaps: AnyObserver<Void>
+        let hideButtonIsOn: AnyObserver<Bool>
     }
     
     struct Output {
-        let hideCounterLabel: Driver<Void>
+        let isCounterHidden: Driver<Bool>
     }
     
     init(dependencies: Dependencies) {
 
         // MARK: Setup inputs
 
-        let hideButtonTaps = PublishSubject<Void>()
+        let hideButtonIsOn = PublishSubject<Bool>()
 
         self.input = Input(
-            hideButtonTaps: hideButtonTaps.asObserver()
+            hideButtonIsOn: hideButtonIsOn.asObserver()
         )
 
         // MARK: Setup outputs
 
         self.output = Output(
-            hideCounterLabel: hideButtonTaps.asDriver()
+            isCounterHidden: hideButtonIsOn.asDriver()
         )
         
         super.init()

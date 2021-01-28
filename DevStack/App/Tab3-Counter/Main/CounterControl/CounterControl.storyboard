@@ -35,9 +35,13 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMJ-nJ-4WY" customClass="SecondaryButton" customModule="A_DevStack" customModuleProvider="target">
-                                <rect key="frame" x="45.5" y="415.5" width="284" height="34"/>
+                                <rect key="frame" x="30.5" y="415.5" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="counter_view_counter_hide_button"/>
+                                <state key="normal" title="counter_view_counter_hide_button_on"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleOnState" value="counter_view_counter_hide_button_on"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleOffState" value="counter_view_counter_hide_button_off"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qdr-Ev-KLG"/>
