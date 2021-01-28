@@ -305,6 +305,36 @@
 		45B76DA7213591ED003BB997 /* Object+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B76DA6213591ED003BB997 /* Object+Extensions.swift */; };
 		45B76DA8213591ED003BB997 /* Object+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B76DA6213591ED003BB997 /* Object+Extensions.swift */; };
 		45B76DA9213591ED003BB997 /* Object+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B76DA6213591ED003BB997 /* Object+Extensions.swift */; };
+		45BC954625C243FA001A6F65 /* CounterFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC954525C243FA001A6F65 /* CounterFlowController.swift */; };
+		45BC954725C243FA001A6F65 /* CounterFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC954525C243FA001A6F65 /* CounterFlowController.swift */; };
+		45BC954825C243FA001A6F65 /* CounterFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC954525C243FA001A6F65 /* CounterFlowController.swift */; };
+		45BC955D25C246BF001A6F65 /* Counter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC955A25C246BF001A6F65 /* Counter.storyboard */; };
+		45BC955E25C246BF001A6F65 /* Counter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC955A25C246BF001A6F65 /* Counter.storyboard */; };
+		45BC955F25C246BF001A6F65 /* Counter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC955A25C246BF001A6F65 /* Counter.storyboard */; };
+		45BC956025C246BF001A6F65 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC955B25C246BF001A6F65 /* CounterViewController.swift */; };
+		45BC956125C246BF001A6F65 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC955B25C246BF001A6F65 /* CounterViewController.swift */; };
+		45BC956225C246BF001A6F65 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC955B25C246BF001A6F65 /* CounterViewController.swift */; };
+		45BC957225C247F3001A6F65 /* CounterControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC956F25C247F3001A6F65 /* CounterControl.storyboard */; };
+		45BC957325C247F3001A6F65 /* CounterControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC956F25C247F3001A6F65 /* CounterControl.storyboard */; };
+		45BC957425C247F3001A6F65 /* CounterControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC956F25C247F3001A6F65 /* CounterControl.storyboard */; };
+		45BC957525C247F3001A6F65 /* CounterControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC957025C247F3001A6F65 /* CounterControlViewController.swift */; };
+		45BC957625C247F3001A6F65 /* CounterControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC957025C247F3001A6F65 /* CounterControlViewController.swift */; };
+		45BC957725C247F3001A6F65 /* CounterControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC957025C247F3001A6F65 /* CounterControlViewController.swift */; };
+		45BC957825C247F3001A6F65 /* CounterControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC957125C247F3001A6F65 /* CounterControlViewModel.swift */; };
+		45BC957925C247F3001A6F65 /* CounterControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC957125C247F3001A6F65 /* CounterControlViewModel.swift */; };
+		45BC957A25C247F3001A6F65 /* CounterControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC957125C247F3001A6F65 /* CounterControlViewModel.swift */; };
+		45BC958825C2481F001A6F65 /* CounterDisplay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC958525C2481F001A6F65 /* CounterDisplay.storyboard */; };
+		45BC958925C2481F001A6F65 /* CounterDisplay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC958525C2481F001A6F65 /* CounterDisplay.storyboard */; };
+		45BC958A25C2481F001A6F65 /* CounterDisplay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC958525C2481F001A6F65 /* CounterDisplay.storyboard */; };
+		45BC958B25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC958625C2481F001A6F65 /* CounterDisplayViewController.swift */; };
+		45BC958C25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC958625C2481F001A6F65 /* CounterDisplayViewController.swift */; };
+		45BC958D25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC958625C2481F001A6F65 /* CounterDisplayViewController.swift */; };
+		45BC958E25C2481F001A6F65 /* CounterDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC958725C2481F001A6F65 /* CounterDisplayViewModel.swift */; };
+		45BC958F25C2481F001A6F65 /* CounterDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC958725C2481F001A6F65 /* CounterDisplayViewModel.swift */; };
+		45BC959025C2481F001A6F65 /* CounterDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC958725C2481F001A6F65 /* CounterDisplayViewModel.swift */; };
+		45BC959625C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959525C25FD3001A6F65 /* UIViewController+Extensions.swift */; };
+		45BC959725C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959525C25FD3001A6F65 /* UIViewController+Extensions.swift */; };
+		45BC959825C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959525C25FD3001A6F65 /* UIViewController+Extensions.swift */; };
 		45C089E82215C12200D0DD49 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseProvider.swift */; };
 		45C089E92215C12200D0DD49 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseProvider.swift */; };
 		45C089EA2215C12200D0DD49 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseProvider.swift */; };
@@ -631,6 +661,16 @@
 		45B76D98213591A9003BB997 /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
 		45B76D9F213591D0003BB997 /* Error+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
 		45B76DA6213591ED003BB997 /* Object+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Object+Extensions.swift"; sourceTree = "<group>"; };
+		45BC954525C243FA001A6F65 /* CounterFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFlowController.swift; sourceTree = "<group>"; };
+		45BC955A25C246BF001A6F65 /* Counter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Counter.storyboard; sourceTree = "<group>"; };
+		45BC955B25C246BF001A6F65 /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
+		45BC956F25C247F3001A6F65 /* CounterControl.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CounterControl.storyboard; sourceTree = "<group>"; };
+		45BC957025C247F3001A6F65 /* CounterControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterControlViewController.swift; sourceTree = "<group>"; };
+		45BC957125C247F3001A6F65 /* CounterControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterControlViewModel.swift; sourceTree = "<group>"; };
+		45BC958525C2481F001A6F65 /* CounterDisplay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CounterDisplay.storyboard; sourceTree = "<group>"; };
+		45BC958625C2481F001A6F65 /* CounterDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterDisplayViewController.swift; sourceTree = "<group>"; };
+		45BC958725C2481F001A6F65 /* CounterDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterDisplayViewModel.swift; sourceTree = "<group>"; };
+		45BC959525C25FD3001A6F65 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		45C089E72215C12200D0DD49 /* DatabaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProvider.swift; sourceTree = "<group>"; };
 		45C3F50E23C114600091848D /* UIColorCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorCompatible.swift; sourceTree = "<group>"; };
 		45C3F51623C1249C0091848D /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
@@ -1043,6 +1083,7 @@
 				4597621720FDDE270034DE29 /* Main */,
 				45E8A4E2220B0803003F7502 /* Tab1-Users */,
 				45890AFA21FF515800894255 /* Tab2-Profile */,
+				45BC954025C243D6001A6F65 /* Tab3-Counter */,
 				4597622220FDE5440034DE29 /* LaunchScreen */,
 				450392832256B14C0037BF42 /* Config */,
 				4597621920FDE4360034DE29 /* AppFlowController.swift */,
@@ -1142,6 +1183,7 @@
 				4511A72C213DDCCB006AD4CC /* UIView+ActivityIndicator.swift */,
 				45571939249FE52100FB24CA /* UIView+ActivityIndicator+Rx.swift */,
 				45571941249FF28900FB24CA /* UIView+SkeletonView+Rx.swift */,
+				45BC959525C25FD3001A6F65 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1240,6 +1282,46 @@
 				450C869023547D5A00DC5E49 /* UserDefaultsProvider.swift */,
 			);
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		45BC954025C243D6001A6F65 /* Tab3-Counter */ = {
+			isa = PBXGroup;
+			children = (
+				45BC954525C243FA001A6F65 /* CounterFlowController.swift */,
+				45BC954D25C24400001A6F65 /* Main */,
+			);
+			path = "Tab3-Counter";
+			sourceTree = "<group>";
+		};
+		45BC954D25C24400001A6F65 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				45BC955A25C246BF001A6F65 /* Counter.storyboard */,
+				45BC955B25C246BF001A6F65 /* CounterViewController.swift */,
+				45BC956E25C247D5001A6F65 /* CounterControl */,
+				45BC958325C24808001A6F65 /* CounterDisplay */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		45BC956E25C247D5001A6F65 /* CounterControl */ = {
+			isa = PBXGroup;
+			children = (
+				45BC956F25C247F3001A6F65 /* CounterControl.storyboard */,
+				45BC957025C247F3001A6F65 /* CounterControlViewController.swift */,
+				45BC957125C247F3001A6F65 /* CounterControlViewModel.swift */,
+			);
+			path = CounterControl;
+			sourceTree = "<group>";
+		};
+		45BC958325C24808001A6F65 /* CounterDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				45BC958525C2481F001A6F65 /* CounterDisplay.storyboard */,
+				45BC958625C2481F001A6F65 /* CounterDisplayViewController.swift */,
+				45BC958725C2481F001A6F65 /* CounterDisplayViewModel.swift */,
+			);
+			path = CounterDisplay;
 			sourceTree = "<group>";
 		};
 		45CDC3B924A92F6D00EF2368 /* Alerts */ = {
@@ -1595,9 +1677,12 @@
 				45DB9774226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
 				45128B792142A627007B6B47 /* TabBarButton.xib in Resources */,
 				456852382105BD20006D3618 /* User.json in Resources */,
+				45BC955D25C246BF001A6F65 /* Counter.storyboard in Resources */,
 				45DA0808222E87780003D32A /* Registration.storyboard in Resources */,
 				45890B3F22086C9C00894255 /* Login.storyboard in Resources */,
+				45BC958825C2481F001A6F65 /* CounterDisplay.storyboard in Resources */,
 				45E8A55B220F6F2C003F7502 /* UserTableViewCell.xib in Resources */,
+				45BC957225C247F3001A6F65 /* CounterControl.storyboard in Resources */,
 				459EC5A42239895F0045BE3B /* Profile.storyboard in Resources */,
 				4597626F20FDF0810034DE29 /* LaunchScreen.storyboard in Resources */,
 				453CEAC121583A7D00A94BAC /* RatingViewSmall.xib in Resources */,
@@ -1627,9 +1712,12 @@
 				45DB9775226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
 				45128B7A2142A627007B6B47 /* TabBarButton.xib in Resources */,
 				450392852256B29D0037BF42 /* GoogleService-Info.plist in Resources */,
+				45BC955E25C246BF001A6F65 /* Counter.storyboard in Resources */,
 				456852392105BD20006D3618 /* User.json in Resources */,
 				45DA0809222E87780003D32A /* Registration.storyboard in Resources */,
+				45BC958925C2481F001A6F65 /* CounterDisplay.storyboard in Resources */,
 				45890B4022086C9C00894255 /* Login.storyboard in Resources */,
+				45BC957325C247F3001A6F65 /* CounterControl.storyboard in Resources */,
 				45E8A55C220F6F2C003F7502 /* UserTableViewCell.xib in Resources */,
 				459EC5A52239895F0045BE3B /* Profile.storyboard in Resources */,
 				4597624F20FDEBC80034DE29 /* Main.storyboard in Resources */,
@@ -1659,9 +1747,12 @@
 				45DB9776226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
 				4568523A2105BD20006D3618 /* User.json in Resources */,
 				A83F0EC021490F1100313067 /* UserImageView.xib in Resources */,
+				45BC955F25C246BF001A6F65 /* Counter.storyboard in Resources */,
 				45DA080A222E87780003D32A /* Registration.storyboard in Resources */,
 				45890B4122086C9C00894255 /* Login.storyboard in Resources */,
+				45BC958A25C2481F001A6F65 /* CounterDisplay.storyboard in Resources */,
 				45E8A55D220F6F2C003F7502 /* UserTableViewCell.xib in Resources */,
+				45BC957425C247F3001A6F65 /* CounterControl.storyboard in Resources */,
 				459EC5A62239895F0045BE3B /* Profile.storyboard in Resources */,
 				4597627320FDF0BD0034DE29 /* LaunchScreen_Beta.storyboard in Resources */,
 				453CEAC321583A7D00A94BAC /* RatingViewSmall.xib in Resources */,
@@ -2038,6 +2129,7 @@
 				450D3DEB2111F043008BAE71 /* KeychainProvider.swift in Sources */,
 				4515CC1D226158AE00204767 /* SafariViewController.swift in Sources */,
 				45A388C1225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
+				45BC959625C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */,
 				453CEAB921553E1F00A94BAC /* RatingView.swift in Sources */,
 				456852552105D024006D3618 /* ServiceError.swift in Sources */,
 				A891BDB72108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
@@ -2057,9 +2149,11 @@
 				45ECA1B1216BF761000B1124 /* UserAPI.swift in Sources */,
 				45ED84AE249F64520055A19E /* ActivityIndicator.swift in Sources */,
 				45CDC3BF24A92FA200EF2368 /* Whisper.swift in Sources */,
+				45BC957525C247F3001A6F65 /* CounterControlViewController.swift in Sources */,
 				A8DDD0CF2121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F0213D2677006AD4CC /* TabBarView.swift in Sources */,
 				456458DE255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */,
+				45BC958E25C2481F001A6F65 /* CounterDisplayViewModel.swift in Sources */,
 				45DB9777226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BC210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				45F4AE422180B88400E75B4A /* LocalizedImageView.swift in Sources */,
@@ -2072,11 +2166,13 @@
 				456852102101E432006D3618 /* User.swift in Sources */,
 				456458EA255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */,
 				456852462105CF82006D3618 /* LoginService.swift in Sources */,
+				45BC958B25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */,
 				A82385DA213418B400CC941C /* ShadowView.swift in Sources */,
 				450A62892439FC9500B43049 /* PushNotification.swift in Sources */,
 				451233E3215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				456851B921008988006D3618 /* BaseViewController.swift in Sources */,
 				A847B1AC210F4872002F9ED1 /* LocationHelper.swift in Sources */,
+				45BC954625C243FA001A6F65 /* CounterFlowController.swift in Sources */,
 				4557193E249FE58400FB24CA /* BaseTableViewController+Rx.swift in Sources */,
 				A83F0EB721490EE200313067 /* UserImageView.swift in Sources */,
 				45C3F51723C1249C0091848D /* SecondaryButton.swift in Sources */,
@@ -2140,6 +2236,7 @@
 				457FA18E241EC44400EA7436 /* ErrorMessages.swift in Sources */,
 				45B76D99213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC32108CB2600BBA179 /* XIBView.swift in Sources */,
+				45BC957825C247F3001A6F65 /* CounterControlViewModel.swift in Sources */,
 				45E8A4ED220B0803003F7502 /* UsersFlowController.swift in Sources */,
 				452732A823F0C7F80067C712 /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				4585A15D214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
@@ -2157,6 +2254,7 @@
 				454FFC9823D74C760062FF4B /* FirebaseService.swift in Sources */,
 				45ECA1C6216BFA90000B1124 /* UserService.swift in Sources */,
 				45ECA1AA216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
+				45BC956025C246BF001A6F65 /* CounterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2177,6 +2275,7 @@
 				450D3DEC2111F043008BAE71 /* KeychainProvider.swift in Sources */,
 				4515CC1E226158AE00204767 /* SafariViewController.swift in Sources */,
 				45A388C2225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
+				45BC959725C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */,
 				453CEABA21553E1F00A94BAC /* RatingView.swift in Sources */,
 				456852562105D024006D3618 /* ServiceError.swift in Sources */,
 				A891BDB82108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
@@ -2196,9 +2295,11 @@
 				A8DDD0D02121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				45ED84AF249F64520055A19E /* ActivityIndicator.swift in Sources */,
 				45CDC3C024A92FA200EF2368 /* Whisper.swift in Sources */,
+				45BC957625C247F3001A6F65 /* CounterControlViewController.swift in Sources */,
 				45ECA1B2216BF761000B1124 /* UserAPI.swift in Sources */,
 				4511A6F1213D2677006AD4CC /* TabBarView.swift in Sources */,
 				456458DF255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */,
+				45BC958F25C2481F001A6F65 /* CounterDisplayViewModel.swift in Sources */,
 				45DB9778226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BD210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				459762E420FE21BC0034DE29 /* ViewModelType.swift in Sources */,
@@ -2211,11 +2312,13 @@
 				456852112101E432006D3618 /* User.swift in Sources */,
 				456458EB255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */,
 				456852472105CF82006D3618 /* LoginService.swift in Sources */,
+				45BC958C25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */,
 				451233E4215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				450A628A2439FC9500B43049 /* PushNotification.swift in Sources */,
 				A82385DB213418B400CC941C /* ShadowView.swift in Sources */,
 				456851BA21008988006D3618 /* BaseViewController.swift in Sources */,
 				A83F0EB821490EE200313067 /* UserImageView.swift in Sources */,
+				45BC954725C243FA001A6F65 /* CounterFlowController.swift in Sources */,
 				4557193F249FE58400FB24CA /* BaseTableViewController+Rx.swift in Sources */,
 				A847B1AD210F4872002F9ED1 /* LocationHelper.swift in Sources */,
 				45C3F51823C1249C0091848D /* SecondaryButton.swift in Sources */,
@@ -2279,6 +2382,7 @@
 				457FA18F241EC44400EA7436 /* ErrorMessages.swift in Sources */,
 				45B76D9A213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC42108CB2600BBA179 /* XIBView.swift in Sources */,
+				45BC957925C247F3001A6F65 /* CounterControlViewModel.swift in Sources */,
 				45E8A4EE220B0803003F7502 /* UsersFlowController.swift in Sources */,
 				452732A923F0C7F80067C712 /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				4585A15E214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
@@ -2296,6 +2400,7 @@
 				454FFC9923D74C760062FF4B /* FirebaseService.swift in Sources */,
 				45ECA1C7216BFA90000B1124 /* UserService.swift in Sources */,
 				45ECA1AB216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
+				45BC956125C246BF001A6F65 /* CounterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2316,6 +2421,7 @@
 				450D3DED2111F043008BAE71 /* KeychainProvider.swift in Sources */,
 				4515CC1F226158AE00204767 /* SafariViewController.swift in Sources */,
 				45A388C3225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
+				45BC959825C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */,
 				453CEABB21553E1F00A94BAC /* RatingView.swift in Sources */,
 				456852572105D024006D3618 /* ServiceError.swift in Sources */,
 				A891BDB92108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
@@ -2335,9 +2441,11 @@
 				45ECA1B3216BF761000B1124 /* UserAPI.swift in Sources */,
 				45ED84B0249F64520055A19E /* ActivityIndicator.swift in Sources */,
 				45CDC3C124A92FA200EF2368 /* Whisper.swift in Sources */,
+				45BC957725C247F3001A6F65 /* CounterControlViewController.swift in Sources */,
 				A8DDD0D12121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F2213D2677006AD4CC /* TabBarView.swift in Sources */,
 				456458E0255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */,
+				45BC959025C2481F001A6F65 /* CounterDisplayViewModel.swift in Sources */,
 				45DB9779226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BE210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				45F4AE442180B88400E75B4A /* LocalizedImageView.swift in Sources */,
@@ -2350,11 +2458,13 @@
 				456852122101E432006D3618 /* User.swift in Sources */,
 				456458EC255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */,
 				456852482105CF82006D3618 /* LoginService.swift in Sources */,
+				45BC958D25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */,
 				A82385DC213418B400CC941C /* ShadowView.swift in Sources */,
 				450A628B2439FC9500B43049 /* PushNotification.swift in Sources */,
 				451233E5215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				456851BB21008988006D3618 /* BaseViewController.swift in Sources */,
 				A847B1AE210F4872002F9ED1 /* LocationHelper.swift in Sources */,
+				45BC954825C243FA001A6F65 /* CounterFlowController.swift in Sources */,
 				45571940249FE58400FB24CA /* BaseTableViewController+Rx.swift in Sources */,
 				A83F0EB921490EE200313067 /* UserImageView.swift in Sources */,
 				45C3F51923C1249C0091848D /* SecondaryButton.swift in Sources */,
@@ -2418,6 +2528,7 @@
 				457FA190241EC44400EA7436 /* ErrorMessages.swift in Sources */,
 				45B76D9B213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC52108CB2600BBA179 /* XIBView.swift in Sources */,
+				45BC957A25C247F3001A6F65 /* CounterControlViewModel.swift in Sources */,
 				45E8A4EF220B0803003F7502 /* UsersFlowController.swift in Sources */,
 				452732AA23F0C7F80067C712 /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				4585A15F214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
@@ -2435,6 +2546,7 @@
 				454FFC9A23D74C760062FF4B /* FirebaseService.swift in Sources */,
 				45ECA1C8216BFA90000B1124 /* UserService.swift in Sources */,
 				45ECA1AC216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
+				45BC956225C246BF001A6F65 /* CounterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

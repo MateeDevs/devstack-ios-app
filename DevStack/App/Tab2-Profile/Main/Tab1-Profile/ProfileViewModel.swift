@@ -19,8 +19,6 @@ final class ProfileViewModel: ViewModel, ViewModelType {
     
     struct Input {
         let logoutButtonTaps: AnyObserver<Void>
-        let increaseButtonTaps: AnyObserver<Void>
-        let decreaseButtonTaps: AnyObserver<Void>
     }
     
     struct Output {
@@ -28,15 +26,12 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         let isRefreshing: Driver<Bool>
         let currentLocation: Driver<CLLocation>
         let logoutSuccess: Driver<Void>
-        let increaseCounter: Driver<User>
-        let decreaseCounter: Driver<User>
     }
 
     struct Profile {
         let fullName: Driver<String>
         let initials: Driver<String>
         let imageURL: Driver<String?>
-        let counterValue: Driver<String>
     }
     
     init(dependencies: Dependencies) {
@@ -44,13 +39,9 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         // MARK: Setup inputs
 
         let logoutButtonTaps = PublishSubject<Void>()
-        let increaseButtonTaps = PublishSubject<Void>()
-        let decreaseButtonTaps = PublishSubject<Void>()
         
         self.input = Input(
-            logoutButtonTaps: logoutButtonTaps.asObserver(),
-            increaseButtonTaps: increaseButtonTaps.asObserver(),
-            decreaseButtonTaps: decreaseButtonTaps.asObserver()
+            logoutButtonTaps: logoutButtonTaps.asObserver()
         )
         
         // MARK: Transformations
@@ -71,28 +62,17 @@ final class ProfileViewModel: ViewModel, ViewModelType {
             return dependencies.loginService.logout().materialize()
         }.share()
 
-        let increaseCounter = increaseButtonTaps.flatMapLatest { _ -> Observable<Event<User>> in
-            return dependencies.userService.increaseCounter().materialize()
-        }.share()
-
-        let decreaseCounter = decreaseButtonTaps.flatMapLatest { _ -> Observable<Event<User>> in
-            return dependencies.userService.decreaseCounter().materialize()
-        }.share()
-
         // MARK: Setup outputs
         
         self.output = Output(
             profile: Profile(
                 fullName: profile.map { $0.fullName }.asDriver(),
                 initials: profile.map { $0.fullName.initials }.asDriver(),
-                imageURL: profile.map { $0.pictureUrl }.asDriver(),
-                counterValue: profile.map { "\($0.counter)" }.asDriver()
+                imageURL: profile.map { $0.pictureUrl }.asDriver()
             ),
             isRefreshing: isRefreshing.asDriver(),
             currentLocation: currentLocation.asDriver(),
-            logoutSuccess: logout.compactMap { $0.element }.asDriver(),
-            increaseCounter: increaseCounter.compactMap { $0.element }.asDriver(),
-            decreaseCounter: decreaseCounter.compactMap { $0.element }.asDriver()
+            logoutSuccess: logout.compactMap { $0.element }.asDriver()
         )
         
         super.init()

@@ -26,9 +26,6 @@ final class ProfileViewController: BaseViewController {
     @IBOutlet private weak var userImageView: UserImageView!
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var locationLabel: UILabel!
-    @IBOutlet private weak var counterLabel: UILabel!
-    @IBOutlet private weak var increaseButton: SecondaryButton!
-    @IBOutlet private weak var decreaseButton: SecondaryButton!
     @IBOutlet private weak var logoutButton: PrimaryButton!
     
     // MARK: Stored properties
@@ -51,14 +48,11 @@ final class ProfileViewController: BaseViewController {
 
         // Inputs
         logoutButton.rx.tap.bind(to: viewModel.input.logoutButtonTaps).disposed(by: disposeBag)
-        increaseButton.rx.tap.bind(to: viewModel.input.increaseButtonTaps).disposed(by: disposeBag)
-        decreaseButton.rx.tap.bind(to: viewModel.input.decreaseButtonTaps).disposed(by: disposeBag)
 
         // Outputs
         viewModel.output.profile.fullName.drive(userNameLabel.rx.text).disposed(by: disposeBag)
         viewModel.output.profile.initials.drive(userImageView.rx.placeholder).disposed(by: disposeBag)
         viewModel.output.profile.imageURL.drive(userImageView.rx.imageURL).disposed(by: disposeBag)
-        viewModel.output.profile.counterValue.drive(counterLabel.rx.text).disposed(by: disposeBag)
         
         viewModel.output.isRefreshing.drive(view.rx.skeletonView).disposed(by: disposeBag)
         
@@ -69,13 +63,11 @@ final class ProfileViewController: BaseViewController {
         viewModel.output.logoutSuccess.drive(onNext: { [weak self] _ in
             self?.flowDelegate?.presentOnboarding()
         }).disposed(by: disposeBag)
-
-        viewModel.output.increaseCounter.drive().disposed(by: disposeBag)
-        viewModel.output.decreaseCounter.drive().disposed(by: disposeBag)
     }
 
     override func setupUI() {
         super.setupUI()
+        
         view.isSkeletonable = true
         userImageView.isSkeletonable = true
         userNameLabel.isSkeletonable = true

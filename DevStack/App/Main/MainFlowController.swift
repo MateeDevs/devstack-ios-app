@@ -20,7 +20,7 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
         let main = MainTabBarController.instantiate()
         
         let usersNc = UINavigationController()
-		usersNc.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_1, image: Asset.Images.contactsTabBar.image, tag: 0)
+		usersNc.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_1, image: Asset.Images.usersTabBar.image, tag: 0)
         let usersFc = UsersFlowController(navigationController: usersNc, dependencies: dependencies)
         let usersRootVc = startChildFlow(usersFc)
         usersNc.viewControllers = [usersRootVc]
@@ -31,8 +31,14 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
         profileFc.delegate = self
         let profileRootVc = startChildFlow(profileFc)
         profileNc.viewControllers = [profileRootVc]
+
+        let counterNc = UINavigationController()
+        counterNc.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_3, image: Asset.Images.counterTabBar.image, tag: 2)
+        let counterFc = CounterFlowController(navigationController: counterNc, dependencies: dependencies)
+        let counterRootVc = startChildFlow(counterFc)
+        counterNc.viewControllers = [counterRootVc]
         
-        main.viewControllers = [usersNc, profileNc]
+        main.viewControllers = [usersNc, profileNc, counterNc]
         return main
     }
     

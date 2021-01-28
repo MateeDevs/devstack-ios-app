@@ -49,20 +49,20 @@ public class UserService {
         return network.observableRequest(endpoint).map(User.self).save()
     }
 
-    public func increaseCounter() -> Observable<User> {
+    public func increaseCounter() -> Observable<Void> {
         return getProfile().take(1).flatMap { user -> Observable<User> in
             let userCopy = User(value: user)
             userCopy.counter += 1
             return Observable.just(userCopy)
-        }.save(model: .fullModel)
+        }.save(model: .fullModel).mapToVoid()
     }
 
-    public func decreaseCounter() -> Observable<User> {
+    public func decreaseCounter() -> Observable<Void> {
         return getProfile().take(1).flatMap { user -> Observable<User> in
             let userCopy = User(value: user)
             userCopy.counter -= 1
             return Observable.just(userCopy)
-        }.save(model: .fullModel)
+        }.save(model: .fullModel).mapToVoid()
     }
 
     public func getProfileId() -> String? {
