@@ -6,6 +6,7 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import RxCocoa
 import RxSwift
 import UIKit
 
@@ -24,6 +25,7 @@ final class CounterControlViewController: BaseViewController {
     // MARK: UI components
     @IBOutlet private weak var increaseButton: SecondaryButton!
     @IBOutlet private weak var decreaseButton: SecondaryButton!
+    @IBOutlet private weak var hideButton: SecondaryButton!
 
     // MARK: Stored properties
 
@@ -58,4 +60,11 @@ final class CounterControlViewController: BaseViewController {
 
     // MARK: Additional methods
 
+}
+
+extension CounterControlViewController {
+    /// Reactive wrapper for `hideButton.tap` property.
+    var hideButtonTap: ControlEvent<Void> {
+        return hideButton.rx.tap
+    }
 }

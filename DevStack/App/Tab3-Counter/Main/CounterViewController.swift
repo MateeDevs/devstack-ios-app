@@ -25,8 +25,8 @@ final class CounterViewController: BaseViewController {
     @IBOutlet private weak var displayView: UIView!
 
     // MARK: Stored properties
-    private var controlViewController: BaseViewController! // swiftlint:disable:this implicitly_unwrapped_optional
-    private var displayViewController: BaseViewController! // swiftlint:disable:this implicitly_unwrapped_optional
+    private var controlViewController: CounterControlViewController! // swiftlint:disable:this implicitly_unwrapped_optional
+    private var displayViewController: CounterDisplayViewController! // swiftlint:disable:this implicitly_unwrapped_optional
 
     // MARK: Inits
     static func instantiate(
@@ -42,18 +42,25 @@ final class CounterViewController: BaseViewController {
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Add child view controllers
+        add(controlViewController)
+        add(displayViewController)
     }
 
     override func viewWillLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        add(controlViewController, frame: controlView.frame)
-        add(displayViewController, frame: displayView.frame)
+        // Set frames for child view controllers
+        controlViewController.view.frame = controlView.frame
+        displayViewController.view.frame = displayView.frame
     }
 
     // MARK: Default methods
     override func setupBindings() {
         super.setupBindings()
+
+        controlViewController.hideButtonTap.bind(to: displayViewController.counterLabelIsHidden).disposed(by: disposeBag)
     }
 
     override func setupUI() {

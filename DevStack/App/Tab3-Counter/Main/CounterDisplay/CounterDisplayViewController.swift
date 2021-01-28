@@ -6,6 +6,7 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import RxCocoa
 import RxSwift
 import UIKit
 
@@ -53,5 +54,16 @@ final class CounterDisplayViewController: BaseViewController {
     }
 
     // MARK: Additional methods
+    private func hideCounterLabel() {
+        counterLabel.isHidden = !counterLabel.isHidden
+    }
+}
 
+extension CounterDisplayViewController {
+    /// Bindable sink for `hideCounterLabel()` method
+    var counterLabelIsHidden: Binder<Void> {
+        return Binder(self) { base, _ in
+            base.hideCounterLabel()
+        }
+    }
 }

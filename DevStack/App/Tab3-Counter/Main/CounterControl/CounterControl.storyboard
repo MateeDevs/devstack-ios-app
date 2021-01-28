@@ -22,29 +22,37 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oun-9O-4ue" customClass="SecondaryButton" customModule="A_DevStack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="91.5" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="profile_view_counter_increase_button"/>
+                                        <state key="normal" title="counter_view_counter_increase_button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5b-b7-xEW" customClass="SecondaryButton" customModule="A_DevStack" customModuleProvider="target">
                                         <rect key="frame" x="155.5" y="0.0" width="91.5" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="profile_view_counter_decrease_button"/>
+                                        <state key="normal" title="counter_view_counter_decrease_button"/>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="X5b-b7-xEW" firstAttribute="width" secondItem="oun-9O-4ue" secondAttribute="width" id="0M3-8c-rpF"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMJ-nJ-4WY" customClass="SecondaryButton" customModule="A_DevStack" customModuleProvider="target">
+                                <rect key="frame" x="45.5" y="415.5" width="284" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="counter_view_counter_hide_button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qdr-Ev-KLG"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="OMJ-nJ-4WY" firstAttribute="centerX" secondItem="qdr-Ev-KLG" secondAttribute="centerX" id="PCc-pS-Vaj"/>
                             <constraint firstItem="hHc-Zq-ZUY" firstAttribute="centerY" secondItem="qdr-Ev-KLG" secondAttribute="centerY" id="XyQ-jW-LoY"/>
+                            <constraint firstItem="OMJ-nJ-4WY" firstAttribute="top" secondItem="hHc-Zq-ZUY" secondAttribute="bottom" constant="64" id="jaH-uw-lto"/>
                             <constraint firstItem="hHc-Zq-ZUY" firstAttribute="trailing" secondItem="qdr-Ev-KLG" secondAttribute="trailing" constant="-64" id="pxY-n6-Xh4"/>
                             <constraint firstItem="hHc-Zq-ZUY" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="64" id="uJw-73-kI9"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="decreaseButton" destination="X5b-b7-xEW" id="MjX-lw-hbN"/>
+                        <outlet property="hideButton" destination="OMJ-nJ-4WY" id="zdW-76-rwl"/>
                         <outlet property="increaseButton" destination="oun-9O-4ue" id="Vgb-yA-NzO"/>
                     </connections>
                 </viewController>
