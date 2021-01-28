@@ -20,7 +20,8 @@ final class CounterDisplayViewController: BaseViewController {
     weak var flowDelegate: CounterDisplayFlowDelegate?
 
     // MARK: ViewModels
-    private var viewModel: CounterDisplayViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
+    private var displayViewModel: CounterDisplayViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
+    private var sharedViewModel: CounterSharedViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
 
     // MARK: UI components
     @IBOutlet private weak var counterLabel: UILabel!
@@ -28,9 +29,10 @@ final class CounterDisplayViewController: BaseViewController {
     // MARK: Stored properties
 
     // MARK: Inits
-    static func instantiate(viewModel: CounterDisplayViewModel) -> CounterDisplayViewController {
+    static func instantiate(displayVm: CounterDisplayViewModel, sharedVm: CounterSharedViewModel) -> CounterDisplayViewController {
         let vc = StoryboardScene.CounterDisplay.initialScene.instantiate()
-        vc.viewModel = viewModel
+        vc.displayViewModel = displayVm
+        vc.sharedViewModel = sharedVm
         return vc
     }
 
@@ -46,7 +48,11 @@ final class CounterDisplayViewController: BaseViewController {
         // Inputs
 
         // Outputs
-        viewModel.output.counterValue.drive(counterLabel.rx.text).disposed(by: disposeBag)
+        displayViewModel.output.counterValue.drive(counterLabel.rx.text).disposed(by: disposeBag)
+
+        sharedViewModel.output.hideCounterLabel
+            .map { !self.counterLabel.isHidden }
+            .drive(counterLabel.rx.isHidden).disposed(by: disposeBag)
     }
 
     override func setupUI() {
@@ -54,16 +60,5 @@ final class CounterDisplayViewController: BaseViewController {
     }
 
     // MARK: Additional methods
-    private func hideCounterLabel() {
-        counterLabel.isHidden = !counterLabel.isHidden
-    }
-}
 
-extension CounterDisplayViewController {
-    /// Bindable sink for `hideCounterLabel()` method
-    var counterLabelIsHidden: Binder<Void> {
-        return Binder(self) { base, _ in
-            base.hideCounterLabel()
-        }
-    }
 }

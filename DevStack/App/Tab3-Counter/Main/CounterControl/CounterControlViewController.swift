@@ -20,7 +20,8 @@ final class CounterControlViewController: BaseViewController {
     weak var flowDelegate: CounterControlFlowDelegate?
 
     // MARK: ViewModels
-    private var viewModel: CounterControlViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
+    private var controlViewModel: CounterControlViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
+    private var sharedViewModel: CounterSharedViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
 
     // MARK: UI components
     @IBOutlet private weak var increaseButton: SecondaryButton!
@@ -30,9 +31,10 @@ final class CounterControlViewController: BaseViewController {
     // MARK: Stored properties
 
     // MARK: Inits
-    static func instantiate(viewModel: CounterControlViewModel) -> CounterControlViewController {
+    static func instantiate(controlVm: CounterControlViewModel, sharedVm: CounterSharedViewModel) -> CounterControlViewController {
         let vc = StoryboardScene.CounterControl.initialScene.instantiate()
-        vc.viewModel = viewModel
+        vc.controlViewModel = controlVm
+        vc.sharedViewModel = sharedVm
         return vc
     }
 
@@ -46,12 +48,13 @@ final class CounterControlViewController: BaseViewController {
         super.setupBindings()
 
         // Inputs
-        increaseButton.rx.tap.bind(to: viewModel.input.increaseButtonTaps).disposed(by: disposeBag)
-        decreaseButton.rx.tap.bind(to: viewModel.input.decreaseButtonTaps).disposed(by: disposeBag)
+        increaseButton.rx.tap.bind(to: controlViewModel.input.increaseButtonTaps).disposed(by: disposeBag)
+        decreaseButton.rx.tap.bind(to: controlViewModel.input.decreaseButtonTaps).disposed(by: disposeBag)
+        hideButton.rx.tap.bind(to: sharedViewModel.input.hideButtonTaps).disposed(by: disposeBag)
 
         // Outputs
-        viewModel.output.increaseCounter.drive().disposed(by: disposeBag)
-        viewModel.output.decreaseCounter.drive().disposed(by: disposeBag)
+        controlViewModel.output.increaseCounter.drive().disposed(by: disposeBag)
+        controlViewModel.output.decreaseCounter.drive().disposed(by: disposeBag)
     }
 
     override func setupUI() {
@@ -60,11 +63,4 @@ final class CounterControlViewController: BaseViewController {
 
     // MARK: Additional methods
 
-}
-
-extension CounterControlViewController {
-    /// Reactive wrapper for `hideButton.tap` property.
-    var hideButtonTap: ControlEvent<Void> {
-        return hideButton.rx.tap
-    }
 }

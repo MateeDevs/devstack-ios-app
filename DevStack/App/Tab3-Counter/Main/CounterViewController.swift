@@ -29,13 +29,10 @@ final class CounterViewController: BaseViewController {
     private var displayViewController: CounterDisplayViewController! // swiftlint:disable:this implicitly_unwrapped_optional
 
     // MARK: Inits
-    static func instantiate(
-        controlViewController: CounterControlViewController,
-        displayViewController: CounterDisplayViewController
-    ) -> CounterViewController {
+    static func instantiate(controlVc: CounterControlViewController, displayVc: CounterDisplayViewController) -> CounterViewController {
         let vc = StoryboardScene.Counter.initialScene.instantiate()
-        vc.controlViewController = controlViewController
-        vc.displayViewController = displayViewController
+        vc.controlViewController = controlVc
+        vc.displayViewController = displayVc
         return vc
     }
 
@@ -59,8 +56,6 @@ final class CounterViewController: BaseViewController {
     // MARK: Default methods
     override func setupBindings() {
         super.setupBindings()
-
-        controlViewController.hideButtonTap.bind(to: displayViewController.counterLabelIsHidden).disposed(by: disposeBag)
     }
 
     override func setupUI() {

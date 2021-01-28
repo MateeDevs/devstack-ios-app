@@ -29,14 +29,10 @@ final class CounterDisplayViewModel: ViewModel, ViewModelType {
 
         self.input = Input()
 
-        // MARK: Transformations
-
-        let profile = dependencies.userService.getProfile()
-
         // MARK: Setup outputs
 
         self.output = Output(
-            counterValue: profile.map { "\($0.counter)" }.asDriver()
+            counterValue: dependencies.userService.getProfile().map { "\($0.counter)" }.asDriver()
         )
 
         super.init()

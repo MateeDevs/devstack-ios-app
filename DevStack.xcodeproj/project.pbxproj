@@ -335,6 +335,9 @@
 		45BC959625C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959525C25FD3001A6F65 /* UIViewController+Extensions.swift */; };
 		45BC959725C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959525C25FD3001A6F65 /* UIViewController+Extensions.swift */; };
 		45BC959825C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959525C25FD3001A6F65 /* UIViewController+Extensions.swift */; };
+		45BC959E25C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959D25C2E684001A6F65 /* CounterSharedViewModel.swift */; };
+		45BC959F25C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959D25C2E684001A6F65 /* CounterSharedViewModel.swift */; };
+		45BC95A025C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959D25C2E684001A6F65 /* CounterSharedViewModel.swift */; };
 		45C089E82215C12200D0DD49 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseProvider.swift */; };
 		45C089E92215C12200D0DD49 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseProvider.swift */; };
 		45C089EA2215C12200D0DD49 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseProvider.swift */; };
@@ -671,6 +674,7 @@
 		45BC958625C2481F001A6F65 /* CounterDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterDisplayViewController.swift; sourceTree = "<group>"; };
 		45BC958725C2481F001A6F65 /* CounterDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterDisplayViewModel.swift; sourceTree = "<group>"; };
 		45BC959525C25FD3001A6F65 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		45BC959D25C2E684001A6F65 /* CounterSharedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterSharedViewModel.swift; sourceTree = "<group>"; };
 		45C089E72215C12200D0DD49 /* DatabaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProvider.swift; sourceTree = "<group>"; };
 		45C3F50E23C114600091848D /* UIColorCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorCompatible.swift; sourceTree = "<group>"; };
 		45C3F51623C1249C0091848D /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
@@ -1298,6 +1302,7 @@
 			children = (
 				45BC955A25C246BF001A6F65 /* Counter.storyboard */,
 				45BC955B25C246BF001A6F65 /* CounterViewController.swift */,
+				45BC959D25C2E684001A6F65 /* CounterSharedViewModel.swift */,
 				45BC956E25C247D5001A6F65 /* CounterControl */,
 				45BC958325C24808001A6F65 /* CounterDisplay */,
 			);
@@ -2146,6 +2151,7 @@
 				45DE1D9421CA9CA300C455C4 /* AuthAPI.swift in Sources */,
 				45E8A4A9220AEBAE003F7502 /* Logger.swift in Sources */,
 				459762DE20FE21290034DE29 /* Storyboards.swift in Sources */,
+				45BC959E25C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */,
 				45ECA1B1216BF761000B1124 /* UserAPI.swift in Sources */,
 				45ED84AE249F64520055A19E /* ActivityIndicator.swift in Sources */,
 				45CDC3BF24A92FA200EF2368 /* Whisper.swift in Sources */,
@@ -2292,6 +2298,7 @@
 				459762DF20FE21290034DE29 /* Storyboards.swift in Sources */,
 				45DE1D9521CA9CA300C455C4 /* AuthAPI.swift in Sources */,
 				45E8A4AA220AEBAE003F7502 /* Logger.swift in Sources */,
+				45BC959F25C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */,
 				A8DDD0D02121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				45ED84AF249F64520055A19E /* ActivityIndicator.swift in Sources */,
 				45CDC3C024A92FA200EF2368 /* Whisper.swift in Sources */,
@@ -2438,6 +2445,7 @@
 				45DE1D9621CA9CA300C455C4 /* AuthAPI.swift in Sources */,
 				45E8A4AB220AEBAE003F7502 /* Logger.swift in Sources */,
 				459762E020FE21290034DE29 /* Storyboards.swift in Sources */,
+				45BC95A025C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */,
 				45ECA1B3216BF761000B1124 /* UserAPI.swift in Sources */,
 				45ED84B0249F64520055A19E /* ActivityIndicator.swift in Sources */,
 				45CDC3C124A92FA200EF2368 /* Whisper.swift in Sources */,
