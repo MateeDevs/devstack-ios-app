@@ -21,17 +21,17 @@ class AppFlowController: FlowController, MainFlowControllerDelegate, OnboardingF
     func setupMain() {
         let fc = MainFlowController(navigationController: navigationController, dependencies: dependencies)
         fc.delegate = self
-        let rootVc = startChildFlow(fc)
+        let rootVC = startChildFlow(fc)
         navigationController.navigationBar.barStyle = .black
-        navigationController.viewControllers = [rootVc]
+        navigationController.viewControllers = [rootVC]
     }
     
     func presentOnboarding(animated: Bool, completion: (() -> Void)?) {
         let nc = UINavigationController()
         let fc = OnboardingFlowController(navigationController: nc, dependencies: dependencies)
         fc.delegate = self
-        let rootVc = startChildFlow(fc)
-        nc.viewControllers = [rootVc]
+        let rootVC = startChildFlow(fc)
+        nc.viewControllers = [rootVC]
         nc.modalPresentationStyle = .fullScreen
         nc.navigationBar.isHidden = true
         navigationController.present(nc, animated: animated, completion: completion)

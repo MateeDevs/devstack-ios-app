@@ -29,10 +29,10 @@ final class CounterViewController: BaseViewController {
     private var displayViewController: CounterDisplayViewController! // swiftlint:disable:this implicitly_unwrapped_optional
 
     // MARK: Inits
-    static func instantiate(controlVc: CounterControlViewController, displayVc: CounterDisplayViewController) -> CounterViewController {
+    static func instantiate(controlVC: CounterControlViewController, displayVC: CounterDisplayViewController) -> CounterViewController {
         let vc = StoryboardScene.Counter.initialScene.instantiate()
-        vc.controlViewController = controlVc
-        vc.displayViewController = displayVc
+        vc.controlViewController = controlVC
+        vc.displayViewController = displayVC
         return vc
     }
 

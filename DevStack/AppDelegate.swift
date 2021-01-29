@@ -44,14 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appAppearance()
         
         // Init main window with navigation controller
-        let navController = UINavigationController()
-        navController.navigationBar.isHidden = true
+        let nc = UINavigationController()
+        nc.navigationBar.isHidden = true
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navController
+        window?.rootViewController = nc
         window?.makeKeyAndVisible()
         
         // Init main flow controller and start the flow
-        flowController = AppFlowController(navigationController: navController, dependencies: ServiceDependency(dependencies: providers))
+        flowController = AppFlowController(navigationController: nc, dependencies: ServiceDependency(dependencies: providers))
         flowController?.start()
         
         firebaseSetup(for: application)
