@@ -140,11 +140,10 @@ platform :ios do
     end
     increment_build_number(build_number: ENV["BUILD_NUMBER"])
 
-    keychain_name = "fastlane"
     keychain_password = SecureRandom.base64
-    delete_keychain(name: keychain_name) if File.exist?(File.expand_path("~/Library/Keychains/fastlane-db"))
+    delete_keychain(name: "fastlane") if File.exist?(File.expand_path("~/Library/Keychains/fastlane-db"))
     create_keychain(
-      name: keychain_name,
+      name: "fastlane",
       unlock: true,
       timeout: 3600,
       lock_when_sleeps: true,
@@ -162,7 +161,7 @@ platform :ios do
       git_url: match_url,
       git_branch: config[:match_branch],
       type: "appstore",
-      keychain_name: keychain_name,
+      keychain_name: "fastlane",
       keychain_password: keychain_password,
       readonly: true
     )
@@ -288,9 +287,11 @@ platform :ios do
 
   after_all do |lane|
     # This block is called, only if the executed lane was successful
+    delete_keychain(name: "fastlane") if File.exist?(File.expand_path("~/Library/Keychains/fastlane-db"))
   end
 
   error do |lane, exception|
     # This block is called, only if there was an error in the executed lane
+    delete_keychain(name: "fastlane") if File.exist?(File.expand_path("~/Library/Keychains/fastlane-db"))
   end
 end
