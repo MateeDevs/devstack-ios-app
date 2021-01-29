@@ -34,9 +34,6 @@ final class SettingsViewController: BaseViewController {
     }
 
     // MARK: Lifecycle methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     // MARK: Default methods
     override func setupBindings() {
@@ -49,10 +46,6 @@ final class SettingsViewController: BaseViewController {
         largeButton.rx.tap.bind { [weak self] in
             self?.topViewHeightConstraint.constant = 1200.0
         }.disposed(by: disposeBag)
-    }
-
-    override func setupUI() {
-        super.setupUI()
     }
 
     // MARK: Additional methods

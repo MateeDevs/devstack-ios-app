@@ -39,9 +39,6 @@ final class CounterControlViewController: BaseViewController {
     }
 
     // MARK: Lifecycle methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     // MARK: Default methods
     override func setupBindings() {
@@ -55,10 +52,6 @@ final class CounterControlViewController: BaseViewController {
         // Outputs
         controlViewModel.output.increaseCounter.drive().disposed(by: disposeBag)
         controlViewModel.output.decreaseCounter.drive().disposed(by: disposeBag)
-    }
-
-    override func setupUI() {
-        super.setupUI()
     }
 
     // MARK: Additional methods

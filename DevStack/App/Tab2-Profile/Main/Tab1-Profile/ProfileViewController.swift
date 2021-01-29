@@ -38,9 +38,6 @@ final class ProfileViewController: BaseViewController {
     }
 
     // MARK: Lifecycle methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     // MARK: Default methods
     override func setupBindings() {

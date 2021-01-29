@@ -37,9 +37,6 @@ final class CounterDisplayViewController: BaseViewController {
     }
 
     // MARK: Lifecycle methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     // MARK: Default methods
     override func setupBindings() {
@@ -50,10 +47,6 @@ final class CounterDisplayViewController: BaseViewController {
         // Outputs
         displayViewModel.output.counterValue.drive(counterLabel.rx.text).disposed(by: disposeBag)
         sharedViewModel.output.isCounterHidden.drive(counterLabel.rx.isHidden).disposed(by: disposeBag)
-    }
-
-    override func setupUI() {
-        super.setupUI()
     }
 
     // MARK: Additional methods
