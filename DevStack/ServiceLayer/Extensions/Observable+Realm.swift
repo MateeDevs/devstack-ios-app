@@ -40,7 +40,7 @@ extension ObservableType {
             if let id = setPrimaryKey {
                 object[primaryKeyName] = id
             }
-            guard let realm = Realm.safeInit() else { return Observable.error(CommonError.realmNotAvailable) }
+            guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
             return realm.rx.save(object, model: model)
         })
     }
@@ -53,7 +53,7 @@ extension ObservableType {
     ///
     func save<T: Object>(model: UpdateModel = .apiModel) -> Observable<[T]> where Element == [T] {
         flatMap({ objects -> Observable<[T]> in
-            guard let realm = Realm.safeInit() else { return Observable.error(CommonError.realmNotAvailable) }
+            guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
             return realm.rx.save(objects, model: model)
         })
     }
@@ -77,7 +77,7 @@ extension ObservableType {
             if let id = setPrimaryKey {
                 object[primaryKeyName] = id
             }
-            guard let realm = Realm.safeInit() else { return Observable.error(CommonError.realmNotAvailable) }
+            guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
             return realm.rx.appendToList(list, objects: [object], model: model).map({ _ in object })
         })
     }
@@ -94,7 +94,7 @@ extension ObservableType {
         model: UpdateModel = .apiModel
     ) -> Observable<[T]> where Element == [T] {
         flatMap({ objects -> Observable<[T]> in
-            guard let realm = Realm.safeInit() else { return Observable.error(CommonError.realmNotAvailable) }
+            guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
             return realm.rx.appendToList(list, objects: objects, model: model).map({ _ in objects })
         })
     }

@@ -12,7 +12,7 @@ import RxSwift
 
 extension Reactive where Base == Realm {
     func save<T: Object>(_ object: T, model: UpdateModel = .apiModel) -> Observable<T> {
-        Observable.create { observer in
+        .create { observer in
             do {
                 try self.base.write {
                     self.base.create(T.self, value: model.value(for: object), update: .modified)
@@ -27,7 +27,7 @@ extension Reactive where Base == Realm {
     }
     
     func save<T: Object>(_ objects: [T], model: UpdateModel = .apiModel) -> Observable<[T]> {
-        Observable.create { observer in
+        .create { observer in
             do {
                 try self.base.write {
                     for object in objects {
@@ -44,7 +44,7 @@ extension Reactive where Base == Realm {
     }
     
     func appendToList<T: Object>(_ list: List<T>, objects: [T], model: UpdateModel = .apiModel) -> Observable<[T]> {
-        Observable.create { observer in
+        .create { observer in
             do {
                 try self.base.write {
                     // It's not possible to append objects directly (nested objects won't be updated)
@@ -72,7 +72,7 @@ extension Reactive where Base == Realm {
     }
     
     func delete<T: Object>(_ object: T) -> Observable<Void> {
-        Observable.create { observer in
+        .create { observer in
             do {
                 try self.base.write {
                     self.base.delete(object)

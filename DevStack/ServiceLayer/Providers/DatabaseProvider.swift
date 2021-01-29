@@ -64,17 +64,17 @@ extension DatabaseProviderType {
 struct DatabaseProvider: DatabaseProviderType {
     
     func observableObject<T: Object>(_ type: T.Type, id: String, primaryKeyName: String) -> Observable<T> {
-        guard let realm = Realm.safeInit() else { return Observable.error(CommonError.realmNotAvailable) }
+        guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
         let dbObjects = realm.objects(T.self).filter(NSPredicate(format: "\(primaryKeyName) == %@", id))
         
         return Observable.collection(from: dbObjects).flatMap { objects -> Observable<T> in
-            guard let object = objects.first else { return Observable.empty() }
-            return Observable.just(object)
+            guard let object = objects.first else { return .empty() }
+            return .just(object)
         }
     }
 
     func observableCollection<T: Object>(_ type: T.Type, predicate: NSPredicate?, sortBy: String?, ascending: Bool) -> Observable<[T]> {
-        guard let realm = Realm.safeInit() else { return Observable.error(CommonError.realmNotAvailable) }
+        guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
         var dbObjects = realm.objects(T.self)
         
         if let predicate = predicate {
@@ -86,8 +86,8 @@ struct DatabaseProvider: DatabaseProviderType {
         }
         
         return Observable.array(from: dbObjects).flatMap { objects -> Observable<[T]> in
-            guard !objects.isEmpty else { return Observable.just([]) }
-            return Observable.just(objects)
+            guard !objects.isEmpty else { return .just([]) }
+            return .just(objects)
         }
     }
 
