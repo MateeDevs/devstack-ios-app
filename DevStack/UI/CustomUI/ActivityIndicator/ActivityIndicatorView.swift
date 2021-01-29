@@ -9,9 +9,17 @@
 import UIKit
 
 class ActivityIndicatorView: XIBView {
+
+    // MARK: UI components
+    @IBOutlet weak var backgroundView: UIView! // swiftlint:disable:this private_outlet
+    @IBOutlet weak var indicator: UIActivityIndicatorView! // swiftlint:disable:this private_outlet
+
+    // MARK: Stored properties
+
+    // MARK: Inits
+
+    // MARK: Default methods
+
+    // MARK: Additional methods
     
-    // swiftlint:disable private_outlet
-    @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
-    // swiftlint:enable private_outlet
 }

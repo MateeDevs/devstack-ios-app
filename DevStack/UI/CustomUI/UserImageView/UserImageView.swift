@@ -11,28 +11,6 @@ import UIKit
 
 @IBDesignable public class UserImageView: XIBView {
 
-    // MARK: Stored properties
-    public var placeholder: String? {
-        didSet {
-            placeholderLabel.text = placeholder
-        }
-    }
-
-    public var image: UIImage? {
-        didSet {
-            imageView.image = image
-            placeholderView.layer.borderWidth = 0
-        }
-    }
-
-    public var imageURL: String? {
-        didSet {
-            guard let imageURL = imageURL, let url = URL(string: imageURL) else { return }
-            imageView.af.setImage(withURL: url)
-            placeholderView.layer.borderWidth = 0
-        }
-    }
-
     // MARK: UI components
     @IBOutlet private weak var placeholderView: UIView! {
         didSet {
@@ -55,19 +33,34 @@ import UIKit
         }
     }
 
-    // MARK: Inits
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
+    // MARK: Stored properties
+    public var placeholder: String? {
+        didSet {
+            placeholderLabel.text = placeholder
+        }
     }
 
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
+    public var image: UIImage? {
+        didSet {
+            imageView.image = image
+            placeholderView.layer.borderWidth = 0
+        }
     }
+
+    public var imageURL: String? {
+        didSet {
+            guard let imageURL = imageURL, let url = URL(string: imageURL) else { return }
+            imageView.af.setImage(withURL: url)
+            placeholderView.layer.borderWidth = 0
+        }
+    }
+
+    // MARK: Inits
 
     // MARK: Default methods
-    private func setup() {
+    override public func configureViews() {
+        super.configureViews()
+
         layoutIfNeeded()
         setDimensions()
         backgroundColor = .clear
@@ -76,6 +69,7 @@ import UIKit
         placeholderView.isSkeletonable = true
     }
 
+    // MARK: Additional methods
     private func setDimensions() {
         placeholderView.layer.cornerRadius = placeholderView.frame.size.width / 2.0
         placeholderLabel.font = UIFont.systemFont(ofSize: placeholderView.frame.size.width / 2.85, weight: .medium)

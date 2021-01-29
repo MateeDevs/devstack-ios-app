@@ -9,7 +9,10 @@
 import UIKit
 
 @IBDesignable open class EnhancedButton: LocalizedButton {
-    
+
+    // MARK: UI components
+
+    // MARK: Stored properties
     @IBInspectable public var cornerRadius: CGFloat = 0.0 {
         didSet {
             layer.cornerRadius = cornerRadius
@@ -97,7 +100,22 @@ import UIKit
     @IBInspectable public var gradientColor2: UIColor = .systemBlue
     @IBInspectable public var gradientColorDisabled1: UIColor = .systemRed
     @IBInspectable public var gradientColorDisabled2: UIColor = .systemBlue
-    
+
+    // MARK: Inits
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+
+    // MARK: Default methods
+    private func setup() {
+    }
+
     override open func layoutSubviews() {
         super.layoutSubviews()
         
@@ -109,7 +127,8 @@ import UIKit
             setupGradient()
         }
     }
-    
+
+    // MARK: Additional methods
     private func setupGradient() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
