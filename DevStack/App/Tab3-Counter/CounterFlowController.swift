@@ -17,8 +17,7 @@ class CounterFlowController: FlowController, CounterFlowDelegate, CounterControl
         let sharedVM = CounterSharedViewModel(dependencies: dependencies)
         let controlVC = setupCounterControl(sharedVM: sharedVM)
         let displayVC = setupCounterDisplay(sharedVM: sharedVM)
-        let counterVC = CounterViewController.instantiate(controlVC: controlVC, displayVC: displayVC)
-        return counterVC
+        return CounterViewController.instantiate(controlVC: controlVC, displayVC: displayVC)
     }
 
     private func setupCounterControl(sharedVM: CounterSharedViewModel) -> CounterControlViewController {

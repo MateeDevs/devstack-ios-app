@@ -29,8 +29,7 @@ final class SettingsViewController: BaseViewController {
 
     // MARK: Inits
     static func instantiate() -> SettingsViewController {
-        let vc = StoryboardScene.Settings.initialScene.instantiate()
-        return vc
+        StoryboardScene.Settings.initialScene.instantiate()
     }
 
     // MARK: Lifecycle methods

@@ -12,7 +12,7 @@ import RxSwift
 public extension Reactive where Base: BaseViewController {
     /// Bindable sink for `handleAlertAction()` method
     var alertAction: Binder<AlertAction> {
-        return Binder(self.base) { base, action in
+        Binder(self.base) { base, action in
             base.handleAlertAction(action)
         }
     }

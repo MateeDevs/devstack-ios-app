@@ -22,15 +22,12 @@ public class LocationService {
     private let locationManager = CLLocationManager()
     
     /// Check whether the location services are enabled and authorized
-    public static func isLocationEnabled() -> Bool {
-        if CLLocationManager.locationServicesEnabled() {
-            switch CLLocationManager.authorizationStatus() {
-            case .authorizedAlways, .authorizedWhenInUse:
-                return true
-            default:
-                return false
-            }
-        } else {
+    public func isLocationEnabled() -> Bool {
+        guard CLLocationManager.locationServicesEnabled() else { return false }
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways, .authorizedWhenInUse:
+            return true
+        default:
             return false
         }
     }
@@ -39,7 +36,7 @@ public class LocationService {
     public func getCurrentLocation(
         withAccuracy accuracy: CLLocationAccuracy = kCLLocationAccuracyThreeKilometers
     ) -> Observable<CLLocation> {
-        return locationManager.rx.didUpdateLocations
+        locationManager.rx.didUpdateLocations
             .map { locations in locations[0] }
             .filter { location in location.horizontalAccuracy < accuracy }
             .do(
@@ -47,10 +44,11 @@ public class LocationService {
                     self?.locationManager.stopUpdatingLocation()
                 },
                 onSubscribed: { [weak self] in
-                    if !LocationService.isLocationEnabled() {
-                        self?.locationManager.requestWhenInUseAuthorization()
+                    guard let self = self else { return }
+                    if !self.isLocationEnabled() {
+                        self.locationManager.requestWhenInUseAuthorization()
                     }
-                    self?.locationManager.startUpdatingLocation()
+                    self.locationManager.startUpdatingLocation()
                 },
                 onDispose: { [weak self] in
                     self?.locationManager.stopUpdatingLocation()

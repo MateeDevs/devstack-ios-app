@@ -19,19 +19,19 @@ public extension Reactive where Base: TextFieldWithHint {
 
     /// Bindable sink for `placeholder` property
     var placeholder: Binder<String> {
-        return Binder(base) { base, placeholder in
+        Binder(base) { base, placeholder in
             base.placeholder = placeholder
         }
     }
 
     /// Reactive wrapper for `text` property.
     var text: ControlProperty<String> {
-        return base.textField.rx.text.orEmpty
+        base.textField.rx.text.orEmpty
     }
 
     /// Bindable sink for `hint` property
     var hint: Binder<String> {
-        return Binder(base) { base, hint in
+        Binder(base) { base, hint in
             base.hint = hint
         }
     }

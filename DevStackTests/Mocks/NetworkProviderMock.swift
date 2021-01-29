@@ -30,7 +30,7 @@ class NetworkProviderMock: NetworkProviderType {
     init(response: ResponseType = .success) {
         stubbingProvider = MoyaProvider<MultiTarget>(
             endpointClosure: { (target: MultiTarget) -> Endpoint in
-                return Endpoint(
+                Endpoint(
                     url: URL(target: target).absoluteString,
                     sampleResponseClosure: {
                         .networkResponse(response.rawValue, response == .success ? target.sampleData : Data())

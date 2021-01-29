@@ -12,7 +12,7 @@ import RxSwift
 public extension Reactive where Base: UIView {
     /// Bindable sink for `startActivityIndicator()`, `stopActivityIndicator()` methods
     var activityIndicator: Binder<Bool> {
-        return Binder(self.base) { base, isLoading in
+        Binder(self.base) { base, isLoading in
             isLoading ? base.startActivityIndicator() : base.stopActivityIndicator()
         }
     }

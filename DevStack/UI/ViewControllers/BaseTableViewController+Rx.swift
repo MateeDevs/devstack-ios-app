@@ -15,21 +15,21 @@ extension BaseTableViewController {
     
     /// Bindable sink for `setData()` method
     var data: Binder<[T]> {
-        return Binder(self) { base, data in
+        Binder(self) { base, data in
             base.setData(data)
         }
     }
     
     /// Bindable sink for `updatePaging()` method
     var loadedCount: Binder<Int> {
-        return Binder(self) { base, count in
+        Binder(self) { base, count in
             base.updatePaging(count)
         }
     }
     
     /// Bindable sink for refresh indicators
     var isRefreshing: Binder<Bool> {
-        return Binder(self) { base, isRefreshing in
+        Binder(self) { base, isRefreshing in
             if isRefreshing, base.items.isEmpty {
                 base.view.startActivityIndicator()
             } else {

@@ -24,8 +24,7 @@ class ProfileFlowController: FlowController, ProfileFlowDelegate, SettingsFlowDe
         let settingsVC = SettingsViewController.instantiate()
         settingsVC.flowDelegate = self
         
-        let wrapperVC = ProfileWrapperViewController.instantiate(viewControllers: [profileVC, settingsVC])
-        return wrapperVC
+        return ProfileWrapperViewController.instantiate(viewControllers: [profileVC, settingsVC])
     }
     
     func presentOnboarding() {

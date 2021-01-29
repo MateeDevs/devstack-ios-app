@@ -12,7 +12,7 @@ import RxSwift
 public extension Reactive where Base: StateButton {
     /// Reactive wrapper for `isOn` property.
     var isOn: ControlProperty<Bool> {
-        return controlProperty(
+        controlProperty(
             editingEvents: [.touchUpInside],
             getter: { base in
                 base.isOn
