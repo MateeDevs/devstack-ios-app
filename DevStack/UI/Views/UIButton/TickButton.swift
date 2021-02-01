@@ -8,14 +8,9 @@
 
 import UIKit
 
-@IBDesignable open class TickButton: UIButton {
+open class TickButton: StateButton {
 
     // MARK: Stored properties
-    public var isOn: Bool = false {
-        didSet {
-            setupImage()
-        }
-    }
 
     // MARK: Inits
     override init(frame: CGRect) {
@@ -30,18 +25,18 @@ import UIKit
 
     // MARK: Default methods
     private func setup() {
-        setupImage()
+        setImage()
         setTitle("", for: .normal)
-        addTarget(self, action: #selector(didTouchUpInside), for: .touchUpInside)
+    }
+
+    @objc override public func didTouchUpInside(_ button: UIButton) {
+        super.didTouchUpInside(button)
+        setImage()
     }
 
     // MARK: Additional methods
-    private func setupImage() {
+    private func setImage() {
         let image = isOn ? Asset.Images.checkboxOn.image : Asset.Images.checkboxOff.image
         setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
-    }
-
-    @objc private func didTouchUpInside(_ button: UIButton) {
-        isOn = !isOn
     }
 }

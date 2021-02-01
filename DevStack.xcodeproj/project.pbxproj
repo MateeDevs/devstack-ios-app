@@ -135,9 +135,6 @@
 		456458E2255B48E600BF97B6 /* TickButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E1255B48E600BF97B6 /* TickButton.swift */; };
 		456458E3255B48E600BF97B6 /* TickButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E1255B48E600BF97B6 /* TickButton.swift */; };
 		456458E4255B48E600BF97B6 /* TickButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E1255B48E600BF97B6 /* TickButton.swift */; };
-		456458E6255B4A6B00BF97B6 /* TickButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E5255B4A6B00BF97B6 /* TickButton+Rx.swift */; };
-		456458E7255B4A6B00BF97B6 /* TickButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E5255B4A6B00BF97B6 /* TickButton+Rx.swift */; };
-		456458E8255B4A6B00BF97B6 /* TickButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E5255B4A6B00BF97B6 /* TickButton+Rx.swift */; };
 		456458EA255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E9255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift */; };
 		456458EB255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E9255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift */; };
 		456458EC255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458E9255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift */; };
@@ -240,6 +237,8 @@
 		458C1AC924A28E8200549420 /* KeychainProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C1AC824A28E8200549420 /* KeychainProviderMock.swift */; };
 		458C1ACB24A3474C00549420 /* UserDefaultsProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C1ACA24A3474C00549420 /* UserDefaultsProviderMock.swift */; };
 		458C1ACD24A347E600549420 /* DatabaseProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C1ACC24A347E600549420 /* DatabaseProviderMock.swift */; };
+		4590753C25C34FBE00AC794F /* StateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F88BE225C34E52003BD1B9 /* StateButton.swift */; };
+		4590754125C34FBE00AC794F /* StateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F88BE225C34E52003BD1B9 /* StateButton.swift */; };
 		459761CE20FDD60A0034DE29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4558D30A20FCC8FF005BC325 /* AppDelegate.swift */; };
 		459761DC20FDD61E0034DE29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4558D30A20FCC8FF005BC325 /* AppDelegate.swift */; };
 		4597621A20FDE4360034DE29 /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597621920FDE4360034DE29 /* AppFlowController.swift */; };
@@ -305,6 +304,39 @@
 		45B76DA7213591ED003BB997 /* Object+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B76DA6213591ED003BB997 /* Object+Extensions.swift */; };
 		45B76DA8213591ED003BB997 /* Object+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B76DA6213591ED003BB997 /* Object+Extensions.swift */; };
 		45B76DA9213591ED003BB997 /* Object+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B76DA6213591ED003BB997 /* Object+Extensions.swift */; };
+		45BC954625C243FA001A6F65 /* CounterFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC954525C243FA001A6F65 /* CounterFlowController.swift */; };
+		45BC954725C243FA001A6F65 /* CounterFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC954525C243FA001A6F65 /* CounterFlowController.swift */; };
+		45BC954825C243FA001A6F65 /* CounterFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC954525C243FA001A6F65 /* CounterFlowController.swift */; };
+		45BC955D25C246BF001A6F65 /* Counter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC955A25C246BF001A6F65 /* Counter.storyboard */; };
+		45BC955E25C246BF001A6F65 /* Counter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC955A25C246BF001A6F65 /* Counter.storyboard */; };
+		45BC955F25C246BF001A6F65 /* Counter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC955A25C246BF001A6F65 /* Counter.storyboard */; };
+		45BC956025C246BF001A6F65 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC955B25C246BF001A6F65 /* CounterViewController.swift */; };
+		45BC956125C246BF001A6F65 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC955B25C246BF001A6F65 /* CounterViewController.swift */; };
+		45BC956225C246BF001A6F65 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC955B25C246BF001A6F65 /* CounterViewController.swift */; };
+		45BC957225C247F3001A6F65 /* CounterControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC956F25C247F3001A6F65 /* CounterControl.storyboard */; };
+		45BC957325C247F3001A6F65 /* CounterControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC956F25C247F3001A6F65 /* CounterControl.storyboard */; };
+		45BC957425C247F3001A6F65 /* CounterControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC956F25C247F3001A6F65 /* CounterControl.storyboard */; };
+		45BC957525C247F3001A6F65 /* CounterControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC957025C247F3001A6F65 /* CounterControlViewController.swift */; };
+		45BC957625C247F3001A6F65 /* CounterControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC957025C247F3001A6F65 /* CounterControlViewController.swift */; };
+		45BC957725C247F3001A6F65 /* CounterControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC957025C247F3001A6F65 /* CounterControlViewController.swift */; };
+		45BC957825C247F3001A6F65 /* CounterControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC957125C247F3001A6F65 /* CounterControlViewModel.swift */; };
+		45BC957925C247F3001A6F65 /* CounterControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC957125C247F3001A6F65 /* CounterControlViewModel.swift */; };
+		45BC957A25C247F3001A6F65 /* CounterControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC957125C247F3001A6F65 /* CounterControlViewModel.swift */; };
+		45BC958825C2481F001A6F65 /* CounterDisplay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC958525C2481F001A6F65 /* CounterDisplay.storyboard */; };
+		45BC958925C2481F001A6F65 /* CounterDisplay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC958525C2481F001A6F65 /* CounterDisplay.storyboard */; };
+		45BC958A25C2481F001A6F65 /* CounterDisplay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC958525C2481F001A6F65 /* CounterDisplay.storyboard */; };
+		45BC958B25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC958625C2481F001A6F65 /* CounterDisplayViewController.swift */; };
+		45BC958C25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC958625C2481F001A6F65 /* CounterDisplayViewController.swift */; };
+		45BC958D25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC958625C2481F001A6F65 /* CounterDisplayViewController.swift */; };
+		45BC958E25C2481F001A6F65 /* CounterDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC958725C2481F001A6F65 /* CounterDisplayViewModel.swift */; };
+		45BC958F25C2481F001A6F65 /* CounterDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC958725C2481F001A6F65 /* CounterDisplayViewModel.swift */; };
+		45BC959025C2481F001A6F65 /* CounterDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC958725C2481F001A6F65 /* CounterDisplayViewModel.swift */; };
+		45BC959625C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959525C25FD3001A6F65 /* UIViewController+Extensions.swift */; };
+		45BC959725C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959525C25FD3001A6F65 /* UIViewController+Extensions.swift */; };
+		45BC959825C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959525C25FD3001A6F65 /* UIViewController+Extensions.swift */; };
+		45BC959E25C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959D25C2E684001A6F65 /* CounterSharedViewModel.swift */; };
+		45BC959F25C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959D25C2E684001A6F65 /* CounterSharedViewModel.swift */; };
+		45BC95A025C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959D25C2E684001A6F65 /* CounterSharedViewModel.swift */; };
 		45C089E82215C12200D0DD49 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseProvider.swift */; };
 		45C089E92215C12200D0DD49 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseProvider.swift */; };
 		45C089EA2215C12200D0DD49 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseProvider.swift */; };
@@ -434,6 +466,10 @@
 		45F8498E2563410D00C42CDE /* UserImageView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F8498D2563410D00C42CDE /* UserImageView+Rx.swift */; };
 		45F8498F2563410D00C42CDE /* UserImageView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F8498D2563410D00C42CDE /* UserImageView+Rx.swift */; };
 		45F849902563410D00C42CDE /* UserImageView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F8498D2563410D00C42CDE /* UserImageView+Rx.swift */; };
+		45F88BE325C34E52003BD1B9 /* StateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F88BE225C34E52003BD1B9 /* StateButton.swift */; };
+		45F88BED25C34F38003BD1B9 /* StateButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F88BEC25C34F38003BD1B9 /* StateButton+Rx.swift */; };
+		45F88BEE25C34F38003BD1B9 /* StateButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F88BEC25C34F38003BD1B9 /* StateButton+Rx.swift */; };
+		45F88BEF25C34F38003BD1B9 /* StateButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F88BEC25C34F38003BD1B9 /* StateButton+Rx.swift */; };
 		45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB498224A3D7C000932918 /* BaseTestCase.swift */; };
 		6B2DCC23AD89AAD3079893A8 /* Pods_DevStackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE835FD7894EF2FF85E7AA3A /* Pods_DevStackTests.framework */; };
 		8F942B8CB2F14464CC197B9D /* Pods_DevStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7226BBC8D76CB9A545614575 /* Pods_DevStack.framework */; };
@@ -565,7 +601,6 @@
 		456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		456458DD255B44B800BF97B6 /* TextFieldWithHint+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldWithHint+Rx.swift"; sourceTree = "<group>"; };
 		456458E1255B48E600BF97B6 /* TickButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickButton.swift; sourceTree = "<group>"; };
-		456458E5255B4A6B00BF97B6 /* TickButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TickButton+Rx.swift"; sourceTree = "<group>"; };
 		456458E9255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImagePickerViewController+Rx.swift"; sourceTree = "<group>"; };
 		456851B821008988006D3618 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		456851BF2100929E006D3618 /* LocalizedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTextField.swift; sourceTree = "<group>"; };
@@ -631,6 +666,17 @@
 		45B76D98213591A9003BB997 /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
 		45B76D9F213591D0003BB997 /* Error+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
 		45B76DA6213591ED003BB997 /* Object+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Object+Extensions.swift"; sourceTree = "<group>"; };
+		45BC954525C243FA001A6F65 /* CounterFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFlowController.swift; sourceTree = "<group>"; };
+		45BC955A25C246BF001A6F65 /* Counter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Counter.storyboard; sourceTree = "<group>"; };
+		45BC955B25C246BF001A6F65 /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
+		45BC956F25C247F3001A6F65 /* CounterControl.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CounterControl.storyboard; sourceTree = "<group>"; };
+		45BC957025C247F3001A6F65 /* CounterControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterControlViewController.swift; sourceTree = "<group>"; };
+		45BC957125C247F3001A6F65 /* CounterControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterControlViewModel.swift; sourceTree = "<group>"; };
+		45BC958525C2481F001A6F65 /* CounterDisplay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CounterDisplay.storyboard; sourceTree = "<group>"; };
+		45BC958625C2481F001A6F65 /* CounterDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterDisplayViewController.swift; sourceTree = "<group>"; };
+		45BC958725C2481F001A6F65 /* CounterDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterDisplayViewModel.swift; sourceTree = "<group>"; };
+		45BC959525C25FD3001A6F65 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		45BC959D25C2E684001A6F65 /* CounterSharedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterSharedViewModel.swift; sourceTree = "<group>"; };
 		45C089E72215C12200D0DD49 /* DatabaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProvider.swift; sourceTree = "<group>"; };
 		45C3F50E23C114600091848D /* UIColorCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorCompatible.swift; sourceTree = "<group>"; };
 		45C3F51623C1249C0091848D /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
@@ -677,6 +723,8 @@
 		45ED84AD249F64520055A19E /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		45F4AE412180B88400E75B4A /* LocalizedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedImageView.swift; sourceTree = "<group>"; };
 		45F8498D2563410D00C42CDE /* UserImageView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserImageView+Rx.swift"; sourceTree = "<group>"; };
+		45F88BE225C34E52003BD1B9 /* StateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateButton.swift; sourceTree = "<group>"; };
+		45F88BEC25C34F38003BD1B9 /* StateButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StateButton+Rx.swift"; sourceTree = "<group>"; };
 		45FB498224A3D7C000932918 /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		7226BBC8D76CB9A545614575 /* Pods_DevStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A71598D309E35AF6F901FEE /* Pods_DevStack_Beta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevStack_Beta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1043,6 +1091,7 @@
 				4597621720FDDE270034DE29 /* Main */,
 				45E8A4E2220B0803003F7502 /* Tab1-Users */,
 				45890AFA21FF515800894255 /* Tab2-Profile */,
+				45BC954025C243D6001A6F65 /* Tab3-Counter */,
 				4597622220FDE5440034DE29 /* LaunchScreen */,
 				450392832256B14C0037BF42 /* Config */,
 				4597621920FDE4360034DE29 /* AppFlowController.swift */,
@@ -1142,6 +1191,7 @@
 				4511A72C213DDCCB006AD4CC /* UIView+ActivityIndicator.swift */,
 				45571939249FE52100FB24CA /* UIView+ActivityIndicator+Rx.swift */,
 				45571941249FF28900FB24CA /* UIView+SkeletonView+Rx.swift */,
+				45BC959525C25FD3001A6F65 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1203,8 +1253,9 @@
 				45C3F51623C1249C0091848D /* SecondaryButton.swift */,
 				456851E22100BC9A006D3618 /* EnhancedButton.swift */,
 				456851DB2100BC8B006D3618 /* LocalizedButton.swift */,
+				45F88BE225C34E52003BD1B9 /* StateButton.swift */,
+				45F88BEC25C34F38003BD1B9 /* StateButton+Rx.swift */,
 				456458E1255B48E600BF97B6 /* TickButton.swift */,
-				456458E5255B4A6B00BF97B6 /* TickButton+Rx.swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -1240,6 +1291,47 @@
 				450C869023547D5A00DC5E49 /* UserDefaultsProvider.swift */,
 			);
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		45BC954025C243D6001A6F65 /* Tab3-Counter */ = {
+			isa = PBXGroup;
+			children = (
+				45BC954525C243FA001A6F65 /* CounterFlowController.swift */,
+				45BC954D25C24400001A6F65 /* Main */,
+			);
+			path = "Tab3-Counter";
+			sourceTree = "<group>";
+		};
+		45BC954D25C24400001A6F65 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				45BC955A25C246BF001A6F65 /* Counter.storyboard */,
+				45BC955B25C246BF001A6F65 /* CounterViewController.swift */,
+				45BC959D25C2E684001A6F65 /* CounterSharedViewModel.swift */,
+				45BC956E25C247D5001A6F65 /* CounterControl */,
+				45BC958325C24808001A6F65 /* CounterDisplay */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		45BC956E25C247D5001A6F65 /* CounterControl */ = {
+			isa = PBXGroup;
+			children = (
+				45BC956F25C247F3001A6F65 /* CounterControl.storyboard */,
+				45BC957025C247F3001A6F65 /* CounterControlViewController.swift */,
+				45BC957125C247F3001A6F65 /* CounterControlViewModel.swift */,
+			);
+			path = CounterControl;
+			sourceTree = "<group>";
+		};
+		45BC958325C24808001A6F65 /* CounterDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				45BC958525C2481F001A6F65 /* CounterDisplay.storyboard */,
+				45BC958625C2481F001A6F65 /* CounterDisplayViewController.swift */,
+				45BC958725C2481F001A6F65 /* CounterDisplayViewModel.swift */,
+			);
+			path = CounterDisplay;
 			sourceTree = "<group>";
 		};
 		45CDC3B924A92F6D00EF2368 /* Alerts */ = {
@@ -1595,9 +1687,12 @@
 				45DB9774226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
 				45128B792142A627007B6B47 /* TabBarButton.xib in Resources */,
 				456852382105BD20006D3618 /* User.json in Resources */,
+				45BC955D25C246BF001A6F65 /* Counter.storyboard in Resources */,
 				45DA0808222E87780003D32A /* Registration.storyboard in Resources */,
 				45890B3F22086C9C00894255 /* Login.storyboard in Resources */,
+				45BC958825C2481F001A6F65 /* CounterDisplay.storyboard in Resources */,
 				45E8A55B220F6F2C003F7502 /* UserTableViewCell.xib in Resources */,
+				45BC957225C247F3001A6F65 /* CounterControl.storyboard in Resources */,
 				459EC5A42239895F0045BE3B /* Profile.storyboard in Resources */,
 				4597626F20FDF0810034DE29 /* LaunchScreen.storyboard in Resources */,
 				453CEAC121583A7D00A94BAC /* RatingViewSmall.xib in Resources */,
@@ -1627,9 +1722,12 @@
 				45DB9775226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
 				45128B7A2142A627007B6B47 /* TabBarButton.xib in Resources */,
 				450392852256B29D0037BF42 /* GoogleService-Info.plist in Resources */,
+				45BC955E25C246BF001A6F65 /* Counter.storyboard in Resources */,
 				456852392105BD20006D3618 /* User.json in Resources */,
 				45DA0809222E87780003D32A /* Registration.storyboard in Resources */,
+				45BC958925C2481F001A6F65 /* CounterDisplay.storyboard in Resources */,
 				45890B4022086C9C00894255 /* Login.storyboard in Resources */,
+				45BC957325C247F3001A6F65 /* CounterControl.storyboard in Resources */,
 				45E8A55C220F6F2C003F7502 /* UserTableViewCell.xib in Resources */,
 				459EC5A52239895F0045BE3B /* Profile.storyboard in Resources */,
 				4597624F20FDEBC80034DE29 /* Main.storyboard in Resources */,
@@ -1659,9 +1757,12 @@
 				45DB9776226BA5B200C3F234 /* ProfileWrapper.storyboard in Resources */,
 				4568523A2105BD20006D3618 /* User.json in Resources */,
 				A83F0EC021490F1100313067 /* UserImageView.xib in Resources */,
+				45BC955F25C246BF001A6F65 /* Counter.storyboard in Resources */,
 				45DA080A222E87780003D32A /* Registration.storyboard in Resources */,
 				45890B4122086C9C00894255 /* Login.storyboard in Resources */,
+				45BC958A25C2481F001A6F65 /* CounterDisplay.storyboard in Resources */,
 				45E8A55D220F6F2C003F7502 /* UserTableViewCell.xib in Resources */,
+				45BC957425C247F3001A6F65 /* CounterControl.storyboard in Resources */,
 				459EC5A62239895F0045BE3B /* Profile.storyboard in Resources */,
 				4597627320FDF0BD0034DE29 /* LaunchScreen_Beta.storyboard in Resources */,
 				453CEAC321583A7D00A94BAC /* RatingViewSmall.xib in Resources */,
@@ -2038,6 +2139,7 @@
 				450D3DEB2111F043008BAE71 /* KeychainProvider.swift in Sources */,
 				4515CC1D226158AE00204767 /* SafariViewController.swift in Sources */,
 				45A388C1225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
+				45BC959625C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */,
 				453CEAB921553E1F00A94BAC /* RatingView.swift in Sources */,
 				456852552105D024006D3618 /* ServiceError.swift in Sources */,
 				A891BDB72108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
@@ -2054,12 +2156,15 @@
 				45DE1D9421CA9CA300C455C4 /* AuthAPI.swift in Sources */,
 				45E8A4A9220AEBAE003F7502 /* Logger.swift in Sources */,
 				459762DE20FE21290034DE29 /* Storyboards.swift in Sources */,
+				45BC959E25C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */,
 				45ECA1B1216BF761000B1124 /* UserAPI.swift in Sources */,
 				45ED84AE249F64520055A19E /* ActivityIndicator.swift in Sources */,
 				45CDC3BF24A92FA200EF2368 /* Whisper.swift in Sources */,
+				45BC957525C247F3001A6F65 /* CounterControlViewController.swift in Sources */,
 				A8DDD0CF2121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F0213D2677006AD4CC /* TabBarView.swift in Sources */,
 				456458DE255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */,
+				45BC958E25C2481F001A6F65 /* CounterDisplayViewModel.swift in Sources */,
 				45DB9777226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BC210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				45F4AE422180B88400E75B4A /* LocalizedImageView.swift in Sources */,
@@ -2072,14 +2177,17 @@
 				456852102101E432006D3618 /* User.swift in Sources */,
 				456458EA255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */,
 				456852462105CF82006D3618 /* LoginService.swift in Sources */,
+				45BC958B25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */,
 				A82385DA213418B400CC941C /* ShadowView.swift in Sources */,
 				450A62892439FC9500B43049 /* PushNotification.swift in Sources */,
 				451233E3215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				456851B921008988006D3618 /* BaseViewController.swift in Sources */,
 				A847B1AC210F4872002F9ED1 /* LocationHelper.swift in Sources */,
+				45BC954625C243FA001A6F65 /* CounterFlowController.swift in Sources */,
 				4557193E249FE58400FB24CA /* BaseTableViewController+Rx.swift in Sources */,
 				A83F0EB721490EE200313067 /* UserImageView.swift in Sources */,
 				45C3F51723C1249C0091848D /* SecondaryButton.swift in Sources */,
+				45F88BE325C34E52003BD1B9 /* StateButton.swift in Sources */,
 				45890B2821FFB95D00894255 /* AppTheme.swift in Sources */,
 				450D3DDC21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C02100929E006D3618 /* LocalizedTextField.swift in Sources */,
@@ -2102,6 +2210,7 @@
 				A8DDD0BA211E3D6900EEB48F /* LocationService.swift in Sources */,
 				4588FF0F2226EF360014FC79 /* BaseTableViewCell.swift in Sources */,
 				456852232105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
+				45F88BED25C34F38003BD1B9 /* StateButton+Rx.swift in Sources */,
 				45A388D3225F39EF00037FFA /* WebViewController.swift in Sources */,
 				455261C7210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8C79A9F2157FD71007A4339 /* Plurals.swift in Sources */,
@@ -2131,7 +2240,6 @@
 				45890B4722086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2B22159EE90036919A /* NetworkProvider.swift in Sources */,
 				45A3D59F2119B76000E39169 /* Realm+Rx.swift in Sources */,
-				456458E6255B4A6B00BF97B6 /* TickButton+Rx.swift in Sources */,
 				454FEE3922404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				456458DA255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */,
 				45890B4322086CA700894255 /* LoginViewController.swift in Sources */,
@@ -2140,6 +2248,7 @@
 				457FA18E241EC44400EA7436 /* ErrorMessages.swift in Sources */,
 				45B76D99213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC32108CB2600BBA179 /* XIBView.swift in Sources */,
+				45BC957825C247F3001A6F65 /* CounterControlViewModel.swift in Sources */,
 				45E8A4ED220B0803003F7502 /* UsersFlowController.swift in Sources */,
 				452732A823F0C7F80067C712 /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				4585A15D214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
@@ -2157,6 +2266,7 @@
 				454FFC9823D74C760062FF4B /* FirebaseService.swift in Sources */,
 				45ECA1C6216BFA90000B1124 /* UserService.swift in Sources */,
 				45ECA1AA216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
+				45BC956025C246BF001A6F65 /* CounterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2177,6 +2287,7 @@
 				450D3DEC2111F043008BAE71 /* KeychainProvider.swift in Sources */,
 				4515CC1E226158AE00204767 /* SafariViewController.swift in Sources */,
 				45A388C2225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
+				45BC959725C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */,
 				453CEABA21553E1F00A94BAC /* RatingView.swift in Sources */,
 				456852562105D024006D3618 /* ServiceError.swift in Sources */,
 				A891BDB82108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
@@ -2193,12 +2304,15 @@
 				459762DF20FE21290034DE29 /* Storyboards.swift in Sources */,
 				45DE1D9521CA9CA300C455C4 /* AuthAPI.swift in Sources */,
 				45E8A4AA220AEBAE003F7502 /* Logger.swift in Sources */,
+				45BC959F25C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */,
 				A8DDD0D02121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				45ED84AF249F64520055A19E /* ActivityIndicator.swift in Sources */,
 				45CDC3C024A92FA200EF2368 /* Whisper.swift in Sources */,
+				45BC957625C247F3001A6F65 /* CounterControlViewController.swift in Sources */,
 				45ECA1B2216BF761000B1124 /* UserAPI.swift in Sources */,
 				4511A6F1213D2677006AD4CC /* TabBarView.swift in Sources */,
 				456458DF255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */,
+				45BC958F25C2481F001A6F65 /* CounterDisplayViewModel.swift in Sources */,
 				45DB9778226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BD210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				459762E420FE21BC0034DE29 /* ViewModelType.swift in Sources */,
@@ -2211,14 +2325,17 @@
 				456852112101E432006D3618 /* User.swift in Sources */,
 				456458EB255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */,
 				456852472105CF82006D3618 /* LoginService.swift in Sources */,
+				45BC958C25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */,
 				451233E4215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				450A628A2439FC9500B43049 /* PushNotification.swift in Sources */,
 				A82385DB213418B400CC941C /* ShadowView.swift in Sources */,
 				456851BA21008988006D3618 /* BaseViewController.swift in Sources */,
 				A83F0EB821490EE200313067 /* UserImageView.swift in Sources */,
+				45BC954725C243FA001A6F65 /* CounterFlowController.swift in Sources */,
 				4557193F249FE58400FB24CA /* BaseTableViewController+Rx.swift in Sources */,
 				A847B1AD210F4872002F9ED1 /* LocationHelper.swift in Sources */,
 				45C3F51823C1249C0091848D /* SecondaryButton.swift in Sources */,
+				4590753C25C34FBE00AC794F /* StateButton.swift in Sources */,
 				45890B2921FFB95D00894255 /* AppTheme.swift in Sources */,
 				450D3DDD21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C12100929E006D3618 /* LocalizedTextField.swift in Sources */,
@@ -2230,6 +2347,7 @@
 				450C869223547D5A00DC5E49 /* UserDefaultsProvider.swift in Sources */,
 				45E8A49C220AD4CB003F7502 /* ViewModel.swift in Sources */,
 				453CEAC821583A7D00A94BAC /* RatingViewSmall.swift in Sources */,
+				45F88BEE25C34F38003BD1B9 /* StateButton+Rx.swift in Sources */,
 				456852402105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */,
 				A8E5D3E3213596FD00515312 /* StatusCode.swift in Sources */,
 				459762EC20FE21F70034DE29 /* UIApplication+Extensions.swift in Sources */,
@@ -2270,7 +2388,6 @@
 				45890B4822086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2C22159EE90036919A /* NetworkProvider.swift in Sources */,
 				45A3D5A02119B76000E39169 /* Realm+Rx.swift in Sources */,
-				456458E7255B4A6B00BF97B6 /* TickButton+Rx.swift in Sources */,
 				454FEE3A22404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				456458DB255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */,
 				45890B4422086CA700894255 /* LoginViewController.swift in Sources */,
@@ -2279,6 +2396,7 @@
 				457FA18F241EC44400EA7436 /* ErrorMessages.swift in Sources */,
 				45B76D9A213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC42108CB2600BBA179 /* XIBView.swift in Sources */,
+				45BC957925C247F3001A6F65 /* CounterControlViewModel.swift in Sources */,
 				45E8A4EE220B0803003F7502 /* UsersFlowController.swift in Sources */,
 				452732A923F0C7F80067C712 /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				4585A15E214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
@@ -2296,6 +2414,7 @@
 				454FFC9923D74C760062FF4B /* FirebaseService.swift in Sources */,
 				45ECA1C7216BFA90000B1124 /* UserService.swift in Sources */,
 				45ECA1AB216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
+				45BC956125C246BF001A6F65 /* CounterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2316,6 +2435,7 @@
 				450D3DED2111F043008BAE71 /* KeychainProvider.swift in Sources */,
 				4515CC1F226158AE00204767 /* SafariViewController.swift in Sources */,
 				45A388C3225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
+				45BC959825C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */,
 				453CEABB21553E1F00A94BAC /* RatingView.swift in Sources */,
 				456852572105D024006D3618 /* ServiceError.swift in Sources */,
 				A891BDB92108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
@@ -2332,12 +2452,15 @@
 				45DE1D9621CA9CA300C455C4 /* AuthAPI.swift in Sources */,
 				45E8A4AB220AEBAE003F7502 /* Logger.swift in Sources */,
 				459762E020FE21290034DE29 /* Storyboards.swift in Sources */,
+				45BC95A025C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */,
 				45ECA1B3216BF761000B1124 /* UserAPI.swift in Sources */,
 				45ED84B0249F64520055A19E /* ActivityIndicator.swift in Sources */,
 				45CDC3C124A92FA200EF2368 /* Whisper.swift in Sources */,
+				45BC957725C247F3001A6F65 /* CounterControlViewController.swift in Sources */,
 				A8DDD0D12121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F2213D2677006AD4CC /* TabBarView.swift in Sources */,
 				456458E0255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */,
+				45BC959025C2481F001A6F65 /* CounterDisplayViewModel.swift in Sources */,
 				45DB9779226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BE210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
 				45F4AE442180B88400E75B4A /* LocalizedImageView.swift in Sources */,
@@ -2350,14 +2473,17 @@
 				456852122101E432006D3618 /* User.swift in Sources */,
 				456458EC255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */,
 				456852482105CF82006D3618 /* LoginService.swift in Sources */,
+				45BC958D25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */,
 				A82385DC213418B400CC941C /* ShadowView.swift in Sources */,
 				450A628B2439FC9500B43049 /* PushNotification.swift in Sources */,
 				451233E5215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				456851BB21008988006D3618 /* BaseViewController.swift in Sources */,
 				A847B1AE210F4872002F9ED1 /* LocationHelper.swift in Sources */,
+				45BC954825C243FA001A6F65 /* CounterFlowController.swift in Sources */,
 				45571940249FE58400FB24CA /* BaseTableViewController+Rx.swift in Sources */,
 				A83F0EB921490EE200313067 /* UserImageView.swift in Sources */,
 				45C3F51923C1249C0091848D /* SecondaryButton.swift in Sources */,
+				4590754125C34FBE00AC794F /* StateButton.swift in Sources */,
 				45890B2A21FFB95D00894255 /* AppTheme.swift in Sources */,
 				450D3DDE21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C22100929E006D3618 /* LocalizedTextField.swift in Sources */,
@@ -2369,6 +2495,7 @@
 				450C869323547D5A00DC5E49 /* UserDefaultsProvider.swift in Sources */,
 				45E8A49D220AD4CB003F7502 /* ViewModel.swift in Sources */,
 				453CEAC921583A7D00A94BAC /* RatingViewSmall.swift in Sources */,
+				45F88BEF25C34F38003BD1B9 /* StateButton+Rx.swift in Sources */,
 				456852412105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */,
 				A8E5D3E4213596FD00515312 /* StatusCode.swift in Sources */,
 				459762ED20FE21F70034DE29 /* UIApplication+Extensions.swift in Sources */,
@@ -2409,7 +2536,6 @@
 				45890B4922086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2D22159EE90036919A /* NetworkProvider.swift in Sources */,
 				45A3D5A12119B76000E39169 /* Realm+Rx.swift in Sources */,
-				456458E8255B4A6B00BF97B6 /* TickButton+Rx.swift in Sources */,
 				454FEE3B22404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				456458DC255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */,
 				45890B4522086CA700894255 /* LoginViewController.swift in Sources */,
@@ -2418,6 +2544,7 @@
 				457FA190241EC44400EA7436 /* ErrorMessages.swift in Sources */,
 				45B76D9B213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC52108CB2600BBA179 /* XIBView.swift in Sources */,
+				45BC957A25C247F3001A6F65 /* CounterControlViewModel.swift in Sources */,
 				45E8A4EF220B0803003F7502 /* UsersFlowController.swift in Sources */,
 				452732AA23F0C7F80067C712 /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				4585A15F214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
@@ -2435,6 +2562,7 @@
 				454FFC9A23D74C760062FF4B /* FirebaseService.swift in Sources */,
 				45ECA1C8216BFA90000B1124 /* UserService.swift in Sources */,
 				45ECA1AC216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
+				45BC956225C246BF001A6F65 /* CounterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
