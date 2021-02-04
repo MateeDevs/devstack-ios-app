@@ -13,7 +13,7 @@ import SkeletonView
 public extension Reactive where Base: UIView {
     /// Bindable sink for `showSkeleton()`, `hideSkeleton()` methods
     var skeletonView: Binder<Bool> {
-        return Binder(self.base) { base, isLoading in
+        Binder(self.base) { base, isLoading in
             if isLoading {
                 base.showAnimatedGradientSkeleton(animation: GradientDirection.topLeftBottomRight.slidingAnimation())
             } else {

@@ -53,7 +53,7 @@ public class UserService {
         return getProfile().take(1).flatMap { user -> Observable<User> in
             let userCopy = User(value: user)
             userCopy.counter += 1
-            return Observable.just(userCopy)
+            return .just(userCopy)
         }.save(model: .fullModel).mapToVoid()
     }
 
@@ -61,7 +61,7 @@ public class UserService {
         return getProfile().take(1).flatMap { user -> Observable<User> in
             let userCopy = User(value: user)
             userCopy.counter -= 1
-            return Observable.just(userCopy)
+            return .just(userCopy)
         }.save(model: .fullModel).mapToVoid()
     }
 
@@ -70,12 +70,12 @@ public class UserService {
     }
     
     public func getProfile() -> Observable<User> {
-        guard let userId = getProfileId() else { return Observable.error(CommonError.noUserId) }
+        guard let userId = getProfileId() else { return .error(CommonError.noUserId) }
         return getUserById(userId)
     }
     
     public func downloadProfile() -> Observable<User> {
-        guard let userId = getProfileId() else { return Observable.error(CommonError.noUserId) }
+        guard let userId = getProfileId() else { return .error(CommonError.noUserId) }
         return downloadUserById(userId)
     }
     

@@ -13,70 +13,77 @@ public protocol TabBarViewDelegate: class {
 }
 
 @IBDesignable public class TabBarView: XIBView {
-    
-    @IBInspectable public var shouldShowNumbers: Bool = false
-    
-    public var buttonMainLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
-    public var buttonMainLabelFontHighlighted: UIFont = UIFont.systemFont(ofSize: 16)
-    
-    @IBInspectable public var buttonMainLabelColor: UIColor = AppTheme.Colors.label
-    @IBInspectable public var buttonMainLabelColorHighlighted: UIColor = AppTheme.Colors.label
-    
-    public var buttonNumberLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
-    public var buttonNumberLabelFontHighlighted: UIFont = UIFont.systemFont(ofSize: 16)
-    
-    @IBInspectable public var buttonNumberLabelColor: UIColor = AppTheme.Colors.label
-    @IBInspectable public var buttonNumberLabelColorHighlighted: UIColor = AppTheme.Colors.label
-    
-    @IBInspectable public var buttonNumberViewBackgroundColor: UIColor = .clear
-    @IBInspectable public var buttonNumberViewBackgroundColorHighlighted: UIColor = .clear
-    
-    @IBInspectable public var buttonBackgroundColor: UIColor = .clear
-    @IBInspectable public var buttonBackgroundColorHighlighted: UIColor = .clear
-    
-    @IBInspectable public var stripViewColor: UIColor = AppTheme.Colors.primaryColor {
-        didSet {
-            stripView?.backgroundColor = stripViewColor
-        }
-    }
-    
+
+    // MARK: UI components
     @IBOutlet private weak var stripView: UIView! {
         didSet {
             stripView.backgroundColor = stripViewColor
         }
     }
-    
-    @IBInspectable public var stripViewHeight: CGFloat = 4 {
-        didSet {
-            stripViewHeightConstraint?.constant = stripViewHeight
-        }
-    }
-    
+
     @IBOutlet private weak var stripViewHeightConstraint: NSLayoutConstraint! {
         didSet {
             stripViewHeightConstraint.constant = stripViewHeight
         }
     }
-    
+
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var buttonsStackView: UIStackView!
     @IBOutlet private weak var leadingConstraintStripView: NSLayoutConstraint!
     @IBOutlet private weak var widthConstraintStripView: NSLayoutConstraint!
-    
+
+    // MARK: Stored properties
+    @IBInspectable public var shouldShowNumbers: Bool = false
+
+    public var buttonMainLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
+    public var buttonMainLabelFontHighlighted: UIFont = UIFont.systemFont(ofSize: 16)
+
+    @IBInspectable public var buttonMainLabelColor: UIColor = AppTheme.Colors.label
+    @IBInspectable public var buttonMainLabelColorHighlighted: UIColor = AppTheme.Colors.label
+
+    public var buttonNumberLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
+    public var buttonNumberLabelFontHighlighted: UIFont = UIFont.systemFont(ofSize: 16)
+
+    @IBInspectable public var buttonNumberLabelColor: UIColor = AppTheme.Colors.label
+    @IBInspectable public var buttonNumberLabelColorHighlighted: UIColor = AppTheme.Colors.label
+
+    @IBInspectable public var buttonNumberViewBackgroundColor: UIColor = .clear
+    @IBInspectable public var buttonNumberViewBackgroundColorHighlighted: UIColor = .clear
+
+    @IBInspectable public var buttonBackgroundColor: UIColor = .clear
+    @IBInspectable public var buttonBackgroundColorHighlighted: UIColor = .clear
+
+    @IBInspectable public var stripViewColor: UIColor = AppTheme.Colors.primaryColor {
+        didSet {
+            stripView?.backgroundColor = stripViewColor
+        }
+    }
+
+    @IBInspectable public var stripViewHeight: CGFloat = 4 {
+        didSet {
+            stripViewHeightConstraint?.constant = stripViewHeight
+        }
+    }
+
     public weak var delegate: TabBarViewDelegate?
-    
+
     private var tabBarButtons: [TabBarButton] = []
-    
+
     public var availableOptions: [String] = [] {
         didSet {
             addButtons(titles: availableOptions)
         }
     }
-    
+
+    // MARK: Inits
+
+    // MARK: Default methods
     override public func configureViews() {
+        super.configureViews()
         widthConstraintStripView.constant = scrollView.contentSize.width / max(CGFloat(tabBarButtons.count), 1)
     }
-    
+
+    // MARK: Additional methods
     public func select(_ index: Int, animated: Bool = false) {
         guard tabBarButtons.count > index else { return }
         selectViewController(tabBarButtons[index], animated: animated)

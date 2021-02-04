@@ -14,23 +14,22 @@ protocol CounterFlowControllerDelegate: class {
 class CounterFlowController: FlowController, CounterFlowDelegate, CounterControlFlowDelegate, CounterDisplayFlowDelegate {
 
     override func setup() -> UIViewController {
-        let sharedVm = CounterSharedViewModel(dependencies: dependencies)
-        let controlVc = setupCounterControl(sharedVm: sharedVm)
-        let displayVc = setupCounterDisplay(sharedVm: sharedVm)
-        let counterVc = CounterViewController.instantiate(controlVc: controlVc, displayVc: displayVc)
-        return counterVc
+        let sharedVM = CounterSharedViewModel(dependencies: dependencies)
+        let controlVC = setupCounterControl(sharedVM: sharedVM)
+        let displayVC = setupCounterDisplay(sharedVM: sharedVM)
+        return CounterViewController.instantiate(controlVC: controlVC, displayVC: displayVC)
     }
 
-    private func setupCounterControl(sharedVm: CounterSharedViewModel) -> CounterControlViewController {
+    private func setupCounterControl(sharedVM: CounterSharedViewModel) -> CounterControlViewController {
         let vm = CounterControlViewModel(dependencies: dependencies)
-        let vc = CounterControlViewController.instantiate(controlVm: vm, sharedVm: sharedVm)
+        let vc = CounterControlViewController.instantiate(controlVM: vm, sharedVM: sharedVM)
         vc.flowDelegate = self
         return vc
     }
 
-    private func setupCounterDisplay(sharedVm: CounterSharedViewModel) -> CounterDisplayViewController {
+    private func setupCounterDisplay(sharedVM: CounterSharedViewModel) -> CounterDisplayViewController {
         let vm = CounterDisplayViewModel(dependencies: dependencies)
-        let vc = CounterDisplayViewController.instantiate(displayVm: vm, sharedVm: sharedVm)
+        let vc = CounterDisplayViewController.instantiate(displayVM: vm, sharedVM: sharedVM)
         vc.flowDelegate = self
         return vc
     }

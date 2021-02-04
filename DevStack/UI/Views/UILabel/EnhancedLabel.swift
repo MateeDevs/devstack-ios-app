@@ -9,7 +9,10 @@
 import UIKit
 
 @IBDesignable open class EnhancedLabel: LocalizedLabel {
-    
+
+    // MARK: UI components
+
+    // MARK: Stored properties
     @IBInspectable public var charSpace: Double = 1.0 {
         didSet {
             reloadAttributedTitle()
@@ -27,7 +30,23 @@ import UIKit
             reloadAttributedTitle()
         }
     }
-    
+
+    // MARK: Inits
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+
+    // MARK: Default methods
+    private func setup() {
+    }
+
+    // MARK: Additional methods
     private func reloadAttributedTitle() {
         guard let text = text else { return }
             

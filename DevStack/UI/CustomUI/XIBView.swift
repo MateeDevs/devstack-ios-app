@@ -9,20 +9,25 @@
 import UIKit
 
 open class XIBView: UIView {
-    
+
+    // MARK: UI components
     public var view: UIView! // swiftlint:disable:this implicitly_unwrapped_optional
-    
+
+    // MARK: Stored properties
+
+    // MARK: Inits
     override public init(frame: CGRect) {
         super.init(frame: frame)
-        xibSetup()
+        setup()
     }
     
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        xibSetup()
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
     }
-    
-    private func xibSetup() {
+
+    // MARK: Default methods
+    private func setup() {
         guard let nibView = loadViewFromNib() else { return }
         view = nibView
         view.frame = bounds
@@ -30,16 +35,17 @@ open class XIBView: UIView {
         addSubview(view)
         configureViews()
     }
-    
+
+    /// Override this method in a subclass for additional setup
+    open func configureViews() {
+    }
+
+    // MARK: Additional methods
     private func loadViewFromNib() -> UIView? {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "\(type(of: self))", bundle: bundle)
         guard let view = nib.instantiate(withOwner: self, options: nil)[0] as? UIView else { return nil }
         return view
-    }
-    
-    /// Override this method in a subclass for additional setup
-    open func configureViews() {
     }
     
 }

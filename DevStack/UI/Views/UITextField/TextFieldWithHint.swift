@@ -26,6 +26,7 @@ public enum TextFieldType {
     public let textField = UITextField()
     private let hintLabel = UILabel()
 
+    // MARK: Stored properties
     @IBInspectable public var title: String = "" {
         didSet {
             titleLabel.text = NSLocalizedString(title, comment: "")
@@ -55,7 +56,6 @@ public enum TextFieldType {
         }
     }
 
-    // MARK: Stored properties
     public var type: TextFieldType = .text {
         didSet {
             setupType()

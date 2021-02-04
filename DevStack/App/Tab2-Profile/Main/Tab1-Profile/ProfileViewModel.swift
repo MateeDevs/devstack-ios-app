@@ -51,7 +51,7 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         let profile = dependencies.userService.getProfile()
         let refreshProfile = dependencies.userService.downloadProfile().trackActivity(activity).materialize().share()
         
-        let isRefreshing: Observable<Bool> = Observable.merge(
+        let isRefreshing = Observable<Bool>.merge(
             activity.asObservable(),
             refreshProfile.map { _ in false }
         )

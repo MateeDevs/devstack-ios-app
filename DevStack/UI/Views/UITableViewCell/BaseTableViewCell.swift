@@ -9,7 +9,11 @@
 import UIKit
 
 @IBDesignable open class BaseTableViewCell: UITableViewCell {
-    
+
+    // MARK: UI components
+    private var separator = UIView()
+
+    // MARK: Stored properties
     public static let estimatedHeight: CGFloat = 44.0
     
     @IBInspectable public var showDefaultSeparator: Bool = true {
@@ -23,19 +27,24 @@ import UIKit
             separator.backgroundColor = separatorColor
         }
     }
-    
-    private var separator = UIView()
-    
+
+    // MARK: Inits
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setup()
+    }
+
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+
+    // MARK: Default methods
+    private func setup() {
         addSeparator()
     }
 
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        addSeparator()
-    }
-    
+    // MARK: Additional methods
     private func addSeparator() {
         contentView.addSubview(separator)
         separator.translatesAutoresizingMaskIntoConstraints = false

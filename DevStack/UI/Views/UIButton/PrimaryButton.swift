@@ -9,17 +9,23 @@
 import UIKit
 
 class PrimaryButton: EnhancedButton {
+
+    // MARK: UI components
+
+    // MARK: Stored properties
     
+    // MARK: Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
 
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setup()
     }
 
+    // MARK: Default methods
     private func setup() {
         cornerRadius = 5.0
         backgroundColor = AppTheme.Colors.primaryButtonBackground
@@ -37,5 +43,7 @@ class PrimaryButton: EnhancedButton {
         contentEdgeInsets.bottom = 16
         contentEdgeInsets.right = 16
     }
+
+    // MARK: Additional methods
     
 }

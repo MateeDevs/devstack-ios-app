@@ -48,7 +48,7 @@ final class UsersViewModel: ViewModel, ViewModelType {
         
         let loadedCount = refreshUsers.compactMap { $0.element }.map { $0.count }
         
-        let isRefreshing: Observable<Bool> = Observable.merge(
+        let isRefreshing = Observable<Bool>.merge(
             activity.asObservable(),
             refreshUsers.map { _ in false }
         )

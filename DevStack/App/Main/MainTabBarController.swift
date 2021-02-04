@@ -16,7 +16,7 @@ enum MainTab: Int {
 class MainTabBarController: UITabBarController {
     
     static func instantiate() -> MainTabBarController {
-        return StoryboardScene.Main.initialScene.instantiate()
+        StoryboardScene.Main.initialScene.instantiate()
     }
 
 }

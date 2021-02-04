@@ -9,17 +9,23 @@
 import UIKit
 
 open class LocalizedButton: StateButton {
-    
+
+    // MARK: UI components
+
+    // MARK: Stored properties
+
+    // MARK: Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
 
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setup()
     }
 
+    // MARK: Default methods
     private func setup() {
         for state in [UIControl.State.normal, UIControl.State.highlighted, UIControl.State.selected, UIControl.State.disabled] {
             if let title = title(for: state) {
@@ -32,5 +38,7 @@ open class LocalizedButton: StateButton {
             contentHorizontalAlignment = .left
         }
     }
+
+    // MARK: Additional methods
     
 }

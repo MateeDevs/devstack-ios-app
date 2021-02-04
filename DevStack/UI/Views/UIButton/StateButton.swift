@@ -10,6 +10,8 @@ import UIKit
 
 @IBDesignable open class StateButton: UIButton {
 
+    // MARK: UI components
+
     // MARK: Stored properties
     @IBInspectable public var isOn: Bool = false
 
@@ -28,15 +30,19 @@ import UIKit
     // MARK: Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addTarget(self, action: #selector(didTouchUpInside), for: .touchUpInside)
+        setup()
     }
 
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
-        addTarget(self, action: #selector(didTouchUpInside), for: .touchUpInside)
+        setup()
     }
 
     // MARK: Default methods
+    private func setup() {
+        addTarget(self, action: #selector(didTouchUpInside), for: .touchUpInside)
+    }
+    
     @objc public func didTouchUpInside(_ button: UIButton) {
         isOn = !isOn
         updateTitle()

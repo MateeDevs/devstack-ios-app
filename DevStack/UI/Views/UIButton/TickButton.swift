@@ -10,6 +10,8 @@ import UIKit
 
 open class TickButton: StateButton {
 
+    // MARK: UI components
+
     // MARK: Stored properties
 
     // MARK: Inits

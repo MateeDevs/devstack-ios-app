@@ -10,16 +10,22 @@ import UIKit
 
 open class LocalizedNavigationItem: UINavigationItem {
 
+    // MARK: UI components
+
+    // MARK: Stored properties
+
+    // MARK: Inits
     override init(title: String) {
         super.init(title: title)
         setup()
     }
 
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setup()
     }
 
+    // MARK: Default methods
     private func setup() {
         if let title = title {
             self.title = NSLocalizedString(title, comment: "")
@@ -33,5 +39,7 @@ open class LocalizedNavigationItem: UINavigationItem {
             self.prompt = NSLocalizedString(prompt, comment: "")
         }
     }
+
+    // MARK: Additional methods
     
 }

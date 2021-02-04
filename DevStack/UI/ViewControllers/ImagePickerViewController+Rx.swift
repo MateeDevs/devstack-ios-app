@@ -12,7 +12,7 @@ import RxSwift
 public extension Reactive where Base: ImagePickerViewController {
     /// Reactive wrapper for `delegate`
     var delegate: DelegateProxy<ImagePickerViewController, ImagePickerViewControllerDelegate> {
-        return RxImagePickerViewControllerDelegateProxy.proxy(for: base)
+        RxImagePickerViewControllerDelegateProxy.proxy(for: base)
     }
 
     /// Reactive wrapper for delegate method `photoSelected`
@@ -47,9 +47,6 @@ open class RxImagePickerViewControllerDelegateProxy: DelegateProxy<ImagePickerVi
 }
 
 private func castOrThrow<T>(_ resultType: T.Type, _ object: Any) throws -> T {
-    guard let returnValue = object as? T else {
-        throw RxCocoaError.castingError(object: object, targetType: resultType)
-    }
-
+    guard let returnValue = object as? T else { throw RxCocoaError.castingError(object: object, targetType: resultType) }
     return returnValue
 }

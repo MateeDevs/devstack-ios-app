@@ -9,7 +9,10 @@
 import UIKit
 
 @IBDesignable open class ColoredImageView: UIImageView {
-    
+
+    // MARK: UI components
+
+    // MARK: Stored properties
     @IBInspectable public var cornerRadius: CGFloat = 0.0 {
         didSet {
             layer.cornerRadius = cornerRadius
@@ -39,5 +42,22 @@ import UIKit
             }
         }
     }
+
+    // MARK: Inits
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+
+    // MARK: Default methods
+    private func setup() {
+    }
+
+    // MARK: Additional methods
     
 }

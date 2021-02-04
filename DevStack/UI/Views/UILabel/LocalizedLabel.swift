@@ -9,20 +9,25 @@
 import UIKit
 
 @IBDesignable open class LocalizedLabel: UILabel {
-    
+
+    // MARK: UI components
+
+    // MARK: Stored properties
     @IBInspectable public var requiredSymbol: String?
     @IBInspectable public var uppercased: Bool = false
 
+    // MARK: Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
 
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setup()
     }
 
+    // MARK: Default methods
     private func setup() {
         if let text = text {
             if uppercased {
@@ -41,5 +46,7 @@ import UIKit
             textAlignment = .left
         }
     }
+
+    // MARK: Additional methods
     
 }

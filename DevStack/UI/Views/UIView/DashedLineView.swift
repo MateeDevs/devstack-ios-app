@@ -9,10 +9,28 @@
 import UIKit
 
 @IBDesignable open class DashedLineView: UIView {
-    
+
+    // MARK: UI components
+
+    // MARK: Stored properties
     @IBInspectable public var lineColor: UIColor = AppTheme.Colors.separator
     @IBInspectable public var lineLength: CGFloat = 6
     @IBInspectable public var lineGap: CGFloat = 3
+
+    // MARK: Inits
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+
+    // MARK: Default methods
+    private func setup() {
+    }
     
     override open func draw(_ rect: CGRect) {
         // Graphics context
@@ -35,5 +53,7 @@ import UIKit
         // Draw a line
         context.strokePath()
     }
+
+    // MARK: Additional methods
     
 }

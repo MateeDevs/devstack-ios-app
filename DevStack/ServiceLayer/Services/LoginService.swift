@@ -45,7 +45,7 @@ public class LoginService {
     public func logout() -> Observable<Void> {
         keychain.deleteAll()
         database.deleteAll()
-        return Observable.just(())
+        return .just(())
     }
     
 }

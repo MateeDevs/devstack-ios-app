@@ -19,26 +19,26 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
     override func setup() -> UIViewController {
         let main = MainTabBarController.instantiate()
         
-        let usersNc = UINavigationController()
-		usersNc.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_1, image: Asset.Images.usersTabBar.image, tag: 0)
-        let usersFc = UsersFlowController(navigationController: usersNc, dependencies: dependencies)
-        let usersRootVc = startChildFlow(usersFc)
-        usersNc.viewControllers = [usersRootVc]
+        let usersNC = UINavigationController()
+		usersNC.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_1, image: Asset.Images.usersTabBar.image, tag: 0)
+        let usersFC = UsersFlowController(navigationController: usersNC, dependencies: dependencies)
+        let usersRootVC = startChildFlow(usersFC)
+        usersNC.viewControllers = [usersRootVC]
         
-        let profileNc = UINavigationController()
-		profileNc.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_2, image: Asset.Images.profileTabBar.image, tag: 1)
-        let profileFc = ProfileFlowController(navigationController: profileNc, dependencies: dependencies)
-        profileFc.delegate = self
-        let profileRootVc = startChildFlow(profileFc)
-        profileNc.viewControllers = [profileRootVc]
+        let profileNC = UINavigationController()
+		profileNC.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_2, image: Asset.Images.profileTabBar.image, tag: 1)
+        let profileFC = ProfileFlowController(navigationController: profileNC, dependencies: dependencies)
+        profileFC.delegate = self
+        let profileRootVC = startChildFlow(profileFC)
+        profileNC.viewControllers = [profileRootVC]
 
-        let counterNc = UINavigationController()
-        counterNc.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_3, image: Asset.Images.counterTabBar.image, tag: 2)
-        let counterFc = CounterFlowController(navigationController: counterNc, dependencies: dependencies)
-        let counterRootVc = startChildFlow(counterFc)
-        counterNc.viewControllers = [counterRootVc]
+        let counterNC = UINavigationController()
+        counterNC.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_3, image: Asset.Images.counterTabBar.image, tag: 2)
+        let counterFC = CounterFlowController(navigationController: counterNC, dependencies: dependencies)
+        let counterRootVC = startChildFlow(counterFC)
+        counterNC.viewControllers = [counterRootVC]
         
-        main.viewControllers = [usersNc, profileNc, counterNc]
+        main.viewControllers = [usersNC, profileNC, counterNC]
         return main
     }
     

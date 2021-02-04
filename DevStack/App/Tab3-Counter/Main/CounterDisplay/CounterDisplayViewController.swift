@@ -29,10 +29,10 @@ final class CounterDisplayViewController: BaseViewController {
     // MARK: Stored properties
 
     // MARK: Inits
-    static func instantiate(displayVm: CounterDisplayViewModel, sharedVm: CounterSharedViewModel) -> CounterDisplayViewController {
+    static func instantiate(displayVM: CounterDisplayViewModel, sharedVM: CounterSharedViewModel) -> CounterDisplayViewController {
         let vc = StoryboardScene.CounterDisplay.initialScene.instantiate()
-        vc.displayViewModel = displayVm
-        vc.sharedViewModel = sharedVm
+        vc.displayViewModel = displayVM
+        vc.sharedViewModel = sharedVM
         return vc
     }
 

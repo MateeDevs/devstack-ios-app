@@ -21,31 +21,44 @@ public enum WhisperStyle {
 }
 
 class WhisperView: UIView {
-    
+
+    // MARK: UI components
     private let messageLabel = UILabel()
-    
+
+    // MARK: Stored properties
     public var message: String = "" {
         didSet {
             messageLabel.text = message
         }
     }
-    
+
+    // MARK: Inits
     override public init(frame: CGRect) {
         super.init(frame: frame)
-        
+        setup()
+    }
+    
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+
+    // MARK: Default methods
+    private func setup() {
+        setupMessageLabel()
+    }
+
+    // MARK: Additional methods
+    private func setupMessageLabel() {
         messageLabel.textAlignment = .center
         messageLabel.textColor = AppTheme.Colors.alertMessage
         messageLabel.font = AppTheme.Fonts.alertMessage
-        
+
         addSubview(messageLabel)
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         messageLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
         messageLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         messageLabel.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor).isActive = true
     }
-    
-    @available(*, unavailable)
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
 }

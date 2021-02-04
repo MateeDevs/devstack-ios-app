@@ -50,7 +50,7 @@ final class LoginViewModel: ViewModel, ViewModelType {
         
         let login = loginButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Observable<Event<Void>> in
             if inputs.email.isEmpty || inputs.password.isEmpty {
-                return Observable.just(.error(ValidationError(L10n.invalid_credentials)))
+                return .just(.error(ValidationError(L10n.invalid_credentials)))
             } else {
                 return dependencies.loginService.login(
                     email: inputs.email,
@@ -61,7 +61,7 @@ final class LoginViewModel: ViewModel, ViewModelType {
         
         let messages = ErrorMessages([.httpUnathorized: L10n.invalid_credentials], defaultMessage: L10n.signing_failed)
         
-        let alertAction: Observable<AlertAction> = Observable.merge(
+        let alertAction = Observable<AlertAction>.merge(
             activity.toWhisper(L10n.signing_in),
             login.compactMap { $0.element }.map { .hideWhisper },
             login.compactMap { $0.error }.map { .showWhisper(Whisper(error: $0.toString(messages))) }

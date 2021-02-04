@@ -9,7 +9,10 @@
 import UIKit
 
 @IBDesignable open class GradientView: UIView {
-    
+
+    // MARK: UI components
+
+    // MARK: Stored properties
     @IBInspectable public var color1: UIColor = .systemRed
     @IBInspectable public var color2: UIColor = .systemBlue
     
@@ -18,14 +21,21 @@ import UIKit
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setup()
+    }
+
+    // MARK: Inits
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+
+    // MARK: Default methods
+    private func setup() {
         applyGradientLayer()
     }
 
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        applyGradientLayer()
-    }
-
+    // MARK: Additional methods
     private func applyGradientLayer() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds

@@ -9,21 +9,29 @@
 import UIKit
 
 open class LocalizedTextField: UITextField {
-    
+
+    // MARK: UI components
+
+    // MARK: Stored properties
+
+    // MARK: Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
 
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setup()
     }
 
+    // MARK: Default methods
     private func setup() {
         if let placeholder = placeholder {
             self.placeholder = NSLocalizedString(placeholder, comment: "")
         }
     }
+
+    // MARK: Additional methods
     
 }

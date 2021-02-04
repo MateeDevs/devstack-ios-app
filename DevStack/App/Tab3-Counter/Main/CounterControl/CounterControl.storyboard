@@ -65,4 +65,15 @@
             <point key="canvasLocation" x="130" y="111"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="OMJ-nJ-4WY">
+            <size key="intrinsicContentSize" width="314" height="34"/>
+        </designable>
+        <designable name="X5b-b7-xEW">
+            <size key="intrinsicContentSize" width="353" height="36"/>
+        </designable>
+        <designable name="oun-9O-4ue">
+            <size key="intrinsicContentSize" width="347" height="36"/>
+        </designable>
+    </designables>
 </document>

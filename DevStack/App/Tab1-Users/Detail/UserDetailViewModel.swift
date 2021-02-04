@@ -51,7 +51,7 @@ final class UserDetailViewModel: ViewModel, ViewModelType {
             dependencies.userService.downloadUserById(userId).trackActivity(activity).materialize()
         }).share()
         
-        let isRefreshing: Observable<Bool> = Observable.merge(
+        let isRefreshing = Observable<Bool>.merge(
             activity.asObservable(),
             refreshUser.map { _ in false }
         )
