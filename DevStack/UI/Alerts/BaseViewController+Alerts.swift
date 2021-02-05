@@ -23,12 +23,16 @@ public extension BaseViewController {
     }
     
     /// Present UIAlertController on current top ViewController.
-    func showAlert(_ alert: Alert) {
+    func showAlert(_ alert: Alert, textFieldHandler: ((UITextField) -> Void)? = nil) {
         let alertController = UIAlertController(title: alert.title, message: alert.message, preferredStyle: .alert)
         alertController.addAction(alert.primaryAction)
         
         if let secondaryAction = alert.secondaryAction {
             alertController.addAction(secondaryAction)
+        }
+        
+        if textFieldHandler != nil {
+            alertController.addTextField(configurationHandler: textFieldHandler)
         }
         
         hideWhisper()
