@@ -12,46 +12,49 @@ import UIKit
 @IBDesignable public class UserImageView: XIBView {
 
     // MARK: UI components
-    @IBOutlet private weak var placeholderView: UIView! {
+    @IBOutlet private weak var initialsView: UIView! {
         didSet {
-            placeholderView.layer.borderWidth = 3
+            initialsView.layer.borderWidth = 3
         }
     }
-    @IBOutlet private weak var placeholderLabel: UILabel!
+    @IBOutlet private weak var initialsLabel: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
 
-    @IBInspectable public var placeholderTextColor: UIColor = .white {
+    @IBInspectable public var initialsTextColor: UIColor = .white {
         didSet {
-            placeholderLabel.textColor = placeholderTextColor
-            placeholderView.layer.borderColor = placeholderTextColor.cgColor
+            initialsLabel.textColor = initialsTextColor
+            initialsView.layer.borderColor = initialsTextColor.cgColor
         }
     }
 
-    @IBInspectable public var placeholderBackgroundColor: UIColor = AppTheme.Colors.primaryColor {
+    @IBInspectable public var initialsBackgroundColor: UIColor = AppTheme.Colors.primaryColor {
         didSet {
-            placeholderView.backgroundColor = placeholderBackgroundColor
+            initialsView.backgroundColor = initialsBackgroundColor
         }
     }
 
     // MARK: Stored properties
-    public var placeholder: String? {
+    @IBInspectable public var initials: String? {
         didSet {
-            placeholderLabel.text = placeholder
+            setInitials()
         }
     }
 
-    public var image: UIImage? {
+    @IBInspectable public var image: UIImage? {
         didSet {
-            imageView.image = image
-            placeholderView.layer.borderWidth = 0
+            setImageOrPlaceholder()
         }
     }
 
-    public var imageURL: String? {
+    @IBInspectable public var imageURL: String? {
         didSet {
-            guard let imageURL = imageURL, let url = URL(string: imageURL) else { return }
-            imageView.af.setImage(withURL: url)
-            placeholderView.layer.borderWidth = 0
+            setImageOrPlaceholder()
+        }
+    }
+
+    @IBInspectable public var placeholder: UIImage? {
+        didSet {
+            setImageOrPlaceholder()
         }
     }
 
@@ -66,13 +69,28 @@ import UIKit
         backgroundColor = .clear
 
         view.isSkeletonable = true
-        placeholderView.isSkeletonable = true
+        initialsView.isSkeletonable = true
     }
 
     // MARK: Additional methods
     private func setDimensions() {
-        placeholderView.layer.cornerRadius = placeholderView.frame.size.width / 2.0
-        placeholderLabel.font = UIFont.systemFont(ofSize: placeholderView.frame.size.width / 2.85, weight: .medium)
+        initialsView.layer.cornerRadius = initialsView.frame.size.width / 2.0
+        initialsLabel.font = UIFont.systemFont(ofSize: initialsView.frame.size.width / 2.85, weight: .medium)
+    }
+
+    private func setInitials() {
+        imageView.image = nil
+        initialsLabel.text = initials
+        initialsView.layer.borderWidth = 3
+    }
+
+    private func setImageOrPlaceholder() {
+        if let imageURL = imageURL, let url = URL(string: imageURL) {
+            imageView.af.setImage(withURL: url, placeholderImage: placeholder)
+        } else {
+            imageView.image = image != nil ? image : placeholder
+        }
+        initialsView.layer.borderWidth = 0
     }
 
 }

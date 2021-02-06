@@ -43,7 +43,7 @@ final class UserDetailViewController: BaseViewController {
 
         // Outputs
         viewModel.output.user.fullName.drive(userNameLabel.rx.text).disposed(by: disposeBag)
-        viewModel.output.user.initials.drive(userImageView.rx.placeholder).disposed(by: disposeBag)
+        viewModel.output.user.initials.drive(userImageView.rx.initials).disposed(by: disposeBag)
         viewModel.output.user.imageURL.drive(userImageView.rx.imageURL).disposed(by: disposeBag)
 
         // Refresh

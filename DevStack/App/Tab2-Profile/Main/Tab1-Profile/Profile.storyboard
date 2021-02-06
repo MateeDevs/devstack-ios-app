@@ -25,10 +25,10 @@
                                     <constraint firstAttribute="width" constant="100" id="GRV-XH-pht"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderTextColor">
+                                    <userDefinedRuntimeAttribute type="color" keyPath="initialsTextColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderBackgroundColor">
+                                    <userDefinedRuntimeAttribute type="color" keyPath="initialsBackgroundColor">
                                         <color key="value" name="MateeYellow"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
