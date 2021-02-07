@@ -165,7 +165,7 @@ public protocol TabBarViewDelegate: class {
                 usingSpringWithDamping: 0.5,
                 initialSpringVelocity: 0,
                 options: .curveEaseIn,
-                animations: { [weak self] in self?.layoutIfNeeded() },
+                animations: { self.layoutIfNeeded() },
                 completion: nil
             )
         }

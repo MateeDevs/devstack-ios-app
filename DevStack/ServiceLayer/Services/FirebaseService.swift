@@ -60,8 +60,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         withCompletionHandler completionHandler: @escaping () -> Void
     ) {
         let notification = response.notification.request.content.userInfo
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
+        DispatchQueue.main.async {
             self.flowController?.dependencies.firebaseService.handleNotification(notification, appDelegate: self)
         }
     }
