@@ -48,7 +48,7 @@ final class ProfileViewController: BaseViewController {
 
         // Outputs
         viewModel.output.profile.fullName.drive(userNameLabel.rx.text).disposed(by: disposeBag)
-        viewModel.output.profile.initials.drive(userImageView.rx.placeholder).disposed(by: disposeBag)
+        viewModel.output.profile.initials.drive(userImageView.rx.initials).disposed(by: disposeBag)
         viewModel.output.profile.imageURL.drive(userImageView.rx.imageURL).disposed(by: disposeBag)
         
         viewModel.output.isRefreshing.drive(view.rx.skeletonView).disposed(by: disposeBag)

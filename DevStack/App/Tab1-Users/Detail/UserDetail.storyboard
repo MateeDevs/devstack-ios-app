@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CkE-Zn-ye5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CkE-Zn-ye5">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,10 +32,10 @@
                                                     <constraint firstAttribute="width" constant="100" id="VoD-kI-4Kb"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderBackgroundColor">
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="initialsBackgroundColor">
                                                         <color key="value" name="MateeYellow"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderTextColor">
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="initialsTextColor">
                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
@@ -46,7 +47,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="QtH-oR-xKW" firstAttribute="top" secondItem="cAr-b3-J9v" secondAttribute="top" constant="64" id="5gh-2m-ihs"/>
                                             <constraint firstItem="YI6-hr-GV2" firstAttribute="top" secondItem="QtH-oR-xKW" secondAttribute="bottom" constant="32" id="XwG-13-NBr"/>
@@ -68,6 +69,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="LX2-wF-xHR"/>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="qdr-Ev-KLG"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qdr-Ev-KLG" firstAttribute="bottom" secondItem="p5y-Hz-A1F" secondAttribute="bottom" id="CZN-2K-Xm3"/>
@@ -75,7 +77,6 @@
                             <constraint firstItem="p5y-Hz-A1F" firstAttribute="top" secondItem="qdr-Ev-KLG" secondAttribute="top" id="MsH-eE-4R4"/>
                             <constraint firstItem="p5y-Hz-A1F" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" id="NDZ-Ce-RAd"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="qdr-Ev-KLG"/>
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="p5y-Hz-A1F" id="u20-3g-EeR"/>
@@ -92,5 +93,8 @@
         <namedColor name="MateeYellow">
             <color red="0.88235294117647056" green="0.74509803921568629" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

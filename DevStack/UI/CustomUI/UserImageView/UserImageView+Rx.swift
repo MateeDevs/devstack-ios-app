@@ -11,9 +11,9 @@ import RxSwift
 
 public extension Reactive where Base: UserImageView {
     /// Bindable sink for `placeholder` property
-    var placeholder: Binder<String?> {
-        Binder(base) { base, placeholder in
-            base.placeholder = placeholder
+    var initials: Binder<String?> {
+        Binder(base) { base, initials in
+            base.initials = initials
         }
     }
 
@@ -28,6 +28,13 @@ public extension Reactive where Base: UserImageView {
     var imageURL: Binder<String?> {
         Binder(base) { base, imageURL in
             base.imageURL = imageURL
+        }
+    }
+
+    /// Bindable sink for `placeholder` property
+    var placeholder: Binder<UIImage?> {
+        Binder(base) { base, placeholder in
+            base.placeholder = placeholder
         }
     }
 }
