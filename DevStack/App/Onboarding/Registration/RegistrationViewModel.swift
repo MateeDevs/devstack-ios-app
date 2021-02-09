@@ -20,10 +20,11 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
         let email: BehaviorRelay<String>
         let password: BehaviorRelay<String>
         let registerButtonTaps: AnyObserver<Void>
+        let loginButtonTaps: AnyObserver<Void>
     }
     
     struct Output {
-        let registrationSuccess: Driver<User>
+        let flow: Driver<RegistrationViewControllerFlow>
         let registerButtonEnabled: Driver<Bool>
         let alertAction: Driver<AlertAction>
     }
@@ -35,11 +36,13 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
         let email = BehaviorRelay<String>(value: "")
         let password = BehaviorRelay<String>(value: "")
         let registerButtonTaps = PublishSubject<Void>()
+        let loginButtonTaps = PublishSubject<Void>()
         
         self.input = Input(
             email: email,
             password: password,
-            registerButtonTaps: registerButtonTaps.asObserver()
+            registerButtonTaps: registerButtonTaps.asObserver(),
+            loginButtonTaps: loginButtonTaps.asObserver()
         )
 
         // MARK: Transformations
@@ -63,6 +66,11 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
             }
         }.share()
         
+        let flow = Observable<RegistrationViewControllerFlow>.merge(
+            registration.compactMap { $0.element }.mapToVoid().map { .popRegistration },
+            loginButtonTaps.map { .popRegistration }
+        )
+        
         let messages = ErrorMessages([.httpConflict: L10n.register_view_email_already_exists], defaultMessage: L10n.signing_up_failed)
         
         let alertAction = Observable<AlertAction>.merge(
@@ -74,7 +82,7 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
         // MARK: Setup outputs
         
         self.output = Output(
-            registrationSuccess: registration.compactMap { $0.element }.asDriver(),
+            flow: flow.asDriver(),
             registerButtonEnabled: activity.map { !$0 },
             alertAction: alertAction.asDriver()
         )

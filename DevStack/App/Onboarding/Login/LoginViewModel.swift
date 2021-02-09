@@ -20,10 +20,11 @@ final class LoginViewModel: ViewModel, ViewModelType {
         let email: BehaviorRelay<String>
         let password: BehaviorRelay<String>
         let loginButtonTaps: AnyObserver<Void>
+        let registerButtonTaps: AnyObserver<Void>
     }
     
     struct Output {
-        let loginSuccess: Driver<Void>
+        let flow: Driver<LoginViewControllerFlow>
         let loginButtonEnabled: Driver<Bool>
         let alertAction: Driver<AlertAction>
     }
@@ -35,11 +36,13 @@ final class LoginViewModel: ViewModel, ViewModelType {
         let email = BehaviorRelay<String>(value: "")
         let password = BehaviorRelay<String>(value: "")
         let loginButtonTaps = PublishSubject<Void>()
+        let registerButtonTaps = PublishSubject<Void>()
         
         self.input = Input(
             email: email,
             password: password,
-            loginButtonTaps: loginButtonTaps.asObserver()
+            loginButtonTaps: loginButtonTaps.asObserver(),
+            registerButtonTaps: registerButtonTaps.asObserver()
         )
 
         // MARK: Transformations
@@ -59,6 +62,11 @@ final class LoginViewModel: ViewModel, ViewModelType {
             }
         }.share()
         
+        let flow = Observable<LoginViewControllerFlow>.merge(
+            login.compactMap { $0.element }.map { .dismiss },
+            registerButtonTaps.map { .showRegistration }
+        )
+        
         let messages = ErrorMessages([.httpUnathorized: L10n.invalid_credentials], defaultMessage: L10n.signing_failed)
         
         let alertAction = Observable<AlertAction>.merge(
@@ -70,7 +78,7 @@ final class LoginViewModel: ViewModel, ViewModelType {
         // MARK: Setup outputs
         
         self.output = Output(
-            loginSuccess: login.compactMap { $0.element }.asDriver(),
+            flow: flow.asDriver(),
             loginButtonEnabled: activity.map { !$0 },
             alertAction: alertAction.asDriver()
         )
