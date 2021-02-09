@@ -10,17 +10,17 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-protocol ProfileFlowDelegate: class {
-    func presentOnboarding()
+enum ProfileViewControllerFlow {
+    case presentOnboarding
 }
 
 final class ProfileViewController: BaseViewController {
 
-    // MARK: FlowDelegate
-    weak var flowDelegate: ProfileFlowDelegate?
+    // MARK: FlowController
+    private weak var flowController: ProfileFlowController?
 
     // MARK: ViewModels
-    private var viewModel: ProfileViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
+    private var viewModel: ProfileViewModel?
 
     // MARK: UI components
     @IBOutlet private weak var userImageView: UserImageView!
@@ -31,9 +31,10 @@ final class ProfileViewController: BaseViewController {
     // MARK: Stored properties
     
     // MARK: Inits
-    static func instantiate(viewModel: ProfileViewModel) -> ProfileViewController {
+    static func instantiate(fc: ProfileFlowController, vm: ProfileViewModel) -> ProfileViewController {
         let vc = StoryboardScene.Profile.initialScene.instantiate()
-        vc.viewModel = viewModel
+        vc.flowController = fc
+        vc.viewModel = vm
         return vc
     }
 
@@ -42,6 +43,8 @@ final class ProfileViewController: BaseViewController {
     // MARK: Default methods
     override func setupBindings() {
         super.setupBindings()
+        
+        guard let viewModel = viewModel, let flowController = flowController else { return }
 
         // Inputs
         logoutButton.rx.tap.bind(to: viewModel.input.logoutButtonTaps).disposed(by: disposeBag)
@@ -57,9 +60,7 @@ final class ProfileViewController: BaseViewController {
             .map { $0.coordinate.toString() }
             .drive(locationLabel.rx.text).disposed(by: disposeBag)
 
-        viewModel.output.logoutSuccess.drive(onNext: { [weak self] _ in
-            self?.flowDelegate?.presentOnboarding()
-        }).disposed(by: disposeBag)
+        viewModel.output.flow.drive(flowController.rx.handleProfileFlow).disposed(by: disposeBag)
     }
 
     override func setupUI() {

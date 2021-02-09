@@ -9,14 +9,10 @@
 import RxSwift
 import UIKit
 
-protocol SettingsFlowDelegate: class {
-
-}
-
 final class SettingsViewController: BaseViewController {
 
     // MARK: FlowDelegate
-    weak var flowDelegate: SettingsFlowDelegate?
+    private weak var flowController: ProfileFlowController?
 
     // MARK: ViewModels
 
@@ -28,7 +24,7 @@ final class SettingsViewController: BaseViewController {
     // MARK: Stored properties
 
     // MARK: Inits
-    static func instantiate() -> SettingsViewController {
+    static func instantiate(fc: ProfileFlowController) -> SettingsViewController {
         StoryboardScene.Settings.initialScene.instantiate()
     }
 
