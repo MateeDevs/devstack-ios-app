@@ -9,26 +9,27 @@
 import RxSwift
 import UIKit
 
-protocol UsersFlowDelegate: class {
-    func showUserDetail(userId: String)
+enum UsersViewControllerFlow {
+    case showUserDetailForId(_ userId: String)
 }
 
 final class UsersViewController: BaseTableViewController<User> {
-
-    // MARK: FlowDelegate
-    weak var flowDelegate: UsersFlowDelegate?
+    
+    // MARK: FlowController
+    private weak var flowController: UsersFlowController?
 
     // MARK: ViewModels
-    private var viewModel: UsersViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
+    private var viewModel: UsersViewModel?
 
     // MARK: UI components
 
     // MARK: Stored properties
     
     // MARK: Inits
-    static func instantiate(viewModel: UsersViewModel) -> UsersViewController {
+    static func instantiate(fc: UsersFlowController, vm: UsersViewModel) -> UsersViewController {
         let vc = StoryboardScene.Users.initialScene.instantiate()
-        vc.viewModel = viewModel
+        vc.flowController = fc
+        vc.viewModel = vm
         return vc
     }
 
@@ -42,6 +43,8 @@ final class UsersViewController: BaseTableViewController<User> {
     // MARK: Default methods
     override func setupBindings() {
         super.setupBindings()
+        
+        guard let viewModel = viewModel else { return }
 
         // Inputs
         page.bind(to: viewModel.input.page).disposed(by: disposeBag)
@@ -73,7 +76,7 @@ final class UsersViewController: BaseTableViewController<User> {
     
     override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = items[indexPath.row]
-        flowDelegate?.showUserDetail(userId: user.id)
+        flowController?.handleUsersFlow(.showUserDetailForId(user.id))
     }
     
     override public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

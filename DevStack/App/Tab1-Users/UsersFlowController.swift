@@ -6,22 +6,40 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
+import RxCocoa
+import RxSwift
 import UIKit
 
-class UsersFlowController: FlowController, UsersFlowDelegate, UserDetailFlowDelegate {
+class UsersFlowController: FlowController {
     
     override func setup() -> UIViewController {
         let vm = UsersViewModel(dependencies: dependencies)
-        let vc = UsersViewController.instantiate(viewModel: vm)
-        vc.flowDelegate = self
+        let vc = UsersViewController.instantiate(fc: self, vm: vm)
         return vc
     }
-    
-    func showUserDetail(userId: String) {
-        let vm = UserDetailViewModel(dependencies: dependencies, userId: userId)
-        let vc = UserDetailViewController.instantiate(viewModel: vm)
-        vc.flowDelegate = self
-        navigationController.show(vc, sender: nil)
+}
+
+// MARK: Users flow
+extension UsersFlowController {
+    func handleUsersFlow(_ flow: UsersViewControllerFlow) {
+        switch flow {
+        case .showUserDetailForId(let userId): showUserDetailForId(userId)
+        }
     }
     
+    private func showUserDetailForId(_ userId: String) {
+        let vm = UserDetailViewModel(dependencies: dependencies, userId: userId)
+        let vc = UserDetailViewController.instantiate(fc: self, vm: vm)
+        navigationController.show(vc, sender: nil)
+    }
+}
+
+// MARK: Reactive extensions
+extension Reactive where Base: UsersFlowController {
+    /// Bindable sink for `handleUsersFlow` method
+    var handleUsersFlow: Binder<UsersViewControllerFlow> {
+        Binder(self.base) { base, flow in
+            base.handleUsersFlow(flow)
+        }
+    }
 }
