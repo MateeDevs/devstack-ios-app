@@ -15,6 +15,7 @@ final class SettingsViewController: BaseViewController {
     private weak var flowController: ProfileFlowController?
 
     // MARK: ViewModels
+    private var viewModel: SettingsViewModel?
 
     // MARK: UI components
     @IBOutlet private weak var topViewHeightConstraint: NSLayoutConstraint!
@@ -24,8 +25,11 @@ final class SettingsViewController: BaseViewController {
     // MARK: Stored properties
 
     // MARK: Inits
-    static func instantiate(fc: ProfileFlowController) -> SettingsViewController {
-        StoryboardScene.Settings.initialScene.instantiate()
+    static func instantiate(fc: ProfileFlowController, vm: SettingsViewModel) -> SettingsViewController {
+        let vc = StoryboardScene.Settings.initialScene.instantiate()
+        vc.flowController = fc
+        vc.viewModel = vm
+        return vc
     }
 
     // MARK: Lifecycle methods
@@ -34,13 +38,14 @@ final class SettingsViewController: BaseViewController {
     override func setupBindings() {
         super.setupBindings()
         
-        smallButton.rx.tap.bind { [weak self] in
-            self?.topViewHeightConstraint.constant = 300.0
-        }.disposed(by: disposeBag)
+        guard let viewModel = viewModel else { return }
         
-        largeButton.rx.tap.bind { [weak self] in
-            self?.topViewHeightConstraint.constant = 1200.0
-        }.disposed(by: disposeBag)
+        // Inputs
+        smallButton.rx.tap.bind(to: viewModel.input.smallButtonTaps).disposed(by: disposeBag)
+        largeButton.rx.tap.bind(to: viewModel.input.largeButtonTaps).disposed(by: disposeBag)
+
+        // Outputs
+        viewModel.output.topViewHeight.drive(topViewHeightConstraint.rx.constant).disposed(by: disposeBag)
     }
 
     // MARK: Additional methods

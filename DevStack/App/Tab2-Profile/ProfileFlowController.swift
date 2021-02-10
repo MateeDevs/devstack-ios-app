@@ -21,7 +21,8 @@ class ProfileFlowController: FlowController {
     override func setup() -> UIViewController {
         let profileVM = ProfileViewModel(dependencies: dependencies)
         let profileVC = ProfileViewController.instantiate(fc: self, vm: profileVM)
-        let settingsVC = SettingsViewController.instantiate(fc: self)
+        let settingsVM = SettingsViewModel(dependencies: dependencies)
+        let settingsVC = SettingsViewController.instantiate(fc: self, vm: settingsVM)
         return ProfileWrapperViewController.instantiate(viewControllers: [profileVC, settingsVC])
     }
 }
