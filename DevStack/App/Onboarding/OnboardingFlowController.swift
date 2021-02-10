@@ -6,8 +6,6 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import RxCocoa
-import RxSwift
 import UIKit
 
 protocol OnboardingFlowControllerDelegate: class {
@@ -22,6 +20,14 @@ class OnboardingFlowController: FlowController {
         let vm = LoginViewModel(dependencies: dependencies)
         let vc = LoginViewController.instantiate(fc: self, vm: vm)
         return vc
+    }
+    
+    override func handleFlow(_ flow: Flow) {
+        switch flow {
+        case .login(let loginFlow): handleLoginFlow(loginFlow)
+        case .registration(let registrationFlow): handleRegistrationFlow(registrationFlow)
+        default: ()
+        }
     }
     
     override func dismiss() {
@@ -56,22 +62,5 @@ extension OnboardingFlowController {
     
     private func popRegistration() {
         navigationController.popViewController(animated: true)
-    }
-}
-
-// MARK: Reactive extensions
-extension Reactive where Base: OnboardingFlowController {
-    /// Bindable sink for `handleLoginFlow` method
-    var handleLoginFlow: Binder<LoginViewControllerFlow> {
-        Binder(self.base) { base, flow in
-            base.handleLoginFlow(flow)
-        }
-    }
-    
-    /// Bindable sink for `handleRegistrationFlow` method
-    var handleRegistrationFlow: Binder<RegistrationViewControllerFlow> {
-        Binder(self.base) { base, flow in
-            base.handleRegistrationFlow(flow)
-        }
     }
 }

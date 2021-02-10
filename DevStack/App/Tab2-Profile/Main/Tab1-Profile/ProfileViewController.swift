@@ -10,14 +10,14 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-enum ProfileViewControllerFlow {
+public enum ProfileViewControllerFlow {
     case presentOnboarding
 }
 
 final class ProfileViewController: BaseViewController {
 
     // MARK: FlowController
-    private weak var flowController: ProfileFlowController?
+    private weak var flowController: FlowController?
 
     // MARK: ViewModels
     private var viewModel: ProfileViewModel?
@@ -60,7 +60,7 @@ final class ProfileViewController: BaseViewController {
             .map { $0.coordinate.toString() }
             .drive(locationLabel.rx.text).disposed(by: disposeBag)
 
-        viewModel.output.flow.drive(flowController.rx.handleProfileFlow).disposed(by: disposeBag)
+        viewModel.output.flow.map { Flow.profile($0) }.drive(flowController.rx.handleFlow).disposed(by: disposeBag)
     }
 
     override func setupUI() {

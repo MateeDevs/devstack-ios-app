@@ -13,7 +13,7 @@ import UIKit
 final class CounterDisplayViewController: BaseViewController {
 
     // MARK: FlowDelegate
-    private weak var flowController: CounterFlowController?
+    private weak var flowController: FlowController?
 
     // MARK: ViewModels
     private var displayViewModel: CounterDisplayViewModel?

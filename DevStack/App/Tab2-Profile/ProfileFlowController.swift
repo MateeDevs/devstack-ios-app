@@ -6,8 +6,6 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import RxCocoa
-import RxSwift
 import UIKit
 
 protocol ProfileFlowControllerDelegate: class {
@@ -25,6 +23,13 @@ class ProfileFlowController: FlowController {
         let settingsVC = SettingsViewController.instantiate(fc: self, vm: settingsVM)
         return ProfileWrapperViewController.instantiate(viewControllers: [profileVC, settingsVC])
     }
+    
+    override func handleFlow(_ flow: Flow) {
+        switch flow {
+        case .profile(let profileFlow): handleProfileFlow(profileFlow)
+        default: ()
+        }
+    }
 }
 
 // MARK: Profile flow
@@ -37,15 +42,5 @@ extension ProfileFlowController {
     
     private func presentOnboarding() {
         delegate?.presentOnboarding()
-    }
-}
-
-// MARK: Reactive extensions
-extension Reactive where Base: ProfileFlowController {
-    /// Bindable sink for `handleProfileFlow` method
-    var handleProfileFlow: Binder<ProfileViewControllerFlow> {
-        Binder(self.base) { base, flow in
-            base.handleProfileFlow(flow)
-        }
     }
 }

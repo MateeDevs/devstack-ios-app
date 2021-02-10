@@ -9,14 +9,14 @@
 import RxSwift
 import UIKit
 
-enum RegistrationViewControllerFlow {
+public enum RegistrationViewControllerFlow {
     case popRegistration
 }
 
 final class RegistrationViewController: InputViewController {
 
     // MARK: FlowController
-    private weak var flowController: OnboardingFlowController?
+    private weak var flowController: FlowController?
 
     // MARK: ViewModels
     private var viewModel: RegistrationViewModel?
@@ -65,7 +65,7 @@ final class RegistrationViewController: InputViewController {
         // Outputs
         viewModel.output.registerButtonEnabled.drive(loginButton.rx.isEnabled).disposed(by: disposeBag)
         viewModel.output.alertAction.drive(rx.alertAction).disposed(by: disposeBag)
-        viewModel.output.flow.drive(flowController.rx.handleRegistrationFlow).disposed(by: disposeBag)
+        viewModel.output.flow.map { Flow.registration($0) }.drive(flowController.rx.handleFlow).disposed(by: disposeBag)
     }
 
     // MARK: Additional methods

@@ -12,7 +12,7 @@ import UIKit
 final class SettingsViewController: BaseViewController {
 
     // MARK: FlowDelegate
-    private weak var flowController: ProfileFlowController?
+    private weak var flowController: FlowController?
 
     // MARK: ViewModels
     private var viewModel: SettingsViewModel?

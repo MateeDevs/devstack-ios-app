@@ -9,7 +9,7 @@
 import RxSwift
 import UIKit
 
-enum LoginViewControllerFlow {
+public enum LoginViewControllerFlow {
     case dismiss
     case showRegistration
 }
@@ -17,7 +17,7 @@ enum LoginViewControllerFlow {
 final class LoginViewController: InputViewController {
     
     // MARK: FlowController
-    private weak var flowController: OnboardingFlowController?
+    private weak var flowController: FlowController?
     
     // MARK: ViewModels
     private var viewModel: LoginViewModel?
@@ -74,7 +74,7 @@ final class LoginViewController: InputViewController {
         // Outputs
         viewModel.output.loginButtonEnabled.drive(loginButton.rx.isEnabled).disposed(by: disposeBag)
         viewModel.output.alertAction.drive(rx.alertAction).disposed(by: disposeBag)
-        viewModel.output.flow.drive(flowController.rx.handleLoginFlow).disposed(by: disposeBag)
+        viewModel.output.flow.map { Flow.login($0) }.drive(flowController.rx.handleFlow).disposed(by: disposeBag)
     }
 
     // MARK: Additional methods

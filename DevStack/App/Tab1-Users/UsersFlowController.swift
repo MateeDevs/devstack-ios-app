@@ -6,8 +6,6 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import RxCocoa
-import RxSwift
 import UIKit
 
 class UsersFlowController: FlowController {
@@ -16,6 +14,13 @@ class UsersFlowController: FlowController {
         let vm = UsersViewModel(dependencies: dependencies)
         let vc = UsersViewController.instantiate(fc: self, vm: vm)
         return vc
+    }
+    
+    override func handleFlow(_ flow: Flow) {
+        switch flow {
+        case .users(let usersFlow): handleUsersFlow(usersFlow)
+        default: ()
+        }
     }
 }
 
@@ -31,15 +36,5 @@ extension UsersFlowController {
         let vm = UserDetailViewModel(dependencies: dependencies, userId: userId)
         let vc = UserDetailViewController.instantiate(fc: self, vm: vm)
         navigationController.show(vc, sender: nil)
-    }
-}
-
-// MARK: Reactive extensions
-extension Reactive where Base: UsersFlowController {
-    /// Bindable sink for `handleUsersFlow` method
-    var handleUsersFlow: Binder<UsersViewControllerFlow> {
-        Binder(self.base) { base, flow in
-            base.handleUsersFlow(flow)
-        }
     }
 }

@@ -9,14 +9,14 @@
 import RxSwift
 import UIKit
 
-enum UsersViewControllerFlow {
+public enum UsersViewControllerFlow {
     case showUserDetailForId(_ userId: String)
 }
 
 final class UsersViewController: BaseTableViewController<User> {
     
     // MARK: FlowController
-    private weak var flowController: UsersFlowController?
+    private weak var flowController: FlowController?
 
     // MARK: ViewModels
     private var viewModel: UsersViewModel?
@@ -76,7 +76,7 @@ final class UsersViewController: BaseTableViewController<User> {
     
     override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = items[indexPath.row]
-        flowController?.handleUsersFlow(.showUserDetailForId(user.id))
+        flowController?.handleFlow(.users(.showUserDetailForId(user.id)))
     }
     
     override public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -6,6 +6,8 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
+import RxCocoa
+import RxSwift
 import UIKit
 
 open class FlowController: NSObject {
@@ -32,6 +34,9 @@ open class FlowController: NSObject {
     open func setup() -> UIViewController {
         UIViewController()
     }
+    
+    /// Override this method in a subclass and setup handlings for all required flows.
+    open func handleFlow(_ flow: Flow) {}
     
     /// Default implementation for dismissing a modal flow. Override in a subclass if you want a custom behavior.
     open func dismiss() {
@@ -74,5 +79,14 @@ extension FlowController: UINavigationControllerDelegate {
             !navigationController.viewControllers.contains(fromViewController),
             fromViewController == rootViewController else { return }
         stopFlow()
+    }
+}
+
+extension Reactive where Base: FlowController {
+    /// Bindable sink for `handleFlow` method
+    var handleFlow: Binder<Flow> {
+        Binder(self.base) { base, flow in
+            base.handleFlow(flow)
+        }
     }
 }

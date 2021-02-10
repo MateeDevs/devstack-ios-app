@@ -12,7 +12,7 @@ import UIKit
 final class UserDetailViewController: BaseViewController {
 
     // MARK: FlowController
-    private weak var flowController: UsersFlowController?
+    private weak var flowController: FlowController?
 
     // MARK: ViewModels
     private var viewModel: UserDetailViewModel?
