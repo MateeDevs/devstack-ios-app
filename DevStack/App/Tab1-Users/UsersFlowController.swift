@@ -12,8 +12,7 @@ class UsersFlowController: FlowController {
     
     override func setup() -> UIViewController {
         let vm = UsersViewModel(dependencies: dependencies)
-        let vc = UsersViewController.instantiate(fc: self, vm: vm)
-        return vc
+        return UsersViewController.instantiate(fc: self, vm: vm)
     }
     
     override func handleFlow(_ flow: Flow) {

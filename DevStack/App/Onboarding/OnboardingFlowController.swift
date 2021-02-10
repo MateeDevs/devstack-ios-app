@@ -18,8 +18,7 @@ class OnboardingFlowController: FlowController {
     
     override func setup() -> UIViewController {
         let vm = LoginViewModel(dependencies: dependencies)
-        let vc = LoginViewController.instantiate(fc: self, vm: vm)
-        return vc
+        return LoginViewController.instantiate(fc: self, vm: vm)
     }
     
     override func handleFlow(_ flow: Flow) {
