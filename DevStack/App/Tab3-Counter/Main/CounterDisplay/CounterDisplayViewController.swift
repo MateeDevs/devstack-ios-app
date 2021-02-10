@@ -10,18 +10,14 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-protocol CounterDisplayFlowDelegate: class {
-
-}
-
 final class CounterDisplayViewController: BaseViewController {
 
     // MARK: FlowDelegate
-    weak var flowDelegate: CounterDisplayFlowDelegate?
+    private weak var flowController: CounterFlowController?
 
     // MARK: ViewModels
-    private var displayViewModel: CounterDisplayViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
-    private var sharedViewModel: CounterSharedViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
+    private var displayViewModel: CounterDisplayViewModel?
+    private var sharedViewModel: CounterSharedViewModel?
 
     // MARK: UI components
     @IBOutlet private weak var counterLabel: UILabel!
@@ -29,8 +25,13 @@ final class CounterDisplayViewController: BaseViewController {
     // MARK: Stored properties
 
     // MARK: Inits
-    static func instantiate(displayVM: CounterDisplayViewModel, sharedVM: CounterSharedViewModel) -> CounterDisplayViewController {
+    static func instantiate(
+        fc: CounterFlowController,
+        displayVM: CounterDisplayViewModel,
+        sharedVM: CounterSharedViewModel
+    ) -> CounterDisplayViewController {
         let vc = StoryboardScene.CounterDisplay.initialScene.instantiate()
+        vc.flowController = fc
         vc.displayViewModel = displayVM
         vc.sharedViewModel = sharedVM
         return vc
@@ -41,6 +42,8 @@ final class CounterDisplayViewController: BaseViewController {
     // MARK: Default methods
     override func setupBindings() {
         super.setupBindings()
+        
+        guard let displayViewModel = displayViewModel, let sharedViewModel = sharedViewModel else { return }
 
         // Inputs
 

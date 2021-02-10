@@ -9,14 +9,9 @@
 import RxSwift
 import UIKit
 
-protocol CounterFlowDelegate: class {
-
-}
-
 final class CounterViewController: BaseViewController {
 
     // MARK: FlowDelegate
-    weak var flowDelegate: CounterFlowDelegate?
 
     // MARK: ViewModels
 

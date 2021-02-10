@@ -8,10 +8,7 @@
 
 import UIKit
 
-protocol CounterFlowControllerDelegate: class {
-}
-
-class CounterFlowController: FlowController, CounterFlowDelegate, CounterControlFlowDelegate, CounterDisplayFlowDelegate {
+class CounterFlowController: FlowController {
 
     override func setup() -> UIViewController {
         let sharedVM = CounterSharedViewModel(dependencies: dependencies)
@@ -22,16 +19,13 @@ class CounterFlowController: FlowController, CounterFlowDelegate, CounterControl
 
     private func setupCounterControl(sharedVM: CounterSharedViewModel) -> CounterControlViewController {
         let vm = CounterControlViewModel(dependencies: dependencies)
-        let vc = CounterControlViewController.instantiate(controlVM: vm, sharedVM: sharedVM)
-        vc.flowDelegate = self
+        let vc = CounterControlViewController.instantiate(fc: self, controlVM: vm, sharedVM: sharedVM)
         return vc
     }
 
     private func setupCounterDisplay(sharedVM: CounterSharedViewModel) -> CounterDisplayViewController {
         let vm = CounterDisplayViewModel(dependencies: dependencies)
-        let vc = CounterDisplayViewController.instantiate(displayVM: vm, sharedVM: sharedVM)
-        vc.flowDelegate = self
+        let vc = CounterDisplayViewController.instantiate(fc: self, displayVM: vm, sharedVM: sharedVM)
         return vc
     }
-
 }
