@@ -38,7 +38,7 @@ final class RegistrationViewController: InputViewController {
     // MARK: Stored properties
 
     // MARK: Inits
-    static func instantiate(fc: OnboardingFlowController, vm: RegistrationViewModel) -> RegistrationViewController {
+    static func instantiate(fc: FlowController, vm: RegistrationViewModel) -> RegistrationViewController {
         let vc = StoryboardScene.Registration.initialScene.instantiate()
         vc.flowController = fc
         vc.viewModel = vm

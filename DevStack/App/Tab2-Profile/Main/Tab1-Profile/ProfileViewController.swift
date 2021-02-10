@@ -31,7 +31,7 @@ final class ProfileViewController: BaseViewController {
     // MARK: Stored properties
     
     // MARK: Inits
-    static func instantiate(fc: ProfileFlowController, vm: ProfileViewModel) -> ProfileViewController {
+    static func instantiate(fc: FlowController, vm: ProfileViewModel) -> ProfileViewController {
         let vc = StoryboardScene.Profile.initialScene.instantiate()
         vc.flowController = fc
         vc.viewModel = vm

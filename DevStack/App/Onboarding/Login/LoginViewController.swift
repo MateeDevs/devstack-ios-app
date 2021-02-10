@@ -39,7 +39,7 @@ final class LoginViewController: InputViewController {
     // MARK: Stored properties
     
     // MARK: Inits
-    static func instantiate(fc: OnboardingFlowController, vm: LoginViewModel) -> LoginViewController {
+    static func instantiate(fc: FlowController, vm: LoginViewModel) -> LoginViewController {
         let vc = StoryboardScene.Login.initialScene.instantiate()
         vc.flowController = fc
         vc.viewModel = vm

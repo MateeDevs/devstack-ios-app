@@ -26,7 +26,7 @@ final class CounterDisplayViewController: BaseViewController {
 
     // MARK: Inits
     static func instantiate(
-        fc: CounterFlowController,
+        fc: FlowController,
         displayVM: CounterDisplayViewModel,
         sharedVM: CounterSharedViewModel
     ) -> CounterDisplayViewController {

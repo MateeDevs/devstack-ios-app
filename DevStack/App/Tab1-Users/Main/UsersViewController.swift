@@ -26,7 +26,7 @@ final class UsersViewController: BaseTableViewController<User> {
     // MARK: Stored properties
     
     // MARK: Inits
-    static func instantiate(fc: UsersFlowController, vm: UsersViewModel) -> UsersViewController {
+    static func instantiate(fc: FlowController, vm: UsersViewModel) -> UsersViewController {
         let vc = StoryboardScene.Users.initialScene.instantiate()
         vc.flowController = fc
         vc.viewModel = vm

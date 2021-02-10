@@ -25,7 +25,7 @@ final class SettingsViewController: BaseViewController {
     // MARK: Stored properties
 
     // MARK: Inits
-    static func instantiate(fc: ProfileFlowController, vm: SettingsViewModel) -> SettingsViewController {
+    static func instantiate(fc: FlowController, vm: SettingsViewModel) -> SettingsViewController {
         let vc = StoryboardScene.Settings.initialScene.instantiate()
         vc.flowController = fc
         vc.viewModel = vm
