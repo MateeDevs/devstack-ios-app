@@ -1,5 +1,5 @@
 //
-//  LoginService.swift
+//  AuthRepository.swift
 //  DevStack
 //
 //  Created by Petr Chmelar on 23/07/2018.
@@ -10,11 +10,11 @@ import Foundation
 import RealmSwift
 import RxSwift
 
-public protocol HasLoginService {
-    var loginService: LoginService { get }
+public protocol HasAuthRepository {
+    var authRepository: AuthRepository { get }
 }
 
-public class LoginService {
+public class AuthRepository {
 
     typealias Dependencies = HasDatabaseProvider & HasKeychainProvider & HasNetworkProvider
 

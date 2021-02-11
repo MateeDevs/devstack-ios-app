@@ -1,5 +1,5 @@
 //
-//  LocationService.swift
+//  LocationRepository.swift
 //  DevStack
 //
 //  Created by Viktor Kaderabek on 10/08/2018.
@@ -9,11 +9,11 @@
 import CoreLocation
 import RxSwift
 
-public protocol HasLocationService {
-    var locationService: LocationService { get }
+public protocol HasLocationRepository {
+    var locationRepository: LocationRepository { get }
 }
 
-public class LocationService {
+public class LocationRepository {
 
     typealias Dependencies = HasNoProvider
 

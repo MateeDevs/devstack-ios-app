@@ -11,7 +11,7 @@ import RxSwift
 
 final class RegistrationViewModel: ViewModel, ViewModelType {
     
-    typealias Dependencies = HasLoginService
+    typealias Dependencies = HasAuthRepository
     
     let input: Input
     let output: Output
@@ -57,7 +57,7 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
             } else if !DataValidator.validateEmail(inputs.email) {
                 return .just(.error(ValidationError(L10n.invalid_email)))
             } else {
-                return dependencies.loginService.registration(
+                return dependencies.authRepository.registration(
                     email: inputs.email,
                     password: inputs.password,
                     firstName: "Anonymous",

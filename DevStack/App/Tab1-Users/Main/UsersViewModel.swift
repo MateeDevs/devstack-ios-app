@@ -11,7 +11,7 @@ import RxSwift
 
 final class UsersViewModel: ViewModel, ViewModelType {
     
-    typealias Dependencies = HasUserService
+    typealias Dependencies = HasUserRepository
 
     let input: Input
     let output: Output
@@ -38,12 +38,12 @@ final class UsersViewModel: ViewModel, ViewModelType {
 
         // MARK: Transformations
         
-        let users = dependencies.userService.getUsers()
+        let users = dependencies.userRepository.getUsers()
         
         let activity = ActivityIndicator()
         
         let refreshUsers = page.flatMap({ page -> Observable<Event<[User]>> in
-            dependencies.userService.downloadUsersForPage(page).trackActivity(activity).materialize()
+            dependencies.userRepository.downloadUsersForPage(page).trackActivity(activity).materialize()
         }).share()
         
         let loadedCount = refreshUsers.compactMap { $0.element }.map { $0.count }

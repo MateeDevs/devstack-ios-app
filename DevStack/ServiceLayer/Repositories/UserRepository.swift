@@ -1,5 +1,5 @@
 //
-//  UserService.swift
+//  UserRepository.swift
 //  DevStack
 //
 //  Created by Petr Chmelar on 08/10/2018.
@@ -8,11 +8,11 @@
 
 import RxSwift
 
-public protocol HasUserService {
-    var userService: UserService { get }
+public protocol HasUserRepository {
+    var userRepository: UserRepository { get }
 }
 
-public class UserService {
+public class UserRepository {
     
     typealias Dependencies = HasDatabaseProvider & HasKeychainProvider & HasNetworkProvider
 
@@ -78,5 +78,4 @@ public class UserService {
         guard let userId = getProfileId() else { return .error(CommonError.noUserId) }
         return downloadUserById(userId)
     }
-    
 }

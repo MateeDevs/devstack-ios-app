@@ -31,9 +31,9 @@
 		450DED282261EF29002314E5 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450DED272261EF29002314E5 /* MainFlowController.swift */; };
 		450DED292261EF29002314E5 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450DED272261EF29002314E5 /* MainFlowController.swift */; };
 		450DED2A2261EF29002314E5 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450DED272261EF29002314E5 /* MainFlowController.swift */; };
-		450E863421072D35001D3E54 /* ServiceDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E863321072D35001D3E54 /* ServiceDependency.swift */; };
-		450E863521072D35001D3E54 /* ServiceDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E863321072D35001D3E54 /* ServiceDependency.swift */; };
-		450E863621072D35001D3E54 /* ServiceDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E863321072D35001D3E54 /* ServiceDependency.swift */; };
+		450E863421072D35001D3E54 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E863321072D35001D3E54 /* RepositoryDependency.swift */; };
+		450E863521072D35001D3E54 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E863321072D35001D3E54 /* RepositoryDependency.swift */; };
+		450E863621072D35001D3E54 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E863321072D35001D3E54 /* RepositoryDependency.swift */; };
 		4511A6EA213D2677006AD4CC /* TabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4511A6E8213D2677006AD4CC /* TabBarView.xib */; };
 		4511A6EB213D2677006AD4CC /* TabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4511A6E8213D2677006AD4CC /* TabBarView.xib */; };
 		4511A6EC213D2677006AD4CC /* TabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4511A6E8213D2677006AD4CC /* TabBarView.xib */; };
@@ -95,9 +95,9 @@
 		454FEE3922404B2C00EB7A54 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3822404B2C00EB7A54 /* ValidationError.swift */; };
 		454FEE3A22404B2C00EB7A54 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3822404B2C00EB7A54 /* ValidationError.swift */; };
 		454FEE3B22404B2C00EB7A54 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3822404B2C00EB7A54 /* ValidationError.swift */; };
-		454FFC9823D74C760062FF4B /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9723D74C760062FF4B /* FirebaseService.swift */; };
-		454FFC9923D74C760062FF4B /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9723D74C760062FF4B /* FirebaseService.swift */; };
-		454FFC9A23D74C760062FF4B /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9723D74C760062FF4B /* FirebaseService.swift */; };
+		454FFC9823D74C760062FF4B /* PushNotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9723D74C760062FF4B /* PushNotificationsRepository.swift */; };
+		454FFC9923D74C760062FF4B /* PushNotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9723D74C760062FF4B /* PushNotificationsRepository.swift */; };
+		454FFC9A23D74C760062FF4B /* PushNotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9723D74C760062FF4B /* PushNotificationsRepository.swift */; };
 		455261BC210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */; };
 		455261BD210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */; };
 		455261BE210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */; };
@@ -123,7 +123,7 @@
 		45571943249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571941249FF28900FB24CA /* UIView+SkeletonView+Rx.swift */; };
 		45571944249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571941249FF28900FB24CA /* UIView+SkeletonView+Rx.swift */; };
 		4557195524A15B1F00FB24CA /* NetworkProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195424A15B1F00FB24CA /* NetworkProviderMock.swift */; };
-		4557195824A15C0200FB24CA /* LoginServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195724A15C0200FB24CA /* LoginServiceTests.swift */; };
+		4557195824A15C0200FB24CA /* AuthRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195724A15C0200FB24CA /* AuthRepositoryTests.swift */; };
 		4557195D24A15C3200FB24CA /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */; };
 		4558D30B20FCC8FF005BC325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4558D30A20FCC8FF005BC325 /* AppDelegate.swift */; };
 		456458DA255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */; };
@@ -174,12 +174,12 @@
 		4568523F2105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568523E2105CF34006D3618 /* CustomNetworkActivityPlugin.swift */; };
 		456852402105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568523E2105CF34006D3618 /* CustomNetworkActivityPlugin.swift */; };
 		456852412105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568523E2105CF34006D3618 /* CustomNetworkActivityPlugin.swift */; };
-		456852462105CF82006D3618 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852452105CF82006D3618 /* LoginService.swift */; };
-		456852472105CF82006D3618 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852452105CF82006D3618 /* LoginService.swift */; };
-		456852482105CF82006D3618 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852452105CF82006D3618 /* LoginService.swift */; };
-		456852552105D024006D3618 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852542105D024006D3618 /* ServiceError.swift */; };
-		456852562105D024006D3618 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852542105D024006D3618 /* ServiceError.swift */; };
-		456852572105D024006D3618 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852542105D024006D3618 /* ServiceError.swift */; };
+		456852462105CF82006D3618 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852452105CF82006D3618 /* AuthRepository.swift */; };
+		456852472105CF82006D3618 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852452105CF82006D3618 /* AuthRepository.swift */; };
+		456852482105CF82006D3618 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852452105CF82006D3618 /* AuthRepository.swift */; };
+		456852552105D024006D3618 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852542105D024006D3618 /* RepositoryError.swift */; };
+		456852562105D024006D3618 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852542105D024006D3618 /* RepositoryError.swift */; };
+		456852572105D024006D3618 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852542105D024006D3618 /* RepositoryError.swift */; };
 		456852642105D805006D3618 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852632105D805006D3618 /* String+Extensions.swift */; };
 		456852652105D805006D3618 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852632105D805006D3618 /* String+Extensions.swift */; };
 		456852662105D805006D3618 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852632105D805006D3618 /* String+Extensions.swift */; };
@@ -460,9 +460,9 @@
 		45ECA1B1216BF761000B1124 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ECA1B0216BF761000B1124 /* UserAPI.swift */; };
 		45ECA1B2216BF761000B1124 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ECA1B0216BF761000B1124 /* UserAPI.swift */; };
 		45ECA1B3216BF761000B1124 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ECA1B0216BF761000B1124 /* UserAPI.swift */; };
-		45ECA1C6216BFA90000B1124 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ECA1C5216BFA90000B1124 /* UserService.swift */; };
-		45ECA1C7216BFA90000B1124 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ECA1C5216BFA90000B1124 /* UserService.swift */; };
-		45ECA1C8216BFA90000B1124 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ECA1C5216BFA90000B1124 /* UserService.swift */; };
+		45ECA1C6216BFA90000B1124 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ECA1C5216BFA90000B1124 /* UserRepository.swift */; };
+		45ECA1C7216BFA90000B1124 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ECA1C5216BFA90000B1124 /* UserRepository.swift */; };
+		45ECA1C8216BFA90000B1124 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ECA1C5216BFA90000B1124 /* UserRepository.swift */; };
 		45ED84AE249F64520055A19E /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED84AD249F64520055A19E /* ActivityIndicator.swift */; };
 		45ED84AF249F64520055A19E /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED84AD249F64520055A19E /* ActivityIndicator.swift */; };
 		45ED84B0249F64520055A19E /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED84AD249F64520055A19E /* ActivityIndicator.swift */; };
@@ -521,9 +521,9 @@
 		A8DDD0A0211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD09F211DFD6200EEB48F /* CLLocationManager+Rx.swift */; };
 		A8DDD0A1211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD09F211DFD6200EEB48F /* CLLocationManager+Rx.swift */; };
 		A8DDD0A2211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD09F211DFD6200EEB48F /* CLLocationManager+Rx.swift */; };
-		A8DDD0BA211E3D6900EEB48F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD0B9211E3D6900EEB48F /* LocationService.swift */; };
-		A8DDD0BB211E3D6900EEB48F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD0B9211E3D6900EEB48F /* LocationService.swift */; };
-		A8DDD0BC211E3D6900EEB48F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD0B9211E3D6900EEB48F /* LocationService.swift */; };
+		A8DDD0BA211E3D6900EEB48F /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD0B9211E3D6900EEB48F /* LocationRepository.swift */; };
+		A8DDD0BB211E3D6900EEB48F /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD0B9211E3D6900EEB48F /* LocationRepository.swift */; };
+		A8DDD0BC211E3D6900EEB48F /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD0B9211E3D6900EEB48F /* LocationRepository.swift */; };
 		A8DDD0CF2121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD0CE2121E2E400EEB48F /* LocalizedNavigationItem.swift */; };
 		A8DDD0D02121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD0CE2121E2E400EEB48F /* LocalizedNavigationItem.swift */; };
 		A8DDD0D12121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD0CE2121E2E400EEB48F /* LocalizedNavigationItem.swift */; };
@@ -559,7 +559,7 @@
 		450D3DDB21105F02008BAE71 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		450D3DEA2111F043008BAE71 /* KeychainProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainProvider.swift; sourceTree = "<group>"; };
 		450DED272261EF29002314E5 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
-		450E863321072D35001D3E54 /* ServiceDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDependency.swift; sourceTree = "<group>"; };
+		450E863321072D35001D3E54 /* RepositoryDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDependency.swift; sourceTree = "<group>"; };
 		4511A6E8213D2677006AD4CC /* TabBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarView.xib; sourceTree = "<group>"; };
 		4511A6E9213D2677006AD4CC /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		4511A716213D73C7006AD4CC /* ActivityIndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityIndicatorView.xib; sourceTree = "<group>"; };
@@ -587,7 +587,7 @@
 		454FFC9023D70E7A0062FF4B /* DevStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevStack.entitlements; sourceTree = "<group>"; };
 		454FFC9123D70E800062FF4B /* DevStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevStack.entitlements; sourceTree = "<group>"; };
 		454FFC9223D70E840062FF4B /* DevStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevStack.entitlements; sourceTree = "<group>"; };
-		454FFC9723D74C760062FF4B /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		454FFC9723D74C760062FF4B /* PushNotificationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsRepository.swift; sourceTree = "<group>"; };
 		455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		455261C2210AFE1100E5F1E1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		455261C6210AFF1700E5F1E1 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -599,7 +599,7 @@
 		4557194924A155ED00FB24CA /* DevStackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevStackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4557194D24A155ED00FB24CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4557195424A15B1F00FB24CA /* NetworkProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderMock.swift; sourceTree = "<group>"; };
-		4557195724A15C0200FB24CA /* LoginServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceTests.swift; sourceTree = "<group>"; };
+		4557195724A15C0200FB24CA /* AuthRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryTests.swift; sourceTree = "<group>"; };
 		4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		4558D30720FCC8FF005BC325 /* DevStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4558D30A20FCC8FF005BC325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -620,8 +620,8 @@
 		456852302105BC83006D3618 /* AuthenticatedProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedProvider.swift; sourceTree = "<group>"; };
 		456852372105BD20006D3618 /* User.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
 		4568523E2105CF34006D3618 /* CustomNetworkActivityPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNetworkActivityPlugin.swift; sourceTree = "<group>"; };
-		456852452105CF82006D3618 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
-		456852542105D024006D3618 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		456852452105CF82006D3618 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		456852542105D024006D3618 /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
 		456852632105D805006D3618 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4571DB2A22159EE90036919A /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		457FA18D241EC44300EA7436 /* ErrorMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
@@ -727,7 +727,7 @@
 		45ECA1A2216B919B000B1124 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		45ECA1A9216B9BE2000B1124 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		45ECA1B0216BF761000B1124 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
-		45ECA1C5216BFA90000B1124 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		45ECA1C5216BFA90000B1124 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		45ED84AD249F64520055A19E /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		45F4AE412180B88400E75B4A /* LocalizedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedImageView.swift; sourceTree = "<group>"; };
 		45F8498D2563410D00C42CDE /* UserImageView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserImageView+Rx.swift"; sourceTree = "<group>"; };
@@ -751,7 +751,7 @@
 		A8C79A9E2157FD71007A4339 /* Plurals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plurals.swift; sourceTree = "<group>"; };
 		A8D348DC2163777200B7D08F /* DataValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataValidator.swift; sourceTree = "<group>"; };
 		A8DDD09F211DFD6200EEB48F /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
-		A8DDD0B9211E3D6900EEB48F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		A8DDD0B9211E3D6900EEB48F /* LocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
 		A8DDD0CE2121E2E400EEB48F /* LocalizedNavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedNavigationItem.swift; sourceTree = "<group>"; };
 		AFEE2864E1EDF8F86BC7B391 /* Pods-DevStack_Beta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevStack_Beta.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevStack_Beta/Pods-DevStack_Beta.release.xcconfig"; sourceTree = "<group>"; };
 		BE835FD7894EF2FF85E7AA3A /* Pods_DevStackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevStackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -851,7 +851,7 @@
 			isa = PBXGroup;
 			children = (
 				457FA18D241EC44300EA7436 /* ErrorMessages.swift */,
-				456852542105D024006D3618 /* ServiceError.swift */,
+				456852542105D024006D3618 /* RepositoryError.swift */,
 				45B76D9121359138003BB997 /* StatusCode.swift */,
 				454FEE3822404B2C00EB7A54 /* ValidationError.swift */,
 			);
@@ -893,12 +893,12 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		4557195624A15BF200FB24CA /* Services */ = {
+		4557195624A15BF200FB24CA /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				4557195724A15C0200FB24CA /* LoginServiceTests.swift */,
+				4557195724A15C0200FB24CA /* AuthRepositoryTests.swift */,
 			);
-			path = Services;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		4557195B24A15C2100FB24CA /* ViewModels */ = {
@@ -967,16 +967,16 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		456852172105B904006D3618 /* Services */ = {
+		456852172105B904006D3618 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				450E863321072D35001D3E54 /* ServiceDependency.swift */,
-				45E1E61C221D5C55006C84D1 /* LocationService */,
-				454FFC9723D74C760062FF4B /* FirebaseService.swift */,
-				456852452105CF82006D3618 /* LoginService.swift */,
-				45ECA1C5216BFA90000B1124 /* UserService.swift */,
+				450E863321072D35001D3E54 /* RepositoryDependency.swift */,
+				45E1E61C221D5C55006C84D1 /* LocationRepository */,
+				456852452105CF82006D3618 /* AuthRepository.swift */,
+				454FFC9723D74C760062FF4B /* PushNotificationsRepository.swift */,
+				45ECA1C5216BFA90000B1124 /* UserRepository.swift */,
 			);
-			path = Services;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		456852182105B93E006D3618 /* Plugins */ = {
@@ -1157,6 +1157,8 @@
 				4568520E2101DF07006D3618 /* DataModel */,
 				456852162105B8FC006D3618 /* Networking */,
 				456852172105B904006D3618 /* Services */,
+				456852172105B904006D3618 /* Repositories */,
+				45BFF41025D4916400813581 /* UseCases */,
 				45A92DF421085834007579AC /* Providers */,
 				4568524C2105CFD8006D3618 /* Utilities */,
 				45890B5622087A1A00894255 /* Extensions */,
@@ -1426,14 +1428,14 @@
 			path = "Tab2-Settings";
 			sourceTree = "<group>";
 		};
-		45E1E61C221D5C55006C84D1 /* LocationService */ = {
+		45E1E61C221D5C55006C84D1 /* LocationRepository */ = {
 			isa = PBXGroup;
 			children = (
-				A8DDD0B9211E3D6900EEB48F /* LocationService.swift */,
+				A8DDD0B9211E3D6900EEB48F /* LocationRepository.swift */,
 				A8DDD09F211DFD6200EEB48F /* CLLocationManager+Rx.swift */,
 				45E1E618221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift */,
 			);
-			path = LocationService;
+			path = LocationRepository;
 			sourceTree = "<group>";
 		};
 		45E8A4E2220B0803003F7502 /* Tab1-Users */ = {
@@ -1477,7 +1479,7 @@
 		45FB498124A3D7A300932918 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				4557195624A15BF200FB24CA /* Services */,
+				4557195624A15BF200FB24CA /* Repositories */,
 				4557195B24A15C2100FB24CA /* ViewModels */,
 			);
 			path = Tests;
@@ -2125,7 +2127,7 @@
 				454AC06524A221B300D6F367 /* ProviderDependency+Mock.swift in Sources */,
 				45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */,
 				4557195D24A15C3200FB24CA /* LoginViewModelTests.swift in Sources */,
-				4557195824A15C0200FB24CA /* LoginServiceTests.swift in Sources */,
+				4557195824A15C0200FB24CA /* AuthRepositoryTests.swift in Sources */,
 				4557195524A15B1F00FB24CA /* NetworkProviderMock.swift in Sources */,
 				458C1AC924A28E8200549420 /* KeychainProviderMock.swift in Sources */,
 				458C1ACD24A347E600549420 /* DatabaseProviderMock.swift in Sources */,
@@ -2154,6 +2156,9 @@
 				45BC959625C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */,
 				453CEAB921553E1F00A94BAC /* RatingView.swift in Sources */,
 				456852552105D024006D3618 /* ServiceError.swift in Sources */,
+				45BFF4A625D4A9CB00813581 /* GetProfileIdUseCase.swift in Sources */,
+				45BFF47825D4A49300813581 /* UpdateUserUseCase.swift in Sources */,
+				456852552105D024006D3618 /* RepositoryError.swift in Sources */,
 				A891BDB72108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
 				45C089E82215C12200D0DD49 /* DatabaseProvider.swift in Sources */,
 				45DA07F7222D7DA00003D32A /* PrimaryButton.swift in Sources */,
@@ -2188,7 +2193,7 @@
 				45890B5C22087C8B00894255 /* String+UIExtensions.swift in Sources */,
 				456852102101E432006D3618 /* User.swift in Sources */,
 				456458EA255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */,
-				456852462105CF82006D3618 /* LoginService.swift in Sources */,
+				456852462105CF82006D3618 /* AuthRepository.swift in Sources */,
 				45BC958B25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */,
 				A82385DA213418B400CC941C /* ShadowView.swift in Sources */,
 				450A62892439FC9500B43049 /* PushNotification.swift in Sources */,
@@ -2220,6 +2225,8 @@
 				45A388D8225F5EF300037FFA /* UIFont+Extensions.swift in Sources */,
 				4511A72D213DDCCB006AD4CC /* UIView+ActivityIndicator.swift in Sources */,
 				A8DDD0BA211E3D6900EEB48F /* LocationService.swift in Sources */,
+				45BFF47025D4A45100813581 /* DownloadUserUseCase.swift in Sources */,
+				A8DDD0BA211E3D6900EEB48F /* LocationRepository.swift in Sources */,
 				4588FF0F2226EF360014FC79 /* BaseTableViewCell.swift in Sources */,
 				456852232105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
 				45F88BED25C34F38003BD1B9 /* StateButton+Rx.swift in Sources */,
@@ -2272,11 +2279,13 @@
 				45E8A55E220F6F2C003F7502 /* UserTableViewCell.swift in Sources */,
 				454AC03E249A724900D6F367 /* Realm+Extensions.swift in Sources */,
 				450E863421072D35001D3E54 /* ServiceDependency.swift in Sources */,
+				450E863421072D35001D3E54 /* RepositoryDependency.swift in Sources */,
+				45BFF46025D4A37000813581 /* DownloadUsersUseCase.swift in Sources */,
 				A8DDD0A0211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */,
 				45A92DF621085864007579AC /* BaseViewController+Alerts.swift in Sources */,
 				45AF119923FFEDE100C63882 /* Formatter.swift in Sources */,
-				454FFC9823D74C760062FF4B /* FirebaseService.swift in Sources */,
-				45ECA1C6216BFA90000B1124 /* UserService.swift in Sources */,
+				454FFC9823D74C760062FF4B /* PushNotificationsRepository.swift in Sources */,
+				45ECA1C6216BFA90000B1124 /* UserRepository.swift in Sources */,
 				45ECA1AA216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
 				45BC956025C246BF001A6F65 /* CounterViewController.swift in Sources */,
 			);
@@ -2304,6 +2313,9 @@
 				45BC959725C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */,
 				453CEABA21553E1F00A94BAC /* RatingView.swift in Sources */,
 				456852562105D024006D3618 /* ServiceError.swift in Sources */,
+				45BFF4A725D4A9CB00813581 /* GetProfileIdUseCase.swift in Sources */,
+				45BFF47925D4A49300813581 /* UpdateUserUseCase.swift in Sources */,
+				456852562105D024006D3618 /* RepositoryError.swift in Sources */,
 				A891BDB82108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
 				45C089E92215C12200D0DD49 /* DatabaseProvider.swift in Sources */,
 				45DA07F8222D7DA00003D32A /* PrimaryButton.swift in Sources */,
@@ -2338,7 +2350,7 @@
 				45890B5D22087C8B00894255 /* String+UIExtensions.swift in Sources */,
 				456852112101E432006D3618 /* User.swift in Sources */,
 				456458EB255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */,
-				456852472105CF82006D3618 /* LoginService.swift in Sources */,
+				456852472105CF82006D3618 /* AuthRepository.swift in Sources */,
 				45BC958C25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */,
 				451233E4215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				450A628A2439FC9500B43049 /* PushNotification.swift in Sources */,
@@ -2370,7 +2382,7 @@
 				45DA080F222E87780003D32A /* RegistrationViewModel.swift in Sources */,
 				45A388D9225F5EF300037FFA /* UIFont+Extensions.swift in Sources */,
 				4511A72E213DDCCB006AD4CC /* UIView+ActivityIndicator.swift in Sources */,
-				A8DDD0BB211E3D6900EEB48F /* LocationService.swift in Sources */,
+				A8DDD0BB211E3D6900EEB48F /* LocationRepository.swift in Sources */,
 				4588FF102226EF360014FC79 /* BaseTableViewCell.swift in Sources */,
 				A8C79AA02157FD71007A4339 /* Plurals.swift in Sources */,
 				45A388D4225F39EF00037FFA /* WebViewController.swift in Sources */,
@@ -2422,11 +2434,13 @@
 				45E8A55F220F6F2C003F7502 /* UserTableViewCell.swift in Sources */,
 				454AC03F249A724900D6F367 /* Realm+Extensions.swift in Sources */,
 				450E863521072D35001D3E54 /* ServiceDependency.swift in Sources */,
+				450E863521072D35001D3E54 /* RepositoryDependency.swift in Sources */,
+				45BFF46125D4A37000813581 /* DownloadUsersUseCase.swift in Sources */,
 				A8DDD0A1211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */,
 				45A92DF721085864007579AC /* BaseViewController+Alerts.swift in Sources */,
 				45AF119A23FFEDE100C63882 /* Formatter.swift in Sources */,
-				454FFC9923D74C760062FF4B /* FirebaseService.swift in Sources */,
-				45ECA1C7216BFA90000B1124 /* UserService.swift in Sources */,
+				454FFC9923D74C760062FF4B /* PushNotificationsRepository.swift in Sources */,
+				45ECA1C7216BFA90000B1124 /* UserRepository.swift in Sources */,
 				45ECA1AB216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
 				45BC956125C246BF001A6F65 /* CounterViewController.swift in Sources */,
 			);
@@ -2454,6 +2468,9 @@
 				45BC959825C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */,
 				453CEABB21553E1F00A94BAC /* RatingView.swift in Sources */,
 				456852572105D024006D3618 /* ServiceError.swift in Sources */,
+				45BFF4A825D4A9CB00813581 /* GetProfileIdUseCase.swift in Sources */,
+				45BFF47A25D4A49300813581 /* UpdateUserUseCase.swift in Sources */,
+				456852572105D024006D3618 /* RepositoryError.swift in Sources */,
 				A891BDB92108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
 				45C089EA2215C12200D0DD49 /* DatabaseProvider.swift in Sources */,
 				45DA07F9222D7DA00003D32A /* PrimaryButton.swift in Sources */,
@@ -2488,7 +2505,7 @@
 				45890B5E22087C8B00894255 /* String+UIExtensions.swift in Sources */,
 				456852122101E432006D3618 /* User.swift in Sources */,
 				456458EC255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */,
-				456852482105CF82006D3618 /* LoginService.swift in Sources */,
+				456852482105CF82006D3618 /* AuthRepository.swift in Sources */,
 				45BC958D25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */,
 				A82385DC213418B400CC941C /* ShadowView.swift in Sources */,
 				450A628B2439FC9500B43049 /* PushNotification.swift in Sources */,
@@ -2520,7 +2537,7 @@
 				45DA0810222E87780003D32A /* RegistrationViewModel.swift in Sources */,
 				45A388DA225F5EF300037FFA /* UIFont+Extensions.swift in Sources */,
 				4511A72F213DDCCB006AD4CC /* UIView+ActivityIndicator.swift in Sources */,
-				A8DDD0BC211E3D6900EEB48F /* LocationService.swift in Sources */,
+				A8DDD0BC211E3D6900EEB48F /* LocationRepository.swift in Sources */,
 				4588FF112226EF360014FC79 /* BaseTableViewCell.swift in Sources */,
 				456852252105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
 				45A388D5225F39EF00037FFA /* WebViewController.swift in Sources */,
@@ -2572,11 +2589,13 @@
 				45E8A560220F6F2C003F7502 /* UserTableViewCell.swift in Sources */,
 				454AC040249A724900D6F367 /* Realm+Extensions.swift in Sources */,
 				450E863621072D35001D3E54 /* ServiceDependency.swift in Sources */,
+				450E863621072D35001D3E54 /* RepositoryDependency.swift in Sources */,
+				45BFF46225D4A37000813581 /* DownloadUsersUseCase.swift in Sources */,
 				A8DDD0A2211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */,
 				45A92DF821085864007579AC /* BaseViewController+Alerts.swift in Sources */,
 				45AF119B23FFEDE100C63882 /* Formatter.swift in Sources */,
-				454FFC9A23D74C760062FF4B /* FirebaseService.swift in Sources */,
-				45ECA1C8216BFA90000B1124 /* UserService.swift in Sources */,
+				454FFC9A23D74C760062FF4B /* PushNotificationsRepository.swift in Sources */,
+				45ECA1C8216BFA90000B1124 /* UserRepository.swift in Sources */,
 				45ECA1AC216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
 				45BC956225C246BF001A6F65 /* CounterViewController.swift in Sources */,
 			);
