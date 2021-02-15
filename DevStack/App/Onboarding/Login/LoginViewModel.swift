@@ -58,9 +58,9 @@ final class LoginViewModel: ViewModel, ViewModelType {
                 return dependencies.authRepository.login(
                     email: inputs.email,
                     password: inputs.password
-                ).trackActivity(activity).materialize()
+                ).trackActivity(activity)
             }
-        }.share()
+        }
         
         let flow = Observable<LoginViewControllerFlow>.merge(
             login.compactMap { $0.element }.map { .dismiss },

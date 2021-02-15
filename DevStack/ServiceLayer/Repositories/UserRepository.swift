@@ -30,39 +30,39 @@ public class UserRepository {
         return database.observableCollection(User.self, sortBy: "id")
     }
     
-    public func downloadUsersForPage(_ page: Int) -> Observable<[User]> {
+    public func refreshUsersForPage(_ page: Int) -> Observable<Event<Int>> {
         let endpoint = UserAPI.getUsersForPage(page)
-        return network.observableRequest(endpoint).map([User].self, atKeyPath: "data").save()
+        return network.observableRequest(endpoint).map([User].self, atKeyPath: "data").save().map { $0.count }.materialize().share()
     }
     
     public func getUserById(_ id: String) -> Observable<User> {
         return database.observableObject(User.self, id: id)
     }
     
-    public func downloadUserById(_ id: String) -> Observable<User> {
+    public func refreshUserById(_ id: String) -> Observable<Event<Void>> {
         let endpoint = UserAPI.getUserById(id)
-        return network.observableRequest(endpoint).map(User.self).save()
+        return network.observableRequest(endpoint).map(User.self).save().mapToVoid().materialize().share()
     }
     
-    public func updateUser(_ user: User) -> Observable<User> {
+    public func updateUser(_ user: User) -> Observable<Event<Void>> {
         let endpoint = UserAPI.updateUser(user)
-        return network.observableRequest(endpoint).map(User.self).save()
+        return network.observableRequest(endpoint).map(User.self).save().mapToVoid().materialize().share()
     }
 
-    public func increaseCounter() -> Observable<Void> {
+    public func increaseCounter() -> Observable<Event<Void>> {
         return getProfile().take(1).flatMap { user -> Observable<User> in
             let userCopy = User(value: user)
             userCopy.counter += 1
             return .just(userCopy)
-        }.save(model: .fullModel).mapToVoid()
+        }.save(model: .fullModel).mapToVoid().materialize().share()
     }
 
-    public func decreaseCounter() -> Observable<Void> {
+    public func decreaseCounter() -> Observable<Event<Void>> {
         return getProfile().take(1).flatMap { user -> Observable<User> in
             let userCopy = User(value: user)
             userCopy.counter -= 1
             return .just(userCopy)
-        }.save(model: .fullModel).mapToVoid()
+        }.save(model: .fullModel).mapToVoid().materialize().share()
     }
 
     public func getProfileId() -> String? {
@@ -74,8 +74,8 @@ public class UserRepository {
         return getUserById(userId)
     }
     
-    public func downloadProfile() -> Observable<User> {
+    public func refreshProfile() -> Observable<Event<Void>> {
         guard let userId = getProfileId() else { return .error(CommonError.noUserId) }
-        return downloadUserById(userId)
+        return refreshUserById(userId)
     }
 }

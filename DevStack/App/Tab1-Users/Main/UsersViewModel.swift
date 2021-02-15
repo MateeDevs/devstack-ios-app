@@ -42,11 +42,9 @@ final class UsersViewModel: ViewModel, ViewModelType {
         
         let activity = ActivityIndicator()
         
-        let refreshUsers = page.flatMap({ page -> Observable<Event<[User]>> in
-            dependencies.userRepository.downloadUsersForPage(page).trackActivity(activity).materialize()
-        }).share()
-        
-        let loadedCount = refreshUsers.compactMap { $0.element }.map { $0.count }
+        let refreshUsers = page.flatMap { page -> Observable<Event<Int>> in
+            dependencies.userRepository.refreshUsersForPage(page).trackActivity(activity)
+        }
         
         let isRefreshing = Observable<Bool>.merge(
             activity.asObservable(),
@@ -57,7 +55,7 @@ final class UsersViewModel: ViewModel, ViewModelType {
         
         self.output = Output(
             users: users.asDriver(),
-            loadedCount: loadedCount.asDriver(),
+            loadedCount: refreshUsers.compactMap { $0.element }.asDriver(),
             isRefreshing: isRefreshing.asDriver()
         )
         
