@@ -68,6 +68,9 @@ post_install do |installer|
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
 
+            # Set iOS deployment target to get rid of warnings
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+
             # Ignore documentation warnings
             config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS'] = 'NO'
 
