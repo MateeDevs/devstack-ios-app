@@ -61,8 +61,8 @@ public extension BaseViewController {
         )
         
         if whisper.hideAfter > 0 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + whisper.hideAfter) { [weak self] in
-                self?.hideWhisper()
+            DispatchQueue.main.asyncAfter(deadline: .now() + whisper.hideAfter) {
+                self.hideWhisper()
             }
         }
     }
