@@ -8,20 +8,32 @@
 
 import UIKit
 
-class UsersFlowController: FlowController, UsersFlowDelegate, UserDetailFlowDelegate {
+class UsersFlowController: FlowController {
     
     override func setup() -> UIViewController {
         let vm = UsersViewModel(dependencies: dependencies)
-        let vc = UsersViewController.instantiate(viewModel: vm)
-        vc.flowDelegate = self
-        return vc
+        return UsersViewController.instantiate(fc: self, vm: vm)
     }
     
-    func showUserDetail(userId: String) {
+    override func handleFlow(_ flow: Flow) {
+        switch flow {
+        case .users(let usersFlow): handleUsersFlow(usersFlow)
+        default: ()
+        }
+    }
+}
+
+// MARK: Users flow
+extension UsersFlowController {
+    func handleUsersFlow(_ flow: UsersViewControllerFlow) {
+        switch flow {
+        case .showUserDetailForId(let userId): showUserDetailForId(userId)
+        }
+    }
+    
+    private func showUserDetailForId(_ userId: String) {
         let vm = UserDetailViewModel(dependencies: dependencies, userId: userId)
-        let vc = UserDetailViewController.instantiate(viewModel: vm)
-        vc.flowDelegate = self
+        let vc = UserDetailViewController.instantiate(fc: self, vm: vm)
         navigationController.show(vc, sender: nil)
     }
-    
 }

@@ -9,17 +9,13 @@
 import RxSwift
 import UIKit
 
-protocol UserDetailFlowDelegate: class {
-
-}
-
 final class UserDetailViewController: BaseViewController {
 
-    // MARK: FlowDelegate
-    weak var flowDelegate: UserDetailFlowDelegate?
+    // MARK: FlowController
+    private weak var flowController: FlowController?
 
     // MARK: ViewModels
-    private var viewModel: UserDetailViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
+    private var viewModel: UserDetailViewModel?
 
     // MARK: UI components
     @IBOutlet private weak var scrollView: UIScrollView!
@@ -29,9 +25,10 @@ final class UserDetailViewController: BaseViewController {
     // MARK: Stored properties
     
     // MARK: Inits
-    static func instantiate(viewModel: UserDetailViewModel) -> UserDetailViewController {
+    static func instantiate(fc: FlowController, vm: UserDetailViewModel) -> UserDetailViewController {
         let vc = StoryboardScene.UserDetail.initialScene.instantiate()
-        vc.viewModel = viewModel
+        vc.flowController = fc
+        vc.viewModel = vm
         return vc
     }
 
@@ -40,6 +37,8 @@ final class UserDetailViewController: BaseViewController {
     // MARK: Default methods
     override func setupBindings() {
         super.setupBindings()
+        
+        guard let viewModel = viewModel else { return }
 
         // Outputs
         viewModel.output.user.fullName.drive(userNameLabel.rx.text).disposed(by: disposeBag)

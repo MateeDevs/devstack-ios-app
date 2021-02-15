@@ -189,6 +189,9 @@
 		457FA18E241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
 		457FA18F241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
 		457FA190241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
+		4584E7F425D36481002335E3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584E7F325D36481002335E3 /* SettingsViewModel.swift */; };
+		4584E7F525D36481002335E3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584E7F325D36481002335E3 /* SettingsViewModel.swift */; };
+		4584E7F625D36481002335E3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584E7F325D36481002335E3 /* SettingsViewModel.swift */; };
 		4585A15D214FE3DE00186D7D /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4585A15C214FE3DE00186D7D /* Array+Extensions.swift */; };
 		4585A15E214FE3DE00186D7D /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4585A15C214FE3DE00186D7D /* Array+Extensions.swift */; };
 		4585A15F214FE3DE00186D7D /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4585A15C214FE3DE00186D7D /* Array+Extensions.swift */; };
@@ -337,6 +340,9 @@
 		45BC959E25C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959D25C2E684001A6F65 /* CounterSharedViewModel.swift */; };
 		45BC959F25C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959D25C2E684001A6F65 /* CounterSharedViewModel.swift */; };
 		45BC95A025C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC959D25C2E684001A6F65 /* CounterSharedViewModel.swift */; };
+		45BFF38D25D3686D00813581 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BFF38C25D3686D00813581 /* Flow.swift */; };
+		45BFF38E25D3686D00813581 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BFF38C25D3686D00813581 /* Flow.swift */; };
+		45BFF38F25D3686D00813581 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BFF38C25D3686D00813581 /* Flow.swift */; };
 		45C089E82215C12200D0DD49 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseProvider.swift */; };
 		45C089E92215C12200D0DD49 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseProvider.swift */; };
 		45C089EA2215C12200D0DD49 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C089E72215C12200D0DD49 /* DatabaseProvider.swift */; };
@@ -619,6 +625,7 @@
 		456852632105D805006D3618 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4571DB2A22159EE90036919A /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		457FA18D241EC44300EA7436 /* ErrorMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
+		4584E7F325D36481002335E3 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		4585A15C214FE3DE00186D7D /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		4588FF092225A73C0014FC79 /* RatingView.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RatingView.xcassets; sourceTree = "<group>"; };
 		4588FF0E2226EF360014FC79 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -677,6 +684,7 @@
 		45BC958725C2481F001A6F65 /* CounterDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterDisplayViewModel.swift; sourceTree = "<group>"; };
 		45BC959525C25FD3001A6F65 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		45BC959D25C2E684001A6F65 /* CounterSharedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterSharedViewModel.swift; sourceTree = "<group>"; };
+		45BFF38C25D3686D00813581 /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		45C089E72215C12200D0DD49 /* DatabaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProvider.swift; sourceTree = "<group>"; };
 		45C3F50E23C114600091848D /* UIColorCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorCompatible.swift; sourceTree = "<group>"; };
 		45C3F51623C1249C0091848D /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
@@ -1095,6 +1103,7 @@
 				4597622220FDE5440034DE29 /* LaunchScreen */,
 				450392832256B14C0037BF42 /* Config */,
 				4597621920FDE4360034DE29 /* AppFlowController.swift */,
+				45BFF38C25D3686D00813581 /* Flow.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1412,6 +1421,7 @@
 			children = (
 				45DB977D226BA9D200C3F234 /* Settings.storyboard */,
 				45DB977E226BA9D200C3F234 /* SettingsViewController.swift */,
+				4584E7F325D36481002335E3 /* SettingsViewModel.swift */,
 			);
 			path = "Tab2-Settings";
 			sourceTree = "<group>";
@@ -2130,8 +2140,10 @@
 				456851E32100BC9A006D3618 /* EnhancedButton.swift in Sources */,
 				45571936249FE3CB00FB24CA /* Observable+Realm.swift in Sources */,
 				45890B2421FF5E8F00894255 /* AuthToken.swift in Sources */,
+				4584E7F425D36481002335E3 /* SettingsViewModel.swift in Sources */,
 				A8A2E502217DD3C70006023F /* GradientView.swift in Sources */,
 				45C3F51B23C127E60091848D /* TextFieldWithHint.swift in Sources */,
+				45BFF38D25D3686D00813581 /* Flow.swift in Sources */,
 				452732A423F0C6ED0067C712 /* Double+UIExtensions.swift in Sources */,
 				45976371210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A3216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
@@ -2278,8 +2290,10 @@
 				456851E42100BC9A006D3618 /* EnhancedButton.swift in Sources */,
 				45571937249FE3CB00FB24CA /* Observable+Realm.swift in Sources */,
 				A8A2E503217DD3C70006023F /* GradientView.swift in Sources */,
+				4584E7F525D36481002335E3 /* SettingsViewModel.swift in Sources */,
 				45890B2521FF5E8F00894255 /* AuthToken.swift in Sources */,
 				45C3F51C23C127E60091848D /* TextFieldWithHint.swift in Sources */,
+				45BFF38E25D3686D00813581 /* Flow.swift in Sources */,
 				452732A523F0C6ED0067C712 /* Double+UIExtensions.swift in Sources */,
 				45976372210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A4216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
@@ -2426,8 +2440,10 @@
 				456851E52100BC9A006D3618 /* EnhancedButton.swift in Sources */,
 				45571938249FE3CB00FB24CA /* Observable+Realm.swift in Sources */,
 				45890B2621FF5E8F00894255 /* AuthToken.swift in Sources */,
+				4584E7F625D36481002335E3 /* SettingsViewModel.swift in Sources */,
 				A8A2E504217DD3C70006023F /* GradientView.swift in Sources */,
 				45C3F51D23C127E60091848D /* TextFieldWithHint.swift in Sources */,
+				45BFF38F25D3686D00813581 /* Flow.swift in Sources */,
 				452732A623F0C6ED0067C712 /* Double+UIExtensions.swift in Sources */,
 				45976373210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A5216B919B000B1124 /* ImagePickerViewController.swift in Sources */,

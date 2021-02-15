@@ -8,14 +8,9 @@
 
 import UIKit
 
-protocol ProfileWrapperFlowDelegate: class {
-
-}
-
 final class ProfileWrapperViewController: BaseViewController {
 
-    // MARK: FlowDelegate
-    weak var flowDelegate: ProfileWrapperFlowDelegate?
+    // MARK: FlowController
 
     // MARK: ViewModels
 

@@ -12,30 +12,54 @@ protocol OnboardingFlowControllerDelegate: class {
     func setupMain()
 }
 
-class OnboardingFlowController: FlowController, LoginFlowDelegate, RegistrationFlowDelegate {
+class OnboardingFlowController: FlowController {
     
     weak var delegate: OnboardingFlowControllerDelegate?
     
     override func setup() -> UIViewController {
         let vm = LoginViewModel(dependencies: dependencies)
-        let vc = LoginViewController.instantiate(viewModel: vm)
-        vc.flowDelegate = self
-        return vc
+        return LoginViewController.instantiate(fc: self, vm: vm)
+    }
+    
+    override func handleFlow(_ flow: Flow) {
+        switch flow {
+        case .login(let loginFlow): handleLoginFlow(loginFlow)
+        case .registration(let registrationFlow): handleRegistrationFlow(registrationFlow)
+        default: ()
+        }
     }
     
     override func dismiss() {
         super.dismiss()
         delegate?.setupMain()
     }
-    
-    func showRegistration() {
-        let vm = RegistrationViewModel(dependencies: dependencies)
-        let vc = RegistrationViewController.instantiate(viewModel: vm)
-        vc.flowDelegate = self
-        navigationController.show(vc, sender: nil)
+}
+
+// MARK: Login flow
+extension OnboardingFlowController {
+    func handleLoginFlow(_ flow: LoginViewControllerFlow) {
+        switch flow {
+        case .dismiss: dismiss()
+        case .showRegistration: showRegistration()
+        }
     }
     
-    func popRegistration() {
+    private func showRegistration() {
+        let vm = RegistrationViewModel(dependencies: dependencies)
+        let vc = RegistrationViewController.instantiate(fc: self, vm: vm)
+        navigationController.show(vc, sender: nil)
+    }
+}
+
+// MARK: Registration flow
+extension OnboardingFlowController {
+    func handleRegistrationFlow(_ flow: RegistrationViewControllerFlow) {
+        switch flow {
+        case .popRegistration: popRegistration()
+        }
+    }
+    
+    private func popRegistration() {
         navigationController.popViewController(animated: true)
     }
 }

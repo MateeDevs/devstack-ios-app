@@ -10,18 +10,14 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-protocol CounterControlFlowDelegate: class {
-
-}
-
 final class CounterControlViewController: BaseViewController {
 
     // MARK: FlowDelegate
-    weak var flowDelegate: CounterControlFlowDelegate?
+    private weak var flowController: FlowController?
 
     // MARK: ViewModels
-    private var controlViewModel: CounterControlViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
-    private var sharedViewModel: CounterSharedViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
+    private var controlViewModel: CounterControlViewModel?
+    private var sharedViewModel: CounterSharedViewModel?
 
     // MARK: UI components
     @IBOutlet private weak var increaseButton: SecondaryButton!
@@ -31,8 +27,13 @@ final class CounterControlViewController: BaseViewController {
     // MARK: Stored properties
 
     // MARK: Inits
-    static func instantiate(controlVM: CounterControlViewModel, sharedVM: CounterSharedViewModel) -> CounterControlViewController {
+    static func instantiate(
+        fc: FlowController,
+        controlVM: CounterControlViewModel,
+        sharedVM: CounterSharedViewModel
+    ) -> CounterControlViewController {
         let vc = StoryboardScene.CounterControl.initialScene.instantiate()
+        vc.flowController = fc
         vc.controlViewModel = controlVM
         vc.sharedViewModel = sharedVM
         return vc
@@ -43,6 +44,8 @@ final class CounterControlViewController: BaseViewController {
     // MARK: Default methods
     override func setupBindings() {
         super.setupBindings()
+        
+        guard let controlViewModel = controlViewModel, let sharedViewModel = sharedViewModel else { return }
 
         // Inputs
         increaseButton.rx.tap.bind(to: controlViewModel.input.increaseButtonTaps).disposed(by: disposeBag)

@@ -25,7 +25,7 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         let profile: Profile
         let isRefreshing: Driver<Bool>
         let currentLocation: Driver<CLLocation>
-        let logoutSuccess: Driver<Void>
+        let flow: Driver<ProfileViewControllerFlow>
     }
 
     struct Profile {
@@ -72,7 +72,7 @@ final class ProfileViewModel: ViewModel, ViewModelType {
             ),
             isRefreshing: isRefreshing.asDriver(),
             currentLocation: currentLocation.asDriver(),
-            logoutSuccess: logout.compactMap { $0.element }.asDriver()
+            flow: logout.compactMap { $0.element }.map { .presentOnboarding }.asDriver()
         )
         
         super.init()

@@ -12,23 +12,35 @@ protocol ProfileFlowControllerDelegate: class {
     func presentOnboarding()
 }
 
-class ProfileFlowController: FlowController, ProfileFlowDelegate, SettingsFlowDelegate {
+class ProfileFlowController: FlowController {
     
     weak var delegate: ProfileFlowControllerDelegate?
     
     override func setup() -> UIViewController {
         let profileVM = ProfileViewModel(dependencies: dependencies)
-        let profileVC = ProfileViewController.instantiate(viewModel: profileVM)
-        profileVC.flowDelegate = self
-        
-        let settingsVC = SettingsViewController.instantiate()
-        settingsVC.flowDelegate = self
-        
+        let profileVC = ProfileViewController.instantiate(fc: self, vm: profileVM)
+        let settingsVM = SettingsViewModel(dependencies: dependencies)
+        let settingsVC = SettingsViewController.instantiate(fc: self, vm: settingsVM)
         return ProfileWrapperViewController.instantiate(viewControllers: [profileVC, settingsVC])
     }
     
-    func presentOnboarding() {
-        delegate?.presentOnboarding()
+    override func handleFlow(_ flow: Flow) {
+        switch flow {
+        case .profile(let profileFlow): handleProfileFlow(profileFlow)
+        default: ()
+        }
+    }
+}
+
+// MARK: Profile flow
+extension ProfileFlowController {
+    func handleProfileFlow(_ flow: ProfileViewControllerFlow) {
+        switch flow {
+        case .presentOnboarding: presentOnboarding()
+        }
     }
     
+    private func presentOnboarding() {
+        delegate?.presentOnboarding()
+    }
 }

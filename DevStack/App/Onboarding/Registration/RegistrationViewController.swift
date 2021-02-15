@@ -9,17 +9,17 @@
 import RxSwift
 import UIKit
 
-protocol RegistrationFlowDelegate: class {
-    func popRegistration()
+public enum RegistrationViewControllerFlow {
+    case popRegistration
 }
 
 final class RegistrationViewController: InputViewController {
 
-    // MARK: FlowDelegate
-    weak var flowDelegate: RegistrationFlowDelegate?
+    // MARK: FlowController
+    private weak var flowController: FlowController?
 
     // MARK: ViewModels
-    var viewModel: RegistrationViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
+    private var viewModel: RegistrationViewModel?
 
     // MARK: UI components
     @IBOutlet private weak var emailTextField: TextFieldWithHint! {
@@ -38,9 +38,10 @@ final class RegistrationViewController: InputViewController {
     // MARK: Stored properties
 
     // MARK: Inits
-    static func instantiate(viewModel: RegistrationViewModel) -> RegistrationViewController {
+    static func instantiate(fc: FlowController, vm: RegistrationViewModel) -> RegistrationViewController {
         let vc = StoryboardScene.Registration.initialScene.instantiate()
-        vc.viewModel = viewModel
+        vc.flowController = fc
+        vc.viewModel = vm
         return vc
     }
 
@@ -52,23 +53,19 @@ final class RegistrationViewController: InputViewController {
     // MARK: Default methods
     override func setupBindings() {
         super.setupBindings()
+        
+        guard let viewModel = viewModel, let flowController = flowController else { return }
 
         // Inputs
         emailTextField.rx.text.bind(to: viewModel.input.email).disposed(by: disposeBag)
         passwordTextField.rx.text.bind(to: viewModel.input.password).disposed(by: disposeBag)
         registerButton.rx.tap.bind(to: viewModel.input.registerButtonTaps).disposed(by: disposeBag)
+        loginButton.rx.tap.bind(to: viewModel.input.loginButtonTaps).disposed(by: disposeBag)
 
         // Outputs
         viewModel.output.registerButtonEnabled.drive(loginButton.rx.isEnabled).disposed(by: disposeBag)
         viewModel.output.alertAction.drive(rx.alertAction).disposed(by: disposeBag)
-        viewModel.output.registrationSuccess.drive(onNext: { [weak self] _ in
-            self?.flowDelegate?.popRegistration()
-        }).disposed(by: disposeBag)
-
-        // Other
-        loginButton.rx.tap.bind { [weak self] in
-            self?.flowDelegate?.popRegistration()
-        }.disposed(by: disposeBag)
+        viewModel.output.flow.map { Flow.registration($0) }.drive(flowController.rx.handleFlow).disposed(by: disposeBag)
     }
 
     // MARK: Additional methods

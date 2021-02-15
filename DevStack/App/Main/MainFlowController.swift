@@ -18,28 +18,36 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
     
     override func setup() -> UIViewController {
         let main = MainTabBarController.instantiate()
-        
+        main.viewControllers = [setupUsersTab(), setupProfileTab(), setupCounterTab()]
+        return main
+    }
+    
+    private func setupUsersTab() -> UINavigationController {
         let usersNC = UINavigationController()
-		usersNC.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_1, image: Asset.Images.usersTabBar.image, tag: 0)
+        usersNC.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_1, image: Asset.Images.usersTabBar.image, tag: 0)
         let usersFC = UsersFlowController(navigationController: usersNC, dependencies: dependencies)
         let usersRootVC = startChildFlow(usersFC)
         usersNC.viewControllers = [usersRootVC]
-        
+        return usersNC
+    }
+    
+    private func setupProfileTab() -> UINavigationController {
         let profileNC = UINavigationController()
-		profileNC.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_2, image: Asset.Images.profileTabBar.image, tag: 1)
+        profileNC.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_2, image: Asset.Images.profileTabBar.image, tag: 1)
         let profileFC = ProfileFlowController(navigationController: profileNC, dependencies: dependencies)
         profileFC.delegate = self
         let profileRootVC = startChildFlow(profileFC)
         profileNC.viewControllers = [profileRootVC]
-
+        return profileNC
+    }
+    
+    private func setupCounterTab() -> UINavigationController {
         let counterNC = UINavigationController()
         counterNC.tabBarItem = UITabBarItem(title: L10n.bottom_bar_item_3, image: Asset.Images.counterTabBar.image, tag: 2)
         let counterFC = CounterFlowController(navigationController: counterNC, dependencies: dependencies)
         let counterRootVC = startChildFlow(counterFC)
         counterNC.viewControllers = [counterRootVC]
-        
-        main.viewControllers = [usersNC, profileNC, counterNC]
-        return main
+        return counterNC
     }
     
     func presentOnboarding() {
@@ -67,6 +75,6 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
     
     private func handleUserDetailDeeplink(userId: String) {
         guard let usersFlowController = switchTab(.users) as? UsersFlowController else { return }
-        usersFlowController.showUserDetail(userId: userId)
+        usersFlowController.handleUsersFlow(.showUserDetailForId(userId))
     }
 }

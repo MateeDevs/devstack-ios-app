@@ -17,23 +17,23 @@ class LoginViewModelTests: BaseTestCase {
     // MARK: Mock
 
     private struct Input {
-        let email: String
-        let password: String
-        let tap: Void
-    }
+        var email: String = ""
+        var password: String = ""
+        var loginButtonTaps: [Void] = []
+        var registerButtonTaps: [Void] = []
 
-    private struct Inputs {
-        static let empty = Input(email: "", password: "", tap: ())
-        static let nonEmpty = Input(email: "email", password: "pass", tap: ())
+        static let loginEmpty = Input(loginButtonTaps: [()])
+        static let loginNonEmpty = Input(email: "email", password: "pass", loginButtonTaps: [()])
+        static let register = Input(registerButtonTaps: [()])
     }
     
     private struct Output {
-        let loginSuccess: TestableObserver<Bool>
+        let flow: TestableObserver<LoginViewControllerFlow>
         let alertAction: TestableObserver<AlertAction>
         let loginButtonEnabled: TestableObserver<Bool>
     }
 
-    private func mockViewModel(for input: Input, providers: ProviderDependency = .mock()) -> Output {
+    @discardableResult private func mockViewModel(for input: Input, providers: ProviderDependency = .mock()) -> Output {
         let viewModel = LoginViewModel(dependencies: ServiceDependency(dependencies: providers))
         
         scheduler.createColdObservable([.next(0, input.email)])
@@ -42,43 +42,62 @@ class LoginViewModelTests: BaseTestCase {
         scheduler.createColdObservable([.next(0, input.password)])
             .bind(to: viewModel.input.password).disposed(by: disposeBag)
 
-        scheduler.createColdObservable([.next(0, ())])
+        scheduler.createColdObservable(input.loginButtonTaps.map { .next(0, $0) })
             .bind(to: viewModel.input.loginButtonTaps).disposed(by: disposeBag)
+
+        scheduler.createColdObservable(input.registerButtonTaps.map { .next(0, $0) })
+            .bind(to: viewModel.input.registerButtonTaps).disposed(by: disposeBag)
         
         return Output(
-            loginSuccess: testableOutput(from: viewModel.output.loginSuccess.map { true }),
+            flow: testableOutput(from: viewModel.output.flow),
             alertAction: testableOutput(from: viewModel.output.alertAction),
             loginButtonEnabled: testableOutput(from: viewModel.output.loginButtonEnabled)
         )
     }
 
-    // MARK: Tests for Output.loginSuccess
-    
-    func testLoginSuccessOutputForNonEmptyInput() {
-        let output = mockViewModel(for: Inputs.nonEmpty)
+    // MARK: Tests for Output.flow
+
+    func testFlowOutputForLoginEmpty() {
+        let output = mockViewModel(for: Input.loginEmpty)
         scheduler.start()
-        XCTAssertEqual(output.loginSuccess.events, [
-            .next(0, true)
+        XCTAssertEqual(output.flow.events, [])
+    }
+
+    func testFlowOutputForLoginCorrectPassword() {
+        let output = mockViewModel(for: Input.loginNonEmpty)
+        scheduler.start()
+        XCTAssertEqual(output.flow.events, [
+            .next(0, .dismiss)
         ])
     }
 
-    func testLoginSuccessOutputForEmptyInput() {
-        let output = mockViewModel(for: Inputs.empty)
-        scheduler.start()
-        XCTAssertEqual(output.loginSuccess.events, [])
-    }
-
-    func testLoginSuccessOutputForWrongPassword() {
+    func testFlowOutputForLoginWrongPassword() {
         let providers: ProviderDependency = .mock(networkResponse: .unauthorized)
-        let output = mockViewModel(for: Inputs.nonEmpty, providers: providers)
+        let output = mockViewModel(for: Input.loginNonEmpty, providers: providers)
         scheduler.start()
-        XCTAssertEqual(output.loginSuccess.events, [])
+        XCTAssertEqual(output.flow.events, [])
     }
 
-    // MARK: Tests for Output.whisperAction
+    func testFlowOutputForRegister() {
+        let output = mockViewModel(for: Input.register)
+        scheduler.start()
+        XCTAssertEqual(output.flow.events, [
+            .next(0, .showRegistration)
+        ])
+    }
+
+    // MARK: Tests for Output.alertAction
+
+    func testWhisperActionOutputForLoginEmpty() {
+        let output = mockViewModel(for: Input.loginEmpty)
+        scheduler.start()
+        XCTAssertEqual(output.alertAction.events, [
+            .next(0, .showWhisper(Whisper(error: L10n.invalid_credentials)))
+        ])
+    }
     
-    func testWhisperActionOutputForNonEmptyInput() {
-        let output = mockViewModel(for: Inputs.nonEmpty)
+    func testAlertActionOutputForLoginCorrectPassword() {
+        let output = mockViewModel(for: Input.loginNonEmpty)
         scheduler.start()
         XCTAssertEqual(output.alertAction.events, [
             .next(0, .showWhisper(Whisper(L10n.signing_in))),
@@ -86,17 +105,9 @@ class LoginViewModelTests: BaseTestCase {
         ])
     }
 
-    func testWhisperActionOutputForEmptyInput() {
-        let output = mockViewModel(for: Inputs.empty)
-        scheduler.start()
-        XCTAssertEqual(output.alertAction.events, [
-            .next(0, .showWhisper(Whisper(error: L10n.invalid_credentials)))
-        ])
-    }
-
-    func testWhisperActionOutputForWrongPassword() {
+    func testAlertActionOutputForLoginWrongPassword() {
         let providers: ProviderDependency = .mock(networkResponse: .unauthorized)
-        let output = mockViewModel(for: Inputs.nonEmpty, providers: providers)
+        let output = mockViewModel(for: Input.loginNonEmpty, providers: providers)
         scheduler.start()
         XCTAssertEqual(output.alertAction.events, [
             .next(0, .showWhisper(Whisper(L10n.signing_in))),
@@ -104,10 +115,16 @@ class LoginViewModelTests: BaseTestCase {
         ])
     }
 
+    func testAlertActionOutputForRegister() {
+        let output = mockViewModel(for: Input.register)
+        scheduler.start()
+        XCTAssertEqual(output.alertAction.events, [])
+    }
+
     // MARK: Tests for Output.loginButtonEnabled
 
     func testLoginButtonEnabledOutput() {
-        let output = mockViewModel(for: Inputs.nonEmpty)
+        let output = mockViewModel(for: Input.loginNonEmpty)
         scheduler.start()
         XCTAssertEqual(output.loginButtonEnabled.events, [
             .next(0, true),
@@ -118,11 +135,11 @@ class LoginViewModelTests: BaseTestCase {
 
     // MARK: Test for requestDidCalled
 
-    func testRequestDidFire() {
+    func testLoginRequestDidFire() {
         let networkProvider = NetworkProviderMock()
         let providers: ProviderDependency = .mock(networkProvider: networkProvider)
         
-        _ = mockViewModel(for: Inputs.nonEmpty, providers: providers)
+        mockViewModel(for: Input.loginNonEmpty, providers: providers)
         scheduler.start()
         
         XCTAssertEqual(networkProvider.firedRequests, 1)
