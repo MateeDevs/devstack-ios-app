@@ -78,7 +78,7 @@ extension ObservableType {
                 object[primaryKeyName] = id
             }
             guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
-            return realm.rx.appendToList(list, objects: [object], model: model).map({ _ in object })
+            return realm.rx.appendToList(list, objects: [object], model: model).map { _ in object }
         })
     }
     
@@ -95,7 +95,7 @@ extension ObservableType {
     ) -> Observable<[T]> where Element == [T] {
         flatMap({ objects -> Observable<[T]> in
             guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
-            return realm.rx.appendToList(list, objects: objects, model: model).map({ _ in objects })
+            return realm.rx.appendToList(list, objects: objects, model: model).map { _ in objects }
         })
     }
     

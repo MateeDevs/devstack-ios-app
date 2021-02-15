@@ -8,7 +8,13 @@
 
 public protocol HasNoRepository {}
 
-public struct RepositoryDependency: HasNoRepository, HasAuthRepository, HasUserRepository, HasLocationRepository, HasPushNotificationsRepository {
+extension RepositoryDependency: HasNoRepository {}
+extension RepositoryDependency: HasAuthRepository {}
+extension RepositoryDependency: HasUserRepository {}
+extension RepositoryDependency: HasLocationRepository {}
+extension RepositoryDependency: HasPushNotificationsRepository {}
+
+public struct RepositoryDependency {
     
     public let authRepository: AuthRepository
     public let userRepository: UserRepository

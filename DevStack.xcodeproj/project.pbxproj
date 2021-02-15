@@ -31,9 +31,6 @@
 		450DED282261EF29002314E5 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450DED272261EF29002314E5 /* MainFlowController.swift */; };
 		450DED292261EF29002314E5 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450DED272261EF29002314E5 /* MainFlowController.swift */; };
 		450DED2A2261EF29002314E5 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450DED272261EF29002314E5 /* MainFlowController.swift */; };
-		450E863421072D35001D3E54 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E863321072D35001D3E54 /* RepositoryDependency.swift */; };
-		450E863521072D35001D3E54 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E863321072D35001D3E54 /* RepositoryDependency.swift */; };
-		450E863621072D35001D3E54 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E863321072D35001D3E54 /* RepositoryDependency.swift */; };
 		4511A6EA213D2677006AD4CC /* TabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4511A6E8213D2677006AD4CC /* TabBarView.xib */; };
 		4511A6EB213D2677006AD4CC /* TabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4511A6E8213D2677006AD4CC /* TabBarView.xib */; };
 		4511A6EC213D2677006AD4CC /* TabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4511A6E8213D2677006AD4CC /* TabBarView.xib */; };
@@ -126,6 +123,12 @@
 		4557195824A15C0200FB24CA /* AuthRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195724A15C0200FB24CA /* AuthRepositoryTests.swift */; };
 		4557195D24A15C3200FB24CA /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */; };
 		4558D30B20FCC8FF005BC325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4558D30A20FCC8FF005BC325 /* AppDelegate.swift */; };
+		456089C525DB386300997546 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456089C425DB386300997546 /* RepositoryError.swift */; };
+		456089C625DB386300997546 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456089C425DB386300997546 /* RepositoryError.swift */; };
+		456089C725DB386300997546 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456089C425DB386300997546 /* RepositoryError.swift */; };
+		456089CD25DB387500997546 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456089CC25DB387500997546 /* RepositoryDependency.swift */; };
+		456089CE25DB387500997546 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456089CC25DB387500997546 /* RepositoryDependency.swift */; };
+		456089CF25DB387500997546 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456089CC25DB387500997546 /* RepositoryDependency.swift */; };
 		456458DA255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */; };
 		456458DB255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */; };
 		456458DC255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */; };
@@ -177,9 +180,6 @@
 		456852462105CF82006D3618 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852452105CF82006D3618 /* AuthRepository.swift */; };
 		456852472105CF82006D3618 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852452105CF82006D3618 /* AuthRepository.swift */; };
 		456852482105CF82006D3618 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852452105CF82006D3618 /* AuthRepository.swift */; };
-		456852552105D024006D3618 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852542105D024006D3618 /* RepositoryError.swift */; };
-		456852562105D024006D3618 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852542105D024006D3618 /* RepositoryError.swift */; };
-		456852572105D024006D3618 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852542105D024006D3618 /* RepositoryError.swift */; };
 		456852642105D805006D3618 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852632105D805006D3618 /* String+Extensions.swift */; };
 		456852652105D805006D3618 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852632105D805006D3618 /* String+Extensions.swift */; };
 		456852662105D805006D3618 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852632105D805006D3618 /* String+Extensions.swift */; };
@@ -521,7 +521,6 @@
 		A8DDD0A0211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD09F211DFD6200EEB48F /* CLLocationManager+Rx.swift */; };
 		A8DDD0A1211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD09F211DFD6200EEB48F /* CLLocationManager+Rx.swift */; };
 		A8DDD0A2211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD09F211DFD6200EEB48F /* CLLocationManager+Rx.swift */; };
-		A8DDD0BA211E3D6900EEB48F /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD0B9211E3D6900EEB48F /* LocationRepository.swift */; };
 		A8DDD0BB211E3D6900EEB48F /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD0B9211E3D6900EEB48F /* LocationRepository.swift */; };
 		A8DDD0BC211E3D6900EEB48F /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD0B9211E3D6900EEB48F /* LocationRepository.swift */; };
 		A8DDD0CF2121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDD0CE2121E2E400EEB48F /* LocalizedNavigationItem.swift */; };
@@ -559,7 +558,6 @@
 		450D3DDB21105F02008BAE71 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		450D3DEA2111F043008BAE71 /* KeychainProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainProvider.swift; sourceTree = "<group>"; };
 		450DED272261EF29002314E5 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
-		450E863321072D35001D3E54 /* RepositoryDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDependency.swift; sourceTree = "<group>"; };
 		4511A6E8213D2677006AD4CC /* TabBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarView.xib; sourceTree = "<group>"; };
 		4511A6E9213D2677006AD4CC /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		4511A716213D73C7006AD4CC /* ActivityIndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityIndicatorView.xib; sourceTree = "<group>"; };
@@ -603,6 +601,8 @@
 		4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		4558D30720FCC8FF005BC325 /* DevStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4558D30A20FCC8FF005BC325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		456089C425DB386300997546 /* RepositoryError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
+		456089CC25DB387500997546 /* RepositoryDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDependency.swift; sourceTree = "<group>"; };
 		456408B52333AF830080678A /* strings.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = strings.txt; path = "../../../../twine-localization/devstack/strings.txt"; sourceTree = "<group>"; };
 		456458D9255B41FF00BF97B6 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		456458DD255B44B800BF97B6 /* TextFieldWithHint+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldWithHint+Rx.swift"; sourceTree = "<group>"; };
@@ -621,7 +621,6 @@
 		456852372105BD20006D3618 /* User.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
 		4568523E2105CF34006D3618 /* CustomNetworkActivityPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNetworkActivityPlugin.swift; sourceTree = "<group>"; };
 		456852452105CF82006D3618 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
-		456852542105D024006D3618 /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
 		456852632105D805006D3618 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4571DB2A22159EE90036919A /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		457FA18D241EC44300EA7436 /* ErrorMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
@@ -851,7 +850,7 @@
 			isa = PBXGroup;
 			children = (
 				457FA18D241EC44300EA7436 /* ErrorMessages.swift */,
-				456852542105D024006D3618 /* RepositoryError.swift */,
+				456089C425DB386300997546 /* RepositoryError.swift */,
 				45B76D9121359138003BB997 /* StatusCode.swift */,
 				454FEE3822404B2C00EB7A54 /* ValidationError.swift */,
 			);
@@ -970,7 +969,7 @@
 		456852172105B904006D3618 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				450E863321072D35001D3E54 /* RepositoryDependency.swift */,
+				456089CC25DB387500997546 /* RepositoryDependency.swift */,
 				45E1E61C221D5C55006C84D1 /* LocationRepository */,
 				456852452105CF82006D3618 /* AuthRepository.swift */,
 				454FFC9723D74C760062FF4B /* PushNotificationsRepository.swift */,
@@ -1156,9 +1155,7 @@
 			children = (
 				4568520E2101DF07006D3618 /* DataModel */,
 				456852162105B8FC006D3618 /* Networking */,
-				456852172105B904006D3618 /* Services */,
 				456852172105B904006D3618 /* Repositories */,
-				45BFF41025D4916400813581 /* UseCases */,
 				45A92DF421085834007579AC /* Providers */,
 				4568524C2105CFD8006D3618 /* Utilities */,
 				45890B5622087A1A00894255 /* Extensions */,
@@ -2150,15 +2147,12 @@
 				45976371210087710034DE29 /* InputViewController.swift in Sources */,
 				45ECA1A3216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
 				458C1AC324A26B8500549420 /* ProviderDependency.swift in Sources */,
+				456089CD25DB387500997546 /* RepositoryDependency.swift in Sources */,
 				450D3DEB2111F043008BAE71 /* KeychainProvider.swift in Sources */,
 				4515CC1D226158AE00204767 /* SafariViewController.swift in Sources */,
 				45A388C1225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
 				45BC959625C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */,
 				453CEAB921553E1F00A94BAC /* RatingView.swift in Sources */,
-				456852552105D024006D3618 /* ServiceError.swift in Sources */,
-				45BFF4A625D4A9CB00813581 /* GetProfileIdUseCase.swift in Sources */,
-				45BFF47825D4A49300813581 /* UpdateUserUseCase.swift in Sources */,
-				456852552105D024006D3618 /* RepositoryError.swift in Sources */,
 				A891BDB72108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
 				45C089E82215C12200D0DD49 /* DatabaseProvider.swift in Sources */,
 				45DA07F7222D7DA00003D32A /* PrimaryButton.swift in Sources */,
@@ -2224,9 +2218,6 @@
 				45DA080E222E87780003D32A /* RegistrationViewModel.swift in Sources */,
 				45A388D8225F5EF300037FFA /* UIFont+Extensions.swift in Sources */,
 				4511A72D213DDCCB006AD4CC /* UIView+ActivityIndicator.swift in Sources */,
-				A8DDD0BA211E3D6900EEB48F /* LocationService.swift in Sources */,
-				45BFF47025D4A45100813581 /* DownloadUserUseCase.swift in Sources */,
-				A8DDD0BA211E3D6900EEB48F /* LocationRepository.swift in Sources */,
 				4588FF0F2226EF360014FC79 /* BaseTableViewCell.swift in Sources */,
 				456852232105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
 				45F88BED25C34F38003BD1B9 /* StateButton+Rx.swift in Sources */,
@@ -2278,13 +2269,11 @@
 				4568522A2105BB52006D3618 /* NetworkingUtilities.swift in Sources */,
 				45E8A55E220F6F2C003F7502 /* UserTableViewCell.swift in Sources */,
 				454AC03E249A724900D6F367 /* Realm+Extensions.swift in Sources */,
-				450E863421072D35001D3E54 /* ServiceDependency.swift in Sources */,
-				450E863421072D35001D3E54 /* RepositoryDependency.swift in Sources */,
-				45BFF46025D4A37000813581 /* DownloadUsersUseCase.swift in Sources */,
 				A8DDD0A0211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */,
 				45A92DF621085864007579AC /* BaseViewController+Alerts.swift in Sources */,
 				45AF119923FFEDE100C63882 /* Formatter.swift in Sources */,
 				454FFC9823D74C760062FF4B /* PushNotificationsRepository.swift in Sources */,
+				456089C525DB386300997546 /* RepositoryError.swift in Sources */,
 				45ECA1C6216BFA90000B1124 /* UserRepository.swift in Sources */,
 				45ECA1AA216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
 				45BC956025C246BF001A6F65 /* CounterViewController.swift in Sources */,
@@ -2312,10 +2301,6 @@
 				45A388C2225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
 				45BC959725C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */,
 				453CEABA21553E1F00A94BAC /* RatingView.swift in Sources */,
-				456852562105D024006D3618 /* ServiceError.swift in Sources */,
-				45BFF4A725D4A9CB00813581 /* GetProfileIdUseCase.swift in Sources */,
-				45BFF47925D4A49300813581 /* UpdateUserUseCase.swift in Sources */,
-				456852562105D024006D3618 /* RepositoryError.swift in Sources */,
 				A891BDB82108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
 				45C089E92215C12200D0DD49 /* DatabaseProvider.swift in Sources */,
 				45DA07F8222D7DA00003D32A /* PrimaryButton.swift in Sources */,
@@ -2362,6 +2347,7 @@
 				A847B1AD210F4872002F9ED1 /* LocationHelper.swift in Sources */,
 				45C3F51823C1249C0091848D /* SecondaryButton.swift in Sources */,
 				4590753C25C34FBE00AC794F /* StateButton.swift in Sources */,
+				456089CE25DB387500997546 /* RepositoryDependency.swift in Sources */,
 				45890B2921FFB95D00894255 /* AppTheme.swift in Sources */,
 				450D3DDD21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C12100929E006D3618 /* LocalizedTextField.swift in Sources */,
@@ -2411,6 +2397,7 @@
 				456851DD2100BC8B006D3618 /* LocalizedButton.swift in Sources */,
 				A82FEF98214650B5006204F3 /* Int+UIExtensions.swift in Sources */,
 				45DB141022E26FA300093272 /* BiometricHelper.swift in Sources */,
+				456089C625DB386300997546 /* RepositoryError.swift in Sources */,
 				45890B4822086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2C22159EE90036919A /* NetworkProvider.swift in Sources */,
 				45A3D5A02119B76000E39169 /* Realm+Rx.swift in Sources */,
@@ -2433,9 +2420,6 @@
 				4568522B2105BB52006D3618 /* NetworkingUtilities.swift in Sources */,
 				45E8A55F220F6F2C003F7502 /* UserTableViewCell.swift in Sources */,
 				454AC03F249A724900D6F367 /* Realm+Extensions.swift in Sources */,
-				450E863521072D35001D3E54 /* ServiceDependency.swift in Sources */,
-				450E863521072D35001D3E54 /* RepositoryDependency.swift in Sources */,
-				45BFF46125D4A37000813581 /* DownloadUsersUseCase.swift in Sources */,
 				A8DDD0A1211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */,
 				45A92DF721085864007579AC /* BaseViewController+Alerts.swift in Sources */,
 				45AF119A23FFEDE100C63882 /* Formatter.swift in Sources */,
@@ -2467,10 +2451,6 @@
 				45A388C3225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
 				45BC959825C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */,
 				453CEABB21553E1F00A94BAC /* RatingView.swift in Sources */,
-				456852572105D024006D3618 /* ServiceError.swift in Sources */,
-				45BFF4A825D4A9CB00813581 /* GetProfileIdUseCase.swift in Sources */,
-				45BFF47A25D4A49300813581 /* UpdateUserUseCase.swift in Sources */,
-				456852572105D024006D3618 /* RepositoryError.swift in Sources */,
 				A891BDB92108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
 				45C089EA2215C12200D0DD49 /* DatabaseProvider.swift in Sources */,
 				45DA07F9222D7DA00003D32A /* PrimaryButton.swift in Sources */,
@@ -2517,6 +2497,7 @@
 				A83F0EB921490EE200313067 /* UserImageView.swift in Sources */,
 				45C3F51923C1249C0091848D /* SecondaryButton.swift in Sources */,
 				4590754125C34FBE00AC794F /* StateButton.swift in Sources */,
+				456089CF25DB387500997546 /* RepositoryDependency.swift in Sources */,
 				45890B2A21FFB95D00894255 /* AppTheme.swift in Sources */,
 				450D3DDE21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C22100929E006D3618 /* LocalizedTextField.swift in Sources */,
@@ -2566,6 +2547,7 @@
 				456851DE2100BC8B006D3618 /* LocalizedButton.swift in Sources */,
 				A82FEF99214650B5006204F3 /* Int+UIExtensions.swift in Sources */,
 				45DB141122E26FA300093272 /* BiometricHelper.swift in Sources */,
+				456089C725DB386300997546 /* RepositoryError.swift in Sources */,
 				45890B4922086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2D22159EE90036919A /* NetworkProvider.swift in Sources */,
 				45A3D5A12119B76000E39169 /* Realm+Rx.swift in Sources */,
@@ -2588,9 +2570,6 @@
 				4568522C2105BB52006D3618 /* NetworkingUtilities.swift in Sources */,
 				45E8A560220F6F2C003F7502 /* UserTableViewCell.swift in Sources */,
 				454AC040249A724900D6F367 /* Realm+Extensions.swift in Sources */,
-				450E863621072D35001D3E54 /* ServiceDependency.swift in Sources */,
-				450E863621072D35001D3E54 /* RepositoryDependency.swift in Sources */,
-				45BFF46225D4A37000813581 /* DownloadUsersUseCase.swift in Sources */,
 				A8DDD0A2211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */,
 				45A92DF821085864007579AC /* BaseViewController+Alerts.swift in Sources */,
 				45AF119B23FFEDE100C63882 /* Formatter.swift in Sources */,

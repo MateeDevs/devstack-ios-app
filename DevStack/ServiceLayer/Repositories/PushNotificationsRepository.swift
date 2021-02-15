@@ -36,7 +36,7 @@ public class PushNotificationsRepository: NSObject {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: notificationData, options: [])
             let notification = try JSONDecoder().decode(PushNotification.self, from: jsonData)
-            Logger.info("PushNotificationsRepository: Notification with type=%d received", notification.type.rawValue, category: .networking)
+            Logger.info("PushNotificationsRepository: Notification received:\n%@", "\(notification)", category: .networking)
             appDelegate.flowController?.handleDeeplink(for: notification)
         } catch let error {
             Logger.error("PushNotificationsRepository: Error during notification decoding:\n%@", "\(error)", category: .networking)
