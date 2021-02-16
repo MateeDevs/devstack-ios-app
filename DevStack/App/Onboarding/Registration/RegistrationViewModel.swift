@@ -64,7 +64,7 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
                     lastName: ""
                 ).trackActivity(activity)
             }
-        }
+        }.share()
         
         let flow = Observable<RegistrationViewControllerFlow>.merge(
             registration.compactMap { $0.element }.mapToVoid().map { .popRegistration },

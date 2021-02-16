@@ -42,11 +42,11 @@ final class CounterControlViewModel: ViewModel, ViewModelType {
 
         let increaseCounter = increaseButtonTaps.flatMapLatest { _ -> Observable<Event<Void>> in
             dependencies.userRepository.increaseCounter()
-        }
+        }.share()
 
         let decreaseCounter = decreaseButtonTaps.flatMapLatest { _ -> Observable<Event<Void>> in
             dependencies.userRepository.decreaseCounter()
-        }
+        }.share()
 
         // MARK: Setup outputs
 

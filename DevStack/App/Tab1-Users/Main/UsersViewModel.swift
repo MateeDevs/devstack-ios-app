@@ -38,13 +38,13 @@ final class UsersViewModel: ViewModel, ViewModelType {
 
         // MARK: Transformations
         
-        let users = dependencies.userRepository.getUsers()
+        let users = dependencies.userRepository.getUsers().share(replay: 1)
         
         let activity = ActivityIndicator()
         
         let refreshUsers = page.flatMap { page -> Observable<Event<Int>> in
             dependencies.userRepository.refreshUsersForPage(page).trackActivity(activity)
-        }
+        }.share()
         
         let isRefreshing = Observable<Bool>.merge(
             activity.asObservable(),

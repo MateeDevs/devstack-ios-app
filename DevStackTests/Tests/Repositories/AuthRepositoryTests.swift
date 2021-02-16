@@ -19,11 +19,11 @@ class AuthRepositoryTests: BaseTestCase {
     func testLoginRequestDidFire() {
         let networkProvider = NetworkProviderMock()
         let providers: ProviderDependency = .mock(networkProvider: networkProvider)
-        let loginRepository = LoginRepository(dependencies: providers)
+        let authRepository = AuthRepository(dependencies: providers)
 
         let output = scheduler.createObserver(Bool.self)
-        loginRepository.login(email: "email", password: "pass")
-            .asDriver().map { true }.drive(output).disposed(by: disposeBag)
+        authRepository.login(email: "email", password: "pass")
+            .asDriver().map { _ in true }.drive(output).disposed(by: disposeBag)
         scheduler.start()
 
         XCTAssertEqual(networkProvider.firedRequests, 1)
@@ -32,11 +32,11 @@ class AuthRepositoryTests: BaseTestCase {
     func testLoginKeychainSavedKeys() {
         let keychainProvider = KeychainProviderMock()
         let providers: ProviderDependency = .mock(keychainProvider: keychainProvider)
-        let loginRepository = LoginRepository(dependencies: providers)
+        let authRepository = AuthRepository(dependencies: providers)
 
         let output = scheduler.createObserver(Bool.self)
-        loginRepository.login(email: "email", password: "pass")
-            .asDriver().map { true }.drive(output).disposed(by: disposeBag)
+        authRepository.login(email: "email", password: "pass")
+            .asDriver().map { _ in true }.drive(output).disposed(by: disposeBag)
         scheduler.start()
 
         XCTAssertEqual(keychainProvider.savedKeys, [.authToken, .userId])

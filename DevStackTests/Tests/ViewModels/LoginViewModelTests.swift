@@ -34,7 +34,7 @@ class LoginViewModelTests: BaseTestCase {
     }
 
     @discardableResult private func mockViewModel(for input: Input, providers: ProviderDependency = .mock()) -> Output {
-        let viewModel = LoginViewModel(dependencies: ServiceDependency(dependencies: providers))
+        let viewModel = LoginViewModel(dependencies: RepositoryDependency(dependencies: providers))
         
         scheduler.createColdObservable([.next(0, input.email)])
             .bind(to: viewModel.input.email).disposed(by: disposeBag)

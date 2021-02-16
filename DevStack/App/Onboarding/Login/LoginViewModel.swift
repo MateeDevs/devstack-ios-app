@@ -60,7 +60,7 @@ final class LoginViewModel: ViewModel, ViewModelType {
                     password: inputs.password
                 ).trackActivity(activity)
             }
-        }
+        }.share()
         
         let flow = Observable<LoginViewControllerFlow>.merge(
             login.compactMap { $0.element }.map { .dismiss },

@@ -48,8 +48,8 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         
         let activity = ActivityIndicator()
 
-        let profile = dependencies.userRepository.getProfile()
-        let refreshProfile = dependencies.userRepository.refreshProfile().trackActivity(activity)
+        let profile = dependencies.userRepository.getProfile().share(replay: 1)
+        let refreshProfile = dependencies.userRepository.refreshProfile().trackActivity(activity).share()
         
         let isRefreshing = Observable<Bool>.merge(
             activity.asObservable(),
@@ -60,7 +60,7 @@ final class ProfileViewModel: ViewModel, ViewModelType {
 
         let logout = logoutButtonTaps.flatMapLatest { _ -> Observable<Event<Void>> in
             return dependencies.authRepository.logout()
-        }
+        }.share()
 
         // MARK: Setup outputs
         

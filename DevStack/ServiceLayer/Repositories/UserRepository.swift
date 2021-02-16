@@ -32,7 +32,7 @@ public class UserRepository {
     
     public func refreshUsersForPage(_ page: Int) -> Observable<Event<Int>> {
         let endpoint = UserAPI.getUsersForPage(page)
-        return network.observableRequest(endpoint).map([User].self, atKeyPath: "data").save().map { $0.count }.materialize().share()
+        return network.observableRequest(endpoint).map([User].self, atKeyPath: "data").save().map { $0.count }.materialize()
     }
     
     public func getUserById(_ id: String) -> Observable<User> {
@@ -41,12 +41,12 @@ public class UserRepository {
     
     public func refreshUserById(_ id: String) -> Observable<Event<Void>> {
         let endpoint = UserAPI.getUserById(id)
-        return network.observableRequest(endpoint).map(User.self).save().mapToVoid().materialize().share()
+        return network.observableRequest(endpoint).map(User.self).save().mapToVoid().materialize()
     }
     
     public func updateUser(_ user: User) -> Observable<Event<Void>> {
         let endpoint = UserAPI.updateUser(user)
-        return network.observableRequest(endpoint).map(User.self).save().mapToVoid().materialize().share()
+        return network.observableRequest(endpoint).map(User.self).save().mapToVoid().materialize()
     }
 
     public func increaseCounter() -> Observable<Event<Void>> {
@@ -54,7 +54,7 @@ public class UserRepository {
             let userCopy = User(value: user)
             userCopy.counter += 1
             return .just(userCopy)
-        }.save(model: .fullModel).mapToVoid().materialize().share()
+        }.save(model: .fullModel).mapToVoid().materialize()
     }
 
     public func decreaseCounter() -> Observable<Event<Void>> {
@@ -62,7 +62,7 @@ public class UserRepository {
             let userCopy = User(value: user)
             userCopy.counter -= 1
             return .just(userCopy)
-        }.save(model: .fullModel).mapToVoid().materialize().share()
+        }.save(model: .fullModel).mapToVoid().materialize()
     }
 
     public func getProfileId() -> String? {
