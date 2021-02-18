@@ -47,8 +47,7 @@ extension UserAPI: TargetType {
             ]
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
         case .updateUser(let user):
-            guard let params = user.dictionary else { return .requestPlain }
-            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
+            return .requestParameters(parameters: user.networkModel.dictionary ?? [:], encoding: JSONEncoding.default)
         default:
             return .requestPlain
         }

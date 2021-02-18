@@ -58,10 +58,7 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
                 return .just(.error(ValidationError(L10n.invalid_email)))
             } else {
                 return dependencies.authRepository.registration(
-                    email: inputs.email,
-                    password: inputs.password,
-                    firstName: "Anonymous",
-                    lastName: ""
+                    RegistrationData(email: inputs.email, pass: inputs.password, firstName: "Anonymous", lastName: "")
                 ).trackActivity(activity)
             }
         }.share()

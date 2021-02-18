@@ -56,8 +56,7 @@ final class LoginViewModel: ViewModel, ViewModelType {
                 return .just(.error(ValidationError(L10n.invalid_credentials)))
             } else {
                 return dependencies.authRepository.login(
-                    email: inputs.email,
-                    password: inputs.password
+                    LoginData(email: inputs.email, pass: inputs.password)
                 ).trackActivity(activity)
             }
         }.share()

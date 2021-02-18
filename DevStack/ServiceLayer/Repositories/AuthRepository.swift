@@ -28,18 +28,17 @@ public class AuthRepository {
         self.network = dependencies.networkProvider
     }
     
-    public func login(email: String, password: String) -> Observable<Event<Void>> {
-        let endpoint = AuthAPI.login(email: email, password: password)
-        return network.observableRequest(endpoint, withInterceptor: false).map(AuthToken.self).do(onNext: { authToken in
+    public func login(_ data: LoginData) -> Observable<Event<Void>> {
+        let endpoint = AuthAPI.login(data)
+        return network.observableRequest(endpoint, withInterceptor: false).map(NETAuthToken.self).do(onNext: { authToken in
             self.keychain.save(.authToken, value: authToken.token)
             self.keychain.save(.userId, value: authToken.userId)
         }).mapToVoid().materialize()
     }
     
-    public func registration(email: String, password: String, firstName: String, lastName: String) -> Observable<Event<Void>> {
-        let user = User(value: ["firstName": firstName, "lastName": lastName])
-        let endpoint = AuthAPI.registration(email: email, password: password, user: user)
-        return network.observableRequest(endpoint).map(User.self).save().mapToVoid().materialize()
+    public func registration(_ data: RegistrationData) -> Observable<Event<Void>> {
+        let endpoint = AuthAPI.registration(data)
+        return network.observableRequest(endpoint).map(NETUser.self).map { $0.domainModel }.save().mapToVoid().materialize()
     }
     
     public func logout() -> Observable<Event<Void>> {
