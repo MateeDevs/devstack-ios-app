@@ -25,8 +25,8 @@ public extension Error {
             let statusCode = StatusCode(rawValue: response.statusCode),
             let message = messages.statusCodes.first(where: { $0.key == statusCode })?.value {
             return message
-        } else if let serviceError = self as? ServiceError,
-            let message = messages.statusCodes.first(where: { $0.key == serviceError.statusCode })?.value {
+        } else if let repositoryError = self as? RepositoryError,
+            let message = messages.statusCodes.first(where: { $0.key == repositoryError.statusCode })?.value {
             return message
         } else {
             return messages.defaultMessage

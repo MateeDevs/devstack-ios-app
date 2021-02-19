@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         // Init main flow controller and start the flow
-        flowController = AppFlowController(navigationController: nc, dependencies: ServiceDependency(dependencies: providers))
+        flowController = AppFlowController(navigationController: nc, dependencies: RepositoryDependency(dependencies: providers))
         flowController?.start()
         
         firebaseSetup(for: application)
@@ -132,7 +132,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Firebase
     private func firebaseSetup(for application: UIApplication) {
-        flowController?.dependencies.firebaseService.start(for: application, appDelegate: self)
+        flowController?.dependencies.pushNotificationsRepository.start(for: application, appDelegate: self)
     }
     
     // MARK: Appearance

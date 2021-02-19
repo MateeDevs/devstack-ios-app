@@ -1,5 +1,5 @@
 //
-//  FirebaseService.swift
+//  PushNotificationsRepository.swift
 //  DevStack
 //
 //  Created by Petr Chmelar on 21/01/2020.
@@ -10,11 +10,11 @@ import Firebase
 import UIKit
 import UserNotifications
 
-public protocol HasFirebaseService {
-    var firebaseService: FirebaseService { get }
+public protocol HasPushNotificationsRepository {
+    var pushNotificationsRepository: PushNotificationsRepository { get }
 }
 
-public class FirebaseService: NSObject {
+public class PushNotificationsRepository: NSObject {
 
     typealias Dependencies = HasNoProvider
 
@@ -36,10 +36,10 @@ public class FirebaseService: NSObject {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: notificationData, options: [])
             let notification = try JSONDecoder().decode(PushNotification.self, from: jsonData)
-            Logger.info("FirebaseService: Notification with type=%d received", notification.type.rawValue, category: .networking)
+            Logger.info("PushNotificationsRepository: Notification received:\n%@", "\(notification)", category: .networking)
             appDelegate.flowController?.handleDeeplink(for: notification)
         } catch let error {
-            Logger.error("FirebaseService: Error during notification decoding:\n%@", "\(error)", category: .networking)
+            Logger.error("PushNotificationsRepository: Error during notification decoding:\n%@", "\(error)", category: .networking)
         }
     }
 }
@@ -61,13 +61,13 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     ) {
         let notification = response.notification.request.content.userInfo
         DispatchQueue.main.async {
-            self.flowController?.dependencies.firebaseService.handleNotification(notification, appDelegate: self)
+            self.flowController?.dependencies.pushNotificationsRepository.handleNotification(notification, appDelegate: self)
         }
     }
 }
 
 extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        Logger.debug("FirebaseService: FirebaseMessaging registration token:\n%@", fcmToken ?? "", category: .networking)
+        Logger.debug("PushNotificationsRepository: FirebaseMessaging registration token:\n%@", fcmToken ?? "", category: .networking)
     }
 }

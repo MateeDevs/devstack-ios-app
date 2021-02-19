@@ -11,7 +11,7 @@ import RxSwift
 
 final class RegistrationViewModel: ViewModel, ViewModelType {
     
-    typealias Dependencies = HasLoginService
+    typealias Dependencies = HasAuthRepository
     
     let input: Input
     let output: Output
@@ -51,18 +51,18 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
         
         let inputs = Observable.combineLatest(email, password) { (email: $0, password: $1) }
         
-        let registration = registerButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Observable<Event<User>> in
+        let registration = registerButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Observable<Event<Void>> in
             if inputs.email.isEmpty || inputs.password.isEmpty {
                 return .just(.error(ValidationError(L10n.invalid_credentials)))
             } else if !DataValidator.validateEmail(inputs.email) {
                 return .just(.error(ValidationError(L10n.invalid_email)))
             } else {
-                return dependencies.loginService.registration(
+                return dependencies.authRepository.registration(
                     email: inputs.email,
                     password: inputs.password,
                     firstName: "Anonymous",
                     lastName: ""
-                ).trackActivity(activity).materialize()
+                ).trackActivity(activity)
             }
         }.share()
         

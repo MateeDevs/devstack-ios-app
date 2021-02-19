@@ -11,7 +11,7 @@ import RxSwift
 
 final class CounterControlViewModel: ViewModel, ViewModelType {
 
-    typealias Dependencies = HasUserService
+    typealias Dependencies = HasUserRepository
 
     let input: Input
     let output: Output
@@ -41,11 +41,11 @@ final class CounterControlViewModel: ViewModel, ViewModelType {
         // MARK: Transformations
 
         let increaseCounter = increaseButtonTaps.flatMapLatest { _ -> Observable<Event<Void>> in
-            dependencies.userService.increaseCounter().materialize()
+            dependencies.userRepository.increaseCounter()
         }.share()
 
         let decreaseCounter = decreaseButtonTaps.flatMapLatest { _ -> Observable<Event<Void>> in
-            dependencies.userService.decreaseCounter().materialize()
+            dependencies.userRepository.decreaseCounter()
         }.share()
 
         // MARK: Setup outputs

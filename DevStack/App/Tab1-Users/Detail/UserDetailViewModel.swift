@@ -11,7 +11,7 @@ import RxSwift
 
 final class UserDetailViewModel: ViewModel, ViewModelType {
     
-    typealias Dependencies = HasUserService
+    typealias Dependencies = HasUserRepository
     
     let input: Input
     let output: Output
@@ -43,13 +43,13 @@ final class UserDetailViewModel: ViewModel, ViewModelType {
 
         // MARK: Transformations
         
-        let user = dependencies.userService.getUserById(userId)
+        let user = dependencies.userRepository.getUserById(userId).share(replay: 1)
         
         let activity = ActivityIndicator()
         
-        let refreshUser = refreshTrigger.flatMap({ _ -> Observable<Event<User>> in
-            dependencies.userService.downloadUserById(userId).trackActivity(activity).materialize()
-        }).share()
+        let refreshUser = refreshTrigger.flatMap { _ -> Observable<Event<Void>> in
+            dependencies.userRepository.refreshUserById(userId).trackActivity(activity)
+        }.share()
         
         let isRefreshing = Observable<Bool>.merge(
             activity.asObservable(),

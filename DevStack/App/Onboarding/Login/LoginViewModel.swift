@@ -11,7 +11,7 @@ import RxSwift
 
 final class LoginViewModel: ViewModel, ViewModelType {
     
-    typealias Dependencies = HasLoginService
+    typealias Dependencies = HasAuthRepository
     
     let input: Input
     let output: Output
@@ -55,10 +55,10 @@ final class LoginViewModel: ViewModel, ViewModelType {
             if inputs.email.isEmpty || inputs.password.isEmpty {
                 return .just(.error(ValidationError(L10n.invalid_credentials)))
             } else {
-                return dependencies.loginService.login(
+                return dependencies.authRepository.login(
                     email: inputs.email,
                     password: inputs.password
-                ).trackActivity(activity).materialize()
+                ).trackActivity(activity)
             }
         }.share()
         
