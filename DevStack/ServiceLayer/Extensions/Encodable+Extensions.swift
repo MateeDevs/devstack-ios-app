@@ -14,7 +14,7 @@ extension Encodable {
         try? JSONEncoder().encode(self)
     }
     
-    var dictionary: [String: Any]? {
+    var encoded: [String: Any]? {
         guard let data = data else { return nil }
         return (try? JSONSerialization.jsonObject(with: data)) as? [String: Any]
     }

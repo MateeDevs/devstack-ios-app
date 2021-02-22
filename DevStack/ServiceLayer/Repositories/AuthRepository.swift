@@ -29,6 +29,7 @@ public class AuthRepository {
     }
     
     public func login(_ data: LoginData) -> Observable<Event<Void>> {
+        guard let data = data.networkModel.encoded else { return .error(CommonError.encoding) }
         let endpoint = AuthAPI.login(data)
         return network.observableRequest(endpoint, withInterceptor: false).map(NETAuthToken.self).do(onNext: { authToken in
             self.keychain.save(.authToken, value: authToken.token)
@@ -37,6 +38,7 @@ public class AuthRepository {
     }
     
     public func registration(_ data: RegistrationData) -> Observable<Event<Void>> {
+        guard let data = data.networkModel.encoded else { return .error(CommonError.encoding) }
         let endpoint = AuthAPI.registration(data)
         return network.observableRequest(endpoint).map(NETUser.self).save().mapToVoid().materialize()
     }

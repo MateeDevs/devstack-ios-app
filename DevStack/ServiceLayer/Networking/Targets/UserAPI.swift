@@ -12,7 +12,7 @@ import Moya
 enum UserAPI {
     case getUsersForPage(_ page: Int)
     case getUserById(_ id: String)
-    case updateUser(_ user: User)
+    case updateUserById(_ id: String, data: [String: Any])
 }
 
 extension UserAPI: TargetType {
@@ -23,13 +23,13 @@ extension UserAPI: TargetType {
             return "/user"
         case .getUserById(let id):
             return "/user/\(id)"
-        case .updateUser(let user):
-            return "/user/\(user.id)"
+        case .updateUserById(let id, _):
+            return "/user/\(id)"
         }
     }
     var method: Moya.Method {
         switch self {
-        case .updateUser:
+        case .updateUserById:
             return .put
         default:
             return .get
@@ -46,8 +46,8 @@ extension UserAPI: TargetType {
                 "limit": NetworkingConstants.paginationCount
             ]
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
-        case .updateUser(let user):
-            return .requestParameters(parameters: user.networkModel.dictionary ?? [:], encoding: JSONEncoding.default)
+        case .updateUserById(_, let data):
+            return .requestParameters(parameters: data, encoding: JSONEncoding.default)
         default:
             return .requestPlain
         }
@@ -56,7 +56,7 @@ extension UserAPI: TargetType {
         switch self {
         case .getUsersForPage:
             return NetworkingUtilities.stubbedResponse("UserList")
-        case .getUserById, .updateUser:
+        case .getUserById, .updateUserById:
             return NetworkingUtilities.stubbedResponse("User")
         }
     }

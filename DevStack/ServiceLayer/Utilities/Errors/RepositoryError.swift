@@ -11,6 +11,7 @@ import Foundation
 public struct CommonError {
     public static let realmNotAvailable = RepositoryError(statusCode: .databaseError, message: "Realm isn't available")
     public static let noUserId = RepositoryError(statusCode: .keychainError, message: "Can't retrieve user's id")
+    public static let encoding = RepositoryError(statusCode: .networkError, message: "Object can't be encoded")
 }
 
 public struct RepositoryError: LocalizedError {

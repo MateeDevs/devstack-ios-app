@@ -10,8 +10,8 @@ import Foundation
 import Moya
 
 enum AuthAPI {
-    case login(_ data: LoginData)
-    case registration(_ data: RegistrationData)
+    case login(_ data: [String: Any])
+    case registration(_ data: [String: Any])
 }
 
 extension AuthAPI: TargetType {
@@ -36,9 +36,9 @@ extension AuthAPI: TargetType {
     var task: Task {
         switch self {
         case let .login(data):
-            return .requestParameters(parameters: data.networkModel.dictionary ?? [:], encoding: JSONEncoding.default)
+            return .requestParameters(parameters: data, encoding: JSONEncoding.default)
         case let .registration(data):
-            return .requestParameters(parameters: data.networkModel.dictionary ?? [:], encoding: JSONEncoding.default)
+            return .requestParameters(parameters: data, encoding: JSONEncoding.default)
         }
     }
     var sampleData: Data {

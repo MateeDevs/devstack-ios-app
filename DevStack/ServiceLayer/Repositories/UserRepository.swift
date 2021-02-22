@@ -45,7 +45,8 @@ public class UserRepository {
     }
     
     public func updateUser(_ user: User) -> Observable<Event<Void>> {
-        let endpoint = UserAPI.updateUser(user)
+        guard let data = user.networkModel.encoded else { return .error(CommonError.encoding) }
+        let endpoint = UserAPI.updateUserById(user.id, data: data)
         return network.observableRequest(endpoint).map(NETUser.self).save().mapToVoid().materialize()
     }
 
