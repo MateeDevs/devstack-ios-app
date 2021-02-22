@@ -11,7 +11,7 @@ import UIKit
 class AppFlowController: FlowController, MainFlowControllerDelegate, OnboardingFlowControllerDelegate {
     
     func start() {
-        if dependencies.userRepository.getProfileId() != nil {
+        if dependencies.getProfileIdUseCase.execute() != nil {
             setupMain()
         } else {
             presentOnboarding(animated: false, completion: nil)

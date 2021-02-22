@@ -6,8 +6,20 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-public struct NETAuthToken: Decodable {
+struct NETAuthToken: Decodable {
     let userId: String
     let email: String
     let token: String
+}
+
+// Conversion from NetworkModel to DomainModel
+extension NETAuthToken: DomainRepresentable {
+    typealias DomainModel = AuthToken
+    
+    var domainModel: DomainModel {
+        AuthToken(
+            userId: userId,
+            token: token
+        )
+    }
 }

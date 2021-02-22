@@ -9,22 +9,19 @@
 public protocol HasNoRepository {}
 
 extension RepositoryDependency: HasNoRepository {}
-extension RepositoryDependency: HasAuthRepository {}
+extension RepositoryDependency: HasAuthTokenRepository {}
 extension RepositoryDependency: HasUserRepository {}
 extension RepositoryDependency: HasLocationRepository {}
-extension RepositoryDependency: HasPushNotificationsRepository {}
 
 public struct RepositoryDependency {
     
-    public let authRepository: AuthRepository
+    public let authTokenRepository: AuthTokenRepository
     public let userRepository: UserRepository
     public let locationRepository: LocationRepository
-    public let pushNotificationsRepository: PushNotificationsRepository
     
-    public init(dependencies: ProviderDependency) {
-        self.authRepository = AuthRepository(dependencies: dependencies)
+    init(dependencies: ProviderDependency) {
+        self.authTokenRepository = AuthTokenRepository(dependencies: dependencies)
         self.userRepository = UserRepository(dependencies: dependencies)
         self.locationRepository = LocationRepository(dependencies: dependencies)
-        self.pushNotificationsRepository = PushNotificationsRepository(dependencies: dependencies)
     }
 }

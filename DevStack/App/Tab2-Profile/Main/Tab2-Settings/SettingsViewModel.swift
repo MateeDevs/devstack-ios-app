@@ -11,7 +11,7 @@ import RxSwift
 
 final class SettingsViewModel: ViewModel, ViewModelType {
     
-    typealias Dependencies = HasNoRepository
+    typealias Dependencies = HasNoUseCase
     
     let input: Input
     let output: Output

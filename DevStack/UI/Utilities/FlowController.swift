@@ -13,14 +13,14 @@ import UIKit
 open class FlowController: NSObject {
     
     public let navigationController: UINavigationController
-    public let dependencies: RepositoryDependency
+    public let dependencies: UseCaseDependency
     
     private weak var parentController: FlowController?
     private(set) var childControllers: [FlowController] = []
     
     private(set) var rootViewController: UIViewController?
     
-    public init(navigationController: UINavigationController, dependencies: RepositoryDependency) {
+    public init(navigationController: UINavigationController, dependencies: UseCaseDependency) {
         self.navigationController = navigationController
         self.dependencies = dependencies
         Logger.info("%@ initialized", "\(type(of: self))", category: .lifecycle)

@@ -92,9 +92,6 @@
 		454FEE3922404B2C00EB7A54 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3822404B2C00EB7A54 /* ValidationError.swift */; };
 		454FEE3A22404B2C00EB7A54 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3822404B2C00EB7A54 /* ValidationError.swift */; };
 		454FEE3B22404B2C00EB7A54 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FEE3822404B2C00EB7A54 /* ValidationError.swift */; };
-		454FFC9823D74C760062FF4B /* PushNotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9723D74C760062FF4B /* PushNotificationsRepository.swift */; };
-		454FFC9923D74C760062FF4B /* PushNotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9723D74C760062FF4B /* PushNotificationsRepository.swift */; };
-		454FFC9A23D74C760062FF4B /* PushNotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FFC9723D74C760062FF4B /* PushNotificationsRepository.swift */; };
 		455261BC210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */; };
 		455261BD210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */; };
 		455261BE210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */; };
@@ -177,9 +174,9 @@
 		4568523F2105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568523E2105CF34006D3618 /* CustomNetworkActivityPlugin.swift */; };
 		456852402105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568523E2105CF34006D3618 /* CustomNetworkActivityPlugin.swift */; };
 		456852412105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568523E2105CF34006D3618 /* CustomNetworkActivityPlugin.swift */; };
-		456852462105CF82006D3618 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852452105CF82006D3618 /* AuthRepository.swift */; };
-		456852472105CF82006D3618 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852452105CF82006D3618 /* AuthRepository.swift */; };
-		456852482105CF82006D3618 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852452105CF82006D3618 /* AuthRepository.swift */; };
+		456852462105CF82006D3618 /* AuthTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852452105CF82006D3618 /* AuthTokenRepository.swift */; };
+		456852472105CF82006D3618 /* AuthTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852452105CF82006D3618 /* AuthTokenRepository.swift */; };
+		456852482105CF82006D3618 /* AuthTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852452105CF82006D3618 /* AuthTokenRepository.swift */; };
 		456852642105D805006D3618 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852632105D805006D3618 /* String+Extensions.swift */; };
 		456852652105D805006D3618 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852632105D805006D3618 /* String+Extensions.swift */; };
 		456852662105D805006D3618 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456852632105D805006D3618 /* String+Extensions.swift */; };
@@ -189,6 +186,60 @@
 		4572500C25E4235F00D1B745 /* Observable+Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572500B25E4235F00D1B745 /* Observable+Moya.swift */; };
 		4572500D25E4235F00D1B745 /* Observable+Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572500B25E4235F00D1B745 /* Observable+Moya.swift */; };
 		4572500E25E4235F00D1B745 /* Observable+Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572500B25E4235F00D1B745 /* Observable+Moya.swift */; };
+		4572502B25E42A6900D1B745 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572502A25E42A6900D1B745 /* LoginUseCase.swift */; };
+		4572502C25E42A6900D1B745 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572502A25E42A6900D1B745 /* LoginUseCase.swift */; };
+		4572502D25E42A6900D1B745 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572502A25E42A6900D1B745 /* LoginUseCase.swift */; };
+		4572503325E42C2200D1B745 /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572503225E42C2200D1B745 /* LogoutUseCase.swift */; };
+		4572503425E42C2200D1B745 /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572503225E42C2200D1B745 /* LogoutUseCase.swift */; };
+		4572503525E42C2200D1B745 /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572503225E42C2200D1B745 /* LogoutUseCase.swift */; };
+		4572504325E42E2D00D1B745 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572504225E42E2D00D1B745 /* AuthToken.swift */; };
+		4572504425E42E2D00D1B745 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572504225E42E2D00D1B745 /* AuthToken.swift */; };
+		4572504525E42E2D00D1B745 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572504225E42E2D00D1B745 /* AuthToken.swift */; };
+		4572505B25E433C000D1B745 /* RegistrationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572505A25E433C000D1B745 /* RegistrationUseCase.swift */; };
+		4572505C25E433C000D1B745 /* RegistrationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572505A25E433C000D1B745 /* RegistrationUseCase.swift */; };
+		4572505D25E433C000D1B745 /* RegistrationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572505A25E433C000D1B745 /* RegistrationUseCase.swift */; };
+		4572506425E4456200D1B745 /* GetUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572506325E4456200D1B745 /* GetUsersUseCase.swift */; };
+		4572506525E4456200D1B745 /* GetUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572506325E4456200D1B745 /* GetUsersUseCase.swift */; };
+		4572506625E4456200D1B745 /* GetUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572506325E4456200D1B745 /* GetUsersUseCase.swift */; };
+		4572506C25E445B900D1B745 /* RefreshUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572506B25E445B900D1B745 /* RefreshUsersUseCase.swift */; };
+		4572506D25E445B900D1B745 /* RefreshUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572506B25E445B900D1B745 /* RefreshUsersUseCase.swift */; };
+		4572506E25E445B900D1B745 /* RefreshUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572506B25E445B900D1B745 /* RefreshUsersUseCase.swift */; };
+		4572507525E447A000D1B745 /* GetUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572507425E447A000D1B745 /* GetUserUseCase.swift */; };
+		4572507625E447A000D1B745 /* GetUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572507425E447A000D1B745 /* GetUserUseCase.swift */; };
+		4572507725E447A000D1B745 /* GetUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572507425E447A000D1B745 /* GetUserUseCase.swift */; };
+		4572507D25E447F100D1B745 /* RefreshUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572507C25E447F100D1B745 /* RefreshUserUseCase.swift */; };
+		4572507E25E447F100D1B745 /* RefreshUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572507C25E447F100D1B745 /* RefreshUserUseCase.swift */; };
+		4572507F25E447F100D1B745 /* RefreshUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572507C25E447F100D1B745 /* RefreshUserUseCase.swift */; };
+		4572508525E44AC200D1B745 /* SourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572508425E44AC200D1B745 /* SourceType.swift */; };
+		4572508625E44AC200D1B745 /* SourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572508425E44AC200D1B745 /* SourceType.swift */; };
+		4572508725E44AC200D1B745 /* SourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572508425E44AC200D1B745 /* SourceType.swift */; };
+		4572509125E44BE900D1B745 /* UpdateUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572509025E44BE900D1B745 /* UpdateUserUseCase.swift */; };
+		4572509225E44BE900D1B745 /* UpdateUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572509025E44BE900D1B745 /* UpdateUserUseCase.swift */; };
+		4572509325E44BE900D1B745 /* UpdateUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572509025E44BE900D1B745 /* UpdateUserUseCase.swift */; };
+		4572509A25E44CF400D1B745 /* GetProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572509925E44CF400D1B745 /* GetProfileUseCase.swift */; };
+		4572509B25E44CF400D1B745 /* GetProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572509925E44CF400D1B745 /* GetProfileUseCase.swift */; };
+		4572509C25E44CF400D1B745 /* GetProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572509925E44CF400D1B745 /* GetProfileUseCase.swift */; };
+		457250A225E44F8D00D1B745 /* RefreshProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250A125E44F8D00D1B745 /* RefreshProfileUseCase.swift */; };
+		457250A325E44F8D00D1B745 /* RefreshProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250A125E44F8D00D1B745 /* RefreshProfileUseCase.swift */; };
+		457250A425E44F8D00D1B745 /* RefreshProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250A125E44F8D00D1B745 /* RefreshProfileUseCase.swift */; };
+		457250AA25E4516F00D1B745 /* UpdateProfileCounterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250A925E4516F00D1B745 /* UpdateProfileCounterUseCase.swift */; };
+		457250AB25E4516F00D1B745 /* UpdateProfileCounterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250A925E4516F00D1B745 /* UpdateProfileCounterUseCase.swift */; };
+		457250AC25E4516F00D1B745 /* UpdateProfileCounterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250A925E4516F00D1B745 /* UpdateProfileCounterUseCase.swift */; };
+		457250BA25E4551700D1B745 /* UseCaseDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250B925E4551700D1B745 /* UseCaseDependency.swift */; };
+		457250BB25E4551700D1B745 /* UseCaseDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250B925E4551700D1B745 /* UseCaseDependency.swift */; };
+		457250BC25E4551700D1B745 /* UseCaseDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250B925E4551700D1B745 /* UseCaseDependency.swift */; };
+		457250C625E4622400D1B745 /* GetProfileIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250C525E4622400D1B745 /* GetProfileIdUseCase.swift */; };
+		457250C725E4622400D1B745 /* GetProfileIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250C525E4622400D1B745 /* GetProfileIdUseCase.swift */; };
+		457250C825E4622400D1B745 /* GetProfileIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250C525E4622400D1B745 /* GetProfileIdUseCase.swift */; };
+		457250D225E4670400D1B745 /* PushNotificationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250D125E4670400D1B745 /* PushNotificationsProvider.swift */; };
+		457250D325E4670400D1B745 /* PushNotificationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250D125E4670400D1B745 /* PushNotificationsProvider.swift */; };
+		457250D425E4670400D1B745 /* PushNotificationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250D125E4670400D1B745 /* PushNotificationsProvider.swift */; };
+		457250E325E468BE00D1B745 /* HandlePushNotificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250E225E468BE00D1B745 /* HandlePushNotificationUseCase.swift */; };
+		457250E425E468BE00D1B745 /* HandlePushNotificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250E225E468BE00D1B745 /* HandlePushNotificationUseCase.swift */; };
+		457250E525E468BE00D1B745 /* HandlePushNotificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250E225E468BE00D1B745 /* HandlePushNotificationUseCase.swift */; };
+		457250EC25E46C8100D1B745 /* GetCurrentLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250EB25E46C8100D1B745 /* GetCurrentLocationUseCase.swift */; };
+		457250ED25E46C8100D1B745 /* GetCurrentLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250EB25E46C8100D1B745 /* GetCurrentLocationUseCase.swift */; };
+		457250EE25E46C8100D1B745 /* GetCurrentLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250EB25E46C8100D1B745 /* GetCurrentLocationUseCase.swift */; };
 		457FA18E241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
 		457FA18F241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
 		457FA190241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
@@ -612,7 +663,6 @@
 		454FFC9023D70E7A0062FF4B /* DevStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevStack.entitlements; sourceTree = "<group>"; };
 		454FFC9123D70E800062FF4B /* DevStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevStack.entitlements; sourceTree = "<group>"; };
 		454FFC9223D70E840062FF4B /* DevStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevStack.entitlements; sourceTree = "<group>"; };
-		454FFC9723D74C760062FF4B /* PushNotificationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsRepository.swift; sourceTree = "<group>"; };
 		455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		455261C2210AFE1100E5F1E1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		455261C6210AFF1700E5F1E1 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -647,10 +697,28 @@
 		456852302105BC83006D3618 /* AuthenticatedProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedProvider.swift; sourceTree = "<group>"; };
 		456852372105BD20006D3618 /* User.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
 		4568523E2105CF34006D3618 /* CustomNetworkActivityPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNetworkActivityPlugin.swift; sourceTree = "<group>"; };
-		456852452105CF82006D3618 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		456852452105CF82006D3618 /* AuthTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenRepository.swift; sourceTree = "<group>"; };
 		456852632105D805006D3618 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4571DB2A22159EE90036919A /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		4572500B25E4235F00D1B745 /* Observable+Moya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Moya.swift"; sourceTree = "<group>"; };
+		4572502A25E42A6900D1B745 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		4572503225E42C2200D1B745 /* LogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCase.swift; sourceTree = "<group>"; };
+		4572504225E42E2D00D1B745 /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
+		4572505A25E433C000D1B745 /* RegistrationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUseCase.swift; sourceTree = "<group>"; };
+		4572506325E4456200D1B745 /* GetUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersUseCase.swift; sourceTree = "<group>"; };
+		4572506B25E445B900D1B745 /* RefreshUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshUsersUseCase.swift; sourceTree = "<group>"; };
+		4572507425E447A000D1B745 /* GetUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserUseCase.swift; sourceTree = "<group>"; };
+		4572507C25E447F100D1B745 /* RefreshUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshUserUseCase.swift; sourceTree = "<group>"; };
+		4572508425E44AC200D1B745 /* SourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceType.swift; sourceTree = "<group>"; };
+		4572509025E44BE900D1B745 /* UpdateUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserUseCase.swift; sourceTree = "<group>"; };
+		4572509925E44CF400D1B745 /* GetProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileUseCase.swift; sourceTree = "<group>"; };
+		457250A125E44F8D00D1B745 /* RefreshProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshProfileUseCase.swift; sourceTree = "<group>"; };
+		457250A925E4516F00D1B745 /* UpdateProfileCounterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileCounterUseCase.swift; sourceTree = "<group>"; };
+		457250B925E4551700D1B745 /* UseCaseDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseDependency.swift; sourceTree = "<group>"; };
+		457250C525E4622400D1B745 /* GetProfileIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileIdUseCase.swift; sourceTree = "<group>"; };
+		457250D125E4670400D1B745 /* PushNotificationsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsProvider.swift; sourceTree = "<group>"; };
+		457250E225E468BE00D1B745 /* HandlePushNotificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlePushNotificationUseCase.swift; sourceTree = "<group>"; };
+		457250EB25E46C8100D1B745 /* GetCurrentLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentLocationUseCase.swift; sourceTree = "<group>"; };
 		457FA18D241EC44300EA7436 /* ErrorMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
 		4584E7F325D36481002335E3 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		4585A15C214FE3DE00186D7D /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
@@ -1006,8 +1074,7 @@
 			children = (
 				456089CC25DB387500997546 /* RepositoryDependency.swift */,
 				45E1E61C221D5C55006C84D1 /* LocationRepository */,
-				456852452105CF82006D3618 /* AuthRepository.swift */,
-				454FFC9723D74C760062FF4B /* PushNotificationsRepository.swift */,
+				456852452105CF82006D3618 /* AuthTokenRepository.swift */,
 				45ECA1C5216BFA90000B1124 /* UserRepository.swift */,
 			);
 			path = Repositories;
@@ -1047,10 +1114,81 @@
 				45ED84AD249F64520055A19E /* ActivityIndicator.swift */,
 				45E8A4A8220AEBAE003F7502 /* Logger.swift */,
 				45FF350F25DD98CF002D33A0 /* Representable.swift */,
+				4572508425E44AC200D1B745 /* SourceType.swift */,
 				45E8A49A220AD4CB003F7502 /* ViewModel.swift */,
 				459762E220FE21BC0034DE29 /* ViewModelType.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4572501B25E429E000D1B745 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				457250B925E4551700D1B745 /* UseCaseDependency.swift */,
+				4572502925E42A5E00D1B745 /* Auth */,
+				457250EA25E46C7200D1B745 /* Location */,
+				4572509825E44C8F00D1B745 /* Profile */,
+				457250E125E4685400D1B745 /* PushNotification */,
+				4572507325E4478700D1B745 /* User */,
+				4572506225E438CD00D1B745 /* Users */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		4572502925E42A5E00D1B745 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				4572502A25E42A6900D1B745 /* LoginUseCase.swift */,
+				4572503225E42C2200D1B745 /* LogoutUseCase.swift */,
+				4572505A25E433C000D1B745 /* RegistrationUseCase.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		4572506225E438CD00D1B745 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				4572506325E4456200D1B745 /* GetUsersUseCase.swift */,
+				4572506B25E445B900D1B745 /* RefreshUsersUseCase.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		4572507325E4478700D1B745 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				4572507425E447A000D1B745 /* GetUserUseCase.swift */,
+				4572507C25E447F100D1B745 /* RefreshUserUseCase.swift */,
+				4572509025E44BE900D1B745 /* UpdateUserUseCase.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		4572509825E44C8F00D1B745 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4572509925E44CF400D1B745 /* GetProfileUseCase.swift */,
+				457250C525E4622400D1B745 /* GetProfileIdUseCase.swift */,
+				457250A125E44F8D00D1B745 /* RefreshProfileUseCase.swift */,
+				457250A925E4516F00D1B745 /* UpdateProfileCounterUseCase.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		457250E125E4685400D1B745 /* PushNotification */ = {
+			isa = PBXGroup;
+			children = (
+				457250E225E468BE00D1B745 /* HandlePushNotificationUseCase.swift */,
+			);
+			path = PushNotification;
+			sourceTree = "<group>";
+		};
+		457250EA25E46C7200D1B745 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				457250EB25E46C8100D1B745 /* GetCurrentLocationUseCase.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		4585A1602151224800186D7D /* UserImageView */ = {
@@ -1334,6 +1472,7 @@
 				45C089E72215C12200D0DD49 /* DatabaseProvider.swift */,
 				450D3DEA2111F043008BAE71 /* KeychainProvider.swift */,
 				4571DB2A22159EE90036919A /* NetworkProvider.swift */,
+				457250D125E4670400D1B745 /* PushNotificationsProvider.swift */,
 				450C869023547D5A00DC5E49 /* UserDefaultsProvider.swift */,
 			);
 			path = Providers;
@@ -1523,19 +1662,20 @@
 		45FF344925DC6776002D33A0 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
-				45FF344A25DC677F002D33A0 /* Models */,
+				45FF344A25DC677F002D33A0 /* DomainModels */,
+				4572501B25E429E000D1B745 /* UseCase */,
 			);
 			path = DomainLayer;
 			sourceTree = "<group>";
 		};
-		45FF344A25DC677F002D33A0 /* Models */ = {
+		45FF344A25DC677F002D33A0 /* DomainModels */ = {
 			isa = PBXGroup;
 			children = (
 				45FF34DF25DD85F3002D33A0 /* Auth */,
 				45FF34E925DD8682002D33A0 /* PushNotification */,
 				45FF34DE25DD85ED002D33A0 /* User */,
 			);
-			path = Models;
+			path = DomainModels;
 			sourceTree = "<group>";
 		};
 		45FF34DE25DD85ED002D33A0 /* User */ = {
@@ -1549,6 +1689,7 @@
 		45FF34DF25DD85F3002D33A0 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				4572504225E42E2D00D1B745 /* AuthToken.swift */,
 				45FF34C625DD8567002D33A0 /* LoginData.swift */,
 				45FF34D225DD85DE002D33A0 /* RegistrationData.swift */,
 			);
@@ -2275,8 +2416,10 @@
 				458C1AC324A26B8500549420 /* ProviderDependency.swift in Sources */,
 				456089CD25DB387500997546 /* RepositoryDependency.swift in Sources */,
 				450D3DEB2111F043008BAE71 /* KeychainProvider.swift in Sources */,
+				457250C625E4622400D1B745 /* GetProfileIdUseCase.swift in Sources */,
 				4515CC1D226158AE00204767 /* SafariViewController.swift in Sources */,
 				45A388C1225E06EF00037FFA /* Measurement+Extensions.swift in Sources */,
+				457250E325E468BE00D1B745 /* HandlePushNotificationUseCase.swift in Sources */,
 				45BC959625C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */,
 				453CEAB921553E1F00A94BAC /* RatingView.swift in Sources */,
 				A891BDB72108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
@@ -2304,6 +2447,7 @@
 				A8DDD0CF2121E2E400EEB48F /* LocalizedNavigationItem.swift in Sources */,
 				4511A6F0213D2677006AD4CC /* TabBarView.swift in Sources */,
 				456458DE255B44B800BF97B6 /* TextFieldWithHint+Rx.swift in Sources */,
+				457250BA25E4551700D1B745 /* UseCaseDependency.swift in Sources */,
 				45BC958E25C2481F001A6F65 /* CounterDisplayViewModel.swift in Sources */,
 				45DB9777226BA5B200C3F234 /* ProfileWrapperViewController.swift in Sources */,
 				455261BC210A1CC200E5F1E1 /* Observable+Extensions.swift in Sources */,
@@ -2313,13 +2457,17 @@
 				459762E320FE21BC0034DE29 /* ViewModelType.swift in Sources */,
 				4511A71E213D73C8006AD4CC /* ActivityIndicatorView.swift in Sources */,
 				45E1E619221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				4572502B25E42A6900D1B745 /* LoginUseCase.swift in Sources */,
 				45FF351025DD98CF002D33A0 /* Representable.swift in Sources */,
 				45890B5C22087C8B00894255 /* String+UIExtensions.swift in Sources */,
+				4572507525E447A000D1B745 /* GetUserUseCase.swift in Sources */,
 				456852102101E432006D3618 /* DBUser.swift in Sources */,
 				456458EA255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */,
-				456852462105CF82006D3618 /* AuthRepository.swift in Sources */,
+				4572506C25E445B900D1B745 /* RefreshUsersUseCase.swift in Sources */,
+				456852462105CF82006D3618 /* AuthTokenRepository.swift in Sources */,
 				45BC958B25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */,
 				A82385DA213418B400CC941C /* ShadowView.swift in Sources */,
+				4572509125E44BE900D1B745 /* UpdateUserUseCase.swift in Sources */,
 				450A62892439FC9500B43049 /* PushNotification.swift in Sources */,
 				451233E3215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				456851B921008988006D3618 /* BaseViewController.swift in Sources */,
@@ -2330,11 +2478,13 @@
 				A83F0EB721490EE200313067 /* UserImageView.swift in Sources */,
 				45C3F51723C1249C0091848D /* SecondaryButton.swift in Sources */,
 				45F88BE325C34E52003BD1B9 /* StateButton.swift in Sources */,
+				4572508525E44AC200D1B745 /* SourceType.swift in Sources */,
 				45890B2821FFB95D00894255 /* AppTheme.swift in Sources */,
 				45FF345025DC6794002D33A0 /* User.swift in Sources */,
 				450D3DDC21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C02100929E006D3618 /* LocalizedTextField.swift in Sources */,
 				450384752170E4FC004F43DC /* Bool+Extensions.swift in Sources */,
+				457250AA25E4516F00D1B745 /* UpdateProfileCounterUseCase.swift in Sources */,
 				45128B802142A634007B6B47 /* TabBarButton.swift in Sources */,
 				45E8A54E220F4BB5003F7502 /* BaseTableViewController.swift in Sources */,
 				4512341B2162326A00F85985 /* NSLayoutConstraint+Extensions.swift in Sources */,
@@ -2344,6 +2494,7 @@
 				453CEAC721583A7D00A94BAC /* RatingViewSmall.swift in Sources */,
 				4568523F2105CF34006D3618 /* CustomNetworkActivityPlugin.swift in Sources */,
 				A8E5D3E2213596FD00515312 /* StatusCode.swift in Sources */,
+				4572506425E4456200D1B745 /* GetUsersUseCase.swift in Sources */,
 				459762EB20FE21F70034DE29 /* UIApplication+Extensions.swift in Sources */,
 				45FF352625DDC347002D33A0 /* NETUser.swift in Sources */,
 				45B76DA0213591D0003BB997 /* Error+Extensions.swift in Sources */,
@@ -2353,13 +2504,17 @@
 				4511A72D213DDCCB006AD4CC /* UIView+ActivityIndicator.swift in Sources */,
 				4588FF0F2226EF360014FC79 /* BaseTableViewCell.swift in Sources */,
 				456852232105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
+				457250A225E44F8D00D1B745 /* RefreshProfileUseCase.swift in Sources */,
 				45F88BED25C34F38003BD1B9 /* StateButton+Rx.swift in Sources */,
 				45A388D3225F39EF00037FFA /* WebViewController.swift in Sources */,
+				457250EC25E46C8100D1B745 /* GetCurrentLocationUseCase.swift in Sources */,
 				455261C7210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				A8C79A9F2157FD71007A4339 /* Plurals.swift in Sources */,
 				452732A023F0ACD70067C712 /* ProfileViewModel.swift in Sources */,
 				45571932249FE37F00FB24CA /* BaseViewController+Alerts+Rx.swift in Sources */,
+				4572504325E42E2D00D1B745 /* AuthToken.swift in Sources */,
 				A8D348DD2163777200B7D08F /* DataValidator.swift in Sources */,
+				457250D225E4670400D1B745 /* PushNotificationsProvider.swift in Sources */,
 				45DA07F0222D7D800003D32A /* HeadlineLabel.swift in Sources */,
 				45A388C7225E388B00037FFA /* FullscreenImageViewController.swift in Sources */,
 				4588FF2A22282D000014FC79 /* UserDetailViewController.swift in Sources */,
@@ -2367,6 +2522,7 @@
 				45DA080B222E87780003D32A /* RegistrationViewController.swift in Sources */,
 				45571942249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */,
 				45E8A4B9220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
+				4572509A25E44CF400D1B745 /* GetProfileUseCase.swift in Sources */,
 				45CDC3BB24A92F8100EF2368 /* Alert.swift in Sources */,
 				45F8498E2563410D00C42CDE /* UserImageView+Rx.swift in Sources */,
 				45E1E61E221DA9EE006C84D1 /* LocalizedTextView.swift in Sources */,
@@ -2382,6 +2538,7 @@
 				45890B4722086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2B22159EE90036919A /* NetworkProvider.swift in Sources */,
 				45A3D59F2119B76000E39169 /* Realm+Rx.swift in Sources */,
+				4572505B25E433C000D1B745 /* RegistrationUseCase.swift in Sources */,
 				454FEE3922404B2C00EB7A54 /* ValidationError.swift in Sources */,
 				456458DA255B41FF00BF97B6 /* UITextField+Extensions.swift in Sources */,
 				45890B4322086CA700894255 /* LoginViewController.swift in Sources */,
@@ -2392,6 +2549,8 @@
 				A891BDC32108CB2600BBA179 /* XIBView.swift in Sources */,
 				45FF34D325DD85DE002D33A0 /* RegistrationData.swift in Sources */,
 				45BC957825C247F3001A6F65 /* CounterControlViewModel.swift in Sources */,
+				4572507D25E447F100D1B745 /* RefreshUserUseCase.swift in Sources */,
+				4572503325E42C2200D1B745 /* LogoutUseCase.swift in Sources */,
 				45E8A4ED220B0803003F7502 /* UsersFlowController.swift in Sources */,
 				452732A823F0C7F80067C712 /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				4585A15D214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
@@ -2406,7 +2565,6 @@
 				45FF355525DDD1B3002D33A0 /* NETLoginData.swift in Sources */,
 				45A92DF621085864007579AC /* BaseViewController+Alerts.swift in Sources */,
 				45AF119923FFEDE100C63882 /* Formatter.swift in Sources */,
-				454FFC9823D74C760062FF4B /* PushNotificationsRepository.swift in Sources */,
 				456089C525DB386300997546 /* RepositoryError.swift in Sources */,
 				45ECA1C6216BFA90000B1124 /* UserRepository.swift in Sources */,
 				45ECA1AA216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
@@ -2424,9 +2582,11 @@
 				A8A2E503217DD3C70006023F /* GradientView.swift in Sources */,
 				4584E7F525D36481002335E3 /* SettingsViewModel.swift in Sources */,
 				45C3F51C23C127E60091848D /* TextFieldWithHint.swift in Sources */,
+				4572507E25E447F100D1B745 /* RefreshUserUseCase.swift in Sources */,
 				45BFF38E25D3686D00813581 /* Flow.swift in Sources */,
 				452732A523F0C6ED0067C712 /* Double+UIExtensions.swift in Sources */,
 				45976372210087710034DE29 /* InputViewController.swift in Sources */,
+				457250D325E4670400D1B745 /* PushNotificationsProvider.swift in Sources */,
 				45ECA1A4216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
 				458C1AC424A26B8500549420 /* ProviderDependency.swift in Sources */,
 				450D3DEC2111F043008BAE71 /* KeychainProvider.swift in Sources */,
@@ -2443,8 +2603,11 @@
 				45E8A574220F7933003F7502 /* UsersViewController.swift in Sources */,
 				459761CE20FDD60A0034DE29 /* AppDelegate.swift in Sources */,
 				45C3F51023C114600091848D /* UIColorCompatible.swift in Sources */,
+				4572502C25E42A6900D1B745 /* LoginUseCase.swift in Sources */,
 				45DB9784226BA9D200C3F234 /* SettingsViewController.swift in Sources */,
 				A82386872138AF1700CC941C /* ColoredImageView.swift in Sources */,
+				457250AB25E4516F00D1B745 /* UpdateProfileCounterUseCase.swift in Sources */,
+				4572504425E42E2D00D1B745 /* AuthToken.swift in Sources */,
 				4588FF2E22282D000014FC79 /* UserDetailViewModel.swift in Sources */,
 				459762DF20FE21290034DE29 /* Storyboards.swift in Sources */,
 				45DE1D9521CA9CA300C455C4 /* AuthAPI.swift in Sources */,
@@ -2471,7 +2634,7 @@
 				456852112101E432006D3618 /* DBUser.swift in Sources */,
 				45FF351125DD98CF002D33A0 /* Representable.swift in Sources */,
 				456458EB255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */,
-				456852472105CF82006D3618 /* AuthRepository.swift in Sources */,
+				456852472105CF82006D3618 /* AuthTokenRepository.swift in Sources */,
 				45BC958C25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */,
 				45FF355625DDD1B3002D33A0 /* NETLoginData.swift in Sources */,
 				451233E4215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
@@ -2479,6 +2642,8 @@
 				A82385DB213418B400CC941C /* ShadowView.swift in Sources */,
 				456851BA21008988006D3618 /* BaseViewController.swift in Sources */,
 				A83F0EB821490EE200313067 /* UserImageView.swift in Sources */,
+				457250E425E468BE00D1B745 /* HandlePushNotificationUseCase.swift in Sources */,
+				457250BB25E4551700D1B745 /* UseCaseDependency.swift in Sources */,
 				45BC954725C243FA001A6F65 /* CounterFlowController.swift in Sources */,
 				4557193F249FE58400FB24CA /* BaseTableViewController+Rx.swift in Sources */,
 				A847B1AD210F4872002F9ED1 /* LocationHelper.swift in Sources */,
@@ -2513,6 +2678,7 @@
 				A8C79AA02157FD71007A4339 /* Plurals.swift in Sources */,
 				45A388D4225F39EF00037FFA /* WebViewController.swift in Sources */,
 				456852242105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
+				457250ED25E46C8100D1B745 /* GetCurrentLocationUseCase.swift in Sources */,
 				455261C8210AFF1800E5F1E1 /* Assets.swift in Sources */,
 				45FF356225DDDFBC002D33A0 /* NETRegistrationData.swift in Sources */,
 				452732A123F0ACD70067C712 /* ProfileViewModel.swift in Sources */,
@@ -2523,10 +2689,12 @@
 				4588FF2B22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C8210095ED006D3618 /* LocalizedLabel.swift in Sources */,
 				45DA080C222E87780003D32A /* RegistrationViewController.swift in Sources */,
+				457250A325E44F8D00D1B745 /* RefreshProfileUseCase.swift in Sources */,
 				45571943249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */,
 				45E8A4BA220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
 				45CDC3BC24A92F8100EF2368 /* Alert.swift in Sources */,
 				45F8498F2563410D00C42CDE /* UserImageView+Rx.swift in Sources */,
+				4572506D25E445B900D1B745 /* RefreshUsersUseCase.swift in Sources */,
 				45E1E61F221DA9EE006C84D1 /* LocalizedTextView.swift in Sources */,
 				456852322105BC83006D3618 /* AuthenticatedProvider.swift in Sources */,
 				45CDC3C424A92FC200EF2368 /* AlertAction.swift in Sources */,
@@ -2546,11 +2714,15 @@
 				45FF352725DDC347002D33A0 /* NETUser.swift in Sources */,
 				45890B4422086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B6220AEF90003F7502 /* FlowController.swift in Sources */,
+				4572506525E4456200D1B745 /* GetUsersUseCase.swift in Sources */,
 				45DB975C226A955700C3F234 /* WhisperView.swift in Sources */,
+				4572509225E44BE900D1B745 /* UpdateUserUseCase.swift in Sources */,
 				457FA18F241EC44400EA7436 /* ErrorMessages.swift in Sources */,
+				4572503425E42C2200D1B745 /* LogoutUseCase.swift in Sources */,
 				45B76D9A213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC42108CB2600BBA179 /* XIBView.swift in Sources */,
 				45BC957925C247F3001A6F65 /* CounterControlViewModel.swift in Sources */,
+				4572508625E44AC200D1B745 /* SourceType.swift in Sources */,
 				45E8A4EE220B0803003F7502 /* UsersFlowController.swift in Sources */,
 				452732A923F0C7F80067C712 /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				4585A15E214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
@@ -2561,13 +2733,16 @@
 				45FF354325DDD0C3002D33A0 /* NETPushNotification.swift in Sources */,
 				4568522B2105BB52006D3618 /* NetworkingUtilities.swift in Sources */,
 				45E8A55F220F6F2C003F7502 /* UserTableViewCell.swift in Sources */,
+				457250C725E4622400D1B745 /* GetProfileIdUseCase.swift in Sources */,
 				454AC03F249A724900D6F367 /* Realm+Extensions.swift in Sources */,
 				A8DDD0A1211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */,
+				4572507625E447A000D1B745 /* GetUserUseCase.swift in Sources */,
 				45A92DF721085864007579AC /* BaseViewController+Alerts.swift in Sources */,
+				4572509B25E44CF400D1B745 /* GetProfileUseCase.swift in Sources */,
 				45AF119A23FFEDE100C63882 /* Formatter.swift in Sources */,
-				454FFC9923D74C760062FF4B /* PushNotificationsRepository.swift in Sources */,
 				45ECA1C7216BFA90000B1124 /* UserRepository.swift in Sources */,
 				45ECA1AB216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
+				4572505C25E433C000D1B745 /* RegistrationUseCase.swift in Sources */,
 				4572500D25E4235F00D1B745 /* Observable+Moya.swift in Sources */,
 				45BC956125C246BF001A6F65 /* CounterViewController.swift in Sources */,
 			);
@@ -2583,9 +2758,11 @@
 				4584E7F625D36481002335E3 /* SettingsViewModel.swift in Sources */,
 				A8A2E504217DD3C70006023F /* GradientView.swift in Sources */,
 				45C3F51D23C127E60091848D /* TextFieldWithHint.swift in Sources */,
+				4572507F25E447F100D1B745 /* RefreshUserUseCase.swift in Sources */,
 				45BFF38F25D3686D00813581 /* Flow.swift in Sources */,
 				452732A623F0C6ED0067C712 /* Double+UIExtensions.swift in Sources */,
 				45976373210087710034DE29 /* InputViewController.swift in Sources */,
+				457250D425E4670400D1B745 /* PushNotificationsProvider.swift in Sources */,
 				45ECA1A5216B919B000B1124 /* ImagePickerViewController.swift in Sources */,
 				458C1AC524A26B8500549420 /* ProviderDependency.swift in Sources */,
 				450D3DED2111F043008BAE71 /* KeychainProvider.swift in Sources */,
@@ -2602,8 +2779,11 @@
 				45E8A575220F7933003F7502 /* UsersViewController.swift in Sources */,
 				459761DC20FDD61E0034DE29 /* AppDelegate.swift in Sources */,
 				45C3F51123C114600091848D /* UIColorCompatible.swift in Sources */,
+				4572502D25E42A6900D1B745 /* LoginUseCase.swift in Sources */,
 				45DB9785226BA9D200C3F234 /* SettingsViewController.swift in Sources */,
 				A82386882138AF1700CC941C /* ColoredImageView.swift in Sources */,
+				457250AC25E4516F00D1B745 /* UpdateProfileCounterUseCase.swift in Sources */,
+				4572504525E42E2D00D1B745 /* AuthToken.swift in Sources */,
 				4588FF2F22282D000014FC79 /* UserDetailViewModel.swift in Sources */,
 				45DE1D9621CA9CA300C455C4 /* AuthAPI.swift in Sources */,
 				45E8A4AB220AEBAE003F7502 /* Logger.swift in Sources */,
@@ -2630,7 +2810,7 @@
 				456852122101E432006D3618 /* DBUser.swift in Sources */,
 				45FF351225DD98CF002D33A0 /* Representable.swift in Sources */,
 				456458EC255B4C0F00BF97B6 /* ImagePickerViewController+Rx.swift in Sources */,
-				456852482105CF82006D3618 /* AuthRepository.swift in Sources */,
+				456852482105CF82006D3618 /* AuthTokenRepository.swift in Sources */,
 				45BC958D25C2481F001A6F65 /* CounterDisplayViewController.swift in Sources */,
 				45FF355725DDD1B3002D33A0 /* NETLoginData.swift in Sources */,
 				A82385DC213418B400CC941C /* ShadowView.swift in Sources */,
@@ -2638,6 +2818,8 @@
 				451233E5215D18BA00F85985 /* UIImageView+Extensions.swift in Sources */,
 				456851BB21008988006D3618 /* BaseViewController.swift in Sources */,
 				A847B1AE210F4872002F9ED1 /* LocationHelper.swift in Sources */,
+				457250E525E468BE00D1B745 /* HandlePushNotificationUseCase.swift in Sources */,
+				457250BC25E4551700D1B745 /* UseCaseDependency.swift in Sources */,
 				45BC954825C243FA001A6F65 /* CounterFlowController.swift in Sources */,
 				45571940249FE58400FB24CA /* BaseTableViewController+Rx.swift in Sources */,
 				A83F0EB921490EE200313067 /* UserImageView.swift in Sources */,
@@ -2672,6 +2854,7 @@
 				456852252105BA6D006D3618 /* NetworkingConstants.swift in Sources */,
 				45A388D5225F39EF00037FFA /* WebViewController.swift in Sources */,
 				455261C9210AFF1800E5F1E1 /* Assets.swift in Sources */,
+				457250EE25E46C8100D1B745 /* GetCurrentLocationUseCase.swift in Sources */,
 				A8C79AA12157FD71007A4339 /* Plurals.swift in Sources */,
 				45FF358725DDDFBD002D33A0 /* NETRegistrationData.swift in Sources */,
 				452732A223F0ACD70067C712 /* ProfileViewModel.swift in Sources */,
@@ -2682,10 +2865,12 @@
 				4588FF2C22282D000014FC79 /* UserDetailViewController.swift in Sources */,
 				456851C9210095ED006D3618 /* LocalizedLabel.swift in Sources */,
 				45DA080D222E87780003D32A /* RegistrationViewController.swift in Sources */,
+				457250A425E44F8D00D1B745 /* RefreshProfileUseCase.swift in Sources */,
 				45571944249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */,
 				45E8A4BB220AF3A3003F7502 /* ProfileFlowController.swift in Sources */,
 				45CDC3BD24A92F8100EF2368 /* Alert.swift in Sources */,
 				45F849902563410D00C42CDE /* UserImageView+Rx.swift in Sources */,
+				4572506E25E445B900D1B745 /* RefreshUsersUseCase.swift in Sources */,
 				45E1E620221DA9EE006C84D1 /* LocalizedTextView.swift in Sources */,
 				456852332105BC83006D3618 /* AuthenticatedProvider.swift in Sources */,
 				45CDC3C524A92FC200EF2368 /* AlertAction.swift in Sources */,
@@ -2705,11 +2890,15 @@
 				45FF352825DDC347002D33A0 /* NETUser.swift in Sources */,
 				45890B4522086CA700894255 /* LoginViewController.swift in Sources */,
 				45E8A4B7220AEF90003F7502 /* FlowController.swift in Sources */,
+				4572506625E4456200D1B745 /* GetUsersUseCase.swift in Sources */,
 				45DB975D226A955700C3F234 /* WhisperView.swift in Sources */,
+				4572509325E44BE900D1B745 /* UpdateUserUseCase.swift in Sources */,
 				457FA190241EC44400EA7436 /* ErrorMessages.swift in Sources */,
+				4572503525E42C2200D1B745 /* LogoutUseCase.swift in Sources */,
 				45B76D9B213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC52108CB2600BBA179 /* XIBView.swift in Sources */,
 				45BC957A25C247F3001A6F65 /* CounterControlViewModel.swift in Sources */,
+				4572508725E44AC200D1B745 /* SourceType.swift in Sources */,
 				45E8A4EF220B0803003F7502 /* UsersFlowController.swift in Sources */,
 				452732AA23F0C7F80067C712 /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				4585A15F214FE3DE00186D7D /* Array+Extensions.swift in Sources */,
@@ -2720,13 +2909,16 @@
 				45FF354425DDD0C3002D33A0 /* NETPushNotification.swift in Sources */,
 				4568522C2105BB52006D3618 /* NetworkingUtilities.swift in Sources */,
 				45E8A560220F6F2C003F7502 /* UserTableViewCell.swift in Sources */,
+				457250C825E4622400D1B745 /* GetProfileIdUseCase.swift in Sources */,
 				454AC040249A724900D6F367 /* Realm+Extensions.swift in Sources */,
 				A8DDD0A2211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */,
+				4572507725E447A000D1B745 /* GetUserUseCase.swift in Sources */,
 				45A92DF821085864007579AC /* BaseViewController+Alerts.swift in Sources */,
+				4572509C25E44CF400D1B745 /* GetProfileUseCase.swift in Sources */,
 				45AF119B23FFEDE100C63882 /* Formatter.swift in Sources */,
-				454FFC9A23D74C760062FF4B /* PushNotificationsRepository.swift in Sources */,
 				45ECA1C8216BFA90000B1124 /* UserRepository.swift in Sources */,
 				45ECA1AC216B9BE2000B1124 /* UIImage+Extensions.swift in Sources */,
+				4572505D25E433C000D1B745 /* RegistrationUseCase.swift in Sources */,
 				4572500E25E4235F00D1B745 /* Observable+Moya.swift in Sources */,
 				45BC956225C246BF001A6F65 /* CounterViewController.swift in Sources */,
 			);

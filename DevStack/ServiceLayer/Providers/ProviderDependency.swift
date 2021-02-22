@@ -8,22 +8,32 @@
 
 protocol HasNoProvider {}
 
-public struct ProviderDependency: HasNoProvider, HasDatabaseProvider, HasKeychainProvider, HasNetworkProvider, HasUserDefaultsProvider {
+extension ProviderDependency: HasNoProvider {}
+extension ProviderDependency: HasDatabaseProvider {}
+extension ProviderDependency: HasKeychainProvider {}
+extension ProviderDependency: HasNetworkProvider {}
+extension ProviderDependency: HasPushNotificationsProvider {}
+extension ProviderDependency: HasUserDefaultsProvider {}
+
+struct ProviderDependency {
 
     let databaseProvider: DatabaseProviderType
     let keychainProvider: KeychainProviderType
     let networkProvider: NetworkProviderType
+    let pushNotificationsProvider: PushNotificationsProviderType
     let userDefaultsProvider: UserDefaultsProviderType
 
-    public init(
+    init(
         databaseProvider: DatabaseProviderType,
         keychainProvider: KeychainProviderType,
         networkProvider: NetworkProviderType,
+        pushNotificationsProvider: PushNotificationsProvider,
         userDefaultsProvider: UserDefaultsProviderType
     ) {
         self.databaseProvider = databaseProvider
         self.keychainProvider = keychainProvider
         self.networkProvider = networkProvider
+        self.pushNotificationsProvider = pushNotificationsProvider
         self.userDefaultsProvider = userDefaultsProvider
     }
 }

@@ -11,6 +11,7 @@ import UIKit
 enum MainTab: Int {
     case users = 0
     case profile = 1
+    case counter = 2
 }
 
 class MainTabBarController: UITabBarController {

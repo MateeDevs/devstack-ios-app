@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Logger.info("PRODUCTION environment", category: .app)
         #endif
 
-        let providers = setupProviders()
+        let providers = setupProviders(for: application)
         self.providers = providers
 
         clearKeychain()
@@ -51,10 +51,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         // Init main flow controller and start the flow
-        flowController = AppFlowController(navigationController: nc, dependencies: RepositoryDependency(dependencies: providers))
+        flowController = AppFlowController(
+            navigationController: nc,
+            dependencies: UseCaseDependency(dependencies: RepositoryDependency(dependencies: providers))
+        )
         flowController?.start()
-        
-        firebaseSetup(for: application)
         
         return true
     }
@@ -82,19 +83,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: Setup providers
-    private func setupProviders() -> ProviderDependency {
+    private func setupProviders(for application: UIApplication) -> ProviderDependency {
         let databaseProvider = DatabaseProvider()
         let keychainProvider = KeychainProvider()
-        let networkProvider = NetworkProvider(
-            keychainProvider: keychainProvider,
-            databaseProvider: databaseProvider
-        )
+        let networkProvider = NetworkProvider(keychainProvider: keychainProvider, databaseProvider: databaseProvider)
+        let pushNotificationsProvider = PushNotificationsProvider(application: application, appDelegate: self)
         let userDefaultsProvider = UserDefaultsProvider()
 
         return ProviderDependency(
             databaseProvider: databaseProvider,
             keychainProvider: keychainProvider,
             networkProvider: networkProvider,
+            pushNotificationsProvider: pushNotificationsProvider,
             userDefaultsProvider: userDefaultsProvider
         )
     }
@@ -128,11 +128,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         config.deleteRealmIfMigrationNeeded = true
         // Tell Realm to use this new configuration object for the default Realm
         Realm.Configuration.defaultConfiguration = config
-    }
-    
-    // MARK: Firebase
-    private func firebaseSetup(for application: UIApplication) {
-        flowController?.dependencies.pushNotificationsRepository.start(for: application, appDelegate: self)
     }
     
     // MARK: Appearance

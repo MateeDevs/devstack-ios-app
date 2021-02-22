@@ -11,7 +11,7 @@ import RxSwift
 
 final class CounterDisplayViewModel: ViewModel, ViewModelType {
 
-    typealias Dependencies = HasUserRepository
+    typealias Dependencies = HasGetProfileUseCase
 
     let input: Input
     let output: Output
@@ -32,7 +32,7 @@ final class CounterDisplayViewModel: ViewModel, ViewModelType {
         // MARK: Setup outputs
 
         self.output = Output(
-            counterValue: dependencies.userRepository.getProfile().map { "\($0.counter)" }.asDriver()
+            counterValue: dependencies.getProfileUseCase.execute().map { "\($0.counter)" }.asDriver()
         )
 
         super.init()

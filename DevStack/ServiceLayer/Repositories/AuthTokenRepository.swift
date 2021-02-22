@@ -1,5 +1,5 @@
 //
-//  AuthRepository.swift
+//  AuthTokenRepository.swift
 //  DevStack
 //
 //  Created by Petr Chmelar on 23/07/2018.
@@ -10,11 +10,11 @@ import Foundation
 import RealmSwift
 import RxSwift
 
-public protocol HasAuthRepository {
-    var authRepository: AuthRepository { get }
+public protocol HasAuthTokenRepository {
+    var authTokenRepository: AuthTokenRepository { get }
 }
 
-public class AuthRepository {
+public class AuthTokenRepository {
 
     typealias Dependencies = HasDatabaseProvider & HasKeychainProvider & HasNetworkProvider
 
@@ -28,27 +28,25 @@ public class AuthRepository {
         self.network = dependencies.networkProvider
     }
     
-    public func login(_ data: LoginData) -> Observable<Event<Void>> {
+    public func create(_ data: LoginData) -> Observable<AuthToken> {
         guard let data = data.networkModel.encoded else { return .error(CommonError.encoding) }
         let endpoint = AuthAPI.login(data)
-        return network.observableRequest(endpoint, withInterceptor: false).map(NETAuthToken.self).do(onNext: { authToken in
+        return network.observableRequest(endpoint, withInterceptor: false).map(NETAuthToken.self).do { authToken in
             self.keychain.save(.authToken, value: authToken.token)
             self.keychain.save(.userId, value: authToken.userId)
-        }).mapToVoid().materialize()
-    }
-    
-    public func registration(_ data: RegistrationData) -> Observable<Event<Void>> {
-        guard let data = data.networkModel.encoded else { return .error(CommonError.encoding) }
-        let endpoint = AuthAPI.registration(data)
-        return network.observableRequest(endpoint).map(NETUser.self).save().mapToVoid().materialize()
-    }
-    
-    public func logout() -> Observable<Event<Void>> {
-        .deferred {
-            self.keychain.deleteAll()
-            self.database.deleteAll()
-            return Observable.just(()).materialize()
         }
     }
     
+    public func read() -> AuthToken? {
+        guard let userId = keychain.get(.userId), let token = keychain.get(.authToken) else { return nil }
+        return AuthToken(userId: userId, token: token)
+    }
+    
+    public func delete() -> Observable<Void> {
+        .deferred {
+            self.keychain.deleteAll()
+            self.database.deleteAll()
+            return .just(())
+        }
+    }
 }

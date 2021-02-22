@@ -12,11 +12,11 @@ protocol HasUserDefaultsProvider {
     var userDefaultsProvider: UserDefaultsProviderType { get }
 }
 
-public enum UserDefaultsCoding: String, CaseIterable {
+enum UserDefaultsCoding: String, CaseIterable {
     case hasRunBefore
 }
 
-public protocol UserDefaultsProviderType {
+protocol UserDefaultsProviderType {
 
     /// Save the given key/value combination
     func save<T>(_ key: UserDefaultsCoding, value: T)

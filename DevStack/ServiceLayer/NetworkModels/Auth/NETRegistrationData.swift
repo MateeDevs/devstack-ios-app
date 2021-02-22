@@ -6,7 +6,7 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-public struct NETRegistrationData: Encodable {
+struct NETRegistrationData: Encodable {
     let email: String
     let pass: String
     let firstName: String

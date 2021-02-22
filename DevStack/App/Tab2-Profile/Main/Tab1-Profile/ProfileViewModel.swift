@@ -12,7 +12,7 @@ import RxSwift
 
 final class ProfileViewModel: ViewModel, ViewModelType {
     
-    typealias Dependencies = HasUserRepository & HasAuthRepository & HasLocationRepository
+    typealias Dependencies = HasGetProfileUseCase & HasRefreshProfileUseCase & HasLogoutUseCase & HasGetCurrentLocationUseCase
     
     let input: Input
     let output: Output
@@ -48,18 +48,18 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         
         let activity = ActivityIndicator()
 
-        let profile = dependencies.userRepository.getProfile().share(replay: 1)
-        let refreshProfile = dependencies.userRepository.refreshProfile().trackActivity(activity).share()
+        let profile = dependencies.getProfileUseCase.execute().share(replay: 1)
+        let refreshProfile = dependencies.refreshProfileUseCase.execute().trackActivity(activity).share()
         
         let isRefreshing = Observable<Bool>.merge(
             activity.asObservable(),
             refreshProfile.map { _ in false }
         )
         
-        let currentLocation = dependencies.locationRepository.getCurrentLocation().take(1)
+        let currentLocation = dependencies.getCurrentLocationUseCase.execute().take(1)
 
         let logout = logoutButtonTaps.flatMapLatest { _ -> Observable<Event<Void>> in
-            return dependencies.authRepository.logout()
+            return dependencies.logoutUseCase.execute()
         }.share()
 
         // MARK: Setup outputs
