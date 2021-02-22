@@ -38,7 +38,7 @@ public class AuthRepository {
     
     public func registration(_ data: RegistrationData) -> Observable<Event<Void>> {
         let endpoint = AuthAPI.registration(data)
-        return network.observableRequest(endpoint).map(NETUser.self).map { $0.domainModel }.save().mapToVoid().materialize()
+        return network.observableRequest(endpoint).map(NETUser.self).save().mapToVoid().materialize()
     }
     
     public func logout() -> Observable<Event<Void>> {

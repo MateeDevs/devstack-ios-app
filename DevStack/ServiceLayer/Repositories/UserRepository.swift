@@ -32,7 +32,7 @@ public class UserRepository {
     
     public func refreshUsersForPage(_ page: Int) -> Observable<Event<Int>> {
         let endpoint = UserAPI.getUsersForPage(page)
-        return network.observableRequest(endpoint).map([NETUser].self, atKeyPath: "data").map { $0.map { $0.domainModel } }.save().map { $0.count }.materialize()
+        return network.observableRequest(endpoint).map([NETUser].self, atKeyPath: "data").save().map { $0.count }.materialize()
     }
     
     public func getUserById(_ id: String) -> Observable<User> {
@@ -41,12 +41,12 @@ public class UserRepository {
     
     public func refreshUserById(_ id: String) -> Observable<Event<Void>> {
         let endpoint = UserAPI.getUserById(id)
-        return network.observableRequest(endpoint).map(NETUser.self).map { $0.domainModel }.save().mapToVoid().materialize()
+        return network.observableRequest(endpoint).map(NETUser.self).save().mapToVoid().materialize()
     }
     
     public func updateUser(_ user: User) -> Observable<Event<Void>> {
         let endpoint = UserAPI.updateUser(user)
-        return network.observableRequest(endpoint).map(NETUser.self).map { $0.domainModel }.save().mapToVoid().materialize()
+        return network.observableRequest(endpoint).map(NETUser.self).save().mapToVoid().materialize()
     }
 
     public func increaseCounter() -> Observable<Event<Void>> {

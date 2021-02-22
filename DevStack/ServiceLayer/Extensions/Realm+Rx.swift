@@ -11,7 +11,10 @@ import RxRealm
 import RxSwift
 
 extension Reactive where Base == Realm {
-    func save<T>(_ object: T, model: UpdateModel = .apiModel) -> Observable<T> where T: DatabaseRepresentable, T.DatabaseModel: Object {
+    func save<T>(
+        _ object: T,
+        model: UpdateModel = .apiModel
+    ) -> Observable<T> where T: DatabaseRepresentable, T.DatabaseModel: Object {
         .create { observer in
             do {
                 try self.base.write {
@@ -26,7 +29,10 @@ extension Reactive where Base == Realm {
         }
     }
     
-    func save<T>(_ objects: [T], model: UpdateModel = .apiModel) -> Observable<[T]> where T: DatabaseRepresentable, T.DatabaseModel: Object {
+    func save<T>(
+        _ objects: [T],
+        model: UpdateModel = .apiModel
+    ) -> Observable<[T]> where T: DatabaseRepresentable, T.DatabaseModel: Object {
         .create { observer in
             do {
                 try self.base.write {
