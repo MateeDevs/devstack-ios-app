@@ -117,7 +117,7 @@
 		45571943249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571941249FF28900FB24CA /* UIView+SkeletonView+Rx.swift */; };
 		45571944249FF28900FB24CA /* UIView+SkeletonView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571941249FF28900FB24CA /* UIView+SkeletonView+Rx.swift */; };
 		4557195524A15B1F00FB24CA /* NetworkProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195424A15B1F00FB24CA /* NetworkProviderMock.swift */; };
-		4557195824A15C0200FB24CA /* AuthRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195724A15C0200FB24CA /* AuthRepositoryTests.swift */; };
+		4557195824A15C0200FB24CA /* AuthTokenRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195724A15C0200FB24CA /* AuthTokenRepositoryTests.swift */; };
 		4557195D24A15C3200FB24CA /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */; };
 		4558D30B20FCC8FF005BC325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4558D30A20FCC8FF005BC325 /* AppDelegate.swift */; };
 		456089C525DB386300997546 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456089C425DB386300997546 /* RepositoryError.swift */; };
@@ -240,6 +240,7 @@
 		457250EC25E46C8100D1B745 /* GetCurrentLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250EB25E46C8100D1B745 /* GetCurrentLocationUseCase.swift */; };
 		457250ED25E46C8100D1B745 /* GetCurrentLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250EB25E46C8100D1B745 /* GetCurrentLocationUseCase.swift */; };
 		457250EE25E46C8100D1B745 /* GetCurrentLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457250EB25E46C8100D1B745 /* GetCurrentLocationUseCase.swift */; };
+		4572512125E56CF400D1B745 /* PushNotificationsProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572512025E56CF400D1B745 /* PushNotificationsProviderMock.swift */; };
 		457FA18E241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
 		457FA18F241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
 		457FA190241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
@@ -674,7 +675,7 @@
 		4557194924A155ED00FB24CA /* DevStackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevStackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4557194D24A155ED00FB24CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4557195424A15B1F00FB24CA /* NetworkProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderMock.swift; sourceTree = "<group>"; };
-		4557195724A15C0200FB24CA /* AuthRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryTests.swift; sourceTree = "<group>"; };
+		4557195724A15C0200FB24CA /* AuthTokenRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenRepositoryTests.swift; sourceTree = "<group>"; };
 		4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		4558D30720FCC8FF005BC325 /* DevStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4558D30A20FCC8FF005BC325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -719,6 +720,7 @@
 		457250D125E4670400D1B745 /* PushNotificationsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsProvider.swift; sourceTree = "<group>"; };
 		457250E225E468BE00D1B745 /* HandlePushNotificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlePushNotificationUseCase.swift; sourceTree = "<group>"; };
 		457250EB25E46C8100D1B745 /* GetCurrentLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentLocationUseCase.swift; sourceTree = "<group>"; };
+		4572512025E56CF400D1B745 /* PushNotificationsProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsProviderMock.swift; sourceTree = "<group>"; };
 		457FA18D241EC44300EA7436 /* ErrorMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
 		4584E7F325D36481002335E3 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		4585A15C214FE3DE00186D7D /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
@@ -991,6 +993,7 @@
 				458C1ACC24A347E600549420 /* DatabaseProviderMock.swift */,
 				458C1AC824A28E8200549420 /* KeychainProviderMock.swift */,
 				4557195424A15B1F00FB24CA /* NetworkProviderMock.swift */,
+				4572512025E56CF400D1B745 /* PushNotificationsProviderMock.swift */,
 				458C1ACA24A3474C00549420 /* UserDefaultsProviderMock.swift */,
 			);
 			path = Mocks;
@@ -999,7 +1002,7 @@
 		4557195624A15BF200FB24CA /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				4557195724A15C0200FB24CA /* AuthRepositoryTests.swift */,
+				4557195724A15C0200FB24CA /* AuthTokenRepositoryTests.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -2389,8 +2392,9 @@
 				458C1ACB24A3474C00549420 /* UserDefaultsProviderMock.swift in Sources */,
 				454AC06524A221B300D6F367 /* ProviderDependency+Mock.swift in Sources */,
 				45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */,
+				4572512125E56CF400D1B745 /* PushNotificationsProviderMock.swift in Sources */,
 				4557195D24A15C3200FB24CA /* LoginViewModelTests.swift in Sources */,
-				4557195824A15C0200FB24CA /* AuthRepositoryTests.swift in Sources */,
+				4557195824A15C0200FB24CA /* AuthTokenRepositoryTests.swift in Sources */,
 				4557195524A15B1F00FB24CA /* NetworkProviderMock.swift in Sources */,
 				458C1AC924A28E8200549420 /* KeychainProviderMock.swift in Sources */,
 				458C1ACD24A347E600549420 /* DatabaseProviderMock.swift in Sources */,

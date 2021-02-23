@@ -27,7 +27,7 @@ struct ProviderDependency {
         databaseProvider: DatabaseProviderType,
         keychainProvider: KeychainProviderType,
         networkProvider: NetworkProviderType,
-        pushNotificationsProvider: PushNotificationsProvider,
+        pushNotificationsProvider: PushNotificationsProviderType,
         userDefaultsProvider: UserDefaultsProviderType
     ) {
         self.databaseProvider = databaseProvider

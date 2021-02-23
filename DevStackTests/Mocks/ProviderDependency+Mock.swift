@@ -16,12 +16,14 @@ extension ProviderDependency {
         databaseProvider: DatabaseProviderType = DatabaseProviderMock(),
         keychainProvider: KeychainProviderType = KeychainProviderMock(),
         networkProvider: NetworkProviderType = NetworkProviderMock(),
+        pushNotificationsProvider: PushNotificationsProviderType = PushNotificationsProviderMock(),
         userDefaultsProvider: UserDefaultsProviderType = UserDefaultsProviderMock()
     ) -> ProviderDependency {
         .init(
             databaseProvider: databaseProvider,
             keychainProvider: keychainProvider,
             networkProvider: networkProvider,
+            pushNotificationsProvider: pushNotificationsProvider,
             userDefaultsProvider: userDefaultsProvider
         )
     }
