@@ -96,7 +96,6 @@ FIXME
 - Mocking of network requests is based on [Moya stubbing provider](https://github.com/Moya/Moya/blob/master/docs/Testing.md)
 
 ## TODO
-- Use `latest` in dSYM sync when [fixed](https://github.com/fastlane/fastlane/issues/17474)
 - Use RxSwift 6 when Moya is ready - [PR](https://github.com/Moya/Moya/pull/2120)
 - Migrate to SPM when all used frameworks are ready - [PR](https://github.com/MateeDevs/devstack-ios-app/pull/85)
 - Refactor project structure according to the Clean Architecture principles (UseCases + DTO)

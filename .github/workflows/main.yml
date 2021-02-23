@@ -55,9 +55,7 @@ jobs:
         env:
           APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
           SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
-        run: |
-          bundle exec fastlane upload_testflight_alpha
-          bundle exec fastlane dsym_alpha
+        run: bundle exec fastlane upload_testflight_alpha
 
   # deploy-beta:
   #   name: Deploy beta
@@ -69,9 +67,7 @@ jobs:
   #       env:
   #         APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
   #         SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
-  #       run: |
-  #         bundle exec fastlane upload_testflight_beta
-  #         bundle exec fastlane dsym_beta
+  #       run: bundle exec fastlane upload_testflight_beta
 
   # deploy-production:
   #   name: Deploy production
@@ -83,6 +79,4 @@ jobs:
   #       env:
   #         APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
   #         SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
-  #       run: |
-  #         bundle exec fastlane upload_testflight_production
-  #         bundle exec fastlane dsym_production
+  #       run: bundle exec fastlane upload_testflight_production
