@@ -15,6 +15,10 @@ public extension ObservableType {
         return map { _ in Void() }
     }
     
+    func mapToEmpty() -> Observable<Element> {
+        flatMap { _ -> Observable<Element> in Observable.empty() }
+    }
+    
     /// Helper that just completes on error
     func asDriver() -> Driver<Element> {
         asDriver { _ in

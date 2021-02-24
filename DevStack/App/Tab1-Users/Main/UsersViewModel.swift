@@ -11,7 +11,9 @@ import RxSwift
 
 final class UsersViewModel: ViewModel, ViewModelType {
     
-    typealias Dependencies = HasUserRepository
+    typealias Dependencies =
+        HasGetUsersUseCase &
+        HasRefreshUsersUseCase
 
     let input: Input
     let output: Output
@@ -38,12 +40,12 @@ final class UsersViewModel: ViewModel, ViewModelType {
 
         // MARK: Transformations
         
-        let users = dependencies.userRepository.getUsers().share(replay: 1)
+        let users = dependencies.getUsersUseCase.execute().share(replay: 1)
         
         let activity = ActivityIndicator()
         
         let refreshUsers = page.flatMap { page -> Observable<Event<Int>> in
-            dependencies.userRepository.refreshUsersForPage(page).trackActivity(activity)
+            dependencies.refreshUsersUseCase.execute(page: page).trackActivity(activity)
         }.share()
         
         let isRefreshing = Observable<Bool>.merge(

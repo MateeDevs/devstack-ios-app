@@ -23,80 +23,24 @@ enum UpdateModel {
 
 extension ObservableType {
     
-    ///
     /// Transformation that saves an object to the database.
-    ///
-    /// - parameter setPrimaryKey: Optional parameter to set object's primary key (useful for foreign key).
-    /// - parameter primaryKeyName: Optional parameter to set alternate primary key name (default is "id").
-    /// - parameter model: Specifies which properties should be updated.
-    /// - returns: Observable which emits saved object.
-    ///
-    func save<T: Object>(
-        setPrimaryKey: String? = nil,
-        primaryKeyName: String = "id",
+    func save<T>(
         model: UpdateModel = .apiModel
-    ) -> Observable<T> where Element == T {
-        flatMap({ object -> Observable<T> in
-            if let id = setPrimaryKey {
-                object[primaryKeyName] = id
-            }
+    ) -> Observable<T> where T: DatabaseRepresentable, T.DatabaseModel: Object, T == Element {
+        flatMap { object -> Observable<T> in
             guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
             return realm.rx.save(object, model: model)
-        })
+        }
     }
     
-    ///
     /// Transformation that saves an array of objects to the database.
-    ///
-    /// - parameter model: Specifies which properties should be updated.
-    /// - returns: Observable which emits saved array.
-    ///
-    func save<T: Object>(model: UpdateModel = .apiModel) -> Observable<[T]> where Element == [T] {
-        flatMap({ objects -> Observable<[T]> in
+    func save<T>(
+        model: UpdateModel = .apiModel
+    ) -> Observable<[T]> where T: DatabaseRepresentable, T.DatabaseModel: Object, [T] == Element {
+        flatMap { objects -> Observable<[T]> in
             guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
             return realm.rx.save(objects, model: model)
-        })
-    }
-    
-    ///
-    /// Transformation that append an object to a given list and saves it to the database.
-    ///
-    /// - parameter list: List that will be extented with new object.
-    /// - parameter setPrimaryKey: Optional parameter to set object's primary key (useful for foreign key).
-    /// - parameter primaryKeyName: Optional parameter to set alternate primary key name (default is "id").
-    /// - parameter model: Specifies which properties should be updated.
-    /// - returns: Observable which emits saved object.
-    ///
-    func appendToList<T: Object>(
-        _ list: List<T>,
-        setPrimaryKey: String? = nil,
-        primaryKeyName: String = "id",
-        model: UpdateModel = .apiModel
-    ) -> Observable<T> where Element == T {
-        flatMap({ object -> Observable<T> in
-            if let id = setPrimaryKey {
-                object[primaryKeyName] = id
-            }
-            guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
-            return realm.rx.appendToList(list, objects: [object], model: model).map { _ in object }
-        })
-    }
-    
-    ///
-    /// Transformation that append all objects from an array to a given list and saves it to the database.
-    ///
-    /// - parameter list: List that will be extented with new objects.
-    /// - parameter model: Specifies which properties should be updated.
-    /// - returns: Observable which emits saved array.
-    ///
-    func appendToList<T: Object>(
-        _ list: List<T>,
-        model: UpdateModel = .apiModel
-    ) -> Observable<[T]> where Element == [T] {
-        flatMap({ objects -> Observable<[T]> in
-            guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
-            return realm.rx.appendToList(list, objects: objects, model: model).map { _ in objects }
-        })
+        }
     }
     
 }

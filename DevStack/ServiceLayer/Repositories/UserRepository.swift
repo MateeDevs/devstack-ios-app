@@ -14,7 +14,10 @@ public protocol HasUserRepository {
 
 public class UserRepository {
     
-    typealias Dependencies = HasDatabaseProvider & HasKeychainProvider & HasNetworkProvider
+    typealias Dependencies =
+        HasDatabaseProvider &
+        HasKeychainProvider &
+        HasNetworkProvider
 
     private let database: DatabaseProviderType
     private let keychain: KeychainProviderType
@@ -26,56 +29,31 @@ public class UserRepository {
         self.network = dependencies.networkProvider
     }
     
-    public func getUsers() -> Observable<[User]> {
-        return database.observableCollection(User.self, sortBy: "id")
+    public func create(_ data: RegistrationData) -> Observable<User> {
+        guard let data = data.networkModel.encoded else { return .error(CommonError.encoding) }
+        let endpoint = AuthAPI.registration(data)
+        return network.observableRequest(endpoint).map(NETUser.self).save()
     }
     
-    public func refreshUsersForPage(_ page: Int) -> Observable<Event<Int>> {
-        let endpoint = UserAPI.getUsersForPage(page)
-        return network.observableRequest(endpoint).map([User].self, atKeyPath: "data").save().map { $0.count }.materialize()
-    }
-    
-    public func getUserById(_ id: String) -> Observable<User> {
-        return database.observableObject(User.self, id: id)
-    }
-    
-    public func refreshUserById(_ id: String) -> Observable<Event<Void>> {
+    public func read(_ sourceType: SourceType, id: String) -> Observable<User> {
+        let db = database.observableObject(DBUser.self, id: id)
         let endpoint = UserAPI.getUserById(id)
-        return network.observableRequest(endpoint).map(User.self).save().mapToVoid().materialize()
+        let net = network.observableRequest(endpoint).map(NETUser.self).save()
+        return sourceType.result(db: db, net: net)
     }
     
-    public func updateUser(_ user: User) -> Observable<Event<Void>> {
-        let endpoint = UserAPI.updateUser(user)
-        return network.observableRequest(endpoint).map(User.self).save().mapToVoid().materialize()
-    }
-
-    public func increaseCounter() -> Observable<Event<Void>> {
-        return getProfile().take(1).flatMap { user -> Observable<User> in
-            let userCopy = User(value: user)
-            userCopy.counter += 1
-            return .just(userCopy)
-        }.save(model: .fullModel).mapToVoid().materialize()
-    }
-
-    public func decreaseCounter() -> Observable<Event<Void>> {
-        return getProfile().take(1).flatMap { user -> Observable<User> in
-            let userCopy = User(value: user)
-            userCopy.counter -= 1
-            return .just(userCopy)
-        }.save(model: .fullModel).mapToVoid().materialize()
-    }
-
-    public func getProfileId() -> String? {
-        return keychain.get(.userId)
+    public func list(_ sourceType: SourceType, page: Int = 0, sortBy: String? = nil) -> Observable<[User]> {
+        let db = database.observableCollection(DBUser.self, sortBy: sortBy)
+        let endpoint = UserAPI.getUsersForPage(page)
+        let net = network.observableRequest(endpoint).map([NETUser].self, atKeyPath: "data").save()
+        return sourceType.result(db: db, net: net)
     }
     
-    public func getProfile() -> Observable<User> {
-        guard let userId = getProfileId() else { return .error(CommonError.noUserId) }
-        return getUserById(userId)
-    }
-    
-    public func refreshProfile() -> Observable<Event<Void>> {
-        guard let userId = getProfileId() else { return .error(CommonError.noUserId) }
-        return refreshUserById(userId)
+    public func update(_ sourceType: SourceType, user: User) -> Observable<User> {
+        let db = database.save(user, model: .fullModel)
+        guard let data = user.networkModel.encoded else { return .error(CommonError.encoding) }
+        let endpoint = UserAPI.updateUserById(user.id, data: data)
+        let net = network.observableRequest(endpoint).map(NETUser.self).save()
+        return sourceType.result(db: db, net: net)
     }
 }

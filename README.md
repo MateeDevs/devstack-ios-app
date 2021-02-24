@@ -98,5 +98,6 @@ FIXME
 ## TODO
 - Use RxSwift 6 when Moya is ready - [PR](https://github.com/Moya/Moya/pull/2120)
 - Migrate to SPM when all used frameworks are ready - [PR](https://github.com/MateeDevs/devstack-ios-app/pull/85)
-- Refactor project structure according to the Clean Architecture principles (UseCases + DTO)
+- Split project into Data + Domain + Presentation projects to ensure Clean Architecture boundaries
 - Migrate to SwiftUI + Combine when the time is right
+- More tests 🙃

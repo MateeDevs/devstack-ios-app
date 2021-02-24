@@ -1,5 +1,5 @@
 //
-//  AuthRepositoryTests.swift
+//  AuthTokenRepositoryTests.swift
 //  DevStack
 //
 //  Created by Petr Chmelar on 19/06/2020.
@@ -12,30 +12,30 @@ import XCTest
 
 @testable import A_DevStack
 
-class AuthRepositoryTests: BaseTestCase {
+class AuthTokenRepositoryTests: BaseTestCase {
 
     // MARK: Tests for login
 
-    func testLoginRequestDidFire() {
+    func testCreateRequestDidFire() {
         let networkProvider = NetworkProviderMock()
         let providers: ProviderDependency = .mock(networkProvider: networkProvider)
-        let authRepository = AuthRepository(dependencies: providers)
+        let authRepository = AuthTokenRepository(dependencies: providers)
 
         let output = scheduler.createObserver(Bool.self)
-        authRepository.login(email: "email", password: "pass")
+        authRepository.create(LoginData(email: "email", pass: "pass"))
             .asDriver().map { _ in true }.drive(output).disposed(by: disposeBag)
         scheduler.start()
 
         XCTAssertEqual(networkProvider.firedRequests, 1)
     }
 
-    func testLoginKeychainSavedKeys() {
+    func testCreateKeychainSavedKeys() {
         let keychainProvider = KeychainProviderMock()
         let providers: ProviderDependency = .mock(keychainProvider: keychainProvider)
-        let authRepository = AuthRepository(dependencies: providers)
+        let authRepository = AuthTokenRepository(dependencies: providers)
 
         let output = scheduler.createObserver(Bool.self)
-        authRepository.login(email: "email", password: "pass")
+        authRepository.create(LoginData(email: "email", pass: "pass"))
             .asDriver().map { _ in true }.drive(output).disposed(by: disposeBag)
         scheduler.start()
 

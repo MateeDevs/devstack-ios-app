@@ -13,12 +13,12 @@ protocol HasKeychainProvider {
     var keychainProvider: KeychainProviderType { get }
 }
 
-public enum KeychainCoding: String, CaseIterable {
+enum KeychainCoding: String, CaseIterable {
     case authToken
     case userId
 }
 
-public protocol KeychainProviderType {
+protocol KeychainProviderType {
 
     /// Save the given key/value combination
     func save(_ key: KeychainCoding, value: String)
