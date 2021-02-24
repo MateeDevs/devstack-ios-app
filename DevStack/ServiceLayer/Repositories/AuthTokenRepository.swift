@@ -16,7 +16,10 @@ public protocol HasAuthTokenRepository {
 
 public class AuthTokenRepository {
 
-    typealias Dependencies = HasDatabaseProvider & HasKeychainProvider & HasNetworkProvider
+    typealias Dependencies =
+        HasDatabaseProvider &
+        HasKeychainProvider &
+        HasNetworkProvider
 
     private let database: DatabaseProviderType
     private let keychain: KeychainProviderType

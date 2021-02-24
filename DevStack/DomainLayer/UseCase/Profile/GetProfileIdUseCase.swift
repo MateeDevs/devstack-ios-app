@@ -12,7 +12,9 @@ public protocol HasGetProfileIdUseCase {
 
 public struct GetProfileIdUseCase {
     
-    typealias Dependencies = HasAuthTokenRepository & HasUserRepository
+    typealias Dependencies =
+        HasAuthTokenRepository &
+        HasUserRepository
     
     private let dependencies: Dependencies
     

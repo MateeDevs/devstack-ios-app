@@ -23,6 +23,6 @@ public struct GetUsersUseCase {
     }
     
     public func execute() -> Observable<[User]> {
-        dependencies.userRepository.read(.local, sortBy: "id")
+        dependencies.userRepository.list(.local, sortBy: "id")
     }
 }

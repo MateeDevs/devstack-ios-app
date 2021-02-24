@@ -11,7 +11,9 @@ import RxSwift
 
 final class UsersViewModel: ViewModel, ViewModelType {
     
-    typealias Dependencies = HasGetUsersUseCase & HasRefreshUsersUseCase
+    typealias Dependencies =
+        HasGetUsersUseCase &
+        HasRefreshUsersUseCase
 
     let input: Input
     let output: Output

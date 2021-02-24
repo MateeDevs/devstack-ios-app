@@ -14,7 +14,9 @@ public protocol HasUpdateProfileCounterUseCase {
 
 public struct UpdateProfileCounterUseCase {
     
-    typealias Dependencies = HasAuthTokenRepository & HasUserRepository
+    typealias Dependencies =
+        HasAuthTokenRepository &
+        HasUserRepository
     
     private let dependencies: Dependencies
     

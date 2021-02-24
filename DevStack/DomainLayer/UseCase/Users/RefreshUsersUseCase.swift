@@ -23,6 +23,6 @@ public struct RefreshUsersUseCase {
     }
     
     public func execute(page: Int) -> Observable<Event<Int>> {
-        dependencies.userRepository.read(.remote, page: page).map { $0.count }.materialize()
+        dependencies.userRepository.list(.remote, page: page).map { $0.count }.materialize()
     }
 }

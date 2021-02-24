@@ -14,7 +14,9 @@ public protocol HasRefreshProfileUseCase {
 
 public struct RefreshProfileUseCase {
     
-    typealias Dependencies = HasAuthTokenRepository & HasUserRepository
+    typealias Dependencies =
+        HasAuthTokenRepository &
+        HasUserRepository
     
     private let dependencies: Dependencies
     

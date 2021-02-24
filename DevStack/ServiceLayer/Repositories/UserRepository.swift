@@ -14,7 +14,10 @@ public protocol HasUserRepository {
 
 public class UserRepository {
     
-    typealias Dependencies = HasDatabaseProvider & HasKeychainProvider & HasNetworkProvider
+    typealias Dependencies =
+        HasDatabaseProvider &
+        HasKeychainProvider &
+        HasNetworkProvider
 
     private let database: DatabaseProviderType
     private let keychain: KeychainProviderType
@@ -39,7 +42,7 @@ public class UserRepository {
         return sourceType.result(db: db, net: net)
     }
     
-    public func read(_ sourceType: SourceType, page: Int = 0, sortBy: String? = nil) -> Observable<[User]> {
+    public func list(_ sourceType: SourceType, page: Int = 0, sortBy: String? = nil) -> Observable<[User]> {
         let db = database.observableCollection(DBUser.self, sortBy: sortBy)
         let endpoint = UserAPI.getUsersForPage(page)
         let net = network.observableRequest(endpoint).map([NETUser].self, atKeyPath: "data").save()

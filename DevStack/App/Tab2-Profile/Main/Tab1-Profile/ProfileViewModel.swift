@@ -12,7 +12,11 @@ import RxSwift
 
 final class ProfileViewModel: ViewModel, ViewModelType {
     
-    typealias Dependencies = HasGetProfileUseCase & HasRefreshProfileUseCase & HasLogoutUseCase & HasGetCurrentLocationUseCase
+    typealias Dependencies =
+        HasGetProfileUseCase &
+        HasRefreshProfileUseCase &
+        HasLogoutUseCase &
+        HasGetCurrentLocationUseCase
     
     let input: Input
     let output: Output
