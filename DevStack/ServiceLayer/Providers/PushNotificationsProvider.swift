@@ -7,6 +7,7 @@
 //
 
 import Firebase
+import UIKit
 import UserNotifications
 
 protocol HasPushNotificationsProvider {

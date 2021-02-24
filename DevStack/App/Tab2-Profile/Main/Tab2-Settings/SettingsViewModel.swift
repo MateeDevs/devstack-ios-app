@@ -8,6 +8,7 @@
 
 import RxCocoa
 import RxSwift
+import UIKit
 
 final class SettingsViewModel: ViewModel, ViewModelType {
     

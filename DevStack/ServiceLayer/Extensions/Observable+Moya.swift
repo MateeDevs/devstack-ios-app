@@ -6,6 +6,7 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import Foundation
 import Moya
 import RxSwift
 
