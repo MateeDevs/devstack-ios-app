@@ -93,7 +93,7 @@ FIXME
 
 ## TODO
 - Use RxSwift 6 when Moya is ready - [PR](https://github.com/Moya/Moya/pull/2120)
-- Migrate to SPM when all used frameworks are ready - [PR](https://github.com/MateeDevs/devstack-ios-app/pull/85)
 - Split project into Data + Domain + Presentation projects to ensure Clean Architecture boundaries
+- Use RxTest through SPM when fixed - [related issue](https://bugs.swift.org/browse/SR-12303)
 - Migrate to SwiftUI + Combine when the time is right
 - More tests 🙃

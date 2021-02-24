@@ -493,13 +493,24 @@
 		45DE1D9821CAACC300C455C4 /* UserList.json in Resources */ = {isa = PBXBuildFile; fileRef = 45DE1D9721CAACC300C455C4 /* UserList.json */; };
 		45DE1D9921CAACC300C455C4 /* UserList.json in Resources */ = {isa = PBXBuildFile; fileRef = 45DE1D9721CAACC300C455C4 /* UserList.json */; };
 		45DE1D9A21CAACC300C455C4 /* UserList.json in Resources */ = {isa = PBXBuildFile; fileRef = 45DE1D9721CAACC300C455C4 /* UserList.json */; };
-		45E100BF25E6A9780082CABA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45BA227C25AE83BF005FDF5F /* RxSwift */; };
-		45E100C025E6A9780082CABA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 45BA227E25AE83C3005FDF5F /* RxCocoa */; };
-		45E100C125E6A9780082CABA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45BA228025AE83CB005FDF5F /* RxSwift */; };
-		45E100C225E6A9780082CABA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 45BA228225AE83CE005FDF5F /* RxCocoa */; };
 		45E100C925E6ABC70082CABA /* GetCurrentLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100C825E6ABC70082CABA /* GetCurrentLocationUseCase.swift */; };
 		45E100CA25E6ABC70082CABA /* GetCurrentLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100C825E6ABC70082CABA /* GetCurrentLocationUseCase.swift */; };
 		45E100CB25E6ABC70082CABA /* GetCurrentLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100C825E6ABC70082CABA /* GetCurrentLocationUseCase.swift */; };
+		45E100F325E6B2A00082CABA /* XCTest+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100E625E6B2A00082CABA /* XCTest+Rx.swift */; };
+		45E100F525E6B2A00082CABA /* RxTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100E825E6B2A00082CABA /* RxTest.swift */; };
+		45E100F625E6B2A00082CABA /* TestableObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100E925E6B2A00082CABA /* TestableObserver.swift */; };
+		45E100F725E6B2A00082CABA /* HotObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100EA25E6B2A00082CABA /* HotObservable.swift */; };
+		45E100F825E6B2A00082CABA /* Event+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100EB25E6B2A00082CABA /* Event+Equatable.swift */; };
+		45E100F925E6B2A00082CABA /* TestableObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100EC25E6B2A00082CABA /* TestableObservable.swift */; };
+		45E100FA25E6B2A00082CABA /* Recorded+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100ED25E6B2A00082CABA /* Recorded+Event.swift */; };
+		45E100FB25E6B2A00082CABA /* Any+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100EE25E6B2A00082CABA /* Any+Equatable.swift */; };
+		45E100FC25E6B2A00082CABA /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100EF25E6B2A00082CABA /* Deprecated.swift */; };
+		45E100FD25E6B2A00082CABA /* Recorded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100F025E6B2A00082CABA /* Recorded.swift */; };
+		45E100FE25E6B2A00082CABA /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100F125E6B2A00082CABA /* Subscription.swift */; };
+		45E100FF25E6B2A00082CABA /* ColdObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100F225E6B2A00082CABA /* ColdObservable.swift */; };
+		45E1011325E6B2DC0082CABA /* TestScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1011125E6B2DB0082CABA /* TestScheduler.swift */; };
+		45E1011425E6B2DC0082CABA /* TestSchedulerVirtualTimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1011225E6B2DC0082CABA /* TestSchedulerVirtualTimeConverter.swift */; };
+		45E1012525E6B45C0082CABA /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1012425E6B45C0082CABA /* Bag.swift */; };
 		45E1E619221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1E618221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift */; };
 		45E1E61A221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1E618221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift */; };
 		45E1E61B221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1E618221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift */; };
@@ -838,6 +849,21 @@
 		45DE1D9321CA9CA300C455C4 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		45DE1D9721CAACC300C455C4 /* UserList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserList.json; sourceTree = "<group>"; };
 		45E100C825E6ABC70082CABA /* GetCurrentLocationUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentLocationUseCase.swift; sourceTree = "<group>"; };
+		45E100E625E6B2A00082CABA /* XCTest+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+Rx.swift"; sourceTree = "<group>"; };
+		45E100E825E6B2A00082CABA /* RxTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTest.swift; sourceTree = "<group>"; };
+		45E100E925E6B2A00082CABA /* TestableObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestableObserver.swift; sourceTree = "<group>"; };
+		45E100EA25E6B2A00082CABA /* HotObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotObservable.swift; sourceTree = "<group>"; };
+		45E100EB25E6B2A00082CABA /* Event+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+Equatable.swift"; sourceTree = "<group>"; };
+		45E100EC25E6B2A00082CABA /* TestableObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestableObservable.swift; sourceTree = "<group>"; };
+		45E100ED25E6B2A00082CABA /* Recorded+Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recorded+Event.swift"; sourceTree = "<group>"; };
+		45E100EE25E6B2A00082CABA /* Any+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Any+Equatable.swift"; sourceTree = "<group>"; };
+		45E100EF25E6B2A00082CABA /* Deprecated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deprecated.swift; sourceTree = "<group>"; };
+		45E100F025E6B2A00082CABA /* Recorded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorded.swift; sourceTree = "<group>"; };
+		45E100F125E6B2A00082CABA /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		45E100F225E6B2A00082CABA /* ColdObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColdObservable.swift; sourceTree = "<group>"; };
+		45E1011125E6B2DB0082CABA /* TestScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestScheduler.swift; sourceTree = "<group>"; };
+		45E1011225E6B2DC0082CABA /* TestSchedulerVirtualTimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSchedulerVirtualTimeConverter.swift; sourceTree = "<group>"; };
+		45E1012425E6B45C0082CABA /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		45E1E618221D5A2A006C84D1 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
 		45E1E61D221DA9EE006C84D1 /* LocalizedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTextView.swift; sourceTree = "<group>"; };
 		45E8A49A220AD4CB003F7502 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -932,14 +958,12 @@
 				45840CCF25ACE8F000DFC729 /* SkeletonView in Frameworks */,
 				459EF41225BF6EEF00C9DAC0 /* Atlantis in Frameworks */,
 				45840CB825ACE7B300DFC729 /* RealmSwift in Frameworks */,
-				45E100C025E6A9780082CABA /* RxCocoa in Frameworks */,
 				4576CEE125ACF54F00218229 /* FirebaseAnalytics in Frameworks */,
 				457837E825BCF691008AB4B2 /* RxSwift in Frameworks */,
 				457837E625BCF691008AB4B2 /* RxCocoa in Frameworks */,
 				4576CEE525ACF54F00218229 /* FirebaseMessaging in Frameworks */,
 				45840CAD25ACE6A400DFC729 /* AlamofireImage in Frameworks */,
 				4576CEE325ACF54F00218229 /* FirebaseCrashlytics in Frameworks */,
-				45E100BF25E6A9780082CABA /* RxSwift in Frameworks */,
 				45840CA425ACE5F900DFC729 /* RxMoya in Frameworks */,
 				45840CA225ACE5F900DFC729 /* Moya in Frameworks */,
 			);
@@ -955,14 +979,12 @@
 				45840CD125ACE8F500DFC729 /* SkeletonView in Frameworks */,
 				459EF41825BF6F0200C9DAC0 /* Atlantis in Frameworks */,
 				45840CBC25ACE7B900DFC729 /* RealmSwift in Frameworks */,
-				45E100C225E6A9780082CABA /* RxCocoa in Frameworks */,
 				4576CEEB25ACF55800218229 /* FirebaseAnalytics in Frameworks */,
 				457837EC25BCF6A0008AB4B2 /* RxSwift in Frameworks */,
 				457837EA25BCF6A0008AB4B2 /* RxCocoa in Frameworks */,
 				4576CEEF25ACF55800218229 /* FirebaseMessaging in Frameworks */,
 				45840CAF25ACE6A700DFC729 /* AlamofireImage in Frameworks */,
 				4576CEED25ACF55800218229 /* FirebaseCrashlytics in Frameworks */,
-				45E100C125E6A9780082CABA /* RxSwift in Frameworks */,
 				45840CA825ACE5FD00DFC729 /* RxMoya in Frameworks */,
 				45840CA625ACE5FD00DFC729 /* Moya in Frameworks */,
 			);
@@ -1048,6 +1070,7 @@
 		4557194A24A155ED00FB24CA /* DevStackTests */ = {
 			isa = PBXGroup;
 			children = (
+				45E100E525E6B2780082CABA /* RxTest */,
 				4557195324A15B1100FB24CA /* Mocks */,
 				45FB498024A3D78600932918 /* Utilities */,
 				45FB498124A3D7A300932918 /* Tests */,
@@ -1681,6 +1704,52 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		45E100E525E6B2780082CABA /* RxTest */ = {
+			isa = PBXGroup;
+			children = (
+				45E1012225E6B4170082CABA /* Platform */,
+				45E1010825E6B2B20082CABA /* Schedulers */,
+				45E100EE25E6B2A00082CABA /* Any+Equatable.swift */,
+				45E100F225E6B2A00082CABA /* ColdObservable.swift */,
+				45E100EF25E6B2A00082CABA /* Deprecated.swift */,
+				45E100EB25E6B2A00082CABA /* Event+Equatable.swift */,
+				45E100EA25E6B2A00082CABA /* HotObservable.swift */,
+				45E100F025E6B2A00082CABA /* Recorded.swift */,
+				45E100ED25E6B2A00082CABA /* Recorded+Event.swift */,
+				45E100E825E6B2A00082CABA /* RxTest.swift */,
+				45E100F125E6B2A00082CABA /* Subscription.swift */,
+				45E100EC25E6B2A00082CABA /* TestableObservable.swift */,
+				45E100E925E6B2A00082CABA /* TestableObserver.swift */,
+				45E100E625E6B2A00082CABA /* XCTest+Rx.swift */,
+			);
+			path = RxTest;
+			sourceTree = "<group>";
+		};
+		45E1010825E6B2B20082CABA /* Schedulers */ = {
+			isa = PBXGroup;
+			children = (
+				45E1011125E6B2DB0082CABA /* TestScheduler.swift */,
+				45E1011225E6B2DC0082CABA /* TestSchedulerVirtualTimeConverter.swift */,
+			);
+			path = Schedulers;
+			sourceTree = "<group>";
+		};
+		45E1012225E6B4170082CABA /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				45E1012325E6B43D0082CABA /* DataStructures */,
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		45E1012325E6B43D0082CABA /* DataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				45E1012425E6B45C0082CABA /* Bag.swift */,
+			);
+			path = DataStructures;
+			sourceTree = "<group>";
+		};
 		45E1E61C221D5C55006C84D1 /* LocationRepository */ = {
 			isa = PBXGroup;
 			children = (
@@ -1946,8 +2015,6 @@
 				457837E525BCF691008AB4B2 /* RxCocoa */,
 				457837E725BCF691008AB4B2 /* RxSwift */,
 				459EF41125BF6EEF00C9DAC0 /* Atlantis */,
-				45BA227C25AE83BF005FDF5F /* RxSwift */,
-				45BA227E25AE83C3005FDF5F /* RxCocoa */,
 			);
 			productName = "A-DevStack";
 			productReference = 459761D720FDD60A0034DE29 /* A-DevStack.app */;
@@ -1985,8 +2052,6 @@
 				457837E925BCF6A0008AB4B2 /* RxCocoa */,
 				457837EB25BCF6A0008AB4B2 /* RxSwift */,
 				459EF41725BF6F0200C9DAC0 /* Atlantis */,
-				45BA228025AE83CB005FDF5F /* RxSwift */,
-				45BA228225AE83CE005FDF5F /* RxCocoa */,
 			);
 			productName = "B-DevStack";
 			productReference = 459761E520FDD61E0034DE29 /* B-DevStack.app */;
@@ -2035,7 +2100,6 @@
 				4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				457837DC25BCF3C5008AB4B2 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */,
-				45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 4558D30820FCC8FF005BC325 /* Products */;
 			projectDirPath = "";
@@ -2353,13 +2417,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				458C1ACB24A3474C00549420 /* UserDefaultsProviderMock.swift in Sources */,
+				45E100FD25E6B2A00082CABA /* Recorded.swift in Sources */,
 				454AC06524A221B300D6F367 /* ProviderDependency+Mock.swift in Sources */,
 				45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */,
+				45E100F525E6B2A00082CABA /* RxTest.swift in Sources */,
+				45E100FA25E6B2A00082CABA /* Recorded+Event.swift in Sources */,
 				4572512125E56CF400D1B745 /* PushNotificationsProviderMock.swift in Sources */,
+				45E100FC25E6B2A00082CABA /* Deprecated.swift in Sources */,
+				45E100F625E6B2A00082CABA /* TestableObserver.swift in Sources */,
+				45E100FB25E6B2A00082CABA /* Any+Equatable.swift in Sources */,
 				4557195D24A15C3200FB24CA /* LoginViewModelTests.swift in Sources */,
+				45E1011325E6B2DC0082CABA /* TestScheduler.swift in Sources */,
 				4557195824A15C0200FB24CA /* AuthTokenRepositoryTests.swift in Sources */,
+				45E100F725E6B2A00082CABA /* HotObservable.swift in Sources */,
+				45E100F925E6B2A00082CABA /* TestableObservable.swift in Sources */,
+				45E100FF25E6B2A00082CABA /* ColdObservable.swift in Sources */,
+				45E100FE25E6B2A00082CABA /* Subscription.swift in Sources */,
 				4557195524A15B1F00FB24CA /* NetworkProviderMock.swift in Sources */,
 				458C1AC924A28E8200549420 /* KeychainProviderMock.swift in Sources */,
+				45E100F825E6B2A00082CABA /* Event+Equatable.swift in Sources */,
+				45E100F325E6B2A00082CABA /* XCTest+Rx.swift in Sources */,
+				45E1011425E6B2DC0082CABA /* TestSchedulerVirtualTimeConverter.swift in Sources */,
+				45E1012525E6B45C0082CABA /* Bag.swift in Sources */,
 				458C1ACD24A347E600549420 /* DatabaseProviderMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3375,14 +3454,6 @@
 				minimumVersion = 1.7.1;
 			};
 		};
-		45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -3590,26 +3661,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */;
 			productName = Atlantis;
-		};
-		45BA227C25AE83BF005FDF5F /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		45BA227E25AE83C3005FDF5F /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		45BA228025AE83CB005FDF5F /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		45BA228225AE83CE005FDF5F /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45C2D6D525AE81E90025157B /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
