@@ -8,6 +8,7 @@
 
 import RxCocoa
 import RxSwift
+import UIKit
 
 public extension Reactive where Base: UserImageView {
     /// Bindable sink for `placeholder` property

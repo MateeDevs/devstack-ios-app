@@ -19,7 +19,7 @@ jobs:
           clean: false
       - name: Pull Twine repo
         run: git -C $TWINE_FOLDER pull origin master
-      - name: Install Gems and Pods
+      - name: Setup tools
         run: ./scripts/setup.sh
       - name: Generate version and build numbers
         run: |
@@ -29,17 +29,17 @@ jobs:
         env:
           MATCH_PASSWORD: ${{ secrets.FASTLANE_MATCH_PASSWORD }}
           APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
-        run: bundle exec fastlane build_alpha
+        run: fastlane build_alpha
       # - name: Create a new Beta build
       #   env:
       #     MATCH_PASSWORD: ${{ secrets.FASTLANE_MATCH_PASSWORD }}
       #     APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
-      #   run: bundle exec fastlane build_beta
+      #   run: fastlane build_beta
       # - name: Create a new Production build
       #   env:
       #     MATCH_PASSWORD: ${{ secrets.FASTLANE_MATCH_PASSWORD }}
       #     APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
-      #   run: bundle exec fastlane build_production
+      #   run: fastlane build_production
       - name: Create and push git tag
         run: |
           git tag "$VERSION_NUMBER.$BUILD_NUMBER"
@@ -55,7 +55,7 @@ jobs:
         env:
           APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
           SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
-        run: bundle exec fastlane upload_testflight_alpha
+        run: fastlane upload_testflight_alpha
 
   # deploy-beta:
   #   name: Deploy beta
@@ -67,7 +67,7 @@ jobs:
   #       env:
   #         APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
   #         SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
-  #       run: bundle exec fastlane upload_testflight_beta
+  #       run: fastlane upload_testflight_beta
 
   # deploy-production:
   #   name: Deploy production
@@ -79,4 +79,4 @@ jobs:
   #       env:
   #         APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
   #         SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
-  #       run: bundle exec fastlane upload_testflight_production
+  #       run: fastlane upload_testflight_production

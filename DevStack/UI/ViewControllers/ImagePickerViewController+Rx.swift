@@ -8,6 +8,7 @@
 
 import RxCocoa
 import RxSwift
+import UIKit
 
 public extension Reactive where Base: ImagePickerViewController {
     /// Reactive wrapper for `delegate`

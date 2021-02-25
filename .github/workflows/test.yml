@@ -17,7 +17,7 @@ jobs:
           clean: false
       - name: Pull Twine repo
         run: git -C $TWINE_FOLDER pull origin master
-      - name: Install Gems and Pods
+      - name: Setup tools
         run: ./scripts/setup.sh
       - name: Run tests
-        run: bundle exec fastlane test_alpha
+        run: fastlane test_alpha

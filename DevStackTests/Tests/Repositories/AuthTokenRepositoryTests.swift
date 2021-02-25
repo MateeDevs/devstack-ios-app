@@ -7,7 +7,6 @@
 //
 
 import RxSwift
-import RxTest
 import XCTest
 
 @testable import A_DevStack

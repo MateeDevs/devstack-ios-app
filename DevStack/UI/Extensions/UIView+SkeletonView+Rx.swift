@@ -9,6 +9,7 @@
 import RxCocoa
 import RxSwift
 import SkeletonView
+import UIKit
 
 public extension Reactive where Base: UIView {
     /// Bindable sink for `showSkeleton()`, `hideSkeleton()` methods

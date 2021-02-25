@@ -8,7 +8,6 @@
 
 import RxCocoa
 import RxSwift
-import RxTest
 import XCTest
 
 class BaseTestCase: XCTestCase {

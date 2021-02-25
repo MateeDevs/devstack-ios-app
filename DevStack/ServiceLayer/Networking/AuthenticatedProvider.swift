@@ -9,7 +9,9 @@
 import Alamofire
 import Foundation
 import Moya
+import RxMoya
 import RxSwift
+import UIKit
 
 /// Custom Moya provider.
 /// - Idea taken from [Moya - ComposingProvider](https://github.com/Moya/Moya/blob/master/docs/Examples/ComposingProvider.md)
