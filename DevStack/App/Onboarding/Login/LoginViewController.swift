@@ -50,13 +50,12 @@ final class LoginViewController: InputViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        #if ALPHA
-        emailTextField.textField.text = "petr.chmelar@matee.cz"
-        passwordTextField.textField.text = "11111111"
-        #elseif BETA
-        emailTextField.textField.text = "petr.chmelar@matee.cz"
-        passwordTextField.textField.text = "11111111"
-        #endif
+        switch UIApplication.environment.type {
+        case .alpha, .beta:
+            emailTextField.textField.text = "petr.chmelar@matee.cz"
+            passwordTextField.textField.text = "11111111"
+        default: ()
+        }
     }
     
     // MARK: Default methods
