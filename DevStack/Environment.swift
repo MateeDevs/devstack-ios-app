@@ -24,8 +24,6 @@ extension UIApplication {
 
 @propertyWrapper
 class InitializedOnlyOnce<Value> {
-    init() {}
-
     var wrappedValue: Value? {
         didSet {
             assert(oldValue == nil, "Not allowed to re-assign value when using @InitializedOnlyOnce!")

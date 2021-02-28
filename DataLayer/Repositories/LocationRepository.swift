@@ -1,7 +1,4 @@
 //
-//  LocationRepository.swift
-//  DevStack
-//
 //  Created by Viktor Kaderabek on 10/08/2018.
 //  Copyright © 2018 Matee. All rights reserved.
 //

@@ -1,7 +1,4 @@
 //
-//  Observable+Realm.swift
-//  DevStack
-//
 //  Created by Petr Chmelar on 07/08/2018.
 //  Copyright © 2020 Matee. All rights reserved.
 //

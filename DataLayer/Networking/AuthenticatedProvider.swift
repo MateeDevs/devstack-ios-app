@@ -1,7 +1,4 @@
 //
-//  AuthenticatedProvider.swift
-//  DevStack
-//
 //  Created by Petr Chmelar on 23/07/2018.
 //  Copyright © 2018 Matee. All rights reserved.
 //
@@ -97,7 +94,7 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
                 guard withInterceptor,
                     let vc = UIApplication.topViewController() as? BaseViewController else { return Single.just(response) }
 
-				let action = UIAlertAction(title: L10n.dialog_interceptor_button_title, style: .default, handler: { _ in
+                let action = UIAlertAction(title: L10n.dialog_interceptor_button_title, style: .default, handler: { _ in
                     // Perform logout and present login screen
                     self.keychain.deleteAll()
                     self.database.deleteAll()

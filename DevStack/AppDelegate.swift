@@ -6,6 +6,7 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
+import DataLayer
 import UIKit
 #if ALPHA || BETA
 import Atlantis
@@ -70,6 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if ALPHA
         Atlantis.start()
         UIApplication.environment = Environment(type: .alpha)
+        DataEnvironment.environment = DataLayer.Environment(type: DataLayer.EnvironmentType.alpha)
         Logger.info("ALPHA environment", category: .app)
         #elseif BETA
         Atlantis.start()
