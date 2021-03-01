@@ -24,16 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        
-        #if ALPHA
-        Atlantis.start()
-        Logger.info("ALPHA environment", category: .app)
-        #elseif BETA
-        Atlantis.start()
-        Logger.info("BETA environment", category: .app)
-        #elseif PRODUCTION
-        Logger.info("PRODUCTION environment", category: .app)
-        #endif
+        setupEnvironment()
 
         let providers = setupProviders(for: application)
         self.providers = providers
@@ -80,6 +71,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    // MARK: Setup environment
+    private func setupEnvironment() {
+        #if ALPHA
+        Atlantis.start()
+        UIApplication.environment = Environment(type: .alpha)
+        Logger.info("ALPHA environment", category: .app)
+        #elseif BETA
+        Atlantis.start()
+        UIApplication.environment = Environment(type: .beta)
+        Logger.info("BETA environment", category: .app)
+        #elseif PRODUCTION
+        UIApplication.environment = Environment(type: .production)
+        Logger.info("PRODUCTION environment", category: .app)
+        #endif
     }
     
     // MARK: Setup providers

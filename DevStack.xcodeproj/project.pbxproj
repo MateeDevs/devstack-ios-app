@@ -19,6 +19,9 @@
 		450B7F3F25E88027006FF2FE /* Biometric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450B7F3E25E88027006FF2FE /* Biometric.swift */; };
 		450B7F4025E88027006FF2FE /* Biometric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450B7F3E25E88027006FF2FE /* Biometric.swift */; };
 		450B7F4125E88027006FF2FE /* Biometric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450B7F3E25E88027006FF2FE /* Biometric.swift */; };
+		450B7EC425E85EBA006FF2FE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450B7EC325E85EBA006FF2FE /* Environment.swift */; };
+		450B7EC525E85EBA006FF2FE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450B7EC325E85EBA006FF2FE /* Environment.swift */; };
+		450B7EC625E85EBA006FF2FE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450B7EC325E85EBA006FF2FE /* Environment.swift */; };
 		450C869123547D5A00DC5E49 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C869023547D5A00DC5E49 /* UserDefaultsProvider.swift */; };
 		450C869223547D5A00DC5E49 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C869023547D5A00DC5E49 /* UserDefaultsProvider.swift */; };
 		450C869323547D5A00DC5E49 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C869023547D5A00DC5E49 /* UserDefaultsProvider.swift */; };
@@ -681,6 +684,7 @@
 		450392882256B3C60037BF42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		450A62882439FC9500B43049 /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		450B7F3E25E88027006FF2FE /* Biometric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Biometric.swift; sourceTree = "<group>"; };
+		450B7EC325E85EBA006FF2FE /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		450C869023547D5A00DC5E49 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		450D3DD421105261008BAE71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		450D3DDB21105F02008BAE71 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
@@ -1139,6 +1143,7 @@
 				4597626520FDEC350034DE29 /* UI */,
 				459761C820FDD4050034DE29 /* App */,
 				4558D30A20FCC8FF005BC325 /* AppDelegate.swift */,
+				450B7EC325E85EBA006FF2FE /* Environment.swift */,
 			);
 			path = DevStack;
 			sourceTree = "<group>";
@@ -2468,6 +2473,7 @@
 				457250E325E468BE00D1B745 /* HandlePushNotificationUseCase.swift in Sources */,
 				45BC959625C25FD3001A6F65 /* UIViewController+Extensions.swift in Sources */,
 				453CEAB921553E1F00A94BAC /* RatingView.swift in Sources */,
+				450B7EC425E85EBA006FF2FE /* Environment.swift in Sources */,
 				A891BDB72108C4E100BBA179 /* LocalizedBarButtonItem.swift in Sources */,
 				45C089E82215C12200D0DD49 /* DatabaseProvider.swift in Sources */,
 				45DA07F7222D7DA00003D32A /* PrimaryButton.swift in Sources */,
@@ -2791,6 +2797,7 @@
 				4572505C25E433C000D1B745 /* RegistrationUseCase.swift in Sources */,
 				4572500D25E4235F00D1B745 /* Observable+Moya.swift in Sources */,
 				45BC956125C246BF001A6F65 /* CounterViewController.swift in Sources */,
+				450B7EC525E85EBA006FF2FE /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2967,6 +2974,7 @@
 				4572505D25E433C000D1B745 /* RegistrationUseCase.swift in Sources */,
 				4572500E25E4235F00D1B745 /* Observable+Moya.swift in Sources */,
 				45BC956225C246BF001A6F65 /* CounterViewController.swift in Sources */,
+				450B7EC625E85EBA006FF2FE /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

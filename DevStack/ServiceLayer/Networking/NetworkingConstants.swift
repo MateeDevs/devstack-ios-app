@@ -6,6 +6,8 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
+import UIKit
+
 struct NetworkingConstants {
     
     static let apiVersion = 1
@@ -15,12 +17,11 @@ struct NetworkingConstants {
     static let iso8601DefaultFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
     static let iso8601DateOnly = "yyyy-MM-dd"
     
-    #if ALPHA
-    static let baseURL = "https://matee-devstack.herokuapp.com"
-    #elseif BETA
-    static let baseURL = "https://matee-devstack.herokuapp.com"
-    #elseif PRODUCTION
-    static let baseURL = "https://matee-devstack.herokuapp.com"
-    #endif
-    
+    static var baseURL: String {
+        switch UIApplication.environment.type {
+        case .alpha: return "https://matee-devstack.herokuapp.com"
+        case .beta: return "https://matee-devstack.herokuapp.com"
+        case .production: return "https://matee-devstack.herokuapp.com"
+        }
+    }
 }
