@@ -35,12 +35,12 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMJ-nJ-4WY" customClass="SecondaryButton" customModule="A_DevStack" customModuleProvider="target">
-                                <rect key="frame" x="30.5" y="415.5" width="314" height="34"/>
+                                <rect key="frame" x="45.5" y="415.5" width="284" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="counter_view_counter_hide_button_on"/>
+                                <state key="normal" title="counter_view_counter_hide_button"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="titleOnState" value="counter_view_counter_hide_button_on"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="titleOffState" value="counter_view_counter_hide_button_off"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleOnState" value="counter_view_counter_hide_button"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleOffState" value="counter_view_counter_show_button"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
@@ -67,7 +67,7 @@
     </scenes>
     <designables>
         <designable name="OMJ-nJ-4WY">
-            <size key="intrinsicContentSize" width="314" height="34"/>
+            <size key="intrinsicContentSize" width="284" height="34"/>
         </designable>
         <designable name="X5b-b7-xEW">
             <size key="intrinsicContentSize" width="353" height="36"/>
