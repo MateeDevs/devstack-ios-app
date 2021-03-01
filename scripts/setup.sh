@@ -8,6 +8,17 @@ touch ../DevStack/Constants/Assets.swift
 touch ../DevStack/Constants/Localizable.swift
 touch ../DevStack/Constants/Storyboards.swift
 
+echo "Checking file header"
+if [ ! -f ../DevStack.xcworkspace/xcuserdata/*.xcuserdatad/IDETemplateMacros.plist ]; then
+  echo "❌ File header is not set - setting now"
+  echo -n "Enter your full name: "
+  read fullname
+  cp IDETemplateMacros.plist ../DevStack.xcworkspace/xcuserdata/*.xcuserdatad/
+  sed -i "" -e "s/___FULLNAME___/$fullname/g" ../DevStack.xcworkspace/xcuserdata/*.xcuserdatad/IDETemplateMacros.plist
+else
+  echo "✅ File header is properly set"
+fi
+
 echo "Checking whether Homebrew is installed"
 if command -v brew &> /dev/null; then
   echo "✅ Homebrew is installed"
