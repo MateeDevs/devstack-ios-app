@@ -16,6 +16,9 @@
 		450A62892439FC9500B43049 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A62882439FC9500B43049 /* PushNotification.swift */; };
 		450A628A2439FC9500B43049 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A62882439FC9500B43049 /* PushNotification.swift */; };
 		450A628B2439FC9500B43049 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A62882439FC9500B43049 /* PushNotification.swift */; };
+		450B7F3F25E88027006FF2FE /* Biometric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450B7F3E25E88027006FF2FE /* Biometric.swift */; };
+		450B7F4025E88027006FF2FE /* Biometric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450B7F3E25E88027006FF2FE /* Biometric.swift */; };
+		450B7F4125E88027006FF2FE /* Biometric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450B7F3E25E88027006FF2FE /* Biometric.swift */; };
 		450C869123547D5A00DC5E49 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C869023547D5A00DC5E49 /* UserDefaultsProvider.swift */; };
 		450C869223547D5A00DC5E49 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C869023547D5A00DC5E49 /* UserDefaultsProvider.swift */; };
 		450C869323547D5A00DC5E49 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C869023547D5A00DC5E49 /* UserDefaultsProvider.swift */; };
@@ -469,9 +472,6 @@
 		45DA080E222E87780003D32A /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA0807222E87780003D32A /* RegistrationViewModel.swift */; };
 		45DA080F222E87780003D32A /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA0807222E87780003D32A /* RegistrationViewModel.swift */; };
 		45DA0810222E87780003D32A /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA0807222E87780003D32A /* RegistrationViewModel.swift */; };
-		45DB140F22E26FA300093272 /* BiometricHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB140E22E26FA300093272 /* BiometricHelper.swift */; };
-		45DB141022E26FA300093272 /* BiometricHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB140E22E26FA300093272 /* BiometricHelper.swift */; };
-		45DB141122E26FA300093272 /* BiometricHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB140E22E26FA300093272 /* BiometricHelper.swift */; };
 		45DB975B226A955700C3F234 /* WhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB975A226A955700C3F234 /* WhisperView.swift */; };
 		45DB975C226A955700C3F234 /* WhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB975A226A955700C3F234 /* WhisperView.swift */; };
 		45DB975D226A955700C3F234 /* WhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB975A226A955700C3F234 /* WhisperView.swift */; };
@@ -680,6 +680,7 @@
 		450392862256B35E0037BF42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		450392882256B3C60037BF42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		450A62882439FC9500B43049 /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
+		450B7F3E25E88027006FF2FE /* Biometric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Biometric.swift; sourceTree = "<group>"; };
 		450C869023547D5A00DC5E49 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		450D3DD421105261008BAE71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		450D3DDB21105F02008BAE71 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
@@ -840,7 +841,6 @@
 		45DA0805222E87780003D32A /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		45DA0806222E87780003D32A /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		45DA0807222E87780003D32A /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
-		45DB140E22E26FA300093272 /* BiometricHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricHelper.swift; sourceTree = "<group>"; };
 		45DB975A226A955700C3F234 /* WhisperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperView.swift; sourceTree = "<group>"; };
 		45DB9771226BA5B200C3F234 /* ProfileWrapper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileWrapper.storyboard; sourceTree = "<group>"; };
 		45DB9772226BA5B200C3F234 /* ProfileWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWrapperViewController.swift; sourceTree = "<group>"; };
@@ -1437,7 +1437,7 @@
 			isa = PBXGroup;
 			children = (
 				45890B2721FFB95D00894255 /* AppTheme.swift */,
-				45DB140E22E26FA300093272 /* BiometricHelper.swift */,
+				450B7F3E25E88027006FF2FE /* Biometric.swift */,
 				A8D348DC2163777200B7D08F /* DataValidator.swift */,
 				45E8A4B4220AEF90003F7502 /* FlowController.swift */,
 				45AF119823FFEDE100C63882 /* Formatter.swift */,
@@ -2487,6 +2487,7 @@
 				45FF34C725DD8567002D33A0 /* LoginData.swift in Sources */,
 				45BC959E25C2E684001A6F65 /* CounterSharedViewModel.swift in Sources */,
 				45ECA1B1216BF761000B1124 /* UserAPI.swift in Sources */,
+				450B7F3F25E88027006FF2FE /* Biometric.swift in Sources */,
 				45ED84AE249F64520055A19E /* ActivityIndicator.swift in Sources */,
 				45CDC3BF24A92FA200EF2368 /* Whisper.swift in Sources */,
 				45BC957525C247F3001A6F65 /* CounterControlViewController.swift in Sources */,
@@ -2580,7 +2581,6 @@
 				450DED282261EF29002314E5 /* MainFlowController.swift in Sources */,
 				456851DC2100BC8B006D3618 /* LocalizedButton.swift in Sources */,
 				A82FEF97214650B5006204F3 /* Int+UIExtensions.swift in Sources */,
-				45DB140F22E26FA300093272 /* BiometricHelper.swift in Sources */,
 				45890B4722086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2B22159EE90036919A /* NetworkProvider.swift in Sources */,
 				45A3D59F2119B76000E39169 /* Realm+Rx.swift in Sources */,
@@ -2626,6 +2626,7 @@
 				456851E42100BC9A006D3618 /* EnhancedButton.swift in Sources */,
 				45571937249FE3CB00FB24CA /* Observable+Realm.swift in Sources */,
 				A8A2E503217DD3C70006023F /* GradientView.swift in Sources */,
+				450B7F4025E88027006FF2FE /* Biometric.swift in Sources */,
 				4584E7F525D36481002335E3 /* SettingsViewModel.swift in Sources */,
 				45C3F51C23C127E60091848D /* TextFieldWithHint.swift in Sources */,
 				4572507E25E447F100D1B745 /* RefreshUserUseCase.swift in Sources */,
@@ -2750,7 +2751,6 @@
 				450DED292261EF29002314E5 /* MainFlowController.swift in Sources */,
 				456851DD2100BC8B006D3618 /* LocalizedButton.swift in Sources */,
 				A82FEF98214650B5006204F3 /* Int+UIExtensions.swift in Sources */,
-				45DB141022E26FA300093272 /* BiometricHelper.swift in Sources */,
 				456089C625DB386300997546 /* RepositoryError.swift in Sources */,
 				45890B4822086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2C22159EE90036919A /* NetworkProvider.swift in Sources */,
@@ -2802,6 +2802,7 @@
 				456851E52100BC9A006D3618 /* EnhancedButton.swift in Sources */,
 				45571938249FE3CB00FB24CA /* Observable+Realm.swift in Sources */,
 				4584E7F625D36481002335E3 /* SettingsViewModel.swift in Sources */,
+				450B7F4125E88027006FF2FE /* Biometric.swift in Sources */,
 				A8A2E504217DD3C70006023F /* GradientView.swift in Sources */,
 				45C3F51D23C127E60091848D /* TextFieldWithHint.swift in Sources */,
 				4572507F25E447F100D1B745 /* RefreshUserUseCase.swift in Sources */,
@@ -2926,7 +2927,6 @@
 				450DED2A2261EF29002314E5 /* MainFlowController.swift in Sources */,
 				456851DE2100BC8B006D3618 /* LocalizedButton.swift in Sources */,
 				A82FEF99214650B5006204F3 /* Int+UIExtensions.swift in Sources */,
-				45DB141122E26FA300093272 /* BiometricHelper.swift in Sources */,
 				456089C725DB386300997546 /* RepositoryError.swift in Sources */,
 				45890B4922086CAF00894255 /* LoginViewModel.swift in Sources */,
 				4571DB2D22159EE90036919A /* NetworkProvider.swift in Sources */,
