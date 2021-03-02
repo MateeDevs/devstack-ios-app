@@ -1,0 +1,39 @@
+name: Build develop
+
+on: 
+  push:
+    branches:
+      - develop
+
+jobs:
+  build:
+    name: Create new builds
+    runs-on: [self-hosted, ios-build]
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          clean: false
+      - name: Pull Twine repo
+        run: git -C $TWINE_FOLDER pull origin master
+      - name: Setup tools
+        run: ./scripts/setup.sh
+      - name: Create a new Alpha build
+        env:
+          BUILD_NUMBER: echo `date +"%y%m%d%H%M"`
+          MATCH_PASSWORD: ${{ secrets.FASTLANE_MATCH_PASSWORD }}
+          APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
+        run: fastlane build_alpha
+
+  deploy-alpha:
+    name: Deploy alpha (internal TestFlight only)
+    needs: build
+    runs-on: [self-hosted, ios-alpha]
+    timeout-minutes: 15
+    steps:
+      - name: Upload the Alpha build to the TestFlight
+        env:
+          APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
+          SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
+        run: fastlane upload_testflight_alpha distribute_external:false
