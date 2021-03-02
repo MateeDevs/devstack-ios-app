@@ -15,7 +15,7 @@ alpha = {
   output_name: "A-DevStack",
   app_identifier: "cz.matee.devstack.alpha",
   scheme: "DevStack_Alpha",
-  gsp_path: "./DevStack/App/Config/Alpha/GoogleService-Info.plist",
+  gsp_path: "./DevStack/App/Config/GoogleService-Info-Alpha.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
   testflight_link: "NOT AVAILABLE"
 }
@@ -24,7 +24,7 @@ beta = {
   output_name: "B-DevStack",
   app_identifier: "cz.matee.devstack.beta",
   scheme: "DevStack_Beta",
-  gsp_path: "./DevStack/App/Config/Beta/GoogleService-Info.plist",
+  gsp_path: "./DevStack/App/Config/GoogleService-Info-Beta.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
   testflight_link: "NOT AVAILABLE"
 }
@@ -33,7 +33,7 @@ production = {
   output_name: "DevStack",
   app_identifier: "cz.matee.devstack",
   scheme: "DevStack",
-  gsp_path: "./DevStack/App/Config/Production/GoogleService-Info.plist",
+  gsp_path: "./DevStack/App/Config/GoogleService-Info-Prod.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
   testflight_link: "NOT AVAILABLE"
 }
@@ -246,8 +246,7 @@ platform :ios do
   desc "Run tests"
   private_lane :tests do |config|
   run_tests(
-    scheme: config[:scheme],
-    configuration: "Debug"
+    scheme: config[:scheme]
   )
   end
 
