@@ -40,26 +40,26 @@ jobs:
           SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
         run: fastlane upload_testflight_alpha distribute_external:true
 
-  # deploy-beta:
-  #   name: Deploy beta
-  #   needs: build
-  #   runs-on: [self-hosted, ios-beta]
-  #   timeout-minutes: 120
-  #   steps:
-  #     - name: Upload the Beta build to the TestFlight
-  #       env:
-  #         APP_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
-  #         SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
-  #       run: fastlane upload_testflight_beta distribute_external:true
+  deploy-beta:
+    name: Deploy beta
+    needs: build
+    runs-on: [self-hosted, ios-beta]
+    timeout-minutes: 120
+    steps:
+      - name: Upload the Beta build to the TestFlight
+        env:
+          APP_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
+          SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
+        run: fastlane upload_testflight_beta distribute_external:true
 
-  # deploy-production:
-  #   name: Deploy production
-  #   needs: build
-  #   runs-on: [self-hosted, ios-prod]
-  #   timeout-minutes: 120
-  #   steps:
-  #     - name: Upload the Production build to the TestFlight
-  #       env:
-  #         APP_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
-  #         SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
-  #       run: fastlane upload_testflight_production distribute_external:true
+  deploy-production:
+    name: Deploy production
+    needs: build
+    runs-on: [self-hosted, ios-prod]
+    timeout-minutes: 120
+    steps:
+      - name: Upload the Production build to the TestFlight
+        env:
+          APP_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
+          SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
+        run: fastlane upload_testflight_production distribute_external:true
