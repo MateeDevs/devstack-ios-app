@@ -148,7 +148,7 @@ platform :ios do
     app_store_connect_api_key(
       key_id: config[:api_key_id],
       issuer_id: config[:api_key_issuer_id],
-      key_content: ENV["APP_STORE_CONNECT_API_KEY"]
+      key_content: ENV["APP_STORE_CONNECT_API_KEY_CONTENT"]
     )
     sync_code_signing(
       username: config[:apple_id],
@@ -198,7 +198,7 @@ platform :ios do
     app_store_connect_api_key(
       key_id: config[:api_key_id],
       issuer_id: config[:api_key_issuer_id],
-      key_content: ENV["APP_STORE_CONNECT_API_KEY"]
+      key_content: ENV["APP_STORE_CONNECT_API_KEY_CONTENT"]
     )
     upload_to_testflight(
       ipa: "./ipa/#{config[:output_name]}.ipa",
