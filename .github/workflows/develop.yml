@@ -30,7 +30,7 @@ jobs:
   deploy-alpha:
     name: Deploy alpha
     needs: build
-    runs-on: [self-hosted, ios-alpha]
+    runs-on: [self-hosted, ios-internal]
     timeout-minutes: 15
     steps:
       - name: Upload the Alpha build to the TestFlight
