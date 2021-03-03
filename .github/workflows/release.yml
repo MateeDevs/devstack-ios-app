@@ -16,9 +16,10 @@ jobs:
         run: git -C $TWINE_FOLDER pull origin master
       - name: Setup tools
         run: ./scripts/setup.sh
+      - name: Generate version and build numbers
+        run: echo "BUILD_NUMBER=$(echo `date +"%y%m%d%H%M"`)" >> $GITHUB_ENV
       - name: Create builds
         env:
-          BUILD_NUMBER: echo `date +"%y%m%d%H%M"`
           MATCH_PASSWORD: ${{ secrets.FASTLANE_MATCH_PASSWORD }}
           APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
         run: |
