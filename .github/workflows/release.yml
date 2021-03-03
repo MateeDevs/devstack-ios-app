@@ -16,7 +16,7 @@ jobs:
         run: git -C $TWINE_FOLDER pull origin master
       - name: Setup tools
         run: ./scripts/setup.sh
-      - name: Generate version and build numbers
+      - name: Generate build number
         run: echo "BUILD_NUMBER=$(echo `date +"%y%m%d%H%M"`)" >> $GITHUB_ENV
       - name: Create builds
         env:
