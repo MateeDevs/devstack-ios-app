@@ -10,6 +10,7 @@
 
 workspace = "DevStack.xcworkspace"
 slack_channel = "#ci"
+plist_path = "./DevStack/App/Config/Info.plist"
 
 alpha = {
   output_name: "A-DevStack",
@@ -130,11 +131,6 @@ platform :ios do
   desc "Create a new build"
   private_lane :build do |config|
 
-    unless ENV["VERSION_NUMBER"] =~ /\d+\.\d+(\.\d+)?$/
-      UI.user_error!("Invalid version number: \"#{ENV["VERSION_NUMBER"]}\". Expect: \"x.x.x\"")
-    end
-    increment_version_number(version_number: ENV["VERSION_NUMBER"].split('/').last)
-
     unless ENV["BUILD_NUMBER"] =~ /^\d{1,18}$/
       UI.user_error!("Invalid build number: \"#{ENV["BUILD_NUMBER"]}\". Expect 1-18 digits")
     end
@@ -181,24 +177,24 @@ platform :ios do
   # UPLOAD TO THE TESTFLIGHT
 
   desc "Upload the Alpha build to the TestFlight"
-  lane :upload_testflight_alpha do
-    upload_testflight(alpha.merge(matee))
+  lane :upload_testflight_alpha do |options|
+    upload_testflight(alpha.merge(matee).merge(options))
   end
 
   desc "Upload the Beta build to the TestFlight"
-  lane :upload_testflight_beta do
-    upload_testflight(beta.merge(matee))
+  lane :upload_testflight_beta do |options|
+    upload_testflight(beta.merge(matee).merge(options))
   end
 
   desc "Upload the Production build to the TestFlight"
-  lane :upload_testflight_production do
-    upload_testflight(production.merge(client))
+  lane :upload_testflight_production do |options|
+    upload_testflight(production.merge(client).merge(options))
   end
 
   desc "Upload the build to the TestFlight"
   private_lane :upload_testflight do |config|
-    version = get_ipa_info_plist_value(ipa: "./ipa/#{config[:output_name]}.ipa", key: "CFBundleShortVersionString")
-    build = get_ipa_info_plist_value(ipa: "./ipa/#{config[:output_name]}.ipa", key: "CFBundleVersion")
+    version = get_info_plist_value(path: plist_path, key: "CFBundleShortVersionString")
+    build = get_info_plist_value(ipa: plist_path, key: "CFBundleVersion")
     app_store_connect_api_key(
       key_id: config[:api_key_id],
       issuer_id: config[:api_key_issuer_id],
@@ -207,8 +203,8 @@ platform :ios do
     upload_to_testflight(
       ipa: "./ipa/#{config[:output_name]}.ipa",
       app_identifier: config[:app_identifier],
-      skip_waiting_for_build_processing: true, # Change to false, if you want to distribute the build for external testers
-      distribute_external: true,
+      skip_waiting_for_build_processing: !config[:distribute_external],
+      distribute_external: config[:distribute_external],
       groups: config[:testflight_groups],
       changelog: "#{config[:output_name]} #{version} build #{build}",
       beta_app_review_info: {
@@ -278,6 +274,16 @@ platform :ios do
     upload_symbols_to_crashlytics(
       gsp_path: config[:gsp_path]
     )
+  end
+
+  # GIT TAG
+
+  desc "Create and push git tag"
+  lane :tag do
+    version = get_info_plist_value(path: plist_path, key: "CFBundleShortVersionString")
+    build = get_info_plist_value(ipa: plist_path, key: "CFBundleVersion")
+    add_git_tag(tag: "#{version}.#{build}")
+    push_git_tags(tag: "#{version}.#{build}")
   end
 
   # You can define as many lanes as you want

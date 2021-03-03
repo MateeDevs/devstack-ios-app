@@ -1,4 +1,4 @@
-name: Test
+name: Test develop
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ jobs:
   test:
     name: Run tests
     runs-on: [self-hosted, ios-build]
-    timeout-minutes: 60
+    timeout-minutes: 15
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
