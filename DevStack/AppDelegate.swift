@@ -6,9 +6,7 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
-import RealmSwift
 import UIKit
-
 #if ALPHA || BETA
 import Atlantis
 #endif
@@ -24,14 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        setupEnvironment()
-
-        let providers = setupProviders(for: application)
-        self.providers = providers
-
-        clearKeychain()
-        realmSetup()
         
+        setupEnvironment()
         appAppearance()
         
         // Init main window with navigation controller
@@ -44,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Init main flow controller and start the flow
         flowController = AppFlowController(
             navigationController: nc,
-            dependencies: UseCaseDependency(dependencies: RepositoryDependency(dependencies: providers))
+            dependencies: UseCaseDependency(dependencies: RepositoryDependency(dependencies: setupProviders(for: application)))
         )
         flowController?.start()
         
@@ -92,10 +84,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Setup providers
     private func setupProviders(for application: UIApplication) -> ProviderDependency {
         let databaseProvider = DatabaseProvider()
-        let keychainProvider = KeychainProvider()
+        let userDefaultsProvider = UserDefaultsProvider()
+        let keychainProvider = KeychainProvider(userDefaultsProvider: userDefaultsProvider)
         let networkProvider = NetworkProvider(keychainProvider: keychainProvider, databaseProvider: databaseProvider)
         let pushNotificationsProvider = PushNotificationsProvider(application: application, appDelegate: self)
-        let userDefaultsProvider = UserDefaultsProvider()
 
         return ProviderDependency(
             databaseProvider: databaseProvider,
@@ -104,37 +96,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             pushNotificationsProvider: pushNotificationsProvider,
             userDefaultsProvider: userDefaultsProvider
         )
-    }
-    
-    // MARK: Clear keychain on first run
-    private func clearKeychain() {
-        guard let providers = providers, (providers.userDefaultsProvider.get(.hasRunBefore) as Bool?) == nil else { return }
-        providers.keychainProvider.deleteAll()
-        providers.userDefaultsProvider.save(.hasRunBefore, value: true)
-    }
-    
-    // MARK: Realm
-    private func realmSetup() {
-        // Realm BASIC migration setup
-        var config = Realm.Configuration(
-            // Set the new schema version. This must be greater than the previously used
-            // version (if you've never set a schema version before, the version is 0).
-            schemaVersion: 0,
-            
-            // Set the block which will be called automatically when opening a Realm with
-            // a schema version lower than the one set above
-            migrationBlock: { _, oldSchemaVersion in
-                // We haven’t migrated anything yet, so oldSchemaVersion == 0
-                if oldSchemaVersion < 1 {
-                    // Nothing to do!
-                    // Realm will automatically detect new properties and removed properties
-                    // And will update the schema on disk automatically
-                }
-            })
-        // Delete old schema
-        config.deleteRealmIfMigrationNeeded = true
-        // Tell Realm to use this new configuration object for the default Realm
-        Realm.Configuration.defaultConfiguration = config
     }
     
     // MARK: Appearance
