@@ -16,7 +16,8 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         HasGetProfileUseCase &
         HasRefreshProfileUseCase &
         HasLogoutUseCase &
-        HasGetCurrentLocationUseCase
+        HasGetCurrentLocationUseCase &
+        HasGetRemoteConfigValueUseCase
     
     let input: Input
     let output: Output
@@ -28,7 +29,8 @@ final class ProfileViewModel: ViewModel, ViewModelType {
     struct Output {
         let profile: Profile
         let isRefreshing: Driver<Bool>
-        let currentLocation: Driver<CLLocation>
+        let currentLocation: Driver<String>
+        let additionalInfoLabelIsHidden: Driver<Bool>
         let flow: Driver<ProfileViewControllerFlow>
     }
 
@@ -61,6 +63,8 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         )
         
         let currentLocation = dependencies.getCurrentLocationUseCase.execute().take(1)
+        
+        let additionalInfoLabelIsHidden = dependencies.getRemoteConfigValueUseCase.execute(.profileAdditionalInfoIsVisible).map { !$0 }
 
         let logout = logoutButtonTaps.flatMapLatest { _ -> Observable<Event<Void>> in
             return dependencies.logoutUseCase.execute()
@@ -75,7 +79,8 @@ final class ProfileViewModel: ViewModel, ViewModelType {
                 imageURL: profile.map { $0.pictureUrl }.asDriver()
             ),
             isRefreshing: isRefreshing.asDriver(),
-            currentLocation: currentLocation.asDriver(),
+            currentLocation: currentLocation.map { $0.coordinate.toString() }.asDriver(),
+            additionalInfoLabelIsHidden: additionalInfoLabelIsHidden.asDriver(),
             flow: logout.compactMap { $0.element }.map { .presentOnboarding }.asDriver()
         )
         

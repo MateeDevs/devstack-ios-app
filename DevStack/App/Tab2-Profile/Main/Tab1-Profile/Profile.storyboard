@@ -34,8 +34,14 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgE-43-xes">
-                                <rect key="frame" x="24" y="196" width="327" height="24"/>
+                                <rect key="frame" x="16" y="196" width="343" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFQ-Dk-44A">
+                                <rect key="frame" x="16" y="308" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -56,17 +62,21 @@
                             <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="1bF-jg-b3i" secondAttribute="trailing" constant="24" id="2FZ-by-nI7"/>
                             <constraint firstItem="1bF-jg-b3i" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="24" id="4aV-YQ-haS"/>
                             <constraint firstItem="iQV-RZ-amD" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="16" id="5AQ-0o-KxB"/>
-                            <constraint firstItem="QgE-43-xes" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="24" id="AeF-PG-T3e"/>
+                            <constraint firstItem="QgE-43-xes" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="16" id="AeF-PG-T3e"/>
+                            <constraint firstItem="WFQ-Dk-44A" firstAttribute="top" secondItem="iQV-RZ-amD" secondAttribute="bottom" constant="32" id="BV3-b7-9zC"/>
                             <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="iQV-RZ-amD" secondAttribute="trailing" constant="16" id="Dxy-wi-m5j"/>
                             <constraint firstItem="iQV-RZ-amD" firstAttribute="top" secondItem="QgE-43-xes" secondAttribute="bottom" constant="32" id="QFI-0e-0Al"/>
                             <constraint firstItem="QgE-43-xes" firstAttribute="top" secondItem="mOy-UN-9uA" secondAttribute="bottom" constant="32" id="ZFi-kY-v5r"/>
+                            <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="WFQ-Dk-44A" secondAttribute="trailing" constant="16" id="ZIR-DK-gsP"/>
                             <constraint firstItem="qdr-Ev-KLG" firstAttribute="bottom" secondItem="1bF-jg-b3i" secondAttribute="bottom" constant="64" id="ayI-9I-SKR"/>
                             <constraint firstItem="mOy-UN-9uA" firstAttribute="top" secondItem="qdr-Ev-KLG" secondAttribute="top" constant="64" id="bcs-N7-QsU"/>
+                            <constraint firstItem="WFQ-Dk-44A" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="16" id="cVg-EU-Bu7"/>
                             <constraint firstItem="mOy-UN-9uA" firstAttribute="centerX" secondItem="qdr-Ev-KLG" secondAttribute="centerX" id="ee3-lY-QOq"/>
-                            <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="QgE-43-xes" secondAttribute="trailing" constant="24" id="zRM-Uf-ohf"/>
+                            <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="QgE-43-xes" secondAttribute="trailing" constant="16" id="zRM-Uf-ohf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="additionalInfoLabel" destination="WFQ-Dk-44A" id="vFB-FN-xZa"/>
                         <outlet property="locationLabel" destination="iQV-RZ-amD" id="b8t-xD-5v5"/>
                         <outlet property="logoutButton" destination="1bF-jg-b3i" id="XuL-A9-MyD"/>
                         <outlet property="userImageView" destination="mOy-UN-9uA" id="ReL-lm-how"/>

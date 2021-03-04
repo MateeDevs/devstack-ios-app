@@ -10,18 +10,21 @@ public protocol HasNoRepository {}
 
 extension RepositoryDependency: HasNoRepository {}
 extension RepositoryDependency: HasAuthTokenRepository {}
-extension RepositoryDependency: HasUserRepository {}
 extension RepositoryDependency: HasLocationRepository {}
+extension RepositoryDependency: HasRemoteConfigRepository {}
+extension RepositoryDependency: HasUserRepository {}
 
 public struct RepositoryDependency {
     
     public let authTokenRepository: AuthTokenRepository
-    public let userRepository: UserRepository
     public let locationRepository: LocationRepository
+    public let remoteConfigRepository: RemoteConfigRepository
+    public let userRepository: UserRepository
     
     init(dependencies: ProviderDependency) {
         self.authTokenRepository = AuthTokenRepository(dependencies: dependencies)
-        self.userRepository = UserRepository(dependencies: dependencies)
         self.locationRepository = LocationRepository(dependencies: dependencies)
+        self.remoteConfigRepository = RemoteConfigRepository(dependencies: dependencies)
+        self.userRepository = UserRepository(dependencies: dependencies)
     }
 }

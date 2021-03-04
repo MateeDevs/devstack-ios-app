@@ -25,6 +25,8 @@ extension UseCaseDependency: HasUpdateProfileCounterUseCase {}
 
 extension UseCaseDependency: HasHandlePushNotificationUseCase {}
 
+extension UseCaseDependency: HasGetRemoteConfigValueUseCase {}
+
 extension UseCaseDependency: HasGetUserUseCase {}
 extension UseCaseDependency: HasRefreshUserUseCase {}
 extension UseCaseDependency: HasUpdateUserUseCase {}
@@ -47,6 +49,8 @@ public struct UseCaseDependency {
     
     public let handlePushNotificationUseCase: HandlePushNotificationUseCase
     
+    public let getRemoteConfigValueUseCase: GetRemoteConfigValueUseCase
+    
     public let getUserUseCase: GetUserUseCase
     public let refreshUserUseCase: RefreshUserUseCase
     public let updateUserUseCase: UpdateUserUseCase
@@ -67,6 +71,8 @@ public struct UseCaseDependency {
         self.updateProfileCounterUseCase = UpdateProfileCounterUseCase(dependencies: dependencies)
         
         self.handlePushNotificationUseCase = HandlePushNotificationUseCase(dependencies: dependencies)
+        
+        self.getRemoteConfigValueUseCase = GetRemoteConfigValueUseCase(dependencies: dependencies)
         
         self.getUserUseCase = GetUserUseCase(dependencies: dependencies)
         self.refreshUserUseCase = RefreshUserUseCase(dependencies: dependencies)

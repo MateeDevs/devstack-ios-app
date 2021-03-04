@@ -97,6 +97,12 @@
 		457837DE25BCF3C5008AB4B2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 457837DD25BCF3C5008AB4B2 /* RxSwift */; };
 		457837E025BCF3C5008AB4B2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 457837DF25BCF3C5008AB4B2 /* RxCocoa */; };
 		457FA18E241EC44400EA7436 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FA18D241EC44300EA7436 /* ErrorMessages.swift */; };
+		458217EC25F11E7D00D587EB /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 458217EB25F11E7D00D587EB /* FirebaseRemoteConfig */; };
+		458217F025F1247E00D587EB /* RemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458217EF25F1247E00D587EB /* RemoteConfigProvider.swift */; };
+		4582181025F19ABD00D587EB /* FirebaseRemoteConfig+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582180F25F19ABD00D587EB /* FirebaseRemoteConfig+Rx.swift */; };
+		4582181625F19CB800D587EB /* RemoteConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582181525F19CB800D587EB /* RemoteConfigRepository.swift */; };
+		4582182E25F1A28D00D587EB /* RemoteConfigCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582182D25F1A28D00D587EB /* RemoteConfigCoding.swift */; };
+		4582183525F1A2CD00D587EB /* GetRemoteConfigValueUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582183425F1A2CD00D587EB /* GetRemoteConfigValueUseCase.swift */; };
 		45840C9E25ACE5BB00DFC729 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9D25ACE5BB00DFC729 /* Moya */; };
 		45840CA025ACE5BB00DFC729 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9F25ACE5BB00DFC729 /* RxMoya */; };
 		45840CAB25ACE69A00DFC729 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CAA25ACE69A00DFC729 /* AlamofireImage */; };
@@ -350,6 +356,11 @@
 		457250E225E468BE00D1B745 /* HandlePushNotificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlePushNotificationUseCase.swift; sourceTree = "<group>"; };
 		4572512025E56CF400D1B745 /* PushNotificationsProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsProviderMock.swift; sourceTree = "<group>"; };
 		457FA18D241EC44300EA7436 /* ErrorMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
+		458217EF25F1247E00D587EB /* RemoteConfigProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigProvider.swift; sourceTree = "<group>"; };
+		4582180F25F19ABD00D587EB /* FirebaseRemoteConfig+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseRemoteConfig+Rx.swift"; sourceTree = "<group>"; };
+		4582181525F19CB800D587EB /* RemoteConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigRepository.swift; sourceTree = "<group>"; };
+		4582182D25F1A28D00D587EB /* RemoteConfigCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigCoding.swift; sourceTree = "<group>"; };
+		4582183425F1A2CD00D587EB /* GetRemoteConfigValueUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRemoteConfigValueUseCase.swift; sourceTree = "<group>"; };
 		4584E7F325D36481002335E3 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		4585A15C214FE3DE00186D7D /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		4588FF092225A73C0014FC79 /* RatingView.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RatingView.xcassets; sourceTree = "<group>"; };
@@ -517,6 +528,7 @@
 				45840CCD25ACE8E900DFC729 /* SkeletonView in Frameworks */,
 				45840CB425ACE7A800DFC729 /* RealmSwift in Frameworks */,
 				457837DE25BCF3C5008AB4B2 /* RxSwift in Frameworks */,
+				458217EC25F11E7D00D587EB /* FirebaseRemoteConfig in Frameworks */,
 				4576CED625ACF50F00218229 /* FirebaseAnalytics in Frameworks */,
 				4576CEDA25ACF50F00218229 /* FirebaseCrashlytics in Frameworks */,
 				45840CAB25ACE69A00DFC729 /* AlamofireImage in Frameworks */,
@@ -707,6 +719,7 @@
 				456089CC25DB387500997546 /* RepositoryDependency.swift */,
 				45E1E61C221D5C55006C84D1 /* LocationRepository */,
 				456852452105CF82006D3618 /* AuthTokenRepository.swift */,
+				4582181525F19CB800D587EB /* RemoteConfigRepository.swift */,
 				45ECA1C5216BFA90000B1124 /* UserRepository.swift */,
 			);
 			path = Repositories;
@@ -761,6 +774,7 @@
 				45E100C725E6ABAF0082CABA /* Location */,
 				4572509825E44C8F00D1B745 /* Profile */,
 				457250E125E4685400D1B745 /* PushNotification */,
+				4582183325F1A2B900D587EB /* RemoteConfig */,
 				4572507325E4478700D1B745 /* User */,
 				4572506225E438CD00D1B745 /* Users */,
 			);
@@ -820,6 +834,22 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4582182C25F1A24000D587EB /* RemoteConfig */ = {
+			isa = PBXGroup;
+			children = (
+				4582182D25F1A28D00D587EB /* RemoteConfigCoding.swift */,
+			);
+			path = RemoteConfig;
+			sourceTree = "<group>";
+		};
+		4582183325F1A2B900D587EB /* RemoteConfig */ = {
+			isa = PBXGroup;
+			children = (
+				4582183425F1A2CD00D587EB /* GetRemoteConfigValueUseCase.swift */,
+			);
+			path = RemoteConfig;
 			sourceTree = "<group>";
 		};
 		4585A1602151224800186D7D /* UserImageView */ = {
@@ -886,6 +916,7 @@
 				450384742170E4FC004F43DC /* Bool+Extensions.swift */,
 				45B76D98213591A9003BB997 /* Encodable+Extensions.swift */,
 				45B76D9F213591D0003BB997 /* Error+Extensions.swift */,
+				4582180F25F19ABD00D587EB /* FirebaseRemoteConfig+Rx.swift */,
 				45FF359825DDEB93002D33A0 /* Object+Extensions.swift */,
 				455261BB210A1CC200E5F1E1 /* Observable+Extensions.swift */,
 				4572500B25E4235F00D1B745 /* Observable+Moya.swift */,
@@ -1104,6 +1135,7 @@
 				450D3DEA2111F043008BAE71 /* KeychainProvider.swift */,
 				4571DB2A22159EE90036919A /* NetworkProvider.swift */,
 				457250D125E4670400D1B745 /* PushNotificationsProvider.swift */,
+				458217EF25F1247E00D587EB /* RemoteConfigProvider.swift */,
 				450C869023547D5A00DC5E49 /* UserDefaultsProvider.swift */,
 			);
 			path = Providers;
@@ -1328,6 +1360,7 @@
 			children = (
 				45FF34DF25DD85F3002D33A0 /* Auth */,
 				45FF34E925DD8682002D33A0 /* PushNotification */,
+				4582182C25F1A24000D587EB /* RemoteConfig */,
 				45FF34DE25DD85ED002D33A0 /* User */,
 			);
 			path = DomainModels;
@@ -1487,6 +1520,7 @@
 				457837DD25BCF3C5008AB4B2 /* RxSwift */,
 				457837DF25BCF3C5008AB4B2 /* RxCocoa */,
 				453D3F7025ED2D9E0094ADD7 /* Atlantis */,
+				458217EB25F11E7D00D587EB /* FirebaseRemoteConfig */,
 			);
 			productName = DevStack;
 			productReference = 4558D30720FCC8FF005BC325 /* DevStack.app */;
@@ -1710,6 +1744,7 @@
 				45571936249FE3CB00FB24CA /* Observable+Realm.swift in Sources */,
 				4584E7F425D36481002335E3 /* SettingsViewModel.swift in Sources */,
 				A8A2E502217DD3C70006023F /* GradientView.swift in Sources */,
+				4582182E25F1A28D00D587EB /* RemoteConfigCoding.swift in Sources */,
 				45C3F51B23C127E60091848D /* TextFieldWithHint.swift in Sources */,
 				45BFF38D25D3686D00813581 /* Flow.swift in Sources */,
 				452732A423F0C6ED0067C712 /* Double+UIExtensions.swift in Sources */,
@@ -1789,6 +1824,7 @@
 				45FF345025DC6794002D33A0 /* User.swift in Sources */,
 				450D3DDC21105F02008BAE71 /* NSObject+Extensions.swift in Sources */,
 				456851C02100929E006D3618 /* LocalizedTextField.swift in Sources */,
+				4582181625F19CB800D587EB /* RemoteConfigRepository.swift in Sources */,
 				450384752170E4FC004F43DC /* Bool+Extensions.swift in Sources */,
 				457250AA25E4516F00D1B745 /* UpdateProfileCounterUseCase.swift in Sources */,
 				45128B802142A634007B6B47 /* TabBarButton.swift in Sources */,
@@ -1841,6 +1877,7 @@
 				456851DC2100BC8B006D3618 /* LocalizedButton.swift in Sources */,
 				A82FEF97214650B5006204F3 /* Int+UIExtensions.swift in Sources */,
 				45890B4722086CAF00894255 /* LoginViewModel.swift in Sources */,
+				4582183525F1A2CD00D587EB /* GetRemoteConfigValueUseCase.swift in Sources */,
 				4571DB2B22159EE90036919A /* NetworkProvider.swift in Sources */,
 				45A3D59F2119B76000E39169 /* Realm+Rx.swift in Sources */,
 				4572505B25E433C000D1B745 /* RegistrationUseCase.swift in Sources */,
@@ -1853,6 +1890,7 @@
 				45B76D99213591A9003BB997 /* Encodable+Extensions.swift in Sources */,
 				A891BDC32108CB2600BBA179 /* XIBView.swift in Sources */,
 				45FF34D325DD85DE002D33A0 /* RegistrationData.swift in Sources */,
+				4582181025F19ABD00D587EB /* FirebaseRemoteConfig+Rx.swift in Sources */,
 				45BC957825C247F3001A6F65 /* CounterControlViewModel.swift in Sources */,
 				4572507D25E447F100D1B745 /* RefreshUserUseCase.swift in Sources */,
 				4572503325E42C2200D1B745 /* LogoutUseCase.swift in Sources */,
@@ -1866,6 +1904,7 @@
 				4568522A2105BB52006D3618 /* NetworkingUtilities.swift in Sources */,
 				45E8A55E220F6F2C003F7502 /* UserTableViewCell.swift in Sources */,
 				454AC03E249A724900D6F367 /* Realm+Extensions.swift in Sources */,
+				458217F025F1247E00D587EB /* RemoteConfigProvider.swift in Sources */,
 				A8DDD0A0211DFD6200EEB48F /* CLLocationManager+Rx.swift in Sources */,
 				45FF355525DDD1B3002D33A0 /* NETLoginData.swift in Sources */,
 				45A92DF621085864007579AC /* BaseViewController+Alerts.swift in Sources */,
@@ -2725,6 +2764,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 457837DC25BCF3C5008AB4B2 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
+		};
+		458217EB25F11E7D00D587EB /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
 		};
 		45840C9D25ACE5BB00DFC729 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
