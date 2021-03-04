@@ -205,7 +205,6 @@ platform :ios do
       skip_waiting_for_build_processing: !config[:distribute_external],
       distribute_external: config[:distribute_external],
       groups: config[:testflight_groups],
-      changelog: "#{config[:output_name]} #{version} build #{build}",
       beta_app_review_info: {
         contact_first_name: testflight_contact[:first_name],
         contact_last_name: testflight_contact[:last_name],
@@ -213,6 +212,13 @@ platform :ios do
         contact_phone: testflight_contact[:phone]
       }
     )
+    if config[:distribute_external]
+      set_changelog(
+        app_identifier: config[:app_identifier],
+        version: "#{version}",
+        changelog: "#{config[:output_name]} #{version} build #{build}"
+      )
+    end
     slack(
       message: "[iOS #{config[:output_name]}] #{version} build #{build} uploaded to the TestFlight\nLink: #{config[:testflight_link]}",
       channel: slack_channel,
