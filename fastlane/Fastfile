@@ -169,7 +169,8 @@ platform :ios do
       xcargs: "PROVISIONING_PROFILE_SPECIFIER='match AppStore #{config[:app_identifier]}'",
       archive_path: "#{config[:output_name]}.xcarchive",
       output_directory: "./ipa",
-      output_name: config[:output_name]
+      output_name: config[:output_name],
+      cloned_source_packages_path: "SourcePackages"
     )
   end
 
@@ -242,7 +243,8 @@ platform :ios do
   desc "Run tests"
   private_lane :tests do |config|
   run_tests(
-    scheme: config[:scheme]
+    scheme: config[:scheme],
+    cloned_source_packages_path: "SourcePackages"
   )
   end
 
