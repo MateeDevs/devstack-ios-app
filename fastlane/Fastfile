@@ -194,6 +194,7 @@ platform :ios do
   private_lane :upload_testflight do |config|
     version = get_ipa_info_plist_value(ipa: "./ipa/#{config[:output_name]}.ipa", key: "CFBundleShortVersionString")
     build = get_ipa_info_plist_value(ipa: "./ipa/#{config[:output_name]}.ipa", key: "CFBundleVersion")
+    changelog = config[:distribute_external] ? "#{config[:output_name]} #{version} build #{build}" : nil
     app_store_connect_api_key(
       key_id: config[:api_key_id],
       issuer_id: config[:api_key_issuer_id],
@@ -205,6 +206,7 @@ platform :ios do
       skip_waiting_for_build_processing: !config[:distribute_external],
       distribute_external: config[:distribute_external],
       groups: config[:testflight_groups],
+      changelog: changelog,
       beta_app_review_info: {
         contact_first_name: testflight_contact[:first_name],
         contact_last_name: testflight_contact[:last_name],
@@ -212,13 +214,6 @@ platform :ios do
         contact_phone: testflight_contact[:phone]
       }
     )
-    if config[:distribute_external]
-      set_changelog(
-        app_identifier: config[:app_identifier],
-        version: "#{version}",
-        changelog: "#{config[:output_name]} #{version} build #{build}"
-      )
-    end
     slack(
       message: "[iOS #{config[:output_name]}] #{version} build #{build} uploaded to the TestFlight\nLink: #{config[:testflight_link]}",
       channel: slack_channel,
