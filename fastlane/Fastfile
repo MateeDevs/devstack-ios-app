@@ -9,7 +9,6 @@
 # Project specific variables
 
 workspace = "DevStack.xcworkspace"
-project = "DevStack.xcodeproj"
 slack_channel = "#ci"
 
 alpha = {
@@ -193,8 +192,8 @@ platform :ios do
 
   desc "Upload the build to the TestFlight"
   private_lane :upload_testflight do |config|
-    version = get_version_number(xcodeproj: project)
-    build = get_build_number(xcodeproj: project)
+    version = get_ipa_info_plist_value(ipa: "./ipa/#{config[:output_name]}.ipa", key: "CFBundleShortVersionString")
+    build = get_ipa_info_plist_value(ipa: "./ipa/#{config[:output_name]}.ipa", key: "CFBundleVersion")
     app_store_connect_api_key(
       key_id: config[:api_key_id],
       issuer_id: config[:api_key_issuer_id],
@@ -280,8 +279,8 @@ platform :ios do
 
   desc "Create and push git tag"
   lane :tag do
-    version = get_version_number(xcodeproj: project)
-    build = get_build_number(xcodeproj: project)
+    version = get_ipa_info_plist_value(ipa: "./ipa/#{config[:output_name]}.ipa", key: "CFBundleShortVersionString")
+    build = get_ipa_info_plist_value(ipa: "./ipa/#{config[:output_name]}.ipa", key: "CFBundleVersion")
     add_git_tag(tag: "#{version}.#{build}")
     push_git_tags(tag: "#{version}.#{build}")
   end
