@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 import RxSwift
 
-@testable import A_DevStack
+@testable import DevStack
 
 class DatabaseProviderMock: DatabaseProviderType {
 
