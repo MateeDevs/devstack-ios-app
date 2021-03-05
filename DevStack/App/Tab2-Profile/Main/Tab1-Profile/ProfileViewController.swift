@@ -26,6 +26,7 @@ final class ProfileViewController: BaseViewController {
     @IBOutlet private weak var userImageView: UserImageView!
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var locationLabel: UILabel!
+    @IBOutlet private weak var additionalInfoLabel: UILabel!
     @IBOutlet private weak var logoutButton: PrimaryButton!
     
     // MARK: Stored properties
@@ -53,13 +54,9 @@ final class ProfileViewController: BaseViewController {
         viewModel.output.profile.fullName.drive(userNameLabel.rx.text).disposed(by: disposeBag)
         viewModel.output.profile.initials.drive(userImageView.rx.initials).disposed(by: disposeBag)
         viewModel.output.profile.imageURL.drive(userImageView.rx.imageURL).disposed(by: disposeBag)
-        
         viewModel.output.isRefreshing.drive(view.rx.skeletonView).disposed(by: disposeBag)
-        
-        viewModel.output.currentLocation
-            .map { $0.coordinate.toString() }
-            .drive(locationLabel.rx.text).disposed(by: disposeBag)
-
+        viewModel.output.currentLocation.drive(locationLabel.rx.text).disposed(by: disposeBag)
+        viewModel.output.additionalInfoLabelIsHidden.drive(additionalInfoLabel.rx.isHidden).disposed(by: disposeBag)
         viewModel.output.flow.map { Flow.profile($0) }.drive(flowController.rx.handleFlow).disposed(by: disposeBag)
     }
 

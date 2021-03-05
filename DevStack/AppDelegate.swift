@@ -88,12 +88,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let keychainProvider = KeychainProvider(userDefaultsProvider: userDefaultsProvider)
         let networkProvider = NetworkProvider(keychainProvider: keychainProvider, databaseProvider: databaseProvider)
         let pushNotificationsProvider = PushNotificationsProvider(application: application, appDelegate: self)
+        let remoteConfigProvider = RemoteConfigProvider()
 
         return ProviderDependency(
             databaseProvider: databaseProvider,
             keychainProvider: keychainProvider,
             networkProvider: networkProvider,
             pushNotificationsProvider: pushNotificationsProvider,
+            remoteConfigProvider: remoteConfigProvider,
             userDefaultsProvider: userDefaultsProvider
         )
     }
