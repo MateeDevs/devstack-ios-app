@@ -35,6 +35,14 @@ protocol KeychainProviderType {
 
 struct KeychainProvider: KeychainProviderType {
     
+    init(userDefaultsProvider: UserDefaultsProviderType) {
+        // Clear keychain on first run
+        if userDefaultsProvider.get(.hasRunBefore) == nil {
+            deleteAll()
+            userDefaultsProvider.save(.hasRunBefore, value: true)
+        }
+    }
+    
     func save(_ key: KeychainCoding, value: String) {
         let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")
         keychain[key.rawValue] = value
