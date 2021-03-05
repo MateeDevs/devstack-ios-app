@@ -103,6 +103,7 @@
 		4582181625F19CB800D587EB /* RemoteConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582181525F19CB800D587EB /* RemoteConfigRepository.swift */; };
 		4582182E25F1A28D00D587EB /* RemoteConfigCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582182D25F1A28D00D587EB /* RemoteConfigCoding.swift */; };
 		4582183525F1A2CD00D587EB /* GetRemoteConfigValueUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582183425F1A2CD00D587EB /* GetRemoteConfigValueUseCase.swift */; };
+		4582183D25F2385F00D587EB /* RemoteConfigProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582183C25F2385F00D587EB /* RemoteConfigProviderMock.swift */; };
 		45840C9E25ACE5BB00DFC729 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9D25ACE5BB00DFC729 /* Moya */; };
 		45840CA025ACE5BB00DFC729 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 45840C9F25ACE5BB00DFC729 /* RxMoya */; };
 		45840CAB25ACE69A00DFC729 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 45840CAA25ACE69A00DFC729 /* AlamofireImage */; };
@@ -361,6 +362,7 @@
 		4582181525F19CB800D587EB /* RemoteConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigRepository.swift; sourceTree = "<group>"; };
 		4582182D25F1A28D00D587EB /* RemoteConfigCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigCoding.swift; sourceTree = "<group>"; };
 		4582183425F1A2CD00D587EB /* GetRemoteConfigValueUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRemoteConfigValueUseCase.swift; sourceTree = "<group>"; };
+		4582183C25F2385F00D587EB /* RemoteConfigProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigProviderMock.swift; sourceTree = "<group>"; };
 		4584E7F325D36481002335E3 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		4585A15C214FE3DE00186D7D /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		4588FF092225A73C0014FC79 /* RatingView.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RatingView.xcassets; sourceTree = "<group>"; };
@@ -637,6 +639,7 @@
 				458C1AC824A28E8200549420 /* KeychainProviderMock.swift */,
 				4557195424A15B1F00FB24CA /* NetworkProviderMock.swift */,
 				4572512025E56CF400D1B745 /* PushNotificationsProviderMock.swift */,
+				4582183C25F2385F00D587EB /* RemoteConfigProviderMock.swift */,
 				458C1ACA24A3474C00549420 /* UserDefaultsProviderMock.swift */,
 			);
 			path = Mocks;
@@ -1714,6 +1717,7 @@
 				45E100F525E6B2A00082CABA /* RxTest.swift in Sources */,
 				45E100FA25E6B2A00082CABA /* Recorded+Event.swift in Sources */,
 				4572512125E56CF400D1B745 /* PushNotificationsProviderMock.swift in Sources */,
+				4582183D25F2385F00D587EB /* RemoteConfigProviderMock.swift in Sources */,
 				45E100FC25E6B2A00082CABA /* Deprecated.swift in Sources */,
 				45E100F625E6B2A00082CABA /* TestableObserver.swift in Sources */,
 				45E100FB25E6B2A00082CABA /* Any+Equatable.swift in Sources */,

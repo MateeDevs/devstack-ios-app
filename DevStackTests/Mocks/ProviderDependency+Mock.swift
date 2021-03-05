@@ -17,6 +17,7 @@ extension ProviderDependency {
         keychainProvider: KeychainProviderType = KeychainProviderMock(),
         networkProvider: NetworkProviderType = NetworkProviderMock(),
         pushNotificationsProvider: PushNotificationsProviderType = PushNotificationsProviderMock(),
+        remoteConfigProvider: RemoteConfigProviderType = RemoteConfigProviderMock(),
         userDefaultsProvider: UserDefaultsProviderType = UserDefaultsProviderMock()
     ) -> ProviderDependency {
         .init(
@@ -24,6 +25,7 @@ extension ProviderDependency {
             keychainProvider: keychainProvider,
             networkProvider: networkProvider,
             pushNotificationsProvider: pushNotificationsProvider,
+            remoteConfigProvider: remoteConfigProvider,
             userDefaultsProvider: userDefaultsProvider
         )
     }
