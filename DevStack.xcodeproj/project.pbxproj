@@ -244,6 +244,16 @@
 		A8E5D3E2213596FD00515312 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B76D9121359138003BB997 /* StatusCode.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		458217FD25F148CE00D587EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4558D30620FCC8FF005BC325;
+			remoteInfo = DevStack;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		450384742170E4FC004F43DC /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
 		450392842256B29D0037BF42 /* GoogleService-Info-Alpha.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Alpha.plist"; sourceTree = "<group>"; };
@@ -1435,6 +1445,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				458217FE25F148CE00D587EB /* PBXTargetDependency */,
 			);
 			name = DevStackTests;
 			packageProductDependencies = (
@@ -1493,7 +1504,7 @@
 				TargetAttributes = {
 					4557194824A155ED00FB24CA = {
 						CreatedOnToolsVersion = 11.4;
-						TestTargetID = 459761CB20FDD60A0034DE29;
+						TestTargetID = 4558D30620FCC8FF005BC325;
 					};
 					4558D30620FCC8FF005BC325 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -1868,6 +1879,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		458217FE25F148CE00D587EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4558D30620FCC8FF005BC325 /* DevStack */;
+			targetProxy = 458217FD25F148CE00D587EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		4527329823F0A4480067C712 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -1977,7 +1996,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-DALPHA\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.alpha;
-				PRODUCT_NAME = "A-DevStack";
+				PRODUCT_NAME = DevStack;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2004,7 +2023,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/A-DevStack.app/A-DevStack";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevStack.app/DevStack";
 			};
 			name = "Alpha Debug";
 		};
@@ -2091,7 +2110,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-DBETA\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.beta;
-				PRODUCT_NAME = "B-DevStack";
+				PRODUCT_NAME = DevStack;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2118,7 +2137,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/A-DevStack.app/A-DevStack";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevStack.app/DevStack";
 			};
 			name = "Beta Debug";
 		};
@@ -2199,7 +2218,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-DALPHA\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.alpha;
-				PRODUCT_NAME = "A-DevStack";
+				PRODUCT_NAME = DevStack;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2225,7 +2244,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/A-DevStack.app/A-DevStack";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevStack.app/DevStack";
 			};
 			name = "Alpha Release";
 		};
@@ -2306,7 +2325,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-DBETA\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.beta;
-				PRODUCT_NAME = "B-DevStack";
+				PRODUCT_NAME = DevStack;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2332,7 +2351,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/A-DevStack.app/A-DevStack";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevStack.app/DevStack";
 			};
 			name = "Beta Release";
 		};
@@ -2355,7 +2374,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/A-DevStack.app/A-DevStack";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevStack.app/DevStack";
 			};
 			name = Debug;
 		};
@@ -2377,7 +2396,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/A-DevStack.app/A-DevStack";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevStack.app/DevStack";
 			};
 			name = Release;
 		};

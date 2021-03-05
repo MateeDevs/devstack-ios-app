@@ -9,7 +9,7 @@
 import RxSwift
 import XCTest
 
-@testable import A_DevStack
+@testable import DevStack
 
 class LoginViewModelTests: BaseTestCase {
 

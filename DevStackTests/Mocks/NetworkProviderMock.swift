@@ -10,7 +10,7 @@ import Foundation
 import Moya
 import RxSwift
 
-@testable import A_DevStack
+@testable import DevStack
 
 enum ResponseType: Int {
     case success = 200

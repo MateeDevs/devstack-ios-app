@@ -8,6 +8,6 @@
 
 import Foundation
 
-@testable import A_DevStack
+@testable import DevStack
 
 class PushNotificationsProviderMock: PushNotificationsProviderType {}
