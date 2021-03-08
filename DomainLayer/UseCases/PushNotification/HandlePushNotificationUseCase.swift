@@ -19,7 +19,7 @@
 //        self.dependencies = dependencies
 //    }
 //
-//    func execute(_ notificationData: [AnyHashable: Any]) -> PushNotification? {
+//    public func execute(_ notificationData: [AnyHashable: Any]) -> PushNotification? {
 //        do {
 //            let jsonData = try JSONSerialization.data(withJSONObject: notificationData, options: [])
 //            let notification = try JSONDecoder().decode(NETPushNotification.self, from: jsonData)

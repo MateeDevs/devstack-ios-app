@@ -19,7 +19,7 @@ public struct RefreshUsersUseCase {
         self.dependencies = dependencies
     }
     
-    func execute(page: Int) -> Observable<Event<Int>> {
+    public func execute(page: Int) -> Observable<Event<Int>> {
         dependencies.userRepository.list(.remote, page: page, sortBy: nil).map { $0.count }.materialize()
     }
 }

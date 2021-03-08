@@ -19,7 +19,7 @@ public struct LogoutUseCase {
         self.dependencies = dependencies
     }
     
-    func execute() -> Observable<Event<Void>> {
+    public func execute() -> Observable<Event<Void>> {
         dependencies.authTokenRepository.delete().materialize()
     }
 }

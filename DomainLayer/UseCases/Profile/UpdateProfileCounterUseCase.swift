@@ -21,7 +21,7 @@ public struct UpdateProfileCounterUseCase {
         self.dependencies = dependencies
     }
     
-    func execute(value: Int) -> Observable<Event<Void>> {
+    public func execute(value: Int) -> Observable<Event<Void>> {
         guard let authToken = dependencies.authTokenRepository.read() else { return .error(CommonError.noAuthToken) }
         return dependencies.userRepository.read(.local, id: authToken.userId).take(1)
             .flatMap { profile -> Observable<User> in

@@ -13,8 +13,8 @@ public struct CommonError {
 
 public struct RepositoryError: LocalizedError {
     
-    let statusCode: StatusCode
-    let message: String
+    public let statusCode: StatusCode
+    private let message: String
     
     public init(statusCode: StatusCode, message: String) {
         self.statusCode = statusCode

@@ -19,7 +19,7 @@ public struct RegistrationUseCase {
         self.dependencies = dependencies
     }
     
-    func execute(_ data: RegistrationData) -> Observable<Event<Void>> {
+    public func execute(_ data: RegistrationData) -> Observable<Event<Void>> {
         dependencies.userRepository.create(data).mapToVoid().materialize()
     }
 }

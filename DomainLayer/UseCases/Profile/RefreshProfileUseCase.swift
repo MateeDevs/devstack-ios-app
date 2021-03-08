@@ -21,7 +21,7 @@ public struct RefreshProfileUseCase {
         self.dependencies = dependencies
     }
     
-    func execute() -> Observable<Event<Void>> {
+    public func execute() -> Observable<Event<Void>> {
         guard let authToken = dependencies.authTokenRepository.read() else { return .error(CommonError.noAuthToken) }
         return dependencies.userRepository.read(.remote, id: authToken.userId).mapToVoid().materialize()
     }

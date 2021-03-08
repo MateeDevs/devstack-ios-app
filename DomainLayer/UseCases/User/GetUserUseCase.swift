@@ -19,7 +19,7 @@ public struct GetUserUseCase {
         self.dependencies = dependencies
     }
     
-    func execute(id: String) -> Observable<User> {
+    public func execute(id: String) -> Observable<User> {
         dependencies.userRepository.read(.local, id: id)
     }
 }

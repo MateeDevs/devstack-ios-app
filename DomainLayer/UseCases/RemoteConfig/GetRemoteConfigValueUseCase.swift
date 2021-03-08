@@ -20,7 +20,7 @@ public struct GetRemoteConfigValueUseCase {
         self.dependencies = dependencies
     }
     
-    func execute(_ key: RemoteConfigCoding) -> Observable<Bool> {
+    public func execute(_ key: RemoteConfigCoding) -> Observable<Bool> {
         dependencies.remoteConfigRepository.read(key)
     }
 }

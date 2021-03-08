@@ -8,6 +8,11 @@ touch ../DevStack/Constants/Assets.swift
 touch ../DevStack/Constants/Localizable.swift
 touch ../DevStack/Constants/Storyboards.swift
 
+find ../PresentationLayer/Resources/*.lproj -type d -exec sh -c 'touch $0/Localizable.strings' {} \;
+touch ../PresentationLayer/Resources/Constants/Assets.swift
+touch ../PresentationLayer/Resources/Constants/Localizable.swift
+touch ../PresentationLayer/Resources/Constants/Storyboards.swift
+
 echo "Checking file header"
 if [ ! -f ../DevStack.xcworkspace/xcuserdata/*.xcuserdatad/IDETemplateMacros.plist ]; then
   echo "❌ File header is not set - setting now"

@@ -5,8 +5,8 @@
 
 public struct ErrorMessages {
     
-    let statusCodes: [StatusCode: String]
-    let defaultMessage: String
+    public let statusCodes: [StatusCode: String]
+    public let defaultMessage: String
     
     public init(_ statusCodes: [StatusCode: String], defaultMessage: String) {
         self.statusCodes = statusCodes

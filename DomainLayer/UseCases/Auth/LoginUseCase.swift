@@ -19,7 +19,7 @@ public struct LoginUseCase {
         self.dependencies = dependencies
     }
     
-    func execute(_ data: LoginData) -> Observable<Event<Void>> {
+    public func execute(_ data: LoginData) -> Observable<Event<Void>> {
         dependencies.authTokenRepository.create(data).mapToVoid().materialize()
     }
 }

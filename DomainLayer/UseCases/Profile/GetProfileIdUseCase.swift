@@ -19,7 +19,7 @@ public struct GetProfileIdUseCase {
         self.dependencies = dependencies
     }
     
-    func execute() -> String? {
+    public func execute() -> String? {
         dependencies.authTokenRepository.read()?.userId
     }
 }

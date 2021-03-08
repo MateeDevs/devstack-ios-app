@@ -20,7 +20,7 @@ public struct GetCurrentLocationUseCase {
         self.dependencies = dependencies
     }
     
-    func execute() -> Observable<CLLocation> {
+    public func execute() -> Observable<CLLocation> {
         return dependencies.locationRepository.getCurrentLocation(withAccuracy: kCLLocationAccuracyThreeKilometers)
     }
 }

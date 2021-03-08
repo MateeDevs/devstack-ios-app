@@ -19,7 +19,7 @@ public struct UpdateUserUseCase {
         self.dependencies = dependencies
     }
     
-    func execute(user: User) -> Observable<Event<Void>> {
+    public func execute(user: User) -> Observable<Event<Void>> {
         dependencies.userRepository.update(.remote, user: user).mapToVoid().materialize()
     }
 }

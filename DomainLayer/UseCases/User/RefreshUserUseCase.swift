@@ -19,7 +19,7 @@ public struct RefreshUserUseCase {
         self.dependencies = dependencies
     }
     
-    func execute(id: String) -> Observable<Event<Void>> {
+    public func execute(id: String) -> Observable<Event<Void>> {
         dependencies.userRepository.read(.remote, id: id).mapToVoid().materialize()
     }
 }
