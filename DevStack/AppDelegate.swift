@@ -7,6 +7,7 @@
 //
 
 import DataLayer
+import DomainLayer
 import UIKit
 #if ALPHA || BETA
 import Atlantis
@@ -17,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     private(set) var flowController: AppFlowController?
-    private var providers: ProviderDependency?
     
     func application(
         _ application: UIApplication,
@@ -70,15 +70,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupEnvironment() {
         #if ALPHA
         Atlantis.start()
-        UIApplication.environment = Environment(type: .alpha)
-        DataEnvironment.environment = DataLayer.Environment(type: DataLayer.EnvironmentType.alpha)
+        Environment.value = EnvironmentValue(type: .alpha)
         Logger.info("ALPHA environment", category: .app)
         #elseif BETA
         Atlantis.start()
-        UIApplication.environment = Environment(type: .beta)
+        Environment.value = EnvironmentValue(type: .beta)
         Logger.info("BETA environment", category: .app)
         #elseif PRODUCTION
-        UIApplication.environment = Environment(type: .production)
+        Environment.value = EnvironmentValue(type: .production)
         Logger.info("PRODUCTION environment", category: .app)
         #endif
     }

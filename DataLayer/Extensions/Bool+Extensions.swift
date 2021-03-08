@@ -3,7 +3,7 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
-public extension Bool {
+extension Bool {
     func toString() -> String? {
         self ? "true" : "false"
     }

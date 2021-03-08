@@ -5,15 +5,15 @@
 
 import Foundation
 
-protocol HasUserDefaultsProvider {
+public protocol HasUserDefaultsProvider {
     var userDefaultsProvider: UserDefaultsProviderType { get }
 }
 
-enum UserDefaultsCoding: String, CaseIterable {
+public enum UserDefaultsCoding: String, CaseIterable {
     case hasRunBefore
 }
 
-protocol UserDefaultsProviderType {
+public protocol UserDefaultsProviderType {
 
     /// Save the given key/value combination
     func save<T>(_ key: UserDefaultsCoding, value: T)

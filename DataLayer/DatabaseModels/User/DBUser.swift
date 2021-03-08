@@ -3,7 +3,6 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
-import Foundation
 import RealmSwift
 
 @objcMembers class DBUser: Object {
@@ -29,7 +28,7 @@ import RealmSwift
 
 // Conversion from DatabaseModel to DomainModel
 extension DBUser: DomainRepresentable {
-    typealias DomainModel = User
+    typealias DomainModel = DomainLayer.User
     
     var domainModel: DomainModel {
         User(
@@ -46,7 +45,7 @@ extension DBUser: DomainRepresentable {
 }
 
 // Conversion from DomainModel to DatabaseModel
-extension User: DatabaseRepresentable {
+extension DomainLayer.User: DatabaseRepresentable {
     typealias DatabaseModel = DBUser
     
     var databaseModel: DatabaseModel {

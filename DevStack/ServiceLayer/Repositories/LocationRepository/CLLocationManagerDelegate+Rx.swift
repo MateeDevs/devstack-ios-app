@@ -10,9 +10,9 @@ import CoreLocation
 import RxCocoa
 import RxSwift
 
-extension CLLocationManager: HasDelegate {
-    public typealias Delegate = CLLocationManagerDelegate
-}
+// extension CLLocationManager: HasDelegate {
+//    public typealias Delegate = CLLocationManagerDelegate
+// }
 
 public class RxCLLocationManagerDelegateProxy: DelegateProxy<CLLocationManager, CLLocationManagerDelegate>, DelegateProxyType {
 

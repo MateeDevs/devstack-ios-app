@@ -3,8 +3,8 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-import XCTest
 @testable import DataLayer
+import XCTest
 
 class DataLayerTests: XCTestCase {
 

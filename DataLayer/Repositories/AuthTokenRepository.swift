@@ -3,17 +3,11 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
-import Foundation
-import RealmSwift
 import RxSwift
 
-public protocol HasAuthTokenRepository {
-    var authTokenRepository: AuthTokenRepository { get }
-}
+public class AuthTokenRepository: AuthTokenRepositoryType {
 
-public class AuthTokenRepository {
-
-    typealias Dependencies =
+    public typealias Dependencies =
         HasDatabaseProvider &
         HasKeychainProvider &
         HasNetworkProvider
@@ -22,7 +16,7 @@ public class AuthTokenRepository {
     private let keychain: KeychainProviderType
     private let network: NetworkProviderType
     
-    init(dependencies: Dependencies) {
+    public init(dependencies: Dependencies) {
         self.database = dependencies.databaseProvider
         self.keychain = dependencies.keychainProvider
         self.network = dependencies.networkProvider
@@ -31,7 +25,7 @@ public class AuthTokenRepository {
     public func create(_ data: LoginData) -> Observable<AuthToken> {
         guard let data = data.networkModel.encoded else { return .error(CommonError.encoding) }
         let endpoint = AuthAPI.login(data)
-        return network.observableRequest(endpoint, withInterceptor: false).map(NETAuthToken.self).do { authToken in
+        return network.observableRequest(endpoint, withInterceptor: false).map(NETAuthToken.self).mapToDomain().do { authToken in
             self.keychain.save(.authToken, value: authToken.token)
             self.keychain.save(.userId, value: authToken.userId)
         }

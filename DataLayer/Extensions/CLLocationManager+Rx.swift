@@ -9,7 +9,7 @@ import CoreLocation
 import RxCocoa
 import RxSwift
 
-public extension Reactive where Base: CLLocationManager {
+extension Reactive where Base: CLLocationManager {
     
     /// Reactive wrapper for `delegate`.
     /// For more information take a look at `DelegateProxyType` protocol documentation.

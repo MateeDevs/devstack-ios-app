@@ -90,26 +90,26 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
     
     func request(_ target: MultiTarget, withInterceptor: Bool = true) -> Single<Moya.Response> {
         let actualRequest = moyaProvider.rx.request(target).flatMap { response -> PrimitiveSequence<SingleTrait, Response> in
-            if response.statusCode == 401 {
-                guard withInterceptor,
-                    let vc = UIApplication.topViewController() as? BaseViewController else { return Single.just(response) }
-
-                let action = UIAlertAction(title: L10n.dialog_interceptor_button_title, style: .default, handler: { _ in
-                    // Perform logout and present login screen
-                    self.keychain.deleteAll()
-                    self.database.deleteAll()
-                    if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
-                        let mainFlow = appDelegate.flowController?.childControllers.first as? MainFlowController {
-                        mainFlow.presentOnboarding()
-                    }
-                })
-                
-                let alert = Alert(title: L10n.dialog_interceptor_title, message: L10n.dialog_interceptor_text, primaryAction: action)
-                vc.handleAlertAction(.showAlert(alert))
-                return Single.error(MoyaError.statusCode(response))
-            } else {
+//            if response.statusCode == 401 {
+//                guard withInterceptor,
+//                    let vc = UIApplication.topViewController() as? UIViewController else { return Single.just(response) }
+//
+//                let action = UIAlertAction(title: L10n.dialog_interceptor_button_title, style: .default, handler: { _ in
+//                    // Perform logout and present login screen
+//                    self.keychain.deleteAll()
+//                    self.database.deleteAll()
+//                    if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+//                        let mainFlow = appDelegate.flowController?.childControllers.first as? MainFlowController {
+//                        mainFlow.presentOnboarding()
+//                    }
+//                })
+//
+//                let alert = Alert(title: L10n.dialog_interceptor_title, message: L10n.dialog_interceptor_text, primaryAction: action)
+//                vc.handleAlertAction(.showAlert(alert))
+//                return Single.error(MoyaError.statusCode(response))
+//            } else {
                 return Single.just(response)
-            }
+//            }
         }
         return actualRequest
     }

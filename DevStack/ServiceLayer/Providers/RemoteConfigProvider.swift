@@ -6,6 +6,7 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import DomainLayer
 import FirebaseRemoteConfig
 import RxSwift
 import UIKit
@@ -23,7 +24,7 @@ struct RemoteConfigProvider: RemoteConfigProviderType {
     
     init() {
         // Set fetch interval to zero for non production environments
-        if UIApplication.environment.type != .production {
+        if Environment.value.type != .production {
             let settings = RemoteConfigSettings()
             settings.minimumFetchInterval = 0
             RemoteConfig.remoteConfig().configSettings = settings

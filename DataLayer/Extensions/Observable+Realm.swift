@@ -6,7 +6,7 @@
 import RealmSwift
 import RxSwift
 
-enum UpdateModel {
+public enum UpdateModel {
     case apiModel
     case fullModel
     
@@ -21,9 +21,7 @@ enum UpdateModel {
 extension ObservableType {
     
     /// Transformation that saves an object to the database.
-    func save<T>(
-        model: UpdateModel = .apiModel
-    ) -> Observable<T> where T: DatabaseRepresentable, T.DatabaseModel: Object, T == Element {
+    func save<T>(model: UpdateModel = .apiModel) -> Observable<T> where T: Object, T == Element {
         flatMap { object -> Observable<T> in
             guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
             return realm.rx.save(object, model: model)
@@ -31,9 +29,7 @@ extension ObservableType {
     }
     
     /// Transformation that saves an array of objects to the database.
-    func save<T>(
-        model: UpdateModel = .apiModel
-    ) -> Observable<[T]> where T: DatabaseRepresentable, T.DatabaseModel: Object, [T] == Element {
+    func save<T>(model: UpdateModel = .apiModel) -> Observable<[T]> where T: Object, [T] == Element {
         flatMap { objects -> Observable<[T]> in
             guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
             return realm.rx.save(objects, model: model)

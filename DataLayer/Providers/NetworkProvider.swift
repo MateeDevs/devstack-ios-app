@@ -6,11 +6,11 @@
 import Moya
 import RxSwift
 
-protocol HasNetworkProvider {
+public protocol HasNetworkProvider {
     var networkProvider: NetworkProviderType { get }
 }
 
-protocol NetworkProviderType {
+public protocol NetworkProviderType {
 
     ///
     /// Function for observing on a specified network call.

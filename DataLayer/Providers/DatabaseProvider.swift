@@ -3,15 +3,14 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import Foundation
 import RealmSwift
 import RxSwift
 
-protocol HasDatabaseProvider {
+public protocol HasDatabaseProvider {
     var databaseProvider: DatabaseProviderType { get }
 }
 
-protocol DatabaseProviderType {
+public protocol DatabaseProviderType {
 
     ///
     /// Generic function for observing on a specified object from database.
@@ -19,13 +18,13 @@ protocol DatabaseProviderType {
     /// - parameter type: Type of object.
     /// - parameter id: Primary key to specify an object.
     /// - parameter primaryKeyName: Optional parameter to set alternate primary key name (default is "id").
-    /// - returns: Observable which emits a domain representation of required object.
+    /// - returns: Observable which emits a required object.
     ///
     func observableObject<T>(
         _ type: T.Type,
         id: String,
         primaryKeyName: String
-    ) -> Observable<T.DomainModel> where T: DomainRepresentable & Object
+    ) -> Observable<T> where T: Object
     
     ///
     /// Generic function for observing on a specified collection of objects from database.
@@ -34,14 +33,14 @@ protocol DatabaseProviderType {
     /// - parameter predicate: NSPredicate for optional objects filtering.
     /// - parameter sortBy: Optional parameter for sorting.
     /// - parameter ascending: Optional parameter for sorting in ascending or descending order.
-    /// - returns: Observable which emits an Array of domain representaions of required objects.
+    /// - returns: Observable which emits an Array of required objects.
     ///
     func observableCollection<T>(
         _ type: T.Type,
         predicate: NSPredicate?,
         sortBy: String?,
         ascending: Bool
-    ) -> Observable<[T.DomainModel]> where T: DomainRepresentable & Object
+    ) -> Observable<[T]> where T: Object
     
     ///
     /// Generic function that saves a given object.
@@ -50,10 +49,7 @@ protocol DatabaseProviderType {
     /// - parameter model: Optional parameter to specify which parameters should be updated.
     /// - returns: Observable which emits an saved object.
     ///
-    func save<T>(
-        _ object: T,
-        model: UpdateModel
-    ) -> Observable<T> where T: DatabaseRepresentable, T.DatabaseModel: Object
+    func save<T>(_ object: T, model: UpdateModel) -> Observable<T> where T: Object
     
     ///
     /// Generic function that saves a collection of objects.
@@ -62,10 +58,7 @@ protocol DatabaseProviderType {
     /// - parameter model: Optional parameter to specify which parameters should be updated.
     /// - returns: Observable which emits an Array of saved objects.
     ///
-    func save<T>(
-        _ objects: [T],
-        model: UpdateModel
-    ) -> Observable<[T]> where T: DatabaseRepresentable, T.DatabaseModel: Object
+    func save<T>(_ objects: [T], model: UpdateModel) -> Observable<[T]> where T: Object
 
     /// Delete all records
     func deleteAll()
@@ -78,7 +71,7 @@ protocol DatabaseProviderType {
         _ type: T.Type,
         id: String,
         primaryKeyName: String = "id"
-    ) -> Observable<T.DomainModel> where T: DomainRepresentable & Object {
+    ) -> Observable<T> where T: Object {
         observableObject(type, id: id, primaryKeyName: primaryKeyName)
     }
 
@@ -87,21 +80,15 @@ protocol DatabaseProviderType {
         predicate: NSPredicate? = nil,
         sortBy: String? = nil,
         ascending: Bool = true
-    ) -> Observable<[T.DomainModel]> where T: DomainRepresentable & Object {
+    ) -> Observable<[T]> where T: Object {
         observableCollection(type, predicate: predicate, sortBy: sortBy, ascending: ascending)
     }
     
-    func save<T>(
-        _ object: T,
-        model: UpdateModel = .apiModel
-    ) -> Observable<T> where T: DatabaseRepresentable, T.DatabaseModel: Object {
+    func save<T>(_ object: T, model: UpdateModel = .apiModel) -> Observable<T> where T: Object {
         save(object, model: model)
     }
     
-    func save<T>(
-        _ objects: [T],
-        model: UpdateModel = .apiModel
-    ) -> Observable<[T]> where T: DatabaseRepresentable, T.DatabaseModel: Object {
+    func save<T>(_ objects: [T], model: UpdateModel = .apiModel) -> Observable<[T]> where T: Object {
         save(objects, model: model)
     }
  }
@@ -112,13 +99,13 @@ struct DatabaseProvider: DatabaseProviderType {
         _ type: T.Type,
         id: String,
         primaryKeyName: String
-    ) -> Observable<T.DomainModel> where T: DomainRepresentable & Object {
+    ) -> Observable<T> where T: Object {
         guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
         let dbObjects = realm.objects(T.self).filter(NSPredicate(format: "\(primaryKeyName) == %@", id))
         
-        return Observable.collection(from: dbObjects).flatMap { objects -> Observable<T.DomainModel> in
+        return Observable.collection(from: dbObjects).flatMap { objects -> Observable<T> in
             guard let object = objects.first else { return .empty() }
-            return .just(object.domainModel)
+            return .just(object)
         }
     }
 
@@ -127,7 +114,7 @@ struct DatabaseProvider: DatabaseProviderType {
         predicate: NSPredicate?,
         sortBy: String?,
         ascending: Bool
-    ) -> Observable<[T.DomainModel]> where T: DomainRepresentable & Object {
+    ) -> Observable<[T]> where T: Object {
         guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
         var dbObjects = realm.objects(T.self)
         
@@ -139,24 +126,18 @@ struct DatabaseProvider: DatabaseProviderType {
             dbObjects = dbObjects.sorted(byKeyPath: sortBy, ascending: ascending)
         }
         
-        return Observable.array(from: dbObjects).flatMap { objects -> Observable<[T.DomainModel]> in
+        return Observable.array(from: dbObjects).flatMap { objects -> Observable<[T]> in
             guard !objects.isEmpty else { return .just([]) }
-            return .just(objects.map { $0.domainModel })
+            return .just(objects)
         }
     }
     
-    func save<T>(
-        _ object: T,
-        model: UpdateModel
-    ) -> Observable<T> where T: DatabaseRepresentable, T.DatabaseModel: Object {
+    func save<T>(_ object: T, model: UpdateModel) -> Observable<T> where T: Object {
         guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
         return realm.rx.save(object, model: model)
     }
     
-    func save<T>(
-        _ objects: [T],
-        model: UpdateModel
-    ) -> Observable<[T]> where T: DatabaseRepresentable, T.DatabaseModel: Object {
+    func save<T>(_ objects: [T], model: UpdateModel) -> Observable<[T]> where T: Object {
         guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
         return realm.rx.save(objects, model: model)
     }

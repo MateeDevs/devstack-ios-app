@@ -1,5 +1,5 @@
 //
-//  Created by Petr Chmelar on 26.02.2021
+//  Created by Petr Chmelar on 08.03.2021
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
@@ -11,16 +11,16 @@ public enum EnvironmentType {
     case production
 }
 
-public struct Environment {
-    let type: EnvironmentType
+public struct EnvironmentValue {
+    public let type: EnvironmentType
     
     public init(type: EnvironmentType) {
         self.type = type
     }
 }
 
-public struct DataEnvironment {
-    @InitializedOnlyOnce public static var environment: Environment! // swiftlint:disable:this implicitly_unwrapped_optional
+public struct Environment {
+    @InitializedOnlyOnce public static var value: EnvironmentValue! // swiftlint:disable:this implicitly_unwrapped_optional
 }
 
 @propertyWrapper

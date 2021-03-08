@@ -6,19 +6,14 @@
 import CoreLocation
 import RxSwift
 
-public protocol HasLocationRepository {
-    var locationRepository: LocationRepository { get }
-}
+public class LocationRepository: LocationRepositoryType {
 
-public class LocationRepository {
-
-    typealias Dependencies = HasNoProvider
-
-    init(dependencies: Dependencies) {}
+    public typealias Dependencies = HasNoProvider
     
     private let locationManager = CLLocationManager()
     
-    /// Check whether the location services are enabled and authorized
+    public init(dependencies: Dependencies) {}
+    
     public func isLocationEnabled() -> Bool {
         guard CLLocationManager.locationServicesEnabled() else { return false }
         switch CLLocationManager.authorizationStatus() {
@@ -29,10 +24,7 @@ public class LocationRepository {
         }
     }
     
-    /// Observe current location
-    public func getCurrentLocation(
-        withAccuracy accuracy: CLLocationAccuracy = kCLLocationAccuracyThreeKilometers
-    ) -> Observable<CLLocation> {
+    public func getCurrentLocation(withAccuracy accuracy: CLLocationAccuracy) -> Observable<CLLocation> {
         locationManager.rx.didUpdateLocations
             .map { locations in locations[0] }
             .filter { location in location.horizontalAccuracy < accuracy }

@@ -6,16 +6,16 @@
 import Foundation
 import KeychainAccess
 
-protocol HasKeychainProvider {
+public protocol HasKeychainProvider {
     var keychainProvider: KeychainProviderType { get }
 }
 
-enum KeychainCoding: String, CaseIterable {
+public enum KeychainCoding: String, CaseIterable {
     case authToken
     case userId
 }
 
-protocol KeychainProviderType {
+public protocol KeychainProviderType {
 
     /// Save the given key/value combination
     func save(_ key: KeychainCoding, value: String)

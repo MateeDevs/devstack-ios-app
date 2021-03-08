@@ -6,6 +6,7 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
+import DomainLayer
 import UIKit
 
 struct NetworkingConstants {
@@ -18,7 +19,7 @@ struct NetworkingConstants {
     static let iso8601DateOnly = "yyyy-MM-dd"
     
     static var baseURL: String {
-        switch UIApplication.environment.type {
+        switch Environment.value.type {
         case .alpha: return "https://matee-devstack.herokuapp.com"
         case .beta: return "https://matee-devstack.herokuapp.com"
         case .production: return "https://matee-devstack.herokuapp.com"

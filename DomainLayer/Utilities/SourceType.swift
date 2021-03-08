@@ -1,5 +1,5 @@
 //
-//  Created by Petr Chmelar on 13.02.2021.
+//  Created by Petr Chmelar on 08.03.2021
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ public enum SourceType {
     case remote
     case both
     
-    func result<T>(db: Observable<T>, net: Observable<T>) -> Observable<T> {
+    public func result<T>(db: Observable<T>, net: Observable<T>) -> Observable<T> {
         switch self {
         case .local: return db
         case .remote: return net
