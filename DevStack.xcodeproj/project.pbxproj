@@ -468,8 +468,9 @@
 		4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		4558D30720FCC8FF005BC325 /* DevStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4558D30A20FCC8FF005BC325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		456E73DD25F817FA007D9A6D /* Info-Release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Release.plist"; sourceTree = "<group>"; };
 		4572512025E56CF400D1B745 /* PushNotificationsProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsProviderMock.swift; sourceTree = "<group>"; };
-		4575E5D525F6EF7200CCC003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4575E5D525F6EF7200CCC003 /* Info-Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Debug.plist"; sourceTree = "<group>"; };
 		4575E65525F6FA7600CCC003 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		4575E65C25F6FFA300CCC003 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		4575E67525F7051100CCC003 /* HasNoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNoUseCase.swift; sourceTree = "<group>"; };
@@ -884,13 +885,22 @@
 			isa = PBXGroup;
 			children = (
 				4575E61225F6F82C00CCC003 /* Entitlements */,
+				456E73DC25F817CF007D9A6D /* Info */,
 				4575E61325F6F83600CCC003 /* GoogleService */,
 				4558D30A20FCC8FF005BC325 /* AppDelegate.swift */,
 				4575E65525F6FA7600CCC003 /* AppIcon.xcassets */,
-				4575E5D525F6EF7200CCC003 /* Info.plist */,
 				4597626E20FDF0810034DE29 /* LaunchScreen.storyboard */,
 			);
 			path = DevStack;
+			sourceTree = "<group>";
+		};
+		456E73DC25F817CF007D9A6D /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				4575E5D525F6EF7200CCC003 /* Info-Debug.plist */,
+				456E73DD25F817FA007D9A6D /* Info-Release.plist */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 		4575E61225F6F82C00CCC003 /* Entitlements */ = {
@@ -2706,7 +2716,7 @@
 				DEVELOPMENT_TEAM = WNB34WBN42;
 				ENABLE_BITCODE = NO;
 				GOOGLE_SERVICE_INFO_PLIST_FILE = "DevStack/GoogleService/GoogleService-Info-Alpha.plist";
-				INFOPLIST_FILE = DevStack/Info.plist;
+				INFOPLIST_FILE = "DevStack/Info/Info-Debug.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2821,7 +2831,7 @@
 				DEVELOPMENT_TEAM = WNB34WBN42;
 				ENABLE_BITCODE = NO;
 				GOOGLE_SERVICE_INFO_PLIST_FILE = "DevStack/GoogleService/GoogleService-Info-Beta.plist";
-				INFOPLIST_FILE = DevStack/Info.plist;
+				INFOPLIST_FILE = "DevStack/Info/Info-Debug.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2930,7 +2940,7 @@
 				DEVELOPMENT_TEAM = WNB34WBN42;
 				ENABLE_TESTABILITY = YES;
 				GOOGLE_SERVICE_INFO_PLIST_FILE = "DevStack/GoogleService/GoogleService-Info-Alpha.plist";
-				INFOPLIST_FILE = DevStack/Info.plist;
+				INFOPLIST_FILE = "DevStack/Info/Info-Release.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3038,7 +3048,7 @@
 				DEVELOPMENT_TEAM = WNB34WBN42;
 				ENABLE_TESTABILITY = YES;
 				GOOGLE_SERVICE_INFO_PLIST_FILE = "DevStack/GoogleService/GoogleService-Info-Beta.plist";
-				INFOPLIST_FILE = DevStack/Info.plist;
+				INFOPLIST_FILE = "DevStack/Info/Info-Release.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3252,7 +3262,7 @@
 				DEVELOPMENT_TEAM = WNB34WBN42;
 				ENABLE_BITCODE = NO;
 				GOOGLE_SERVICE_INFO_PLIST_FILE = "DevStack/GoogleService/GoogleService-Info-Prod.plist";
-				INFOPLIST_FILE = DevStack/Info.plist;
+				INFOPLIST_FILE = "DevStack/Info/Info-Debug.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3283,7 +3293,7 @@
 				DEVELOPMENT_TEAM = WNB34WBN42;
 				ENABLE_TESTABILITY = YES;
 				GOOGLE_SERVICE_INFO_PLIST_FILE = "DevStack/GoogleService/GoogleService-Info-Prod.plist";
-				INFOPLIST_FILE = DevStack/Info.plist;
+				INFOPLIST_FILE = "DevStack/Info/Info-Release.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
