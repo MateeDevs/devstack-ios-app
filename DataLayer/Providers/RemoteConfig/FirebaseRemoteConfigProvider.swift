@@ -5,18 +5,8 @@
 
 import FirebaseRemoteConfig
 import RxSwift
-import UIKit
 
-public protocol HasRemoteConfigProvider {
-    var remoteConfigProvider: RemoteConfigProviderType { get }
-}
-
-public protocol RemoteConfigProviderType {
-    /// Try to retrieve a value for the given key
-    func get(_ key: RemoteConfigCoding) -> Observable<Bool>
-}
-
-public struct RemoteConfigProvider: RemoteConfigProviderType {
+public struct FirebaseRemoteConfigProvider {
     
     public init() {
         // Set fetch interval to zero for non production environments
@@ -26,6 +16,9 @@ public struct RemoteConfigProvider: RemoteConfigProviderType {
             RemoteConfig.remoteConfig().configSettings = settings
         }
     }
+}
+
+extension FirebaseRemoteConfigProvider: RemoteConfigProviderType {
     
     public func get(_ key: RemoteConfigCoding) -> Observable<Bool> {
         return RemoteConfig.remoteConfig().rx.fetch().flatMap { _ -> Observable<Bool> in

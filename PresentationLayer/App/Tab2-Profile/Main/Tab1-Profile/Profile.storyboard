@@ -12,12 +12,12 @@
         <!--Profile View Controller-->
         <scene sceneID="y7m-UU-Pkg">
             <objects>
-                <viewController id="CkE-Zn-ye5" customClass="ProfileViewController" customModule="A_DevStack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CkE-Zn-ye5" customClass="ProfileViewController" customModule="PresentationLayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NqY-lr-Xhd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mOy-UN-9uA" customClass="UserImageView" customModule="A_DevStack" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mOy-UN-9uA" customClass="UserImageView" customModule="PresentationLayer" customModuleProvider="target">
                                 <rect key="frame" x="137.5" y="64" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -39,7 +39,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFQ-Dk-44A">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="profile_view_remote_config_label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFQ-Dk-44A" customClass="LocalizedLabel" customModule="PresentationLayer" customModuleProvider="target">
                                 <rect key="frame" x="16" y="308" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -51,9 +51,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bF-jg-b3i" customClass="PrimaryButton" customModule="A_DevStack" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bF-jg-b3i" customClass="PrimaryButton" customModule="PresentationLayer" customModuleProvider="target">
                                 <rect key="frame" x="24" y="573" width="327" height="30"/>
                                 <state key="normal" title="profile_view_logout_button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UY-wd-JWJ" customClass="SecondaryButton" customModule="PresentationLayer" customModuleProvider="target">
+                                <rect key="frame" x="16" y="361" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="profile_view_push_notifications_register_button"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qdr-Ev-KLG"/>
@@ -64,21 +69,25 @@
                             <constraint firstItem="iQV-RZ-amD" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="16" id="5AQ-0o-KxB"/>
                             <constraint firstItem="QgE-43-xes" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="16" id="AeF-PG-T3e"/>
                             <constraint firstItem="WFQ-Dk-44A" firstAttribute="top" secondItem="iQV-RZ-amD" secondAttribute="bottom" constant="32" id="BV3-b7-9zC"/>
+                            <constraint firstItem="qdr-Ev-KLG" firstAttribute="leading" secondItem="3UY-wd-JWJ" secondAttribute="leading" constant="-16" id="DcK-k9-HRm"/>
                             <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="iQV-RZ-amD" secondAttribute="trailing" constant="16" id="Dxy-wi-m5j"/>
                             <constraint firstItem="iQV-RZ-amD" firstAttribute="top" secondItem="QgE-43-xes" secondAttribute="bottom" constant="32" id="QFI-0e-0Al"/>
+                            <constraint firstItem="3UY-wd-JWJ" firstAttribute="top" secondItem="WFQ-Dk-44A" secondAttribute="bottom" constant="32" id="Xsy-MW-xug"/>
                             <constraint firstItem="QgE-43-xes" firstAttribute="top" secondItem="mOy-UN-9uA" secondAttribute="bottom" constant="32" id="ZFi-kY-v5r"/>
                             <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="WFQ-Dk-44A" secondAttribute="trailing" constant="16" id="ZIR-DK-gsP"/>
                             <constraint firstItem="qdr-Ev-KLG" firstAttribute="bottom" secondItem="1bF-jg-b3i" secondAttribute="bottom" constant="64" id="ayI-9I-SKR"/>
                             <constraint firstItem="mOy-UN-9uA" firstAttribute="top" secondItem="qdr-Ev-KLG" secondAttribute="top" constant="64" id="bcs-N7-QsU"/>
                             <constraint firstItem="WFQ-Dk-44A" firstAttribute="leading" secondItem="qdr-Ev-KLG" secondAttribute="leading" constant="16" id="cVg-EU-Bu7"/>
                             <constraint firstItem="mOy-UN-9uA" firstAttribute="centerX" secondItem="qdr-Ev-KLG" secondAttribute="centerX" id="ee3-lY-QOq"/>
+                            <constraint firstItem="3UY-wd-JWJ" firstAttribute="trailing" secondItem="qdr-Ev-KLG" secondAttribute="trailing" constant="-16" id="vSB-OM-kld"/>
                             <constraint firstItem="qdr-Ev-KLG" firstAttribute="trailing" secondItem="QgE-43-xes" secondAttribute="trailing" constant="16" id="zRM-Uf-ohf"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="additionalInfoLabel" destination="WFQ-Dk-44A" id="vFB-FN-xZa"/>
                         <outlet property="locationLabel" destination="iQV-RZ-amD" id="b8t-xD-5v5"/>
                         <outlet property="logoutButton" destination="1bF-jg-b3i" id="XuL-A9-MyD"/>
+                        <outlet property="registerPushNotificationsButton" destination="3UY-wd-JWJ" id="2v7-Hp-ffk"/>
+                        <outlet property="remoteConfigLabel" destination="WFQ-Dk-44A" id="sm6-qO-RJb"/>
                         <outlet property="userImageView" destination="mOy-UN-9uA" id="ReL-lm-how"/>
                         <outlet property="userNameLabel" destination="QgE-43-xes" id="7kj-Ql-R2H"/>
                     </connections>
@@ -91,6 +100,12 @@
     <designables>
         <designable name="1bF-jg-b3i">
             <size key="intrinsicContentSize" width="187" height="30"/>
+        </designable>
+        <designable name="3UY-wd-JWJ">
+            <size key="intrinsicContentSize" width="422" height="36"/>
+        </designable>
+        <designable name="WFQ-Dk-44A">
+            <size key="intrinsicContentSize" width="256.5" height="20.5"/>
         </designable>
     </designables>
     <resources>

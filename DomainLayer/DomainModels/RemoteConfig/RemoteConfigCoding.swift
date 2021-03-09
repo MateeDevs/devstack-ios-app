@@ -4,5 +4,5 @@
 //
 
 public enum RemoteConfigCoding: String {
-    case profileAdditionalInfoIsVisible = "profile_additional_info_is_visible"
+    case profileLabelIsVisible = "profile_label_is_visible"
 }

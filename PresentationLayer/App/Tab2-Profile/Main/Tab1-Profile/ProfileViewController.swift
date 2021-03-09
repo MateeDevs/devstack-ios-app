@@ -23,7 +23,8 @@ final class ProfileViewController: BaseViewController {
     @IBOutlet private weak var userImageView: UserImageView!
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var locationLabel: UILabel!
-    @IBOutlet private weak var additionalInfoLabel: UILabel!
+    @IBOutlet private weak var remoteConfigLabel: LocalizedLabel!
+    @IBOutlet private weak var registerPushNotificationsButton: SecondaryButton!
     @IBOutlet private weak var logoutButton: PrimaryButton!
     
     // MARK: Stored properties
@@ -45,6 +46,7 @@ final class ProfileViewController: BaseViewController {
         guard let viewModel = viewModel, let flowController = flowController else { return }
 
         // Inputs
+        registerPushNotificationsButton.rx.tap.bind(to: viewModel.input.registerPushNotificationsButtonTaps).disposed(by: disposeBag)
         logoutButton.rx.tap.bind(to: viewModel.input.logoutButtonTaps).disposed(by: disposeBag)
 
         // Outputs
@@ -53,7 +55,8 @@ final class ProfileViewController: BaseViewController {
         viewModel.output.profile.imageURL.drive(userImageView.rx.imageURL).disposed(by: disposeBag)
         viewModel.output.isRefreshing.drive(view.rx.skeletonView).disposed(by: disposeBag)
         viewModel.output.currentLocation.drive(locationLabel.rx.text).disposed(by: disposeBag)
-        viewModel.output.additionalInfoLabelIsHidden.drive(additionalInfoLabel.rx.isHidden).disposed(by: disposeBag)
+        viewModel.output.remoteConfigLabelIsHidden.drive(remoteConfigLabel.rx.isHidden).disposed(by: disposeBag)
+        viewModel.output.registerForPushNotifications.drive().disposed(by: disposeBag)
         viewModel.output.flow.map { Flow.profile($0) }.drive(flowController.rx.handleFlow).disposed(by: disposeBag)
     }
 

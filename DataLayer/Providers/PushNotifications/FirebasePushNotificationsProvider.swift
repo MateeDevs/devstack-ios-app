@@ -7,31 +7,31 @@ import Firebase
 import UIKit
 import UserNotifications
 
-public protocol HasPushNotificationsProvider {
-    var pushNotificationsProvider: PushNotificationsProviderType { get }
-}
-
-public protocol PushNotificationsProviderType {
-}
-
-public class PushNotificationsProvider: NSObject, PushNotificationsProviderType {
+public class FirebasePushNotificationsProvider: NSObject {
+    
+    private let application: UIApplication
     
     public init(application: UIApplication, appDelegate: (UIApplicationDelegate & UNUserNotificationCenterDelegate)) {
+        self.application = application
         super.init()
         
         // Start Firebase
         FirebaseApp.configure()
         
-        // Setup APNs
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: { _, _ in })
+        // Setup delegates
         UNUserNotificationCenter.current().delegate = appDelegate
         Messaging.messaging().delegate = self
+    }
+}
+
+extension FirebasePushNotificationsProvider: PushNotificationsProviderType {
+    public func requestAuthorization(options: UNAuthorizationOptions, completionHandler: @escaping (Bool, Error?) -> Void) {
+        UNUserNotificationCenter.current().requestAuthorization(options: options, completionHandler: completionHandler)
         application.registerForRemoteNotifications()
     }
 }
 
-extension PushNotificationsProvider: MessagingDelegate {
+extension FirebasePushNotificationsProvider: MessagingDelegate {
     public func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         Logger.debug("PushNotificationsProvider: FirebaseMessaging registration token:\n%@", fcmToken ?? "", category: .networking)
     }

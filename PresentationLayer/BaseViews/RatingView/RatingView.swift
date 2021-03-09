@@ -1,7 +1,4 @@
 //
-//  RatingView.swift
-//  DevStack
-//
 //  Created by Viktor Kaderabek on 07/03/2017.
 //  Copyright © 2017 Matee. All rights reserved.
 //

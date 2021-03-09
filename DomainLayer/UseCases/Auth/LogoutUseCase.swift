@@ -3,8 +3,6 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-import RxSwift
-
 public protocol HasLogoutUseCase {
     var logoutUseCase: LogoutUseCase { get }
 }
@@ -19,7 +17,7 @@ public struct LogoutUseCase {
         self.dependencies = dependencies
     }
     
-    public func execute() -> Observable<Event<Void>> {
-        dependencies.authTokenRepository.delete().materialize()
+    public func execute() {
+        dependencies.authTokenRepository.delete()
     }
 }

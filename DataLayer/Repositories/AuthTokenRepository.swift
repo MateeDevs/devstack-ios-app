@@ -36,11 +36,8 @@ public class AuthTokenRepository: AuthTokenRepositoryType {
         return AuthToken(userId: userId, token: token)
     }
     
-    public func delete() -> Observable<Void> {
-        .deferred {
-            self.keychain.deleteAll()
-            self.database.deleteAll()
-            return .just(())
-        }
+    public func delete() {
+        keychain.deleteAll()
+        database.deleteAll()
     }
 }

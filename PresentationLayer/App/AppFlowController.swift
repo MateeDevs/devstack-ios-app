@@ -17,6 +17,24 @@ public class AppFlowController: FlowController, MainFlowControllerDelegate, Onbo
         }
     }
     
+    public func handleDeeplink(for notification: PushNotification) {
+        guard let main = childControllers.first(where: { $0 is MainFlowController }) as? MainFlowController else { return }
+        main.handleDeeplink(for: notification)
+    }
+    
+    public func handleLogout() {
+        guard let vc = navigationController.topViewController as? BaseViewController else { return }
+
+        let action = UIAlertAction(title: L10n.dialog_interceptor_button_title, style: .default, handler: { _ in
+            // Perform logout and present login screen
+            self.dependencies.logoutUseCase.execute()
+            self.presentOnboarding(animated: true, completion: nil)
+        })
+
+        let alert = Alert(title: L10n.dialog_interceptor_title, message: L10n.dialog_interceptor_text, primaryAction: action)
+        vc.handleAlertAction(.showAlert(alert))
+    }
+    
     func setupMain() {
         let fc = MainFlowController(navigationController: navigationController, dependencies: dependencies)
         fc.delegate = self
@@ -34,11 +52,6 @@ public class AppFlowController: FlowController, MainFlowControllerDelegate, Onbo
         nc.modalPresentationStyle = .fullScreen
         nc.navigationBar.isHidden = true
         navigationController.present(nc, animated: animated, completion: completion)
-    }
-    
-    public func handleDeeplink(for notification: PushNotification) {
-        guard let main = childControllers.first(where: { $0 is MainFlowController }) as? MainFlowController else { return }
-        main.handleDeeplink(for: notification)
     }
     
     private func setupAppearance() {

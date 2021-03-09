@@ -1,42 +1,30 @@
 //
-//  Created by Petr Chmelar on 23/07/2018.
-//  Copyright © 2018 Matee. All rights reserved.
+//  Created by Petr Chmelar on 14/02/2019.
+//  Copyright © 2019 Matee. All rights reserved.
 //
 
-import Alamofire
-import Foundation
 import Moya
 import RxMoya
 import RxSwift
 import UIKit
 
-/// Custom Moya provider.
-/// - Idea taken from [Moya - ComposingProvider](https://github.com/Moya/Moya/blob/master/docs/Examples/ComposingProvider.md)
-final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetType {
-
+public struct MoyaNetworkProvider {
+    
     private let keychain: KeychainProviderType
     private let database: DatabaseProviderType
+    
+    private weak var _delegate: NetworkProviderDelegate?
+
+    /// Custom Moya provider
+    /// - Idea taken from [Moya - ComposingProvider](https://github.com/Moya/Moya/blob/master/docs/Examples/ComposingProvider.md)
     private let moyaProvider: MoyaProvider<MultiTarget>
 
-    init(
-        keychainProvider: KeychainProviderType,
-        databaseProvider: DatabaseProviderType,
-        headers: [String: String] = [:],
-        parameters: [String: Any] = [:]
-    ) {
+    public init(keychainProvider: KeychainProviderType, databaseProvider: DatabaseProviderType) {
         self.keychain = keychainProvider
         self.database = databaseProvider
-
+        
         let endpointClosure = { (target: MultiTarget) -> Endpoint in
-            
-            // Add custom headers and parameters
             var defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
-            defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: headers)
-            if !parameters.isEmpty {
-                defaultEndpoint = defaultEndpoint.replacing(
-                    task: .requestParameters(parameters: parameters, encoding: URLEncoding.default)
-                )
-            }
             
             // Add service headers
             defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: [
@@ -48,7 +36,7 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
                 "Client-HW": UIDevice.current.identifierForVendor?.uuidString ?? "undefined"
             ])
             
-            // Add auth header to every request if available
+            // Add auth header
             if let authToken = keychainProvider.get(.authToken) {
                 defaultEndpoint = defaultEndpoint.adding(newHTTPHeaderFields: ["Authorization": "Bearer \(authToken)"])
             }
@@ -87,30 +75,35 @@ final class AuthenticatedProvider<MultiTarget> where MultiTarget: Moya.TargetTyp
         
         moyaProvider = MoyaProvider<MultiTarget>(endpointClosure: endpointClosure, requestClosure: requestClosure, plugins: plugins)
     }
+}
+
+extension MoyaNetworkProvider: NetworkProviderType {
     
-    func request(_ target: MultiTarget, withInterceptor: Bool = true) -> Single<Moya.Response> {
-        let actualRequest = moyaProvider.rx.request(target).flatMap { response -> PrimitiveSequence<SingleTrait, Response> in
-//            if response.statusCode == 401 {
-//                guard withInterceptor,
-//                    let vc = UIApplication.topViewController() as? UIViewController else { return Single.just(response) }
-//
-//                let action = UIAlertAction(title: L10n.dialog_interceptor_button_title, style: .default, handler: { _ in
-//                    // Perform logout and present login screen
-//                    self.keychain.deleteAll()
-//                    self.database.deleteAll()
-//                    if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
-//                        let mainFlow = appDelegate.flowController?.childControllers.first as? MainFlowController {
-//                        mainFlow.presentOnboarding()
-//                    }
-//                })
-//
-//                let alert = Alert(title: L10n.dialog_interceptor_title, message: L10n.dialog_interceptor_text, primaryAction: action)
-//                vc.handleAlertAction(.showAlert(alert))
-//                return Single.error(MoyaError.statusCode(response))
-//            } else {
-                return Single.just(response)
-//            }
+    public var delegate: NetworkProviderDelegate? {
+        get {
+            _delegate
         }
-        return actualRequest
+        set {
+            _delegate = newValue
+        }
+    }
+
+    public func observableRequest(_ endpoint: TargetType, withInterceptor: Bool) -> Observable<Response> {
+        moyaProvider.rx.request(MultiTarget(endpoint))
+            .flatMap { response -> PrimitiveSequence<SingleTrait, Response> in
+                if withInterceptor, response.statusCode == StatusCode.httpUnathorized.rawValue {
+                    delegate?.didReceiveHttpUnathorized()
+                    return Single.error(MoyaError.statusCode(response))
+                } else {
+                    return Single.just(response)
+                }
+            }
+            .asObservable().filterSuccessfulStatusCodes()
+            .catchError { error -> Observable<Response> in
+                guard let moyaError = error as? MoyaError,
+                      let response = moyaError.response,
+                      let statusCode = StatusCode(rawValue: response.statusCode) else { return .error(error) }
+                return .error(RepositoryError(statusCode: statusCode, message: response.description))
+            }
     }
 }

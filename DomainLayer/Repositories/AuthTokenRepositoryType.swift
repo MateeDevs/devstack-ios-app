@@ -12,5 +12,5 @@ public protocol HasAuthTokenRepository {
 public protocol AuthTokenRepositoryType {
     func create(_ data: LoginData) -> Observable<AuthToken>
     func read() -> AuthToken?
-    func delete() -> Observable<Void>
+    func delete()
 }

@@ -1,7 +1,4 @@
 //
-//  AppDelegate.swift
-//  DevStack
-//
 //  Created by Petr Chmelar on 16/07/2018.
 //  Copyright © 2018 Matee. All rights reserved.
 //
@@ -86,12 +83,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Setup providers
     private func setupProviders(for application: UIApplication) -> ProviderDependency {
-        let databaseProvider = DatabaseProvider()
-        let userDefaultsProvider = UserDefaultsProvider()
-        let keychainProvider = KeychainProvider(userDefaultsProvider: userDefaultsProvider)
-        let networkProvider = NetworkProvider(keychainProvider: keychainProvider, databaseProvider: databaseProvider)
-        let pushNotificationsProvider = PushNotificationsProvider(application: application, appDelegate: self)
-        let remoteConfigProvider = RemoteConfigProvider()
+        let databaseProvider = RealmDatabaseProvider()
+        let userDefaultsProvider = SystemUserDefaultsProvider()
+        let keychainProvider = SystemKeychainProvider(userDefaultsProvider: userDefaultsProvider)
+        var networkProvider = MoyaNetworkProvider(keychainProvider: keychainProvider, databaseProvider: databaseProvider)
+        let pushNotificationsProvider = FirebasePushNotificationsProvider(application: application, appDelegate: self)
+        let remoteConfigProvider = FirebaseRemoteConfigProvider()
+        
+        networkProvider.delegate = self
 
         return ProviderDependency(
             databaseProvider: databaseProvider,
@@ -121,8 +120,14 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
    ) {
        let notification = response.notification.request.content.userInfo
        DispatchQueue.main.async {
-           guard let notification = self.flowController?.dependencies.handlePushNotificationUseCase.execute(notification) else { return }
+           guard let notification = self.flowController?.dependencies.decodePushNotificationUseCase.execute(notification) else { return }
            self.flowController?.handleDeeplink(for: notification)
        }
    }
+}
+
+extension AppDelegate: NetworkProviderDelegate {
+    func didReceiveHttpUnathorized() {
+        self.flowController?.handleLogout()
+    }
 }

@@ -14,12 +14,14 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         HasRefreshProfileUseCase &
         HasLogoutUseCase &
         HasGetCurrentLocationUseCase &
-        HasGetRemoteConfigValueUseCase
+        HasGetRemoteConfigValueUseCase &
+        HasRegisterForPushNotificationsUseCase
     
     let input: Input
     let output: Output
     
     struct Input {
+        let registerPushNotificationsButtonTaps: AnyObserver<Void>
         let logoutButtonTaps: AnyObserver<Void>
     }
     
@@ -27,7 +29,8 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         let profile: Profile
         let isRefreshing: Driver<Bool>
         let currentLocation: Driver<String>
-        let additionalInfoLabelIsHidden: Driver<Bool>
+        let remoteConfigLabelIsHidden: Driver<Bool>
+        let registerForPushNotifications: Driver<Void>
         let flow: Driver<ProfileViewControllerFlow>
     }
 
@@ -41,9 +44,11 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         
         // MARK: Setup inputs
 
+        let registerPushNotificationsButtonTaps = PublishSubject<Void>()
         let logoutButtonTaps = PublishSubject<Void>()
         
         self.input = Input(
+            registerPushNotificationsButtonTaps: registerPushNotificationsButtonTaps.asObserver(),
             logoutButtonTaps: logoutButtonTaps.asObserver()
         )
         
@@ -61,10 +66,16 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         
         let currentLocation = dependencies.getCurrentLocationUseCase.execute().take(1)
         
-        let additionalInfoLabelIsHidden = dependencies.getRemoteConfigValueUseCase.execute(.profileAdditionalInfoIsVisible).map { !$0 }
+        let remoteConfigLabelIsHidden = dependencies.getRemoteConfigValueUseCase.execute(.profileLabelIsVisible).map { !$0 }
+        
+        let registerForPushNotifications = registerPushNotificationsButtonTaps.flatMapLatest { _ -> Observable<Void> in
+            dependencies.registerForPushNotificationsUseCase.execute()
+            return .just(())
+        }.share()
 
-        let logout = logoutButtonTaps.flatMapLatest { _ -> Observable<Event<Void>> in
-            return dependencies.logoutUseCase.execute()
+        let logout = logoutButtonTaps.flatMapLatest { _ -> Observable<Void> in
+            dependencies.logoutUseCase.execute()
+            return .just(())
         }.share()
 
         // MARK: Setup outputs
@@ -77,8 +88,9 @@ final class ProfileViewModel: ViewModel, ViewModelType {
             ),
             isRefreshing: isRefreshing.asDriver(),
             currentLocation: currentLocation.map { $0.coordinate.toString() }.asDriver(),
-            additionalInfoLabelIsHidden: additionalInfoLabelIsHidden.asDriver(),
-            flow: logout.compactMap { $0.element }.map { .presentOnboarding }.asDriver()
+            remoteConfigLabelIsHidden: remoteConfigLabelIsHidden.asDriver(),
+            registerForPushNotifications: registerForPushNotifications.asDriver(),
+            flow: logout.map { .presentOnboarding }.asDriver()
         )
         
         super.init()
