@@ -6,19 +6,21 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
+#if ALPHA || BETA
+import Atlantis
+#endif
+
 import DataLayer
 import DependencyInjection
 import PresentationLayer
 import UIKit
-#if ALPHA || BETA
-import Atlantis
-#endif
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    private(set) var flowController: AppFlowController?
+    private var flowController: AppFlowController?
     
     func application(
         _ application: UIApplication,
@@ -88,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userDefaultsProvider = UserDefaultsProvider()
         let keychainProvider = KeychainProvider(userDefaultsProvider: userDefaultsProvider)
         let networkProvider = NetworkProvider(keychainProvider: keychainProvider, databaseProvider: databaseProvider)
-        let pushNotificationsProvider = PushNotificationsProvider(/*application: application, appDelegate: self*/)
+        let pushNotificationsProvider = PushNotificationsProvider(application: application, appDelegate: self)
         let remoteConfigProvider = RemoteConfigProvider()
 
         return ProviderDependency(
@@ -100,4 +102,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             userDefaultsProvider: userDefaultsProvider
         )
     }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+   func userNotificationCenter(
+       _ center: UNUserNotificationCenter,
+       willPresent notification: UNNotification,
+       withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+   ) {
+       // Show system notification
+       completionHandler([.alert, .badge, .sound])
+   }
+
+   func userNotificationCenter(
+       _ center: UNUserNotificationCenter,
+       didReceive response: UNNotificationResponse,
+       withCompletionHandler completionHandler: @escaping () -> Void
+   ) {
+       let notification = response.notification.request.content.userInfo
+       DispatchQueue.main.async {
+           guard let notification = self.flowController?.dependencies.handlePushNotificationUseCase.execute(notification) else { return }
+           self.flowController?.handleDeeplink(for: notification)
+       }
+   }
 }

@@ -36,7 +36,7 @@ public class AppFlowController: FlowController, MainFlowControllerDelegate, Onbo
         navigationController.present(nc, animated: animated, completion: completion)
     }
     
-    func handleDeeplink(for notification: PushNotification) {
+    public func handleDeeplink(for notification: PushNotification) {
         guard let main = childControllers.first(where: { $0 is MainFlowController }) as? MainFlowController else { return }
         main.handleDeeplink(for: notification)
     }
