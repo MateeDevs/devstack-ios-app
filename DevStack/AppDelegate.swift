@@ -7,7 +7,8 @@
 //
 
 import DataLayer
-import DomainLayer
+import DependencyInjection
+import PresentationLayer
 import UIKit
 #if ALPHA || BETA
 import Atlantis
@@ -25,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         
         setupEnvironment()
-        appAppearance()
         
         // Init main window with navigation controller
         let nc = UINavigationController()
@@ -88,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userDefaultsProvider = UserDefaultsProvider()
         let keychainProvider = KeychainProvider(userDefaultsProvider: userDefaultsProvider)
         let networkProvider = NetworkProvider(keychainProvider: keychainProvider, databaseProvider: databaseProvider)
-        let pushNotificationsProvider = PushNotificationsProvider(application: application, appDelegate: self)
+        let pushNotificationsProvider = PushNotificationsProvider(/*application: application, appDelegate: self*/)
         let remoteConfigProvider = RemoteConfigProvider()
 
         return ProviderDependency(
@@ -99,21 +99,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             remoteConfigProvider: remoteConfigProvider,
             userDefaultsProvider: userDefaultsProvider
         )
-    }
-    
-    // MARK: Appearance
-    private func appAppearance() {
-        
-        // Navigation bar
-        UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().tintColor = AppTheme.Colors.navBarTitle
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: AppTheme.Colors.navBarTitle]
-        UINavigationBar.appearance().barTintColor = AppTheme.Colors.navBarBackground
-        
-        // Tab bar
-        UITabBar.appearance().tintColor = AppTheme.Colors.primaryColor
-        
-        // UITextField
-        UITextField.appearance().tintColor = AppTheme.Colors.primaryColor
     }
 }

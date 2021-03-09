@@ -28,21 +28,23 @@ public protocol UserDefaultsProviderType {
     func deleteAll()
 }
 
-struct UserDefaultsProvider: UserDefaultsProviderType {
+public struct UserDefaultsProvider: UserDefaultsProviderType {
     
-    func save<T>(_ key: UserDefaultsCoding, value: T) {
+    public init() {}
+    
+    public func save<T>(_ key: UserDefaultsCoding, value: T) {
         UserDefaults.standard.set(value, forKey: key.rawValue)
     }
     
-    func get<T>(_ key: UserDefaultsCoding) -> T? {
+    public func get<T>(_ key: UserDefaultsCoding) -> T? {
         UserDefaults.standard.object(forKey: key.rawValue) as? T
     }
     
-    func delete(_ key: UserDefaultsCoding) {
+    public func delete(_ key: UserDefaultsCoding) {
         UserDefaults.standard.removeObject(forKey: key.rawValue)
     }
     
-    func deleteAll() {
+    public func deleteAll() {
         for key in UserDefaultsCoding.allCases {
             delete(key)
         }

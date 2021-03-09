@@ -30,18 +30,25 @@ extension NetworkProviderType {
     }
 }
 
-struct NetworkProvider: NetworkProviderType {
+public struct NetworkProvider: NetworkProviderType {
 
     private let moyaProvider: AuthenticatedProvider<MultiTarget>
 
-    init(keychainProvider: KeychainProviderType, databaseProvider: DatabaseProviderType) {
+    public init(keychainProvider: KeychainProviderType, databaseProvider: DatabaseProviderType) {
         self.moyaProvider = AuthenticatedProvider<MultiTarget>(
             keychainProvider: keychainProvider,
             databaseProvider: databaseProvider
         )
     }
 
-    func observableRequest(_ endpoint: TargetType, withInterceptor: Bool) -> Observable<Response> {
-        moyaProvider.request(MultiTarget(endpoint), withInterceptor: withInterceptor).asObservable().filterSuccessfulStatusCodes()
+    public func observableRequest(_ endpoint: TargetType, withInterceptor: Bool) -> Observable<Response> {
+        moyaProvider.request(MultiTarget(endpoint), withInterceptor: withInterceptor)
+            .asObservable().filterSuccessfulStatusCodes()
+            .catchError { error -> Observable<Response> in
+                guard let moyaError = error as? MoyaError,
+                      let response = moyaError.response,
+                      let statusCode = StatusCode(rawValue: response.statusCode) else { return .error(error) }
+                return .error(RepositoryError(statusCode: statusCode, message: response.description))
+            }
     }
 }

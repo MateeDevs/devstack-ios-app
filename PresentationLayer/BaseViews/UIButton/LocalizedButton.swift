@@ -26,7 +26,7 @@ class LocalizedButton: StateButton {
     private func setup() {
         for state in [UIControl.State.normal, UIControl.State.highlighted, UIControl.State.selected, UIControl.State.disabled] {
             if let title = title(for: state) {
-                setTitle(NSLocalizedString(title, comment: ""), for: state)
+                setTitle(NSLocalizedString(title, bundle: Bundle.current, comment: ""), for: state)
             }
         }
         

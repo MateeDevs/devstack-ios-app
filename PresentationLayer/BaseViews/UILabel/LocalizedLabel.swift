@@ -28,9 +28,9 @@ import UIKit
     private func setup() {
         if let text = text {
             if uppercased {
-                self.text = NSLocalizedString(text, comment: "").uppercased()
+                self.text = NSLocalizedString(text, bundle: Bundle.current, comment: "").uppercased()
             } else {
-                self.text = NSLocalizedString(text, comment: "")
+                self.text = NSLocalizedString(text, bundle: Bundle.current, comment: "")
             }
             
             if let symbol = requiredSymbol {

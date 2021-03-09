@@ -27,7 +27,7 @@ import UIKit
 
     // MARK: Default methods
     private func setup() {
-        placeholder = NSLocalizedString(text, comment: "")
+        placeholder = NSLocalizedString(text, bundle: Bundle.current, comment: "")
         text = placeholder
         
         defaultColor = textColor

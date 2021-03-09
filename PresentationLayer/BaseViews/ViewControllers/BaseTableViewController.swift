@@ -27,7 +27,7 @@ open class BaseTableViewController<T>: BaseViewController, UIScrollViewDelegate,
     private(set) var page = PublishSubject<Int>()
     private var shouldFetchMore = false
     private var currentPage: Int = 0
-    private var perPage: Int = NetworkingConstants.paginationCount
+    private var perPage: Int = Constants.paginationCount
     
     // MARK: Lifecycle methods
     override open func viewDidLoad() {
@@ -59,7 +59,7 @@ open class BaseTableViewController<T>: BaseViewController, UIScrollViewDelegate,
     // MARK: Additional methods
     public func registerCells(_ identifiers: [String]) {
         for identifier in identifiers {
-            let cellNib = UINib(nibName: identifier, bundle: nil)
+            let cellNib = UINib(nibName: identifier, bundle: Bundle(for: type(of: self)))
             tableView?.register(cellNib, forCellReuseIdentifier: identifier)
         }
     }

@@ -25,7 +25,7 @@ class LocalizedBarButtonItem: UIBarButtonItem {
     // MARK: Default methods
     private func setup() {
         if let title = self.title {
-            self.title = NSLocalizedString(title, comment: "")
+            self.title = NSLocalizedString(title, bundle: Bundle.current, comment: "")
         }
     }
 

@@ -3,13 +3,9 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
-import UIKit
-
 struct NetworkingConstants {
-    
+
     static let apiVersion = 1
-    
-    static let paginationCount = 100
     
     static let iso8601DefaultFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
     static let iso8601DateOnly = "yyyy-MM-dd"

@@ -25,15 +25,15 @@ class LocalizedNavigationItem: UINavigationItem {
     // MARK: Default methods
     private func setup() {
         if let title = title {
-            self.title = NSLocalizedString(title, comment: "")
+            self.title = NSLocalizedString(title, bundle: Bundle.current, comment: "")
         }
         
         if let backButtonTitle = backBarButtonItem?.title {
-            self.backBarButtonItem?.title = NSLocalizedString(backButtonTitle, comment: "")
+            self.backBarButtonItem?.title = NSLocalizedString(backButtonTitle, bundle: Bundle.current, comment: "")
         }
         
         if let prompt = prompt {
-            self.prompt = NSLocalizedString(prompt, comment: "")
+            self.prompt = NSLocalizedString(prompt, bundle: Bundle.current, comment: "")
         }
     }
 

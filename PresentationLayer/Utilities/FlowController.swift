@@ -3,11 +3,12 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
+import DependencyInjection
 import RxCocoa
 import RxSwift
 import UIKit
 
-class FlowController: NSObject {
+public class FlowController: NSObject {
     
     let navigationController: UINavigationController
     let dependencies: UseCaseDependency
@@ -17,7 +18,7 @@ class FlowController: NSObject {
     
     private(set) var rootViewController: UIViewController?
     
-    init(navigationController: UINavigationController, dependencies: UseCaseDependency) {
+    public init(navigationController: UINavigationController, dependencies: UseCaseDependency) {
         self.navigationController = navigationController
         self.dependencies = dependencies
         Logger.info("%@ initialized", "\(type(of: self))", category: .lifecycle)
@@ -65,7 +66,7 @@ class FlowController: NSObject {
 }
 
 extension FlowController: UINavigationControllerDelegate {
-    func navigationController(
+    public func navigationController(
         _ navigationController: UINavigationController,
         didShow viewController: UIViewController,
         animated: Bool

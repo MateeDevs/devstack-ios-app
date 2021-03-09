@@ -93,9 +93,32 @@ public protocol DatabaseProviderType {
     }
  }
 
-struct DatabaseProvider: DatabaseProviderType {
+public struct DatabaseProvider: DatabaseProviderType {
+    
+    public init() {
+        // Realm BASIC migration setup
+        var config = Realm.Configuration(
+            // Set the new schema version. This must be greater than the previously used
+            // version (if you've never set a schema version before, the version is 0).
+            schemaVersion: 0,
+            
+            // Set the block which will be called automatically when opening a Realm with
+            // a schema version lower than the one set above
+            migrationBlock: { _, oldSchemaVersion in
+                // We haven’t migrated anything yet, so oldSchemaVersion == 0
+                if oldSchemaVersion < 1 {
+                    // Nothing to do!
+                    // Realm will automatically detect new properties and removed properties
+                    // And will update the schema on disk automatically
+                }
+            })
+        // Delete old schema
+        config.deleteRealmIfMigrationNeeded = true
+        // Tell Realm to use this new configuration object for the default Realm
+        Realm.Configuration.defaultConfiguration = config
+    }
    
-    func observableObject<T>(
+    public func observableObject<T>(
         _ type: T.Type,
         id: String,
         primaryKeyName: String
@@ -109,7 +132,7 @@ struct DatabaseProvider: DatabaseProviderType {
         }
     }
 
-    func observableCollection<T>(
+    public func observableCollection<T>(
         _ type: T.Type,
         predicate: NSPredicate?,
         sortBy: String?,
@@ -132,17 +155,17 @@ struct DatabaseProvider: DatabaseProviderType {
         }
     }
     
-    func save<T>(_ object: T, model: UpdateModel) -> Observable<T> where T: Object {
+    public func save<T>(_ object: T, model: UpdateModel) -> Observable<T> where T: Object {
         guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
         return realm.rx.save(object, model: model)
     }
     
-    func save<T>(_ objects: [T], model: UpdateModel) -> Observable<[T]> where T: Object {
+    public func save<T>(_ objects: [T], model: UpdateModel) -> Observable<[T]> where T: Object {
         guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
         return realm.rx.save(objects, model: model)
     }
 
-    func deleteAll() {
+    public func deleteAll() {
         guard let realm = Realm.safeInit() else { return }
         do {
             try realm.write {

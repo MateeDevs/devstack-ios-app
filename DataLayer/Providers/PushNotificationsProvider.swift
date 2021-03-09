@@ -3,19 +3,21 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-// import Firebase
-// import UIKit
-// import UserNotifications
-//
-// public protocol HasPushNotificationsProvider {
-//    var pushNotificationsProvider: PushNotificationsProviderType { get }
-// }
-//
-// public protocol PushNotificationsProviderType {
-// }
-//
-// struct PushNotificationsProvider: PushNotificationsProviderType {
-//
+ import Firebase
+ import UIKit
+ import UserNotifications
+
+ public protocol HasPushNotificationsProvider {
+    var pushNotificationsProvider: PushNotificationsProviderType { get }
+ }
+
+ public protocol PushNotificationsProviderType {
+ }
+
+ public struct PushNotificationsProvider: PushNotificationsProviderType {
+    
+    public init() {}
+
 //    init(application: UIApplication, appDelegate: AppDelegate) {
 //        // Start Firebase
 //        FirebaseApp.configure()
@@ -27,8 +29,8 @@
 //        Messaging.messaging().delegate = appDelegate
 //        application.registerForRemoteNotifications()
 //    }
-// }
-//
+ }
+
 // extension AppDelegate: UNUserNotificationCenterDelegate {
 //    func userNotificationCenter(
 //        _ center: UNUserNotificationCenter,

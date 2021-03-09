@@ -3,23 +3,23 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-// import Foundation
-//
-// public protocol HasHandlePushNotificationUseCase {
-//    var handlePushNotificationUseCase: HandlePushNotificationUseCase { get }
-// }
-//
-// public struct HandlePushNotificationUseCase {
-//
-//    public typealias Dependencies = HasNoRepository
-//
-//    private let dependencies: Dependencies
-//
-//    public init(dependencies: Dependencies) {
-//        self.dependencies = dependencies
-//    }
-//
-//    public func execute(_ notificationData: [AnyHashable: Any]) -> PushNotification? {
+ import Foundation
+
+ public protocol HasHandlePushNotificationUseCase {
+    var handlePushNotificationUseCase: HandlePushNotificationUseCase { get }
+ }
+
+ public struct HandlePushNotificationUseCase {
+
+    public typealias Dependencies = HasNoRepository
+
+    private let dependencies: Dependencies
+
+    public init(dependencies: Dependencies) {
+        self.dependencies = dependencies
+    }
+
+    public func execute(_ notificationData: [AnyHashable: Any]) -> PushNotification? {
 //        do {
 //            let jsonData = try JSONSerialization.data(withJSONObject: notificationData, options: [])
 //            let notification = try JSONDecoder().decode(NETPushNotification.self, from: jsonData)
@@ -27,7 +27,7 @@
 //            return notification.domainModel
 //        } catch let error {
 //            Logger.error("HandlePushNotificationUseCase: Error during notification decoding:\n%@", "\(error)", category: .networking)
-//            return nil
+            return nil
 //        }
-//    }
-// }
+    }
+ }

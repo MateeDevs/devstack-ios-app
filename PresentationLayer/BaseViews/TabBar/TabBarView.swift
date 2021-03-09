@@ -101,7 +101,7 @@ protocol TabBarViewDelegate: class {
         removeButtonsFromStackView()
         for (index, title) in titles.enumerated() {
             let btn = TabBarButton()
-            btn.mainLabel.text = NSLocalizedString(title, comment: "")
+            btn.mainLabel.text = NSLocalizedString(title, bundle: Bundle.current, comment: "")
             btn.mainLabel.font = buttonMainLabelFont
             btn.mainLabel.textColor = buttonMainLabelColor
             btn.numberLabel.font = buttonNumberLabelFont

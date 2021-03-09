@@ -40,7 +40,7 @@ extension UserAPI: TargetType {
         case .getUsersForPage(let page):
             let params: [String: Any] = [
                 "page": page,
-                "limit": NetworkingConstants.paginationCount
+                "limit": Constants.paginationCount
             ]
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
         case .updateUserById(_, let data):

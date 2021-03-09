@@ -16,9 +16,9 @@ public protocol RemoteConfigProviderType {
     func get(_ key: RemoteConfigCoding) -> Observable<Bool>
 }
 
-struct RemoteConfigProvider: RemoteConfigProviderType {
+public struct RemoteConfigProvider: RemoteConfigProviderType {
     
-    init() {
+    public init() {
         // Set fetch interval to zero for non production environments
         if Environment.value.type != .production {
             let settings = RemoteConfigSettings()
@@ -27,7 +27,7 @@ struct RemoteConfigProvider: RemoteConfigProviderType {
         }
     }
     
-    func get(_ key: RemoteConfigCoding) -> Observable<Bool> {
+    public func get(_ key: RemoteConfigCoding) -> Observable<Bool> {
         return RemoteConfig.remoteConfig().rx.fetch().flatMap { _ -> Observable<Bool> in
              let boolValue = RemoteConfig.remoteConfig().configValue(forKey: key.rawValue).boolValue
              return Observable.just(boolValue)

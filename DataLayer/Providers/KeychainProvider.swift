@@ -30,20 +30,28 @@ public protocol KeychainProviderType {
     func deleteAll()
 }
 
-struct KeychainProvider: KeychainProviderType {
+public struct KeychainProvider: KeychainProviderType {
     
-    func save(_ key: KeychainCoding, value: String) {
+    public init(userDefaultsProvider: UserDefaultsProviderType) {
+        // Clear keychain on first run
+        if userDefaultsProvider.get(.hasRunBefore) == nil {
+            deleteAll()
+            userDefaultsProvider.save(.hasRunBefore, value: true)
+        }
+    }
+    
+    public func save(_ key: KeychainCoding, value: String) {
         let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")
         keychain[key.rawValue] = value
     }
     
-    func get(_ key: KeychainCoding) -> String? {
+    public func get(_ key: KeychainCoding) -> String? {
         let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")
         guard let value = keychain[key.rawValue] else { return nil }
         return value
     }
     
-    func delete(_ key: KeychainCoding) {
+    public func delete(_ key: KeychainCoding) {
         do {
             let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")
             try keychain.remove(key.rawValue)
@@ -52,7 +60,7 @@ struct KeychainProvider: KeychainProviderType {
         }
     }
     
-    func deleteAll() {
+    public func deleteAll() {
         for key in KeychainCoding.allCases {
             delete(key)
         }
