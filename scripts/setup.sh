@@ -3,10 +3,10 @@
 cd "$(dirname "$0")"
 
 echo "Creating files for Twine and SwiftGen"
-find ../DevStack/Resources/*.lproj -type d -exec sh -c 'touch $0/Localizable.strings' {} \;
-touch ../DevStack/Constants/Assets.swift
-touch ../DevStack/Constants/Localizable.swift
-touch ../DevStack/Constants/Storyboards.swift
+find ../PresentationLayer/Resources/*.lproj -type d -exec sh -c 'touch $0/Localizable.strings' {} \;
+touch ../PresentationLayer/Resources/Constants/Assets.swift
+touch ../PresentationLayer/Resources/Constants/Localizable.swift
+touch ../PresentationLayer/Resources/Constants/Storyboards.swift
 
 echo "Checking file header"
 if [ ! -f ../DevStack.xcworkspace/xcuserdata/*.xcuserdatad/IDETemplateMacros.plist ]; then

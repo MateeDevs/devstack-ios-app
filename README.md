@@ -39,14 +39,17 @@ FIXME
 - You can use the `scripts/setup.sh` for quick setup of all required tools
 - There is also `scripts/rename.sh` for quick renaming from DevStack to YourProject
 
-## Architecture (MVVM)
-- Service Layer is composed from individual services (LoginService, UserService, etc.)
-- Services obtains data through the providers (DatabaseProvider, NetworkProvider, etc.)
-- Network communication is based on [Moya](https://github.com/Moya/Moya) network framework
-- Data model is represented via [Realm](https://github.com/realm/realm-cocoa) object models and native Decodable is used for mapping from JSON
-- Asynchronous functions in microservices are represented as observables with the [RxSwift](https://github.com/ReactiveX/RxSwift) framework
-- Services are "injected" into ViewModels during the init via Dependencies typealias
+## Architecture (Clean Architecture + MVVM + RxSwift)
+- Whole application is separated into three layers according to the Clean Architecture principles
+- Dependencies between layers: `PresentationLayer -> DomainLayer <- DataLayer`
+- PresentationLayer is represented by ViewModels + ViewControllers and FlowControllers
 - ViewModel has its inputs and outputs which are then binded or observed in a relevant ViewController
+- DomainLayer reflects whole business logic of the application via DomainModels and UseCases
+- DataLayer provides required data via Repositories and Providers from database / network / etc.
+- Network communication is based on [Moya](https://github.com/Moya/Moya) and native Decodable is used for mapping from JSON
+- Database models are represented via [Realm](https://github.com/realm/realm-cocoa) object models
+- Asynchronous work is represented as Observable from the [RxSwift](https://github.com/ReactiveX/RxSwift) framework
+- Providers/Repositories/UseCases are "injected" during the init via Dependencies typealias
 
 ## Style Guide
 - [Swift Style Guide](https://github.com/raywenderlich/swift-style-guide)
@@ -68,13 +71,13 @@ FIXME
 
 ## Push Notifications
 - Push Notifications are sent via [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging)
-- All received notifications are handled inside the FirebaseService
+- All received notifications are handled inside the `HandlePushNotificationUseCase`
 - Notifications can be easily tested with scripts from the [ios-push-tester](https://github.com/MateeDevs/ios-push-tester) repository
 
 ## Debug
 - All important information should be logged using the default `os_log` (wrapper `Logger` is available for convenience)
-- All network requests going through the `AuthenticatedProvider` are printed into the console in debug builds
-- [Proxyman](https://proxyman.io) for HTTP request/response debugging is enabled for alpha and beta build
+- All network requests going through the `MoyaNetworkProvider` are printed into the console in debug builds
+- [Proxyman](https://proxyman.io) for HTTP request/response debugging is enabled for alpha and beta builds
 
 ## Build + Release
 - CI/CD process is based on [GitHub Actions](https://github.com/features/actions) and [Fastlane](https://fastlane.tools/)
@@ -88,13 +91,14 @@ FIXME
 - After successful release build, a git tag with version and build numbers is created and pushed to the git
 
 ## Tests
-- Unit tests are in `DevStackTests`, you can run them on any scheme with `CMD + U`
-- All new features should have at least a basic test set for ViewModel's outputs and all newly created service methods
+- Unit tests are in `Tests`, you can run them on any scheme with `CMD + U`
+- All new features should have at least a basic test set for ViewModel's outputs and all newly created UseCases + Repositories
 - Mocking of network requests is based on [Moya stubbing provider](https://github.com/Moya/Moya/blob/master/docs/Testing.md)
 
 ## TODO
-- Use RxSwift 6 when Moya is ready - [PR](https://github.com/Moya/Moya/pull/2120)
-- Split project into Data + Domain + Presentation projects to ensure Clean Architecture boundaries
-- Use RxTest through SPM when fixed - [related issue](https://bugs.swift.org/browse/SR-12303)
-- Migrate to SwiftUI + Combine when the time is right
 - More tests 🙃
+- Check whether [Resolver](https://github.com/hmlongco/Resolver) is suitable for our needs
+- Use RxSwift 6 when Moya is ready - [PR](https://github.com/Moya/Moya/pull/2120)
+- Use RxTest through SPM when [fixed](https://bugs.swift.org/browse/SR-12303)
+- Get rid of SPMDependencies wrapper when [fixed](https://github.com/renaudjenny/Swift-Package-Manager-Static-Dynamic-Xcode-Bug)
+- Migrate to SwiftUI + Combine when the time is right

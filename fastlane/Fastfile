@@ -10,12 +10,13 @@
 
 workspace = "DevStack.xcworkspace"
 slack_channel = "#ci"
+info_plist_path = "./Application/Info/Info-Release.plist"
 
 alpha = {
   output_name: "A-DevStack",
   app_identifier: "cz.matee.devstack.alpha",
   scheme: "DevStack_Alpha",
-  gsp_path: "./DevStack/App/Config/GoogleService-Info-Alpha.plist",
+  gsp_path: "./Application/GoogleService/GoogleService-Info-Alpha.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
   testflight_link: "NOT AVAILABLE"
 }
@@ -24,7 +25,7 @@ beta = {
   output_name: "B-DevStack",
   app_identifier: "cz.matee.devstack.beta",
   scheme: "DevStack_Beta",
-  gsp_path: "./DevStack/App/Config/GoogleService-Info-Beta.plist",
+  gsp_path: "./Application/GoogleService/GoogleService-Info-Beta.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
   testflight_link: "NOT AVAILABLE"
 }
@@ -33,7 +34,7 @@ production = {
   output_name: "DevStack",
   app_identifier: "cz.matee.devstack",
   scheme: "DevStack",
-  gsp_path: "./DevStack/App/Config/GoogleService-Info-Prod.plist",
+  gsp_path: "./Application/GoogleService/GoogleService-Info-Prod.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
   testflight_link: "NOT AVAILABLE"
 }
@@ -47,7 +48,6 @@ matee = {
   team_id_dev: "WNB34WBN42",
   team_id_connect: "120470944",
   match_branch: "matee",
-  certificate: "Apple Distribution: Matee Devs s.r.o.",
   api_key_id: "CQT3ZM53U8",
   api_key_issuer_id: "e85e5ea1-4316-4e79-a474-858ab98197e0"
 }
@@ -55,7 +55,7 @@ matee = {
 testflight_contact = {
   first_name: "Petr",
   last_name: "Chmelar",
-  email: "petr.chmelar@matee.cz",
+  email: "testflight@matee.cz",
   phone: "+420724229167"
 }
 
@@ -133,7 +133,7 @@ platform :ios do
     unless ENV["BUILD_NUMBER"] =~ /^\d{1,18}$/
       UI.user_error!("Invalid build number: \"#{ENV["BUILD_NUMBER"]}\". Expect 1-18 digits")
     end
-    increment_build_number(build_number: ENV["BUILD_NUMBER"])
+    set_info_plist_value(path: info_plist_path, key: "CFBundleVersion", value: ENV["BUILD_NUMBER"])
 
     keychain_password = SecureRandom.base64
     delete_keychain(name: "fastlane") if File.exist?(File.expand_path("~/Library/Keychains/fastlane-db"))
@@ -165,8 +165,6 @@ platform :ios do
       scheme: config[:scheme],
       clean: true,
       export_method: "app-store",
-      codesigning_identity: config[:certificate],
-      xcargs: "PROVISIONING_PROFILE_SPECIFIER='match AppStore #{config[:app_identifier]}'",
       archive_path: "#{config[:output_name]}.xcarchive",
       output_directory: "./ipa",
       output_name: config[:output_name]
@@ -280,8 +278,8 @@ platform :ios do
 
   desc "Create and push git tag"
   lane :tag do
-    version = get_ipa_info_plist_value(ipa: "./ipa/#{config[:output_name]}.ipa", key: "CFBundleShortVersionString")
-    build = get_ipa_info_plist_value(ipa: "./ipa/#{config[:output_name]}.ipa", key: "CFBundleVersion")
+    version = get_ipa_info_plist_value(ipa: "./ipa/#{production[:output_name]}.ipa", key: "CFBundleShortVersionString")
+    build = get_ipa_info_plist_value(ipa: "./ipa/#{production[:output_name]}.ipa", key: "CFBundleVersion")
     add_git_tag(tag: "#{version}.#{build}")
     push_git_tags(tag: "#{version}.#{build}")
   end
