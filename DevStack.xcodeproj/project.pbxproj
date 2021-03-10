@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		453D3F7125ED2D9E0094ADD7 /* Atlantis in Frameworks */ = {isa = PBXBuildFile; productRef = 453D3F7025ED2D9E0094ADD7 /* Atlantis */; };
 		454AC06524A221B300D6F367 /* ProviderDependency+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454AC06424A221B300D6F367 /* ProviderDependency+Mock.swift */; };
 		4557195524A15B1F00FB24CA /* NetworkProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195424A15B1F00FB24CA /* NetworkProviderMock.swift */; };
 		4557195824A15C0200FB24CA /* AuthTokenRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195724A15C0200FB24CA /* AuthTokenRepositoryTests.swift */; };
@@ -23,21 +22,13 @@
 		456E744D25F83456007D9A6D /* PresentationLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458218BA25F25E4300D587EB /* PresentationLayer.framework */; };
 		456E744E25F83456007D9A6D /* PresentationLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 458218BA25F25E4300D587EB /* PresentationLayer.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		456E744F25F83458007D9A6D /* DependencyInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */; };
-		456E745025F83458007D9A6D /* DependencyInjection.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		456E745225F83459007D9A6D /* DomainLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; };
-		456E745325F83459007D9A6D /* DomainLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		456E745425F8345B007D9A6D /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
-		456E745525F8345B007D9A6D /* SPMDependencies.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		456E745625F8345D007D9A6D /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
-		456E745725F8345D007D9A6D /* SPMDependencies.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		456E745D25F83460007D9A6D /* DomainLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; };
-		456E745E25F83460007D9A6D /* DomainLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		456E746025F83461007D9A6D /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
-		456E746125F83461007D9A6D /* SPMDependencies.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		456E746525F83464007D9A6D /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582185825F25D5800D587EB /* DataLayer.framework */; };
-		456E746625F83464007D9A6D /* DataLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4582185825F25D5800D587EB /* DataLayer.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		456E746825F83465007D9A6D /* DomainLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; };
-		456E746925F83465007D9A6D /* DomainLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		456E747425F837D7007D9A6D /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
 		4572512125E56CF400D1B745 /* PushNotificationsProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572512025E56CF400D1B745 /* PushNotificationsProviderMock.swift */; };
 		4575E5BF25F6EB4A00CCC003 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4575E5BE25F6EB4A00CCC003 /* RxSwift */; };
@@ -279,6 +270,9 @@
 		45D3771E25F8D07800D05900 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771B25F8D07800D05900 /* Localizable.swift */; };
 		45D3771F25F8D07800D05900 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771C25F8D07800D05900 /* Assets.swift */; };
 		45D3772025F8D07800D05900 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771D25F8D07800D05900 /* Storyboards.swift */; };
+		45D3776825F9228A00D05900 /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
+		45D3776925F9228A00D05900 /* SPMDependencies.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		45D3776D25F9229600D05900 /* Atlantis in Frameworks */ = {isa = PBXBuildFile; productRef = 45D3776C25F9229600D05900 /* Atlantis */; };
 		45E100F325E6B2A00082CABA /* XCTest+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100E625E6B2A00082CABA /* XCTest+Rx.swift */; };
 		45E100F525E6B2A00082CABA /* RxTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100E825E6B2A00082CABA /* RxTest.swift */; };
 		45E100F625E6B2A00082CABA /* TestableObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100E925E6B2A00082CABA /* TestableObserver.swift */; };
@@ -382,6 +376,13 @@
 			remoteGlobalIDString = 459F8BE325F6D67F004ACAD4;
 			remoteInfo = DependencyInjection;
 		};
+		45D3776A25F9228A00D05900 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 458219A725F262F000D587EB;
+			remoteInfo = SPMDependencies;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -393,56 +394,9 @@
 			files = (
 				456E744E25F83456007D9A6D /* PresentationLayer.framework in Embed Frameworks */,
 				456E744C25F83454007D9A6D /* DomainLayer.framework in Embed Frameworks */,
+				45D3776925F9228A00D05900 /* SPMDependencies.framework in Embed Frameworks */,
 				456E744725F83452007D9A6D /* DataLayer.framework in Embed Frameworks */,
 				456E744A25F83453007D9A6D /* DependencyInjection.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		456E745125F83459007D9A6D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				456E745325F83459007D9A6D /* DomainLayer.framework in Embed Frameworks */,
-				456E745525F8345B007D9A6D /* SPMDependencies.framework in Embed Frameworks */,
-				456E745025F83458007D9A6D /* DependencyInjection.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		456E745825F8345D007D9A6D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				456E745725F8345D007D9A6D /* SPMDependencies.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		456E745F25F83460007D9A6D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				456E746125F83461007D9A6D /* SPMDependencies.framework in Embed Frameworks */,
-				456E745E25F83460007D9A6D /* DomainLayer.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		456E746725F83464007D9A6D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				456E746925F83465007D9A6D /* DomainLayer.framework in Embed Frameworks */,
-				456E746625F83464007D9A6D /* DataLayer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -745,7 +699,7 @@
 				456E744925F83453007D9A6D /* DependencyInjection.framework in Frameworks */,
 				456E744D25F83456007D9A6D /* PresentationLayer.framework in Frameworks */,
 				456E744625F83452007D9A6D /* DataLayer.framework in Frameworks */,
-				453D3F7125ED2D9E0094ADD7 /* Atlantis in Frameworks */,
+				45D3776825F9228A00D05900 /* SPMDependencies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +736,7 @@
 			files = (
 				4575E5BF25F6EB4A00CCC003 /* RxSwift in Frameworks */,
 				458219C725F2634100D587EB /* Realm in Frameworks */,
+				45D3776D25F9229600D05900 /* Atlantis in Frameworks */,
 				4575E5EA25F6F19000CCC003 /* RxCocoa in Frameworks */,
 				458219C525F2633900D587EB /* RxMoya in Frameworks */,
 				4575E5EC25F6F19900CCC003 /* SkeletonView in Frameworks */,
@@ -1903,10 +1858,10 @@
 				4582189A25F25E3400D587EB /* PBXTargetDependency */,
 				458218CE25F25E4400D587EB /* PBXTargetDependency */,
 				459F8BEA25F6D67F004ACAD4 /* PBXTargetDependency */,
+				45D3776B25F9228A00D05900 /* PBXTargetDependency */,
 			);
 			name = DevStack;
 			packageProductDependencies = (
-				453D3F7025ED2D9E0094ADD7 /* Atlantis */,
 			);
 			productName = DevStack;
 			productReference = 4558D30720FCC8FF005BC325 /* DevStack.app */;
@@ -1920,7 +1875,6 @@
 				4582185425F25D5800D587EB /* Sources */,
 				4582185525F25D5800D587EB /* Frameworks */,
 				4582185625F25D5800D587EB /* Resources */,
-				456E745F25F83460007D9A6D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1943,7 +1897,6 @@
 				4582188225F25E3300D587EB /* Sources */,
 				4582188325F25E3300D587EB /* Frameworks */,
 				4582188425F25E3300D587EB /* Resources */,
-				456E745825F8345D007D9A6D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1965,7 +1918,6 @@
 				458218B625F25E4300D587EB /* Sources */,
 				458218B725F25E4300D587EB /* Frameworks */,
 				458218B825F25E4300D587EB /* Resources */,
-				456E745125F83459007D9A6D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2006,6 +1958,7 @@
 				4575E5E725F6F18C00CCC003 /* AlamofireImage */,
 				4575E5E925F6F19000CCC003 /* RxCocoa */,
 				4575E5EB25F6F19900CCC003 /* SkeletonView */,
+				45D3776C25F9229600D05900 /* Atlantis */,
 			);
 			productName = DataLayerDependencies;
 			productReference = 458219A825F262F000D587EB /* SPMDependencies.framework */;
@@ -2019,7 +1972,6 @@
 				459F8BE025F6D67F004ACAD4 /* Sources */,
 				459F8BE125F6D67F004ACAD4 /* Frameworks */,
 				459F8BE225F6D67F004ACAD4 /* Resources */,
-				456E746725F83464007D9A6D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2604,6 +2556,11 @@
 			isa = PBXTargetDependency;
 			target = 459F8BE325F6D67F004ACAD4 /* DependencyInjection */;
 			targetProxy = 459F8C4825F6D96F004ACAD4 /* PBXContainerItemProxy */;
+		};
+		45D3776B25F9228A00D05900 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 458219A725F262F000D587EB /* SPMDependencies */;
+			targetProxy = 45D3776A25F9228A00D05900 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -4479,11 +4436,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		453D3F7025ED2D9E0094ADD7 /* Atlantis */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */;
-			productName = Atlantis;
-		};
 		4575E5BE25F6EB4A00CCC003 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
@@ -4543,6 +4495,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 45840CBD25ACE84900DFC729 /* XCRemoteSwiftPackageReference "RxRealm" */;
 			productName = RxRealm;
+		};
+		45D3776C25F9229600D05900 /* Atlantis */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */;
+			productName = Atlantis;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
