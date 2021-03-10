@@ -55,7 +55,7 @@ matee = {
 testflight_contact = {
   first_name: "Petr",
   last_name: "Chmelar",
-  email: "testflight@matee.cz",
+  email: "petr.chmelar@matee.cz",
   phone: "+420724229167"
 }
 
