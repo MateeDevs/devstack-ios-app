@@ -3,11 +3,11 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-public protocol HasDecodePushNotificationUseCase {
-    var decodePushNotificationUseCase: DecodePushNotificationUseCase { get }
+public protocol HasHandlePushNotificationUseCase {
+    var handlePushNotificationUseCase: HandlePushNotificationUseCase { get }
 }
 
-public struct DecodePushNotificationUseCase {
+public struct HandlePushNotificationUseCase {
     
     public typealias Dependencies = HasPushNotificationsRepository
     

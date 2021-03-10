@@ -115,7 +115,7 @@
 		45821AFB25F2698700D587EB /* GetProfileIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45821AFA25F2698700D587EB /* GetProfileIdUseCase.swift */; };
 		45821B0425F2699400D587EB /* RefreshProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45821B0325F2699400D587EB /* RefreshProfileUseCase.swift */; };
 		45821B0D25F269A400D587EB /* UpdateProfileCounterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45821B0C25F269A400D587EB /* UpdateProfileCounterUseCase.swift */; };
-		45821B1725F269BE00D587EB /* DecodePushNotificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45821B1625F269BE00D587EB /* DecodePushNotificationUseCase.swift */; };
+		45821B1725F269BE00D587EB /* HandlePushNotificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45821B1625F269BE00D587EB /* HandlePushNotificationUseCase.swift */; };
 		45821B2125F269E800D587EB /* GetRemoteConfigValueUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45821B2025F269E800D587EB /* GetRemoteConfigValueUseCase.swift */; };
 		45821B2B25F269FD00D587EB /* GetUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45821B2A25F269FD00D587EB /* GetUserUseCase.swift */; };
 		45821B3B25F26A0B00D587EB /* RefreshUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45821B3A25F26A0B00D587EB /* RefreshUserUseCase.swift */; };
@@ -538,7 +538,7 @@
 		45821AFA25F2698700D587EB /* GetProfileIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileIdUseCase.swift; sourceTree = "<group>"; };
 		45821B0325F2699400D587EB /* RefreshProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshProfileUseCase.swift; sourceTree = "<group>"; };
 		45821B0C25F269A400D587EB /* UpdateProfileCounterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileCounterUseCase.swift; sourceTree = "<group>"; };
-		45821B1625F269BE00D587EB /* DecodePushNotificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodePushNotificationUseCase.swift; sourceTree = "<group>"; };
+		45821B1625F269BE00D587EB /* HandlePushNotificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlePushNotificationUseCase.swift; sourceTree = "<group>"; };
 		45821B2025F269E800D587EB /* GetRemoteConfigValueUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRemoteConfigValueUseCase.swift; sourceTree = "<group>"; };
 		45821B2A25F269FD00D587EB /* GetUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserUseCase.swift; sourceTree = "<group>"; };
 		45821B3A25F26A0B00D587EB /* RefreshUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshUserUseCase.swift; sourceTree = "<group>"; };
@@ -1256,7 +1256,7 @@
 		45821B1525F269AF00D587EB /* PushNotification */ = {
 			isa = PBXGroup;
 			children = (
-				45821B1625F269BE00D587EB /* DecodePushNotificationUseCase.swift */,
+				45821B1625F269BE00D587EB /* HandlePushNotificationUseCase.swift */,
 				4575E6D725F7F68800CCC003 /* RegisterForPushNotificationsUseCase.swift */,
 			);
 			path = PushNotification;
@@ -2398,7 +2398,7 @@
 				45821A8125F268AF00D587EB /* RegistrationData.swift in Sources */,
 				459F86A225F66A49004ACAD4 /* Observable+Extensions.swift in Sources */,
 				45821B2B25F269FD00D587EB /* GetUserUseCase.swift in Sources */,
-				45821B1725F269BE00D587EB /* DecodePushNotificationUseCase.swift in Sources */,
+				45821B1725F269BE00D587EB /* HandlePushNotificationUseCase.swift in Sources */,
 				45821B0425F2699400D587EB /* RefreshProfileUseCase.swift in Sources */,
 				458FD8FC25F289F700FBD3B0 /* LocationRepositoryType.swift in Sources */,
 				45821AEB25F2697800D587EB /* GetProfileUseCase.swift in Sources */,
