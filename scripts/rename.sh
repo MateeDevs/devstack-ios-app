@@ -9,9 +9,6 @@ echo -n "Enter new name: "
 read new_name
 new_name_lowercase=`echo "${new_name}" | tr '[:upper:]' '[:lower:]'`
 
-echo "Renaming root folder"
-mv ../${old_name} ../${new_name}
-
 echo "Renaming workspace"
 mv ../${old_name}.xcworkspace ../${new_name}.xcworkspace
 sed -i '' -e "s/${old_name}/${new_name}/g" ../${new_name}.xcworkspace/contents.xcworkspacedata
@@ -29,16 +26,9 @@ sed -i '' -e "s/${old_name}/${new_name}/g" ../${new_name}.xcodeproj/xcshareddata
 mv ../${new_name}.xcodeproj/xcshareddata/xcschemes/${old_name}.xcscheme ../${new_name}.xcodeproj/xcshareddata/xcschemes/${new_name}.xcscheme
 sed -i '' -e "s/${old_name}/${new_name}/g" ../${new_name}.xcodeproj/xcshareddata/xcschemes/${new_name}.xcscheme
 
-echo "Renaming entitlements"
-mv ../${new_name}/App/Config/Alpha/${old_name}.entitlements ../${new_name}/App/Config/Alpha/${new_name}.entitlements
-mv ../${new_name}/App/Config/Beta/${old_name}.entitlements ../${new_name}/App/Config/Beta/${new_name}.entitlements
-mv ../${new_name}/App/Config/Production/${old_name}.entitlements ../${new_name}/App/Config/Production/${new_name}.entitlements
-
 echo "Renaming support files"
-sed -i '' -e "s/${old_name}/${new_name}/g" ../scripts/twine.sh
 sed -i '' -e "s/${old_name_lowercase}/${new_name_lowercase}/g" ../scripts/twine.sh
-sed -i '' -e "s/${old_name}/${new_name}/g" ../scripts/swiftgen.sh
-sed -i '' -e "s/${old_name}/${new_name}/g" ../scripts/swiftgen-analyze.sh
+sed -i '' -e "s/${old_name}/${new_name}/g" ../scripts/swiftlint-analyze.sh
 sed -i '' -e "s/${old_name}/${new_name}/g" ../fastlane/Fastfile
 sed -i '' -e "s/${old_name_lowercase}/${new_name_lowercase}/g" ../fastlane/Fastfile
 sed -i '' -e "s/${old_name}/${new_name}/g" ../scripts/setup.sh

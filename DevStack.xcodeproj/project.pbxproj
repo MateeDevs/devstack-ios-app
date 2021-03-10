@@ -453,8 +453,8 @@
 		450392842256B29D0037BF42 /* GoogleService-Info-Alpha.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Alpha.plist"; sourceTree = "<group>"; };
 		450392862256B35E0037BF42 /* GoogleService-Info-Beta.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Beta.plist"; sourceTree = "<group>"; };
 		450392882256B3C60037BF42 /* GoogleService-Info-Prod.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Prod.plist"; sourceTree = "<group>"; };
-		453D408325EDBB750094ADD7 /* DevStack-Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DevStack-Debug.entitlements"; sourceTree = "<group>"; };
-		453D408425EDBB750094ADD7 /* DevStack-Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DevStack-Release.entitlements"; sourceTree = "<group>"; };
+		453D408325EDBB750094ADD7 /* Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Debug.entitlements; sourceTree = "<group>"; };
+		453D408425EDBB750094ADD7 /* Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Release.entitlements; sourceTree = "<group>"; };
 		454AC06424A221B300D6F367 /* ProviderDependency+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProviderDependency+Mock.swift"; sourceTree = "<group>"; };
 		4557194924A155ED00FB24CA /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4557194D24A155ED00FB24CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -913,8 +913,8 @@
 		4575E61225F6F82C00CCC003 /* Entitlements */ = {
 			isa = PBXGroup;
 			children = (
-				453D408325EDBB750094ADD7 /* DevStack-Debug.entitlements */,
-				453D408425EDBB750094ADD7 /* DevStack-Release.entitlements */,
+				453D408325EDBB750094ADD7 /* Debug.entitlements */,
+				453D408425EDBB750094ADD7 /* Release.entitlements */,
 			);
 			path = Entitlements;
 			sourceTree = "<group>";
@@ -2699,7 +2699,7 @@
 			buildSettings = {
 				APP_DISPLAY_NAME = "A-DevStack";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Alpha";
-				CODE_SIGN_ENTITLEMENTS = "Application/Entitlements/DevStack-Debug.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Application/Entitlements/Debug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2811,7 +2811,7 @@
 			buildSettings = {
 				APP_DISPLAY_NAME = "B-DevStack";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Beta";
-				CODE_SIGN_ENTITLEMENTS = "Application/Entitlements/DevStack-Debug.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Application/Entitlements/Debug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2917,7 +2917,7 @@
 			buildSettings = {
 				APP_DISPLAY_NAME = "A-DevStack";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Alpha";
-				CODE_SIGN_ENTITLEMENTS = "Application/Entitlements/DevStack-Release.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Application/Entitlements/Release.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -3022,7 +3022,7 @@
 			buildSettings = {
 				APP_DISPLAY_NAME = "B-DevStack";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Beta";
-				CODE_SIGN_ENTITLEMENTS = "Application/Entitlements/DevStack-Release.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Application/Entitlements/Release.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -3229,7 +3229,7 @@
 			buildSettings = {
 				APP_DISPLAY_NAME = DevStack;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Application/Entitlements/DevStack-Debug.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Application/Entitlements/Debug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -3259,7 +3259,7 @@
 			buildSettings = {
 				APP_DISPLAY_NAME = DevStack;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Application/Entitlements/DevStack-Release.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Application/Entitlements/Release.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
