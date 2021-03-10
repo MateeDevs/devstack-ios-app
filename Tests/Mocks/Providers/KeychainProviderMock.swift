@@ -1,15 +1,7 @@
 //
-//  KeychainProviderMock.swift
-//  DevStack
-//
 //  Created by Petr Chmelar on 23/06/2020.
 //  Copyright © 2020 Matee. All rights reserved.
 //
-
-import Foundation
-import KeychainAccess
-
-@testable import DevStack
 
 class KeychainProviderMock: KeychainProviderType {
 

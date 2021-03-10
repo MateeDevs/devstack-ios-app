@@ -6,7 +6,7 @@
 import RxCocoa
 import RxSwift
 
-extension ObservableType {
+public extension ObservableType {
     /// Helper that just completes on error
     func asDriver() -> Driver<Element> {
         asDriver { _ in

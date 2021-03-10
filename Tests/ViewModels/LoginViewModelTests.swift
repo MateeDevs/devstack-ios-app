@@ -1,7 +1,4 @@
 //
-//  LoginViewModelTests.swift
-//  DevStack
-//
 //  Created by Petr Chmelar on 20/06/2020.
 //  Copyright © 2020 Matee. All rights reserved.
 //
@@ -9,7 +6,7 @@
 import RxSwift
 import XCTest
 
-@testable import DevStack
+@testable import PresentationLayer
 
 class LoginViewModelTests: BaseTestCase {
 

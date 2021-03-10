@@ -36,38 +36,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4557194824A155ED00FB24CA"
-               BuildableName = "DevStackTests.xctest"
-               BlueprintName = "DevStackTests"
-               ReferencedContainer = "container:DevStack.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4582185F25F25D5900D587EB"
-               BuildableName = "DataLayerTests.xctest"
-               BlueprintName = "DataLayerTests"
-               ReferencedContainer = "container:DevStack.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4582188D25F25E3400D587EB"
-               BuildableName = "DomainLayerTests.xctest"
-               BlueprintName = "DomainLayerTests"
-               ReferencedContainer = "container:DevStack.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "458218C125F25E4400D587EB"
-               BuildableName = "PresentationLayerTests.xctest"
-               BlueprintName = "PresentationLayerTests"
+               BuildableName = "Tests.xctest"
+               BlueprintName = "Tests"
                ReferencedContainer = "container:DevStack.xcodeproj">
             </BuildableReference>
          </TestableReference>

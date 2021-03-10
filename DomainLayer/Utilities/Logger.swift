@@ -7,7 +7,7 @@ import Foundation
 import os.log
 
 /// Predefined OSLog categories
-/// - Idea taken from [AckeeCZ iOS-MVVM-ProjectTemplate](https://github.com/AckeeCZ/iOS-MVVM-ProjectTemplate)
+/// Idea taken from [AckeeCZ iOS-MVVM-ProjectTemplate](https://github.com/AckeeCZ/iOS-MVVM-ProjectTemplate)
 public enum LoggerCategory {
     case app, networking, lifecycle
     
@@ -22,7 +22,7 @@ public enum LoggerCategory {
 }
 
 /// Wrapper for os_log function
-/// - Idea taken from [Unified Logging Wrapper](https://gist.github.com/smosko/6b8c161a7ae092e7b72e891a5050deaa)
+/// Idea taken from [Unified Logging Wrapper](https://gist.github.com/smosko/6b8c161a7ae092e7b72e891a5050deaa)
 public struct Logger {
     
     private static func log(_ message: StaticString, _ args: [CVarArg], category: LoggerCategory, type: OSLogType) {

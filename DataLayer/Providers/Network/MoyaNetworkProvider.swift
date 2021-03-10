@@ -16,7 +16,7 @@ public struct MoyaNetworkProvider {
     private weak var _delegate: NetworkProviderDelegate?
 
     /// Custom Moya provider
-    /// - Idea taken from [Moya - ComposingProvider](https://github.com/Moya/Moya/blob/master/docs/Examples/ComposingProvider.md)
+    /// Idea taken from [Moya - ComposingProvider](https://github.com/Moya/Moya/blob/master/docs/Examples/ComposingProvider.md)
     private let moyaProvider: MoyaProvider<MultiTarget>
 
     public init(keychainProvider: KeychainProviderType, databaseProvider: DatabaseProviderType) {

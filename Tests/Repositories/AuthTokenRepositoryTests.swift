@@ -1,15 +1,10 @@
 //
-//  AuthTokenRepositoryTests.swift
-//  DevStack
-//
 //  Created by Petr Chmelar on 19/06/2020.
 //  Copyright © 2020 Matee. All rights reserved.
 //
 
 import RxSwift
 import XCTest
-
-@testable import DevStack
 
 class AuthTokenRepositoryTests: BaseTestCase {
 

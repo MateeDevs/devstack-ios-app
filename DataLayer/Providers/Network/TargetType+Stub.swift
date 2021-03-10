@@ -7,11 +7,11 @@ import Moya
 
 extension TargetType {
     func stub<T>(_ networkType: T.Type) -> Data {
-        stub(for: String(describing: type(of: networkType)))
+        stub(for: String(describing: networkType))
     }
     
     func stubList<T>(_ networkType: T.Type) -> Data {
-        stub(for: "\(String(describing: type(of: networkType)))List")
+        stub(for: "\(String(describing: networkType))List")
     }
     
     private func stub(for resourceName: String) -> Data {
