@@ -47,7 +47,6 @@ matee = {
   team_id_dev: "WNB34WBN42",
   team_id_connect: "120470944",
   match_branch: "matee",
-  certificate: "Apple Distribution: Matee Devs s.r.o.",
   api_key_id: "CQT3ZM53U8",
   api_key_issuer_id: "e85e5ea1-4316-4e79-a474-858ab98197e0"
 }
@@ -55,7 +54,7 @@ matee = {
 testflight_contact = {
   first_name: "Petr",
   last_name: "Chmelar",
-  email: "petr.chmelar@matee.cz",
+  email: "testflight@matee.cz",
   phone: "+420724229167"
 }
 
@@ -165,8 +164,6 @@ platform :ios do
       scheme: config[:scheme],
       clean: true,
       export_method: "app-store",
-      codesigning_identity: config[:certificate],
-      xcargs: "PROVISIONING_PROFILE_SPECIFIER='match AppStore #{config[:app_identifier]}'",
       archive_path: "#{config[:output_name]}.xcarchive",
       output_directory: "./ipa",
       output_name: config[:output_name]
