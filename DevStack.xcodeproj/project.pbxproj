@@ -269,9 +269,6 @@
 		459F8B4C25F6B60B004ACAD4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8B4B25F6B60B004ACAD4 /* ViewModel.swift */; };
 		459F8B5525F6B623004ACAD4 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8B5425F6B623004ACAD4 /* ViewModelType.swift */; };
 		459F8B5E25F6B643004ACAD4 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8B5D25F6B643004ACAD4 /* Error+Extensions.swift */; };
-		459F8B7925F6B766004ACAD4 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8B7625F6B766004ACAD4 /* Assets.swift */; };
-		459F8B7A25F6B766004ACAD4 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8B7725F6B766004ACAD4 /* Storyboards.swift */; };
-		459F8B7B25F6B766004ACAD4 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8B7825F6B766004ACAD4 /* Localizable.swift */; };
 		459F8B8425F6B82A004ACAD4 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8B8325F6B82A004ACAD4 /* Observable+Extensions.swift */; };
 		459F8BB225F6C338004ACAD4 /* HasNoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8BB125F6C338004ACAD4 /* HasNoProvider.swift */; };
 		459F8BE825F6D67F004ACAD4 /* DependencyInjection.h in Headers */ = {isa = PBXBuildFile; fileRef = 459F8BE625F6D67F004ACAD4 /* DependencyInjection.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -279,6 +276,9 @@
 		459F8C2725F6D812004ACAD4 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C2625F6D812004ACAD4 /* RepositoryDependency.swift */; };
 		459F8C3725F6D86B004ACAD4 /* ProviderDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */; };
 		459F8C5225F6DA4E004ACAD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C5125F6DA4E004ACAD4 /* Constants.swift */; };
+		45D3771E25F8D07800D05900 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771B25F8D07800D05900 /* Localizable.swift */; };
+		45D3771F25F8D07800D05900 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771C25F8D07800D05900 /* Assets.swift */; };
+		45D3772025F8D07800D05900 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771D25F8D07800D05900 /* Storyboards.swift */; };
 		45E100F325E6B2A00082CABA /* XCTest+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100E625E6B2A00082CABA /* XCTest+Rx.swift */; };
 		45E100F525E6B2A00082CABA /* RxTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100E825E6B2A00082CABA /* RxTest.swift */; };
 		45E100F625E6B2A00082CABA /* TestableObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100E925E6B2A00082CABA /* TestableObserver.swift */; };
@@ -698,9 +698,6 @@
 		459F8B4B25F6B60B004ACAD4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		459F8B5425F6B623004ACAD4 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		459F8B5D25F6B643004ACAD4 /* Error+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
-		459F8B7625F6B766004ACAD4 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
-		459F8B7725F6B766004ACAD4 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
-		459F8B7825F6B766004ACAD4 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		459F8B8325F6B82A004ACAD4 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		459F8BB125F6C338004ACAD4 /* HasNoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNoProvider.swift; sourceTree = "<group>"; };
 		459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependencyInjection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -710,6 +707,9 @@
 		459F8C2625F6D812004ACAD4 /* RepositoryDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDependency.swift; sourceTree = "<group>"; };
 		459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDependency.swift; sourceTree = "<group>"; };
 		459F8C5125F6DA4E004ACAD4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		45D3771B25F8D07800D05900 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		45D3771C25F8D07800D05900 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		45D3771D25F8D07800D05900 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		45E100E625E6B2A00082CABA /* XCTest+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+Rx.swift"; sourceTree = "<group>"; };
 		45E100E825E6B2A00082CABA /* RxTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTest.swift; sourceTree = "<group>"; };
 		45E100E925E6B2A00082CABA /* TestableObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestableObserver.swift; sourceTree = "<group>"; };
@@ -1570,20 +1570,10 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
-		459F8A1F25F6B10D004ACAD4 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				459F8B7625F6B766004ACAD4 /* Assets.swift */,
-				459F8B7825F6B766004ACAD4 /* Localizable.swift */,
-				459F8B7725F6B766004ACAD4 /* Storyboards.swift */,
-			);
-			path = Constants;
-			sourceTree = "<group>";
-		};
 		459F8A2025F6B123004ACAD4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				459F8A1F25F6B10D004ACAD4 /* Constants */,
+				45D3771825F8D05100D05900 /* Constants */,
 				459F8A2125F6B1E9004ACAD4 /* Colors.xcassets */,
 				459F8A2A25F6B1F2004ACAD4 /* Images.xcassets */,
 				459F8A3C25F6B20A004ACAD4 /* InfoPlist.strings */,
@@ -1763,6 +1753,16 @@
 				459F8BE725F6D67F004ACAD4 /* Info.plist */,
 			);
 			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		45D3771825F8D05100D05900 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				45D3771C25F8D07800D05900 /* Assets.swift */,
+				45D3771B25F8D07800D05900 /* Localizable.swift */,
+				45D3771D25F8D07800D05900 /* Storyboards.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		45E100E525E6B2780082CABA /* RxTest */ = {
@@ -2421,13 +2421,11 @@
 				459F8B1A25F6B4ED004ACAD4 /* CounterControlViewModel.swift in Sources */,
 				459F894225F6ADA2004ACAD4 /* Date+Extensions.swift in Sources */,
 				459F895425F6ADC8004ACAD4 /* Int+Extensions.swift in Sources */,
-				459F8B7A25F6B766004ACAD4 /* Storyboards.swift in Sources */,
 				459F883125F6A710004ACAD4 /* HeadlineLabel.swift in Sources */,
 				459F8AF225F6B4BB004ACAD4 /* ProfileViewController.swift in Sources */,
 				459F899C25F6AF88004ACAD4 /* UIImageView+Extensions.swift in Sources */,
 				459F8AD025F6B493004ACAD4 /* UserDetailViewModel.swift in Sources */,
 				459F888225F6A831004ACAD4 /* DashedLineView.swift in Sources */,
-				459F8B7B25F6B766004ACAD4 /* Localizable.swift in Sources */,
 				459F885525F6A77C004ACAD4 /* BaseTableViewCell.swift in Sources */,
 				459F88BA25F6A997004ACAD4 /* RatingViewSmall.swift in Sources */,
 				459F89B725F6AFC2004ACAD4 /* UITextField+Extensions.swift in Sources */,
@@ -2439,6 +2437,7 @@
 				459F8B8425F6B82A004ACAD4 /* Observable+Extensions.swift in Sources */,
 				459F8AC325F6B488004ACAD4 /* UserTableViewCell.swift in Sources */,
 				459F87F225F6A5CF004ACAD4 /* EnhancedButton.swift in Sources */,
+				45D3771E25F8D07800D05900 /* Localizable.swift in Sources */,
 				459F89FE25F6B0B2004ACAD4 /* Whisper.swift in Sources */,
 				459F87A925F6A3FD004ACAD4 /* ImagePickerViewController+Rx.swift in Sources */,
 				459F87BB25F6A420004ACAD4 /* SafariViewController.swift in Sources */,
@@ -2451,7 +2450,6 @@
 				459F8A8025F6B3ED004ACAD4 /* LoginViewModel.swift in Sources */,
 				459F8B3125F6B519004ACAD4 /* AppFlowController.swift in Sources */,
 				459F8A8125F6B3ED004ACAD4 /* LoginViewController.swift in Sources */,
-				459F8B7925F6B766004ACAD4 /* Assets.swift in Sources */,
 				459F885E25F6A79C004ACAD4 /* TextFieldWithHint.swift in Sources */,
 				4575E65D25F6FFA300CCC003 /* Bundle+Extensions.swift in Sources */,
 				459F8A6E25F6B3BD004ACAD4 /* OnboardingFlowController.swift in Sources */,
@@ -2487,6 +2485,7 @@
 				459F89AE25F6AFAF004ACAD4 /* UIStackView+Extensions.swift in Sources */,
 				459F89EC25F6B072004ACAD4 /* AlertAction.swift in Sources */,
 				459F8AA525F6B46D004ACAD4 /* UsersFlowController.swift in Sources */,
+				45D3771F25F8D07800D05900 /* Assets.swift in Sources */,
 				459F8AF025F6B4BB004ACAD4 /* ProfileViewModel.swift in Sources */,
 				459F880425F6A643004ACAD4 /* StateButton.swift in Sources */,
 				459F8A1725F6B0E3004ACAD4 /* BaseViewController+Alerts+Rx.swift in Sources */,
@@ -2507,6 +2506,7 @@
 				459F880D25F6A674004ACAD4 /* StateButton+Rx.swift in Sources */,
 				459F87B225F6A40E004ACAD4 /* InputViewController.swift in Sources */,
 				459F878525F6A3A6004ACAD4 /* BaseTableViewController.swift in Sources */,
+				45D3772025F8D07800D05900 /* Storyboards.swift in Sources */,
 				459F894B25F6ADB8004ACAD4 /* Double+Extensions.swift in Sources */,
 				459F8B1425F6B4E3004ACAD4 /* CounterViewController.swift in Sources */,
 				459F876725F6A280004ACAD4 /* PresentationLayer.swift in Sources */,
