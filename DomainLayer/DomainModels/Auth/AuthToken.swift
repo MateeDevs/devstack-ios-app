@@ -3,7 +3,7 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-public struct AuthToken {
+public struct AuthToken: Equatable {
     public let userId: String
     public let token: String
     

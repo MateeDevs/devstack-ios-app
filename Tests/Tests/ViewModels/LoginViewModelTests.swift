@@ -128,17 +128,4 @@ class LoginViewModelTests: BaseTestCase {
             .next(0, true)
         ])
     }
-
-    // MARK: Test for requestDidCalled
-
-    func testLoginRequestDidFire() {
-        let networkProvider = NetworkProviderMock()
-        let providers: ProviderDependency = .mock(networkProvider: networkProvider)
-        
-        mockViewModel(for: Input.loginNonEmpty, providers: providers)
-        scheduler.start()
-        
-        XCTAssertEqual(networkProvider.firedRequests, 1)
-    }
-
 }

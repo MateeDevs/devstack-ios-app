@@ -5,10 +5,20 @@
 
 import RxSwift
 
-class RemoteConfigProviderMock: RemoteConfigProviderType {
+class RemoteConfigProviderMock {
+    
+    var storage: [RemoteConfigCoding: Bool] = [:]
+
+    init(_ storage: [RemoteConfigCoding: Bool] = [:]) {
+        self.storage = storage
+    }
+}
+
+extension RemoteConfigProviderMock: RemoteConfigProviderType {
 
     func get(_ key: RemoteConfigCoding) -> Observable<Bool> {
-        print("RemoteConfigProviderMock.get called")
-        return .empty()
+        providerEvents.append(.remoteConfigGet(key))
+        guard let value = storage[key] else { return .empty() }
+        return .just(value)
     }
 }

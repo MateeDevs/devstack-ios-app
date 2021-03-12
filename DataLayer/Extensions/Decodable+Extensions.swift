@@ -1,20 +1,18 @@
 //
-//  Created by Petr Chmelar on 28.02.2021
+//  Created by Petr Chmelar on 12.03.2021
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-import Moya
-
-extension TargetType {
-    func stub<T>(_ networkType: T.Type) -> Data {
-        stub(for: String(describing: networkType))
+public extension Decodable {
+    static var stub: Data {
+        stub(for: String(describing: self))
     }
     
-    func stubList<T>(_ networkType: T.Type) -> Data {
-        stub(for: "\(String(describing: networkType))List")
+    static var stubList: Data {
+        stub(for: "\(String(describing: self))List")
     }
     
-    private func stub(for resourceName: String) -> Data {
+    private static func stub(for resourceName: String) -> Data {
         let bundle = Bundle(for: BundleToken.self)
         guard let path = bundle.path(forResource: resourceName, ofType: "json"),
               let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else { return Data() }

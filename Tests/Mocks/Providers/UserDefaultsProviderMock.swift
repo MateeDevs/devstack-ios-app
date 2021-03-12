@@ -3,25 +3,33 @@
 //  Copyright © 2020 Matee. All rights reserved.
 //
 
-class UserDefaultsProviderMock: UserDefaultsProviderType {
+class UserDefaultsProviderMock {
+    
+    var storage: [UserDefaultsCoding: Any] = [:]
 
-    var savedKeys: [UserDefaultsCoding] = []
+    init(_ storage: [UserDefaultsCoding: Any] = [:]) {
+        self.storage = storage
+    }
+}
 
+extension UserDefaultsProviderMock: UserDefaultsProviderType {
     func save<T>(_ key: UserDefaultsCoding, value: T) {
-        print("UserDefaultsProviderMock.save called")
-        savedKeys.append(key)
+        providerEvents.append(.userDefaultsSave(key))
+        storage[key] = value
     }
 
     func get<T>(_ key: UserDefaultsCoding) -> T? {
-        print("UserDefaultsProviderMock.get called")
-        return nil
+        providerEvents.append(.userDefaultsGet(key))
+        return storage[key] as? T
     }
 
     func delete(_ key: UserDefaultsCoding) {
-        print("UserDefaultsProviderMock.delete called")
+        providerEvents.append(.userDefaultsDelete(key))
+        storage.removeValue(forKey: key)
     }
 
     func deleteAll() {
-        print("UserDefaultsProviderMock.deleteAll called")
+        providerEvents.append(.userDefaultsDeleteAll)
+        storage = [:]
     }
 }

@@ -6,5 +6,7 @@
 import UserNotifications
 
 class PushNotificationsProviderMock: PushNotificationsProviderType {
-    func requestAuthorization(options: UNAuthorizationOptions, completionHandler: @escaping (Bool, Error?) -> Void) {}
+    func requestAuthorization(options: UNAuthorizationOptions, completionHandler: @escaping (Bool, Error?) -> Void) {
+        providerEvents.append(.pushNotificationsRequestAuthorization)
+    }
 }
