@@ -35,28 +35,28 @@ extension UseCaseDependency: HasRefreshUsersUseCase {}
 
 public struct UseCaseDependency {
     
-    public let loginUseCase: LoginUseCase
-    public let logoutUseCase: LogoutUseCase
-    public let registrationUseCase: RegistrationUseCase
+    public let loginUseCase: LoginUseCaseType
+    public let logoutUseCase: LogoutUseCaseType
+    public let registrationUseCase: RegistrationUseCaseType
     
-    public let getCurrentLocationUseCase: GetCurrentLocationUseCase
+    public let getCurrentLocationUseCase: GetCurrentLocationUseCaseType
     
-    public let getProfileUseCase: GetProfileUseCase
-    public let getProfileIdUseCase: GetProfileIdUseCase
-    public let refreshProfileUseCase: RefreshProfileUseCase
-    public let updateProfileCounterUseCase: UpdateProfileCounterUseCase
+    public let getProfileUseCase: GetProfileUseCaseType
+    public let getProfileIdUseCase: GetProfileIdUseCaseType
+    public let refreshProfileUseCase: RefreshProfileUseCaseType
+    public let updateProfileCounterUseCase: UpdateProfileCounterUseCaseType
     
-    public let handlePushNotificationUseCase: HandlePushNotificationUseCase
-    public let registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCase
+    public let handlePushNotificationUseCase: HandlePushNotificationUseCaseType
+    public let registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCaseType
     
-    public let getRemoteConfigValueUseCase: GetRemoteConfigValueUseCase
+    public let getRemoteConfigValueUseCase: GetRemoteConfigValueUseCaseType
     
-    public let getUserUseCase: GetUserUseCase
-    public let refreshUserUseCase: RefreshUserUseCase
-    public let updateUserUseCase: UpdateUserUseCase
+    public let getUserUseCase: GetUserUseCaseType
+    public let refreshUserUseCase: RefreshUserUseCaseType
+    public let updateUserUseCase: UpdateUserUseCaseType
     
-    public let getUsersUseCase: GetUsersUseCase
-    public let refreshUsersUseCase: RefreshUsersUseCase
+    public let getUsersUseCase: GetUsersUseCaseType
+    public let refreshUsersUseCase: RefreshUsersUseCaseType
     
     public init(dependencies: RepositoryDependency) {
         self.loginUseCase = LoginUseCase(dependencies: dependencies)

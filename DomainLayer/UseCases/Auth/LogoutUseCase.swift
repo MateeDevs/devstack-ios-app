@@ -4,10 +4,14 @@
 //
 
 public protocol HasLogoutUseCase {
-    var logoutUseCase: LogoutUseCase { get }
+    var logoutUseCase: LogoutUseCaseType { get }
 }
 
-public struct LogoutUseCase {
+public protocol LogoutUseCaseType {
+    func execute()
+}
+
+public struct LogoutUseCase: LogoutUseCaseType {
     
     public typealias Dependencies = HasAuthTokenRepository
     

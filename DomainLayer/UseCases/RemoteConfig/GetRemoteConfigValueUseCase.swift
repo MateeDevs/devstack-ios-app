@@ -6,10 +6,14 @@
 import RxSwift
 
 public protocol HasGetRemoteConfigValueUseCase {
-    var getRemoteConfigValueUseCase: GetRemoteConfigValueUseCase { get }
+    var getRemoteConfigValueUseCase: GetRemoteConfigValueUseCaseType { get }
 }
 
-public struct GetRemoteConfigValueUseCase {
+public protocol GetRemoteConfigValueUseCaseType {
+    func execute(_ key: RemoteConfigCoding) -> Observable<Bool>
+}
+
+public struct GetRemoteConfigValueUseCase: GetRemoteConfigValueUseCaseType {
     
     public typealias Dependencies =
         HasRemoteConfigRepository

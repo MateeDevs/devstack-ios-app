@@ -6,10 +6,14 @@
 import RxSwift
 
 public protocol HasRefreshUserUseCase {
-    var refreshUserUseCase: RefreshUserUseCase { get }
+    var refreshUserUseCase: RefreshUserUseCaseType { get }
 }
 
-public struct RefreshUserUseCase {
+public protocol RefreshUserUseCaseType {
+    func execute(id: String) -> Observable<Event<Void>>
+}
+
+public struct RefreshUserUseCase: RefreshUserUseCaseType {
     
     public typealias Dependencies = HasUserRepository
     

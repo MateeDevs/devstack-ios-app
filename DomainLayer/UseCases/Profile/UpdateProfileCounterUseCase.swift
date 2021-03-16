@@ -6,10 +6,14 @@
 import RxSwift
 
 public protocol HasUpdateProfileCounterUseCase {
-    var updateProfileCounterUseCase: UpdateProfileCounterUseCase { get }
+    var updateProfileCounterUseCase: UpdateProfileCounterUseCaseType { get }
 }
 
-public struct UpdateProfileCounterUseCase {
+public protocol UpdateProfileCounterUseCaseType {
+    func execute(value: Int) -> Observable<Event<Void>>
+}
+
+public struct UpdateProfileCounterUseCase: UpdateProfileCounterUseCaseType {
     
     public typealias Dependencies =
         HasAuthTokenRepository &

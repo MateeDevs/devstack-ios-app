@@ -69,7 +69,10 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         let remoteConfigLabelIsHidden = dependencies.getRemoteConfigValueUseCase.execute(.profileLabelIsVisible).map { !$0 }
         
         let registerForPushNotifications = registerPushNotificationsButtonTaps.flatMapLatest { _ -> Observable<Void> in
-            dependencies.registerForPushNotificationsUseCase.execute()
+            dependencies.registerForPushNotificationsUseCase.execute(
+                options: [.alert, .badge, .sound],
+                completionHandler: { _, _ in }
+            )
             return .just(())
         }.share()
 

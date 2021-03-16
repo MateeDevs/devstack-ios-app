@@ -6,10 +6,14 @@
 import RxSwift
 
 public protocol HasGetUserUseCase {
-    var getUserUseCase: GetUserUseCase { get }
+    var getUserUseCase: GetUserUseCaseType { get }
 }
 
-public struct GetUserUseCase {
+public protocol GetUserUseCaseType {
+    func execute(id: String) -> Observable<User>
+}
+
+public struct GetUserUseCase: GetUserUseCaseType {
     
     public typealias Dependencies = HasUserRepository
     

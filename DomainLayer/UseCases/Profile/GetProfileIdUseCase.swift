@@ -4,10 +4,14 @@
 //
 
 public protocol HasGetProfileIdUseCase {
-    var getProfileIdUseCase: GetProfileIdUseCase { get }
+    var getProfileIdUseCase: GetProfileIdUseCaseType { get }
 }
 
-public struct GetProfileIdUseCase {
+public protocol GetProfileIdUseCaseType {
+    func execute() -> String?
+}
+
+public struct GetProfileIdUseCase: GetProfileIdUseCaseType {
     
     public typealias Dependencies =
         HasAuthTokenRepository &
