@@ -817,6 +817,69 @@
 			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
+		4550CFFF26016CD0009C16B4 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				4550D00026016CDF009C16B4 /* Auth */,
+				4550D00126016CE3009C16B4 /* Location */,
+				4550D00226016CEE009C16B4 /* Profile */,
+				4550D00326016CFB009C16B4 /* PushNotification */,
+				4550D00426016D03009C16B4 /* RemoteConfig */,
+				4550D00526016D0E009C16B4 /* User */,
+				4550D00626016D13009C16B4 /* Users */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		4550D00026016CDF009C16B4 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		4550D00126016CE3009C16B4 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		4550D00226016CEE009C16B4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4550D00326016CFB009C16B4 /* PushNotification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PushNotification;
+			sourceTree = "<group>";
+		};
+		4550D00426016D03009C16B4 /* RemoteConfig */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RemoteConfig;
+			sourceTree = "<group>";
+		};
+		4550D00526016D0E009C16B4 /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		4550D00626016D13009C16B4 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
 		4557194A24A155ED00FB24CA /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -835,6 +898,7 @@
 		4557195324A15B1100FB24CA /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				4550CFFF26016CD0009C16B4 /* UseCases */,
 				454D161325FC1D7E00920CF0 /* Providers */,
 			);
 			path = Mocks;

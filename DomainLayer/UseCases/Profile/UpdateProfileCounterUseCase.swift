@@ -10,7 +10,7 @@ public protocol HasUpdateProfileCounterUseCase {
 }
 
 public protocol UpdateProfileCounterUseCaseType {
-    func execute(value: Int) -> Observable<Event<Void>>
+    func execute(value: Int) -> Observable<Void>
 }
 
 public struct UpdateProfileCounterUseCase: UpdateProfileCounterUseCaseType {
@@ -25,12 +25,12 @@ public struct UpdateProfileCounterUseCase: UpdateProfileCounterUseCaseType {
         self.dependencies = dependencies
     }
     
-    public func execute(value: Int) -> Observable<Event<Void>> {
+    public func execute(value: Int) -> Observable<Void> {
         guard let authToken = dependencies.authTokenRepository.read() else { return .error(CommonError.noAuthToken) }
         return dependencies.userRepository.read(.local, id: authToken.userId).take(1)
             .flatMap { profile -> Observable<User> in
                 let updatedProfile = User(copy: profile, counter: profile.counter + value)
                 return dependencies.userRepository.update(.local, user: updatedProfile)
-            }.mapToVoid().materialize()
+            }.mapToVoid()
     }
 }

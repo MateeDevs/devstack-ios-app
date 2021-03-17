@@ -27,9 +27,11 @@ final class CounterDisplayViewModel: ViewModel, ViewModelType {
         self.input = Input()
 
         // MARK: Setup outputs
+        
+        let profile = dependencies.getProfileUseCase.execute().ignoreErrors()
 
         self.output = Output(
-            counterValue: dependencies.getProfileUseCase.execute().map { "\($0.counter)" }.asDriver()
+            counterValue: profile.map { "\($0.counter)" }.asDriver()
         )
 
         super.init()

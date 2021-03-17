@@ -56,17 +56,18 @@ final class ProfileViewModel: ViewModel, ViewModelType {
         
         let activity = ActivityIndicator()
 
-        let profile = dependencies.getProfileUseCase.execute().share(replay: 1)
-        let refreshProfile = dependencies.refreshProfileUseCase.execute().trackActivity(activity).share()
+        let profile = dependencies.getProfileUseCase.execute().ignoreErrors().share(replay: 1)
+        let refreshProfile = dependencies.refreshProfileUseCase.execute().trackActivity(activity).ignoreErrors().share()
         
         let isRefreshing = Observable<Bool>.merge(
             activity.asObservable(),
             refreshProfile.map { _ in false }
         )
         
-        let currentLocation = dependencies.getCurrentLocationUseCase.execute().take(1)
+        let currentLocation = dependencies.getCurrentLocationUseCase.execute().ignoreErrors().take(1)
         
-        let remoteConfigLabelIsHidden = dependencies.getRemoteConfigValueUseCase.execute(.profileLabelIsVisible).map { !$0 }
+        let remoteConfigLabelIsHidden = dependencies.getRemoteConfigValueUseCase
+            .execute(.profileLabelIsVisible).ignoreErrors().map { !$0 }
         
         let registerForPushNotifications = registerPushNotificationsButtonTaps.flatMapLatest { _ -> Observable<Void> in
             dependencies.registerForPushNotificationsUseCase.execute(

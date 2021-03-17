@@ -10,7 +10,7 @@ public protocol HasLoginUseCase {
 }
 
 public protocol LoginUseCaseType {
-    func execute(_ data: LoginData) -> Observable<Event<Void>>
+    func execute(_ data: LoginData) -> Observable<Void>
 }
 
 public struct LoginUseCase: LoginUseCaseType {
@@ -23,7 +23,7 @@ public struct LoginUseCase: LoginUseCaseType {
         self.dependencies = dependencies
     }
     
-    public func execute(_ data: LoginData) -> Observable<Event<Void>> {
-        dependencies.authTokenRepository.create(data).mapToVoid().materialize()
+    public func execute(_ data: LoginData) -> Observable<Void> {
+        dependencies.authTokenRepository.create(data).mapToVoid()
     }
 }

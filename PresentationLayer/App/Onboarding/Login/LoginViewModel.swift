@@ -48,14 +48,14 @@ final class LoginViewModel: ViewModel, ViewModelType {
         
         let inputs = Observable.combineLatest(email, password) { (email: $0, password: $1) }
         
-        let login = loginButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Observable<Event<Void>> in
+        let login = loginButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Observable<Void> in
             if inputs.email.isEmpty || inputs.password.isEmpty {
-                return .just(.error(ValidationError(L10n.invalid_credentials)))
+                return .error(ValidationError(L10n.invalid_credentials))
             } else {
                 let data = LoginData(email: inputs.email, pass: inputs.password)
                 return dependencies.loginUseCase.execute(data).trackActivity(activity)
             }
-        }.share()
+        }.materialize().share()
         
         let flow = Observable<LoginViewControllerFlow>.merge(
             login.compactMap { $0.element }.map { .dismiss },

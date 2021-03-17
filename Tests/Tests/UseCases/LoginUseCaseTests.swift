@@ -13,8 +13,7 @@ class LoginUseCaseTests: BaseTestCase {
 
         let output = scheduler.createObserver(Bool.self)
         useCase.execute(LoginData(email: "email", pass: "pass"))
-            .dematerialize().map { _ in true }
-            .asDriver().drive(output).disposed(by: disposeBag)
+            .map { _ in true }.asDriver().drive(output).disposed(by: disposeBag)
         scheduler.start()
         
         XCTAssertEqual(output.events, [

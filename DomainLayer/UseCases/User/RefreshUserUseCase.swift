@@ -10,7 +10,7 @@ public protocol HasRefreshUserUseCase {
 }
 
 public protocol RefreshUserUseCaseType {
-    func execute(id: String) -> Observable<Event<Void>>
+    func execute(id: String) -> Observable<Void>
 }
 
 public struct RefreshUserUseCase: RefreshUserUseCaseType {
@@ -23,7 +23,7 @@ public struct RefreshUserUseCase: RefreshUserUseCaseType {
         self.dependencies = dependencies
     }
     
-    public func execute(id: String) -> Observable<Event<Void>> {
-        dependencies.userRepository.read(.remote, id: id).mapToVoid().materialize()
+    public func execute(id: String) -> Observable<Void> {
+        dependencies.userRepository.read(.remote, id: id).mapToVoid()
     }
 }

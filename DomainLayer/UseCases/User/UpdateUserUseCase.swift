@@ -10,7 +10,7 @@ public protocol HasUpdateUserUseCase {
 }
 
 public protocol UpdateUserUseCaseType {
-    func execute(user: User) -> Observable<Event<Void>>
+    func execute(user: User) -> Observable<Void>
 }
 
 public struct UpdateUserUseCase: UpdateUserUseCaseType {
@@ -23,7 +23,7 @@ public struct UpdateUserUseCase: UpdateUserUseCaseType {
         self.dependencies = dependencies
     }
     
-    public func execute(user: User) -> Observable<Event<Void>> {
-        dependencies.userRepository.update(.remote, user: user).mapToVoid().materialize()
+    public func execute(user: User) -> Observable<Void> {
+        dependencies.userRepository.update(.remote, user: user).mapToVoid()
     }
 }

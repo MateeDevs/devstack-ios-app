@@ -10,7 +10,7 @@ public protocol HasRefreshProfileUseCase {
 }
 
 public protocol RefreshProfileUseCaseType {
-    func execute() -> Observable<Event<Void>>
+    func execute() -> Observable<Void>
 }
 
 public struct RefreshProfileUseCase: RefreshProfileUseCaseType {
@@ -25,8 +25,8 @@ public struct RefreshProfileUseCase: RefreshProfileUseCaseType {
         self.dependencies = dependencies
     }
     
-    public func execute() -> Observable<Event<Void>> {
+    public func execute() -> Observable<Void> {
         guard let authToken = dependencies.authTokenRepository.read() else { return .error(CommonError.noAuthToken) }
-        return dependencies.userRepository.read(.remote, id: authToken.userId).mapToVoid().materialize()
+        return dependencies.userRepository.read(.remote, id: authToken.userId).mapToVoid()
     }
 }

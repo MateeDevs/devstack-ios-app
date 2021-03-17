@@ -10,7 +10,7 @@ public protocol HasRegistrationUseCase {
 }
 
 public protocol RegistrationUseCaseType {
-    func execute(_ data: RegistrationData) -> Observable<Event<Void>>
+    func execute(_ data: RegistrationData) -> Observable<Void>
 }
 
 public struct RegistrationUseCase: RegistrationUseCaseType {
@@ -23,7 +23,7 @@ public struct RegistrationUseCase: RegistrationUseCaseType {
         self.dependencies = dependencies
     }
     
-    public func execute(_ data: RegistrationData) -> Observable<Event<Void>> {
-        dependencies.userRepository.create(data).mapToVoid().materialize()
+    public func execute(_ data: RegistrationData) -> Observable<Void> {
+        dependencies.userRepository.create(data).mapToVoid()
     }
 }

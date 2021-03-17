@@ -10,7 +10,7 @@ public protocol HasRefreshUsersUseCase {
 }
 
 public protocol RefreshUsersUseCaseType {
-    func execute(page: Int) -> Observable<Event<Int>>
+    func execute(page: Int) -> Observable<Int>
 }
 
 public struct RefreshUsersUseCase: RefreshUsersUseCaseType {
@@ -23,7 +23,7 @@ public struct RefreshUsersUseCase: RefreshUsersUseCaseType {
         self.dependencies = dependencies
     }
     
-    public func execute(page: Int) -> Observable<Event<Int>> {
-        dependencies.userRepository.list(.remote, page: page, sortBy: nil).map { $0.count }.materialize()
+    public func execute(page: Int) -> Observable<Int> {
+        dependencies.userRepository.list(.remote, page: page, sortBy: nil).map { $0.count }
     }
 }
