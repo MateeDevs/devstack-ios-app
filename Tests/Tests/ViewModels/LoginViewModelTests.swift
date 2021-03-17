@@ -29,8 +29,13 @@ class LoginViewModelTests: BaseTestCase {
         let loginButtonEnabled: TestableObserver<Bool>
     }
 
-    @discardableResult private func mockViewModel(for input: Input, providers: ProviderDependency = .mock()) -> Output {
-        let viewModel = LoginViewModel(dependencies: UseCaseDependency(dependencies: RepositoryDependency(dependencies: providers)))
+    @discardableResult private func mockViewModel(
+        for input: Input,
+        loginUseCaseResult: Observable<Void> = .just(())
+    ) -> Output {
+        let viewModel = LoginViewModel(dependencies: UseCaseDependencyMock(
+            loginUseCase: LoginUseCaseMock(returnValue: loginUseCaseResult)
+        ))
         
         scheduler.createColdObservable([.next(0, input.email)])
             .bind(to: viewModel.input.email).disposed(by: disposeBag)
@@ -68,8 +73,10 @@ class LoginViewModelTests: BaseTestCase {
     }
 
     func testFlowOutputForLoginWrongPassword() {
-        let providers: ProviderDependency = .mock(networkResponse: .unauthorized)
-        let output = mockViewModel(for: Input.loginNonEmpty, providers: providers)
+        let output = mockViewModel(
+            for: Input.loginNonEmpty,
+            loginUseCaseResult: .error(RepositoryError(statusCode: StatusCode.httpUnathorized, message: ""))
+        )
         scheduler.start()
         XCTAssertEqual(output.flow.events, [])
     }
@@ -102,8 +109,10 @@ class LoginViewModelTests: BaseTestCase {
     }
 
     func testAlertActionOutputForLoginWrongPassword() {
-        let providers: ProviderDependency = .mock(networkResponse: .unauthorized)
-        let output = mockViewModel(for: Input.loginNonEmpty, providers: providers)
+        let output = mockViewModel(
+            for: Input.loginNonEmpty,
+            loginUseCaseResult: .error(RepositoryError(statusCode: StatusCode.httpUnathorized, message: ""))
+        )
         scheduler.start()
         XCTAssertEqual(output.alertAction.events, [
             .next(0, .showWhisper(Whisper(L10n.signing_in))),
