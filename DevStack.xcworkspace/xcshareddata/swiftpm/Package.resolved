@@ -51,7 +51,7 @@
         "repositoryURL": "https://github.com/MateeDevs/devstack-kmp-app.git",
         "state": {
           "branch": "feature/swift-package-intergration",
-          "revision": "824b87016f7fa18d633dabbc80aa08616a07d50c",
+          "revision": "9902f489c8b99dc92c5e7157ea93cf890b2b2070",
           "version": null
         }
       },

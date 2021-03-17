@@ -36,10 +36,3 @@ public class KmpKoinDependency {
 enum KoinDiError: Swift.Error {
     case invalidCast
 }
-
-public protocol HasKmpSharedUseCases {
-    var kmpGetUserUseCase: DevstackKmpShared.GetUserUseCase { get }
-    var kmpLoginUser: DevstackKmpShared.LoginUseCase { get }
-    var kmpGetUsersUsecase: DevstackKmpShared.GetUsersUseCase { get }
-    var kmpGetDummyUsecase: DevstackKmpShared.GetDummyFlowUseCase { get }
-}

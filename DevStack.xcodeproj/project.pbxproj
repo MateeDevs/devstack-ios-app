@@ -325,6 +325,14 @@
 		48C3DFA52602165D004CB3E1 /* KmpKoinDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DFA42602165D004CB3E1 /* KmpKoinDependency.swift */; };
 		48C3DFAD2602189B004CB3E1 /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 48C3DFAC2602189B004CB3E1 /* DevstackKmpShared */; };
 		48C3DFE426025312004CB3E1 /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
+		48C3DFF526025A97004CB3E1 /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 48C3DFF426025A97004CB3E1 /* DevstackKmpShared */; };
+		48C3E01126025B68004CB3E1 /* BooksFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E01026025B68004CB3E1 /* BooksFlowController.swift */; };
+		48C3E07C260262AB004CB3E1 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C3E07A260262AB004CB3E1 /* BookTableViewCell.xib */; };
+		48C3E07D260262AB004CB3E1 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E07B260262AB004CB3E1 /* BookTableViewCell.swift */; };
+		48C3E09F260264D1004CB3E1 /* Books.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C3E09C260264D1004CB3E1 /* Books.storyboard */; };
+		48C3E0A0260264D1004CB3E1 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E09D260264D1004CB3E1 /* BooksViewController.swift */; };
+		48C3E0A1260264D1004CB3E1 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E09E260264D1004CB3E1 /* BooksViewModel.swift */; };
+		48C3E0AF26026F7D004CB3E1 /* KotlinUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E0AE26026F7D004CB3E1 /* KotlinUseCases.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -753,6 +761,13 @@
 		48C3DF8E260215BE004CB3E1 /* KotlinUseCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KotlinUseCase+Extensions.swift"; sourceTree = "<group>"; };
 		48C3DF9C26021612004CB3E1 /* KotlinDomain+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KotlinDomain+Extensions.swift"; sourceTree = "<group>"; };
 		48C3DFA42602165D004CB3E1 /* KmpKoinDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KmpKoinDependency.swift; sourceTree = "<group>"; };
+		48C3E01026025B68004CB3E1 /* BooksFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksFlowController.swift; sourceTree = "<group>"; };
+		48C3E07A260262AB004CB3E1 /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
+		48C3E07B260262AB004CB3E1 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		48C3E09C260264D1004CB3E1 /* Books.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Books.storyboard; sourceTree = "<group>"; };
+		48C3E09D260264D1004CB3E1 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		48C3E09E260264D1004CB3E1 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
+		48C3E0AE26026F7D004CB3E1 /* KotlinUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KotlinUseCases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -794,6 +809,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				456E745625F8345D007D9A6D /* SPMDependencies.framework in Frameworks */,
+				48C3DFF526025A97004CB3E1 /* DevstackKmpShared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1384,6 +1400,7 @@
 				45821B1F25F269CF00D587EB /* RemoteConfig */,
 				45821B2925F269EF00D587EB /* User */,
 				45821B4C25F26ACE00D587EB /* Users */,
+				48C3E0AE26026F7D004CB3E1 /* KotlinUseCases.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1574,6 +1591,7 @@
 				459F8A6125F6B331004ACAD4 /* Tab1-Users */,
 				459F8A6225F6B338004ACAD4 /* Tab2-Profile */,
 				459F8A6325F6B341004ACAD4 /* Tab3-Counter */,
+				48C3E00926025B24004CB3E1 /* Tab4-Books */,
 				459F8B3025F6B519004ACAD4 /* AppFlowController.swift */,
 				459F8B3925F6B52A004ACAD4 /* Flow.swift */,
 			);
@@ -1987,6 +2005,35 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		48C3E00926025B24004CB3E1 /* Tab4-Books */ = {
+			isa = PBXGroup;
+			children = (
+				48C3E01026025B68004CB3E1 /* BooksFlowController.swift */,
+				48C3E01826025C19004CB3E1 /* Main */,
+			);
+			path = "Tab4-Books";
+			sourceTree = "<group>";
+		};
+		48C3E01826025C19004CB3E1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				48C3E09C260264D1004CB3E1 /* Books.storyboard */,
+				48C3E09D260264D1004CB3E1 /* BooksViewController.swift */,
+				48C3E09E260264D1004CB3E1 /* BooksViewModel.swift */,
+				48C3E0792602629A004CB3E1 /* Views */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		48C3E0792602629A004CB3E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48C3E07A260262AB004CB3E1 /* BookTableViewCell.xib */,
+				48C3E07B260262AB004CB3E1 /* BookTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -2118,6 +2165,7 @@
 			);
 			name = DomainLayer;
 			packageProductDependencies = (
+				48C3DFF426025A97004CB3E1 /* DevstackKmpShared */,
 			);
 			productName = DomainLayer;
 			productReference = 4582188625F25E3300D587EB /* DomainLayer.framework */;
@@ -2326,6 +2374,7 @@
 				459F88D925F6A9A8004ACAD4 /* UserImageView.xib in Resources */,
 				459F8B1525F6B4E3004ACAD4 /* Counter.storyboard in Resources */,
 				459F8A5225F6B224004ACAD4 /* Localizable.strings in Resources */,
+				48C3E09F260264D1004CB3E1 /* Books.storyboard in Resources */,
 				459F8B1925F6B4ED004ACAD4 /* CounterControl.storyboard in Resources */,
 				459F88CA25F6A9A4004ACAD4 /* TabBarView.xib in Resources */,
 				459F88AB25F6A98D004ACAD4 /* ActivityIndicatorView.xib in Resources */,
@@ -2339,6 +2388,7 @@
 				459F88BB25F6A997004ACAD4 /* RatingView.xcassets in Resources */,
 				459F8A8F25F6B3FA004ACAD4 /* Registration.storyboard in Resources */,
 				459F88BD25F6A997004ACAD4 /* RatingView.xib in Resources */,
+				48C3E07C260262AB004CB3E1 /* BookTableViewCell.xib in Resources */,
 				459F8B2625F6B4F2004ACAD4 /* CounterDisplay.storyboard in Resources */,
 				459F8A3E25F6B20A004ACAD4 /* InfoPlist.strings in Resources */,
 				459F8AFF25F6B4CC004ACAD4 /* Settings.storyboard in Resources */,
@@ -2574,6 +2624,7 @@
 				459F86F625F66FA9004ACAD4 /* Logger.swift in Sources */,
 				459F86B425F66C42004ACAD4 /* ErrorMessages.swift in Sources */,
 				45821A8A25F268C000D587EB /* PushNotification.swift in Sources */,
+				48C3E0AF26026F7D004CB3E1 /* KotlinUseCases.swift in Sources */,
 				458FD90525F28A2100FBD3B0 /* UserRepositoryType.swift in Sources */,
 				45821A9325F268D500D587EB /* RemoteConfigCoding.swift in Sources */,
 				459F86D625F66C78004ACAD4 /* ValidationError.swift in Sources */,
@@ -2640,6 +2691,7 @@
 				459F8B8425F6B82A004ACAD4 /* Observable+Extensions.swift in Sources */,
 				459F8AC325F6B488004ACAD4 /* UserTableViewCell.swift in Sources */,
 				459F87F225F6A5CF004ACAD4 /* EnhancedButton.swift in Sources */,
+				48C3E01126025B68004CB3E1 /* BooksFlowController.swift in Sources */,
 				45D3771E25F8D07800D05900 /* Localizable.swift in Sources */,
 				459F89FE25F6B0B2004ACAD4 /* Whisper.swift in Sources */,
 				459F87A925F6A3FD004ACAD4 /* ImagePickerViewController+Rx.swift in Sources */,
@@ -2652,6 +2704,7 @@
 				459F8A9A25F6B45D004ACAD4 /* MainTabBarController.swift in Sources */,
 				459F8A8025F6B3ED004ACAD4 /* LoginViewModel.swift in Sources */,
 				459F8B3125F6B519004ACAD4 /* AppFlowController.swift in Sources */,
+				48C3E0A0260264D1004CB3E1 /* BooksViewController.swift in Sources */,
 				459F8A8125F6B3ED004ACAD4 /* LoginViewController.swift in Sources */,
 				459F885E25F6A79C004ACAD4 /* TextFieldWithHint.swift in Sources */,
 				4575E65D25F6FFA300CCC003 /* Bundle+Extensions.swift in Sources */,
@@ -2675,10 +2728,12 @@
 				459F89D925F6B009004ACAD4 /* UIView+SkeletonView+Rx.swift in Sources */,
 				459F8B3A25F6B52A004ACAD4 /* Flow.swift in Sources */,
 				459F896F25F6ADFD004ACAD4 /* NSObject+Extensions.swift in Sources */,
+				48C3E07D260262AB004CB3E1 /* BookTableViewCell.swift in Sources */,
 				459F890E25F6ABB2004ACAD4 /* Formatter.swift in Sources */,
 				459F889D25F6A8AA004ACAD4 /* WhisperView.swift in Sources */,
 				459F87A025F6A3E8004ACAD4 /* ImagePickerViewController.swift in Sources */,
 				459F87C425F6A42E004ACAD4 /* WebViewController.swift in Sources */,
+				48C3E0A1260264D1004CB3E1 /* BooksViewModel.swift in Sources */,
 				459F892725F6ACCE004ACAD4 /* Plurals.swift in Sources */,
 				459F8AE525F6B4AB004ACAD4 /* ProfileWrapperViewController.swift in Sources */,
 				459F878E25F6A3B8004ACAD4 /* BaseTableViewController+Rx.swift in Sources */,
@@ -4767,6 +4822,11 @@
 			productName = Atlantis;
 		};
 		48C3DFAC2602189B004CB3E1 /* DevstackKmpShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48C3DF7326021561004CB3E1 /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
+			productName = DevstackKmpShared;
+		};
+		48C3DFF426025A97004CB3E1 /* DevstackKmpShared */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 48C3DF7326021561004CB3E1 /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
 			productName = DevstackKmpShared;

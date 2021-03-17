@@ -10,19 +10,25 @@ import DevstackKmpShared
 import Foundation
 import RxSwift
 
-extension DevstackKmpShared.GetUserUseCase {
-    func asObservable(_ userId: String) -> Observable<User> {
-        return createObservable(
-            self, DevstackKmpShared.GetUserUseCase.Params(userId: userId)) { kotlinUser in
-                kotlinUser.toSwiftUser()
-        }
+// public extension DevstackKmpShared.GetUserUseCase {
+//    func asObservable(_ userId: String) -> Observable<User> {
+//        return createObservable(
+//            self, DevstackKmpShared.GetUserUseCase.Params(userId: userId)) { kotlinUser in
+//                kotlinUser.toSwiftUser()
+//        }
+//    }
+// }
+
+public extension RefreshBooksUseCase {
+    func asObservable() -> Observable<Event<Void>> {
+        return createObservable(self)
     }
 }
 
-extension DevstackKmpShared.GetDummyFlowUseCase {
-    func asObservable() -> Observable<String> {
-        return createObservable(self) { kotlinDomain in
-            String(kotlinDomain)
+public extension GetBooksUseCase {
+    func asObservable() -> Observable<[Book]> {
+        return createObservable(self).map {  nsArray in
+            nsArray as! [Book] // swiftlint:disable:this force_cast
         }
     }
 }
@@ -141,6 +147,29 @@ func createObservable<Params>(
     }.mapToVoid().materialize()
 }
 
+// Create observable from usecase that returns unit -> void
+// Invoke usecase and complete
+func createObservable(
+    _ usecase: UseCaseResultNoParams<KotlinUnit>) -> Observable<Event<Void>> {
+        
+    return Observable<Void>.create { observer in
+        let job: Kotlinx_coroutines_coreJob = usecase.subscribe { result in
+            switch result {
+            case is ResultSuccess<AnyObject>:
+                    observer.on(.next(()))
+                    observer.onCompleted()
+            case let errorResult as ResultError<AnyObject> :
+                    observer.on(.error(errorResult.error.toSwiftError()))
+            default:
+                observer.on(.error(UnknownKotlinError()))
+            }
+        } onThrow: { kotlinThrowable in
+            observer.on(.error(KotlinThrowableError(kotlinThrowable)))
+        }
+        return Disposables.create { job.cancel(cause: nil) }
+    }.mapToVoid().materialize()
+}
+
 // Create observable from usecase without params that retuns flow
 // Invoke usecase and collect all values from flow. When flow ends than observable stream ends
 func createObservable<KotlinDomain, SwiftDomain>(
@@ -153,6 +182,22 @@ func createObservable<KotlinDomain, SwiftDomain>(
         } onComplete: {
             observer.on(.completed)
         } onThrow: { kotlinThrowable in
+            observer.on(.error(KotlinThrowableError(kotlinThrowable)))
+        }
+        return Disposables.create { job.cancel(cause: nil) }
+    }
+}
+
+func createObservable<KotlinDomain>(
+    _ usecase: UseCaseFlowNoParams<KotlinDomain>) -> Observable<KotlinDomain> {
+    
+    return Observable<KotlinDomain>.create { observer in
+        let job: Kotlinx_coroutines_coreJob = usecase.subscribe { item in
+            observer.on(.next(item as! KotlinDomain)) // swiftlint:disable:this force_cast
+        } onComplete: {
+            observer.on(.completed)
+        } onThrow: { kotlinThrowable in
+            print(kotlinThrowable.message)
             observer.on(.error(KotlinThrowableError(kotlinThrowable)))
         }
         return Disposables.create { job.cancel(cause: nil) }

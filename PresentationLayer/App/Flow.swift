@@ -10,4 +10,5 @@ public enum Flow {
     case registration(RegistrationViewControllerFlow)
     case users(UsersViewControllerFlow)
     case profile(ProfileViewControllerFlow)
+    case books(BooksViewControllerFlow)
 }
