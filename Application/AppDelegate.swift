@@ -33,10 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = nc
         window?.makeKeyAndVisible()
         
+        let koinDependency = KmpKoinDependency()
         // Init main flow controller and start the flow
         flowController = AppFlowController(
             navigationController: nc,
-            dependencies: UseCaseDependency(dependencies: RepositoryDependency(dependencies: setupProviders(for: application)))
+            dependencies: UseCaseDependency(dependencies: RepositoryDependency(dependencies: setupProviders(for: application)), koinDependency: koinDependency)
         )
         flowController?.start()
         

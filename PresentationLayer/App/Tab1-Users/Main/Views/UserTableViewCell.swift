@@ -9,7 +9,7 @@ class UserTableViewCell: BaseTableViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
     
-    func setupWithUser(_ user: User) {
+    func setupWithUser(_ user: DomainLayer.User) {
         nameLabel.text = user.fullName
     }
 }

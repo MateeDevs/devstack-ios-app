@@ -320,6 +320,11 @@
 		45E1011425E6B2DC0082CABA /* TestSchedulerVirtualTimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1011225E6B2DC0082CABA /* TestSchedulerVirtualTimeConverter.swift */; };
 		45E1012525E6B45C0082CABA /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1012425E6B45C0082CABA /* Bag.swift */; };
 		45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB498224A3D7C000932918 /* BaseTestCase.swift */; };
+		48C3DF8F260215BE004CB3E1 /* KotlinUseCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DF8E260215BE004CB3E1 /* KotlinUseCase+Extensions.swift */; };
+		48C3DF9D26021612004CB3E1 /* KotlinDomain+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DF9C26021612004CB3E1 /* KotlinDomain+Extensions.swift */; };
+		48C3DFA52602165D004CB3E1 /* KmpKoinDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DFA42602165D004CB3E1 /* KmpKoinDependency.swift */; };
+		48C3DFAD2602189B004CB3E1 /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 48C3DFAC2602189B004CB3E1 /* DevstackKmpShared */; };
+		48C3DFE426025312004CB3E1 /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -408,6 +413,13 @@
 			remoteInfo = DependencyInjection;
 		};
 		45D3776A25F9228A00D05900 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 458219A725F262F000D587EB;
+			remoteInfo = SPMDependencies;
+		};
+		48C3DFE626025312004CB3E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
 			proxyType = 1;
@@ -738,6 +750,9 @@
 		45E1011225E6B2DC0082CABA /* TestSchedulerVirtualTimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSchedulerVirtualTimeConverter.swift; sourceTree = "<group>"; };
 		45E1012425E6B45C0082CABA /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		45FB498224A3D7C000932918 /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
+		48C3DF8E260215BE004CB3E1 /* KotlinUseCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KotlinUseCase+Extensions.swift"; sourceTree = "<group>"; };
+		48C3DF9C26021612004CB3E1 /* KotlinDomain+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KotlinDomain+Extensions.swift"; sourceTree = "<group>"; };
+		48C3DFA42602165D004CB3E1 /* KmpKoinDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KmpKoinDependency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -805,6 +820,7 @@
 				458219CB25F2634100D587EB /* RxRealm in Frameworks */,
 				458219C925F2634100D587EB /* RealmSwift in Frameworks */,
 				458219BD25F2631C00D587EB /* FirebaseMessaging in Frameworks */,
+				48C3DFAD2602189B004CB3E1 /* DevstackKmpShared in Frameworks */,
 				458219BF25F2632200D587EB /* FirebaseRemoteConfig in Frameworks */,
 				4575E5E825F6F18C00CCC003 /* AlamofireImage in Frameworks */,
 				458219C325F2633900D587EB /* Moya in Frameworks */,
@@ -817,6 +833,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				456E746825F83465007D9A6D /* DomainLayer.framework in Frameworks */,
+				48C3DFE426025312004CB3E1 /* SPMDependencies.framework in Frameworks */,
 				456E746525F83464007D9A6D /* DataLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1465,6 +1482,8 @@
 			isa = PBXGroup;
 			children = (
 				459F86A125F66A49004ACAD4 /* Observable+Extensions.swift */,
+				48C3DF8E260215BE004CB3E1 /* KotlinUseCase+Extensions.swift */,
+				48C3DF9C26021612004CB3E1 /* KotlinDomain+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1898,6 +1917,7 @@
 				459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */,
 				459F8BE625F6D67F004ACAD4 /* DependencyInjection.h */,
 				459F8BE725F6D67F004ACAD4 /* Info.plist */,
+				48C3DFA42602165D004CB3E1 /* KmpKoinDependency.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -2097,6 +2117,8 @@
 				4575E5F025F6F1B800CCC003 /* PBXTargetDependency */,
 			);
 			name = DomainLayer;
+			packageProductDependencies = (
+			);
 			productName = DomainLayer;
 			productReference = 4582188625F25E3300D587EB /* DomainLayer.framework */;
 			productType = "com.apple.product-type.framework";
@@ -2120,6 +2142,8 @@
 				4575E5F525F6F1C300CCC003 /* PBXTargetDependency */,
 			);
 			name = PresentationLayer;
+			packageProductDependencies = (
+			);
 			productName = PresentationLayer;
 			productReference = 458218BA25F25E4300D587EB /* PresentationLayer.framework */;
 			productType = "com.apple.product-type.framework";
@@ -2152,6 +2176,7 @@
 				4575E5E925F6F19000CCC003 /* RxCocoa */,
 				4575E5EB25F6F19900CCC003 /* SkeletonView */,
 				45D3776C25F9229600D05900 /* Atlantis */,
+				48C3DFAC2602189B004CB3E1 /* DevstackKmpShared */,
 			);
 			productName = DataLayerDependencies;
 			productReference = 458219A825F262F000D587EB /* SPMDependencies.framework */;
@@ -2171,8 +2196,11 @@
 			dependencies = (
 				459F8C1925F6D798004ACAD4 /* PBXTargetDependency */,
 				459F8C1D25F6D798004ACAD4 /* PBXTargetDependency */,
+				48C3DFE726025312004CB3E1 /* PBXTargetDependency */,
 			);
 			name = DependencyInjection;
+			packageProductDependencies = (
+			);
 			productName = DependencyInjection;
 			productReference = 459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */;
 			productType = "com.apple.product-type.framework";
@@ -2235,6 +2263,7 @@
 				4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */,
 				45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				48C3DF7326021561004CB3E1 /* XCRemoteSwiftPackageReference "devstack-kmp-app" */,
 			);
 			productRefGroup = 4558D30820FCC8FF005BC325 /* Products */;
 			projectDirPath = "";
@@ -2555,6 +2584,7 @@
 				45821AC725F2693900D587EB /* LogoutUseCase.swift in Sources */,
 				459F86DF25F66F7A004ACAD4 /* HasNoRepository.swift in Sources */,
 				45821A9C25F268E200D587EB /* User.swift in Sources */,
+				48C3DF8F260215BE004CB3E1 /* KotlinUseCase+Extensions.swift in Sources */,
 				45821B0D25F269A400D587EB /* UpdateProfileCounterUseCase.swift in Sources */,
 				45821A6F25F2689200D587EB /* AuthToken.swift in Sources */,
 				45821AFB25F2698700D587EB /* GetProfileIdUseCase.swift in Sources */,
@@ -2577,6 +2607,7 @@
 				459F86CD25F66C69004ACAD4 /* StatusCode.swift in Sources */,
 				45821AD025F2694800D587EB /* RegistrationUseCase.swift in Sources */,
 				45821ABE25F2691900D587EB /* LoginUseCase.swift in Sources */,
+				48C3DF9D26021612004CB3E1 /* KotlinDomain+Extensions.swift in Sources */,
 				45821B4E25F26ADC00D587EB /* GetUsersUseCase.swift in Sources */,
 				459F873225F69A8B004ACAD4 /* Environment.swift in Sources */,
 				459F8C5225F6DA4E004ACAD4 /* Constants.swift in Sources */,
@@ -2710,6 +2741,7 @@
 			files = (
 				459F8C3725F6D86B004ACAD4 /* ProviderDependency.swift in Sources */,
 				459F8C2725F6D812004ACAD4 /* RepositoryDependency.swift in Sources */,
+				48C3DFA52602165D004CB3E1 /* KmpKoinDependency.swift in Sources */,
 				459F8C0525F6D733004ACAD4 /* UseCaseDependency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2781,6 +2813,11 @@
 			isa = PBXTargetDependency;
 			target = 458219A725F262F000D587EB /* SPMDependencies */;
 			targetProxy = 45D3776A25F9228A00D05900 /* PBXContainerItemProxy */;
+		};
+		48C3DFE726025312004CB3E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 458219A725F262F000D587EB /* SPMDependencies */;
+			targetProxy = 48C3DFE626025312004CB3E1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -4653,6 +4690,14 @@
 				minimumVersion = 5.1.2;
 			};
 		};
+		48C3DF7326021561004CB3E1 /* XCRemoteSwiftPackageReference "devstack-kmp-app" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MateeDevs/devstack-kmp-app.git";
+			requirement = {
+				branch = "feature/swift-package-intergration";
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -4720,6 +4765,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */;
 			productName = Atlantis;
+		};
+		48C3DFAC2602189B004CB3E1 /* DevstackKmpShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48C3DF7326021561004CB3E1 /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
+			productName = DevstackKmpShared;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

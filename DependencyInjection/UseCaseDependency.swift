@@ -4,6 +4,7 @@
 //
 
 import DataLayer
+import DevstackKmpShared
 import DomainLayer
 
 // swiftlint:disable superfluous_disable_command file_length
@@ -51,7 +52,15 @@ public struct UseCaseDependency: UseCaseDependencyType {
     public let getUsersUseCase: GetUsersUseCaseType
     public let refreshUsersUseCase: RefreshUsersUseCaseType
     
-    public init(dependencies: RepositoryDependency) {
+    // KMP shared deps
+    private let koinDependency: KmpKoinDependency
+    
+        public let kmpGetUserUseCase: DevstackKmpShared.GetUserUseCase
+        public let kmpLoginUser: DevstackKmpShared.LoginUseCase
+        public let kmpGetUsersUsecase: DevstackKmpShared.GetUsersUseCase
+        public let kmpGetDummyUsecase: DevstackKmpShared.GetDummyFlowUseCase
+    
+    public init(dependencies: RepositoryDependency, koinDependency: KmpKoinDependency) {
         self.loginUseCase = LoginUseCase(dependencies: dependencies)
         self.logoutUseCase = LogoutUseCase(dependencies: dependencies)
         self.registrationUseCase = RegistrationUseCase(dependencies: dependencies)
@@ -74,5 +83,11 @@ public struct UseCaseDependency: UseCaseDependencyType {
         
         self.getUsersUseCase = GetUsersUseCase(dependencies: dependencies)
         self.refreshUsersUseCase = RefreshUsersUseCase(dependencies: dependencies)
+        
+        self.koinDependency = koinDependency
+        self.kmpLoginUser = koinDependency.get(DevstackKmpShared.LoginUseCase.self)
+        self.kmpGetUsersUsecase = koinDependency.get(DevstackKmpShared.GetUsersUseCase.self)
+        self.kmpGetUserUseCase = koinDependency.get(DevstackKmpShared.GetUserUseCase.self)
+        self.kmpGetDummyUsecase = koinDependency.get(DevstackKmpShared.GetDummyFlowUseCase.self)
     }
 }

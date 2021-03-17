@@ -20,7 +20,7 @@ final class UsersViewModel: ViewModel, ViewModelType {
     }
     
     struct Output {
-        let users: Driver<[User]>
+        let users: Driver<[DomainLayer.User]>
         let loadedCount: Driver<Int>
         let isRefreshing: Driver<Bool>
     }

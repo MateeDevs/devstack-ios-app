@@ -10,7 +10,7 @@ public enum UsersViewControllerFlow {
     case showUserDetailForId(_ userId: String)
 }
 
-final class UsersViewController: BaseTableViewController<User> {
+final class UsersViewController: BaseTableViewController<DomainLayer.User> {
     
     // MARK: FlowController
     private weak var flowController: FlowController?
