@@ -15,10 +15,12 @@ class LoginViewModelTests: BaseTestCase {
     
     private let loginUseCase = LoginUseCaseTypeMock()
     
-    override func setupDependencies() {
-        super.setupDependencies()
-        
+    private func setupDependencies() -> UseCaseDependencyMock {
         setupLoginUseCase()
+        
+        return UseCaseDependencyMock(
+            loginUseCase: loginUseCase
+        )
     }
     
     private func setupLoginUseCase() {
@@ -50,9 +52,7 @@ class LoginViewModelTests: BaseTestCase {
     }
 
     private func generateOutput(for input: Input) -> Output {
-        let viewModel = LoginViewModel(dependencies: UseCaseDependencyMock(
-            loginUseCase: loginUseCase
-        ))
+        let viewModel = LoginViewModel(dependencies: setupDependencies())
         
         scheduler.createColdObservable([.next(0, input.email)])
             .bind(to: viewModel.input.email).disposed(by: disposeBag)

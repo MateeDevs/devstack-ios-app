@@ -17,11 +17,7 @@ class BaseTestCase: XCTestCase {
 
         scheduler = TestScheduler(initialClock: 0)
         disposeBag = DisposeBag()
-        setupDependencies()
     }
-    
-    /// Override this method in a subclass and setup all required dependencies
-    func setupDependencies() {}
 
     func testableOutput<T>(from driver: Driver<T>) -> TestableObserver<T> {
         let output = scheduler.createObserver(T.self)
