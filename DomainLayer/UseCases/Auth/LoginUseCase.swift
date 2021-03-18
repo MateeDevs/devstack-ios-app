@@ -9,7 +9,7 @@ public protocol HasLoginUseCase {
     var loginUseCase: LoginUseCaseType { get }
 }
 
-public protocol LoginUseCaseType {
+public protocol LoginUseCaseType: AutoMockable {
     func execute(_ data: LoginData) -> Observable<Void>
 }
 

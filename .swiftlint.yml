@@ -3,6 +3,7 @@ excluded:
   - Pods
   - vendor
   - Tests/RxTest
+  - Tests/Mocks.swift
 
 indentation: 2
 cyclomatic_complexity: 10

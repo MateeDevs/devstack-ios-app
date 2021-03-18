@@ -31,22 +31,22 @@ struct UseCaseDependencyMock: UseCaseDependencyType {
     let refreshUsersUseCase: RefreshUsersUseCaseType
     
     init(
-        loginUseCase: LoginUseCaseType = LoginUseCaseMock(),
-        logoutUseCase: LogoutUseCaseType = LogoutUseCaseMock(),
-        registrationUseCase: RegistrationUseCaseType = RegistrationUseCaseMock(),
-        getCurrentLocationUseCase: GetCurrentLocationUseCaseType = GetCurrentLocationUseCaseMock(),
-        getProfileUseCase: GetProfileUseCaseType = GetProfileUseCaseMock(),
-        getProfileIdUseCase: GetProfileIdUseCaseType = GetProfileIdUseCaseMock(),
-        refreshProfileUseCase: RefreshProfileUseCaseType = RefreshProfileUseCaseMock(),
-        updateProfileCounterUseCase: UpdateProfileCounterUseCaseType = UpdateProfileCounterUseCaseMock(),
-        handlePushNotificationUseCase: HandlePushNotificationUseCaseType = HandlePushNotificationUseCaseMock(),
-        registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCaseType = RegisterForPushNotificationsUseCaseMock(),
-        getRemoteConfigValueUseCase: GetRemoteConfigValueUseCaseType = GetRemoteConfigValueUseCaseMock(),
-        getUserUseCase: GetUserUseCaseType = GetUserUseCaseMock(),
-        refreshUserUseCase: RefreshUserUseCaseType = RefreshUserUseCaseMock(),
-        updateUserUseCase: UpdateUserUseCaseType = UpdateUserUseCaseMock(),
-        getUsersUseCase: GetUsersUseCaseType = GetUsersUseCaseMock(),
-        refreshUsersUseCase: RefreshUsersUseCaseType = RefreshUsersUseCaseMock()
+        loginUseCase: LoginUseCaseType = LoginUseCaseTypeMock(),
+        logoutUseCase: LogoutUseCaseType = LogoutUseCaseTypeMock(),
+        registrationUseCase: RegistrationUseCaseType = RegistrationUseCaseTypeMock(),
+        getCurrentLocationUseCase: GetCurrentLocationUseCaseType = GetCurrentLocationUseCaseTypeMock(),
+        getProfileUseCase: GetProfileUseCaseType = GetProfileUseCaseTypeMock(),
+        getProfileIdUseCase: GetProfileIdUseCaseType = GetProfileIdUseCaseTypeMock(),
+        refreshProfileUseCase: RefreshProfileUseCaseType = RefreshProfileUseCaseTypeMock(),
+        updateProfileCounterUseCase: UpdateProfileCounterUseCaseType = UpdateProfileCounterUseCaseTypeMock(),
+        handlePushNotificationUseCase: HandlePushNotificationUseCaseType = HandlePushNotificationUseCaseTypeMock(),
+        registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCaseType = RegisterForPushNotificationsUseCaseTypeMock(),
+        getRemoteConfigValueUseCase: GetRemoteConfigValueUseCaseType = GetRemoteConfigValueUseCaseTypeMock(),
+        getUserUseCase: GetUserUseCaseType = GetUserUseCaseTypeMock(),
+        refreshUserUseCase: RefreshUserUseCaseType = RefreshUserUseCaseTypeMock(),
+        updateUserUseCase: UpdateUserUseCaseType = UpdateUserUseCaseTypeMock(),
+        getUsersUseCase: GetUsersUseCaseType = GetUsersUseCaseTypeMock(),
+        refreshUsersUseCase: RefreshUsersUseCaseType = RefreshUsersUseCaseTypeMock()
     ) {
         self.loginUseCase = loginUseCase
         self.logoutUseCase = logoutUseCase

@@ -4,6 +4,7 @@
 //
 
 import RxSwift
+import SwiftyMocky
 import XCTest
 
 @testable import PresentationLayer
@@ -19,7 +20,8 @@ class LoginViewModelTests: BaseTestCase {
         var registerButtonTaps: [Void] = []
 
         static let loginEmpty = Input(loginButtonTaps: [()])
-        static let loginNonEmpty = Input(email: "email", password: "pass", loginButtonTaps: [()])
+        static let loginValid = Input(email: "email", password: "validPass", loginButtonTaps: [()])
+        static let loginInvalid = Input(email: "email", password: "invalidPass", loginButtonTaps: [()])
         static let register = Input(registerButtonTaps: [()])
     }
     
@@ -29,13 +31,15 @@ class LoginViewModelTests: BaseTestCase {
         let loginButtonEnabled: TestableObserver<Bool>
     }
 
-    @discardableResult private func mockViewModel(
-        for input: Input,
-        loginUseCaseResult: Observable<Void> = .just(())
-    ) -> Output {
-        let viewModel = LoginViewModel(dependencies: UseCaseDependencyMock(
-            loginUseCase: LoginUseCaseMock(returnValue: loginUseCaseResult)
-        ))
+    @discardableResult private func mockViewModel(for input: Input) -> Output {
+        let loginUseCaseMock = LoginUseCaseTypeMock()
+        Given(loginUseCaseMock, .execute(
+                .value(LoginData(email: "email", pass: "invalidPass")),
+                willReturn: .error(RepositoryError(statusCode: StatusCode.httpUnathorized, message: "")))
+        )
+        Given(loginUseCaseMock, .execute(.any, willReturn: .just(())))
+        
+        let viewModel = LoginViewModel(dependencies: UseCaseDependencyMock(loginUseCase: loginUseCaseMock))
         
         scheduler.createColdObservable([.next(0, input.email)])
             .bind(to: viewModel.input.email).disposed(by: disposeBag)
@@ -64,19 +68,16 @@ class LoginViewModelTests: BaseTestCase {
         XCTAssertEqual(output.flow.events, [])
     }
 
-    func testFlowOutputForLoginCorrectPassword() {
-        let output = mockViewModel(for: Input.loginNonEmpty)
+    func testFlowOutputForLoginValid() {
+        let output = mockViewModel(for: Input.loginValid)
         scheduler.start()
         XCTAssertEqual(output.flow.events, [
             .next(0, .dismiss)
         ])
     }
 
-    func testFlowOutputForLoginWrongPassword() {
-        let output = mockViewModel(
-            for: Input.loginNonEmpty,
-            loginUseCaseResult: .error(RepositoryError(statusCode: StatusCode.httpUnathorized, message: ""))
-        )
+    func testFlowOutputForLoginInvalid() {
+        let output = mockViewModel(for: Input.loginInvalid)
         scheduler.start()
         XCTAssertEqual(output.flow.events, [])
     }
@@ -99,8 +100,8 @@ class LoginViewModelTests: BaseTestCase {
         ])
     }
     
-    func testAlertActionOutputForLoginCorrectPassword() {
-        let output = mockViewModel(for: Input.loginNonEmpty)
+    func testAlertActionOutputForLoginValid() {
+        let output = mockViewModel(for: Input.loginValid)
         scheduler.start()
         XCTAssertEqual(output.alertAction.events, [
             .next(0, .showWhisper(Whisper(L10n.signing_in))),
@@ -108,11 +109,8 @@ class LoginViewModelTests: BaseTestCase {
         ])
     }
 
-    func testAlertActionOutputForLoginWrongPassword() {
-        let output = mockViewModel(
-            for: Input.loginNonEmpty,
-            loginUseCaseResult: .error(RepositoryError(statusCode: StatusCode.httpUnathorized, message: ""))
-        )
+    func testAlertActionOutputForLoginInvalid() {
+        let output = mockViewModel(for: Input.loginInvalid)
         scheduler.start()
         XCTAssertEqual(output.alertAction.events, [
             .next(0, .showWhisper(Whisper(L10n.signing_in))),
@@ -129,7 +127,7 @@ class LoginViewModelTests: BaseTestCase {
     // MARK: Tests for Output.loginButtonEnabled
 
     func testLoginButtonEnabledOutput() {
-        let output = mockViewModel(for: Input.loginNonEmpty)
+        let output = mockViewModel(for: Input.loginValid)
         scheduler.start()
         XCTAssertEqual(output.loginButtonEnabled.events, [
             .next(0, true),

@@ -10,7 +10,7 @@ public protocol HasGetCurrentLocationUseCase {
     var getCurrentLocationUseCase: GetCurrentLocationUseCaseType { get }
 }
 
-public protocol GetCurrentLocationUseCaseType {
+public protocol GetCurrentLocationUseCaseType: AutoMockable {
     func execute() -> Observable<CLLocation>
 }
 

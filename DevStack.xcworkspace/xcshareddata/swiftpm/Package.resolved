@@ -272,6 +272,15 @@
         }
       },
       {
+        "package": "swiftymocky",
+        "repositoryURL": "https://github.com/MakeAWishFoundation/SwiftyMocky",
+        "state": {
+          "branch": null,
+          "revision": "5cae2006d61247b63a8b0c27ff4d3a6fae294bcf",
+          "version": "4.0.4"
+        }
+      },
+      {
         "package": "Yams",
         "repositoryURL": "https://github.com/jpsim/Yams",
         "state": {

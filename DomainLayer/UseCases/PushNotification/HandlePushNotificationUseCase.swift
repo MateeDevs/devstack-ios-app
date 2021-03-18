@@ -7,7 +7,7 @@ public protocol HasHandlePushNotificationUseCase {
     var handlePushNotificationUseCase: HandlePushNotificationUseCaseType { get }
 }
 
-public protocol HandlePushNotificationUseCaseType {
+public protocol HandlePushNotificationUseCaseType: AutoMockable {
     func execute(_ notificationData: [AnyHashable: Any]) -> PushNotification?
 }
 

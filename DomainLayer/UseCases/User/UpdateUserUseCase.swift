@@ -9,7 +9,7 @@ public protocol HasUpdateUserUseCase {
     var updateUserUseCase: UpdateUserUseCaseType { get }
 }
 
-public protocol UpdateUserUseCaseType {
+public protocol UpdateUserUseCaseType: AutoMockable {
     func execute(user: User) -> Observable<Void>
 }
 

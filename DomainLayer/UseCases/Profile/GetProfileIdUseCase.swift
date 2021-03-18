@@ -7,7 +7,7 @@ public protocol HasGetProfileIdUseCase {
     var getProfileIdUseCase: GetProfileIdUseCaseType { get }
 }
 
-public protocol GetProfileIdUseCaseType {
+public protocol GetProfileIdUseCaseType: AutoMockable {
     func execute() -> String?
 }
 

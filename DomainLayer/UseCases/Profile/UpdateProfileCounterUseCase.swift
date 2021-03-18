@@ -9,7 +9,7 @@ public protocol HasUpdateProfileCounterUseCase {
     var updateProfileCounterUseCase: UpdateProfileCounterUseCaseType { get }
 }
 
-public protocol UpdateProfileCounterUseCaseType {
+public protocol UpdateProfileCounterUseCaseType: AutoMockable {
     func execute(value: Int) -> Observable<Void>
 }
 

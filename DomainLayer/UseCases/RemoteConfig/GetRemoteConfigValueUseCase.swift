@@ -9,7 +9,7 @@ public protocol HasGetRemoteConfigValueUseCase {
     var getRemoteConfigValueUseCase: GetRemoteConfigValueUseCaseType { get }
 }
 
-public protocol GetRemoteConfigValueUseCaseType {
+public protocol GetRemoteConfigValueUseCaseType: AutoMockable {
     func execute(_ key: RemoteConfigCoding) -> Observable<Bool>
 }
 
