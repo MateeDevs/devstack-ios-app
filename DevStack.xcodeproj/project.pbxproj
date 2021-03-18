@@ -21,6 +21,7 @@
 		4534C1BD2603D6630022ACF4 /* SwiftyMocky in Frameworks */ = {isa = PBXBuildFile; productRef = 4534C1BC2603D6630022ACF4 /* SwiftyMocky */; };
 		4534C1CF2603D6DD0022ACF4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4534C1C42603D6AD0022ACF4 /* XCTest.framework */; };
 		4534C1FC260414350022ACF4 /* NetworkProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C1FB260414350022ACF4 /* NetworkProviderMock.swift */; };
+		4534C20B2604192B0022ACF4 /* LoginData+Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C20A2604192B0022ACF4 /* LoginData+Stubs.swift */; };
 		454AC06524A221B300D6F367 /* ProviderDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454AC06424A221B300D6F367 /* ProviderDependencyMock.swift */; };
 		454D163625FC21FD00920CF0 /* Decodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D163525FC21FD00920CF0 /* Decodable+Extensions.swift */; };
 		4557195824A15C0200FB24CA /* AuthTokenRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195724A15C0200FB24CA /* AuthTokenRepositoryTests.swift */; };
@@ -444,6 +445,7 @@
 		4534C1A22603C98F0022ACF4 /* Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		4534C1C42603D6AD0022ACF4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4534C1FB260414350022ACF4 /* NetworkProviderMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProviderMock.swift; sourceTree = "<group>"; };
+		4534C20A2604192B0022ACF4 /* LoginData+Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginData+Stubs.swift"; sourceTree = "<group>"; };
 		453D408325EDBB750094ADD7 /* Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Debug.entitlements; sourceTree = "<group>"; };
 		453D408425EDBB750094ADD7 /* Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Release.entitlements; sourceTree = "<group>"; };
 		454AC06424A221B300D6F367 /* ProviderDependencyMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDependencyMock.swift; sourceTree = "<group>"; };
@@ -840,6 +842,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4534C2092604191C0022ACF4 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				4534C20A2604192B0022ACF4 /* LoginData+Stubs.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		454D161325FC1D7E00920CF0 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
@@ -863,6 +873,7 @@
 			isa = PBXGroup;
 			children = (
 				4511286825FBD05C007CBA76 /* Tests */,
+				4534C2092604191C0022ACF4 /* Stubs */,
 				4557195324A15B1100FB24CA /* Mocks */,
 				454D161425FC1D8600920CF0 /* DependencyInjection */,
 				45FB498024A3D78600932918 /* Utilities */,
@@ -2390,6 +2401,7 @@
 				45E100FD25E6B2A00082CABA /* Recorded.swift in Sources */,
 				454AC06524A221B300D6F367 /* ProviderDependencyMock.swift in Sources */,
 				45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */,
+				4534C20B2604192B0022ACF4 /* LoginData+Stubs.swift in Sources */,
 				45E100F525E6B2A00082CABA /* RxTest.swift in Sources */,
 				451FAFE425FC107600171EDB /* LoginUseCaseTests.swift in Sources */,
 				45E100FA25E6B2A00082CABA /* Recorded+Event.swift in Sources */,
