@@ -12,11 +12,11 @@ struct RepositoryDependencyMock: RepositoryDependencyType {
     let userRepository: UserRepositoryType
     
     init(
-        authTokenRepository: AuthTokenRepositoryType = AuthTokenRepositoryMock(),
-        locationRepository: LocationRepositoryType = LocationRepositoryMock(),
-        pushNotificationsRepository: PushNotificationsRepositoryType = PushNotificationsRepositoryMock(),
-        remoteConfigRepository: RemoteConfigRepositoryType = RemoteConfigRepositoryMock(),
-        userRepository: UserRepositoryType = UserRepositoryMock()
+        authTokenRepository: AuthTokenRepositoryType = AuthTokenRepositoryTypeMock(),
+        locationRepository: LocationRepositoryType = LocationRepositoryTypeMock(),
+        pushNotificationsRepository: PushNotificationsRepositoryType = PushNotificationsRepositoryTypeMock(),
+        remoteConfigRepository: RemoteConfigRepositoryType = RemoteConfigRepositoryTypeMock(),
+        userRepository: UserRepositoryType = UserRepositoryTypeMock()
     ) {
         self.authTokenRepository = authTokenRepository
         self.locationRepository = locationRepository

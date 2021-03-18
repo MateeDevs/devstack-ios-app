@@ -9,7 +9,7 @@ public protocol HasAuthTokenRepository {
     var authTokenRepository: AuthTokenRepositoryType { get }
 }
 
-public protocol AuthTokenRepositoryType {
+public protocol AuthTokenRepositoryType: AutoMockable {
     func create(_ data: LoginData) -> Observable<AuthToken>
     func read() -> AuthToken?
     func delete()
