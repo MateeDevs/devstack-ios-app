@@ -9,7 +9,7 @@ public protocol HasPushNotificationsProvider {
     var pushNotificationsProvider: PushNotificationsProviderType { get }
 }
 
-public protocol PushNotificationsProviderType {
+public protocol PushNotificationsProviderType: AutoMockable {
     /// Request user's authorization for push notifications
     func requestAuthorization(options: UNAuthorizationOptions, completionHandler: @escaping (Bool, Error?) -> Void)
 }

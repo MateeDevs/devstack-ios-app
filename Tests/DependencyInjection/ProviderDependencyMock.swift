@@ -14,11 +14,11 @@ struct ProviderDependencyMock: ProviderDependencyType {
     
     init(
         databaseProvider: DatabaseProviderType = DatabaseProviderMock(),
-        keychainProvider: KeychainProviderType = KeychainProviderMock(),
+        keychainProvider: KeychainProviderType = KeychainProviderTypeMock(),
         networkProvider: NetworkProviderType = NetworkProviderMock(),
-        pushNotificationsProvider: PushNotificationsProviderType = PushNotificationsProviderMock(),
-        remoteConfigProvider: RemoteConfigProviderType = RemoteConfigProviderMock(),
-        userDefaultsProvider: UserDefaultsProviderType = UserDefaultsProviderMock()
+        pushNotificationsProvider: PushNotificationsProviderType = PushNotificationsProviderTypeMock(),
+        remoteConfigProvider: RemoteConfigProviderType = RemoteConfigProviderTypeMock(),
+        userDefaultsProvider: UserDefaultsProviderType = UserDefaultsProviderTypeMock()
     ) {
         self.databaseProvider = databaseProvider
         self.keychainProvider = keychainProvider

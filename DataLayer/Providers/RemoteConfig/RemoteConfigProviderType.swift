@@ -9,7 +9,7 @@ public protocol HasRemoteConfigProvider {
     var remoteConfigProvider: RemoteConfigProviderType { get }
 }
 
-public protocol RemoteConfigProviderType {
+public protocol RemoteConfigProviderType: AutoMockable {
     /// Try to retrieve a value for the given key
     func get(_ key: RemoteConfigCoding) -> Observable<Bool>
 }

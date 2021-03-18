@@ -11,7 +11,7 @@ public enum UserDefaultsCoding: String, CaseIterable {
     case hasRunBefore
 }
 
-public protocol UserDefaultsProviderType {
+public protocol UserDefaultsProviderType: AutoMockable {
 
     /// Save the given key/value combination
     func save<T>(_ key: UserDefaultsCoding, value: T)

@@ -12,7 +12,7 @@ public enum KeychainCoding: String, CaseIterable {
     case userId
 }
 
-public protocol KeychainProviderType {
+public protocol KeychainProviderType: AutoMockable {
 
     /// Save the given key/value combination
     func save(_ key: KeychainCoding, value: String)

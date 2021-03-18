@@ -4,16 +4,40 @@
 //
 
 import RxSwift
+import SwiftyMocky
 import XCTest
 
 @testable import DataLayer
 
 class AuthTokenRepositoryTests: BaseTestCase {
-
+    
+    // MARK: Dependencies
+    
+    private let databaseProvider = DatabaseProviderMock()
+    private let keychainProvider = KeychainProviderTypeMock()
+    private let networkProvider = NetworkProviderMock()
+    
+    override func setupDependencies() {
+        super.setupDependencies()
+        
+        setupKeychainProvider()
+    }
+    
+    private func setupKeychainProvider() {
+        Given(keychainProvider, .get(.value(.authToken), willReturn: NETAuthToken.stubDomain.token))
+        Given(keychainProvider, .get(.value(.userId), willReturn: NETAuthToken.stubDomain.userId))
+    }
+    
+    // MARK: Tests
+    
     func testCreate() {
-        let repository = AuthTokenRepository(dependencies: ProviderDependencyMock())
-
+        let repository = AuthTokenRepository(dependencies: ProviderDependencyMock(
+            databaseProvider: databaseProvider,
+            keychainProvider: keychainProvider,
+            networkProvider: networkProvider
+        ))
         let output = scheduler.createObserver(AuthToken.self)
+        
         repository.create(LoginData(email: "email", pass: "pass"))
             .asDriver().drive(output).disposed(by: disposeBag)
         scheduler.start()
@@ -22,42 +46,29 @@ class AuthTokenRepositoryTests: BaseTestCase {
             .next(0, NETAuthToken.stubDomain),
             .completed(0)
         ])
-        XCTAssertEqual(providerEvents, [
-            .networkRequest,
-            .keychainSave(.authToken),
-            .keychainSave(.userId)
-        ])
+        Verify(keychainProvider, 1, .save(.value(.authToken), value: .value(NETAuthToken.stubDomain.token)))
+        Verify(keychainProvider, 1, .save(.value(.userId), value: .value(NETAuthToken.stubDomain.userId)))
+        // Verify network request
     }
     
     func testRead() {
-        let keychainProvider = KeychainProviderMock([
-            .authToken: NETAuthToken.stubDomain.token,
-            .userId: NETAuthToken.stubDomain.userId
-        ])
         let repository = AuthTokenRepository(dependencies: ProviderDependencyMock(keychainProvider: keychainProvider))
-
+        
         let output = repository.read()
         
         XCTAssertEqual(output, NETAuthToken.stubDomain)
-        XCTAssertEqual(providerEvents, [
-            .keychainGet(.userId),
-            .keychainGet(.authToken)
-        ])
+        Verify(keychainProvider, 1, .get(.value(.userId)))
+        Verify(keychainProvider, 1, .get(.value(.authToken)))
     }
     
     func testDelete() {
-        let keychainProvider = KeychainProviderMock([
-            .authToken: NETAuthToken.stubDomain.token,
-            .userId: NETAuthToken.stubDomain.userId
-        ])
-        let repository = AuthTokenRepository(dependencies: ProviderDependencyMock(keychainProvider: keychainProvider))
-
+        let repository = AuthTokenRepository(dependencies: ProviderDependencyMock(
+            keychainProvider: keychainProvider
+        ))
+        
         repository.delete()
         
-        XCTAssertEqual(keychainProvider.storage, [:])
-        XCTAssertEqual(providerEvents, [
-            .keychainDeleteAll,
-            .databaseDeleteAll
-        ])
+        Verify(keychainProvider, 1, .deleteAll())
+        // Verify database deleteAll
     }
 }
