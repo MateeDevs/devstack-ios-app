@@ -6,7 +6,7 @@
 import RxSwift
 
 struct RefreshUserUseCaseMock: RefreshUserUseCaseType {
-    var returnValue: Observable<Void>
+    var returnValue: Observable<Void> = .empty()
     
     func execute(id: String) -> Observable<Void> {
         return returnValue

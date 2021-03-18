@@ -8,32 +8,25 @@ import DomainLayer
 
 // swiftlint:disable superfluous_disable_command file_length
 
-extension UseCaseDependency: HasNoUseCase {}
+public protocol UseCaseDependencyType: HasNoUseCase,
+    HasLoginUseCase,
+    HasLogoutUseCase,
+    HasRegistrationUseCase,
+    HasGetCurrentLocationUseCase,
+    HasGetProfileUseCase,
+    HasGetProfileIdUseCase,
+    HasRefreshProfileUseCase,
+    HasUpdateProfileCounterUseCase,
+    HasHandlePushNotificationUseCase,
+    HasRegisterForPushNotificationsUseCase,
+    HasGetRemoteConfigValueUseCase,
+    HasGetUserUseCase,
+    HasRefreshUserUseCase,
+    HasUpdateUserUseCase,
+    HasGetUsersUseCase,
+    HasRefreshUsersUseCase {}
 
-extension UseCaseDependency: HasLoginUseCase {}
-extension UseCaseDependency: HasLogoutUseCase {}
-extension UseCaseDependency: HasRegistrationUseCase {}
-
-extension UseCaseDependency: HasGetCurrentLocationUseCase {}
-
-extension UseCaseDependency: HasGetProfileUseCase {}
-extension UseCaseDependency: HasGetProfileIdUseCase {}
-extension UseCaseDependency: HasRefreshProfileUseCase {}
-extension UseCaseDependency: HasUpdateProfileCounterUseCase {}
-
-extension UseCaseDependency: HasHandlePushNotificationUseCase {}
-extension UseCaseDependency: HasRegisterForPushNotificationsUseCase {}
-
-extension UseCaseDependency: HasGetRemoteConfigValueUseCase {}
-
-extension UseCaseDependency: HasGetUserUseCase {}
-extension UseCaseDependency: HasRefreshUserUseCase {}
-extension UseCaseDependency: HasUpdateUserUseCase {}
-
-extension UseCaseDependency: HasGetUsersUseCase {}
-extension UseCaseDependency: HasRefreshUsersUseCase {}
-
-public struct UseCaseDependency {
+public struct UseCaseDependency: UseCaseDependencyType {
     
     public let loginUseCase: LoginUseCaseType
     public let logoutUseCase: LogoutUseCaseType

@@ -6,7 +6,7 @@
 import RxSwift
 
 struct LoginUseCaseMock: LoginUseCaseType {
-    var returnValue: Observable<Void>
+    var returnValue: Observable<Void> = .empty()
     
     func execute(_ data: LoginData) -> Observable<Void> {
         return returnValue

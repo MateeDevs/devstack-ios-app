@@ -6,7 +6,7 @@
 import RxSwift
 
 struct GetUserUseCaseMock: GetUserUseCaseType {
-    var returnValue: Observable<User>
+    var returnValue: Observable<User> = .empty()
     
     func execute(id: String) -> Observable<User> {
         return returnValue

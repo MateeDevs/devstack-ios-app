@@ -7,7 +7,7 @@ import CoreLocation
 import RxSwift
 
 struct GetCurrentLocationUseCaseMock: GetCurrentLocationUseCaseType {
-    var returnValue: Observable<CLLocation>
+    var returnValue: Observable<CLLocation> = .empty()
     
     func execute() -> Observable<CLLocation> {
         return returnValue

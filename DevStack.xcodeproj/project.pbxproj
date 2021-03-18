@@ -11,7 +11,7 @@
 		451FAFC425FBFBAE00171EDB /* DomainRepresentable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451FAFC325FBFBAE00171EDB /* DomainRepresentable+Extensions.swift */; };
 		451FAFE425FC107600171EDB /* LoginUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451FAFE325FC107600171EDB /* LoginUseCaseTests.swift */; };
 		451FB00C25FC12E400171EDB /* NETPushNotification.json in Resources */ = {isa = PBXBuildFile; fileRef = 451FB00B25FC12E400171EDB /* NETPushNotification.json */; };
-		4534C023260209F30022ACF4 /* UseCaseDependency+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C022260209F30022ACF4 /* UseCaseDependency+Mock.swift */; };
+		4534C023260209F30022ACF4 /* UseCaseDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C022260209F30022ACF4 /* UseCaseDependencyMock.swift */; };
 		4534C06C2602666A0022ACF4 /* LogoutUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C06B2602666A0022ACF4 /* LogoutUseCaseMock.swift */; };
 		4534C074260266990022ACF4 /* RegistrationUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C073260266990022ACF4 /* RegistrationUseCaseMock.swift */; };
 		4534C07C260266C60022ACF4 /* GetCurrentLocationUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C07B260266C60022ACF4 /* GetCurrentLocationUseCaseMock.swift */; };
@@ -27,7 +27,17 @@
 		4534C0DE2602719F0022ACF4 /* UpdateUserUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C0DD2602719F0022ACF4 /* UpdateUserUseCaseMock.swift */; };
 		4534C0E6260271C40022ACF4 /* GetUsersUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C0E5260271C40022ACF4 /* GetUsersUseCaseMock.swift */; };
 		4534C0FA260271F90022ACF4 /* RefreshUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C0F9260271F90022ACF4 /* RefreshUsersUseCase.swift */; };
-		454AC06524A221B300D6F367 /* ProviderDependency+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454AC06424A221B300D6F367 /* ProviderDependency+Mock.swift */; };
+		4534C103260359B20022ACF4 /* AuthTokenRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C102260359B20022ACF4 /* AuthTokenRepositoryMock.swift */; };
+		4534C11026036AA10022ACF4 /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582185825F25D5800D587EB /* DataLayer.framework */; };
+		4534C11126036AA10022ACF4 /* DependencyInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */; };
+		4534C11226036AA10022ACF4 /* DomainLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; };
+		4534C11326036AA10022ACF4 /* PresentationLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458218BA25F25E4300D587EB /* PresentationLayer.framework */; };
+		4534C11B26036E310022ACF4 /* LocationRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C11A26036E310022ACF4 /* LocationRepositoryMock.swift */; };
+		4534C12326036EB40022ACF4 /* PushNotificationsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C12226036EB40022ACF4 /* PushNotificationsRepositoryMock.swift */; };
+		4534C12B26036EEC0022ACF4 /* RemoteConfigRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C12A26036EEC0022ACF4 /* RemoteConfigRepositoryMock.swift */; };
+		4534C13326036F110022ACF4 /* UserRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C13226036F110022ACF4 /* UserRepositoryMock.swift */; };
+		4534C14F2603706B0022ACF4 /* RepositoryDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C14E2603706B0022ACF4 /* RepositoryDependencyMock.swift */; };
+		454AC06524A221B300D6F367 /* ProviderDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454AC06424A221B300D6F367 /* ProviderDependencyMock.swift */; };
 		454D163625FC21FD00920CF0 /* Decodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D163525FC21FD00920CF0 /* Decodable+Extensions.swift */; };
 		4550D01C26017F58009C16B4 /* LoginUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4550D01B26017F58009C16B4 /* LoginUseCaseMock.swift */; };
 		4557195524A15B1F00FB24CA /* NetworkProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195424A15B1F00FB24CA /* NetworkProviderMock.swift */; };
@@ -432,7 +442,7 @@
 		451FAFC325FBFBAE00171EDB /* DomainRepresentable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DomainRepresentable+Extensions.swift"; sourceTree = "<group>"; };
 		451FAFE325FC107600171EDB /* LoginUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseTests.swift; sourceTree = "<group>"; };
 		451FB00B25FC12E400171EDB /* NETPushNotification.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NETPushNotification.json; sourceTree = "<group>"; };
-		4534C022260209F30022ACF4 /* UseCaseDependency+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UseCaseDependency+Mock.swift"; sourceTree = "<group>"; };
+		4534C022260209F30022ACF4 /* UseCaseDependencyMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseDependencyMock.swift; sourceTree = "<group>"; };
 		4534C06B2602666A0022ACF4 /* LogoutUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCaseMock.swift; sourceTree = "<group>"; };
 		4534C073260266990022ACF4 /* RegistrationUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUseCaseMock.swift; sourceTree = "<group>"; };
 		4534C07B260266C60022ACF4 /* GetCurrentLocationUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentLocationUseCaseMock.swift; sourceTree = "<group>"; };
@@ -448,9 +458,15 @@
 		4534C0DD2602719F0022ACF4 /* UpdateUserUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserUseCaseMock.swift; sourceTree = "<group>"; };
 		4534C0E5260271C40022ACF4 /* GetUsersUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersUseCaseMock.swift; sourceTree = "<group>"; };
 		4534C0F9260271F90022ACF4 /* RefreshUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshUsersUseCase.swift; sourceTree = "<group>"; };
+		4534C102260359B20022ACF4 /* AuthTokenRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenRepositoryMock.swift; sourceTree = "<group>"; };
+		4534C11A26036E310022ACF4 /* LocationRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepositoryMock.swift; sourceTree = "<group>"; };
+		4534C12226036EB40022ACF4 /* PushNotificationsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsRepositoryMock.swift; sourceTree = "<group>"; };
+		4534C12A26036EEC0022ACF4 /* RemoteConfigRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigRepositoryMock.swift; sourceTree = "<group>"; };
+		4534C13226036F110022ACF4 /* UserRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryMock.swift; sourceTree = "<group>"; };
+		4534C14E2603706B0022ACF4 /* RepositoryDependencyMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDependencyMock.swift; sourceTree = "<group>"; };
 		453D408325EDBB750094ADD7 /* Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Debug.entitlements; sourceTree = "<group>"; };
 		453D408425EDBB750094ADD7 /* Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Release.entitlements; sourceTree = "<group>"; };
-		454AC06424A221B300D6F367 /* ProviderDependency+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProviderDependency+Mock.swift"; sourceTree = "<group>"; };
+		454AC06424A221B300D6F367 /* ProviderDependencyMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDependencyMock.swift; sourceTree = "<group>"; };
 		454D163525FC21FD00920CF0 /* Decodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extensions.swift"; sourceTree = "<group>"; };
 		4550D01B26017F58009C16B4 /* LoginUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseMock.swift; sourceTree = "<group>"; };
 		4557194924A155ED00FB24CA /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -729,6 +745,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4534C11026036AA10022ACF4 /* DataLayer.framework in Frameworks */,
+				4534C11126036AA10022ACF4 /* DependencyInjection.framework in Frameworks */,
+				4534C11226036AA10022ACF4 /* DomainLayer.framework in Frameworks */,
+				4534C11326036AA10022ACF4 /* PresentationLayer.framework in Frameworks */,
 				456E747425F837D7007D9A6D /* SPMDependencies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -830,6 +850,18 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4534C101260359910022ACF4 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				4534C102260359B20022ACF4 /* AuthTokenRepositoryMock.swift */,
+				4534C11A26036E310022ACF4 /* LocationRepositoryMock.swift */,
+				4534C12226036EB40022ACF4 /* PushNotificationsRepositoryMock.swift */,
+				4534C12A26036EEC0022ACF4 /* RemoteConfigRepositoryMock.swift */,
+				4534C13226036F110022ACF4 /* UserRepositoryMock.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		454D161325FC1D7E00920CF0 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
@@ -846,8 +878,9 @@
 		454D161425FC1D8600920CF0 /* DependencyInjection */ = {
 			isa = PBXGroup;
 			children = (
-				454AC06424A221B300D6F367 /* ProviderDependency+Mock.swift */,
-				4534C022260209F30022ACF4 /* UseCaseDependency+Mock.swift */,
+				4534C022260209F30022ACF4 /* UseCaseDependencyMock.swift */,
+				4534C14E2603706B0022ACF4 /* RepositoryDependencyMock.swift */,
+				454AC06424A221B300D6F367 /* ProviderDependencyMock.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -950,6 +983,7 @@
 			isa = PBXGroup;
 			children = (
 				4550CFFF26016CD0009C16B4 /* UseCases */,
+				4534C101260359910022ACF4 /* Repositories */,
 				454D161325FC1D7E00920CF0 /* Providers */,
 			);
 			path = Mocks;
@@ -2394,15 +2428,18 @@
 			files = (
 				458C1ACB24A3474C00549420 /* UserDefaultsProviderMock.swift in Sources */,
 				45E100FD25E6B2A00082CABA /* Recorded.swift in Sources */,
-				454AC06524A221B300D6F367 /* ProviderDependency+Mock.swift in Sources */,
+				454AC06524A221B300D6F367 /* ProviderDependencyMock.swift in Sources */,
 				45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */,
 				45E100F525E6B2A00082CABA /* RxTest.swift in Sources */,
+				4534C12326036EB40022ACF4 /* PushNotificationsRepositoryMock.swift in Sources */,
+				4534C12B26036EEC0022ACF4 /* RemoteConfigRepositoryMock.swift in Sources */,
 				451FAFE425FC107600171EDB /* LoginUseCaseTests.swift in Sources */,
 				45E100FA25E6B2A00082CABA /* Recorded+Event.swift in Sources */,
 				4534C07C260266C60022ACF4 /* GetCurrentLocationUseCaseMock.swift in Sources */,
+				4534C13326036F110022ACF4 /* UserRepositoryMock.swift in Sources */,
 				4572512125E56CF400D1B745 /* PushNotificationsProviderMock.swift in Sources */,
 				4534C0CE260270050022ACF4 /* GetUserUseCaseMock.swift in Sources */,
-				4534C023260209F30022ACF4 /* UseCaseDependency+Mock.swift in Sources */,
+				4534C023260209F30022ACF4 /* UseCaseDependencyMock.swift in Sources */,
 				4534C0E6260271C40022ACF4 /* GetUsersUseCaseMock.swift in Sources */,
 				4582183D25F2385F00D587EB /* RemoteConfigProviderMock.swift in Sources */,
 				4534C08426026C250022ACF4 /* GetProfileUseCaseMock.swift in Sources */,
@@ -2418,6 +2455,7 @@
 				45E1011325E6B2DC0082CABA /* TestScheduler.swift in Sources */,
 				4534C0D62602716C0022ACF4 /* RefreshUserUseCaseMock.swift in Sources */,
 				4557195824A15C0200FB24CA /* AuthTokenRepositoryTests.swift in Sources */,
+				4534C11B26036E310022ACF4 /* LocationRepositoryMock.swift in Sources */,
 				45E100F725E6B2A00082CABA /* HotObservable.swift in Sources */,
 				45E100F925E6B2A00082CABA /* TestableObservable.swift in Sources */,
 				4534C074260266990022ACF4 /* RegistrationUseCaseMock.swift in Sources */,
@@ -2430,6 +2468,7 @@
 				4557195524A15B1F00FB24CA /* NetworkProviderMock.swift in Sources */,
 				4534C0FA260271F90022ACF4 /* RefreshUsersUseCase.swift in Sources */,
 				458C1AC924A28E8200549420 /* KeychainProviderMock.swift in Sources */,
+				4534C103260359B20022ACF4 /* AuthTokenRepositoryMock.swift in Sources */,
 				45E100F825E6B2A00082CABA /* Event+Equatable.swift in Sources */,
 				45E100F325E6B2A00082CABA /* XCTest+Rx.swift in Sources */,
 				45E1011425E6B2DC0082CABA /* TestSchedulerVirtualTimeConverter.swift in Sources */,
@@ -2437,6 +2476,7 @@
 				458C1ACD24A347E600549420 /* DatabaseProviderMock.swift in Sources */,
 				4550D01C26017F58009C16B4 /* LoginUseCaseMock.swift in Sources */,
 				4534C06C2602666A0022ACF4 /* LogoutUseCaseMock.swift in Sources */,
+				4534C14F2603706B0022ACF4 /* RepositoryDependencyMock.swift in Sources */,
 				4534C08C26026C4D0022ACF4 /* GetProfileIdUseCaseMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

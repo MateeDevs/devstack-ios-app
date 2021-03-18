@@ -6,7 +6,7 @@
 import RxSwift
 
 struct GetRemoteConfigValueUseCaseMock: GetRemoteConfigValueUseCaseType {
-    var returnValue: Observable<Bool>
+    var returnValue: Observable<Bool> = .empty()
     
     func execute(_ key: RemoteConfigCoding) -> Observable<Bool> {
         return returnValue

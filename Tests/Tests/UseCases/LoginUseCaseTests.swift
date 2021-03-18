@@ -6,10 +6,14 @@
 import RxSwift
 import XCTest
 
+@testable import DataLayer
+
 class LoginUseCaseTests: BaseTestCase {
 
     func testExecute() {
-        let useCase = LoginUseCase(dependencies: RepositoryDependency(dependencies: ProviderDependency.mock()))
+        let useCase = LoginUseCase(dependencies: RepositoryDependencyMock(
+            authTokenRepository: AuthTokenRepositoryMock(createReturnValue: .just(NETAuthToken.stubDomain))
+        ))
 
         let output = scheduler.createObserver(Bool.self)
         useCase.execute(LoginData(email: "email", pass: "pass"))

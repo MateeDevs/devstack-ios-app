@@ -11,7 +11,7 @@ import XCTest
 class AuthTokenRepositoryTests: BaseTestCase {
 
     func testCreate() {
-        let repository = AuthTokenRepository(dependencies: ProviderDependency.mock())
+        let repository = AuthTokenRepository(dependencies: ProviderDependencyMock())
 
         let output = scheduler.createObserver(AuthToken.self)
         repository.create(LoginData(email: "email", pass: "pass"))
@@ -34,7 +34,7 @@ class AuthTokenRepositoryTests: BaseTestCase {
             .authToken: NETAuthToken.stubDomain.token,
             .userId: NETAuthToken.stubDomain.userId
         ])
-        let repository = AuthTokenRepository(dependencies: ProviderDependency.mock(keychainProvider: keychainProvider))
+        let repository = AuthTokenRepository(dependencies: ProviderDependencyMock(keychainProvider: keychainProvider))
 
         let output = repository.read()
         
@@ -50,7 +50,7 @@ class AuthTokenRepositoryTests: BaseTestCase {
             .authToken: NETAuthToken.stubDomain.token,
             .userId: NETAuthToken.stubDomain.userId
         ])
-        let repository = AuthTokenRepository(dependencies: ProviderDependency.mock(keychainProvider: keychainProvider))
+        let repository = AuthTokenRepository(dependencies: ProviderDependencyMock(keychainProvider: keychainProvider))
 
         repository.delete()
         

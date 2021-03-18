@@ -6,7 +6,7 @@
 import Foundation
 import UserNotifications
 
-public class PushNotificationsRepository: PushNotificationsRepositoryType {
+public struct PushNotificationsRepository: PushNotificationsRepositoryType {
     
     public typealias Dependencies =
         HasPushNotificationsProvider

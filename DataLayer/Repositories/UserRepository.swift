@@ -5,7 +5,7 @@
 
 import RxSwift
 
-public class UserRepository: UserRepositoryType {
+public struct UserRepository: UserRepositoryType {
     
     public typealias Dependencies =
         HasDatabaseProvider &

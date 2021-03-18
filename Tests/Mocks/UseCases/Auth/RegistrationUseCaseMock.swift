@@ -6,7 +6,7 @@
 import RxSwift
 
 struct RegistrationUseCaseMock: RegistrationUseCaseType {
-    var returnValue: Observable<Void>
+    var returnValue: Observable<Void> = .empty()
     
     func execute(_ data: RegistrationData) -> Observable<Void> {
         return returnValue

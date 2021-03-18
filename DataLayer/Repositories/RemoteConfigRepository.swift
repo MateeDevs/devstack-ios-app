@@ -5,7 +5,7 @@
 
 import RxSwift
 
-public class RemoteConfigRepository: RemoteConfigRepositoryType {
+public struct RemoteConfigRepository: RemoteConfigRepositoryType {
     
     public typealias Dependencies =
         HasRemoteConfigProvider
