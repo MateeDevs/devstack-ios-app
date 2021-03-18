@@ -11,7 +11,7 @@ import XCTest
 
 class LoginViewModelTests: BaseTestCase {
 
-    // MARK: Mock
+    // MARK: Setup inputs and outputs
 
     private struct Input {
         var email: String = ""
@@ -30,8 +30,10 @@ class LoginViewModelTests: BaseTestCase {
         let alertAction: TestableObserver<AlertAction>
         let loginButtonEnabled: TestableObserver<Bool>
     }
+    
+    // MARK: Mock
 
-    @discardableResult private func mockViewModel(for input: Input) -> Output {
+    private func mockViewModel(for input: Input) -> Output {
         let loginUseCaseMock = LoginUseCaseTypeMock()
         Given(loginUseCaseMock, .execute(
                 .value(LoginData(email: "email", pass: "invalidPass")),
@@ -60,78 +62,68 @@ class LoginViewModelTests: BaseTestCase {
         )
     }
 
-    // MARK: Tests for Output.flow
+    // MARK: Tests
 
-    func testFlowOutputForLoginEmpty() {
+    func testLoginEmpty() {
         let output = mockViewModel(for: Input.loginEmpty)
+        
         scheduler.start()
+        
         XCTAssertEqual(output.flow.events, [])
-    }
-
-    func testFlowOutputForLoginValid() {
-        let output = mockViewModel(for: Input.loginValid)
-        scheduler.start()
-        XCTAssertEqual(output.flow.events, [
-            .next(0, .dismiss)
-        ])
-    }
-
-    func testFlowOutputForLoginInvalid() {
-        let output = mockViewModel(for: Input.loginInvalid)
-        scheduler.start()
-        XCTAssertEqual(output.flow.events, [])
-    }
-
-    func testFlowOutputForRegister() {
-        let output = mockViewModel(for: Input.register)
-        scheduler.start()
-        XCTAssertEqual(output.flow.events, [
-            .next(0, .showRegistration)
-        ])
-    }
-
-    // MARK: Tests for Output.alertAction
-
-    func testWhisperActionOutputForLoginEmpty() {
-        let output = mockViewModel(for: Input.loginEmpty)
-        scheduler.start()
         XCTAssertEqual(output.alertAction.events, [
             .next(0, .showWhisper(Whisper(error: L10n.invalid_credentials)))
         ])
+        XCTAssertEqual(output.loginButtonEnabled.events, [
+            .next(0, true)
+        ])
     }
-    
-    func testAlertActionOutputForLoginValid() {
+
+    func testLoginValid() {
         let output = mockViewModel(for: Input.loginValid)
+        
         scheduler.start()
+        
+        XCTAssertEqual(output.flow.events, [
+            .next(0, .dismiss)
+        ])
         XCTAssertEqual(output.alertAction.events, [
             .next(0, .showWhisper(Whisper(L10n.signing_in))),
             .next(0, .hideWhisper)
         ])
+        XCTAssertEqual(output.loginButtonEnabled.events, [
+            .next(0, true),
+            .next(0, false),
+            .next(0, true)
+        ])
     }
 
-    func testAlertActionOutputForLoginInvalid() {
+    func testLoginInvalid() {
         let output = mockViewModel(for: Input.loginInvalid)
+        
         scheduler.start()
+        
+        XCTAssertEqual(output.flow.events, [])
         XCTAssertEqual(output.alertAction.events, [
             .next(0, .showWhisper(Whisper(L10n.signing_in))),
             .next(0, .showWhisper(Whisper(error: L10n.invalid_credentials)))
         ])
-    }
-
-    func testAlertActionOutputForRegister() {
-        let output = mockViewModel(for: Input.register)
-        scheduler.start()
-        XCTAssertEqual(output.alertAction.events, [])
-    }
-
-    // MARK: Tests for Output.loginButtonEnabled
-
-    func testLoginButtonEnabledOutput() {
-        let output = mockViewModel(for: Input.loginValid)
-        scheduler.start()
         XCTAssertEqual(output.loginButtonEnabled.events, [
             .next(0, true),
             .next(0, false),
+            .next(0, true)
+        ])
+    }
+
+    func testRegister() {
+        let output = mockViewModel(for: Input.register)
+        
+        scheduler.start()
+        
+        XCTAssertEqual(output.flow.events, [
+            .next(0, .showRegistration)
+        ])
+        XCTAssertEqual(output.alertAction.events, [])
+        XCTAssertEqual(output.loginButtonEnabled.events, [
             .next(0, true)
         ])
     }
