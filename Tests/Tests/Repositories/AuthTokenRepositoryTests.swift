@@ -17,10 +17,14 @@ class AuthTokenRepositoryTests: BaseTestCase {
     private let keychainProvider = KeychainProviderTypeMock()
     private let networkProvider = NetworkProviderMock()
     
-    override func setupDependencies() {
-        super.setupDependencies()
-        
+    private func setupDependencies() -> ProviderDependencyMock {
         setupKeychainProvider()
+        
+        return ProviderDependencyMock(
+            databaseProvider: databaseProvider,
+            keychainProvider: keychainProvider,
+            networkProvider: networkProvider
+        )
     }
     
     private func setupKeychainProvider() {
@@ -31,11 +35,7 @@ class AuthTokenRepositoryTests: BaseTestCase {
     // MARK: Tests
     
     func testCreate() {
-        let repository = AuthTokenRepository(dependencies: ProviderDependencyMock(
-            databaseProvider: databaseProvider,
-            keychainProvider: keychainProvider,
-            networkProvider: networkProvider
-        ))
+        let repository = AuthTokenRepository(dependencies: setupDependencies())
         let output = scheduler.createObserver(AuthToken.self)
         
         repository.create(LoginData(email: "email", pass: "pass"))
@@ -52,7 +52,7 @@ class AuthTokenRepositoryTests: BaseTestCase {
     }
     
     func testRead() {
-        let repository = AuthTokenRepository(dependencies: ProviderDependencyMock(keychainProvider: keychainProvider))
+        let repository = AuthTokenRepository(dependencies: setupDependencies())
         
         let output = repository.read()
         
@@ -62,9 +62,7 @@ class AuthTokenRepositoryTests: BaseTestCase {
     }
     
     func testDelete() {
-        let repository = AuthTokenRepository(dependencies: ProviderDependencyMock(
-            keychainProvider: keychainProvider
-        ))
+        let repository = AuthTokenRepository(dependencies: setupDependencies())
         
         repository.delete()
         

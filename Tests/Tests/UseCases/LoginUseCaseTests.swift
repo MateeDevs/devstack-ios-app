@@ -15,10 +15,12 @@ class LoginUseCaseTests: BaseTestCase {
     
     private let authTokenRepository = AuthTokenRepositoryTypeMock()
     
-    override func setupDependencies() {
-        super.setupDependencies()
-        
+    private func setupDependencies() -> RepositoryDependencyMock {
         setupAuthTokenRepository()
+        
+        return RepositoryDependencyMock(
+            authTokenRepository: authTokenRepository
+        )
     }
     
     private func setupAuthTokenRepository() {
@@ -28,9 +30,7 @@ class LoginUseCaseTests: BaseTestCase {
     // MARK: Tests
 
     func testExecute() {
-        let useCase = LoginUseCase(dependencies: RepositoryDependencyMock(
-            authTokenRepository: authTokenRepository
-        ))
+        let useCase = LoginUseCase(dependencies: setupDependencies())
         let input = LoginData(email: "email", pass: "pass")
         let output = scheduler.createObserver(Bool.self)
         
