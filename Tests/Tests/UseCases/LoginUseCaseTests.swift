@@ -13,7 +13,7 @@ class LoginUseCaseTests: BaseTestCase {
     
     // MARK: Dependencies
     
-    private var authTokenRepository = AuthTokenRepositoryTypeMock()
+    private let authTokenRepository = AuthTokenRepositoryTypeMock()
     
     override func setupDependencies() {
         super.setupDependencies()
@@ -31,15 +31,16 @@ class LoginUseCaseTests: BaseTestCase {
         let useCase = LoginUseCase(dependencies: RepositoryDependencyMock(
             authTokenRepository: authTokenRepository
         ))
-
+        let input = LoginData(email: "email", pass: "pass")
         let output = scheduler.createObserver(Bool.self)
-        useCase.execute(LoginData(email: "email", pass: "pass"))
-            .map { _ in true }.asDriver().drive(output).disposed(by: disposeBag)
+        
+        useCase.execute(input).map { _ in true }.asDriver().drive(output).disposed(by: disposeBag)
         scheduler.start()
         
         XCTAssertEqual(output.events, [
             .next(0, true),
             .completed(0)
         ])
+        Verify(authTokenRepository, 1, .create(.value(input)))
     }
 }

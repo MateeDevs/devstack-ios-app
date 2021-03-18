@@ -13,7 +13,7 @@ class LoginViewModelTests: BaseTestCase {
     
     // MARK: Dependencies
     
-    private var loginUseCase = LoginUseCaseTypeMock()
+    private let loginUseCase = LoginUseCaseTypeMock()
     
     override func setupDependencies() {
         super.setupDependencies()

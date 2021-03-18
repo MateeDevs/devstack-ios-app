@@ -51,7 +51,6 @@ extension NetworkProviderMock: NetworkProviderType {
     }
     
     func observableRequest(_ endpoint: TargetType, withInterceptor: Bool) -> Observable<Response> {
-        providerEvents.append(.networkRequest)
         return stubbingProvider.rx.request(MultiTarget(endpoint))
             .asObservable().filterSuccessfulStatusCodes()
             .catchError { error -> Observable<Response> in
