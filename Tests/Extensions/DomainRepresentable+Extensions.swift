@@ -7,6 +7,10 @@
 
 extension DomainRepresentable where Self: Decodable {
     static var stubDomain: Self.DomainModel {
-        try! JSONDecoder().decode(self, from: self.stub).domainModel // swiftlint:disable:this force_try
+        try! JSONDecoder().decode(self, from: stub).domainModel // swiftlint:disable:this force_try
+    }
+    
+    static var stubListDomain: [Self.DomainModel] {
+        try! JSONDecoder().decode([Self].self, from: stubList).map { $0.domainModel } // swiftlint:disable:this force_try
     }
 }
