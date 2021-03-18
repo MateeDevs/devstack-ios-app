@@ -10,8 +10,26 @@ import XCTest
 @testable import PresentationLayer
 
 class LoginViewModelTests: BaseTestCase {
+    
+    // MARK: Dependencies
+    
+    private var loginUseCase = LoginUseCaseTypeMock()
+    
+    override func setupDependencies() {
+        super.setupDependencies()
+        
+        setupLoginUseCase()
+    }
+    
+    private func setupLoginUseCase() {
+        Given(loginUseCase, .execute(
+                .value(LoginData(email: "email", pass: "invalidPass")),
+                willReturn: .error(RepositoryError(statusCode: StatusCode.httpUnathorized, message: "")))
+        )
+        Given(loginUseCase, .execute(.any, willReturn: .just(())))
+    }
 
-    // MARK: Setup inputs and outputs
+    // MARK: Inputs and outputs
 
     private struct Input {
         var email: String = ""
@@ -30,18 +48,9 @@ class LoginViewModelTests: BaseTestCase {
         let alertAction: TestableObserver<AlertAction>
         let loginButtonEnabled: TestableObserver<Bool>
     }
-    
-    // MARK: Mock
 
-    private func mockViewModel(for input: Input) -> Output {
-        let loginUseCaseMock = LoginUseCaseTypeMock()
-        Given(loginUseCaseMock, .execute(
-                .value(LoginData(email: "email", pass: "invalidPass")),
-                willReturn: .error(RepositoryError(statusCode: StatusCode.httpUnathorized, message: "")))
-        )
-        Given(loginUseCaseMock, .execute(.any, willReturn: .just(())))
-        
-        let viewModel = LoginViewModel(dependencies: UseCaseDependencyMock(loginUseCase: loginUseCaseMock))
+    private func generateOutput(for input: Input) -> Output {
+        let viewModel = LoginViewModel(dependencies: UseCaseDependencyMock(loginUseCase: loginUseCase))
         
         scheduler.createColdObservable([.next(0, input.email)])
             .bind(to: viewModel.input.email).disposed(by: disposeBag)
@@ -65,7 +74,7 @@ class LoginViewModelTests: BaseTestCase {
     // MARK: Tests
 
     func testLoginEmpty() {
-        let output = mockViewModel(for: Input.loginEmpty)
+        let output = generateOutput(for: Input.loginEmpty)
         
         scheduler.start()
         
@@ -76,10 +85,11 @@ class LoginViewModelTests: BaseTestCase {
         XCTAssertEqual(output.loginButtonEnabled.events, [
             .next(0, true)
         ])
+        Verify(loginUseCase, 0, .execute(.any))
     }
 
     func testLoginValid() {
-        let output = mockViewModel(for: Input.loginValid)
+        let output = generateOutput(for: Input.loginValid)
         
         scheduler.start()
         
@@ -95,10 +105,14 @@ class LoginViewModelTests: BaseTestCase {
             .next(0, false),
             .next(0, true)
         ])
+        Verify(loginUseCase, 1, .execute(.value(LoginData(
+            email: Input.loginValid.email,
+            pass: Input.loginValid.password
+        ))))
     }
 
     func testLoginInvalid() {
-        let output = mockViewModel(for: Input.loginInvalid)
+        let output = generateOutput(for: Input.loginInvalid)
         
         scheduler.start()
         
@@ -112,10 +126,14 @@ class LoginViewModelTests: BaseTestCase {
             .next(0, false),
             .next(0, true)
         ])
+        Verify(loginUseCase, 1, .execute(.value(LoginData(
+            email: Input.loginInvalid.email,
+            pass: Input.loginInvalid.password
+        ))))
     }
 
     func testRegister() {
-        let output = mockViewModel(for: Input.register)
+        let output = generateOutput(for: Input.register)
         
         scheduler.start()
         
@@ -126,5 +144,6 @@ class LoginViewModelTests: BaseTestCase {
         XCTAssertEqual(output.loginButtonEnabled.events, [
             .next(0, true)
         ])
+        Verify(loginUseCase, 0, .execute(.any))
     }
 }
