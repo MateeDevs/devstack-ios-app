@@ -25,7 +25,7 @@ class LoginViewModelTests: BaseTestCase {
     
     private func setupLoginUseCase() {
         Given(loginUseCase, .execute(
-            .value(LoginData(email: "email", pass: "invalidPass")),
+            .value(.invalid),
             willReturn: .error(RepositoryError(statusCode: StatusCode.httpUnathorized, message: ""))
         ))
         Given(loginUseCase, .execute(.any, willReturn: .just(())))
@@ -34,14 +34,13 @@ class LoginViewModelTests: BaseTestCase {
     // MARK: Inputs and outputs
 
     private struct Input {
-        var email: String = ""
-        var password: String = ""
+        var loginData: LoginData = LoginData(email: "", password: "")
         var loginButtonTaps: [Void] = []
         var registerButtonTaps: [Void] = []
 
         static let loginEmpty = Input(loginButtonTaps: [()])
-        static let loginValid = Input(email: "email", password: "validPass", loginButtonTaps: [()])
-        static let loginInvalid = Input(email: "email", password: "invalidPass", loginButtonTaps: [()])
+        static let loginValid = Input(loginData: .valid, loginButtonTaps: [()])
+        static let loginInvalid = Input(loginData: .invalid, loginButtonTaps: [()])
         static let register = Input(registerButtonTaps: [()])
     }
     
@@ -54,10 +53,10 @@ class LoginViewModelTests: BaseTestCase {
     private func generateOutput(for input: Input) -> Output {
         let viewModel = LoginViewModel(dependencies: setupDependencies())
         
-        scheduler.createColdObservable([.next(0, input.email)])
+        scheduler.createColdObservable([.next(0, input.loginData.email)])
             .bind(to: viewModel.input.email).disposed(by: disposeBag)
 
-        scheduler.createColdObservable([.next(0, input.password)])
+        scheduler.createColdObservable([.next(0, input.loginData.password)])
             .bind(to: viewModel.input.password).disposed(by: disposeBag)
 
         scheduler.createColdObservable(input.loginButtonTaps.map { .next(0, $0) })
@@ -107,10 +106,7 @@ class LoginViewModelTests: BaseTestCase {
             .next(0, false),
             .next(0, true)
         ])
-        Verify(loginUseCase, 1, .execute(.value(LoginData(
-            email: Input.loginValid.email,
-            pass: Input.loginValid.password
-        ))))
+        Verify(loginUseCase, 1, .execute(.value(.valid)))
     }
 
     func testLoginInvalid() {
@@ -128,10 +124,7 @@ class LoginViewModelTests: BaseTestCase {
             .next(0, false),
             .next(0, true)
         ])
-        Verify(loginUseCase, 1, .execute(.value(LoginData(
-            email: Input.loginInvalid.email,
-            pass: Input.loginInvalid.password
-        ))))
+        Verify(loginUseCase, 1, .execute(.value(.invalid)))
     }
 
     func testRegister() {

@@ -52,7 +52,7 @@ final class LoginViewModel: ViewModel, ViewModelType {
             if inputs.email.isEmpty || inputs.password.isEmpty {
                 return .error(ValidationError(L10n.invalid_credentials))
             } else {
-                let data = LoginData(email: inputs.email, pass: inputs.password)
+                let data = LoginData(email: inputs.email, password: inputs.password)
                 return dependencies.loginUseCase.execute(data).trackActivity(activity)
             }
         }.materialize().share()

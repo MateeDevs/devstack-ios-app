@@ -38,8 +38,7 @@ class AuthTokenRepositoryTests: BaseTestCase {
         let repository = AuthTokenRepository(dependencies: setupDependencies())
         let output = scheduler.createObserver(AuthToken.self)
         
-        repository.create(LoginData(email: "email", pass: "pass"))
-            .asDriver().drive(output).disposed(by: disposeBag)
+        repository.create(.valid).asDriver().drive(output).disposed(by: disposeBag)
         scheduler.start()
         
         XCTAssertEqual(output.events, [

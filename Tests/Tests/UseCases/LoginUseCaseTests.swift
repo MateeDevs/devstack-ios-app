@@ -31,16 +31,15 @@ class LoginUseCaseTests: BaseTestCase {
 
     func testExecute() {
         let useCase = LoginUseCase(dependencies: setupDependencies())
-        let input = LoginData(email: "email", pass: "pass")
         let output = scheduler.createObserver(Bool.self)
         
-        useCase.execute(input).map { _ in true }.asDriver().drive(output).disposed(by: disposeBag)
+        useCase.execute(.valid).map { _ in true }.asDriver().drive(output).disposed(by: disposeBag)
         scheduler.start()
         
         XCTAssertEqual(output.events, [
             .next(0, true),
             .completed(0)
         ])
-        Verify(authTokenRepository, 1, .create(.value(input)))
+        Verify(authTokenRepository, 1, .create(.value(.valid)))
     }
 }
