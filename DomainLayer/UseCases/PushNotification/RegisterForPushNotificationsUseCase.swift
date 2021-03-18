@@ -9,7 +9,7 @@ public protocol HasRegisterForPushNotificationsUseCase {
     var registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCaseType { get }
 }
 
-public protocol RegisterForPushNotificationsUseCaseType {
+public protocol RegisterForPushNotificationsUseCaseType: AutoMockable {
     func execute(options: UNAuthorizationOptions, completionHandler: @escaping (Bool, Error?) -> Void)
 }
 

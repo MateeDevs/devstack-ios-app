@@ -9,7 +9,7 @@ public protocol HasGetUserUseCase {
     var getUserUseCase: GetUserUseCaseType { get }
 }
 
-public protocol GetUserUseCaseType {
+public protocol GetUserUseCaseType: AutoMockable {
     func execute(id: String) -> Observable<User>
 }
 

@@ -4,6 +4,7 @@
 //
 
 import RxSwift
+import SwiftyMocky
 import XCTest
 
 @testable import DataLayer

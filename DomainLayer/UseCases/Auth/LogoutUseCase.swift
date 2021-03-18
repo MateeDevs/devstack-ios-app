@@ -7,7 +7,7 @@ public protocol HasLogoutUseCase {
     var logoutUseCase: LogoutUseCaseType { get }
 }
 
-public protocol LogoutUseCaseType {
+public protocol LogoutUseCaseType: AutoMockable {
     func execute()
 }
 

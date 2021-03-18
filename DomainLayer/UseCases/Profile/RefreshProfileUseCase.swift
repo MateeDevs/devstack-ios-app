@@ -9,7 +9,7 @@ public protocol HasRefreshProfileUseCase {
     var refreshProfileUseCase: RefreshProfileUseCaseType { get }
 }
 
-public protocol RefreshProfileUseCaseType {
+public protocol RefreshProfileUseCaseType: AutoMockable {
     func execute() -> Observable<Void>
 }
 

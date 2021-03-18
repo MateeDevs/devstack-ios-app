@@ -1,0 +1,14 @@
+sourceryCommand: null
+sourceryTemplate: null
+Tests:
+  sources:
+    include:
+    - ./.
+  output: ./Tests/Mocks.swift
+  targets:
+  - Tests
+  import:
+  - CoreLocation
+  - Foundation
+  - RxSwift
+  - UserNotifications

@@ -18,6 +18,9 @@ Assets.swift
 Localizable.swift
 Storyboards.swift
 
+## SwiftyMocky generated
+Mocks.swift
+
 ## Various settings
 *.pbxuser
 !default.pbxuser

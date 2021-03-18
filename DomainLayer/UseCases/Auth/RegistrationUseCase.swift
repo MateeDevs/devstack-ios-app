@@ -9,7 +9,7 @@ public protocol HasRegistrationUseCase {
     var registrationUseCase: RegistrationUseCaseType { get }
 }
 
-public protocol RegistrationUseCaseType {
+public protocol RegistrationUseCaseType: AutoMockable {
     func execute(_ data: RegistrationData) -> Observable<Void>
 }
 
