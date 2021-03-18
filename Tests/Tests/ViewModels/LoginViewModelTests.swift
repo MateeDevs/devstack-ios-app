@@ -23,9 +23,9 @@ class LoginViewModelTests: BaseTestCase {
     
     private func setupLoginUseCase() {
         Given(loginUseCase, .execute(
-                .value(LoginData(email: "email", pass: "invalidPass")),
-                willReturn: .error(RepositoryError(statusCode: StatusCode.httpUnathorized, message: "")))
-        )
+            .value(LoginData(email: "email", pass: "invalidPass")),
+            willReturn: .error(RepositoryError(statusCode: StatusCode.httpUnathorized, message: ""))
+        ))
         Given(loginUseCase, .execute(.any, willReturn: .just(())))
     }
 
@@ -50,7 +50,9 @@ class LoginViewModelTests: BaseTestCase {
     }
 
     private func generateOutput(for input: Input) -> Output {
-        let viewModel = LoginViewModel(dependencies: UseCaseDependencyMock(loginUseCase: loginUseCase))
+        let viewModel = LoginViewModel(dependencies: UseCaseDependencyMock(
+            loginUseCase: loginUseCase
+        ))
         
         scheduler.createColdObservable([.next(0, input.email)])
             .bind(to: viewModel.input.email).disposed(by: disposeBag)

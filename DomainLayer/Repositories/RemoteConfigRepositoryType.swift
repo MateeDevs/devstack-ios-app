@@ -9,6 +9,6 @@ public protocol HasRemoteConfigRepository {
     var remoteConfigRepository: RemoteConfigRepositoryType { get }
 }
 
-public protocol RemoteConfigRepositoryType {
+public protocol RemoteConfigRepositoryType: AutoMockable {
     func read(_ key: RemoteConfigCoding) -> Observable<Bool>
 }

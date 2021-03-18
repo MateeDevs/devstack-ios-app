@@ -10,10 +10,26 @@ import XCTest
 @testable import DataLayer
 
 class LoginUseCaseTests: BaseTestCase {
+    
+    // MARK: Dependencies
+    
+    private var authTokenRepository = AuthTokenRepositoryTypeMock()
+    
+    override func setupDependencies() {
+        super.setupDependencies()
+        
+        setupAuthTokenRepository()
+    }
+    
+    private func setupAuthTokenRepository() {
+        Given(authTokenRepository, .create(.any, willReturn: .just(NETAuthToken.stubDomain)))
+    }
+    
+    // MARK: Tests
 
     func testExecute() {
         let useCase = LoginUseCase(dependencies: RepositoryDependencyMock(
-            authTokenRepository: AuthTokenRepositoryMock(createReturnValue: .just(NETAuthToken.stubDomain))
+            authTokenRepository: authTokenRepository
         ))
 
         let output = scheduler.createObserver(Bool.self)

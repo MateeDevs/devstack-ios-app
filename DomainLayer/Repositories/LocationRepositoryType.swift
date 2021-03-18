@@ -10,7 +10,7 @@ public protocol HasLocationRepository {
     var locationRepository: LocationRepositoryType { get }
 }
 
-public protocol LocationRepositoryType {
+public protocol LocationRepositoryType: AutoMockable {
     
     /// Check whether the location services are enabled and authorized
     func isLocationEnabled() -> Bool
