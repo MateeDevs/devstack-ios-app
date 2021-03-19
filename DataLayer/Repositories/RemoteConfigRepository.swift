@@ -5,12 +5,12 @@
 
 import RxSwift
 
-public struct RemoteConfigRepository: RemoteConfigRepositoryType {
+public struct RemoteConfigRepositoryImpl: RemoteConfigRepository {
     
     public typealias Dependencies =
         HasRemoteConfigProvider
 
-    private let remoteConfig: RemoteConfigProviderType
+    private let remoteConfig: RemoteConfigProvider
 
     public init(dependencies: Dependencies) {
         self.remoteConfig = dependencies.remoteConfigProvider

@@ -24,7 +24,7 @@ public class FirebasePushNotificationsProvider: NSObject {
     }
 }
 
-extension FirebasePushNotificationsProvider: PushNotificationsProviderType {
+extension FirebasePushNotificationsProvider: PushNotificationsProvider {
     public func requestAuthorization(options: UNAuthorizationOptions, completionHandler: @escaping (Bool, Error?) -> Void) {
         UNUserNotificationCenter.current().requestAuthorization(options: options, completionHandler: completionHandler)
         application.registerForRemoteNotifications()

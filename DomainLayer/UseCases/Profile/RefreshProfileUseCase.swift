@@ -6,14 +6,14 @@
 import RxSwift
 
 public protocol HasRefreshProfileUseCase {
-    var refreshProfileUseCase: RefreshProfileUseCaseType { get }
+    var refreshProfileUseCase: RefreshProfileUseCase { get }
 }
 
-public protocol RefreshProfileUseCaseType: AutoMockable {
+public protocol RefreshProfileUseCase: AutoMockable {
     func execute() -> Observable<Void>
 }
 
-public struct RefreshProfileUseCase: RefreshProfileUseCaseType {
+public struct RefreshProfileUseCaseImpl: RefreshProfileUseCase {
     
     public typealias Dependencies =
         HasAuthTokenRepository &

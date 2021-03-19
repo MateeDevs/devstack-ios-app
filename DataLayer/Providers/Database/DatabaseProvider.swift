@@ -7,10 +7,10 @@ import RealmSwift
 import RxSwift
 
 public protocol HasDatabaseProvider {
-    var databaseProvider: DatabaseProviderType { get }
+    var databaseProvider: DatabaseProvider { get }
 }
 
-public protocol DatabaseProviderType {
+public protocol DatabaseProvider {
     
     ///
     /// Generic function for observing on a specified object from database.
@@ -65,7 +65,7 @@ public protocol DatabaseProviderType {
 }
 
 // This extension exists only to provide default values for parameters
-extension DatabaseProviderType {
+extension DatabaseProvider {
     
     func observableObject<T>(
         _ type: T.Type,

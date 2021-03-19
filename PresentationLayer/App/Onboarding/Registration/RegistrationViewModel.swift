@@ -6,7 +6,7 @@
 import RxCocoa
 import RxSwift
 
-final class RegistrationViewModel: ViewModel, ViewModelType {
+final class RegistrationViewModel: BaseViewModel, ViewModel {
     
     typealias Dependencies = HasRegistrationUseCase
     

@@ -6,14 +6,14 @@
 import RxSwift
 
 public protocol HasGetProfileUseCase {
-    var getProfileUseCase: GetProfileUseCaseType { get }
+    var getProfileUseCase: GetProfileUseCase { get }
 }
 
-public protocol GetProfileUseCaseType: AutoMockable {
+public protocol GetProfileUseCase: AutoMockable {
     func execute() -> Observable<User>
 }
 
-public struct GetProfileUseCase: GetProfileUseCaseType {
+public struct GetProfileUseCaseImpl: GetProfileUseCase {
     
     public typealias Dependencies =
         HasAuthTokenRepository &

@@ -18,7 +18,7 @@ public struct FirebaseRemoteConfigProvider {
     }
 }
 
-extension FirebaseRemoteConfigProvider: RemoteConfigProviderType {
+extension FirebaseRemoteConfigProvider: RemoteConfigProvider {
     
     public func get(_ key: RemoteConfigCoding) -> Observable<Bool> {
         return RemoteConfig.remoteConfig().rx.fetch().flatMap { _ -> Observable<Bool> in

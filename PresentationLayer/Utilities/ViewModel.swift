@@ -1,14 +1,12 @@
 //
-//  Created by Petr Chmelar on 06/02/2019.
-//  Copyright © 2019 Matee. All rights reserved.
+//  Created by Petr Chmelar on 17/07/2018.
+//  Copyright © 2018 Matee. All rights reserved.
 //
 
-class ViewModel {
-    init() {
-        Logger.info("%@ initialized", "\(type(of: self))", category: .lifecycle)
-    }
-    
-    deinit {
-        Logger.info("%@ deinitialized", "\(type(of: self))", category: .lifecycle)
-    }
+protocol ViewModel {
+    associatedtype Input
+    associatedtype Output
+
+    var input: Input { get }
+    var output: Output { get }
 }

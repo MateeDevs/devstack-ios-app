@@ -4,14 +4,14 @@
 //
 
 public protocol HasUserDefaultsProvider {
-    var userDefaultsProvider: UserDefaultsProviderType { get }
+    var userDefaultsProvider: UserDefaultsProvider { get }
 }
 
 public enum UserDefaultsCoding: String, CaseIterable {
     case hasRunBefore
 }
 
-public protocol UserDefaultsProviderType: AutoMockable {
+public protocol UserDefaultsProvider: AutoMockable {
 
     /// Save the given key/value combination
     func save<T>(_ key: UserDefaultsCoding, value: T)

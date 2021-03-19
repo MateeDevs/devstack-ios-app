@@ -6,10 +6,10 @@
 import RxSwift
 
 public protocol HasAuthTokenRepository {
-    var authTokenRepository: AuthTokenRepositoryType { get }
+    var authTokenRepository: AuthTokenRepository { get }
 }
 
-public protocol AuthTokenRepositoryType: AutoMockable {
+public protocol AuthTokenRepository: AutoMockable {
     func create(_ data: LoginData) -> Observable<AuthToken>
     func read() -> AuthToken?
     func delete()

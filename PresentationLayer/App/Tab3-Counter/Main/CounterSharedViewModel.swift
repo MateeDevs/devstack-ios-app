@@ -6,7 +6,7 @@
 import RxCocoa
 import RxSwift
 
-final class CounterSharedViewModel: ViewModel, ViewModelType {
+final class CounterSharedViewModel: BaseViewModel, ViewModel {
     
     typealias Dependencies = HasNoUseCase
     

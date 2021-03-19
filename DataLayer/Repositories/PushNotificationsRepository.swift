@@ -6,12 +6,12 @@
 import Foundation
 import UserNotifications
 
-public struct PushNotificationsRepository: PushNotificationsRepositoryType {
+public struct PushNotificationsRepositoryImpl: PushNotificationsRepository {
     
     public typealias Dependencies =
         HasPushNotificationsProvider
 
-    private let pushNotifications: PushNotificationsProviderType
+    private let pushNotifications: PushNotificationsProvider
 
     public init(dependencies: Dependencies) {
         self.pushNotifications = dependencies.pushNotificationsProvider

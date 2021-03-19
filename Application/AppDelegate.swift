@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Init main flow controller and start the flow
         flowController = AppFlowController(
             navigationController: nc,
-            dependencies: UseCaseDependency(dependencies: RepositoryDependency(dependencies: setupProviders(for: application)))
+            dependencies: UseCaseDependencyImpl(dependencies: RepositoryDependencyImpl(dependencies: setupProviders(for: application)))
         )
         flowController?.start()
         
@@ -92,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         networkProvider.delegate = self
 
-        return ProviderDependency(
+        return ProviderDependencyImpl(
             databaseProvider: databaseProvider,
             keychainProvider: keychainProvider,
             networkProvider: networkProvider,

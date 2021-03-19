@@ -6,7 +6,7 @@
 import RxCocoa
 import RxSwift
 
-final class LoginViewModel: ViewModel, ViewModelType {
+final class LoginViewModel: BaseViewModel, ViewModel {
     
     typealias Dependencies = HasLoginUseCase
     

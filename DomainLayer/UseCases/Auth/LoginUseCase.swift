@@ -6,14 +6,14 @@
 import RxSwift
 
 public protocol HasLoginUseCase {
-    var loginUseCase: LoginUseCaseType { get }
+    var loginUseCase: LoginUseCase { get }
 }
 
-public protocol LoginUseCaseType: AutoMockable {
+public protocol LoginUseCase: AutoMockable {
     func execute(_ data: LoginData) -> Observable<Void>
 }
 
-public struct LoginUseCase: LoginUseCaseType {
+public struct LoginUseCaseImpl: LoginUseCase {
     
     public typealias Dependencies = HasAuthTokenRepository
     
