@@ -18,10 +18,10 @@
 		4534C14F2603706B0022ACF4 /* RepositoryDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C14E2603706B0022ACF4 /* RepositoryDependencyMock.swift */; };
 		4534C1872603C1530022ACF4 /* AutoMockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C1862603C1530022ACF4 /* AutoMockable.swift */; };
 		4534C1A32603C98F0022ACF4 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C1A22603C98F0022ACF4 /* Mocks.swift */; };
-		4534C1BD2603D6630022ACF4 /* SwiftyMocky in Frameworks */ = {isa = PBXBuildFile; productRef = 4534C1BC2603D6630022ACF4 /* SwiftyMocky */; };
-		4534C1CF2603D6DD0022ACF4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4534C1C42603D6AD0022ACF4 /* XCTest.framework */; };
 		4534C1FC260414350022ACF4 /* NetworkProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C1FB260414350022ACF4 /* NetworkProviderMock.swift */; };
 		4534C20B2604192B0022ACF4 /* LoginData+Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C20A2604192B0022ACF4 /* LoginData+Stubs.swift */; };
+		454AAD1F26050B7B0098A3E1 /* SwiftyMocky in Frameworks */ = {isa = PBXBuildFile; productRef = 454AAD1E26050B7B0098A3E1 /* SwiftyMocky */; };
+		454AAD2026050B800098A3E1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4534C1C42603D6AD0022ACF4 /* XCTest.framework */; };
 		454AC06524A221B300D6F367 /* ProviderDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454AC06424A221B300D6F367 /* ProviderDependencyMock.swift */; };
 		454D163625FC21FD00920CF0 /* Decodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D163525FC21FD00920CF0 /* Decodable+Extensions.swift */; };
 		4557195824A15C0200FB24CA /* AuthTokenRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195724A15C0200FB24CA /* AuthTokenRepositoryTests.swift */; };
@@ -704,10 +704,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454AAD2026050B800098A3E1 /* XCTest.framework in Frameworks */,
 				4534C11026036AA10022ACF4 /* DataLayer.framework in Frameworks */,
 				4534C11126036AA10022ACF4 /* DependencyInjection.framework in Frameworks */,
 				4534C11226036AA10022ACF4 /* DomainLayer.framework in Frameworks */,
 				4534C11326036AA10022ACF4 /* PresentationLayer.framework in Frameworks */,
+				454AAD1F26050B7B0098A3E1 /* SwiftyMocky in Frameworks */,
 				456E747425F837D7007D9A6D /* SPMDependencies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -755,7 +757,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4534C1CF2603D6DD0022ACF4 /* XCTest.framework in Frameworks */,
 				4575E5BF25F6EB4A00CCC003 /* RxSwift in Frameworks */,
 				458219C725F2634100D587EB /* Realm in Frameworks */,
 				45D3776D25F9229600D05900 /* Atlantis in Frameworks */,
@@ -764,7 +765,6 @@
 				4575E5EC25F6F19900CCC003 /* SkeletonView in Frameworks */,
 				458219CB25F2634100D587EB /* RxRealm in Frameworks */,
 				458219C925F2634100D587EB /* RealmSwift in Frameworks */,
-				4534C1BD2603D6630022ACF4 /* SwiftyMocky in Frameworks */,
 				458219BD25F2631C00D587EB /* FirebaseMessaging in Frameworks */,
 				458219BF25F2632200D587EB /* FirebaseRemoteConfig in Frameworks */,
 				4575E5E825F6F18C00CCC003 /* AlamofireImage in Frameworks */,
@@ -1903,6 +1903,7 @@
 			);
 			name = Tests;
 			packageProductDependencies = (
+				454AAD1E26050B7B0098A3E1 /* SwiftyMocky */,
 			);
 			productName = DevStackTests;
 			productReference = 4557194924A155ED00FB24CA /* Tests.xctest */;
@@ -2028,7 +2029,6 @@
 				4575E5E925F6F19000CCC003 /* RxCocoa */,
 				4575E5EB25F6F19900CCC003 /* SkeletonView */,
 				45D3776C25F9229600D05900 /* Atlantis */,
-				4534C1BC2603D6630022ACF4 /* SwiftyMocky */,
 			);
 			productName = DataLayerDependencies;
 			productReference = 458219A825F262F000D587EB /* SPMDependencies.framework */;
@@ -4537,7 +4537,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4534C1BC2603D6630022ACF4 /* SwiftyMocky */ = {
+		454AAD1E26050B7B0098A3E1 /* SwiftyMocky */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4534C17D2603BF050022ACF4 /* XCRemoteSwiftPackageReference "SwiftyMocky" */;
 			productName = SwiftyMocky;
