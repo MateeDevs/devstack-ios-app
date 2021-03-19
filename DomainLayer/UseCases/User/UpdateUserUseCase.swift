@@ -6,10 +6,14 @@
 import RxSwift
 
 public protocol HasUpdateUserUseCase {
-    var updateUserUseCase: UpdateUserUseCase { get }
+    var updateUserUseCase: UpdateUserUseCaseType { get }
 }
 
-public struct UpdateUserUseCase {
+public protocol UpdateUserUseCaseType {
+    func execute(user: User) -> Observable<Void>
+}
+
+public struct UpdateUserUseCase: UpdateUserUseCaseType {
     
     public typealias Dependencies = HasUserRepository
     
@@ -19,7 +23,7 @@ public struct UpdateUserUseCase {
         self.dependencies = dependencies
     }
     
-    public func execute(user: User) -> Observable<Event<Void>> {
-        dependencies.userRepository.update(.remote, user: user).mapToVoid().materialize()
+    public func execute(user: User) -> Observable<Void> {
+        dependencies.userRepository.update(.remote, user: user).mapToVoid()
     }
 }

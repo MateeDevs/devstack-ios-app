@@ -6,10 +6,14 @@
 import RxSwift
 
 public protocol HasRefreshProfileUseCase {
-    var refreshProfileUseCase: RefreshProfileUseCase { get }
+    var refreshProfileUseCase: RefreshProfileUseCaseType { get }
 }
 
-public struct RefreshProfileUseCase {
+public protocol RefreshProfileUseCaseType {
+    func execute() -> Observable<Void>
+}
+
+public struct RefreshProfileUseCase: RefreshProfileUseCaseType {
     
     public typealias Dependencies =
         HasAuthTokenRepository &
@@ -21,8 +25,8 @@ public struct RefreshProfileUseCase {
         self.dependencies = dependencies
     }
     
-    public func execute() -> Observable<Event<Void>> {
+    public func execute() -> Observable<Void> {
         guard let authToken = dependencies.authTokenRepository.read() else { return .error(CommonError.noAuthToken) }
-        return dependencies.userRepository.read(.remote, id: authToken.userId).mapToVoid().materialize()
+        return dependencies.userRepository.read(.remote, id: authToken.userId).mapToVoid()
     }
 }

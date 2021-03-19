@@ -52,9 +52,9 @@ extension UserAPI: TargetType {
     var sampleData: Data {
         switch self {
         case .getUsersForPage:
-            return stubList(NETUser.self)
+            return NETUser.stubList
         case .getUserById, .updateUserById:
-            return stub(NETUser.self)
+            return NETUser.stub
         }
     }
 }

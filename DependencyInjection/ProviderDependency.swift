@@ -5,15 +5,15 @@
 
 import DataLayer
 
-extension ProviderDependency: HasNoProvider {}
-extension ProviderDependency: HasDatabaseProvider {}
-extension ProviderDependency: HasKeychainProvider {}
-extension ProviderDependency: HasNetworkProvider {}
-extension ProviderDependency: HasPushNotificationsProvider {}
-extension ProviderDependency: HasRemoteConfigProvider {}
-extension ProviderDependency: HasUserDefaultsProvider {}
+public protocol ProviderDependencyType: HasNoProvider,
+    HasDatabaseProvider,
+    HasKeychainProvider,
+    HasNetworkProvider,
+    HasPushNotificationsProvider,
+    HasRemoteConfigProvider,
+    HasUserDefaultsProvider {}
 
-public struct ProviderDependency {
+public struct ProviderDependency: ProviderDependencyType {
 
     public let databaseProvider: DatabaseProviderType
     public let keychainProvider: KeychainProviderType

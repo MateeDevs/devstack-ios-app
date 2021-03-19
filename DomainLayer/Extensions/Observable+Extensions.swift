@@ -7,10 +7,14 @@ import RxSwift
 
 public extension ObservableType {
     func mapToVoid() -> Observable<Void> {
-        return map { _ in Void() }
+        map { _ in Void() }
     }
     
     func mapToEmpty() -> Observable<Element> {
-        flatMap { _ -> Observable<Element> in Observable.empty() }
+        flatMap { _ -> Observable<Element> in .empty() }
+    }
+    
+    func ignoreErrors() -> Observable<Element> {
+        catchError { _ in .empty() }
     }
 }

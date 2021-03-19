@@ -37,19 +37,19 @@ final class CounterControlViewModel: ViewModel, ViewModelType {
 
         // MARK: Transformations
 
-        let increaseCounter = increaseButtonTaps.flatMapLatest { _ -> Observable<Event<Void>> in
+        let increaseCounter = increaseButtonTaps.flatMapLatest { _ -> Observable<Void> in
             dependencies.updateProfileCounterUseCase.execute(value: 1)
-        }.share()
+        }.ignoreErrors().share()
 
-        let decreaseCounter = decreaseButtonTaps.flatMapLatest { _ -> Observable<Event<Void>> in
+        let decreaseCounter = decreaseButtonTaps.flatMapLatest { _ -> Observable<Void> in
             dependencies.updateProfileCounterUseCase.execute(value: -1)
-        }.share()
+        }.ignoreErrors().share()
 
         // MARK: Setup outputs
 
         self.output = Output(
-            increaseCounter: increaseCounter.compactMap { $0.element }.asDriver(),
-            decreaseCounter: decreaseCounter.compactMap { $0.element }.asDriver()
+            increaseCounter: increaseCounter.asDriver(),
+            decreaseCounter: decreaseCounter.asDriver()
         )
 
         super.init()

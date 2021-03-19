@@ -41,9 +41,9 @@ extension AuthAPI: TargetType {
     var sampleData: Data {
         switch self {
         case .login:
-            return stub(NETAuthToken.self)
+            return NETAuthToken.stub
         case .registration:
-            return stub(NETUser.self)
+            return NETUser.stub
         }
     }
 }

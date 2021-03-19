@@ -7,6 +7,9 @@ import RxCocoa
 import RxSwift
 import XCTest
 
+// Global variable to easily check the order of events across all providers
+var providerEvents: [ProviderEvent] = []
+
 class BaseTestCase: XCTestCase {
 
     var scheduler: TestScheduler! // swiftlint:disable:this implicitly_unwrapped_optional
@@ -15,6 +18,7 @@ class BaseTestCase: XCTestCase {
     override func setUp() {
         super.setUp()
 
+        providerEvents = []
         scheduler = TestScheduler(initialClock: 0)
         disposeBag = DisposeBag()
     }

@@ -37,13 +37,13 @@ final class UsersViewModel: ViewModel, ViewModelType {
 
         // MARK: Transformations
         
-        let users = dependencies.getUsersUseCase.execute().share(replay: 1)
+        let users = dependencies.getUsersUseCase.execute().ignoreErrors().share(replay: 1)
         
         let activity = ActivityIndicator()
         
-        let refreshUsers = page.flatMap { page -> Observable<Event<Int>> in
+        let refreshUsers = page.flatMap { page -> Observable<Int> in
             dependencies.refreshUsersUseCase.execute(page: page).trackActivity(activity)
-        }.share()
+        }.ignoreErrors().share()
         
         let isRefreshing = Observable<Bool>.merge(
             activity.asObservable(),
@@ -54,7 +54,7 @@ final class UsersViewModel: ViewModel, ViewModelType {
         
         self.output = Output(
             users: users.asDriver(),
-            loadedCount: refreshUsers.compactMap { $0.element }.asDriver(),
+            loadedCount: refreshUsers.asDriver(),
             isRefreshing: isRefreshing.asDriver()
         )
         

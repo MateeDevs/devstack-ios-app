@@ -7,10 +7,14 @@ import CoreLocation
 import RxSwift
 
 public protocol HasGetCurrentLocationUseCase {
-    var getCurrentLocationUseCase: GetCurrentLocationUseCase { get }
+    var getCurrentLocationUseCase: GetCurrentLocationUseCaseType { get }
 }
 
-public struct GetCurrentLocationUseCase {
+public protocol GetCurrentLocationUseCaseType {
+    func execute() -> Observable<CLLocation>
+}
+
+public struct GetCurrentLocationUseCase: GetCurrentLocationUseCaseType {
     
     public typealias Dependencies = HasLocationRepository
     

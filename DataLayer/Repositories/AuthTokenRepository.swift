@@ -5,7 +5,7 @@
 
 import RxSwift
 
-public class AuthTokenRepository: AuthTokenRepositoryType {
+public struct AuthTokenRepository: AuthTokenRepositoryType {
 
     public typealias Dependencies =
         HasDatabaseProvider &

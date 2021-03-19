@@ -9,8 +9,6 @@ import RxSwift
 public extension ObservableType {
     /// Helper that just completes on error
     func asDriver() -> Driver<Element> {
-        asDriver { _ in
-            Driver.empty()
-        }
+        asDriver { _ in .empty() }
     }
 }

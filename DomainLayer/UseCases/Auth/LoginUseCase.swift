@@ -6,10 +6,14 @@
 import RxSwift
 
 public protocol HasLoginUseCase {
-    var loginUseCase: LoginUseCase { get }
+    var loginUseCase: LoginUseCaseType { get }
 }
 
-public struct LoginUseCase {
+public protocol LoginUseCaseType {
+    func execute(_ data: LoginData) -> Observable<Void>
+}
+
+public struct LoginUseCase: LoginUseCaseType {
     
     public typealias Dependencies = HasAuthTokenRepository
     
@@ -19,7 +23,7 @@ public struct LoginUseCase {
         self.dependencies = dependencies
     }
     
-    public func execute(_ data: LoginData) -> Observable<Event<Void>> {
-        dependencies.authTokenRepository.create(data).mapToVoid().materialize()
+    public func execute(_ data: LoginData) -> Observable<Void> {
+        dependencies.authTokenRepository.create(data).mapToVoid()
     }
 }

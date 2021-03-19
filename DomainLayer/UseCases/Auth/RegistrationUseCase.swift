@@ -6,10 +6,14 @@
 import RxSwift
 
 public protocol HasRegistrationUseCase {
-    var registrationUseCase: RegistrationUseCase { get }
+    var registrationUseCase: RegistrationUseCaseType { get }
 }
 
-public struct RegistrationUseCase {
+public protocol RegistrationUseCaseType {
+    func execute(_ data: RegistrationData) -> Observable<Void>
+}
+
+public struct RegistrationUseCase: RegistrationUseCaseType {
     
     public typealias Dependencies = HasUserRepository
     
@@ -19,7 +23,7 @@ public struct RegistrationUseCase {
         self.dependencies = dependencies
     }
     
-    public func execute(_ data: RegistrationData) -> Observable<Event<Void>> {
-        dependencies.userRepository.create(data).mapToVoid().materialize()
+    public func execute(_ data: RegistrationData) -> Observable<Void> {
+        dependencies.userRepository.create(data).mapToVoid()
     }
 }

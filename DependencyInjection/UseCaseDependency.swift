@@ -8,55 +8,48 @@ import DomainLayer
 
 // swiftlint:disable superfluous_disable_command file_length
 
-extension UseCaseDependency: HasNoUseCase {}
+public protocol UseCaseDependencyType: HasNoUseCase,
+    HasLoginUseCase,
+    HasLogoutUseCase,
+    HasRegistrationUseCase,
+    HasGetCurrentLocationUseCase,
+    HasGetProfileUseCase,
+    HasGetProfileIdUseCase,
+    HasRefreshProfileUseCase,
+    HasUpdateProfileCounterUseCase,
+    HasHandlePushNotificationUseCase,
+    HasRegisterForPushNotificationsUseCase,
+    HasGetRemoteConfigValueUseCase,
+    HasGetUserUseCase,
+    HasRefreshUserUseCase,
+    HasUpdateUserUseCase,
+    HasGetUsersUseCase,
+    HasRefreshUsersUseCase {}
 
-extension UseCaseDependency: HasLoginUseCase {}
-extension UseCaseDependency: HasLogoutUseCase {}
-extension UseCaseDependency: HasRegistrationUseCase {}
-
-extension UseCaseDependency: HasGetCurrentLocationUseCase {}
-
-extension UseCaseDependency: HasGetProfileUseCase {}
-extension UseCaseDependency: HasGetProfileIdUseCase {}
-extension UseCaseDependency: HasRefreshProfileUseCase {}
-extension UseCaseDependency: HasUpdateProfileCounterUseCase {}
-
-extension UseCaseDependency: HasHandlePushNotificationUseCase {}
-extension UseCaseDependency: HasRegisterForPushNotificationsUseCase {}
-
-extension UseCaseDependency: HasGetRemoteConfigValueUseCase {}
-
-extension UseCaseDependency: HasGetUserUseCase {}
-extension UseCaseDependency: HasRefreshUserUseCase {}
-extension UseCaseDependency: HasUpdateUserUseCase {}
-
-extension UseCaseDependency: HasGetUsersUseCase {}
-extension UseCaseDependency: HasRefreshUsersUseCase {}
-
-public struct UseCaseDependency {
+public struct UseCaseDependency: UseCaseDependencyType {
     
-    public let loginUseCase: LoginUseCase
-    public let logoutUseCase: LogoutUseCase
-    public let registrationUseCase: RegistrationUseCase
+    public let loginUseCase: LoginUseCaseType
+    public let logoutUseCase: LogoutUseCaseType
+    public let registrationUseCase: RegistrationUseCaseType
     
-    public let getCurrentLocationUseCase: GetCurrentLocationUseCase
+    public let getCurrentLocationUseCase: GetCurrentLocationUseCaseType
     
-    public let getProfileUseCase: GetProfileUseCase
-    public let getProfileIdUseCase: GetProfileIdUseCase
-    public let refreshProfileUseCase: RefreshProfileUseCase
-    public let updateProfileCounterUseCase: UpdateProfileCounterUseCase
+    public let getProfileUseCase: GetProfileUseCaseType
+    public let getProfileIdUseCase: GetProfileIdUseCaseType
+    public let refreshProfileUseCase: RefreshProfileUseCaseType
+    public let updateProfileCounterUseCase: UpdateProfileCounterUseCaseType
     
-    public let handlePushNotificationUseCase: HandlePushNotificationUseCase
-    public let registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCase
+    public let handlePushNotificationUseCase: HandlePushNotificationUseCaseType
+    public let registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCaseType
     
-    public let getRemoteConfigValueUseCase: GetRemoteConfigValueUseCase
+    public let getRemoteConfigValueUseCase: GetRemoteConfigValueUseCaseType
     
-    public let getUserUseCase: GetUserUseCase
-    public let refreshUserUseCase: RefreshUserUseCase
-    public let updateUserUseCase: UpdateUserUseCase
+    public let getUserUseCase: GetUserUseCaseType
+    public let refreshUserUseCase: RefreshUserUseCaseType
+    public let updateUserUseCase: UpdateUserUseCaseType
     
-    public let getUsersUseCase: GetUsersUseCase
-    public let refreshUsersUseCase: RefreshUsersUseCase
+    public let getUsersUseCase: GetUsersUseCaseType
+    public let refreshUsersUseCase: RefreshUsersUseCaseType
     
     public init(dependencies: RepositoryDependency) {
         self.loginUseCase = LoginUseCase(dependencies: dependencies)

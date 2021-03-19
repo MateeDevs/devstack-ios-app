@@ -3,25 +3,33 @@
 //  Copyright © 2020 Matee. All rights reserved.
 //
 
-class KeychainProviderMock: KeychainProviderType {
+class KeychainProviderMock {
+    
+    var storage: [KeychainCoding: String] = [:]
 
-    var savedKeys: [KeychainCoding] = []
+    init(_ storage: [KeychainCoding: String] = [:]) {
+        self.storage = storage
+    }
+}
 
+extension KeychainProviderMock: KeychainProviderType {
     func save(_ key: KeychainCoding, value: String) {
-        print("KeychainProviderMock.save called")
-        savedKeys.append(key)
+        providerEvents.append(.keychainSave(key))
+        storage[key] = value
     }
 
     func get(_ key: KeychainCoding) -> String? {
-        print("KeychainProviderMock.get called")
-        return nil
+        providerEvents.append(.keychainGet(key))
+        return storage[key]
     }
 
     func delete(_ key: KeychainCoding) {
-        print("KeychainProviderMock.delete called")
+        providerEvents.append(.keychainDelete(key))
+        storage.removeValue(forKey: key)
     }
 
     func deleteAll() {
-        print("KeychainProviderMock.deleteAll called")
+        providerEvents.append(.keychainDeleteAll)
+        storage = [:]
     }
 }

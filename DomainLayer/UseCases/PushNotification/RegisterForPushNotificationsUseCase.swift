@@ -6,10 +6,14 @@
 import UserNotifications
 
 public protocol HasRegisterForPushNotificationsUseCase {
-    var registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCase { get }
+    var registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCaseType { get }
 }
 
-public struct RegisterForPushNotificationsUseCase {
+public protocol RegisterForPushNotificationsUseCaseType {
+    func execute(options: UNAuthorizationOptions, completionHandler: @escaping (Bool, Error?) -> Void)
+}
+
+public struct RegisterForPushNotificationsUseCase: RegisterForPushNotificationsUseCaseType {
     
     public typealias Dependencies = HasPushNotificationsRepository
     
@@ -19,10 +23,7 @@ public struct RegisterForPushNotificationsUseCase {
         self.dependencies = dependencies
     }
 
-    public func execute(
-        options: UNAuthorizationOptions = [.alert, .badge, .sound],
-        completionHandler: @escaping (Bool, Error?) -> Void = { _, _ in }
-    ) {
+    public func execute(options: UNAuthorizationOptions, completionHandler: @escaping (Bool, Error?) -> Void) {
         dependencies.pushNotificationsRepository.register(
             options: options,
             completionHandler: completionHandler

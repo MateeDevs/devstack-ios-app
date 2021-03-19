@@ -6,14 +6,14 @@
 import DataLayer
 import DomainLayer
 
-extension RepositoryDependency: HasNoRepository {}
-extension RepositoryDependency: HasAuthTokenRepository {}
-extension RepositoryDependency: HasLocationRepository {}
-extension RepositoryDependency: HasPushNotificationsRepository {}
-extension RepositoryDependency: HasRemoteConfigRepository {}
-extension RepositoryDependency: HasUserRepository {}
+public protocol RepositoryDependencyType: HasNoRepository,
+    HasAuthTokenRepository,
+    HasLocationRepository,
+    HasPushNotificationsRepository,
+    HasRemoteConfigRepository,
+    HasUserRepository {}
 
-public struct RepositoryDependency {
+public struct RepositoryDependency: RepositoryDependencyType {
     
     public let authTokenRepository: AuthTokenRepositoryType
     public let locationRepository: LocationRepositoryType

@@ -13,7 +13,7 @@ class DatabaseProviderMock: DatabaseProviderType {
         id: String,
         primaryKeyName: String
     ) -> Observable<T> where T: Object {
-        print("DatabaseProviderMock.observableObject called")
+        providerEvents.append(.databaseGet(DatabaseObjectType(rawValue: String(describing: T.self)) ?? .undefined))
         return .empty()
     }
 
@@ -23,21 +23,21 @@ class DatabaseProviderMock: DatabaseProviderType {
         sortBy: String?,
         ascending: Bool
     ) -> Observable<[T]> where T: Object {
-        print("DatabaseProviderMock.observableCollection called")
+        providerEvents.append(.databaseGet(DatabaseObjectType(rawValue: String(describing: [T].self)) ?? .undefined))
         return .empty()
     }
     
     func save<T>(_ object: T, model: UpdateModel) -> Observable<T> where T: Object {
-        print("DatabaseProviderMock.save called")
+        providerEvents.append(.databaseSave(DatabaseObjectType(rawValue: String(describing: T.self)) ?? .undefined))
         return .empty()
     }
     
     func save<T>(_ objects: [T], model: UpdateModel) -> Observable<[T]> where T: Object {
-        print("DatabaseProviderMock.save called")
+        providerEvents.append(.databaseSave(DatabaseObjectType(rawValue: String(describing: [T].self)) ?? .undefined))
         return .empty()
     }
 
     func deleteAll() {
-        print("DatabaseProviderMock.deleteAll called")
+        providerEvents.append(.databaseDeleteAll)
     }
 }
