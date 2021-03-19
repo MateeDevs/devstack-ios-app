@@ -4,6 +4,7 @@
 //
 
 extension LoginData {
-    static let valid = LoginData(email: "email", password: "validPass")
-    static let invalid = LoginData(email: "email", password: "invalidPass")
+    static let empty = LoginData(email: "", password: "")
+    static let valid = LoginData(email: "email@email.com", password: "validPassword")
+    static let invalidPassword = LoginData(email: "email@email.com", password: "invalidPassword")
 }

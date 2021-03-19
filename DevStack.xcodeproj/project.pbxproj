@@ -22,6 +22,11 @@
 		4534C20B2604192B0022ACF4 /* LoginData+Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C20A2604192B0022ACF4 /* LoginData+Stubs.swift */; };
 		454AAD1F26050B7B0098A3E1 /* SwiftyMocky in Frameworks */ = {isa = PBXBuildFile; productRef = 454AAD1E26050B7B0098A3E1 /* SwiftyMocky */; };
 		454AAD2026050B800098A3E1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4534C1C42603D6AD0022ACF4 /* XCTest.framework */; };
+		4534C249260427A40022ACF4 /* RegistrationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C248260427A40022ACF4 /* RegistrationViewModelTests.swift */; };
+		4534C2512604280D0022ACF4 /* RegistrationData+Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C2502604280D0022ACF4 /* RegistrationData+Stubs.swift */; };
+		4534C25926042E780022ACF4 /* UsersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C25826042E780022ACF4 /* UsersViewModelTests.swift */; };
+		454AAD10260508930098A3E1 /* SwiftyMocky in Frameworks */ = {isa = PBXBuildFile; productRef = 454AAD0F260508930098A3E1 /* SwiftyMocky */; };
+		454AAD11260508990098A3E1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4534C1C42603D6AD0022ACF4 /* XCTest.framework */; };
 		454AC06524A221B300D6F367 /* ProviderDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454AC06424A221B300D6F367 /* ProviderDependencyMock.swift */; };
 		454D163625FC21FD00920CF0 /* Decodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D163525FC21FD00920CF0 /* Decodable+Extensions.swift */; };
 		4557195824A15C0200FB24CA /* AuthTokenRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195724A15C0200FB24CA /* AuthTokenRepositoryTests.swift */; };
@@ -427,6 +432,9 @@
 		4534C1C42603D6AD0022ACF4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4534C1FB260414350022ACF4 /* NetworkProviderMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProviderMock.swift; sourceTree = "<group>"; };
 		4534C20A2604192B0022ACF4 /* LoginData+Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginData+Stubs.swift"; sourceTree = "<group>"; };
+		4534C248260427A40022ACF4 /* RegistrationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModelTests.swift; sourceTree = "<group>"; };
+		4534C2502604280D0022ACF4 /* RegistrationData+Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegistrationData+Stubs.swift"; sourceTree = "<group>"; };
+		4534C25826042E780022ACF4 /* UsersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModelTests.swift; sourceTree = "<group>"; };
 		453D408325EDBB750094ADD7 /* Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Debug.entitlements; sourceTree = "<group>"; };
 		453D408425EDBB750094ADD7 /* Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Release.entitlements; sourceTree = "<group>"; };
 		454AC06424A221B300D6F367 /* ProviderDependencyMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDependencyMock.swift; sourceTree = "<group>"; };
@@ -705,11 +713,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				454AAD2026050B800098A3E1 /* XCTest.framework in Frameworks */,
+				454AAD11260508990098A3E1 /* XCTest.framework in Frameworks */,
 				4534C11026036AA10022ACF4 /* DataLayer.framework in Frameworks */,
 				4534C11126036AA10022ACF4 /* DependencyInjection.framework in Frameworks */,
 				4534C11226036AA10022ACF4 /* DomainLayer.framework in Frameworks */,
 				4534C11326036AA10022ACF4 /* PresentationLayer.framework in Frameworks */,
 				454AAD1F26050B7B0098A3E1 /* SwiftyMocky in Frameworks */,
+				454AAD10260508930098A3E1 /* SwiftyMocky in Frameworks */,
 				456E747425F837D7007D9A6D /* SPMDependencies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -815,6 +825,7 @@
 			isa = PBXGroup;
 			children = (
 				4534C20A2604192B0022ACF4 /* LoginData+Stubs.swift */,
+				4534C2502604280D0022ACF4 /* RegistrationData+Stubs.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -875,6 +886,8 @@
 			isa = PBXGroup;
 			children = (
 				4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */,
+				4534C248260427A40022ACF4 /* RegistrationViewModelTests.swift */,
+				4534C25826042E780022ACF4 /* UsersViewModelTests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1904,6 +1917,7 @@
 			name = Tests;
 			packageProductDependencies = (
 				454AAD1E26050B7B0098A3E1 /* SwiftyMocky */,
+				454AAD0F260508930098A3E1 /* SwiftyMocky */,
 			);
 			productName = DevStackTests;
 			productReference = 4557194924A155ED00FB24CA /* Tests.xctest */;
@@ -2327,15 +2341,18 @@
 				45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */,
 				4534C20B2604192B0022ACF4 /* LoginData+Stubs.swift in Sources */,
 				45E100F525E6B2A00082CABA /* RxTest.swift in Sources */,
+				4534C25926042E780022ACF4 /* UsersViewModelTests.swift in Sources */,
 				451FAFE425FC107600171EDB /* LoginUseCaseTests.swift in Sources */,
 				45E100FA25E6B2A00082CABA /* Recorded+Event.swift in Sources */,
 				4534C023260209F30022ACF4 /* UseCaseDependencyMock.swift in Sources */,
+				4534C2512604280D0022ACF4 /* RegistrationData+Stubs.swift in Sources */,
 				45E100FC25E6B2A00082CABA /* Deprecated.swift in Sources */,
 				45E100F625E6B2A00082CABA /* TestableObserver.swift in Sources */,
 				45E100FB25E6B2A00082CABA /* Any+Equatable.swift in Sources */,
 				4534C1A32603C98F0022ACF4 /* Mocks.swift in Sources */,
 				456E73E925F827E4007D9A6D /* Tests.swift in Sources */,
 				4534C1FC260414350022ACF4 /* NetworkProviderMock.swift in Sources */,
+				4534C249260427A40022ACF4 /* RegistrationViewModelTests.swift in Sources */,
 				4557195D24A15C3200FB24CA /* LoginViewModelTests.swift in Sources */,
 				45E1011325E6B2DC0082CABA /* TestScheduler.swift in Sources */,
 				4557195824A15C0200FB24CA /* AuthTokenRepositoryTests.swift in Sources */,
@@ -4538,6 +4555,7 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		454AAD1E26050B7B0098A3E1 /* SwiftyMocky */ = {
+		454AAD0F260508930098A3E1 /* SwiftyMocky */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4534C17D2603BF050022ACF4 /* XCRemoteSwiftPackageReference "SwiftyMocky" */;
 			productName = SwiftyMocky;

@@ -3,20 +3,20 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-public struct RegistrationData {
+public struct RegistrationData: Equatable {
     public let email: String
-    public let pass: String
+    public let password: String
     public let firstName: String
     public let lastName: String
     
     public init(
         email: String,
-        pass: String,
+        password: String,
         firstName: String,
         lastName: String
     ) {
         self.email = email
-        self.pass = pass
+        self.password = password
         self.firstName = firstName
         self.lastName = lastName
     }

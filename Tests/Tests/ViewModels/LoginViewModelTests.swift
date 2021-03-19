@@ -25,7 +25,7 @@ class LoginViewModelTests: BaseTestCase {
     
     private func setupLoginUseCase() {
         Given(loginUseCase, .execute(
-            .value(.invalid),
+            .value(.invalidPassword),
             willReturn: .error(RepositoryError(statusCode: StatusCode.httpUnathorized, message: ""))
         ))
         Given(loginUseCase, .execute(.any, willReturn: .just(())))
@@ -34,13 +34,13 @@ class LoginViewModelTests: BaseTestCase {
     // MARK: Inputs and outputs
 
     private struct Input {
-        var loginData: LoginData = LoginData(email: "", password: "")
+        var loginData: LoginData = .empty
         var loginButtonTaps: [Void] = []
         var registerButtonTaps: [Void] = []
 
         static let loginEmpty = Input(loginButtonTaps: [()])
         static let loginValid = Input(loginData: .valid, loginButtonTaps: [()])
-        static let loginInvalid = Input(loginData: .invalid, loginButtonTaps: [()])
+        static let loginInvalidPassword = Input(loginData: .invalidPassword, loginButtonTaps: [()])
         static let register = Input(registerButtonTaps: [()])
     }
     
@@ -75,7 +75,7 @@ class LoginViewModelTests: BaseTestCase {
     // MARK: Tests
 
     func testLoginEmpty() {
-        let output = generateOutput(for: Input.loginEmpty)
+        let output = generateOutput(for: .loginEmpty)
         
         scheduler.start()
         
@@ -90,7 +90,7 @@ class LoginViewModelTests: BaseTestCase {
     }
 
     func testLoginValid() {
-        let output = generateOutput(for: Input.loginValid)
+        let output = generateOutput(for: .loginValid)
         
         scheduler.start()
         
@@ -109,8 +109,8 @@ class LoginViewModelTests: BaseTestCase {
         Verify(loginUseCase, 1, .execute(.value(.valid)))
     }
 
-    func testLoginInvalid() {
-        let output = generateOutput(for: Input.loginInvalid)
+    func testLoginInvalidPassword() {
+        let output = generateOutput(for: .loginInvalidPassword)
         
         scheduler.start()
         
@@ -124,11 +124,11 @@ class LoginViewModelTests: BaseTestCase {
             .next(0, false),
             .next(0, true)
         ])
-        Verify(loginUseCase, 1, .execute(.value(.invalid)))
+        Verify(loginUseCase, 1, .execute(.value(.invalidPassword)))
     }
 
     func testRegister() {
-        let output = generateOutput(for: Input.register)
+        let output = generateOutput(for: .register)
         
         scheduler.start()
         
