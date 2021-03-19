@@ -6,7 +6,7 @@
 import RxCocoa
 import RxSwift
 
-final class CounterControlViewModel: ViewModel, ViewModelType {
+final class CounterControlViewModel: BaseViewModel, ViewModel {
 
     typealias Dependencies = HasUpdateProfileCounterUseCase
 

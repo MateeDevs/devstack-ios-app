@@ -6,7 +6,7 @@
 import RxCocoa
 import RxSwift
 
-final class CounterDisplayViewModel: ViewModel, ViewModelType {
+final class CounterDisplayViewModel: BaseViewModel, ViewModel {
 
     typealias Dependencies = HasGetProfileUseCase
 

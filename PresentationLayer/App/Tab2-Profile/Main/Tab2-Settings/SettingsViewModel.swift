@@ -7,7 +7,7 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-final class SettingsViewModel: ViewModel, ViewModelType {
+final class SettingsViewModel: BaseViewModel, ViewModel {
     
     typealias Dependencies = HasNoUseCase
     

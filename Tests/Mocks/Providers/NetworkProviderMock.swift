@@ -39,7 +39,7 @@ class NetworkProviderMock {
     }
 }
 
-extension NetworkProviderMock: NetworkProviderType {
+extension NetworkProviderMock: NetworkProvider {
     
     var delegate: NetworkProviderDelegate? {
         get {

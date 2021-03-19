@@ -4,7 +4,7 @@ Tests:
   sources:
     include:
     - ./.
-  output: ./Tests/Mocks.swift
+  output: ./Tests/Mocks/Mocks.swift
   targets:
   - Tests
   import:

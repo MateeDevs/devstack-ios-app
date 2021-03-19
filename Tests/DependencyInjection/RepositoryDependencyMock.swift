@@ -3,20 +3,20 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-struct RepositoryDependencyMock: RepositoryDependencyType {
+struct RepositoryDependencyMock: RepositoryDependency {
     
-    let authTokenRepository: AuthTokenRepositoryType
-    let locationRepository: LocationRepositoryType
-    let pushNotificationsRepository: PushNotificationsRepositoryType
-    let remoteConfigRepository: RemoteConfigRepositoryType
-    let userRepository: UserRepositoryType
+    let authTokenRepository: AuthTokenRepository
+    let locationRepository: LocationRepository
+    let pushNotificationsRepository: PushNotificationsRepository
+    let remoteConfigRepository: RemoteConfigRepository
+    let userRepository: UserRepository
     
     init(
-        authTokenRepository: AuthTokenRepositoryType = AuthTokenRepositoryTypeMock(),
-        locationRepository: LocationRepositoryType = LocationRepositoryTypeMock(),
-        pushNotificationsRepository: PushNotificationsRepositoryType = PushNotificationsRepositoryTypeMock(),
-        remoteConfigRepository: RemoteConfigRepositoryType = RemoteConfigRepositoryTypeMock(),
-        userRepository: UserRepositoryType = UserRepositoryTypeMock()
+        authTokenRepository: AuthTokenRepository = AuthTokenRepositoryMock(),
+        locationRepository: LocationRepository = LocationRepositoryMock(),
+        pushNotificationsRepository: PushNotificationsRepository = PushNotificationsRepositoryMock(),
+        remoteConfigRepository: RemoteConfigRepository = RemoteConfigRepositoryMock(),
+        userRepository: UserRepository = UserRepositoryMock()
     ) {
         self.authTokenRepository = authTokenRepository
         self.locationRepository = locationRepository

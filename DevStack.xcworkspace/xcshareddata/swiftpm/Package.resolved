@@ -47,15 +47,6 @@
         }
       },
       {
-        "package": "DevstackKmpShared",
-        "repositoryURL": "git@github.com:MateeDevs/devstack-kmp-app.git",
-        "state": {
-          "branch": "develop",
-          "revision": "c6eb05371e899b6c9aa1817379cd04940a5547ce",
-          "version": null
-        }
-      },
-      {
         "package": "Firebase",
         "repositoryURL": "https://github.com/firebase/firebase-ios-sdk",
         "state": {

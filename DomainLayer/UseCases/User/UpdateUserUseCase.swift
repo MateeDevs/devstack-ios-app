@@ -6,14 +6,14 @@
 import RxSwift
 
 public protocol HasUpdateUserUseCase {
-    var updateUserUseCase: UpdateUserUseCaseType { get }
+    var updateUserUseCase: UpdateUserUseCase { get }
 }
 
-public protocol UpdateUserUseCaseType: AutoMockable {
+public protocol UpdateUserUseCase: AutoMockable {
     func execute(user: User) -> Observable<Void>
 }
 
-public struct UpdateUserUseCase: UpdateUserUseCaseType {
+public struct UpdateUserUseCaseImpl: UpdateUserUseCase {
     
     public typealias Dependencies = HasUserRepository
     

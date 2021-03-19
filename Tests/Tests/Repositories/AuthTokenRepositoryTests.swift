@@ -14,7 +14,7 @@ class AuthTokenRepositoryTests: BaseTestCase {
     // MARK: Dependencies
     
     private let databaseProvider = DatabaseProviderMock()
-    private let keychainProvider = KeychainProviderTypeMock()
+    private let keychainProvider = KeychainProviderMock()
     private let networkProvider = NetworkProviderMock()
     
     private func setupDependencies() -> ProviderDependencyMock {
@@ -35,7 +35,7 @@ class AuthTokenRepositoryTests: BaseTestCase {
     // MARK: Tests
     
     func testCreate() {
-        let repository = AuthTokenRepository(dependencies: setupDependencies())
+        let repository = AuthTokenRepositoryImpl(dependencies: setupDependencies())
         let output = scheduler.createObserver(AuthToken.self)
         
         repository.create(.valid).asDriver().drive(output).disposed(by: disposeBag)
@@ -51,7 +51,7 @@ class AuthTokenRepositoryTests: BaseTestCase {
     }
     
     func testRead() {
-        let repository = AuthTokenRepository(dependencies: setupDependencies())
+        let repository = AuthTokenRepositoryImpl(dependencies: setupDependencies())
         
         let output = repository.read()
         
@@ -61,7 +61,7 @@ class AuthTokenRepositoryTests: BaseTestCase {
     }
     
     func testDelete() {
-        let repository = AuthTokenRepository(dependencies: setupDependencies())
+        let repository = AuthTokenRepositoryImpl(dependencies: setupDependencies())
         
         repository.delete()
         

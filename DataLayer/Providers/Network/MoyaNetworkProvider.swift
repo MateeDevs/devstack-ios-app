@@ -10,8 +10,8 @@ import UIKit
 
 public struct MoyaNetworkProvider {
     
-    private let keychain: KeychainProviderType
-    private let database: DatabaseProviderType
+    private let keychain: KeychainProvider
+    private let database: DatabaseProvider
     
     private weak var _delegate: NetworkProviderDelegate?
 
@@ -19,7 +19,7 @@ public struct MoyaNetworkProvider {
     /// Idea taken from [Moya - ComposingProvider](https://github.com/Moya/Moya/blob/master/docs/Examples/ComposingProvider.md)
     private let moyaProvider: MoyaProvider<MultiTarget>
 
-    public init(keychainProvider: KeychainProviderType, databaseProvider: DatabaseProviderType) {
+    public init(keychainProvider: KeychainProvider, databaseProvider: DatabaseProvider) {
         self.keychain = keychainProvider
         self.database = databaseProvider
         
@@ -77,7 +77,7 @@ public struct MoyaNetworkProvider {
     }
 }
 
-extension MoyaNetworkProvider: NetworkProviderType {
+extension MoyaNetworkProvider: NetworkProvider {
     
     public var delegate: NetworkProviderDelegate? {
         get {

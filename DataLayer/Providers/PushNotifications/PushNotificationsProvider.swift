@@ -6,10 +6,10 @@
 import UserNotifications
 
 public protocol HasPushNotificationsProvider {
-    var pushNotificationsProvider: PushNotificationsProviderType { get }
+    var pushNotificationsProvider: PushNotificationsProvider { get }
 }
 
-public protocol PushNotificationsProviderType: AutoMockable {
+public protocol PushNotificationsProvider: AutoMockable {
     /// Request user's authorization for push notifications
     func requestAuthorization(options: UNAuthorizationOptions, completionHandler: @escaping (Bool, Error?) -> Void)
 }

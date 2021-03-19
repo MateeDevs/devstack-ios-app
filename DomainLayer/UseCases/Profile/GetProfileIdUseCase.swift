@@ -4,14 +4,14 @@
 //
 
 public protocol HasGetProfileIdUseCase {
-    var getProfileIdUseCase: GetProfileIdUseCaseType { get }
+    var getProfileIdUseCase: GetProfileIdUseCase { get }
 }
 
-public protocol GetProfileIdUseCaseType: AutoMockable {
+public protocol GetProfileIdUseCase: AutoMockable {
     func execute() -> String?
 }
 
-public struct GetProfileIdUseCase: GetProfileIdUseCaseType {
+public struct GetProfileIdUseCaseImpl: GetProfileIdUseCase {
     
     public typealias Dependencies =
         HasAuthTokenRepository &

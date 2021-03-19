@@ -5,7 +5,7 @@
 
 import DataLayer
 
-public protocol ProviderDependencyType: HasNoProvider,
+public protocol ProviderDependency: HasNoProvider,
     HasDatabaseProvider,
     HasKeychainProvider,
     HasNetworkProvider,
@@ -13,22 +13,22 @@ public protocol ProviderDependencyType: HasNoProvider,
     HasRemoteConfigProvider,
     HasUserDefaultsProvider {}
 
-public struct ProviderDependency: ProviderDependencyType {
+public struct ProviderDependencyImpl: ProviderDependency {
 
-    public let databaseProvider: DatabaseProviderType
-    public let keychainProvider: KeychainProviderType
-    public let networkProvider: NetworkProviderType
-    public let pushNotificationsProvider: PushNotificationsProviderType
-    public let remoteConfigProvider: RemoteConfigProviderType
-    public let userDefaultsProvider: UserDefaultsProviderType
+    public let databaseProvider: DatabaseProvider
+    public let keychainProvider: KeychainProvider
+    public let networkProvider: NetworkProvider
+    public let pushNotificationsProvider: PushNotificationsProvider
+    public let remoteConfigProvider: RemoteConfigProvider
+    public let userDefaultsProvider: UserDefaultsProvider
 
     public init(
-        databaseProvider: DatabaseProviderType,
-        keychainProvider: KeychainProviderType,
-        networkProvider: NetworkProviderType,
-        pushNotificationsProvider: PushNotificationsProviderType,
-        remoteConfigProvider: RemoteConfigProviderType,
-        userDefaultsProvider: UserDefaultsProviderType
+        databaseProvider: DatabaseProvider,
+        keychainProvider: KeychainProvider,
+        networkProvider: NetworkProvider,
+        pushNotificationsProvider: PushNotificationsProvider,
+        remoteConfigProvider: RemoteConfigProvider,
+        userDefaultsProvider: UserDefaultsProvider
     ) {
         self.databaseProvider = databaseProvider
         self.keychainProvider = keychainProvider

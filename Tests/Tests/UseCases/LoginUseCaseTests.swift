@@ -13,7 +13,7 @@ class LoginUseCaseTests: BaseTestCase {
     
     // MARK: Dependencies
     
-    private let authTokenRepository = AuthTokenRepositoryTypeMock()
+    private let authTokenRepository = AuthTokenRepositoryMock()
     
     private func setupDependencies() -> RepositoryDependencyMock {
         setupAuthTokenRepository()
@@ -30,7 +30,7 @@ class LoginUseCaseTests: BaseTestCase {
     // MARK: Tests
 
     func testExecute() {
-        let useCase = LoginUseCase(dependencies: setupDependencies())
+        let useCase = LoginUseCaseImpl(dependencies: setupDependencies())
         let output = scheduler.createObserver(Bool.self)
         
         useCase.execute(.valid).map { _ in true }.asDriver().drive(output).disposed(by: disposeBag)

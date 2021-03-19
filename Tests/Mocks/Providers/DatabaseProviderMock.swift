@@ -6,7 +6,7 @@
 import RealmSwift
 import RxSwift
 
-class DatabaseProviderMock: DatabaseProviderType {
+class DatabaseProviderMock: DatabaseProvider {
 
     func observableObject<T>(
         _ type: T.Type,

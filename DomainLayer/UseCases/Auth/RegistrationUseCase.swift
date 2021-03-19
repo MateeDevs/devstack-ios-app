@@ -6,14 +6,14 @@
 import RxSwift
 
 public protocol HasRegistrationUseCase {
-    var registrationUseCase: RegistrationUseCaseType { get }
+    var registrationUseCase: RegistrationUseCase { get }
 }
 
-public protocol RegistrationUseCaseType: AutoMockable {
+public protocol RegistrationUseCase: AutoMockable {
     func execute(_ data: RegistrationData) -> Observable<Void>
 }
 
-public struct RegistrationUseCase: RegistrationUseCaseType {
+public struct RegistrationUseCaseImpl: RegistrationUseCase {
     
     public typealias Dependencies = HasUserRepository
     
