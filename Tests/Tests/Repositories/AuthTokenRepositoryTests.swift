@@ -45,9 +45,9 @@ class AuthTokenRepositoryTests: BaseTestCase {
             .next(0, NETAuthToken.stubDomain),
             .completed(0)
         ])
+        XCTAssertEqual(networkProvider.observableRequestCallsCount, 1)
         Verify(keychainProvider, 1, .save(.value(.authToken), value: .value(NETAuthToken.stubDomain.token)))
         Verify(keychainProvider, 1, .save(.value(.userId), value: .value(NETAuthToken.stubDomain.userId)))
-        // Verify network request
     }
     
     func testRead() {
@@ -66,6 +66,6 @@ class AuthTokenRepositoryTests: BaseTestCase {
         repository.delete()
         
         Verify(keychainProvider, 1, .deleteAll())
-        // Verify database deleteAll
+        XCTAssertEqual(databaseProvider.deleteAllCallsCount, 1)
     }
 }
