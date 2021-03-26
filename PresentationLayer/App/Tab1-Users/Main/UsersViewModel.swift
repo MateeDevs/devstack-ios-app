@@ -44,13 +44,18 @@ final class UsersViewModel: BaseViewModel, ViewModel {
         let refreshUsers = page.flatMap { page -> Observable<Int> in
             dependencies.refreshUsersUseCase.execute(page: page).trackActivity(activity)
         }.ignoreErrors().share()
+        
+        let isRefreshing = Observable<Bool>.merge(
+            activity.asObservable(),
+            refreshUsers.map { _ in false }
+        )
 
         // MARK: Setup outputs
         
         self.output = Output(
             users: users.asDriver(),
             loadedCount: refreshUsers.asDriver(),
-            isRefreshing: activity.asDriver()
+            isRefreshing: isRefreshing.asDriver()
         )
         
         super.init()

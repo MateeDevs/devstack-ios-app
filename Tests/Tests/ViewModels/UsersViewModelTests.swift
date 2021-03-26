@@ -40,9 +40,9 @@
     // MARK: Inputs and outputs
 
     private struct Input {
-        var page: Int = 0
+        var page: [Int] = []
         
-        static let initialLoad = Input(page: 0)
+        static let initialLoad = Input(page: [0])
     }
 
     private struct Output {
@@ -54,7 +54,7 @@
     private func generateOutput(for input: Input) -> Output {
         let viewModel = UsersViewModel(dependencies: setupDependencies())
 
-        scheduler.createColdObservable([.next(0, input.page)])
+        scheduler.createColdObservable(input.page.map { .next(0, $0) })
             .do { [weak self] _ in self?.dbStream.onNext(NETUser.stubListDomain) }
             .bind(to: viewModel.input.page).disposed(by: disposeBag)
 
@@ -82,6 +82,7 @@
         XCTAssertEqual(output.isRefreshing.events, [
             .next(0, false),
             .next(0, true),
+            .next(0, false),
             .next(0, false)
         ])
         Verify(getUsersUseCase, 1, .execute())

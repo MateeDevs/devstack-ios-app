@@ -282,6 +282,7 @@
 		459F8C2725F6D812004ACAD4 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C2625F6D812004ACAD4 /* RepositoryDependency.swift */; };
 		459F8C3725F6D86B004ACAD4 /* ProviderDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */; };
 		459F8C5225F6DA4E004ACAD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C5125F6DA4E004ACAD4 /* Constants.swift */; };
+		45B675AF260E104B00DF7387 /* UserDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675AE260E104B00DF7387 /* UserDetailViewModelTests.swift */; };
 		45D3771E25F8D07800D05900 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771B25F8D07800D05900 /* Localizable.swift */; };
 		45D3771F25F8D07800D05900 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771C25F8D07800D05900 /* Assets.swift */; };
 		45D3772025F8D07800D05900 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771D25F8D07800D05900 /* Storyboards.swift */; };
@@ -448,8 +449,6 @@
 		4558D30A20FCC8FF005BC325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		456E73DD25F817FA007D9A6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		456E73E825F827E4007D9A6D /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		4572512025E56CF400D1B745 /* PushNotificationsProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsProviderMock.swift; sourceTree = "<group>"; };
-		4575E5D525F6EF7200CCC003 /* Info+Proxyman.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info+Proxyman.plist"; sourceTree = "<group>"; };
 		4575E5D525F6EF7200CCC003 /* Info-Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Debug.plist"; sourceTree = "<group>"; };
 		4575E65525F6FA7600CCC003 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		4575E65C25F6FFA300CCC003 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
@@ -687,6 +686,7 @@
 		459F8C2625F6D812004ACAD4 /* RepositoryDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDependency.swift; sourceTree = "<group>"; };
 		459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDependency.swift; sourceTree = "<group>"; };
 		459F8C5125F6DA4E004ACAD4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		45B675AE260E104B00DF7387 /* UserDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModelTests.swift; sourceTree = "<group>"; };
 		45D3771B25F8D07800D05900 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		45D3771C25F8D07800D05900 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		45D3771D25F8D07800D05900 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
@@ -890,6 +890,7 @@
 				4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */,
 				4534C248260427A40022ACF4 /* RegistrationViewModelTests.swift */,
 				4534C25826042E780022ACF4 /* UsersViewModelTests.swift */,
+				45B675AE260E104B00DF7387 /* UserDetailViewModelTests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -940,7 +941,7 @@
 			isa = PBXGroup;
 			children = (
 				456E73DD25F817FA007D9A6D /* Info.plist */,
-				4575E5D525F6EF7200CCC003 /* Info+Proxyman.plist */,
+				4575E5D525F6EF7200CCC003 /* Info-Debug.plist */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -2384,6 +2385,7 @@
 				45E100F325E6B2A00082CABA /* XCTest+Rx.swift in Sources */,
 				45E1011425E6B2DC0082CABA /* TestSchedulerVirtualTimeConverter.swift in Sources */,
 				45E1012525E6B45C0082CABA /* Bag.swift in Sources */,
+				45B675AF260E104B00DF7387 /* UserDetailViewModelTests.swift in Sources */,
 				458C1ACD24A347E600549420 /* DatabaseProviderMock.swift in Sources */,
 				4534C14F2603706B0022ACF4 /* RepositoryDependencyMock.swift in Sources */,
 			);
