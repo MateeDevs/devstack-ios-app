@@ -35,7 +35,7 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
     private func setupBooksTab() -> UINavigationController {
         let booksNC = UINavigationController()
         booksNC.tabBarItem = UITabBarItem(
-            title: "Books",
+            title: L10n.bottom_bar_item_4,
             image: Asset.Images.usersTabBar.image,
             tag: MainTab.books.rawValue
         )

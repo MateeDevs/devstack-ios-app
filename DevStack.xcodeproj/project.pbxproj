@@ -321,8 +321,7 @@
 		45E1012525E6B45C0082CABA /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1012425E6B45C0082CABA /* Bag.swift */; };
 		45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB498224A3D7C000932918 /* BaseTestCase.swift */; };
 		48C3DF8F260215BE004CB3E1 /* KotlinUseCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DF8E260215BE004CB3E1 /* KotlinUseCase+Extensions.swift */; };
-		48C3DF9D26021612004CB3E1 /* KotlinDomain+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DF9C26021612004CB3E1 /* KotlinDomain+Extensions.swift */; };
-		48C3DFA52602165D004CB3E1 /* KmpKoinDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DFA42602165D004CB3E1 /* KmpKoinDependency.swift */; };
+		48C3DFA52602165D004CB3E1 /* KMPDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DFA42602165D004CB3E1 /* KMPDependency.swift */; };
 		48C3DFAD2602189B004CB3E1 /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 48C3DFAC2602189B004CB3E1 /* DevstackKmpShared */; };
 		48C3DFE426025312004CB3E1 /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
 		48C3DFF526025A97004CB3E1 /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 48C3DFF426025A97004CB3E1 /* DevstackKmpShared */; };
@@ -759,8 +758,7 @@
 		45E1012425E6B45C0082CABA /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		45FB498224A3D7C000932918 /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		48C3DF8E260215BE004CB3E1 /* KotlinUseCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KotlinUseCase+Extensions.swift"; sourceTree = "<group>"; };
-		48C3DF9C26021612004CB3E1 /* KotlinDomain+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KotlinDomain+Extensions.swift"; sourceTree = "<group>"; };
-		48C3DFA42602165D004CB3E1 /* KmpKoinDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KmpKoinDependency.swift; sourceTree = "<group>"; };
+		48C3DFA42602165D004CB3E1 /* KMPDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMPDependency.swift; sourceTree = "<group>"; };
 		48C3E01026025B68004CB3E1 /* BooksFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksFlowController.swift; sourceTree = "<group>"; };
 		48C3E07A260262AB004CB3E1 /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
 		48C3E07B260262AB004CB3E1 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
@@ -1500,7 +1498,6 @@
 			children = (
 				459F86A125F66A49004ACAD4 /* Observable+Extensions.swift */,
 				48C3DF8E260215BE004CB3E1 /* KotlinUseCase+Extensions.swift */,
-				48C3DF9C26021612004CB3E1 /* KotlinDomain+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1935,7 +1932,7 @@
 				459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */,
 				459F8BE625F6D67F004ACAD4 /* DependencyInjection.h */,
 				459F8BE725F6D67F004ACAD4 /* Info.plist */,
-				48C3DFA42602165D004CB3E1 /* KmpKoinDependency.swift */,
+				48C3DFA42602165D004CB3E1 /* KMPDependency.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -2658,7 +2655,6 @@
 				459F86CD25F66C69004ACAD4 /* StatusCode.swift in Sources */,
 				45821AD025F2694800D587EB /* RegistrationUseCase.swift in Sources */,
 				45821ABE25F2691900D587EB /* LoginUseCase.swift in Sources */,
-				48C3DF9D26021612004CB3E1 /* KotlinDomain+Extensions.swift in Sources */,
 				45821B4E25F26ADC00D587EB /* GetUsersUseCase.swift in Sources */,
 				459F873225F69A8B004ACAD4 /* Environment.swift in Sources */,
 				459F8C5225F6DA4E004ACAD4 /* Constants.swift in Sources */,
@@ -2796,7 +2792,7 @@
 			files = (
 				459F8C3725F6D86B004ACAD4 /* ProviderDependency.swift in Sources */,
 				459F8C2725F6D812004ACAD4 /* RepositoryDependency.swift in Sources */,
-				48C3DFA52602165D004CB3E1 /* KmpKoinDependency.swift in Sources */,
+				48C3DFA52602165D004CB3E1 /* KMPDependency.swift in Sources */,
 				459F8C0525F6D733004ACAD4 /* UseCaseDependency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4749,7 +4745,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MateeDevs/devstack-kmp-app.git";
 			requirement = {
-				branch = "feature/swift-package-intergration";
+				branch = develop;
 				kind = branch;
 			};
 		};

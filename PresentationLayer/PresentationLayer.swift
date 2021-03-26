@@ -3,5 +3,5 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-@_exported import DevstackKmpShared
+@_exported import class DevstackKmpShared.Book
 @_exported import DomainLayer

@@ -56,7 +56,7 @@ final class BooksViewController: BaseTableViewController<Book> {
 
     override func setupUI() {
         super.setupUI()
-        navigationItem.title = "Books"
+        navigationItem.title = L10n.books_view_toolbar_title
     }
 
     // MARK: TableView methods

@@ -40,12 +40,12 @@ final class BooksViewModel: ViewModel, ViewModelType {
         // MARK: Transformations
         
         let books = dependencies.getBooksUseCase
-            .asObservable().ignoreErrors().share(replay: 1)
+            .execute().ignoreErrors().share(replay: 1)
         
         let activity = ActivityIndicator()
         
         let refreshUsers = page.flatMap { _ -> Observable<Int> in
-            dependencies.refreshBooksUseCase.asObservable().map({ _ in 100 }).trackActivity(activity)
+            dependencies.refreshBooksUseCase.execute().map({ _ in 100 }).trackActivity(activity)
         }.ignoreErrors().share()
 
         let isRefreshing = Observable<Bool>.merge(

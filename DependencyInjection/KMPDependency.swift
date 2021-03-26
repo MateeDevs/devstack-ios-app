@@ -7,32 +7,31 @@
 //
 
 import DevstackKmpShared
+import DomainLayer
 import Foundation
 
-public class KmpKoinDependency {
+public protocol KMPDependency {
+    func get<T: AnyObject>(_ type: T.Type) -> T
+}
+
+public class KmpKoinDependency: KMPDependency {
     
     private var _koin: Koin_coreKoin?
-    
-    var koin: Koin_coreKoin {
-        return _koin!
-    }
     
     public init() {
         startKoin()
     }
     
     private func startKoin() {
-        let onStartup = { NSLog( "Koin initialized") }
+        let onStartup = {
+            DomainLayer.Logger.debug("Koin Started", category: .app)
+        }
         
         let koinApplication = KoinIOSKt.doInitKoinIos(doOnStartup: onStartup)
         _koin = koinApplication.koin
     }
     
     public func get<T: AnyObject>(_ type: T.Type) -> T {
-        koin.get(objCClass: type) as! T // swiftlint:disable:this force_cast
+        _koin?.get(objCClass: type) as! T // swiftlint:disable:this force_cast
     }
-}
-
-enum KoinDiError: Swift.Error {
-    case invalidCast
 }

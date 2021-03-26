@@ -26,7 +26,6 @@ public protocol UseCaseDependencyType: HasNoUseCase,
     HasUpdateUserUseCase,
     HasGetUsersUseCase,
     HasRefreshUsersUseCase,
-    HasKmpSharedUseCases,
     HasBookUseCases {}
 
 public struct UseCaseDependency: UseCaseDependencyType {
@@ -54,14 +53,10 @@ public struct UseCaseDependency: UseCaseDependencyType {
     public let getUsersUseCase: GetUsersUseCaseType
     public let refreshUsersUseCase: RefreshUsersUseCaseType
     
-    // KMP shared deps
-    private let koinDependency: KmpKoinDependency
-    
-    public let kmpLoginUser: DevstackKmpShared.LoginUseCase
     public let getBooksUseCase: GetBooksUseCase
     public let refreshBooksUseCase: RefreshBooksUseCase
     
-    public init(dependencies: RepositoryDependency, koinDependency: KmpKoinDependency) {
+    public init(dependencies: RepositoryDependency, kmpDependencies: KMPDependency) {
         self.loginUseCase = LoginUseCase(dependencies: dependencies)
         self.logoutUseCase = LogoutUseCase(dependencies: dependencies)
         self.registrationUseCase = RegistrationUseCase(dependencies: dependencies)
@@ -85,10 +80,8 @@ public struct UseCaseDependency: UseCaseDependencyType {
         self.getUsersUseCase = GetUsersUseCase(dependencies: dependencies)
         self.refreshUsersUseCase = RefreshUsersUseCase(dependencies: dependencies)
         
-        self.koinDependency = koinDependency
-        self.kmpLoginUser = koinDependency.get(DevstackKmpShared.LoginUseCase.self)
-        self.getBooksUseCase = koinDependency.get(GetBooksUseCase.self)
-        self.refreshBooksUseCase = koinDependency.get(RefreshBooksUseCase.self)
+        self.getBooksUseCase = kmpDependencies.get(GetBooksUseCase.self)
+        self.refreshBooksUseCase = kmpDependencies.get(RefreshBooksUseCase.self)
         
     }
 }

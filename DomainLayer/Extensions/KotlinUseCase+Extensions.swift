@@ -10,23 +10,14 @@ import DevstackKmpShared
 import Foundation
 import RxSwift
 
-// public extension DevstackKmpShared.GetUserUseCase {
-//    func asObservable(_ userId: String) -> Observable<User> {
-//        return createObservable(
-//            self, DevstackKmpShared.GetUserUseCase.Params(userId: userId)) { kotlinUser in
-//                kotlinUser.toSwiftUser()
-//        }
-//    }
-// }
-
 public extension RefreshBooksUseCase {
-    func asObservable() -> Observable<Event<Void>> {
+    func execute() -> Observable<Event<Void>> {
         return createObservable(self)
     }
 }
 
 public extension GetBooksUseCase {
-    func asObservable() -> Observable<[Book]> {
+    func execute() -> Observable<[Book]> {
         return createObservable(self).map {  nsArray in
             nsArray as! [Book] // swiftlint:disable:this force_cast
         }
@@ -40,19 +31,23 @@ public extension GetBooksUseCase {
 func createObservable<Params, KotlinDomain, SwiftDomain>(
     _ usecase: UseCaseResult<Params, KotlinDomain>,
     _ params: Params,
-    _ transform:@escaping (KotlinDomain) -> SwiftDomain ) -> Observable<SwiftDomain> {
+    _ transform: @escaping (KotlinDomain) -> SwiftDomain
+) -> Observable<SwiftDomain> {
     
     return Observable<SwiftDomain>.create { observer in
-        let job: Kotlinx_coroutines_coreJob = usecase.subscribe(params: params) { result in
-            if let success = result as? ResultSuccess {
+        let job: Kotlinx_coroutines_coreJob = usecase.subscribe(
+            params: params,
+            onSuccess: { result in
+                guard let success = result as? ResultSuccess else {
+                    guard let errorResult = result as? ResultError else { return }
+                    observer.on(.error(errorResult.error.swiftError)); return
+                }
                 observer.on(.next(transform(success.data as! KotlinDomain))) // swiftlint:disable:this force_cast
                 observer.onCompleted()
-            } else if let errorResult = result as? ResultError {
-                observer.on(.error(errorResult.error.toSwiftError()))
-            }
-        } onThrow_: { kotlinThrowable in
-            observer.on(.error(KotlinThrowableError(kotlinThrowable)))
-        }
+            },
+            onThrow_: { kotlinThrowable in
+                observer.on(.error(KotlinThrowableError(kotlinThrowable)))
+            })
         return Disposables.create { job.cancel(cause: nil) }
     }
 }
@@ -62,20 +57,25 @@ func createObservable<Params, KotlinDomain, SwiftDomain>(
 func createObservable<Params, KotlinDomain, SwiftDomain>(
     _ usecase: UseCaseFlowResult<Params, KotlinDomain>,
     _ params: Params,
-    _ transform:@escaping (KotlinDomain) -> SwiftDomain ) -> Observable<SwiftDomain> {
+    _ transform:@escaping (KotlinDomain) -> SwiftDomain
+) -> Observable<SwiftDomain> {
     
     return Observable<SwiftDomain>.create { observer in
-        let job: Kotlinx_coroutines_coreJob = usecase.subscribe(params: params) { result in
-            if let success = result as? ResultSuccess {
+        let job: Kotlinx_coroutines_coreJob = usecase.subscribe(
+            params: params,
+            onEach: { result in
+                guard let success = result as? ResultSuccess else {
+                    guard let errorResult = result as? ResultError else { return }
+                    observer.on(.error(errorResult.error.swiftError)); return
+                }
                 observer.on(.next(transform(success.data as! KotlinDomain))) // swiftlint:disable:this force_cast
-            } else if let errorResult = result as? ResultError {
-                observer.on(.error(errorResult.error.toSwiftError()))
-            }
-        } onComplete: {
-            observer.on(.completed)
-        } onThrow: { kotlinThrowable in
-            observer.on(.error(KotlinThrowableError(kotlinThrowable)))
-        }
+            },
+            onComplete: {
+                observer.on(.completed)
+            },
+            onThrow: { kotlinThrowable in
+                observer.on(.error(KotlinThrowableError(kotlinThrowable)))
+            })
         return Disposables.create { job.cancel(cause: nil) }
     }
 }
@@ -84,19 +84,22 @@ func createObservable<Params, KotlinDomain, SwiftDomain>(
 // Invoke usecase and complete
 func createObservable<KotlinDomain, SwiftDomain>(
     _ usecase: UseCaseResultNoParams<KotlinDomain>,
-    _ transform:@escaping (KotlinDomain) -> SwiftDomain ) -> Observable<SwiftDomain> {
+    _ transform:@escaping (KotlinDomain) -> SwiftDomain
+) -> Observable<SwiftDomain> {
     
     return Observable<SwiftDomain>.create { observer in
-        let job: Kotlinx_coroutines_coreJob = usecase.subscribe { result in
-            if let success = result as? ResultSuccess {
+        let job: Kotlinx_coroutines_coreJob = usecase.subscribe(
+            onSuccess: { result in
+                guard let success = result as? ResultSuccess else {
+                    guard let errorResult = result as? ResultError else { return }
+                    observer.on(.error(errorResult.error.swiftError)); return
+                }
                 observer.on(.next(transform(success.data as! KotlinDomain))) // swiftlint:disable:this force_cast
                 observer.onCompleted()
-            } else if let errorResult = result as? ResultError {
-                observer.on(.error(errorResult.error.toSwiftError()))
-            }
-        } onThrow: { kotlinThrowable in
-            observer.on(.error(KotlinThrowableError(kotlinThrowable)))
-        }
+            },
+            onThrow: { kotlinThrowable in
+                observer.on(.error(KotlinThrowableError(kotlinThrowable)))
+            })
         return Disposables.create { job.cancel(cause: nil) }
     }
 }
@@ -105,20 +108,24 @@ func createObservable<KotlinDomain, SwiftDomain>(
 // Invoke usecase and collect all values from flow. When flow ends than observable stream ends
 func createObservable<KotlinDomain, SwiftDomain>(
     _ usecase: UseCaseFlowResultNoParams<KotlinDomain>,
-    _ transform:@escaping (KotlinDomain) -> SwiftDomain ) -> Observable<SwiftDomain> {
+    _ transform:@escaping (KotlinDomain) -> SwiftDomain
+) -> Observable<SwiftDomain> {
     
     return Observable<SwiftDomain>.create { observer in
-        let job: Kotlinx_coroutines_coreJob = usecase.subscribe { result in
-            if let success = result as? ResultSuccess {
+        let job: Kotlinx_coroutines_coreJob = usecase.subscribe(
+            onEach: { result in
+                guard let success = result as? ResultSuccess else {
+                    guard let errorResult = result as? ResultError else { return }
+                    observer.on(.error(errorResult.error.swiftError)); return
+                }
                 observer.on(.next(transform(success.data as! KotlinDomain))) // swiftlint:disable:this force_cast
-            } else if let errorResult = result as? ResultError {
-                observer.on(.error(errorResult.error.toSwiftError()))
-            }
-        } onComplete: {
-            observer.on(.completed)
-        } onThrow: { kotlinThrowable in
-            observer.on(.error(KotlinThrowableError(kotlinThrowable)))
-        }
+            },
+            onComplete: {
+                observer.on(.completed)
+            },
+            onThrow: { kotlinThrowable in
+                observer.on(.error(KotlinThrowableError(kotlinThrowable)))
+            })
         return Disposables.create { job.cancel(cause: nil) }
     }
 }
@@ -127,22 +134,23 @@ func createObservable<KotlinDomain, SwiftDomain>(
 // Invoke usecase and complete
 func createObservable<Params>(
     _ usecase: UseCaseResult<Params, KotlinUnit>,
-    _ params: Params) -> Observable<Event<Void>> {
+    _ params: Params
+) -> Observable<Event<Void>> {
     
     return Observable<Void>.create { observer in
-        let job: Kotlinx_coroutines_coreJob = usecase.subscribe(params: params) { result in
-            switch result {
-            case is ResultSuccess<AnyObject>:
-                    observer.on(.next(()))
-                    observer.onCompleted()
-            case let errorResult as ResultError<AnyObject> :
-                    observer.on(.error(errorResult.error.toSwiftError()))
-            default:
-                observer.on(.error(UnknownKotlinError()))
-            }
-        } onThrow_: { kotlinThrowable in
-            observer.on(.error(KotlinThrowableError(kotlinThrowable)))
-        }
+        let job: Kotlinx_coroutines_coreJob = usecase.subscribe(
+            params: params,
+            onSuccess: { result in
+                guard result is ResultSuccess else {
+                    guard let errorResult = result as? ResultError else { return }
+                    observer.on(.error(errorResult.error.swiftError)); return
+                }
+                observer.on(.next(()))
+                observer.onCompleted()
+            },
+            onThrow_: { kotlinThrowable in
+                observer.on(.error(KotlinThrowableError(kotlinThrowable)))
+            })
         return Disposables.create { job.cancel(cause: nil) }
     }.mapToVoid().materialize()
 }
@@ -150,22 +158,23 @@ func createObservable<Params>(
 // Create observable from usecase that returns unit -> void
 // Invoke usecase and complete
 func createObservable(
-    _ usecase: UseCaseResultNoParams<KotlinUnit>) -> Observable<Event<Void>> {
-        
+    _ usecase: UseCaseResultNoParams<KotlinUnit>
+) -> Observable<Event<Void>> {
+    
     return Observable<Void>.create { observer in
-        let job: Kotlinx_coroutines_coreJob = usecase.subscribe { result in
-            switch result {
-            case is ResultSuccess<AnyObject>:
-                    observer.on(.next(()))
-                    observer.onCompleted()
-            case let errorResult as ResultError<AnyObject> :
-                    observer.on(.error(errorResult.error.toSwiftError()))
-            default:
-                observer.on(.error(UnknownKotlinError()))
+        let job: Kotlinx_coroutines_coreJob = usecase.subscribe(
+            onSuccess: { result in
+                guard result is ResultSuccess else {
+                    guard let errorResult = result as? ResultError else { return }
+                    observer.on(.error(errorResult.error.swiftError)); return
+                }
+                observer.on(.next(()))
+                observer.onCompleted()
+            },
+            onThrow: { kotlinThrowable in
+                observer.on(.error(KotlinThrowableError(kotlinThrowable)))
             }
-        } onThrow: { kotlinThrowable in
-            observer.on(.error(KotlinThrowableError(kotlinThrowable)))
-        }
+        )
         return Disposables.create { job.cancel(cause: nil) }
     }.mapToVoid().materialize()
 }
@@ -174,39 +183,57 @@ func createObservable(
 // Invoke usecase and collect all values from flow. When flow ends than observable stream ends
 func createObservable<KotlinDomain, SwiftDomain>(
     _ usecase: UseCaseFlowNoParams<KotlinDomain>,
-    _ transform:@escaping (KotlinDomain) -> SwiftDomain ) -> Observable<SwiftDomain> {
+    _ transform:@escaping (KotlinDomain) -> SwiftDomain
+) -> Observable<SwiftDomain> {
     
     return Observable<SwiftDomain>.create { observer in
-        let job: Kotlinx_coroutines_coreJob = usecase.subscribe { item in
-            observer.on(.next(transform(item as! KotlinDomain))) // swiftlint:disable:this force_cast
-        } onComplete: {
-            observer.on(.completed)
-        } onThrow: { kotlinThrowable in
-            observer.on(.error(KotlinThrowableError(kotlinThrowable)))
-        }
+        let job: Kotlinx_coroutines_coreJob = usecase.subscribe(
+            onEach: { item in
+                observer.on(.next(transform(item as! KotlinDomain))) // swiftlint:disable:this force_cast
+            },
+            onComplete: {
+                observer.on(.completed)
+            },
+            onThrow: { kotlinThrowable in
+                observer.on(.error(KotlinThrowableError(kotlinThrowable)))
+            }
+        )
         return Disposables.create { job.cancel(cause: nil) }
     }
 }
 
 func createObservable<KotlinDomain>(
-    _ usecase: UseCaseFlowNoParams<KotlinDomain>) -> Observable<KotlinDomain> {
+    _ usecase: UseCaseFlowNoParams<KotlinDomain>
+) -> Observable<KotlinDomain> {
     
     return Observable<KotlinDomain>.create { observer in
-        let job: Kotlinx_coroutines_coreJob = usecase.subscribe { item in
-            observer.on(.next(item as! KotlinDomain)) // swiftlint:disable:this force_cast
-        } onComplete: {
-            observer.on(.completed)
-        } onThrow: { kotlinThrowable in
-            print(kotlinThrowable.message)
-            observer.on(.error(KotlinThrowableError(kotlinThrowable)))
-        }
+        let job: Kotlinx_coroutines_coreJob = usecase.subscribe(
+            onEach: { item in
+                observer.on(.next(item as! KotlinDomain)) // swiftlint:disable:this force_cast
+            },
+            onComplete: {
+                observer.on(.completed)
+            },
+            onThrow: { kotlinThrowable in
+                observer.on(.error(KotlinThrowableError(kotlinThrowable)))
+            }
+        )
         return Disposables.create { job.cancel(cause: nil) }
     }
 }
 
 extension DevstackKmpShared.ErrorResult {
-    func toSwiftError() -> LocalizedError {
-        return CommonError.noAuthToken
+    var swiftError: LocalizedError {
+        self.toSwiftError()
+    }
+    
+    private func toSwiftError() -> LocalizedError {
+        switch self {
+        case is BackendError.NotAuthorized:
+            return RepositoryError(statusCode: StatusCode.unknown, message: self.message ?? "Unknown")
+        default:
+            return RepositoryError(statusCode: StatusCode.unknown, message: self.message ?? "Unknown")
+        }
     }
 }
 
@@ -215,11 +242,7 @@ class UnknownKotlinError: LocalizedError {}
 class KotlinThrowableError: LocalizedError {
     let throwable: KotlinThrowable
     
-    init(_ throwable: KotlinThrowable) {
-        self.throwable = throwable
-    }
+    init( _ throwable: KotlinThrowable) { self.throwable = throwable }
     
-    var errorDescription: String? {
-        get { throwable.message }
-    }
+    var errorDescription: String? { throwable.message }
 }

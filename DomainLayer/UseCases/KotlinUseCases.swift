@@ -12,9 +12,3 @@ public protocol HasBookUseCases {
     var getBooksUseCase: GetBooksUseCase { get }
     var refreshBooksUseCase: RefreshBooksUseCase { get }
 }
-
-public protocol HasKmpSharedUseCases {
-    var kmpLoginUser: DevstackKmpShared.LoginUseCase { get }
-//    var kmpGetUserUseCase: DevstackKmpShared.GetUserUseCase { get }
-//    var kmpGetUsersUsecase: DevstackKmpShared.GetUsersUseCase { get }
-}
