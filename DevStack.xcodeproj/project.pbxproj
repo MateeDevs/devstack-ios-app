@@ -283,6 +283,12 @@
 		459F8C3725F6D86B004ACAD4 /* ProviderDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */; };
 		459F8C5225F6DA4E004ACAD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C5125F6DA4E004ACAD4 /* Constants.swift */; };
 		45B675AF260E104B00DF7387 /* UserDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675AE260E104B00DF7387 /* UserDetailViewModelTests.swift */; };
+		45B675B7260E237100DF7387 /* RegistrationUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675B6260E237100DF7387 /* RegistrationUseCaseTests.swift */; };
+		45B675D3260E239D00DF7387 /* GetUserUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675D2260E239D00DF7387 /* GetUserUseCaseTests.swift */; };
+		45B675DB260E23A600DF7387 /* RefreshUserUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675DA260E23A600DF7387 /* RefreshUserUseCaseTests.swift */; };
+		45B675EA260E23BB00DF7387 /* GetUsersUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675E9260E23BB00DF7387 /* GetUsersUseCaseTests.swift */; };
+		45B675F2260E23C600DF7387 /* RefreshUsersUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675F1260E23C600DF7387 /* RefreshUsersUseCaseTests.swift */; };
+		45B675FA260E23DC00DF7387 /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675F9260E23DC00DF7387 /* UserRepositoryTests.swift */; };
 		45D3771E25F8D07800D05900 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771B25F8D07800D05900 /* Localizable.swift */; };
 		45D3771F25F8D07800D05900 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771C25F8D07800D05900 /* Assets.swift */; };
 		45D3772025F8D07800D05900 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771D25F8D07800D05900 /* Storyboards.swift */; };
@@ -687,6 +693,12 @@
 		459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDependency.swift; sourceTree = "<group>"; };
 		459F8C5125F6DA4E004ACAD4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		45B675AE260E104B00DF7387 /* UserDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModelTests.swift; sourceTree = "<group>"; };
+		45B675B6260E237100DF7387 /* RegistrationUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUseCaseTests.swift; sourceTree = "<group>"; };
+		45B675D2260E239D00DF7387 /* GetUserUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserUseCaseTests.swift; sourceTree = "<group>"; };
+		45B675DA260E23A600DF7387 /* RefreshUserUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshUserUseCaseTests.swift; sourceTree = "<group>"; };
+		45B675E9260E23BB00DF7387 /* GetUsersUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersUseCaseTests.swift; sourceTree = "<group>"; };
+		45B675F1260E23C600DF7387 /* RefreshUsersUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshUsersUseCaseTests.swift; sourceTree = "<group>"; };
+		45B675F9260E23DC00DF7387 /* UserRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
 		45D3771B25F8D07800D05900 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		45D3771C25F8D07800D05900 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		45D3771D25F8D07800D05900 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
@@ -810,7 +822,9 @@
 		4511287825FBD08A007CBA76 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				451FAFE325FC107600171EDB /* LoginUseCaseTests.swift */,
+				45B675BE260E237C00DF7387 /* Auth */,
+				45B675C5260E238C00DF7387 /* User */,
+				45B675DC260E23AA00DF7387 /* Users */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -880,6 +894,7 @@
 			isa = PBXGroup;
 			children = (
 				4557195724A15C0200FB24CA /* AuthTokenRepositoryTests.swift */,
+				45B675F9260E23DC00DF7387 /* UserRepositoryTests.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1794,6 +1809,33 @@
 			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
+		45B675BE260E237C00DF7387 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				451FAFE325FC107600171EDB /* LoginUseCaseTests.swift */,
+				45B675B6260E237100DF7387 /* RegistrationUseCaseTests.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		45B675C5260E238C00DF7387 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				45B675D2260E239D00DF7387 /* GetUserUseCaseTests.swift */,
+				45B675DA260E23A600DF7387 /* RefreshUserUseCaseTests.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		45B675DC260E23AA00DF7387 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				45B675E9260E23BB00DF7387 /* GetUsersUseCaseTests.swift */,
+				45B675F1260E23C600DF7387 /* RefreshUsersUseCaseTests.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
 		45D3771825F8D05100D05900 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -2358,17 +2400,21 @@
 				45E100FD25E6B2A00082CABA /* Recorded.swift in Sources */,
 				454AC06524A221B300D6F367 /* ProviderDependencyMock.swift in Sources */,
 				45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */,
+				45B675D3260E239D00DF7387 /* GetUserUseCaseTests.swift in Sources */,
 				4534C20B2604192B0022ACF4 /* LoginData+Stubs.swift in Sources */,
 				45E100F525E6B2A00082CABA /* RxTest.swift in Sources */,
+				45B675DB260E23A600DF7387 /* RefreshUserUseCaseTests.swift in Sources */,
 				4534C25926042E780022ACF4 /* UsersViewModelTests.swift in Sources */,
 				451FAFE425FC107600171EDB /* LoginUseCaseTests.swift in Sources */,
 				45E100FA25E6B2A00082CABA /* Recorded+Event.swift in Sources */,
 				4534C023260209F30022ACF4 /* UseCaseDependencyMock.swift in Sources */,
 				4534C2512604280D0022ACF4 /* RegistrationData+Stubs.swift in Sources */,
 				45E100FC25E6B2A00082CABA /* Deprecated.swift in Sources */,
+				45B675FA260E23DC00DF7387 /* UserRepositoryTests.swift in Sources */,
 				45E100F625E6B2A00082CABA /* TestableObserver.swift in Sources */,
 				45E100FB25E6B2A00082CABA /* Any+Equatable.swift in Sources */,
 				4534C1A32603C98F0022ACF4 /* Mocks.swift in Sources */,
+				45B675B7260E237100DF7387 /* RegistrationUseCaseTests.swift in Sources */,
 				456E73E925F827E4007D9A6D /* Tests.swift in Sources */,
 				4534C1FC260414350022ACF4 /* NetworkProviderMock.swift in Sources */,
 				45FBAABC260A992700617C25 /* NETUser+Stubs.swift in Sources */,
@@ -2376,6 +2422,7 @@
 				4557195D24A15C3200FB24CA /* LoginViewModelTests.swift in Sources */,
 				45E1011325E6B2DC0082CABA /* TestScheduler.swift in Sources */,
 				4557195824A15C0200FB24CA /* AuthTokenRepositoryTests.swift in Sources */,
+				45B675F2260E23C600DF7387 /* RefreshUsersUseCaseTests.swift in Sources */,
 				45E100F725E6B2A00082CABA /* HotObservable.swift in Sources */,
 				45E100F925E6B2A00082CABA /* TestableObservable.swift in Sources */,
 				45E100FF25E6B2A00082CABA /* ColdObservable.swift in Sources */,
@@ -2386,6 +2433,7 @@
 				45E1011425E6B2DC0082CABA /* TestSchedulerVirtualTimeConverter.swift in Sources */,
 				45E1012525E6B45C0082CABA /* Bag.swift in Sources */,
 				45B675AF260E104B00DF7387 /* UserDetailViewModelTests.swift in Sources */,
+				45B675EA260E23BB00DF7387 /* GetUsersUseCaseTests.swift in Sources */,
 				458C1ACD24A347E600549420 /* DatabaseProviderMock.swift in Sources */,
 				4534C14F2603706B0022ACF4 /* RepositoryDependencyMock.swift in Sources */,
 			);
