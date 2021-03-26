@@ -40,9 +40,9 @@
     // MARK: Inputs and outputs
 
     private struct Input {
-        var page: [Int] = []
+        var page: [(time: TestTime, element: Int)] = []
         
-        static let initialLoad = Input(page: [0])
+        static let initialLoad = Input(page: [(0, 0)])
     }
 
     private struct Output {
@@ -54,7 +54,7 @@
     private func generateOutput(for input: Input) -> Output {
         let viewModel = UsersViewModel(dependencies: setupDependencies())
 
-        scheduler.createColdObservable(input.page.map { .next(0, $0) })
+        scheduler.createColdObservable(input.page.map { .next($0.time, $0.element) })
             .do { [weak self] _ in self?.dbStream.onNext(NETUser.stubListDomain) }
             .bind(to: viewModel.input.page).disposed(by: disposeBag)
 

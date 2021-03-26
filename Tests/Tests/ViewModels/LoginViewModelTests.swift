@@ -35,13 +35,13 @@ class LoginViewModelTests: BaseTestCase {
 
     private struct Input {
         var loginData: LoginData = .empty
-        var loginButtonTaps: [Void] = []
-        var registerButtonTaps: [Void] = []
+        var loginButtonTaps: [(time: TestTime, element: Void)] = []
+        var registerButtonTaps: [(time: TestTime, element: Void)] = []
 
-        static let loginEmpty = Input(loginButtonTaps: [()])
-        static let loginValid = Input(loginData: .valid, loginButtonTaps: [()])
-        static let loginInvalidPassword = Input(loginData: .invalidPassword, loginButtonTaps: [()])
-        static let register = Input(registerButtonTaps: [()])
+        static let loginEmpty = Input(loginButtonTaps: [(0, ())])
+        static let loginValid = Input(loginData: .valid, loginButtonTaps: [(0, ())])
+        static let loginInvalidPassword = Input(loginData: .invalidPassword, loginButtonTaps: [(0, ())])
+        static let register = Input(registerButtonTaps: [(0, ())])
     }
     
     private struct Output {
@@ -59,10 +59,10 @@ class LoginViewModelTests: BaseTestCase {
         scheduler.createColdObservable([.next(0, input.loginData.password)])
             .bind(to: viewModel.input.password).disposed(by: disposeBag)
 
-        scheduler.createColdObservable(input.loginButtonTaps.map { .next(0, $0) })
+        scheduler.createColdObservable(input.loginButtonTaps.map { .next($0.time, $0.element) })
             .bind(to: viewModel.input.loginButtonTaps).disposed(by: disposeBag)
 
-        scheduler.createColdObservable(input.registerButtonTaps.map { .next(0, $0) })
+        scheduler.createColdObservable(input.registerButtonTaps.map { .next($0.time, $0.element) })
             .bind(to: viewModel.input.registerButtonTaps).disposed(by: disposeBag)
         
         return Output(

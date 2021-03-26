@@ -40,9 +40,9 @@ class UserDetailViewModelTests: BaseTestCase {
     // MARK: Inputs and outputs
     
     private struct Input {
-        var refreshTrigger: [Void] = []
+        var refreshTrigger: [(time: TestTime, element: Void)] = []
         
-        static let initialLoad = Input(refreshTrigger: [()])
+        static let initialLoad = Input(refreshTrigger: [(0, ())])
     }
     
     private struct Output {
@@ -59,7 +59,7 @@ class UserDetailViewModelTests: BaseTestCase {
     private func generateOutput(for input: Input) -> Output {
         let viewModel = UserDetailViewModel(dependencies: setupDependencies(), userId: NETUser.stubDomain.id)
         
-        scheduler.createColdObservable(input.refreshTrigger.map { .next(0, $0) })
+        scheduler.createColdObservable(input.refreshTrigger.map { .next($0.time, $0.element) })
             .do { [weak self] _ in self?.dbStream.onNext(NETUser.stubDomain) }
             .bind(to: viewModel.input.refreshTrigger).disposed(by: disposeBag)
         

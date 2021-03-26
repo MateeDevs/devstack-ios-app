@@ -35,14 +35,14 @@
 
     private struct Input {
         var registrationData: RegistrationData = .empty
-        var registerButtonTaps: [Void] = []
-        var loginButtonTaps: [Void] = []
+        var registerButtonTaps: [(time: TestTime, element: Void)] = []
+        var loginButtonTaps: [(time: TestTime, element: Void)] = []
 
-        static let registerEmpty = Input(registerButtonTaps: [()])
-        static let registerValid = Input(registrationData: .valid, registerButtonTaps: [()])
-        static let registerInvalidEmail = Input(registrationData: .invalidEmail, registerButtonTaps: [()])
-        static let registerExistingEmail = Input(registrationData: .existingEmail, registerButtonTaps: [()])
-        static let login = Input(loginButtonTaps: [()])
+        static let registerEmpty = Input(registerButtonTaps: [(0, ())])
+        static let registerValid = Input(registrationData: .valid, registerButtonTaps: [(0, ())])
+        static let registerInvalidEmail = Input(registrationData: .invalidEmail, registerButtonTaps: [(0, ())])
+        static let registerExistingEmail = Input(registrationData: .existingEmail, registerButtonTaps: [(0, ())])
+        static let login = Input(loginButtonTaps: [(0, ())])
     }
 
     private struct Output {
@@ -60,10 +60,10 @@
         scheduler.createColdObservable([.next(0, input.registrationData.password)])
             .bind(to: viewModel.input.password).disposed(by: disposeBag)
 
-        scheduler.createColdObservable(input.registerButtonTaps.map { .next(0, $0) })
+        scheduler.createColdObservable(input.registerButtonTaps.map { .next($0.time, $0.element) })
             .bind(to: viewModel.input.registerButtonTaps).disposed(by: disposeBag)
 
-        scheduler.createColdObservable(input.loginButtonTaps.map { .next(0, $0) })
+        scheduler.createColdObservable(input.loginButtonTaps.map { .next($0.time, $0.element) })
             .bind(to: viewModel.input.loginButtonTaps).disposed(by: disposeBag)
 
         return Output(
