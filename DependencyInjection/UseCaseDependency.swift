@@ -4,7 +4,8 @@
 //
 
 import DataLayer
-import DevstackKmpShared
+import class DevstackKmpShared.GetBooksUseCase
+import class DevstackKmpShared.RefreshBooksUseCase
 import DomainLayer
 
 // swiftlint:disable superfluous_disable_command file_length

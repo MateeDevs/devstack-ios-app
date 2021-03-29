@@ -7,7 +7,7 @@ import DevstackKmpShared
 import RxCocoa
 import RxSwift
 
-final class BooksViewModel: ViewModel, ViewModelType {
+final class BooksViewModel: BaseViewModel, ViewModel {
     
     typealias Dependencies = HasBookUseCases
     
