@@ -298,6 +298,8 @@
 		459F8C2725F6D812004ACAD4 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C2625F6D812004ACAD4 /* RepositoryDependency.swift */; };
 		459F8C3725F6D86B004ACAD4 /* ProviderDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */; };
 		459F8C5225F6DA4E004ACAD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C5125F6DA4E004ACAD4 /* Constants.swift */; };
+		45C45B5526124BD80076991C /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 45C45B5426124BD80076991C /* DevstackKmpShared */; };
+		45C45B5D26124FFA0076991C /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 45C45B5C26124FFA0076991C /* DevstackKmpShared */; };
 		45D3771E25F8D07800D05900 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771B25F8D07800D05900 /* Localizable.swift */; };
 		45D3771F25F8D07800D05900 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771C25F8D07800D05900 /* Assets.swift */; };
 		45D3772025F8D07800D05900 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771D25F8D07800D05900 /* Storyboards.swift */; };
@@ -322,9 +324,7 @@
 		45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB498224A3D7C000932918 /* BaseTestCase.swift */; };
 		48C3DF8F260215BE004CB3E1 /* KotlinUseCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DF8E260215BE004CB3E1 /* KotlinUseCase+Extensions.swift */; };
 		48C3DFA52602165D004CB3E1 /* KMPDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DFA42602165D004CB3E1 /* KMPDependency.swift */; };
-		48C3DFAD2602189B004CB3E1 /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 48C3DFAC2602189B004CB3E1 /* DevstackKmpShared */; };
 		48C3DFE426025312004CB3E1 /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
-		48C3DFF526025A97004CB3E1 /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 48C3DFF426025A97004CB3E1 /* DevstackKmpShared */; };
 		48C3E01126025B68004CB3E1 /* BooksFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E01026025B68004CB3E1 /* BooksFlowController.swift */; };
 		48C3E07C260262AB004CB3E1 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C3E07A260262AB004CB3E1 /* BookTableViewCell.xib */; };
 		48C3E07D260262AB004CB3E1 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E07B260262AB004CB3E1 /* BookTableViewCell.swift */; };
@@ -807,7 +807,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				456E745625F8345D007D9A6D /* SPMDependencies.framework in Frameworks */,
-				48C3DFF526025A97004CB3E1 /* DevstackKmpShared in Frameworks */,
+				45C45B5D26124FFA0076991C /* DevstackKmpShared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -834,7 +834,7 @@
 				458219CB25F2634100D587EB /* RxRealm in Frameworks */,
 				458219C925F2634100D587EB /* RealmSwift in Frameworks */,
 				458219BD25F2631C00D587EB /* FirebaseMessaging in Frameworks */,
-				48C3DFAD2602189B004CB3E1 /* DevstackKmpShared in Frameworks */,
+				45C45B5526124BD80076991C /* DevstackKmpShared in Frameworks */,
 				458219BF25F2632200D587EB /* FirebaseRemoteConfig in Frameworks */,
 				4575E5E825F6F18C00CCC003 /* AlamofireImage in Frameworks */,
 				458219C325F2633900D587EB /* Moya in Frameworks */,
@@ -2162,7 +2162,7 @@
 			);
 			name = DomainLayer;
 			packageProductDependencies = (
-				48C3DFF426025A97004CB3E1 /* DevstackKmpShared */,
+				45C45B5C26124FFA0076991C /* DevstackKmpShared */,
 			);
 			productName = DomainLayer;
 			productReference = 4582188625F25E3300D587EB /* DomainLayer.framework */;
@@ -2221,7 +2221,7 @@
 				4575E5E925F6F19000CCC003 /* RxCocoa */,
 				4575E5EB25F6F19900CCC003 /* SkeletonView */,
 				45D3776C25F9229600D05900 /* Atlantis */,
-				48C3DFAC2602189B004CB3E1 /* DevstackKmpShared */,
+				45C45B5426124BD80076991C /* DevstackKmpShared */,
 			);
 			productName = DataLayerDependencies;
 			productReference = 458219A825F262F000D587EB /* SPMDependencies.framework */;
@@ -2308,7 +2308,7 @@
 				4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */,
 				45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				48C3DF7326021561004CB3E1 /* XCRemoteSwiftPackageReference "devstack-kmp-app" */,
+				45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */,
 			);
 			productRefGroup = 4558D30820FCC8FF005BC325 /* Products */;
 			projectDirPath = "";
@@ -4733,20 +4733,20 @@
 				minimumVersion = 1.7.1;
 			};
 		};
+		45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:MateeDevs/devstack-kmp-app.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 		45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.1.2;
-			};
-		};
-		48C3DF7326021561004CB3E1 /* XCRemoteSwiftPackageReference "devstack-kmp-app" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MateeDevs/devstack-kmp-app.git";
-			requirement = {
-				branch = develop;
-				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -4812,20 +4812,20 @@
 			package = 45840CBD25ACE84900DFC729 /* XCRemoteSwiftPackageReference "RxRealm" */;
 			productName = RxRealm;
 		};
+		45C45B5426124BD80076991C /* DevstackKmpShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
+			productName = DevstackKmpShared;
+		};
+		45C45B5C26124FFA0076991C /* DevstackKmpShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
+			productName = DevstackKmpShared;
+		};
 		45D3776C25F9229600D05900 /* Atlantis */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */;
 			productName = Atlantis;
-		};
-		48C3DFAC2602189B004CB3E1 /* DevstackKmpShared */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 48C3DF7326021561004CB3E1 /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
-			productName = DevstackKmpShared;
-		};
-		48C3DFF426025A97004CB3E1 /* DevstackKmpShared */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 48C3DF7326021561004CB3E1 /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
-			productName = DevstackKmpShared;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

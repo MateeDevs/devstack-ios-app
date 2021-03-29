@@ -48,10 +48,10 @@
       },
       {
         "package": "DevstackKmpShared",
-        "repositoryURL": "https://github.com/MateeDevs/devstack-kmp-app.git",
+        "repositoryURL": "git@github.com:MateeDevs/devstack-kmp-app.git",
         "state": {
           "branch": "develop",
-          "revision": "acced71b08067dfc9fc71687bde66c1785766618",
+          "revision": "c6eb05371e899b6c9aa1817379cd04940a5547ce",
           "version": null
         }
       },
