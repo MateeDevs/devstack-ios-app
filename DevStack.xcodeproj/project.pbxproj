@@ -73,7 +73,6 @@
 		4582192125F261CD00D587EB /* NETUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582191E25F261CC00D587EB /* NETUser.swift */; };
 		4582192225F261CD00D587EB /* NETUserList.json in Resources */ = {isa = PBXBuildFile; fileRef = 4582191F25F261CC00D587EB /* NETUserList.json */; };
 		4582192325F261CD00D587EB /* NETUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 4582192025F261CD00D587EB /* NETUser.json */; };
-		4582192F25F261D900D587EB /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582192B25F261D900D587EB /* UserRepository.swift */; };
 		4582193025F261D900D587EB /* AuthTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582192C25F261D900D587EB /* AuthTokenRepository.swift */; };
 		4582193125F261D900D587EB /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582192D25F261D900D587EB /* LocationRepository.swift */; };
 		4582194025F261E100D587EB /* SystemKeychainProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582193A25F261E000D587EB /* SystemKeychainProvider.swift */; };
@@ -128,8 +127,9 @@
 		458C1ACD24A347E600549420 /* DatabaseProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C1ACC24A347E600549420 /* DatabaseProviderMock.swift */; };
 		458FD8F325F289C900FBD3B0 /* AuthTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FD8F225F289C900FBD3B0 /* AuthTokenRepository.swift */; };
 		458FD8FC25F289F700FBD3B0 /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FD8FB25F289F700FBD3B0 /* LocationRepository.swift */; };
-		458FD90525F28A2100FBD3B0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FD90425F28A2100FBD3B0 /* UserRepository.swift */; };
 		4597626F20FDF0810034DE29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4597626E20FDF0810034DE29 /* LaunchScreen.storyboard */; };
+		4598969B26129B9E00C852E0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4598969A26129B9D00C852E0 /* UserRepository.swift */; };
+		459896A326129BC200C852E0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459896A226129BC200C852E0 /* UserRepository.swift */; };
 		459F865825F665DD004ACAD4 /* SourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F865725F665DD004ACAD4 /* SourceType.swift */; };
 		459F866825F6665D004ACAD4 /* RemoteConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F866725F6665D004ACAD4 /* RemoteConfigRepository.swift */; };
 		459F867125F66674004ACAD4 /* RemoteConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F867025F66674004ACAD4 /* RemoteConfigRepository.swift */; };
@@ -310,7 +310,7 @@
 		48C3E09F260264D1004CB3E1 /* Books.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C3E09C260264D1004CB3E1 /* Books.storyboard */; };
 		48C3E0A0260264D1004CB3E1 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E09D260264D1004CB3E1 /* BooksViewController.swift */; };
 		48C3E0A1260264D1004CB3E1 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E09E260264D1004CB3E1 /* BooksViewModel.swift */; };
-		48C3E0AF26026F7D004CB3E1 /* KotlinUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E0AE26026F7D004CB3E1 /* KotlinUseCases.swift */; };
+		48C3E0AF26026F7D004CB3E1 /* KMPUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E0AE26026F7D004CB3E1 /* KMPUseCases.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -458,9 +458,6 @@
 		4558D30A20FCC8FF005BC325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		456E73DD25F817FA007D9A6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		456E73E825F827E4007D9A6D /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		4572512025E56CF400D1B745 /* PushNotificationsProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsProviderMock.swift; sourceTree = "<group>"; };
-		4575E5D525F6EF7200CCC003 /* Info+Proxyman.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info+Proxyman.plist"; sourceTree = "<group>"; };
-		4575E5D525F6EF7200CCC003 /* Info-Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Debug.plist"; sourceTree = "<group>"; };
 		4575E65525F6FA7600CCC003 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		4575E65C25F6FFA300CCC003 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		4575E67525F7051100CCC003 /* HasNoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNoUseCase.swift; sourceTree = "<group>"; };
@@ -491,7 +488,6 @@
 		4582191E25F261CC00D587EB /* NETUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETUser.swift; sourceTree = "<group>"; };
 		4582191F25F261CC00D587EB /* NETUserList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NETUserList.json; sourceTree = "<group>"; };
 		4582192025F261CD00D587EB /* NETUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NETUser.json; sourceTree = "<group>"; };
-		4582192B25F261D900D587EB /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		4582192C25F261D900D587EB /* AuthTokenRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthTokenRepository.swift; sourceTree = "<group>"; };
 		4582192D25F261D900D587EB /* LocationRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
 		4582193A25F261E000D587EB /* SystemKeychainProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemKeychainProvider.swift; sourceTree = "<group>"; };
@@ -540,8 +536,10 @@
 		458C1ACC24A347E600549420 /* DatabaseProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProviderMock.swift; sourceTree = "<group>"; };
 		458FD8F225F289C900FBD3B0 /* AuthTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenRepository.swift; sourceTree = "<group>"; };
 		458FD8FB25F289F700FBD3B0 /* LocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
-		458FD90425F28A2100FBD3B0 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		4597626E20FDF0810034DE29 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4598969A26129B9D00C852E0 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		459896A226129BC200C852E0 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		459896B026129CB300C852E0 /* Info+Proxyman.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info+Proxyman.plist"; sourceTree = "<group>"; };
 		459F865725F665DD004ACAD4 /* SourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceType.swift; sourceTree = "<group>"; };
 		459F866725F6665D004ACAD4 /* RemoteConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigRepository.swift; sourceTree = "<group>"; };
 		459F867025F66674004ACAD4 /* RemoteConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigRepository.swift; sourceTree = "<group>"; };
@@ -724,7 +722,7 @@
 		48C3E09C260264D1004CB3E1 /* Books.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Books.storyboard; sourceTree = "<group>"; };
 		48C3E09D260264D1004CB3E1 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		48C3E09E260264D1004CB3E1 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
-		48C3E0AE26026F7D004CB3E1 /* KotlinUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KotlinUseCases.swift; sourceTree = "<group>"; };
+		48C3E0AE26026F7D004CB3E1 /* KMPUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMPUseCases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -956,7 +954,7 @@
 			isa = PBXGroup;
 			children = (
 				456E73DD25F817FA007D9A6D /* Info.plist */,
-				4575E5D525F6EF7200CCC003 /* Info+Proxyman.plist */,
+				459896B026129CB300C852E0 /* Info+Proxyman.plist */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -1180,7 +1178,7 @@
 				4582192D25F261D900D587EB /* LocationRepository.swift */,
 				4575E6C925F7F2F100CCC003 /* PushNotificationsRepository.swift */,
 				459F866725F6665D004ACAD4 /* RemoteConfigRepository.swift */,
-				4582192B25F261D900D587EB /* UserRepository.swift */,
+				4598969A26129B9D00C852E0 /* UserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1265,7 +1263,6 @@
 		45821AA425F268EC00D587EB /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				4575E67525F7051100CCC003 /* HasNoUseCase.swift */,
 				45821AB525F2690800D587EB /* Auth */,
 				45821AD825F2694F00D587EB /* Location */,
 				45821AE925F2696E00D587EB /* Profile */,
@@ -1273,7 +1270,8 @@
 				45821B1F25F269CF00D587EB /* RemoteConfig */,
 				45821B2925F269EF00D587EB /* User */,
 				45821B4C25F26ACE00D587EB /* Users */,
-				48C3E0AE26026F7D004CB3E1 /* KotlinUseCases.swift */,
+				4575E67525F7051100CCC003 /* HasNoUseCase.swift */,
+				48C3E0AE26026F7D004CB3E1 /* KMPUseCases.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1351,7 +1349,7 @@
 				458FD8FB25F289F700FBD3B0 /* LocationRepository.swift */,
 				4575E6CF25F7F30300CCC003 /* PushNotificationsRepository.swift */,
 				459F867025F66674004ACAD4 /* RemoteConfigRepository.swift */,
-				458FD90425F28A2100FBD3B0 /* UserRepository.swift */,
+				459896A226129BC200C852E0 /* UserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1806,9 +1804,9 @@
 				459F8C0425F6D733004ACAD4 /* UseCaseDependency.swift */,
 				459F8C2625F6D812004ACAD4 /* RepositoryDependency.swift */,
 				459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */,
+				48C3DFA42602165D004CB3E1 /* KMPDependency.swift */,
 				459F8BE625F6D67F004ACAD4 /* DependencyInjection.h */,
 				459F8BE725F6D67F004ACAD4 /* Info.plist */,
-				48C3DFA42602165D004CB3E1 /* KMPDependency.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -2099,7 +2097,6 @@
 				4575E5EB25F6F19900CCC003 /* SkeletonView */,
 				45D3776C25F9229600D05900 /* Atlantis */,
 				45C45B5426124BD80076991C /* DevstackKmpShared */,
-				4534C1BC2603D6630022ACF4 /* SwiftyMocky */,
 			);
 			productName = DataLayerDependencies;
 			productReference = 458219A825F262F000D587EB /* SPMDependencies.framework */;
@@ -2463,7 +2460,6 @@
 				4582194F25F261EE00D587EB /* NetworkingConstants.swift in Sources */,
 				4582193125F261D900D587EB /* LocationRepository.swift in Sources */,
 				4582194225F261E100D587EB /* SystemUserDefaultsProvider.swift in Sources */,
-				4582192F25F261D900D587EB /* UserRepository.swift in Sources */,
 				4582198425F2621800D587EB /* CLLocationManagerDelegate+Rx.swift in Sources */,
 				4582191225F261BE00D587EB /* NETLoginData.swift in Sources */,
 				4582194025F261E100D587EB /* SystemKeychainProvider.swift in Sources */,
@@ -2473,6 +2469,7 @@
 				4582196325F2620900D587EB /* AuthAPI.swift in Sources */,
 				459F875725F69F71004ACAD4 /* DataLayer.swift in Sources */,
 				4575E69125F7E8E300CCC003 /* DatabaseProvider.swift in Sources */,
+				4598969B26129B9E00C852E0 /* UserRepository.swift in Sources */,
 				4582194325F261E100D587EB /* FirebasePushNotificationsProvider.swift in Sources */,
 				4582197F25F2621800D587EB /* Encodable+Extensions.swift in Sources */,
 				4575E6CA25F7F2F100CCC003 /* PushNotificationsRepository.swift in Sources */,
@@ -2494,9 +2491,7 @@
 				459F86F625F66FA9004ACAD4 /* Logger.swift in Sources */,
 				459F86B425F66C42004ACAD4 /* ErrorMessages.swift in Sources */,
 				45821A8A25F268C000D587EB /* PushNotification.swift in Sources */,
-				48C3E0AF26026F7D004CB3E1 /* KotlinUseCases.swift in Sources */,
-				458FD90525F28A2100FBD3B0 /* UserRepositoryType.swift in Sources */,
-				458FD90525F28A2100FBD3B0 /* UserRepository.swift in Sources */,
+				48C3E0AF26026F7D004CB3E1 /* KMPUseCases.swift in Sources */,
 				45821A9325F268D500D587EB /* RemoteConfigCoding.swift in Sources */,
 				459F86D625F66C78004ACAD4 /* ValidationError.swift in Sources */,
 				4575E67625F7051100CCC003 /* HasNoUseCase.swift in Sources */,
@@ -2530,6 +2525,7 @@
 				459F86CD25F66C69004ACAD4 /* StatusCode.swift in Sources */,
 				45821AD025F2694800D587EB /* RegistrationUseCase.swift in Sources */,
 				45821ABE25F2691900D587EB /* LoginUseCase.swift in Sources */,
+				459896A326129BC200C852E0 /* UserRepository.swift in Sources */,
 				45821B4E25F26ADC00D587EB /* GetUsersUseCase.swift in Sources */,
 				459F873225F69A8B004ACAD4 /* Environment.swift in Sources */,
 				459F8C5225F6DA4E004ACAD4 /* Constants.swift in Sources */,
