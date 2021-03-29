@@ -1,7 +1,4 @@
 //
-//  KotlinUseCase+Extensions.swift
-//  DomainLayer
-//
 //  Created by Jan Kusy on 17.03.2021.
 //  Copyright © 2021 Matee. All rights reserved.
 //
@@ -9,6 +6,8 @@
 import DevstackKmpShared
 import Foundation
 import RxSwift
+
+// swiftlint:disable file_length
 
 public extension RefreshBooksUseCase {
     func execute() -> Observable<Event<Void>> {
