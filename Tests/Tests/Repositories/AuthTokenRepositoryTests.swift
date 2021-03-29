@@ -34,7 +34,7 @@ class AuthTokenRepositoryTests: BaseTestCase {
     
     // MARK: Tests
     
-    func testCreate() {
+    func testCreateValid() {
         let repository = AuthTokenRepositoryImpl(dependencies: setupDependencies())
         let output = scheduler.createObserver(AuthToken.self)
         
@@ -65,7 +65,7 @@ class AuthTokenRepositoryTests: BaseTestCase {
         
         repository.delete()
         
-        Verify(keychainProvider, 1, .deleteAll())
         XCTAssertEqual(databaseProvider.deleteAllCallsCount, 1)
+        Verify(keychainProvider, 1, .deleteAll())
     }
 }

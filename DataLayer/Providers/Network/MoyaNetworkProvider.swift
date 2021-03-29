@@ -92,13 +92,14 @@ extension MoyaNetworkProvider: NetworkProvider {
         moyaProvider.rx.request(MultiTarget(endpoint))
             .flatMap { response -> PrimitiveSequence<SingleTrait, Response> in
                 if withInterceptor, response.statusCode == StatusCode.httpUnathorized.rawValue {
-                    delegate?.didReceiveHttpUnathorized()
+                    delegate?.didReceiveHttpUnauthorized()
                     return Single.error(MoyaError.statusCode(response))
                 } else {
                     return Single.just(response)
                 }
             }
-            .asObservable().filterSuccessfulStatusCodes()
+            .asObservable()
+            .filterSuccessfulStatusCodes()
             .catchError { error -> Observable<Response> in
                 guard let moyaError = error as? MoyaError,
                       let response = moyaError.response,

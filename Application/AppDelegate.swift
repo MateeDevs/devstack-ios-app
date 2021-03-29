@@ -127,7 +127,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 }
 
 extension AppDelegate: NetworkProviderDelegate {
-    func didReceiveHttpUnathorized() {
+    func didReceiveHttpUnauthorized() {
         self.flowController?.handleLogout()
     }
 }

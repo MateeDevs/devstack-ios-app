@@ -6,33 +6,19 @@
 import RealmSwift
 import RxSwift
 
-public enum UpdateModel {
-    case apiModel
-    case fullModel
-    
-    func value(for object: Object) -> Any {
-        switch self {
-        case .apiModel: return object.apiModel
-        case .fullModel: return object.fullModel
-        }
-    }
-}
-
 extension ObservableType {
     
     /// Transformation that saves an object to the database.
-    func save<T>(model: UpdateModel = .apiModel) -> Observable<T> where T: Object, T == Element {
+    func save<T>(_ provider: DatabaseProvider, model: UpdateModel = .apiModel) -> Observable<T> where T: Object, T == Element {
         flatMap { object -> Observable<T> in
-            guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
-            return realm.rx.save(object, model: model)
+            provider.save(object, model: model)
         }
     }
     
     /// Transformation that saves an array of objects to the database.
-    func save<T>(model: UpdateModel = .apiModel) -> Observable<[T]> where T: Object, [T] == Element {
+    func save<T>(_ provider: DatabaseProvider, model: UpdateModel = .apiModel) -> Observable<[T]> where T: Object, [T] == Element {
         flatMap { objects -> Observable<[T]> in
-            guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
-            return realm.rx.save(objects, model: model)
+            provider.save(objects, model: model)
         }
     }
 }
