@@ -50,6 +50,21 @@ class AuthTokenRepositoryTests: BaseTestCase {
         Verify(keychainProvider, 1, .save(.value(.userId), value: .value(NETAuthToken.stubDomain.userId)))
     }
     
+    func testCreateInvalidPassword() {
+        let repository = AuthTokenRepositoryImpl(dependencies: setupDependencies())
+        let output = scheduler.createObserver(AuthToken.self)
+        networkProvider.observableRequestReturnError = RepositoryError(statusCode: StatusCode.httpUnathorized, message: "")
+        
+        repository.create(.invalidPassword).bind(to: output).disposed(by: disposeBag)
+        scheduler.start()
+        
+        XCTAssertEqual(output.events, [
+            .error(0, RepositoryError(statusCode: StatusCode.httpUnathorized, message: ""))
+        ])
+        XCTAssertEqual(networkProvider.observableRequestCallsCount, 1)
+        Verify(keychainProvider, 0, .save(.any, value: .any))
+    }
+    
     func testRead() {
         let repository = AuthTokenRepositoryImpl(dependencies: setupDependencies())
         
