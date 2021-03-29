@@ -47,15 +47,6 @@
         }
       },
       {
-        "package": "DevstackKmpShared",
-        "repositoryURL": "git@github.com:MateeDevs/devstack-kmp-app.git",
-        "state": {
-          "branch": "develop",
-          "revision": "c6eb05371e899b6c9aa1817379cd04940a5547ce",
-          "version": null
-        }
-      },
-      {
         "package": "Firebase",
         "repositoryURL": "https://github.com/firebase/firebase-ios-sdk",
         "state": {
@@ -278,6 +269,15 @@
           "branch": null,
           "revision": "a6014fe94c3dbff0ad500e8da4f251a5d336530b",
           "version": "5.1.0-beta.1"
+        }
+      },
+      {
+        "package": "swiftymocky",
+        "repositoryURL": "https://github.com/MakeAWishFoundation/SwiftyMocky",
+        "state": {
+          "branch": null,
+          "revision": "5cae2006d61247b63a8b0c27ff4d3a6fae294bcf",
+          "version": "4.0.4"
         }
       },
       {

@@ -7,14 +7,14 @@ import CoreLocation
 import RxSwift
 
 public protocol HasGetCurrentLocationUseCase {
-    var getCurrentLocationUseCase: GetCurrentLocationUseCaseType { get }
+    var getCurrentLocationUseCase: GetCurrentLocationUseCase { get }
 }
 
-public protocol GetCurrentLocationUseCaseType {
+public protocol GetCurrentLocationUseCase: AutoMockable {
     func execute() -> Observable<CLLocation>
 }
 
-public struct GetCurrentLocationUseCase: GetCurrentLocationUseCaseType {
+public struct GetCurrentLocationUseCaseImpl: GetCurrentLocationUseCase {
     
     public typealias Dependencies = HasLocationRepository
     

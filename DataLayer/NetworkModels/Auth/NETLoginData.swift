@@ -15,7 +15,7 @@ extension LoginData: NetworkRepresentable {
     var networkModel: NetworkModel {
         NETLoginData(
             email: email,
-            pass: pass
+            pass: password
         )
     }
 }

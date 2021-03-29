@@ -7,7 +7,7 @@ public struct SystemUserDefaultsProvider {
     public init() {}
 }
 
-extension SystemUserDefaultsProvider: UserDefaultsProviderType {
+extension SystemUserDefaultsProvider: UserDefaultsProvider {
     
     public func save<T>(_ key: UserDefaultsCoding, value: T) {
         UserDefaults.standard.set(value, forKey: key.rawValue)

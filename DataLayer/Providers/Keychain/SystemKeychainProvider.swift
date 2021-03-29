@@ -7,7 +7,7 @@ import KeychainAccess
 
 public struct SystemKeychainProvider {
     
-    public init(userDefaultsProvider: UserDefaultsProviderType) {
+    public init(userDefaultsProvider: UserDefaultsProvider) {
         // Clear keychain on first run
         if (userDefaultsProvider.get(.hasRunBefore) as Bool?) == nil {
             deleteAll()
@@ -16,7 +16,7 @@ public struct SystemKeychainProvider {
     }
 }
 
-extension SystemKeychainProvider: KeychainProviderType {
+extension SystemKeychainProvider: KeychainProvider {
     
     public func save(_ key: KeychainCoding, value: String) {
         let keychain = Keychain(service: "\(Bundle.main.bundleIdentifier!)")

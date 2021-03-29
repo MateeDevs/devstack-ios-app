@@ -6,7 +6,7 @@
 import CoreLocation
 import RxSwift
 
-public class LocationRepository: LocationRepositoryType {
+public class LocationRepositoryImpl: LocationRepository {
 
     public typealias Dependencies = HasNoProvider
     

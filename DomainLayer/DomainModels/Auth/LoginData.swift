@@ -3,15 +3,15 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-public struct LoginData {
+public struct LoginData: Equatable {
     public let email: String
-    public let pass: String
+    public let password: String
     
     public init(
         email: String,
-        pass: String
+        password: String
     ) {
         self.email = email
-        self.pass = pass
+        self.password = password
     }
 }

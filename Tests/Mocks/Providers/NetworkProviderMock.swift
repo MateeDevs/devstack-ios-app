@@ -17,6 +17,8 @@ enum ResponseType: Int {
 }
 
 class NetworkProviderMock {
+    
+    var observableRequestCallsCount = 0
 
     private weak var _delegate: NetworkProviderDelegate?
     private let stubbingProvider: MoyaProvider<MultiTarget>
@@ -39,7 +41,7 @@ class NetworkProviderMock {
     }
 }
 
-extension NetworkProviderMock: NetworkProviderType {
+extension NetworkProviderMock: NetworkProvider {
     
     var delegate: NetworkProviderDelegate? {
         get {
@@ -51,7 +53,7 @@ extension NetworkProviderMock: NetworkProviderType {
     }
     
     func observableRequest(_ endpoint: TargetType, withInterceptor: Bool) -> Observable<Response> {
-        providerEvents.append(.networkRequest)
+        observableRequestCallsCount += 1
         return stubbingProvider.rx.request(MultiTarget(endpoint))
             .asObservable().filterSuccessfulStatusCodes()
             .catchError { error -> Observable<Response> in

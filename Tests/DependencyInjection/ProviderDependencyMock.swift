@@ -3,22 +3,22 @@
 //  Copyright © 2020 Matee. All rights reserved.
 //
 
-struct ProviderDependencyMock: ProviderDependencyType {
+struct ProviderDependencyMock: ProviderDependency {
     
-    let databaseProvider: DatabaseProviderType
-    let keychainProvider: KeychainProviderType
-    let networkProvider: NetworkProviderType
-    let pushNotificationsProvider: PushNotificationsProviderType
-    let remoteConfigProvider: RemoteConfigProviderType
-    let userDefaultsProvider: UserDefaultsProviderType
+    let databaseProvider: DatabaseProvider
+    let keychainProvider: KeychainProvider
+    let networkProvider: NetworkProvider
+    let pushNotificationsProvider: PushNotificationsProvider
+    let remoteConfigProvider: RemoteConfigProvider
+    let userDefaultsProvider: UserDefaultsProvider
     
     init(
-        databaseProvider: DatabaseProviderType = DatabaseProviderMock(),
-        keychainProvider: KeychainProviderType = KeychainProviderMock(),
-        networkProvider: NetworkProviderType = NetworkProviderMock(),
-        pushNotificationsProvider: PushNotificationsProviderType = PushNotificationsProviderMock(),
-        remoteConfigProvider: RemoteConfigProviderType = RemoteConfigProviderMock(),
-        userDefaultsProvider: UserDefaultsProviderType = UserDefaultsProviderMock()
+        databaseProvider: DatabaseProvider = DatabaseProviderMock(),
+        keychainProvider: KeychainProvider = KeychainProviderMock(),
+        networkProvider: NetworkProvider = NetworkProviderMock(),
+        pushNotificationsProvider: PushNotificationsProvider = PushNotificationsProviderMock(),
+        remoteConfigProvider: RemoteConfigProvider = RemoteConfigProviderMock(),
+        userDefaultsProvider: UserDefaultsProvider = UserDefaultsProviderMock()
     ) {
         self.databaseProvider = databaseProvider
         self.keychainProvider = keychainProvider

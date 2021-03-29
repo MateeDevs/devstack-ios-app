@@ -5,48 +5,48 @@
 
 // swiftlint:disable superfluous_disable_command file_length
 
-struct UseCaseDependencyMock: UseCaseDependencyType {
+struct UseCaseDependencyMock: UseCaseDependency {
     
-    let loginUseCase: LoginUseCaseType
-    let logoutUseCase: LogoutUseCaseType
-    let registrationUseCase: RegistrationUseCaseType
+    let loginUseCase: LoginUseCase
+    let logoutUseCase: LogoutUseCase
+    let registrationUseCase: RegistrationUseCase
     
-    let getCurrentLocationUseCase: GetCurrentLocationUseCaseType
+    let getCurrentLocationUseCase: GetCurrentLocationUseCase
     
-    let getProfileUseCase: GetProfileUseCaseType
-    let getProfileIdUseCase: GetProfileIdUseCaseType
-    let refreshProfileUseCase: RefreshProfileUseCaseType
-    let updateProfileCounterUseCase: UpdateProfileCounterUseCaseType
+    let getProfileUseCase: GetProfileUseCase
+    let getProfileIdUseCase: GetProfileIdUseCase
+    let refreshProfileUseCase: RefreshProfileUseCase
+    let updateProfileCounterUseCase: UpdateProfileCounterUseCase
     
-    let handlePushNotificationUseCase: HandlePushNotificationUseCaseType
-    let registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCaseType
+    let handlePushNotificationUseCase: HandlePushNotificationUseCase
+    let registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCase
     
-    let getRemoteConfigValueUseCase: GetRemoteConfigValueUseCaseType
+    let getRemoteConfigValueUseCase: GetRemoteConfigValueUseCase
     
-    let getUserUseCase: GetUserUseCaseType
-    let refreshUserUseCase: RefreshUserUseCaseType
-    let updateUserUseCase: UpdateUserUseCaseType
+    let getUserUseCase: GetUserUseCase
+    let refreshUserUseCase: RefreshUserUseCase
+    let updateUserUseCase: UpdateUserUseCase
     
-    let getUsersUseCase: GetUsersUseCaseType
-    let refreshUsersUseCase: RefreshUsersUseCaseType
+    let getUsersUseCase: GetUsersUseCase
+    let refreshUsersUseCase: RefreshUsersUseCase
     
     init(
-        loginUseCase: LoginUseCaseType = LoginUseCaseMock(),
-        logoutUseCase: LogoutUseCaseType = LogoutUseCaseMock(),
-        registrationUseCase: RegistrationUseCaseType = RegistrationUseCaseMock(),
-        getCurrentLocationUseCase: GetCurrentLocationUseCaseType = GetCurrentLocationUseCaseMock(),
-        getProfileUseCase: GetProfileUseCaseType = GetProfileUseCaseMock(),
-        getProfileIdUseCase: GetProfileIdUseCaseType = GetProfileIdUseCaseMock(),
-        refreshProfileUseCase: RefreshProfileUseCaseType = RefreshProfileUseCaseMock(),
-        updateProfileCounterUseCase: UpdateProfileCounterUseCaseType = UpdateProfileCounterUseCaseMock(),
-        handlePushNotificationUseCase: HandlePushNotificationUseCaseType = HandlePushNotificationUseCaseMock(),
-        registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCaseType = RegisterForPushNotificationsUseCaseMock(),
-        getRemoteConfigValueUseCase: GetRemoteConfigValueUseCaseType = GetRemoteConfigValueUseCaseMock(),
-        getUserUseCase: GetUserUseCaseType = GetUserUseCaseMock(),
-        refreshUserUseCase: RefreshUserUseCaseType = RefreshUserUseCaseMock(),
-        updateUserUseCase: UpdateUserUseCaseType = UpdateUserUseCaseMock(),
-        getUsersUseCase: GetUsersUseCaseType = GetUsersUseCaseMock(),
-        refreshUsersUseCase: RefreshUsersUseCaseType = RefreshUsersUseCaseMock()
+        loginUseCase: LoginUseCase = LoginUseCaseMock(),
+        logoutUseCase: LogoutUseCase = LogoutUseCaseMock(),
+        registrationUseCase: RegistrationUseCase = RegistrationUseCaseMock(),
+        getCurrentLocationUseCase: GetCurrentLocationUseCase = GetCurrentLocationUseCaseMock(),
+        getProfileUseCase: GetProfileUseCase = GetProfileUseCaseMock(),
+        getProfileIdUseCase: GetProfileIdUseCase = GetProfileIdUseCaseMock(),
+        refreshProfileUseCase: RefreshProfileUseCase = RefreshProfileUseCaseMock(),
+        updateProfileCounterUseCase: UpdateProfileCounterUseCase = UpdateProfileCounterUseCaseMock(),
+        handlePushNotificationUseCase: HandlePushNotificationUseCase = HandlePushNotificationUseCaseMock(),
+        registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCase = RegisterForPushNotificationsUseCaseMock(),
+        getRemoteConfigValueUseCase: GetRemoteConfigValueUseCase = GetRemoteConfigValueUseCaseMock(),
+        getUserUseCase: GetUserUseCase = GetUserUseCaseMock(),
+        refreshUserUseCase: RefreshUserUseCase = RefreshUserUseCaseMock(),
+        updateUserUseCase: UpdateUserUseCase = UpdateUserUseCaseMock(),
+        getUsersUseCase: GetUsersUseCase = GetUsersUseCaseMock(),
+        refreshUsersUseCase: RefreshUsersUseCase = RefreshUsersUseCaseMock()
     ) {
         self.loginUseCase = loginUseCase
         self.logoutUseCase = logoutUseCase

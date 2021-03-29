@@ -36,8 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Init main flow controller and start the flow
         flowController = AppFlowController(
             navigationController: nc,
-            dependencies: UseCaseDependency(
-                dependencies: RepositoryDependency(dependencies: setupProviders(for: application)),
+            dependencies: UseCaseDependencyImpl(
+                dependencies: RepositoryDependencyImpl(dependencies: setupProviders(for: application)),
                 kmpDependencies: KmpKoinDependency()
             )
         )
@@ -94,8 +94,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let remoteConfigProvider = FirebaseRemoteConfigProvider()
         
         networkProvider.delegate = self
-        
-        return ProviderDependency(
+
+        return ProviderDependencyImpl(
             databaseProvider: databaseProvider,
             keychainProvider: keychainProvider,
             networkProvider: networkProvider,

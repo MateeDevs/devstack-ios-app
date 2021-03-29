@@ -9,7 +9,7 @@ import DomainLayer
 
 // swiftlint:disable superfluous_disable_command file_length
 
-public protocol UseCaseDependencyType: HasNoUseCase,
+public protocol UseCaseDependency: HasNoUseCase,
     HasLoginUseCase,
     HasLogoutUseCase,
     HasRegistrationUseCase,
@@ -28,60 +28,59 @@ public protocol UseCaseDependencyType: HasNoUseCase,
     HasRefreshUsersUseCase,
     HasBookUseCases {}
 
-public struct UseCaseDependency: UseCaseDependencyType {
+public struct UseCaseDependencyImpl: UseCaseDependency {
     
-    public let loginUseCase: LoginUseCaseType
-    public let logoutUseCase: LogoutUseCaseType
-    public let registrationUseCase: RegistrationUseCaseType
+    public let loginUseCase: LoginUseCase
+    public let logoutUseCase: LogoutUseCase
+    public let registrationUseCase: RegistrationUseCase
     
-    public let getCurrentLocationUseCase: GetCurrentLocationUseCaseType
+    public let getCurrentLocationUseCase: GetCurrentLocationUseCase
     
-    public let getProfileUseCase: GetProfileUseCaseType
-    public let getProfileIdUseCase: GetProfileIdUseCaseType
-    public let refreshProfileUseCase: RefreshProfileUseCaseType
-    public let updateProfileCounterUseCase: UpdateProfileCounterUseCaseType
+    public let getProfileUseCase: GetProfileUseCase
+    public let getProfileIdUseCase: GetProfileIdUseCase
+    public let refreshProfileUseCase: RefreshProfileUseCase
+    public let updateProfileCounterUseCase: UpdateProfileCounterUseCase
     
-    public let handlePushNotificationUseCase: HandlePushNotificationUseCaseType
-    public let registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCaseType
+    public let handlePushNotificationUseCase: HandlePushNotificationUseCase
+    public let registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCase
     
-    public let getRemoteConfigValueUseCase: GetRemoteConfigValueUseCaseType
+    public let getRemoteConfigValueUseCase: GetRemoteConfigValueUseCase
     
-    public let getUserUseCase: GetUserUseCaseType
-    public let refreshUserUseCase: RefreshUserUseCaseType
-    public let updateUserUseCase: UpdateUserUseCaseType
+    public let getUserUseCase: GetUserUseCase
+    public let refreshUserUseCase: RefreshUserUseCase
+    public let updateUserUseCase: UpdateUserUseCase
     
-    public let getUsersUseCase: GetUsersUseCaseType
-    public let refreshUsersUseCase: RefreshUsersUseCaseType
+    public let getUsersUseCase: GetUsersUseCase
+    public let refreshUsersUseCase: RefreshUsersUseCase
     
     public let getBooksUseCase: GetBooksUseCase
     public let refreshBooksUseCase: RefreshBooksUseCase
     
     public init(dependencies: RepositoryDependency, kmpDependencies: KMPDependency) {
-        self.loginUseCase = LoginUseCase(dependencies: dependencies)
-        self.logoutUseCase = LogoutUseCase(dependencies: dependencies)
-        self.registrationUseCase = RegistrationUseCase(dependencies: dependencies)
+        self.loginUseCase = LoginUseCaseImpl(dependencies: dependencies)
+        self.logoutUseCase = LogoutUseCaseImpl(dependencies: dependencies)
+        self.registrationUseCase = RegistrationUseCaseImpl(dependencies: dependencies)
         
-        self.getCurrentLocationUseCase = GetCurrentLocationUseCase(dependencies: dependencies)
+        self.getCurrentLocationUseCase = GetCurrentLocationUseCaseImpl(dependencies: dependencies)
         
-        self.getProfileUseCase = GetProfileUseCase(dependencies: dependencies)
-        self.getProfileIdUseCase = GetProfileIdUseCase(dependencies: dependencies)
-        self.refreshProfileUseCase = RefreshProfileUseCase(dependencies: dependencies)
-        self.updateProfileCounterUseCase = UpdateProfileCounterUseCase(dependencies: dependencies)
+        self.getProfileUseCase = GetProfileUseCaseImpl(dependencies: dependencies)
+        self.getProfileIdUseCase = GetProfileIdUseCaseImpl(dependencies: dependencies)
+        self.refreshProfileUseCase = RefreshProfileUseCaseImpl(dependencies: dependencies)
+        self.updateProfileCounterUseCase = UpdateProfileCounterUseCaseImpl(dependencies: dependencies)
         
-        self.handlePushNotificationUseCase = HandlePushNotificationUseCase(dependencies: dependencies)
-        self.registerForPushNotificationsUseCase = RegisterForPushNotificationsUseCase(dependencies: dependencies)
+        self.handlePushNotificationUseCase = HandlePushNotificationUseCaseImpl(dependencies: dependencies)
+        self.registerForPushNotificationsUseCase = RegisterForPushNotificationsUseCaseImpl(dependencies: dependencies)
         
-        self.getRemoteConfigValueUseCase = GetRemoteConfigValueUseCase(dependencies: dependencies)
+        self.getRemoteConfigValueUseCase = GetRemoteConfigValueUseCaseImpl(dependencies: dependencies)
         
-        self.getUserUseCase = GetUserUseCase(dependencies: dependencies)
-        self.refreshUserUseCase = RefreshUserUseCase(dependencies: dependencies)
-        self.updateUserUseCase = UpdateUserUseCase(dependencies: dependencies)
+        self.getUserUseCase = GetUserUseCaseImpl(dependencies: dependencies)
+        self.refreshUserUseCase = RefreshUserUseCaseImpl(dependencies: dependencies)
+        self.updateUserUseCase = UpdateUserUseCaseImpl(dependencies: dependencies)
         
-        self.getUsersUseCase = GetUsersUseCase(dependencies: dependencies)
-        self.refreshUsersUseCase = RefreshUsersUseCase(dependencies: dependencies)
+        self.getUsersUseCase = GetUsersUseCaseImpl(dependencies: dependencies)
+        self.refreshUsersUseCase = RefreshUsersUseCaseImpl(dependencies: dependencies)
         
         self.getBooksUseCase = kmpDependencies.get(GetBooksUseCase.self)
         self.refreshBooksUseCase = kmpDependencies.get(RefreshBooksUseCase.self)
-        
     }
 }

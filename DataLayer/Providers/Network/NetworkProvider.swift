@@ -11,10 +11,10 @@ public protocol NetworkProviderDelegate: class {
 }
 
 public protocol HasNetworkProvider {
-    var networkProvider: NetworkProviderType { get }
+    var networkProvider: NetworkProvider { get }
 }
 
-public protocol NetworkProviderType {
+public protocol NetworkProvider {
     
     var delegate: NetworkProviderDelegate? { get set }
 
@@ -30,7 +30,7 @@ public protocol NetworkProviderType {
 }
 
 // This extension exists only to provide default values for parameters
-extension NetworkProviderType {
+extension NetworkProvider {
     func observableRequest(_ endpoint: TargetType, withInterceptor: Bool = true) -> Observable<Response> {
         observableRequest(endpoint, withInterceptor: withInterceptor)
     }

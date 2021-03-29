@@ -4,14 +4,14 @@
 //
 
 public protocol HasLogoutUseCase {
-    var logoutUseCase: LogoutUseCaseType { get }
+    var logoutUseCase: LogoutUseCase { get }
 }
 
-public protocol LogoutUseCaseType {
+public protocol LogoutUseCase: AutoMockable {
     func execute()
 }
 
-public struct LogoutUseCase: LogoutUseCaseType {
+public struct LogoutUseCaseImpl: LogoutUseCase {
     
     public typealias Dependencies = HasAuthTokenRepository
     

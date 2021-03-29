@@ -6,7 +6,7 @@
 import RxCocoa
 import RxSwift
 
-final class UsersViewModel: ViewModel, ViewModelType {
+final class UsersViewModel: BaseViewModel, ViewModel {
     
     typealias Dependencies =
         HasGetUsersUseCase &

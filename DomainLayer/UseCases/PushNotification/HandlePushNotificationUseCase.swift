@@ -4,14 +4,14 @@
 //
 
 public protocol HasHandlePushNotificationUseCase {
-    var handlePushNotificationUseCase: HandlePushNotificationUseCaseType { get }
+    var handlePushNotificationUseCase: HandlePushNotificationUseCase { get }
 }
 
-public protocol HandlePushNotificationUseCaseType {
+public protocol HandlePushNotificationUseCase: AutoMockable {
     func execute(_ notificationData: [AnyHashable: Any]) -> PushNotification?
 }
 
-public struct HandlePushNotificationUseCase: HandlePushNotificationUseCaseType {
+public struct HandlePushNotificationUseCaseImpl: HandlePushNotificationUseCase {
     
     public typealias Dependencies = HasPushNotificationsRepository
     

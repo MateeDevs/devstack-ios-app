@@ -5,16 +5,16 @@
 
 import RxSwift
 
-public struct AuthTokenRepository: AuthTokenRepositoryType {
+public struct AuthTokenRepositoryImpl: AuthTokenRepository {
 
     public typealias Dependencies =
         HasDatabaseProvider &
         HasKeychainProvider &
         HasNetworkProvider
 
-    private let database: DatabaseProviderType
-    private let keychain: KeychainProviderType
-    private let network: NetworkProviderType
+    private let database: DatabaseProvider
+    private let keychain: KeychainProvider
+    private let network: NetworkProvider
     
     public init(dependencies: Dependencies) {
         self.database = dependencies.databaseProvider

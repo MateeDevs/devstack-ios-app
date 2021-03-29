@@ -36,7 +36,7 @@ public struct RealmDatabaseProvider {
     }
 }
 
-extension RealmDatabaseProvider: DatabaseProviderType {
+extension RealmDatabaseProvider: DatabaseProvider {
     
     public func observableObject<T>(
         _ type: T.Type,

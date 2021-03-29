@@ -6,14 +6,14 @@
 import UserNotifications
 
 public protocol HasRegisterForPushNotificationsUseCase {
-    var registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCaseType { get }
+    var registerForPushNotificationsUseCase: RegisterForPushNotificationsUseCase { get }
 }
 
-public protocol RegisterForPushNotificationsUseCaseType {
+public protocol RegisterForPushNotificationsUseCase: AutoMockable {
     func execute(options: UNAuthorizationOptions, completionHandler: @escaping (Bool, Error?) -> Void)
 }
 
-public struct RegisterForPushNotificationsUseCase: RegisterForPushNotificationsUseCaseType {
+public struct RegisterForPushNotificationsUseCaseImpl: RegisterForPushNotificationsUseCase {
     
     public typealias Dependencies = HasPushNotificationsRepository
     

@@ -6,26 +6,26 @@
 import DataLayer
 import DomainLayer
 
-public protocol RepositoryDependencyType: HasNoRepository,
+public protocol RepositoryDependency: HasNoRepository,
     HasAuthTokenRepository,
     HasLocationRepository,
     HasPushNotificationsRepository,
     HasRemoteConfigRepository,
     HasUserRepository {}
 
-public struct RepositoryDependency: RepositoryDependencyType {
+public struct RepositoryDependencyImpl: RepositoryDependency {
     
-    public let authTokenRepository: AuthTokenRepositoryType
-    public let locationRepository: LocationRepositoryType
-    public let pushNotificationsRepository: PushNotificationsRepositoryType
-    public let remoteConfigRepository: RemoteConfigRepositoryType
-    public let userRepository: UserRepositoryType
+    public let authTokenRepository: AuthTokenRepository
+    public let locationRepository: LocationRepository
+    public let pushNotificationsRepository: PushNotificationsRepository
+    public let remoteConfigRepository: RemoteConfigRepository
+    public let userRepository: UserRepository
     
     public init(dependencies: ProviderDependency) {
-        self.authTokenRepository = AuthTokenRepository(dependencies: dependencies)
-        self.locationRepository = LocationRepository(dependencies: dependencies)
-        self.pushNotificationsRepository = PushNotificationsRepository(dependencies: dependencies)
-        self.remoteConfigRepository = RemoteConfigRepository(dependencies: dependencies)
-        self.userRepository = UserRepository(dependencies: dependencies)
+        self.authTokenRepository = AuthTokenRepositoryImpl(dependencies: dependencies)
+        self.locationRepository = LocationRepositoryImpl(dependencies: dependencies)
+        self.pushNotificationsRepository = PushNotificationsRepositoryImpl(dependencies: dependencies)
+        self.remoteConfigRepository = RemoteConfigRepositoryImpl(dependencies: dependencies)
+        self.userRepository = UserRepositoryImpl(dependencies: dependencies)
     }
 }

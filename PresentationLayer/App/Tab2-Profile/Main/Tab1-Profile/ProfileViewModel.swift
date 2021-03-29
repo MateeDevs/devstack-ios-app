@@ -7,7 +7,7 @@ import CoreLocation
 import RxCocoa
 import RxSwift
 
-final class ProfileViewModel: ViewModel, ViewModelType {
+final class ProfileViewModel: BaseViewModel, ViewModel {
     
     typealias Dependencies =
         HasGetProfileUseCase &

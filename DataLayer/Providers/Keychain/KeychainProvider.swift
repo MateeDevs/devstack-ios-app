@@ -4,7 +4,7 @@
 //
 
 public protocol HasKeychainProvider {
-    var keychainProvider: KeychainProviderType { get }
+    var keychainProvider: KeychainProvider { get }
 }
 
 public enum KeychainCoding: String, CaseIterable {
@@ -12,7 +12,7 @@ public enum KeychainCoding: String, CaseIterable {
     case userId
 }
 
-public protocol KeychainProviderType {
+public protocol KeychainProvider: AutoMockable {
 
     /// Save the given key/value combination
     func save(_ key: KeychainCoding, value: String)

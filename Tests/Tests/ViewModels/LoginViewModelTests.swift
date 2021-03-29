@@ -4,22 +4,43 @@
 //
 
 import RxSwift
+import SwiftyMocky
 import XCTest
 
 @testable import PresentationLayer
 
 class LoginViewModelTests: BaseTestCase {
+    
+    // MARK: Dependencies
+    
+    private let loginUseCase = LoginUseCaseMock()
+    
+    private func setupDependencies() -> UseCaseDependencyMock {
+        setupLoginUseCase()
+        
+        return UseCaseDependencyMock(
+            loginUseCase: loginUseCase
+        )
+    }
+    
+    private func setupLoginUseCase() {
+        Given(loginUseCase, .execute(
+            .value(.invalid),
+            willReturn: .error(RepositoryError(statusCode: StatusCode.httpUnathorized, message: ""))
+        ))
+        Given(loginUseCase, .execute(.any, willReturn: .just(())))
+    }
 
-    // MARK: Mock
+    // MARK: Inputs and outputs
 
     private struct Input {
-        var email: String = ""
-        var password: String = ""
+        var loginData: LoginData = LoginData(email: "", password: "")
         var loginButtonTaps: [Void] = []
         var registerButtonTaps: [Void] = []
 
         static let loginEmpty = Input(loginButtonTaps: [()])
-        static let loginNonEmpty = Input(email: "email", password: "pass", loginButtonTaps: [()])
+        static let loginValid = Input(loginData: .valid, loginButtonTaps: [()])
+        static let loginInvalid = Input(loginData: .invalid, loginButtonTaps: [()])
         static let register = Input(registerButtonTaps: [()])
     }
     
@@ -29,18 +50,13 @@ class LoginViewModelTests: BaseTestCase {
         let loginButtonEnabled: TestableObserver<Bool>
     }
 
-    @discardableResult private func mockViewModel(
-        for input: Input,
-        loginUseCaseResult: Observable<Void> = .just(())
-    ) -> Output {
-        let viewModel = LoginViewModel(dependencies: UseCaseDependencyMock(
-            loginUseCase: LoginUseCaseMock(returnValue: loginUseCaseResult)
-        ))
+    private func generateOutput(for input: Input) -> Output {
+        let viewModel = LoginViewModel(dependencies: setupDependencies())
         
-        scheduler.createColdObservable([.next(0, input.email)])
+        scheduler.createColdObservable([.next(0, input.loginData.email)])
             .bind(to: viewModel.input.email).disposed(by: disposeBag)
 
-        scheduler.createColdObservable([.next(0, input.password)])
+        scheduler.createColdObservable([.next(0, input.loginData.password)])
             .bind(to: viewModel.input.password).disposed(by: disposeBag)
 
         scheduler.createColdObservable(input.loginButtonTaps.map { .next(0, $0) })
@@ -56,85 +72,73 @@ class LoginViewModelTests: BaseTestCase {
         )
     }
 
-    // MARK: Tests for Output.flow
+    // MARK: Tests
 
-    func testFlowOutputForLoginEmpty() {
-        let output = mockViewModel(for: Input.loginEmpty)
+    func testLoginEmpty() {
+        let output = generateOutput(for: Input.loginEmpty)
+        
         scheduler.start()
+        
         XCTAssertEqual(output.flow.events, [])
-    }
-
-    func testFlowOutputForLoginCorrectPassword() {
-        let output = mockViewModel(for: Input.loginNonEmpty)
-        scheduler.start()
-        XCTAssertEqual(output.flow.events, [
-            .next(0, .dismiss)
-        ])
-    }
-
-    func testFlowOutputForLoginWrongPassword() {
-        let output = mockViewModel(
-            for: Input.loginNonEmpty,
-            loginUseCaseResult: .error(RepositoryError(statusCode: StatusCode.httpUnathorized, message: ""))
-        )
-        scheduler.start()
-        XCTAssertEqual(output.flow.events, [])
-    }
-
-    func testFlowOutputForRegister() {
-        let output = mockViewModel(for: Input.register)
-        scheduler.start()
-        XCTAssertEqual(output.flow.events, [
-            .next(0, .showRegistration)
-        ])
-    }
-
-    // MARK: Tests for Output.alertAction
-
-    func testWhisperActionOutputForLoginEmpty() {
-        let output = mockViewModel(for: Input.loginEmpty)
-        scheduler.start()
         XCTAssertEqual(output.alertAction.events, [
             .next(0, .showWhisper(Whisper(error: L10n.invalid_credentials)))
         ])
+        XCTAssertEqual(output.loginButtonEnabled.events, [
+            .next(0, true)
+        ])
+        Verify(loginUseCase, 0, .execute(.any))
     }
-    
-    func testAlertActionOutputForLoginCorrectPassword() {
-        let output = mockViewModel(for: Input.loginNonEmpty)
+
+    func testLoginValid() {
+        let output = generateOutput(for: Input.loginValid)
+        
         scheduler.start()
+        
+        XCTAssertEqual(output.flow.events, [
+            .next(0, .dismiss)
+        ])
         XCTAssertEqual(output.alertAction.events, [
             .next(0, .showWhisper(Whisper(L10n.signing_in))),
             .next(0, .hideWhisper)
         ])
-    }
-
-    func testAlertActionOutputForLoginWrongPassword() {
-        let output = mockViewModel(
-            for: Input.loginNonEmpty,
-            loginUseCaseResult: .error(RepositoryError(statusCode: StatusCode.httpUnathorized, message: ""))
-        )
-        scheduler.start()
-        XCTAssertEqual(output.alertAction.events, [
-            .next(0, .showWhisper(Whisper(L10n.signing_in))),
-            .next(0, .showWhisper(Whisper(error: L10n.invalid_credentials)))
-        ])
-    }
-
-    func testAlertActionOutputForRegister() {
-        let output = mockViewModel(for: Input.register)
-        scheduler.start()
-        XCTAssertEqual(output.alertAction.events, [])
-    }
-
-    // MARK: Tests for Output.loginButtonEnabled
-
-    func testLoginButtonEnabledOutput() {
-        let output = mockViewModel(for: Input.loginNonEmpty)
-        scheduler.start()
         XCTAssertEqual(output.loginButtonEnabled.events, [
             .next(0, true),
             .next(0, false),
             .next(0, true)
         ])
+        Verify(loginUseCase, 1, .execute(.value(.valid)))
+    }
+
+    func testLoginInvalid() {
+        let output = generateOutput(for: Input.loginInvalid)
+        
+        scheduler.start()
+        
+        XCTAssertEqual(output.flow.events, [])
+        XCTAssertEqual(output.alertAction.events, [
+            .next(0, .showWhisper(Whisper(L10n.signing_in))),
+            .next(0, .showWhisper(Whisper(error: L10n.invalid_credentials)))
+        ])
+        XCTAssertEqual(output.loginButtonEnabled.events, [
+            .next(0, true),
+            .next(0, false),
+            .next(0, true)
+        ])
+        Verify(loginUseCase, 1, .execute(.value(.invalid)))
+    }
+
+    func testRegister() {
+        let output = generateOutput(for: Input.register)
+        
+        scheduler.start()
+        
+        XCTAssertEqual(output.flow.events, [
+            .next(0, .showRegistration)
+        ])
+        XCTAssertEqual(output.alertAction.events, [])
+        XCTAssertEqual(output.loginButtonEnabled.events, [
+            .next(0, true)
+        ])
+        Verify(loginUseCase, 0, .execute(.any))
     }
 }
