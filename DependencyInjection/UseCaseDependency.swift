@@ -4,6 +4,7 @@
 //
 
 import DataLayer
+import DevstackKmpShared
 import DomainLayer
 
 // swiftlint:disable superfluous_disable_command file_length
@@ -24,7 +25,8 @@ public protocol UseCaseDependencyType: HasNoUseCase,
     HasRefreshUserUseCase,
     HasUpdateUserUseCase,
     HasGetUsersUseCase,
-    HasRefreshUsersUseCase {}
+    HasRefreshUsersUseCase,
+    HasBookUseCases {}
 
 public struct UseCaseDependency: UseCaseDependencyType {
     
@@ -51,7 +53,10 @@ public struct UseCaseDependency: UseCaseDependencyType {
     public let getUsersUseCase: GetUsersUseCaseType
     public let refreshUsersUseCase: RefreshUsersUseCaseType
     
-    public init(dependencies: RepositoryDependency) {
+    public let getBooksUseCase: GetBooksUseCase
+    public let refreshBooksUseCase: RefreshBooksUseCase
+    
+    public init(dependencies: RepositoryDependency, kmpDependencies: KMPDependency) {
         self.loginUseCase = LoginUseCase(dependencies: dependencies)
         self.logoutUseCase = LogoutUseCase(dependencies: dependencies)
         self.registrationUseCase = RegistrationUseCase(dependencies: dependencies)
@@ -74,5 +79,9 @@ public struct UseCaseDependency: UseCaseDependencyType {
         
         self.getUsersUseCase = GetUsersUseCase(dependencies: dependencies)
         self.refreshUsersUseCase = RefreshUsersUseCase(dependencies: dependencies)
+        
+        self.getBooksUseCase = kmpDependencies.get(GetBooksUseCase.self)
+        self.refreshBooksUseCase = kmpDependencies.get(RefreshBooksUseCase.self)
+        
     }
 }

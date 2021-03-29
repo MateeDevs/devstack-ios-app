@@ -36,7 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Init main flow controller and start the flow
         flowController = AppFlowController(
             navigationController: nc,
-            dependencies: UseCaseDependency(dependencies: RepositoryDependency(dependencies: setupProviders(for: application)))
+            dependencies: UseCaseDependency(
+                dependencies: RepositoryDependency(dependencies: setupProviders(for: application)),
+                kmpDependencies: KmpKoinDependency()
+            )
         )
         flowController?.start()
         
@@ -91,7 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let remoteConfigProvider = FirebaseRemoteConfigProvider()
         
         networkProvider.delegate = self
-
+        
         return ProviderDependency(
             databaseProvider: databaseProvider,
             keychainProvider: keychainProvider,
@@ -104,26 +107,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-   func userNotificationCenter(
-       _ center: UNUserNotificationCenter,
-       willPresent notification: UNNotification,
-       withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
-   ) {
-       // Show system notification
-       completionHandler([.alert, .badge, .sound])
-   }
-
-   func userNotificationCenter(
-       _ center: UNUserNotificationCenter,
-       didReceive response: UNNotificationResponse,
-       withCompletionHandler completionHandler: @escaping () -> Void
-   ) {
-       let notification = response.notification.request.content.userInfo
-       DispatchQueue.main.async {
-           guard let notification = self.flowController?.dependencies.handlePushNotificationUseCase.execute(notification) else { return }
-           self.flowController?.handleDeeplink(for: notification)
-       }
-   }
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+    ) {
+        // Show system notification
+        completionHandler([.alert, .badge, .sound])
+    }
+    
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse,
+        withCompletionHandler completionHandler: @escaping () -> Void
+    ) {
+        let notification = response.notification.request.content.userInfo
+        DispatchQueue.main.async {
+            guard let notification = self.flowController?.dependencies.handlePushNotificationUseCase.execute(notification) else { return }
+            self.flowController?.handleDeeplink(for: notification)
+        }
+    }
 }
 
 extension AppDelegate: NetworkProviderDelegate {

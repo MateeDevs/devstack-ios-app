@@ -298,6 +298,8 @@
 		459F8C2725F6D812004ACAD4 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C2625F6D812004ACAD4 /* RepositoryDependency.swift */; };
 		459F8C3725F6D86B004ACAD4 /* ProviderDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */; };
 		459F8C5225F6DA4E004ACAD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C5125F6DA4E004ACAD4 /* Constants.swift */; };
+		45C45B5526124BD80076991C /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 45C45B5426124BD80076991C /* DevstackKmpShared */; };
+		45C45B5D26124FFA0076991C /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 45C45B5C26124FFA0076991C /* DevstackKmpShared */; };
 		45D3771E25F8D07800D05900 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771B25F8D07800D05900 /* Localizable.swift */; };
 		45D3771F25F8D07800D05900 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771C25F8D07800D05900 /* Assets.swift */; };
 		45D3772025F8D07800D05900 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771D25F8D07800D05900 /* Storyboards.swift */; };
@@ -320,6 +322,16 @@
 		45E1011425E6B2DC0082CABA /* TestSchedulerVirtualTimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1011225E6B2DC0082CABA /* TestSchedulerVirtualTimeConverter.swift */; };
 		45E1012525E6B45C0082CABA /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1012425E6B45C0082CABA /* Bag.swift */; };
 		45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB498224A3D7C000932918 /* BaseTestCase.swift */; };
+		48C3DF8F260215BE004CB3E1 /* KotlinUseCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DF8E260215BE004CB3E1 /* KotlinUseCase+Extensions.swift */; };
+		48C3DFA52602165D004CB3E1 /* KMPDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DFA42602165D004CB3E1 /* KMPDependency.swift */; };
+		48C3DFE426025312004CB3E1 /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
+		48C3E01126025B68004CB3E1 /* BooksFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E01026025B68004CB3E1 /* BooksFlowController.swift */; };
+		48C3E07C260262AB004CB3E1 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C3E07A260262AB004CB3E1 /* BookTableViewCell.xib */; };
+		48C3E07D260262AB004CB3E1 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E07B260262AB004CB3E1 /* BookTableViewCell.swift */; };
+		48C3E09F260264D1004CB3E1 /* Books.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C3E09C260264D1004CB3E1 /* Books.storyboard */; };
+		48C3E0A0260264D1004CB3E1 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E09D260264D1004CB3E1 /* BooksViewController.swift */; };
+		48C3E0A1260264D1004CB3E1 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E09E260264D1004CB3E1 /* BooksViewModel.swift */; };
+		48C3E0AF26026F7D004CB3E1 /* KotlinUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E0AE26026F7D004CB3E1 /* KotlinUseCases.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -408,6 +420,13 @@
 			remoteInfo = DependencyInjection;
 		};
 		45D3776A25F9228A00D05900 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 458219A725F262F000D587EB;
+			remoteInfo = SPMDependencies;
+		};
+		48C3DFE626025312004CB3E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
 			proxyType = 1;
@@ -738,6 +757,15 @@
 		45E1011225E6B2DC0082CABA /* TestSchedulerVirtualTimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSchedulerVirtualTimeConverter.swift; sourceTree = "<group>"; };
 		45E1012425E6B45C0082CABA /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		45FB498224A3D7C000932918 /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
+		48C3DF8E260215BE004CB3E1 /* KotlinUseCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KotlinUseCase+Extensions.swift"; sourceTree = "<group>"; };
+		48C3DFA42602165D004CB3E1 /* KMPDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMPDependency.swift; sourceTree = "<group>"; };
+		48C3E01026025B68004CB3E1 /* BooksFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksFlowController.swift; sourceTree = "<group>"; };
+		48C3E07A260262AB004CB3E1 /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
+		48C3E07B260262AB004CB3E1 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		48C3E09C260264D1004CB3E1 /* Books.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Books.storyboard; sourceTree = "<group>"; };
+		48C3E09D260264D1004CB3E1 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		48C3E09E260264D1004CB3E1 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
+		48C3E0AE26026F7D004CB3E1 /* KotlinUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KotlinUseCases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -779,6 +807,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				456E745625F8345D007D9A6D /* SPMDependencies.framework in Frameworks */,
+				45C45B5D26124FFA0076991C /* DevstackKmpShared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,6 +834,7 @@
 				458219CB25F2634100D587EB /* RxRealm in Frameworks */,
 				458219C925F2634100D587EB /* RealmSwift in Frameworks */,
 				458219BD25F2631C00D587EB /* FirebaseMessaging in Frameworks */,
+				45C45B5526124BD80076991C /* DevstackKmpShared in Frameworks */,
 				458219BF25F2632200D587EB /* FirebaseRemoteConfig in Frameworks */,
 				4575E5E825F6F18C00CCC003 /* AlamofireImage in Frameworks */,
 				458219C325F2633900D587EB /* Moya in Frameworks */,
@@ -817,6 +847,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				456E746825F83465007D9A6D /* DomainLayer.framework in Frameworks */,
+				48C3DFE426025312004CB3E1 /* SPMDependencies.framework in Frameworks */,
 				456E746525F83464007D9A6D /* DataLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1367,6 +1398,7 @@
 				45821B1F25F269CF00D587EB /* RemoteConfig */,
 				45821B2925F269EF00D587EB /* User */,
 				45821B4C25F26ACE00D587EB /* Users */,
+				48C3E0AE26026F7D004CB3E1 /* KotlinUseCases.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1465,6 +1497,7 @@
 			isa = PBXGroup;
 			children = (
 				459F86A125F66A49004ACAD4 /* Observable+Extensions.swift */,
+				48C3DF8E260215BE004CB3E1 /* KotlinUseCase+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1555,6 +1588,7 @@
 				459F8A6125F6B331004ACAD4 /* Tab1-Users */,
 				459F8A6225F6B338004ACAD4 /* Tab2-Profile */,
 				459F8A6325F6B341004ACAD4 /* Tab3-Counter */,
+				48C3E00926025B24004CB3E1 /* Tab4-Books */,
 				459F8B3025F6B519004ACAD4 /* AppFlowController.swift */,
 				459F8B3925F6B52A004ACAD4 /* Flow.swift */,
 			);
@@ -1898,6 +1932,7 @@
 				459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */,
 				459F8BE625F6D67F004ACAD4 /* DependencyInjection.h */,
 				459F8BE725F6D67F004ACAD4 /* Info.plist */,
+				48C3DFA42602165D004CB3E1 /* KMPDependency.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -1965,6 +2000,35 @@
 				451128D025FBE915007CBA76 /* ProviderEvent.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		48C3E00926025B24004CB3E1 /* Tab4-Books */ = {
+			isa = PBXGroup;
+			children = (
+				48C3E01026025B68004CB3E1 /* BooksFlowController.swift */,
+				48C3E01826025C19004CB3E1 /* Main */,
+			);
+			path = "Tab4-Books";
+			sourceTree = "<group>";
+		};
+		48C3E01826025C19004CB3E1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				48C3E09C260264D1004CB3E1 /* Books.storyboard */,
+				48C3E09D260264D1004CB3E1 /* BooksViewController.swift */,
+				48C3E09E260264D1004CB3E1 /* BooksViewModel.swift */,
+				48C3E0792602629A004CB3E1 /* Views */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		48C3E0792602629A004CB3E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48C3E07A260262AB004CB3E1 /* BookTableViewCell.xib */,
+				48C3E07B260262AB004CB3E1 /* BookTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2097,6 +2161,9 @@
 				4575E5F025F6F1B800CCC003 /* PBXTargetDependency */,
 			);
 			name = DomainLayer;
+			packageProductDependencies = (
+				45C45B5C26124FFA0076991C /* DevstackKmpShared */,
+			);
 			productName = DomainLayer;
 			productReference = 4582188625F25E3300D587EB /* DomainLayer.framework */;
 			productType = "com.apple.product-type.framework";
@@ -2120,6 +2187,8 @@
 				4575E5F525F6F1C300CCC003 /* PBXTargetDependency */,
 			);
 			name = PresentationLayer;
+			packageProductDependencies = (
+			);
 			productName = PresentationLayer;
 			productReference = 458218BA25F25E4300D587EB /* PresentationLayer.framework */;
 			productType = "com.apple.product-type.framework";
@@ -2152,6 +2221,7 @@
 				4575E5E925F6F19000CCC003 /* RxCocoa */,
 				4575E5EB25F6F19900CCC003 /* SkeletonView */,
 				45D3776C25F9229600D05900 /* Atlantis */,
+				45C45B5426124BD80076991C /* DevstackKmpShared */,
 			);
 			productName = DataLayerDependencies;
 			productReference = 458219A825F262F000D587EB /* SPMDependencies.framework */;
@@ -2171,8 +2241,11 @@
 			dependencies = (
 				459F8C1925F6D798004ACAD4 /* PBXTargetDependency */,
 				459F8C1D25F6D798004ACAD4 /* PBXTargetDependency */,
+				48C3DFE726025312004CB3E1 /* PBXTargetDependency */,
 			);
 			name = DependencyInjection;
+			packageProductDependencies = (
+			);
 			productName = DependencyInjection;
 			productReference = 459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */;
 			productType = "com.apple.product-type.framework";
@@ -2235,6 +2308,7 @@
 				4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */,
 				45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */,
 			);
 			productRefGroup = 4558D30820FCC8FF005BC325 /* Products */;
 			projectDirPath = "";
@@ -2297,6 +2371,7 @@
 				459F88D925F6A9A8004ACAD4 /* UserImageView.xib in Resources */,
 				459F8B1525F6B4E3004ACAD4 /* Counter.storyboard in Resources */,
 				459F8A5225F6B224004ACAD4 /* Localizable.strings in Resources */,
+				48C3E09F260264D1004CB3E1 /* Books.storyboard in Resources */,
 				459F8B1925F6B4ED004ACAD4 /* CounterControl.storyboard in Resources */,
 				459F88CA25F6A9A4004ACAD4 /* TabBarView.xib in Resources */,
 				459F88AB25F6A98D004ACAD4 /* ActivityIndicatorView.xib in Resources */,
@@ -2310,6 +2385,7 @@
 				459F88BB25F6A997004ACAD4 /* RatingView.xcassets in Resources */,
 				459F8A8F25F6B3FA004ACAD4 /* Registration.storyboard in Resources */,
 				459F88BD25F6A997004ACAD4 /* RatingView.xib in Resources */,
+				48C3E07C260262AB004CB3E1 /* BookTableViewCell.xib in Resources */,
 				459F8B2625F6B4F2004ACAD4 /* CounterDisplay.storyboard in Resources */,
 				459F8A3E25F6B20A004ACAD4 /* InfoPlist.strings in Resources */,
 				459F8AFF25F6B4CC004ACAD4 /* Settings.storyboard in Resources */,
@@ -2545,6 +2621,7 @@
 				459F86F625F66FA9004ACAD4 /* Logger.swift in Sources */,
 				459F86B425F66C42004ACAD4 /* ErrorMessages.swift in Sources */,
 				45821A8A25F268C000D587EB /* PushNotification.swift in Sources */,
+				48C3E0AF26026F7D004CB3E1 /* KotlinUseCases.swift in Sources */,
 				458FD90525F28A2100FBD3B0 /* UserRepositoryType.swift in Sources */,
 				45821A9325F268D500D587EB /* RemoteConfigCoding.swift in Sources */,
 				459F86D625F66C78004ACAD4 /* ValidationError.swift in Sources */,
@@ -2555,6 +2632,7 @@
 				45821AC725F2693900D587EB /* LogoutUseCase.swift in Sources */,
 				459F86DF25F66F7A004ACAD4 /* HasNoRepository.swift in Sources */,
 				45821A9C25F268E200D587EB /* User.swift in Sources */,
+				48C3DF8F260215BE004CB3E1 /* KotlinUseCase+Extensions.swift in Sources */,
 				45821B0D25F269A400D587EB /* UpdateProfileCounterUseCase.swift in Sources */,
 				45821A6F25F2689200D587EB /* AuthToken.swift in Sources */,
 				45821AFB25F2698700D587EB /* GetProfileIdUseCase.swift in Sources */,
@@ -2609,6 +2687,7 @@
 				459F8B8425F6B82A004ACAD4 /* Observable+Extensions.swift in Sources */,
 				459F8AC325F6B488004ACAD4 /* UserTableViewCell.swift in Sources */,
 				459F87F225F6A5CF004ACAD4 /* EnhancedButton.swift in Sources */,
+				48C3E01126025B68004CB3E1 /* BooksFlowController.swift in Sources */,
 				45D3771E25F8D07800D05900 /* Localizable.swift in Sources */,
 				459F89FE25F6B0B2004ACAD4 /* Whisper.swift in Sources */,
 				459F87A925F6A3FD004ACAD4 /* ImagePickerViewController+Rx.swift in Sources */,
@@ -2621,6 +2700,7 @@
 				459F8A9A25F6B45D004ACAD4 /* MainTabBarController.swift in Sources */,
 				459F8A8025F6B3ED004ACAD4 /* LoginViewModel.swift in Sources */,
 				459F8B3125F6B519004ACAD4 /* AppFlowController.swift in Sources */,
+				48C3E0A0260264D1004CB3E1 /* BooksViewController.swift in Sources */,
 				459F8A8125F6B3ED004ACAD4 /* LoginViewController.swift in Sources */,
 				459F885E25F6A79C004ACAD4 /* TextFieldWithHint.swift in Sources */,
 				4575E65D25F6FFA300CCC003 /* Bundle+Extensions.swift in Sources */,
@@ -2644,10 +2724,12 @@
 				459F89D925F6B009004ACAD4 /* UIView+SkeletonView+Rx.swift in Sources */,
 				459F8B3A25F6B52A004ACAD4 /* Flow.swift in Sources */,
 				459F896F25F6ADFD004ACAD4 /* NSObject+Extensions.swift in Sources */,
+				48C3E07D260262AB004CB3E1 /* BookTableViewCell.swift in Sources */,
 				459F890E25F6ABB2004ACAD4 /* Formatter.swift in Sources */,
 				459F889D25F6A8AA004ACAD4 /* WhisperView.swift in Sources */,
 				459F87A025F6A3E8004ACAD4 /* ImagePickerViewController.swift in Sources */,
 				459F87C425F6A42E004ACAD4 /* WebViewController.swift in Sources */,
+				48C3E0A1260264D1004CB3E1 /* BooksViewModel.swift in Sources */,
 				459F892725F6ACCE004ACAD4 /* Plurals.swift in Sources */,
 				459F8AE525F6B4AB004ACAD4 /* ProfileWrapperViewController.swift in Sources */,
 				459F878E25F6A3B8004ACAD4 /* BaseTableViewController+Rx.swift in Sources */,
@@ -2710,6 +2792,7 @@
 			files = (
 				459F8C3725F6D86B004ACAD4 /* ProviderDependency.swift in Sources */,
 				459F8C2725F6D812004ACAD4 /* RepositoryDependency.swift in Sources */,
+				48C3DFA52602165D004CB3E1 /* KMPDependency.swift in Sources */,
 				459F8C0525F6D733004ACAD4 /* UseCaseDependency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2781,6 +2864,11 @@
 			isa = PBXTargetDependency;
 			target = 458219A725F262F000D587EB /* SPMDependencies */;
 			targetProxy = 45D3776A25F9228A00D05900 /* PBXContainerItemProxy */;
+		};
+		48C3DFE726025312004CB3E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 458219A725F262F000D587EB /* SPMDependencies */;
+			targetProxy = 48C3DFE626025312004CB3E1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -4645,6 +4733,14 @@
 				minimumVersion = 1.7.1;
 			};
 		};
+		45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:MateeDevs/devstack-kmp-app.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 		45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -4715,6 +4811,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 45840CBD25ACE84900DFC729 /* XCRemoteSwiftPackageReference "RxRealm" */;
 			productName = RxRealm;
+		};
+		45C45B5426124BD80076991C /* DevstackKmpShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
+			productName = DevstackKmpShared;
+		};
+		45C45B5C26124FFA0076991C /* DevstackKmpShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
+			productName = DevstackKmpShared;
 		};
 		45D3776C25F9229600D05900 /* Atlantis */ = {
 			isa = XCSwiftPackageProductDependency;

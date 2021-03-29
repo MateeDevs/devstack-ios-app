@@ -69,7 +69,9 @@ final class RegistrationViewModel: ViewModel, ViewModelType {
         let alertAction = Observable<AlertAction>.merge(
             activity.toWhisper(L10n.signing_up),
             registration.compactMap { $0.element }.map { _ in .hideWhisper },
-            registration.compactMap { $0.error }.map { .showWhisper(Whisper(error: $0.toString(messages))) }
+            registration.compactMap { $0.error }.map {
+                .showWhisper(Whisper(error: $0.toString(messages)))
+            }
         )
 
         // MARK: Setup outputs
