@@ -33,7 +33,7 @@ class RefreshUserUseCaseTests: BaseTestCase {
         let useCase = RefreshUserUseCaseImpl(dependencies: setupDependencies())
         let output = scheduler.createObserver(Bool.self)
         
-        useCase.execute(id: NETUser.stubDomain.id).map { _ in true }.asDriver().drive(output).disposed(by: disposeBag)
+        useCase.execute(id: NETUser.stubDomain.id).map { _ in true }.bind(to: output).disposed(by: disposeBag)
         scheduler.start()
         
         XCTAssertEqual(output.events, [

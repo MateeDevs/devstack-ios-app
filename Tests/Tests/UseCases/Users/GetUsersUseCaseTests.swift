@@ -33,7 +33,7 @@ class GetUsersUseCaseTests: BaseTestCase {
         let useCase = GetUsersUseCaseImpl(dependencies: setupDependencies())
         let output = scheduler.createObserver([User].self)
         
-        useCase.execute().asDriver().drive(output).disposed(by: disposeBag)
+        useCase.execute().bind(to: output).disposed(by: disposeBag)
         scheduler.start()
         
         XCTAssertEqual(output.events, [

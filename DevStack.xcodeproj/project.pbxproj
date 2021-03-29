@@ -289,6 +289,7 @@
 		45B675EA260E23BB00DF7387 /* GetUsersUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675E9260E23BB00DF7387 /* GetUsersUseCaseTests.swift */; };
 		45B675F2260E23C600DF7387 /* RefreshUsersUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675F1260E23C600DF7387 /* RefreshUsersUseCaseTests.swift */; };
 		45B676022611F23100DF7387 /* UpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B676012611F23100DF7387 /* UpdateModel.swift */; };
+		45B676102612088D00DF7387 /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6760F2612088D00DF7387 /* UserRepositoryTests.swift */; };
 		45D3771E25F8D07800D05900 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771B25F8D07800D05900 /* Localizable.swift */; };
 		45D3771F25F8D07800D05900 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771C25F8D07800D05900 /* Assets.swift */; };
 		45D3772025F8D07800D05900 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771D25F8D07800D05900 /* Storyboards.swift */; };
@@ -699,6 +700,7 @@
 		45B675E9260E23BB00DF7387 /* GetUsersUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersUseCaseTests.swift; sourceTree = "<group>"; };
 		45B675F1260E23C600DF7387 /* RefreshUsersUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshUsersUseCaseTests.swift; sourceTree = "<group>"; };
 		45B676012611F23100DF7387 /* UpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateModel.swift; sourceTree = "<group>"; };
+		45B6760F2612088D00DF7387 /* UserRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
 		45D3771B25F8D07800D05900 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		45D3771C25F8D07800D05900 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		45D3771D25F8D07800D05900 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
@@ -894,6 +896,7 @@
 			isa = PBXGroup;
 			children = (
 				4557195724A15C0200FB24CA /* AuthTokenRepositoryTests.swift */,
+				45B6760F2612088D00DF7387 /* UserRepositoryTests.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -2410,6 +2413,7 @@
 				4534C023260209F30022ACF4 /* UseCaseDependencyMock.swift in Sources */,
 				4534C2512604280D0022ACF4 /* RegistrationData+Stubs.swift in Sources */,
 				45E100FC25E6B2A00082CABA /* Deprecated.swift in Sources */,
+				45B676102612088D00DF7387 /* UserRepositoryTests.swift in Sources */,
 				45E100F625E6B2A00082CABA /* TestableObserver.swift in Sources */,
 				45E100FB25E6B2A00082CABA /* Any+Equatable.swift in Sources */,
 				4534C1A32603C98F0022ACF4 /* Mocks.swift in Sources */,
