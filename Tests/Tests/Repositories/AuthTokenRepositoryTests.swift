@@ -52,8 +52,8 @@ class AuthTokenRepositoryTests: BaseTestCase {
     
     func testCreateInvalidPassword() {
         let repository = AuthTokenRepositoryImpl(dependencies: setupDependencies())
-        let output = scheduler.createObserver(AuthToken.self)
         networkProvider.observableRequestReturnError = RepositoryError(statusCode: StatusCode.httpUnathorized, message: "")
+        let output = scheduler.createObserver(AuthToken.self)
         
         repository.create(.invalidPassword).bind(to: output).disposed(by: disposeBag)
         scheduler.start()

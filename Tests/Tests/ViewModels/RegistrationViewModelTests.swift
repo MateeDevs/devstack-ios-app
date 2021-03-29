@@ -26,7 +26,7 @@
     private func setupRegistrationUseCase() {
         Given(registrationUseCase, .execute(
             .value(.existingEmail),
-            willReturn: .error(ValidationError(L10n.register_view_email_already_exists))
+            willReturn: .error(RepositoryError(statusCode: StatusCode.httpConflict, message: ""))
         ))
         Given(registrationUseCase, .execute(.any, willReturn: .just(())))
     }

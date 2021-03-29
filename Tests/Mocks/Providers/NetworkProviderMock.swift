@@ -42,12 +42,10 @@ extension NetworkProviderMock: NetworkProvider {
     }
     
     func observableRequest(_ endpoint: TargetType, withInterceptor: Bool) -> Observable<Response> {
-        observableRequestCallsCount += 1
-        
         if let error = observableRequestReturnError {
-            return .error(error)
+            return Observable.error(error).do(onError: { _ in self.observableRequestCallsCount += 1 })
         } else {
-            return stubbingProvider.rx.request(MultiTarget(endpoint)).asObservable()
+            return stubbingProvider.rx.request(MultiTarget(endpoint)).asObservable().do { _ in self.observableRequestCallsCount += 1 }
         }
     }
 }
