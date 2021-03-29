@@ -3,13 +3,14 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-import DevstackKmpShared
 import RxCocoa
 import RxSwift
 
 final class BooksViewModel: BaseViewModel, ViewModel {
     
-    typealias Dependencies = HasBookUseCases
+    typealias Dependencies =
+        HasGetBooksUseCase &
+        HasRefreshBooksUseCase
     
     let input: Input
     let output: Output
@@ -36,13 +37,12 @@ final class BooksViewModel: BaseViewModel, ViewModel {
 
         // MARK: Transformations
         
-        let books = dependencies.getBooksUseCase
-            .execute().ignoreErrors().share(replay: 1)
+        let books = dependencies.getBooksUseCase!.execute().ignoreErrors().share(replay: 1)
         
         let activity = ActivityIndicator()
         
         let refreshUsers = page.flatMap { _ -> Observable<Int> in
-            dependencies.refreshBooksUseCase.execute().map({ _ in 100 }).trackActivity(activity)
+            dependencies.refreshBooksUseCase!.execute().map({ _ in 100 }).trackActivity(activity)
         }.ignoreErrors().share()
 
         let isRefreshing = Observable<Bool>.merge(

@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationController: nc,
             dependencies: UseCaseDependencyImpl(
                 dependencies: RepositoryDependencyImpl(dependencies: setupProviders(for: application)),
-                kmpDependencies: KmpKoinDependency()
+                kmpDependencies: KMPKoinDependency()
             )
         )
         flowController?.start()

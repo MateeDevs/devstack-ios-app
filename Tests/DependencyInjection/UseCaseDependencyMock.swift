@@ -3,6 +3,9 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import class DevstackKmpShared.GetBooksUseCase
+import class DevstackKmpShared.RefreshBooksUseCase
+
 // swiftlint:disable superfluous_disable_command file_length
 
 struct UseCaseDependencyMock: UseCaseDependency {
@@ -30,6 +33,9 @@ struct UseCaseDependencyMock: UseCaseDependency {
     let getUsersUseCase: GetUsersUseCase
     let refreshUsersUseCase: RefreshUsersUseCase
     
+    let getBooksUseCase: GetBooksUseCase?
+    let refreshBooksUseCase: RefreshBooksUseCase?
+    
     init(
         loginUseCase: LoginUseCase = LoginUseCaseMock(),
         logoutUseCase: LogoutUseCase = LogoutUseCaseMock(),
@@ -46,7 +52,9 @@ struct UseCaseDependencyMock: UseCaseDependency {
         refreshUserUseCase: RefreshUserUseCase = RefreshUserUseCaseMock(),
         updateUserUseCase: UpdateUserUseCase = UpdateUserUseCaseMock(),
         getUsersUseCase: GetUsersUseCase = GetUsersUseCaseMock(),
-        refreshUsersUseCase: RefreshUsersUseCase = RefreshUsersUseCaseMock()
+        refreshUsersUseCase: RefreshUsersUseCase = RefreshUsersUseCaseMock(),
+        getBooksUseCase: GetBooksUseCase? = nil,
+        refreshBooksUseCase: RefreshBooksUseCase? = nil
     ) {
         self.loginUseCase = loginUseCase
         self.logoutUseCase = logoutUseCase
@@ -64,5 +72,7 @@ struct UseCaseDependencyMock: UseCaseDependency {
         self.updateUserUseCase = updateUserUseCase
         self.getUsersUseCase = getUsersUseCase
         self.refreshUsersUseCase = refreshUsersUseCase
+        self.getBooksUseCase = getBooksUseCase
+        self.refreshBooksUseCase = refreshBooksUseCase
     }
 }

@@ -11,7 +11,7 @@ public protocol KMPDependency {
     func get<T: AnyObject>(_ type: T.Type) -> T
 }
 
-public class KmpKoinDependency: KMPDependency {
+public class KMPKoinDependency: KMPDependency {
     
     private var _koin: Koin_coreKoin?
     
