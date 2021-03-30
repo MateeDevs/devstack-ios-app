@@ -3,6 +3,9 @@
 //  Copyright © 2020 Matee. All rights reserved.
 //
 
+import DataLayer
+import DependencyInjection
+
 struct ProviderDependencyMock: ProviderDependency {
     
     let databaseProvider: DatabaseProvider

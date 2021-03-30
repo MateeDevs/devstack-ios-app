@@ -3,6 +3,8 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import DomainLayer
+
 extension LoginData {
     static let empty = LoginData(email: "", password: "")
     static let valid = LoginData(email: "email@email.com", password: "validPassword")

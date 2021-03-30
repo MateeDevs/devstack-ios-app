@@ -3,8 +3,10 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import DependencyInjection
 import class DevstackKmpShared.GetBooksUseCase
 import class DevstackKmpShared.RefreshBooksUseCase
+import DomainLayer
 
 struct UseCaseDependencyMock: UseCaseDependency {
     

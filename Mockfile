@@ -9,6 +9,8 @@ Tests:
   - Tests
   import:
   - CoreLocation
+  - DataLayer
+  - DomainLayer
   - Foundation
   - RxSwift
   - UserNotifications

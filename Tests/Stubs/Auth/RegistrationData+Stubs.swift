@@ -3,6 +3,8 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import DomainLayer
+
 extension RegistrationData {
     static let empty = RegistrationData(
         email: "",
