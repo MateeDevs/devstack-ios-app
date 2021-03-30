@@ -3,6 +3,8 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
+import Foundation
+
 public struct SystemUserDefaultsProvider {
     public init() {}
 }

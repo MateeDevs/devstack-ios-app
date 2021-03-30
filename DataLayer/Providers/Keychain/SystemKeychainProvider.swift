@@ -3,6 +3,7 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
+import Foundation
 import KeychainAccess
 
 public struct SystemKeychainProvider {

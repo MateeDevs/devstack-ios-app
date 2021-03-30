@@ -3,6 +3,8 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import Foundation
+
 @testable import DataLayer
 
 // swiftlint:disable force_try

@@ -3,6 +3,8 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import Foundation
+
 @_exported import DataLayer
 @_exported import DependencyInjection
 @_exported import DomainLayer
