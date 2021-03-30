@@ -67,7 +67,9 @@ final class LoginViewModel: BaseViewModel, ViewModel {
         let alertAction = Observable<AlertAction>.merge(
             activity.toWhisper(L10n.signing_in),
             login.compactMap { $0.element }.map { .hideWhisper },
-            login.compactMap { $0.error }.map { .showWhisper(Whisper(error: $0.toString(messages))) }
+            login.compactMap { $0.error }.map {
+                .showWhisper(Whisper(error: $0.toString(messages)))
+            }
         )
 
         // MARK: Setup outputs

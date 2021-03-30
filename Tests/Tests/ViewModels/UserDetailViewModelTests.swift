@@ -17,7 +17,7 @@ class UserDetailViewModelTests: BaseTestCase {
     private let getUserUseCase = GetUserUseCaseMock()
     private let refreshUserUseCase = RefreshUserUseCaseMock()
     
-    private func setupDependencies() -> UseCaseDependencyMock {
+    private func setupDependencies() -> UseCaseDependency {
         setupGetUserUseCase()
         setupRefreshUserUseCase()
         

@@ -17,7 +17,7 @@
     private let getUsersUseCase = GetUsersUseCaseMock()
     private let refreshUsersUseCase = RefreshUsersUseCaseMock()
 
-    private func setupDependencies() -> UseCaseDependencyMock {
+    private func setupDependencies() -> UseCaseDependency {
         setupGetUsersUseCase()
         setupRefreshUsersUseCase()
 

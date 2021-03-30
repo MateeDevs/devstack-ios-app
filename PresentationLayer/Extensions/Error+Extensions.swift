@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Error {
+extension Swift.Error {
     
     ///
     /// Transformation that tries to map an error to a message based on a given ruleset

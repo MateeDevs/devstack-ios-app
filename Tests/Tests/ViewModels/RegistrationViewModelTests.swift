@@ -15,7 +15,7 @@
 
     private let registrationUseCase = RegistrationUseCaseMock()
 
-    private func setupDependencies() -> UseCaseDependencyMock {
+    private func setupDependencies() -> UseCaseDependency {
         setupRegistrationUseCase()
 
         return UseCaseDependencyMock(

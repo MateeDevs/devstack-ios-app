@@ -15,7 +15,7 @@ class LoginUseCaseTests: BaseTestCase {
     
     private let authTokenRepository = AuthTokenRepositoryMock()
     
-    private func setupDependencies() -> RepositoryDependency {
+    private func setupDependencies() -> RepositoryDependencyMock {
         setupAuthTokenRepository()
         
         return RepositoryDependencyMock(
@@ -33,7 +33,7 @@ class LoginUseCaseTests: BaseTestCase {
         let useCase = LoginUseCaseImpl(dependencies: setupDependencies())
         let output = scheduler.createObserver(Bool.self)
         
-        useCase.execute(.valid).map { _ in true }.bind(to: output).disposed(by: disposeBag)
+        useCase.execute(.valid).map { _ in true }.asDriver().drive(output).disposed(by: disposeBag)
         scheduler.start()
         
         XCTAssertEqual(output.events, [

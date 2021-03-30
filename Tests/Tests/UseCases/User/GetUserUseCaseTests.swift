@@ -15,7 +15,7 @@ class GetUserUseCaseTests: BaseTestCase {
     
     private let userRepository = UserRepositoryMock()
     
-    private func setupDependencies() -> RepositoryDependencyMock {
+    private func setupDependencies() -> RepositoryDependency {
         setupUserRepository()
         
         return RepositoryDependencyMock(

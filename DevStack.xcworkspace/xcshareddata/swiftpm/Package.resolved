@@ -47,12 +47,21 @@
         }
       },
       {
+        "package": "DevstackKmpShared",
+        "repositoryURL": "git@github.com:MateeDevs/devstack-kmp-app.git",
+        "state": {
+          "branch": "develop",
+          "revision": "c6eb05371e899b6c9aa1817379cd04940a5547ce",
+          "version": null
+        }
+      },
+      {
         "package": "Firebase",
         "repositoryURL": "https://github.com/firebase/firebase-ios-sdk",
         "state": {
           "branch": null,
-          "revision": "f4cd4db180486996d3b3216d11e7adf634695daa",
-          "version": "7.7.0"
+          "revision": "e118a7fb4319eaa37fd03c3b4216c93811d9c413",
+          "version": "7.8.1"
         }
       },
       {
@@ -60,8 +69,8 @@
         "repositoryURL": "https://github.com/google/GoogleAppMeasurement.git",
         "state": {
           "branch": null,
-          "revision": "38205d8e39f806f71b048f93427337c9511c9402",
-          "version": "7.5.1"
+          "revision": "9db2a8536e804dced3ccf8c1b4d05051f014f941",
+          "version": "7.8.1"
         }
       },
       {
@@ -69,8 +78,8 @@
         "repositoryURL": "https://github.com/google/GoogleDataTransport.git",
         "state": {
           "branch": null,
-          "revision": "2e8a342494d20fcf209b61a45cddc1668b5ccc6d",
-          "version": "8.2.0"
+          "revision": "34bd15a31149e42eadd6c75bd67aaea002e23bf4",
+          "version": "8.3.0"
         }
       },
       {
@@ -78,8 +87,8 @@
         "repositoryURL": "https://github.com/google/GoogleUtilities.git",
         "state": {
           "branch": null,
-          "revision": "2c7d33099a3c3da1139bb1e8eb94e46e0dacf075",
-          "version": "7.2.2"
+          "revision": "1c47ea135322768023ecdcc9db79bf3df821209f",
+          "version": "7.3.0"
         }
       },
       {
@@ -204,8 +213,8 @@
         "repositoryURL": "https://github.com/realm/realm-cocoa",
         "state": {
           "branch": null,
-          "revision": "f0af9a11038c44d0de3aac11ba6b7e27d7432660",
-          "version": "10.7.0"
+          "revision": "ae8e646590396dfc13c1abbf8aa2e48c43766dce",
+          "version": "10.7.2"
         }
       },
       {
@@ -213,8 +222,8 @@
         "repositoryURL": "https://github.com/realm/realm-core",
         "state": {
           "branch": null,
-          "revision": "3ea95cb8cf7715e913492c2dbf4d539d6b1b806d",
-          "version": "10.5.3"
+          "revision": "bab46acdca91c417a0d4849b8f4992a3c17e29a5",
+          "version": "10.5.5"
         }
       },
       {

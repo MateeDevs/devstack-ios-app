@@ -17,7 +17,7 @@ class AuthTokenRepositoryTests: BaseTestCase {
     private let keychainProvider = KeychainProviderMock()
     private let networkProvider = NetworkProviderMock()
     
-    private func setupDependencies() -> ProviderDependencyMock {
+    private func setupDependencies() -> ProviderDependency {
         setupKeychainProvider()
         
         return ProviderDependencyMock(
