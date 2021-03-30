@@ -5,12 +5,24 @@
 
 @testable import DataLayer
 
+// swiftlint:disable force_try
+
 extension DomainRepresentable where Self: Decodable {
     static var stubDomain: Self.DomainModel {
-        try! JSONDecoder().decode(self, from: stub).domainModel // swiftlint:disable:this force_try
+        let object = try! JSONDecoder().decode(self, from: stub)
+        return object.domainModel
     }
     
-    static var stubListDomain: [Self.DomainModel] {
-        try! JSONDecoder().decode([Self].self, from: stubList).map { $0.domainModel } // swiftlint:disable:this force_try
+    static func stubListDomain(atKeyPath keyPath: String? = nil) -> [Self.DomainModel] where Self: Any {
+        var data = stubList
+        
+        if let keyPath = keyPath,
+           let dict = try! JSONSerialization.jsonObject(with: stubList, options: .allowFragments) as? NSDictionary,
+           let jsonObject = dict.value(forKey: keyPath) {
+            data = try! JSONSerialization.data(withJSONObject: jsonObject)
+        }
+        
+        let objects = try! JSONDecoder().decode([Self].self, from: data)
+        return objects.map { $0.domainModel }
     }
 }

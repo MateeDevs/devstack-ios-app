@@ -3,7 +3,7 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-public struct User {
+public struct User: Equatable {
     public let id: String
     public let email: String
     public let firstName: String

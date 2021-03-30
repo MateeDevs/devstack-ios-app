@@ -17,8 +17,9 @@ class AuthTokenRepositoryTests: BaseTestCase {
     private let keychainProvider = KeychainProviderMock()
     private let networkProvider = NetworkProviderMock()
     
-    private func setupDependencies() -> ProviderDependencyMock {
-        setupKeychainProvider()
+    private func setupDependencies() -> ProviderDependency {
+        Given(keychainProvider, .get(.value(.authToken), willReturn: NETAuthToken.stubDomain.token))
+        Given(keychainProvider, .get(.value(.userId), willReturn: NETAuthToken.stubDomain.userId))
         
         return ProviderDependencyMock(
             databaseProvider: databaseProvider,
@@ -27,18 +28,13 @@ class AuthTokenRepositoryTests: BaseTestCase {
         )
     }
     
-    private func setupKeychainProvider() {
-        Given(keychainProvider, .get(.value(.authToken), willReturn: NETAuthToken.stubDomain.token))
-        Given(keychainProvider, .get(.value(.userId), willReturn: NETAuthToken.stubDomain.userId))
-    }
-    
     // MARK: Tests
     
-    func testCreate() {
+    func testCreateValid() {
         let repository = AuthTokenRepositoryImpl(dependencies: setupDependencies())
         let output = scheduler.createObserver(AuthToken.self)
         
-        repository.create(.valid).asDriver().drive(output).disposed(by: disposeBag)
+        repository.create(.valid).bind(to: output).disposed(by: disposeBag)
         scheduler.start()
         
         XCTAssertEqual(output.events, [
@@ -48,6 +44,21 @@ class AuthTokenRepositoryTests: BaseTestCase {
         XCTAssertEqual(networkProvider.observableRequestCallsCount, 1)
         Verify(keychainProvider, 1, .save(.value(.authToken), value: .value(NETAuthToken.stubDomain.token)))
         Verify(keychainProvider, 1, .save(.value(.userId), value: .value(NETAuthToken.stubDomain.userId)))
+    }
+    
+    func testCreateInvalidPassword() {
+        let repository = AuthTokenRepositoryImpl(dependencies: setupDependencies())
+        networkProvider.observableRequestReturnError = RepositoryError(statusCode: StatusCode.httpUnathorized, message: "")
+        let output = scheduler.createObserver(AuthToken.self)
+        
+        repository.create(.invalidPassword).bind(to: output).disposed(by: disposeBag)
+        scheduler.start()
+        
+        XCTAssertEqual(output.events, [
+            .error(0, RepositoryError(statusCode: StatusCode.httpUnathorized, message: ""))
+        ])
+        XCTAssertEqual(networkProvider.observableRequestCallsCount, 1)
+        Verify(keychainProvider, 0, .save(.any, value: .any))
     }
     
     func testRead() {
@@ -65,7 +76,7 @@ class AuthTokenRepositoryTests: BaseTestCase {
         
         repository.delete()
         
-        Verify(keychainProvider, 1, .deleteAll())
         XCTAssertEqual(databaseProvider.deleteAllCallsCount, 1)
+        Verify(keychainProvider, 1, .deleteAll())
     }
 }

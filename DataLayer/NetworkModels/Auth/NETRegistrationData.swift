@@ -17,7 +17,7 @@ extension RegistrationData: NetworkRepresentable {
     var networkModel: NetworkModel {
         NETRegistrationData(
             email: email,
-            pass: pass,
+            pass: password,
             firstName: firstName,
             lastName: lastName
         )

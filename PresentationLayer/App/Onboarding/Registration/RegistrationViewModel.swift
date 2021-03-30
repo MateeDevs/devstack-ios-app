@@ -54,7 +54,7 @@ final class RegistrationViewModel: BaseViewModel, ViewModel {
             } else if !inputs.email.isValidEmail {
                 return .error(ValidationError(L10n.invalid_email))
             } else {
-                let data = RegistrationData(email: inputs.email, pass: inputs.password, firstName: "Anonymous", lastName: "")
+                let data = RegistrationData(email: inputs.email, password: inputs.password, firstName: "Anonymous", lastName: "")
                 return dependencies.registrationUseCase.execute(data).trackActivity(activity)
             }
         }.materialize().share()

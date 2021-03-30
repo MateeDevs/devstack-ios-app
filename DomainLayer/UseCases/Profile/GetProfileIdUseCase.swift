@@ -13,9 +13,7 @@ public protocol GetProfileIdUseCase: AutoMockable {
 
 public struct GetProfileIdUseCaseImpl: GetProfileIdUseCase {
     
-    public typealias Dependencies =
-        HasAuthTokenRepository &
-        HasUserRepository
+    public typealias Dependencies = HasAuthTokenRepository
     
     private let dependencies: Dependencies
     

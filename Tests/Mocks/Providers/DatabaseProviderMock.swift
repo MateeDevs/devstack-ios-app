@@ -9,17 +9,13 @@ import RxSwift
 class DatabaseProviderMock: DatabaseProvider {
     
     var observableObjectCallsCount = 0
-    var observableObjectReturnValue: Observable<Object> = .empty()
+    var observableObjectReturnValue: Object?
     
     var observableCollectionCallsCount = 0
-    var observableCollectionReturnValue: Observable<[Object]> = .empty()
+    var observableCollectionReturnValue: [Object] = []
     
     var saveObjectCallsCount = 0
-    var saveObjectReturnValue: Observable<Object> = .empty()
-    
     var saveCollectionCallsCount = 0
-    var saveCollectionReturnValue: Observable<[Object]> = .empty()
-    
     var deleteAllCallsCount = 0
 
     func observableObject<T>(
@@ -27,9 +23,8 @@ class DatabaseProviderMock: DatabaseProvider {
         id: String,
         primaryKeyName: String
     ) -> Observable<T> where T: Object {
-        observableObjectCallsCount += 1
-        guard let observableObjectReturnValue = observableObjectReturnValue as? Observable<T> else { return .empty() }
-        return observableObjectReturnValue
+        guard let object = observableObjectReturnValue as? T else { return .empty() }
+        return Observable.just(object).do { _ in self.observableObjectCallsCount += 1 }
     }
 
     func observableCollection<T>(
@@ -38,21 +33,16 @@ class DatabaseProviderMock: DatabaseProvider {
         sortBy: String?,
         ascending: Bool
     ) -> Observable<[T]> where T: Object {
-        observableCollectionCallsCount += 1
-        guard let observableCollectionReturnValue = observableCollectionReturnValue as? Observable<[T]> else { return .empty() }
-        return observableCollectionReturnValue
+        guard let collection = observableCollectionReturnValue as? [T] else { return .empty() }
+        return Observable.just(collection).do { _ in self.observableCollectionCallsCount += 1 }
     }
     
     func save<T>(_ object: T, model: UpdateModel) -> Observable<T> where T: Object {
-        saveObjectCallsCount += 1
-        guard let saveObjectReturnValue = saveObjectReturnValue as? Observable<T> else { return .empty() }
-        return saveObjectReturnValue
+        return Observable.just(object).do { _ in self.saveObjectCallsCount += 1 }
     }
     
     func save<T>(_ objects: [T], model: UpdateModel) -> Observable<[T]> where T: Object {
-        saveCollectionCallsCount += 1
-        guard let saveCollectionReturnValue = saveCollectionReturnValue as? Observable<[T]> else { return .empty() }
-        return saveCollectionReturnValue
+        return Observable.just(objects).do { _ in self.saveCollectionCallsCount += 1 }
     }
 
     func deleteAll() {
