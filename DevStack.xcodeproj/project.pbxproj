@@ -157,7 +157,6 @@
 		459F86DF25F66F7A004ACAD4 /* HasNoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F86DE25F66F7A004ACAD4 /* HasNoRepository.swift */; };
 		459F86F625F66FA9004ACAD4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F86F525F66FA9004ACAD4 /* Logger.swift */; };
 		459F873225F69A8B004ACAD4 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F873125F69A8B004ACAD4 /* Environment.swift */; };
-		459F875725F69F71004ACAD4 /* DataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F875625F69F71004ACAD4 /* DataLayer.swift */; };
 		459F877C25F6A367004ACAD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F877B25F6A367004ACAD4 /* BaseViewController.swift */; };
 		459F878525F6A3A6004ACAD4 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F878425F6A3A6004ACAD4 /* BaseTableViewController.swift */; };
 		459F878E25F6A3B8004ACAD4 /* BaseTableViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F878D25F6A3B8004ACAD4 /* BaseTableViewController+Rx.swift */; };
@@ -492,7 +491,6 @@
 		4558D30720FCC8FF005BC325 /* DevStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4558D30A20FCC8FF005BC325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		456E73DD25F817FA007D9A6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4575E5D525F6EF7200CCC003 /* Info-Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Debug.plist"; sourceTree = "<group>"; };
 		4575E65525F6FA7600CCC003 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		4575E65C25F6FFA300CCC003 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		4575E67525F7051100CCC003 /* HasNoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNoUseCase.swift; sourceTree = "<group>"; };
@@ -591,7 +589,6 @@
 		459F86DE25F66F7A004ACAD4 /* HasNoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNoRepository.swift; sourceTree = "<group>"; };
 		459F86F525F66FA9004ACAD4 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		459F873125F69A8B004ACAD4 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		459F875625F69F71004ACAD4 /* DataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayer.swift; sourceTree = "<group>"; };
 		459F877B25F6A367004ACAD4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		459F878425F6A3A6004ACAD4 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		459F878D25F6A3B8004ACAD4 /* BaseTableViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTableViewController+Rx.swift"; sourceTree = "<group>"; };
@@ -1079,7 +1076,6 @@
 			isa = PBXGroup;
 			children = (
 				456E73DD25F817FA007D9A6D /* Info.plist */,
-				4575E5D525F6EF7200CCC003 /* Info-Debug.plist */,
 				459896B026129CB300C852E0 /* Info+Proxyman.plist */,
 			);
 			path = Info;
@@ -1183,7 +1179,6 @@
 				458218FE25F2610F00D587EB /* Providers */,
 				4582190125F2612A00D587EB /* Utilities */,
 				458218F725F260D500D587EB /* Extensions */,
-				459F875625F69F71004ACAD4 /* DataLayer.swift */,
 				4582185B25F25D5900D587EB /* Info.plist */,
 			);
 			path = DataLayer;
@@ -2665,7 +2660,6 @@
 				4582191425F261BE00D587EB /* NETAuthToken.swift in Sources */,
 				4582193025F261D900D587EB /* AuthTokenRepository.swift in Sources */,
 				4582196325F2620900D587EB /* AuthAPI.swift in Sources */,
-				459F875725F69F71004ACAD4 /* DataLayer.swift in Sources */,
 				4575E69125F7E8E300CCC003 /* DatabaseProvider.swift in Sources */,
 				4598969B26129B9E00C852E0 /* UserRepository.swift in Sources */,
 				4582194325F261E100D587EB /* FirebasePushNotificationsProvider.swift in Sources */,

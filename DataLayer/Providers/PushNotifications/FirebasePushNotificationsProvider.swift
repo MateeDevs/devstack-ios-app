@@ -3,6 +3,7 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import DomainLayer
 import Firebase
 import UIKit
 import UserNotifications

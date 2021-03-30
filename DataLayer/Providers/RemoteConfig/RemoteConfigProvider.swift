@@ -3,6 +3,7 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import DomainLayer
 import RxSwift
 
 public protocol HasRemoteConfigProvider {

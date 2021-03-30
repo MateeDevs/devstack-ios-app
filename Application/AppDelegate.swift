@@ -9,6 +9,7 @@ import Atlantis
 
 import DataLayer
 import DependencyInjection
+import DomainLayer
 import PresentationLayer
 import UIKit
 import UserNotifications

@@ -3,6 +3,7 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
+import DomainLayer
 import Moya
 import RxMoya
 import RxSwift

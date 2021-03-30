@@ -3,7 +3,6 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-import DataLayer
 import class DevstackKmpShared.GetBooksUseCase
 import class DevstackKmpShared.RefreshBooksUseCase
 import DomainLayer

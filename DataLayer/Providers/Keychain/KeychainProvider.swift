@@ -3,6 +3,8 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
+import DomainLayer
+
 public protocol HasKeychainProvider {
     var keychainProvider: KeychainProvider { get }
 }

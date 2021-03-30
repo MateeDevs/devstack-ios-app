@@ -3,6 +3,8 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import DomainLayer
+
 struct NETUser: Codable {
     let id: String
     let email: String
