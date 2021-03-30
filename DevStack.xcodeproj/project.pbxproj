@@ -21,6 +21,7 @@
 		4530D22C2612B96000A5520D /* RegisterForPushNotificationsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D22B2612B96000A5520D /* RegisterForPushNotificationsUseCaseTests.swift */; };
 		4530D2352612BA6200A5520D /* GetRemoteConfigValueUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D2342612BA6200A5520D /* GetRemoteConfigValueUseCaseTests.swift */; };
 		4530D2432612BB2D00A5520D /* UpdateUserUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D2422612BB2D00A5520D /* UpdateUserUseCaseTests.swift */; };
+		4530D24E2613153300A5520D /* ProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D24D2613153300A5520D /* ProfileViewModelTests.swift */; };
 		4534C11026036AA10022ACF4 /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582185825F25D5800D587EB /* DataLayer.framework */; };
 		4534C11126036AA10022ACF4 /* DependencyInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */; };
 		4534C11226036AA10022ACF4 /* DomainLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; };
@@ -474,6 +475,7 @@
 		4530D22B2612B96000A5520D /* RegisterForPushNotificationsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterForPushNotificationsUseCaseTests.swift; sourceTree = "<group>"; };
 		4530D2342612BA6200A5520D /* GetRemoteConfigValueUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRemoteConfigValueUseCaseTests.swift; sourceTree = "<group>"; };
 		4530D2422612BB2D00A5520D /* UpdateUserUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserUseCaseTests.swift; sourceTree = "<group>"; };
+		4530D24D2613153300A5520D /* ProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelTests.swift; sourceTree = "<group>"; };
 		4534C14E2603706B0022ACF4 /* RepositoryDependencyMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDependencyMock.swift; sourceTree = "<group>"; };
 		4534C1862603C1530022ACF4 /* AutoMockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMockable.swift; sourceTree = "<group>"; };
 		4534C1A22603C98F0022ACF4 /* Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
@@ -933,6 +935,32 @@
 			path = RemoteConfig;
 			sourceTree = "<group>";
 		};
+		4530D24A2613150300A5520D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */,
+				4534C248260427A40022ACF4 /* RegistrationViewModelTests.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		4530D24B2613151000A5520D /* Tab1-Users */ = {
+			isa = PBXGroup;
+			children = (
+				4534C25826042E780022ACF4 /* UsersViewModelTests.swift */,
+				45B675AE260E104B00DF7387 /* UserDetailViewModelTests.swift */,
+			);
+			path = "Tab1-Users";
+			sourceTree = "<group>";
+		};
+		4530D24C2613151B00A5520D /* Tab2-Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4530D24D2613153300A5520D /* ProfileViewModelTests.swift */,
+			);
+			path = "Tab2-Profile";
+			sourceTree = "<group>";
+		};
 		4534C2092604191C0022ACF4 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
@@ -1000,10 +1028,9 @@
 		4557195B24A15C2100FB24CA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */,
-				4534C248260427A40022ACF4 /* RegistrationViewModelTests.swift */,
-				4534C25826042E780022ACF4 /* UsersViewModelTests.swift */,
-				45B675AE260E104B00DF7387 /* UserDetailViewModelTests.swift */,
+				4530D24A2613150300A5520D /* Onboarding */,
+				4530D24B2613151000A5520D /* Tab1-Users */,
+				4530D24C2613151B00A5520D /* Tab2-Profile */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -2576,6 +2603,7 @@
 				45E100FE25E6B2A00082CABA /* Subscription.swift in Sources */,
 				458068D02612A889000E96A0 /* Recorded+Event.swift in Sources */,
 				4530D1D32612ADD300A5520D /* LogoutUseCaseTests.swift in Sources */,
+				4530D24E2613153300A5520D /* ProfileViewModelTests.swift in Sources */,
 				4530D21E2612B4A600A5520D /* HandlePushNotificationUseCaseTests.swift in Sources */,
 				45E100F825E6B2A00082CABA /* Event+Equatable.swift in Sources */,
 				45E100F325E6B2A00082CABA /* XCTest+Rx.swift in Sources */,

@@ -3,75 +3,75 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
- import RxSwift
- import SwiftyMocky
- import XCTest
+import RxSwift
+import SwiftyMocky
+import XCTest
 
- @testable import DataLayer
- @testable import PresentationLayer
+@testable import DataLayer
+@testable import PresentationLayer
 
- class UsersViewModelTests: BaseTestCase {
-
+class UsersViewModelTests: BaseTestCase {
+    
     // MARK: Dependencies
     
     private let dbStream = BehaviorSubject<[User]>(value: NETUser.stubListDomain)
-
+    
     private let getUsersUseCase = GetUsersUseCaseMock()
     private let refreshUsersUseCase = RefreshUsersUseCaseMock()
-
+    
     private func setupDependencies() -> UseCaseDependency {
         setupGetUsersUseCase()
         setupRefreshUsersUseCase()
-
+        
         return UseCaseDependencyMock(
             getUsersUseCase: getUsersUseCase,
             refreshUsersUseCase: refreshUsersUseCase
         )
     }
-
+    
     private func setupGetUsersUseCase() {
         Given(getUsersUseCase, .execute(willReturn: dbStream.asObservable()))
     }
-
+    
     private func setupRefreshUsersUseCase() {
         Given(refreshUsersUseCase, .execute(page: .any, willReturn: .just(Constants.paginationCount)))
     }
-
+    
     // MARK: Inputs and outputs
-
+    
     private struct Input {
         var page: [(time: TestTime, element: Int)] = []
         
         static let initialLoad = Input(page: [(0, 0)])
     }
-
+    
     private struct Output {
         let users: TestableObserver<[User]>
         let loadedCount: TestableObserver<Int>
         let isRefreshing: TestableObserver<Bool>
     }
-
+    
     private func generateOutput(for input: Input) -> Output {
         let viewModel = UsersViewModel(dependencies: setupDependencies())
-
+        
         scheduler.createColdObservable(input.page.map { .next($0.time, $0.element) })
             .do { [weak self] _ in self?.dbStream.onNext(NETUser.stubListDomain) }
             .bind(to: viewModel.input.page).disposed(by: disposeBag)
-
+        
         return Output(
             users: testableOutput(from: viewModel.output.users),
             loadedCount: testableOutput(from: viewModel.output.loadedCount),
             isRefreshing: testableOutput(from: viewModel.output.isRefreshing)
         )
     }
-
+    
     // MARK: Tests
-
+    
     func testInitialLoad() {
         let output = generateOutput(for: .initialLoad)
-
+        
         scheduler.start()
-
+        
         XCTAssertEqual(output.users.events, [
             .next(0, NETUser.stubListDomain),
             .next(0, NETUser.stubListDomain)
@@ -88,4 +88,4 @@
         Verify(getUsersUseCase, 1, .execute())
         Verify(refreshUsersUseCase, 1, .execute(page: 0))
     }
- }
+}

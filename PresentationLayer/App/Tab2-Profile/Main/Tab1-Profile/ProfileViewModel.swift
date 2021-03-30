@@ -26,7 +26,7 @@ final class ProfileViewModel: BaseViewModel, ViewModel {
     }
     
     struct Output {
-        let profile: Profile
+        let profile: OutputProfile
         let isRefreshing: Driver<Bool>
         let currentLocation: Driver<String>
         let remoteConfigLabelIsHidden: Driver<Bool>
@@ -34,7 +34,7 @@ final class ProfileViewModel: BaseViewModel, ViewModel {
         let flow: Driver<ProfileViewControllerFlow>
     }
 
-    struct Profile {
+    struct OutputProfile {
         let fullName: Driver<String>
         let initials: Driver<String>
         let imageURL: Driver<String?>
@@ -85,7 +85,7 @@ final class ProfileViewModel: BaseViewModel, ViewModel {
         // MARK: Setup outputs
         
         self.output = Output(
-            profile: Profile(
+            profile: OutputProfile(
                 fullName: profile.map { $0.fullName }.asDriver(),
                 initials: profile.map { $0.fullName.initials }.asDriver(),
                 imageURL: profile.map { $0.pictureUrl }.asDriver()
