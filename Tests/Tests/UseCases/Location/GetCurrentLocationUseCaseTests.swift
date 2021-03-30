@@ -19,18 +19,14 @@ class GetCurrentLocationUseCaseTests: BaseTestCase {
     private let locationRepository = LocationRepositoryMock()
     
     private func setupDependencies() -> RepositoryDependency {
-        setupLocationRepository()
-        
-        return RepositoryDependencyMock(
-            locationRepository: locationRepository
-        )
-    }
-    
-    private func setupLocationRepository() {
         Given(locationRepository, .getCurrentLocation(
             withAccuracy: .value(kCLLocationAccuracyThreeKilometers),
             willReturn: .just(location)
         ))
+        
+        return RepositoryDependencyMock(
+            locationRepository: locationRepository
+        )
     }
     
     // MARK: Tests

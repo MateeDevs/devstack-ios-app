@@ -16,15 +16,11 @@ class GetProfileIdUseCaseTests: BaseTestCase {
     private let authTokenRepository = AuthTokenRepositoryMock()
     
     private func setupDependencies() -> RepositoryDependency {
-        setupAuthTokenRepository()
+        Given(authTokenRepository, .read(willReturn: NETAuthToken.stubDomain))
         
         return RepositoryDependencyMock(
             authTokenRepository: authTokenRepository
         )
-    }
-    
-    private func setupAuthTokenRepository() {
-        Given(authTokenRepository, .read(willReturn: NETAuthToken.stubDomain))
     }
     
     // MARK: Tests

@@ -16,15 +16,11 @@ class RegistrationUseCaseTests: BaseTestCase {
     private let userRepository = UserRepositoryMock()
     
     private func setupDependencies() -> RepositoryDependency {
-        setupUserRepository()
+        Given(userRepository, .create(.any, willReturn: .just(NETUser.stubDomain)))
         
         return RepositoryDependencyMock(
             userRepository: userRepository
         )
-    }
-    
-    private func setupUserRepository() {
-        Given(userRepository, .create(.any, willReturn: .just(NETUser.stubDomain)))
     }
     
     // MARK: Tests

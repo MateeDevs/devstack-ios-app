@@ -20,21 +20,13 @@ class UserDetailViewModelTests: BaseTestCase {
     private let refreshUserUseCase = RefreshUserUseCaseMock()
     
     private func setupDependencies() -> UseCaseDependency {
-        setupGetUserUseCase()
-        setupRefreshUserUseCase()
+        Given(getUserUseCase, .execute(id: .value(NETUser.stubDomain.id), willReturn: dbStream.asObservable()))
+        Given(refreshUserUseCase, .execute(id: .value(NETUser.stubDomain.id), willReturn: .just(())))
         
         return UseCaseDependencyMock(
             getUserUseCase: getUserUseCase,
             refreshUserUseCase: refreshUserUseCase
         )
-    }
-    
-    private func setupGetUserUseCase() {
-        Given(getUserUseCase, .execute(id: .value(NETUser.stubDomain.id), willReturn: dbStream.asObservable()))
-    }
-    
-    private func setupRefreshUserUseCase() {
-        Given(refreshUserUseCase, .execute(id: .value(NETUser.stubDomain.id), willReturn: .just(())))
     }
     
     // MARK: Inputs and outputs

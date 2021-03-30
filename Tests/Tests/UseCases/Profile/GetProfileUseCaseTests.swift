@@ -17,21 +17,13 @@ class GetProfileUseCaseTests: BaseTestCase {
     private let userRepository = UserRepositoryMock()
     
     private func setupDependencies() -> RepositoryDependency {
-        setupAuthTokenRepository()
-        setupUserRepository()
+        Given(authTokenRepository, .read(willReturn: NETAuthToken.stubDomain))
+        Given(userRepository, .read(.value(.local), id: .value(NETUser.stubDomain.id), willReturn: .just(NETUser.stubDomain)))
         
         return RepositoryDependencyMock(
             authTokenRepository: authTokenRepository,
             userRepository: userRepository
         )
-    }
-    
-    private func setupAuthTokenRepository() {
-        Given(authTokenRepository, .read(willReturn: NETAuthToken.stubDomain))
-    }
-    
-    private func setupUserRepository() {
-        Given(userRepository, .read(.value(.local), id: .value(NETUser.stubDomain.id), willReturn: .just(NETUser.stubDomain)))
     }
     
     // MARK: Tests

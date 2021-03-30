@@ -16,15 +16,11 @@ class GetRemoteConfigValueUseCaseTests: BaseTestCase {
     private let remoteConfigRepository = RemoteConfigRepositoryMock()
     
     private func setupDependencies() -> RepositoryDependency {
-        setupRemoteConfigRepository()
+        Given(remoteConfigRepository, .read(.value(.profileLabelIsVisible), willReturn: .just(true)))
         
         return RepositoryDependencyMock(
             remoteConfigRepository: remoteConfigRepository
         )
-    }
-    
-    private func setupRemoteConfigRepository() {
-        Given(remoteConfigRepository, .read(.value(.profileLabelIsVisible), willReturn: .just(true)))
     }
     
     // MARK: Tests

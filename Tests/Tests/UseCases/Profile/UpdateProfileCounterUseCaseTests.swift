@@ -19,22 +19,14 @@ class UpdateProfileCounterUseCaseTests: BaseTestCase {
     private let userRepository = UserRepositoryMock()
     
     private func setupDependencies() -> RepositoryDependency {
-        setupAuthTokenRepository()
-        setupUserRepository()
+        Given(authTokenRepository, .read(willReturn: NETAuthToken.stubDomain))
+        Given(userRepository, .read(.value(.local), id: .value(NETUser.stubDomain.id), willReturn: .just(NETUser.stubDomain)))
+        Given(userRepository, .update(.value(.local), user: .value(updatedUser), willReturn: .just(updatedUser)))
         
         return RepositoryDependencyMock(
             authTokenRepository: authTokenRepository,
             userRepository: userRepository
         )
-    }
-    
-    private func setupAuthTokenRepository() {
-        Given(authTokenRepository, .read(willReturn: NETAuthToken.stubDomain))
-    }
-    
-    private func setupUserRepository() {
-        Given(userRepository, .read(.value(.local), id: .value(NETUser.stubDomain.id), willReturn: .just(NETUser.stubDomain)))
-        Given(userRepository, .update(.value(.local), user: .value(updatedUser), willReturn: .just(updatedUser)))
     }
     
     // MARK: Tests

@@ -16,15 +16,11 @@ class RefreshUserUseCaseTests: BaseTestCase {
     private let userRepository = UserRepositoryMock()
     
     private func setupDependencies() -> RepositoryDependency {
-        setupUserRepository()
+        Given(userRepository, .read(.value(.remote), id: .value(NETUser.stubDomain.id), willReturn: .just(NETUser.stubDomain)))
         
         return RepositoryDependencyMock(
             userRepository: userRepository
         )
-    }
-    
-    private func setupUserRepository() {
-        Given(userRepository, .read(.value(.remote), id: .value(NETUser.stubDomain.id), willReturn: .just(NETUser.stubDomain)))
     }
     
     // MARK: Tests

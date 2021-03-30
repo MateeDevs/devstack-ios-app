@@ -26,10 +26,10 @@ class ProfileViewModelTests: BaseTestCase {
     private let registerForPushNotificationsUseCase = RegisterForPushNotificationsUseCaseMock()
     
     private func setupDependencies() -> UseCaseDependency {
-        setupGetProfileUseCase()
-        setupRefreshProfileUseCase()
-        setupGetCurrentLocationUseCase()
-        setupGetRemoteConfigValueUseCase()
+        Given(getProfileUseCase, .execute(willReturn: dbStream.asObservable()))
+        Given(refreshProfileUseCase, .execute(willReturn: .just(())))
+        Given(getCurrentLocationUseCase, .execute(willReturn: .just(location)))
+        Given(getRemoteConfigValueUseCase, .execute(.value(.profileLabelIsVisible), willReturn: .just(true)))
         
         return UseCaseDependencyMock(
             logoutUseCase: logoutUseCase,
@@ -39,22 +39,6 @@ class ProfileViewModelTests: BaseTestCase {
             registerForPushNotificationsUseCase: registerForPushNotificationsUseCase,
             getRemoteConfigValueUseCase: getRemoteConfigValueUseCase
         )
-    }
-    
-    private func setupGetProfileUseCase() {
-        Given(getProfileUseCase, .execute(willReturn: dbStream.asObservable()))
-    }
-    
-    private func setupRefreshProfileUseCase() {
-        Given(refreshProfileUseCase, .execute(willReturn: .just(())))
-    }
-    
-    private func setupGetCurrentLocationUseCase() {
-        Given(getCurrentLocationUseCase, .execute(willReturn: .just(location)))
-    }
-    
-    private func setupGetRemoteConfigValueUseCase() {
-        Given(getRemoteConfigValueUseCase, .execute(.value(.profileLabelIsVisible), willReturn: .just(true)))
     }
     
     // MARK: Inputs and outputs

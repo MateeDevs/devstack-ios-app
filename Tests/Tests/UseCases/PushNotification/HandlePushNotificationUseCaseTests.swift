@@ -16,16 +16,12 @@ class HandlePushNotificationUseCaseTests: BaseTestCase {
     private let pushNotificationsRepository = PushNotificationsRepositoryMock()
     
     private func setupDependencies() -> RepositoryDependency {
-        setupPushNotificationsRepository()
+        // We should test against concrete value instead of any, but I don't know how to mock [AnyHashable:Any]
+        Given(pushNotificationsRepository, .decode(.any, willReturn: NETPushNotification.stubDomain))
         
         return RepositoryDependencyMock(
             pushNotificationsRepository: pushNotificationsRepository
         )
-    }
-    
-    private func setupPushNotificationsRepository() {
-        // We should test against concrete value instead of any, but I don't know how to mock [AnyHashable:Any]
-        Given(pushNotificationsRepository, .decode(.any, willReturn: NETPushNotification.stubDomain))
     }
     
     // MARK: Tests

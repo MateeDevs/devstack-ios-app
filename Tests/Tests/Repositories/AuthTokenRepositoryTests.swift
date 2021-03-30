@@ -18,18 +18,14 @@ class AuthTokenRepositoryTests: BaseTestCase {
     private let networkProvider = NetworkProviderMock()
     
     private func setupDependencies() -> ProviderDependency {
-        setupKeychainProvider()
+        Given(keychainProvider, .get(.value(.authToken), willReturn: NETAuthToken.stubDomain.token))
+        Given(keychainProvider, .get(.value(.userId), willReturn: NETAuthToken.stubDomain.userId))
         
         return ProviderDependencyMock(
             databaseProvider: databaseProvider,
             keychainProvider: keychainProvider,
             networkProvider: networkProvider
         )
-    }
-    
-    private func setupKeychainProvider() {
-        Given(keychainProvider, .get(.value(.authToken), willReturn: NETAuthToken.stubDomain.token))
-        Given(keychainProvider, .get(.value(.userId), willReturn: NETAuthToken.stubDomain.userId))
     }
     
     // MARK: Tests

@@ -20,21 +20,13 @@ class UsersViewModelTests: BaseTestCase {
     private let refreshUsersUseCase = RefreshUsersUseCaseMock()
     
     private func setupDependencies() -> UseCaseDependency {
-        setupGetUsersUseCase()
-        setupRefreshUsersUseCase()
+        Given(getUsersUseCase, .execute(willReturn: dbStream.asObservable()))
+        Given(refreshUsersUseCase, .execute(page: .any, willReturn: .just(Constants.paginationCount)))
         
         return UseCaseDependencyMock(
             getUsersUseCase: getUsersUseCase,
             refreshUsersUseCase: refreshUsersUseCase
         )
-    }
-    
-    private func setupGetUsersUseCase() {
-        Given(getUsersUseCase, .execute(willReturn: dbStream.asObservable()))
-    }
-    
-    private func setupRefreshUsersUseCase() {
-        Given(refreshUsersUseCase, .execute(page: .any, willReturn: .just(Constants.paginationCount)))
     }
     
     // MARK: Inputs and outputs

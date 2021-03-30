@@ -16,13 +16,9 @@ class RemoteConfigRepositoryTests: BaseTestCase {
     private let remoteConfigProvider = RemoteConfigProviderMock()
     
     private func setupDependencies() -> ProviderDependency {
-        setupRemoteConfigProvider()
+        Given(remoteConfigProvider, .get(.any, willReturn: .just(true)))
         
         return ProviderDependencyMock(remoteConfigProvider: remoteConfigProvider)
-    }
-    
-    private func setupRemoteConfigProvider() {
-        Given(remoteConfigProvider, .get(.value(.profileLabelIsVisible), willReturn: .just(true)))
     }
     
     // MARK: Tests
@@ -38,6 +34,6 @@ class RemoteConfigRepositoryTests: BaseTestCase {
             .next(0, true),
             .completed(0)
         ])
-        Verify(remoteConfigProvider, 1, .get(.value(.profileLabelIsVisible)))
+        Verify(remoteConfigProvider, 1, .get(.any))
     }
 }
