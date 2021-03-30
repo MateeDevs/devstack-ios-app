@@ -158,7 +158,6 @@
 		459F86F625F66FA9004ACAD4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F86F525F66FA9004ACAD4 /* Logger.swift */; };
 		459F873225F69A8B004ACAD4 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F873125F69A8B004ACAD4 /* Environment.swift */; };
 		459F875725F69F71004ACAD4 /* DataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F875625F69F71004ACAD4 /* DataLayer.swift */; };
-		459F876725F6A280004ACAD4 /* PresentationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F876625F6A280004ACAD4 /* PresentationLayer.swift */; };
 		459F877C25F6A367004ACAD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F877B25F6A367004ACAD4 /* BaseViewController.swift */; };
 		459F878525F6A3A6004ACAD4 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F878425F6A3A6004ACAD4 /* BaseTableViewController.swift */; };
 		459F878E25F6A3B8004ACAD4 /* BaseTableViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F878D25F6A3B8004ACAD4 /* BaseTableViewController+Rx.swift */; };
@@ -593,7 +592,6 @@
 		459F86F525F66FA9004ACAD4 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		459F873125F69A8B004ACAD4 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		459F875625F69F71004ACAD4 /* DataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayer.swift; sourceTree = "<group>"; };
-		459F876625F6A280004ACAD4 /* PresentationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationLayer.swift; sourceTree = "<group>"; };
 		459F877B25F6A367004ACAD4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		459F878425F6A3A6004ACAD4 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		459F878D25F6A3B8004ACAD4 /* BaseTableViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTableViewController+Rx.swift"; sourceTree = "<group>"; };
@@ -1213,7 +1211,6 @@
 				459F8A2025F6B123004ACAD4 /* Resources */,
 				459F877725F6A32A004ACAD4 /* Utilities */,
 				459F877825F6A333004ACAD4 /* Extensions */,
-				459F876625F6A280004ACAD4 /* PresentationLayer.swift */,
 				458218BD25F25E4300D587EB /* Info.plist */,
 			);
 			path = PresentationLayer;
@@ -2835,7 +2832,6 @@
 				45D3772025F8D07800D05900 /* Storyboards.swift in Sources */,
 				459F894B25F6ADB8004ACAD4 /* Double+Extensions.swift in Sources */,
 				459F8B1425F6B4E3004ACAD4 /* CounterViewController.swift in Sources */,
-				459F876725F6A280004ACAD4 /* PresentationLayer.swift in Sources */,
 				459F877C25F6A367004ACAD4 /* BaseViewController.swift in Sources */,
 				459F879725F6A3D3004ACAD4 /* FullscreenImageViewController.swift in Sources */,
 				459F8ADA25F6B4A0004ACAD4 /* ProfileFlowController.swift in Sources */,

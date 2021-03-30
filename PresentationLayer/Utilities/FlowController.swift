@@ -4,6 +4,7 @@
 //
 
 import DependencyInjection
+import DomainLayer
 import RxCocoa
 import RxSwift
 import UIKit

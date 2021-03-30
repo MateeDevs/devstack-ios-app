@@ -3,6 +3,8 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
+import DomainLayer
+
 class BaseViewModel {
     init() {
         Logger.info("%@ initialized", "\(type(of: self))", category: .lifecycle)

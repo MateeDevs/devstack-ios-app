@@ -3,6 +3,8 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import class DevstackKmpShared.Book
+import DomainLayer
 import RxCocoa
 import RxSwift
 

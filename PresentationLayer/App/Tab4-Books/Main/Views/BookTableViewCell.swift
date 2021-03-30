@@ -3,6 +3,7 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import class DevstackKmpShared.Book
 import UIKit
 
 class BookTableViewCell: BaseTableViewCell {
