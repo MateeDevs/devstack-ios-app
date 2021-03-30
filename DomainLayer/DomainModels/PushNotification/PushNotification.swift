@@ -8,7 +8,7 @@ public enum PushNotificationType: Int {
     case userDetail = 2
 }
 
-public struct PushNotification {
+public struct PushNotification: Equatable {
     public let title: String
     public let body: String
     public let type: PushNotificationType

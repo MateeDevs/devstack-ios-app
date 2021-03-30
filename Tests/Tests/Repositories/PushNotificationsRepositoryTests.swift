@@ -27,8 +27,8 @@ class PushNotificationsRepositoryTests: BaseTestCase {
         repository.register(options: [.alert, .badge, .sound], completionHandler: { _, _ in })
 
         Verify(pushNotificationsProvider, 1, .requestAuthorization(
-                options: .value([.alert, .badge, .sound]),
-                completionHandler: .any
+            options: .value([.alert, .badge, .sound]),
+            completionHandler: .any
         ))
     }
 }

@@ -6,8 +6,6 @@
 import class DevstackKmpShared.GetBooksUseCase
 import class DevstackKmpShared.RefreshBooksUseCase
 
-// swiftlint:disable superfluous_disable_command file_length
-
 struct UseCaseDependencyMock: UseCaseDependency {
     
     let loginUseCase: LoginUseCase

@@ -5,7 +5,7 @@
 
 struct NETPushNotification: Decodable {
     let aps: APS
-    let type: Int
+    let type: String
     let entity_id: String
     
     struct APS: Decodable {
@@ -26,7 +26,7 @@ extension NETPushNotification: DomainRepresentable {
         PushNotification(
             title: aps.alert.title,
             body: aps.alert.body,
-            type: PushNotificationType(rawValue: type) ?? .info,
+            type: PushNotificationType(rawValue: Int(type) ?? 1) ?? .info,
             entityId: entity_id
         )
     }

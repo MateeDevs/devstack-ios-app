@@ -11,6 +11,16 @@
 		451FB00C25FC12E400171EDB /* NETPushNotification.json in Resources */ = {isa = PBXBuildFile; fileRef = 451FB00B25FC12E400171EDB /* NETPushNotification.json */; };
 		4530D1B72612AAA900A5520D /* RemoteConfigRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D1B62612AAA900A5520D /* RemoteConfigRepositoryTests.swift */; };
 		4530D1C52612ABC100A5520D /* PushNotificationsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D1C42612ABC100A5520D /* PushNotificationsRepositoryTests.swift */; };
+		4530D1D32612ADD300A5520D /* LogoutUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D1D22612ADD300A5520D /* LogoutUseCaseTests.swift */; };
+		4530D1E22612AE5B00A5520D /* GetCurrentLocationUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D1E12612AE5B00A5520D /* GetCurrentLocationUseCaseTests.swift */; };
+		4530D1FD2612B07500A5520D /* GetProfileUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D1FC2612B07500A5520D /* GetProfileUseCaseTests.swift */; };
+		4530D2052612B13900A5520D /* GetProfileIdUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D2042612B13900A5520D /* GetProfileIdUseCaseTests.swift */; };
+		4530D20D2612B22A00A5520D /* RefreshProfileUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D20C2612B22A00A5520D /* RefreshProfileUseCaseTests.swift */; };
+		4530D2152612B2CB00A5520D /* UpdateProfileCounterUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D2142612B2CB00A5520D /* UpdateProfileCounterUseCaseTests.swift */; };
+		4530D21E2612B4A600A5520D /* HandlePushNotificationUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D21D2612B4A600A5520D /* HandlePushNotificationUseCaseTests.swift */; };
+		4530D22C2612B96000A5520D /* RegisterForPushNotificationsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D22B2612B96000A5520D /* RegisterForPushNotificationsUseCaseTests.swift */; };
+		4530D2352612BA6200A5520D /* GetRemoteConfigValueUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D2342612BA6200A5520D /* GetRemoteConfigValueUseCaseTests.swift */; };
+		4530D2432612BB2D00A5520D /* UpdateUserUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D2422612BB2D00A5520D /* UpdateUserUseCaseTests.swift */; };
 		4534C11026036AA10022ACF4 /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582185825F25D5800D587EB /* DataLayer.framework */; };
 		4534C11126036AA10022ACF4 /* DependencyInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */; };
 		4534C11226036AA10022ACF4 /* DomainLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; };
@@ -454,6 +464,16 @@
 		451FB00B25FC12E400171EDB /* NETPushNotification.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NETPushNotification.json; sourceTree = "<group>"; };
 		4530D1B62612AAA900A5520D /* RemoteConfigRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigRepositoryTests.swift; sourceTree = "<group>"; };
 		4530D1C42612ABC100A5520D /* PushNotificationsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsRepositoryTests.swift; sourceTree = "<group>"; };
+		4530D1D22612ADD300A5520D /* LogoutUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCaseTests.swift; sourceTree = "<group>"; };
+		4530D1E12612AE5B00A5520D /* GetCurrentLocationUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentLocationUseCaseTests.swift; sourceTree = "<group>"; };
+		4530D1FC2612B07500A5520D /* GetProfileUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileUseCaseTests.swift; sourceTree = "<group>"; };
+		4530D2042612B13900A5520D /* GetProfileIdUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileIdUseCaseTests.swift; sourceTree = "<group>"; };
+		4530D20C2612B22A00A5520D /* RefreshProfileUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshProfileUseCaseTests.swift; sourceTree = "<group>"; };
+		4530D2142612B2CB00A5520D /* UpdateProfileCounterUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileCounterUseCaseTests.swift; sourceTree = "<group>"; };
+		4530D21D2612B4A600A5520D /* HandlePushNotificationUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlePushNotificationUseCaseTests.swift; sourceTree = "<group>"; };
+		4530D22B2612B96000A5520D /* RegisterForPushNotificationsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterForPushNotificationsUseCaseTests.swift; sourceTree = "<group>"; };
+		4530D2342612BA6200A5520D /* GetRemoteConfigValueUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRemoteConfigValueUseCaseTests.swift; sourceTree = "<group>"; };
+		4530D2422612BB2D00A5520D /* UpdateUserUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserUseCaseTests.swift; sourceTree = "<group>"; };
 		4534C14E2603706B0022ACF4 /* RepositoryDependencyMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDependencyMock.swift; sourceTree = "<group>"; };
 		4534C1862603C1530022ACF4 /* AutoMockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMockable.swift; sourceTree = "<group>"; };
 		4534C1A22603C98F0022ACF4 /* Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
@@ -859,6 +879,10 @@
 			isa = PBXGroup;
 			children = (
 				45B675BE260E237C00DF7387 /* Auth */,
+				4530D1E02612AE3E00A5520D /* Location */,
+				4530D1EF2612AFC300A5520D /* Profile */,
+				4530D21C2612B49400A5520D /* PushNotification */,
+				4530D2332612BA4E00A5520D /* RemoteConfig */,
 				45B675C5260E238C00DF7387 /* User */,
 				45B675DC260E23AA00DF7387 /* Users */,
 			);
@@ -871,6 +895,42 @@
 				451FAFC325FBFBAE00171EDB /* DomainRepresentable+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4530D1E02612AE3E00A5520D /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				4530D1E12612AE5B00A5520D /* GetCurrentLocationUseCaseTests.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		4530D1EF2612AFC300A5520D /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4530D1FC2612B07500A5520D /* GetProfileUseCaseTests.swift */,
+				4530D2042612B13900A5520D /* GetProfileIdUseCaseTests.swift */,
+				4530D20C2612B22A00A5520D /* RefreshProfileUseCaseTests.swift */,
+				4530D2142612B2CB00A5520D /* UpdateProfileCounterUseCaseTests.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4530D21C2612B49400A5520D /* PushNotification */ = {
+			isa = PBXGroup;
+			children = (
+				4530D21D2612B4A600A5520D /* HandlePushNotificationUseCaseTests.swift */,
+				4530D22B2612B96000A5520D /* RegisterForPushNotificationsUseCaseTests.swift */,
+			);
+			path = PushNotification;
+			sourceTree = "<group>";
+		};
+		4530D2332612BA4E00A5520D /* RemoteConfig */ = {
+			isa = PBXGroup;
+			children = (
+				4530D2342612BA6200A5520D /* GetRemoteConfigValueUseCaseTests.swift */,
+			);
+			path = RemoteConfig;
 			sourceTree = "<group>";
 		};
 		4534C2092604191C0022ACF4 /* Stubs */ = {
@@ -1857,6 +1917,7 @@
 			isa = PBXGroup;
 			children = (
 				451FAFE325FC107600171EDB /* LoginUseCaseTests.swift */,
+				4530D1D22612ADD300A5520D /* LogoutUseCaseTests.swift */,
 				45B675B6260E237100DF7387 /* RegistrationUseCaseTests.swift */,
 			);
 			path = Auth;
@@ -1867,6 +1928,7 @@
 			children = (
 				45B675D2260E239D00DF7387 /* GetUserUseCaseTests.swift */,
 				45B675DA260E23A600DF7387 /* RefreshUserUseCaseTests.swift */,
+				4530D2422612BB2D00A5520D /* UpdateUserUseCaseTests.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -2485,9 +2547,12 @@
 				45E100FD25E6B2A00082CABA /* Recorded.swift in Sources */,
 				458068DE2612A89C000E96A0 /* Tests.swift in Sources */,
 				454AC06524A221B300D6F367 /* ProviderDependencyMock.swift in Sources */,
+				4530D2052612B13900A5520D /* GetProfileIdUseCaseTests.swift in Sources */,
 				45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */,
+				4530D2432612BB2D00A5520D /* UpdateUserUseCaseTests.swift in Sources */,
 				458068C82612A882000E96A0 /* RxTest.swift in Sources */,
 				458068AC2612A82E000E96A0 /* NetworkProviderMock.swift in Sources */,
+				4530D1FD2612B07500A5520D /* GetProfileUseCaseTests.swift in Sources */,
 				4530D1B72612AAA900A5520D /* RemoteConfigRepositoryTests.swift in Sources */,
 				45B675D3260E239D00DF7387 /* GetUserUseCaseTests.swift in Sources */,
 				45B675DB260E23A600DF7387 /* RefreshUserUseCaseTests.swift in Sources */,
@@ -2501,6 +2566,7 @@
 				4534C1A32603C98F0022ACF4 /* Mocks.swift in Sources */,
 				45B675B7260E237100DF7387 /* RegistrationUseCaseTests.swift in Sources */,
 				45FBAABC260A992700617C25 /* NETUser+Stubs.swift in Sources */,
+				4530D2352612BA6200A5520D /* GetRemoteConfigValueUseCaseTests.swift in Sources */,
 				4534C249260427A40022ACF4 /* RegistrationViewModelTests.swift in Sources */,
 				45B675F2260E23C600DF7387 /* RefreshUsersUseCaseTests.swift in Sources */,
 				45E100F725E6B2A00082CABA /* HotObservable.swift in Sources */,
@@ -2509,11 +2575,17 @@
 				451FAFC425FBFBAE00171EDB /* DomainRepresentable+Extensions.swift in Sources */,
 				45E100FE25E6B2A00082CABA /* Subscription.swift in Sources */,
 				458068D02612A889000E96A0 /* Recorded+Event.swift in Sources */,
+				4530D1D32612ADD300A5520D /* LogoutUseCaseTests.swift in Sources */,
+				4530D21E2612B4A600A5520D /* HandlePushNotificationUseCaseTests.swift in Sources */,
 				45E100F825E6B2A00082CABA /* Event+Equatable.swift in Sources */,
 				45E100F325E6B2A00082CABA /* XCTest+Rx.swift in Sources */,
 				4580685F2612A6CB000E96A0 /* LoginData+Stubs.swift in Sources */,
+				4530D20D2612B22A00A5520D /* RefreshProfileUseCaseTests.swift in Sources */,
+				4530D1E22612AE5B00A5520D /* GetCurrentLocationUseCaseTests.swift in Sources */,
 				458068BA2612A873000E96A0 /* TestScheduler.swift in Sources */,
 				45E1011425E6B2DC0082CABA /* TestSchedulerVirtualTimeConverter.swift in Sources */,
+				4530D2152612B2CB00A5520D /* UpdateProfileCounterUseCaseTests.swift in Sources */,
+				4530D22C2612B96000A5520D /* RegisterForPushNotificationsUseCaseTests.swift in Sources */,
 				45E1012525E6B45C0082CABA /* Bag.swift in Sources */,
 				45B675AF260E104B00DF7387 /* UserDetailViewModelTests.swift in Sources */,
 				45B675EA260E23BB00DF7387 /* GetUsersUseCaseTests.swift in Sources */,

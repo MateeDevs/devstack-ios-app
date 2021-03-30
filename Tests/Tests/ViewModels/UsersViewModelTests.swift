@@ -13,6 +13,8 @@
  class UsersViewModelTests: BaseTestCase {
 
     // MARK: Dependencies
+    
+    private let dbStream = BehaviorSubject<[User]>(value: NETUser.stubListDomain)
 
     private let getUsersUseCase = GetUsersUseCaseMock()
     private let refreshUsersUseCase = RefreshUsersUseCaseMock()
@@ -26,8 +28,6 @@
             refreshUsersUseCase: refreshUsersUseCase
         )
     }
-    
-    private let dbStream = BehaviorSubject<[User]>(value: NETUser.stubListDomain)
 
     private func setupGetUsersUseCase() {
         Given(getUsersUseCase, .execute(willReturn: dbStream.asObservable()))

@@ -17,7 +17,7 @@ public extension RefreshBooksUseCase {
 
 public extension GetBooksUseCase {
     func execute() -> Observable<[Book]> {
-        return createObservable(self).map {  nsArray in
+        return createObservable(self).map { nsArray in
             nsArray as! [Book] // swiftlint:disable:this force_cast
         }
     }
