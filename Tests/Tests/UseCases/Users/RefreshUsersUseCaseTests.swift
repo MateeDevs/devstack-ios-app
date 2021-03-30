@@ -17,10 +17,7 @@ class RefreshUsersUseCaseTests: BaseTestCase {
     
     private func setupDependencies() -> RepositoryDependency {
         Given(userRepository, .list(.value(.remote), page: .any, sortBy: .any, willReturn: .just(NETUser.stubListDomain)))
-        
-        return RepositoryDependencyMock(
-            userRepository: userRepository
-        )
+        return RepositoryDependencyMock(userRepository: userRepository)
     }
     
     // MARK: Tests

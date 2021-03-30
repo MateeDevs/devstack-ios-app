@@ -18,10 +18,7 @@ class CounterDisplayViewModelTests: BaseTestCase {
     
     private func setupDependencies() -> UseCaseDependency {
         Given(getProfileUseCase, .execute(willReturn: .just(NETUser.stubDomain)))
-        
-        return UseCaseDependencyMock(
-            getProfileUseCase: getProfileUseCase
-        )
+        return UseCaseDependencyMock(getProfileUseCase: getProfileUseCase)
     }
     
     // MARK: Inputs and outputs

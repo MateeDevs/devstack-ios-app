@@ -17,10 +17,7 @@ class RegistrationViewModelTests: BaseTestCase {
     
     private func setupDependencies() -> UseCaseDependency {
         setupRegistrationUseCase()
-        
-        return UseCaseDependencyMock(
-            registrationUseCase: registrationUseCase
-        )
+        return UseCaseDependencyMock(registrationUseCase: registrationUseCase)
     }
     
     private func setupRegistrationUseCase() {

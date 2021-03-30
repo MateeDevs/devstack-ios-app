@@ -19,7 +19,7 @@ class UserRepositoryTests: BaseTestCase {
     private let networkProvider = NetworkProviderMock()
     
     private func setupDependencies() -> ProviderDependency {
-        return ProviderDependencyMock(
+        ProviderDependencyMock(
             databaseProvider: databaseProvider,
             networkProvider: networkProvider
         )

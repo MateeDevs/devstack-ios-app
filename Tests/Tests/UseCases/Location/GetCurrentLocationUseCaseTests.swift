@@ -24,9 +24,7 @@ class GetCurrentLocationUseCaseTests: BaseTestCase {
             willReturn: .just(location)
         ))
         
-        return RepositoryDependencyMock(
-            locationRepository: locationRepository
-        )
+        return RepositoryDependencyMock(locationRepository: locationRepository)
     }
     
     // MARK: Tests

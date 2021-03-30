@@ -17,10 +17,7 @@ class GetProfileIdUseCaseTests: BaseTestCase {
     
     private func setupDependencies() -> RepositoryDependency {
         Given(authTokenRepository, .read(willReturn: NETAuthToken.stubDomain))
-        
-        return RepositoryDependencyMock(
-            authTokenRepository: authTokenRepository
-        )
+        return RepositoryDependencyMock(authTokenRepository: authTokenRepository)
     }
     
     // MARK: Tests

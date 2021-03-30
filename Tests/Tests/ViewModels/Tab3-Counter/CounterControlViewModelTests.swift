@@ -17,10 +17,7 @@ class CounterControlViewModelTests: BaseTestCase {
     
     private func setupDependencies() -> UseCaseDependency {
         Given(updateProfileCounterUseCase, .execute(value: .any, willReturn: .just(())))
-        
-        return UseCaseDependencyMock(
-            updateProfileCounterUseCase: updateProfileCounterUseCase
-        )
+        return UseCaseDependencyMock(updateProfileCounterUseCase: updateProfileCounterUseCase)
     }
 
     // MARK: Inputs and outputs

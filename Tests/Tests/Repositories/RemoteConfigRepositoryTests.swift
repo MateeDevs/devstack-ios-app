@@ -17,7 +17,6 @@ class RemoteConfigRepositoryTests: BaseTestCase {
     
     private func setupDependencies() -> ProviderDependency {
         Given(remoteConfigProvider, .get(.any, willReturn: .just(true)))
-        
         return ProviderDependencyMock(remoteConfigProvider: remoteConfigProvider)
     }
     

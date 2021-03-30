@@ -17,10 +17,7 @@ class LoginUseCaseTests: BaseTestCase {
     
     private func setupDependencies() -> RepositoryDependency {
         Given(authTokenRepository, .create(.any, willReturn: .just(NETAuthToken.stubDomain)))
-        
-        return RepositoryDependencyMock(
-            authTokenRepository: authTokenRepository
-        )
+        return RepositoryDependencyMock(authTokenRepository: authTokenRepository)
     }
     
     // MARK: Tests

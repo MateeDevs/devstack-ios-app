@@ -19,10 +19,7 @@ class UpdateUserUseCaseTests: BaseTestCase {
     
     private func setupDependencies() -> RepositoryDependency {
         Given(userRepository, .update(.value(.remote), user: .value(updatedUser), willReturn: .just(updatedUser)))
-        
-        return RepositoryDependencyMock(
-            userRepository: userRepository
-        )
+        return RepositoryDependencyMock(userRepository: userRepository)
     }
     
     // MARK: Tests

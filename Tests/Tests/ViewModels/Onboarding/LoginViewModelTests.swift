@@ -17,10 +17,7 @@ class LoginViewModelTests: BaseTestCase {
     
     private func setupDependencies() -> UseCaseDependency {
         setupLoginUseCase()
-        
-        return UseCaseDependencyMock(
-            loginUseCase: loginUseCase
-        )
+        return UseCaseDependencyMock(loginUseCase: loginUseCase)
     }
     
     private func setupLoginUseCase() {
