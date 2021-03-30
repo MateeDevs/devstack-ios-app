@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		451FAFC425FBFBAE00171EDB /* DomainRepresentable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451FAFC325FBFBAE00171EDB /* DomainRepresentable+Extensions.swift */; };
 		451FB00C25FC12E400171EDB /* NETPushNotification.json in Resources */ = {isa = PBXBuildFile; fileRef = 451FB00B25FC12E400171EDB /* NETPushNotification.json */; };
+		4530D1B72612AAA900A5520D /* RemoteConfigRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D1B62612AAA900A5520D /* RemoteConfigRepositoryTests.swift */; };
+		4530D1C52612ABC100A5520D /* PushNotificationsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D1C42612ABC100A5520D /* PushNotificationsRepositoryTests.swift */; };
 		4534C11026036AA10022ACF4 /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582185825F25D5800D587EB /* DataLayer.framework */; };
 		4534C11126036AA10022ACF4 /* DependencyInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */; };
 		4534C11226036AA10022ACF4 /* DomainLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; };
@@ -450,6 +452,8 @@
 		451FAFC325FBFBAE00171EDB /* DomainRepresentable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DomainRepresentable+Extensions.swift"; sourceTree = "<group>"; };
 		451FAFE325FC107600171EDB /* LoginUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseTests.swift; sourceTree = "<group>"; };
 		451FB00B25FC12E400171EDB /* NETPushNotification.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NETPushNotification.json; sourceTree = "<group>"; };
+		4530D1B62612AAA900A5520D /* RemoteConfigRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigRepositoryTests.swift; sourceTree = "<group>"; };
+		4530D1C42612ABC100A5520D /* PushNotificationsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsRepositoryTests.swift; sourceTree = "<group>"; };
 		4534C14E2603706B0022ACF4 /* RepositoryDependencyMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDependencyMock.swift; sourceTree = "<group>"; };
 		4534C1862603C1530022ACF4 /* AutoMockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMockable.swift; sourceTree = "<group>"; };
 		4534C1A22603C98F0022ACF4 /* Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
@@ -926,6 +930,8 @@
 			isa = PBXGroup;
 			children = (
 				4557195724A15C0200FB24CA /* AuthTokenRepositoryTests.swift */,
+				4530D1C42612ABC100A5520D /* PushNotificationsRepositoryTests.swift */,
+				4530D1B62612AAA900A5520D /* RemoteConfigRepositoryTests.swift */,
 				45B6760F2612088D00DF7387 /* UserRepositoryTests.swift */,
 			);
 			path = Repositories;
@@ -2482,6 +2488,7 @@
 				45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */,
 				458068C82612A882000E96A0 /* RxTest.swift in Sources */,
 				458068AC2612A82E000E96A0 /* NetworkProviderMock.swift in Sources */,
+				4530D1B72612AAA900A5520D /* RemoteConfigRepositoryTests.swift in Sources */,
 				45B675D3260E239D00DF7387 /* GetUserUseCaseTests.swift in Sources */,
 				45B675DB260E23A600DF7387 /* RefreshUserUseCaseTests.swift in Sources */,
 				4534C25926042E780022ACF4 /* UsersViewModelTests.swift in Sources */,
@@ -2511,6 +2518,7 @@
 				45B675AF260E104B00DF7387 /* UserDetailViewModelTests.swift in Sources */,
 				45B675EA260E23BB00DF7387 /* GetUsersUseCaseTests.swift in Sources */,
 				458C1ACD24A347E600549420 /* DatabaseProviderMock.swift in Sources */,
+				4530D1C52612ABC100A5520D /* PushNotificationsRepositoryTests.swift in Sources */,
 				4534C14F2603706B0022ACF4 /* RepositoryDependencyMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
