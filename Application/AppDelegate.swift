@@ -124,8 +124,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     ) {
         let notification = response.notification.request.content.userInfo
         DispatchQueue.main.async {
-            guard let notification = self.flowController?.dependencies.handlePushNotificationUseCase.execute(notification) else { return }
-            self.flowController?.handleDeeplink(for: notification)
+            self.flowController?.handlePushNotification(notification)
         }
     }
 }

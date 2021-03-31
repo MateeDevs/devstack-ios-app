@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum Flow {
+enum Flow {
     case login(LoginViewControllerFlow)
     case registration(RegistrationViewControllerFlow)
     case users(UsersViewControllerFlow)

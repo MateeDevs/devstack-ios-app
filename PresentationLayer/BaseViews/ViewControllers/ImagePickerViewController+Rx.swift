@@ -7,7 +7,7 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-public extension Reactive where Base: ImagePickerViewController {
+extension Reactive where Base: ImagePickerViewController {
     /// Reactive wrapper for `delegate`
     var delegate: DelegateProxy<ImagePickerViewController, ImagePickerViewControllerDelegate> {
         RxImagePickerViewControllerDelegateProxy.proxy(for: base)
@@ -22,24 +22,24 @@ public extension Reactive where Base: ImagePickerViewController {
 }
 
 extension ImagePickerViewController: HasDelegate {
-    public typealias Delegate = ImagePickerViewControllerDelegate
+    typealias Delegate = ImagePickerViewControllerDelegate
 }
 
-open class RxImagePickerViewControllerDelegateProxy: DelegateProxy<ImagePickerViewController, ImagePickerViewControllerDelegate>,
+class RxImagePickerViewControllerDelegateProxy: DelegateProxy<ImagePickerViewController, ImagePickerViewControllerDelegate>,
     DelegateProxyType,
     ImagePickerViewControllerDelegate {
-
+    
     /// Typed parent object.
-    public private(set) weak var imagePickerViewController: ImagePickerViewController?
+    private(set) weak var imagePickerViewController: ImagePickerViewController?
 
     /// - parameter imagePickerViewController: Parent object for delegate proxy.
-    public init(imagePickerViewController: ParentObject) {
+    init(imagePickerViewController: ParentObject) {
         self.imagePickerViewController = imagePickerViewController
         super.init(parentObject: imagePickerViewController, delegateProxy: RxImagePickerViewControllerDelegateProxy.self)
     }
 
     // Register known implementations
-    public static func registerKnownImplementations() {
+    static func registerKnownImplementations() {
         self.register { RxImagePickerViewControllerDelegateProxy(imagePickerViewController: $0) }
     }
 }
