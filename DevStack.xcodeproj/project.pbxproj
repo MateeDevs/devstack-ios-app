@@ -39,6 +39,7 @@
 		454AC06524A221B300D6F367 /* ProviderDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454AC06424A221B300D6F367 /* ProviderDependencyMock.swift */; };
 		454D163625FC21FD00920CF0 /* Decodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D163525FC21FD00920CF0 /* Decodable+Extensions.swift */; };
 		4558D30B20FCC8FF005BC325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4558D30A20FCC8FF005BC325 /* AppDelegate.swift */; };
+		456479AC2615B9140074DFFB /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 456479AB2615B9140074DFFB /* DevstackKmpShared */; };
 		456E744625F83452007D9A6D /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582185825F25D5800D587EB /* DataLayer.framework */; };
 		456E744725F83452007D9A6D /* DataLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4582185825F25D5800D587EB /* DataLayer.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		456E744925F83453007D9A6D /* DependencyInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */; };
@@ -296,8 +297,6 @@
 		45B675F2260E23C600DF7387 /* RefreshUsersUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675F1260E23C600DF7387 /* RefreshUsersUseCaseTests.swift */; };
 		45B676022611F23100DF7387 /* UpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B676012611F23100DF7387 /* UpdateModel.swift */; };
 		45B676102612088D00DF7387 /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6760F2612088D00DF7387 /* UserRepositoryTests.swift */; };
-		45C45B5526124BD80076991C /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 45C45B5426124BD80076991C /* DevstackKmpShared */; };
-		45C45B5D26124FFA0076991C /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 45C45B5C26124FFA0076991C /* DevstackKmpShared */; };
 		45D3771E25F8D07800D05900 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771B25F8D07800D05900 /* Localizable.swift */; };
 		45D3771F25F8D07800D05900 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771C25F8D07800D05900 /* Assets.swift */; };
 		45D3772025F8D07800D05900 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771D25F8D07800D05900 /* Storyboards.swift */; };
@@ -795,6 +794,7 @@
 				456E744D25F83456007D9A6D /* PresentationLayer.framework in Frameworks */,
 				456E744625F83452007D9A6D /* DataLayer.framework in Frameworks */,
 				45D3776825F9228A00D05900 /* SPMDependencies.framework in Frameworks */,
+				456479AC2615B9140074DFFB /* DevstackKmpShared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,7 +812,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				456E745625F8345D007D9A6D /* SPMDependencies.framework in Frameworks */,
-				45C45B5D26124FFA0076991C /* DevstackKmpShared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,7 +838,6 @@
 				458219CB25F2634100D587EB /* RxRealm in Frameworks */,
 				458219C925F2634100D587EB /* RealmSwift in Frameworks */,
 				458219BD25F2631C00D587EB /* FirebaseMessaging in Frameworks */,
-				45C45B5526124BD80076991C /* DevstackKmpShared in Frameworks */,
 				458219BF25F2632200D587EB /* FirebaseRemoteConfig in Frameworks */,
 				4575E5E825F6F18C00CCC003 /* AlamofireImage in Frameworks */,
 				458219C325F2633900D587EB /* Moya in Frameworks */,
@@ -2161,6 +2159,7 @@
 			);
 			name = DevStack;
 			packageProductDependencies = (
+				456479AB2615B9140074DFFB /* DevstackKmpShared */,
 			);
 			productName = DevStack;
 			productReference = 4558D30720FCC8FF005BC325 /* DevStack.app */;
@@ -2204,7 +2203,6 @@
 			);
 			name = DomainLayer;
 			packageProductDependencies = (
-				45C45B5C26124FFA0076991C /* DevstackKmpShared */,
 			);
 			productName = DomainLayer;
 			productReference = 4582188625F25E3300D587EB /* DomainLayer.framework */;
@@ -2263,7 +2261,6 @@
 				4575E5E925F6F19000CCC003 /* RxCocoa */,
 				4575E5EB25F6F19900CCC003 /* SkeletonView */,
 				45D3776C25F9229600D05900 /* Atlantis */,
-				45C45B5426124BD80076991C /* DevstackKmpShared */,
 			);
 			productName = DataLayerDependencies;
 			productReference = 458219A825F262F000D587EB /* SPMDependencies.framework */;
@@ -4827,6 +4824,11 @@
 			package = 4534C17D2603BF050022ACF4 /* XCRemoteSwiftPackageReference "SwiftyMocky" */;
 			productName = SwiftyMocky;
 		};
+		456479AB2615B9140074DFFB /* DevstackKmpShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
+			productName = DevstackKmpShared;
+		};
 		4575E5BE25F6EB4A00CCC003 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
@@ -4886,16 +4888,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 45840CBD25ACE84900DFC729 /* XCRemoteSwiftPackageReference "RxRealm" */;
 			productName = RxRealm;
-		};
-		45C45B5426124BD80076991C /* DevstackKmpShared */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
-			productName = DevstackKmpShared;
-		};
-		45C45B5C26124FFA0076991C /* DevstackKmpShared */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
-			productName = DevstackKmpShared;
 		};
 		45D3776C25F9229600D05900 /* Atlantis */ = {
 			isa = XCSwiftPackageProductDependency;

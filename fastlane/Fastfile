@@ -10,12 +10,12 @@
 
 workspace = "DevStack.xcworkspace"
 slack_channel = "#ci"
-info_plist_path = "./Application/Info/Info.plist"
 
 alpha = {
   output_name: "A-DevStack",
   app_identifier: "cz.matee.devstack.alpha",
   scheme: "DevStack_Alpha",
+  info_plist_path: "./Application/Info/Info+Proxyman.plist",
   gsp_path: "./Application/GoogleService/GoogleService-Info-Alpha.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
   testflight_link: "NOT AVAILABLE"
@@ -25,6 +25,7 @@ beta = {
   output_name: "B-DevStack",
   app_identifier: "cz.matee.devstack.beta",
   scheme: "DevStack_Beta",
+  info_plist_path: "./Application/Info/Info+Proxyman.plist",
   gsp_path: "./Application/GoogleService/GoogleService-Info-Beta.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
   testflight_link: "NOT AVAILABLE"
@@ -34,6 +35,7 @@ production = {
   output_name: "DevStack",
   app_identifier: "cz.matee.devstack",
   scheme: "DevStack",
+  info_plist_path: "./Application/Info/Info.plist",
   gsp_path: "./Application/GoogleService/GoogleService-Info-Prod.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
   testflight_link: "NOT AVAILABLE"
@@ -133,7 +135,7 @@ platform :ios do
     unless ENV["BUILD_NUMBER"] =~ /^\d{1,18}$/
       UI.user_error!("Invalid build number: \"#{ENV["BUILD_NUMBER"]}\". Expect 1-18 digits")
     end
-    set_info_plist_value(path: info_plist_path, key: "CFBundleVersion", value: ENV["BUILD_NUMBER"])
+    set_info_plist_value(path: config[:info_plist_path], key: "CFBundleVersion", value: ENV["BUILD_NUMBER"])
 
     keychain_password = SecureRandom.base64
     delete_keychain(name: "fastlane") if File.exist?(File.expand_path("~/Library/Keychains/fastlane-db"))
