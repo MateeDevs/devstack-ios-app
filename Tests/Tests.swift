@@ -3,10 +3,8 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-@_exported import DataLayer
-@_exported import DependencyInjection
-@_exported import DomainLayer
-@_exported import PresentationLayer
+import DomainLayer
+import Foundation
 
 /// Main setup shared by all XCTestCases
 /// Idea taken from [StackOverflow](https://stackoverflow.com/a/41895011)

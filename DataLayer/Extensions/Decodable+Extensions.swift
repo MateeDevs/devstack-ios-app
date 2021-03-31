@@ -3,6 +3,8 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import Foundation
+
 public extension Decodable {
     static var stub: Data {
         stub(for: String(describing: self))

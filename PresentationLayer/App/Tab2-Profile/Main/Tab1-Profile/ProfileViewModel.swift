@@ -4,6 +4,7 @@
 //
 
 import CoreLocation
+import DomainLayer
 import RxCocoa
 import RxSwift
 

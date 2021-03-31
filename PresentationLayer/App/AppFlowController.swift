@@ -3,6 +3,7 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
+import DomainLayer
 import UIKit
 
 public class AppFlowController: FlowController, MainFlowControllerDelegate, OnboardingFlowControllerDelegate {

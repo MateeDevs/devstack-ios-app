@@ -3,6 +3,7 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
+import Foundation
 import RealmSwift
 import RxSwift
 

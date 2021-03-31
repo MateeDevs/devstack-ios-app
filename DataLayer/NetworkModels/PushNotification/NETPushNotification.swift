@@ -3,6 +3,8 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import DomainLayer
+
 struct NETPushNotification: Decodable {
     let aps: APS
     let type: String

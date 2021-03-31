@@ -3,11 +3,12 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+@testable import DataLayer
+import DependencyInjection
+import DomainLayer
 import RxSwift
 import SwiftyMocky
 import XCTest
-
-@testable import DataLayer
 
 class RefreshUserUseCaseTests: BaseTestCase {
     

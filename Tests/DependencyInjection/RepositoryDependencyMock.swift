@@ -3,6 +3,9 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import DependencyInjection
+import DomainLayer
+
 struct RepositoryDependencyMock: RepositoryDependency {
     
     let authTokenRepository: AuthTokenRepository

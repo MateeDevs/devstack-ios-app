@@ -3,6 +3,7 @@
 //  Copyright © 2017 Matee. All rights reserved.
 //
 
+import DomainLayer
 import RxSwift
 import UIKit
 

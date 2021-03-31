@@ -3,6 +3,8 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import DomainLayer
+
 struct NETAuthToken: Decodable {
     let userId: String
     let email: String

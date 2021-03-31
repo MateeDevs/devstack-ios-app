@@ -3,6 +3,8 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
+import DomainLayer
+
 struct NETLoginData: Encodable {
     let email: String
     let pass: String

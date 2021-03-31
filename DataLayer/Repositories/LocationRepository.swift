@@ -4,6 +4,7 @@
 //
 
 import CoreLocation
+import DomainLayer
 import RxSwift
 
 public class LocationRepositoryImpl: LocationRepository {

@@ -3,6 +3,8 @@
 //  Copyright © 2020 Matee. All rights reserved.
 //
 
+import DataLayer
+import Foundation
 import Moya
 import RxSwift
 

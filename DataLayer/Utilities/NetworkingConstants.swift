@@ -3,6 +3,8 @@
 //  Copyright © 2018 Matee. All rights reserved.
 //
 
+import DomainLayer
+
 struct NetworkingConstants {
 
     static let apiVersion = 1

@@ -4,12 +4,13 @@
 //
 
 import CoreLocation
+@testable import DataLayer
+import DependencyInjection
+import DomainLayer
+@testable import PresentationLayer
 import RxSwift
 import SwiftyMocky
 import XCTest
-
-@testable import DataLayer
-@testable import PresentationLayer
 
 class ProfileViewModelTests: BaseTestCase {
     

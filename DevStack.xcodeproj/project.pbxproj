@@ -80,9 +80,6 @@
 		458068C82612A882000E96A0 /* RxTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458068C72612A882000E96A0 /* RxTest.swift */; };
 		458068D02612A889000E96A0 /* Recorded+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458068CF2612A888000E96A0 /* Recorded+Event.swift */; };
 		458068DE2612A89C000E96A0 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458068DD2612A89B000E96A0 /* Tests.swift */; };
-		4582186A25F25D5900D587EB /* DataLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4582185A25F25D5900D587EB /* DataLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4582189825F25E3400D587EB /* DomainLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4582188825F25E3300D587EB /* DomainLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		458218CC25F25E4400D587EB /* PresentationLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 458218BC25F25E4300D587EB /* PresentationLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4582190525F261B200D587EB /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582190425F261B200D587EB /* DBUser.swift */; };
 		4582191125F261BE00D587EB /* NETAuthToken.json in Resources */ = {isa = PBXBuildFile; fileRef = 4582190D25F261BD00D587EB /* NETAuthToken.json */; };
 		4582191225F261BE00D587EB /* NETLoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582190E25F261BD00D587EB /* NETLoginData.swift */; };
@@ -113,7 +110,6 @@
 		4582198425F2621800D587EB /* CLLocationManagerDelegate+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582197825F2621700D587EB /* CLLocationManagerDelegate+Rx.swift */; };
 		4582198525F2621800D587EB /* Object+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582197925F2621800D587EB /* Object+Extensions.swift */; };
 		4582198725F2621800D587EB /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582197B25F2621800D587EB /* Realm+Extensions.swift */; };
-		458219AC25F262F000D587EB /* SPMDependencies.h in Headers */ = {isa = PBXBuildFile; fileRef = 458219AA25F262F000D587EB /* SPMDependencies.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		458219BD25F2631C00D587EB /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 458219BC25F2631C00D587EB /* FirebaseMessaging */; };
 		458219BF25F2632200D587EB /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 458219BE25F2632200D587EB /* FirebaseRemoteConfig */; };
 		458219C125F2633000D587EB /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 458219C025F2633000D587EB /* KeychainAccess */; };
@@ -161,8 +157,6 @@
 		459F86DF25F66F7A004ACAD4 /* HasNoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F86DE25F66F7A004ACAD4 /* HasNoRepository.swift */; };
 		459F86F625F66FA9004ACAD4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F86F525F66FA9004ACAD4 /* Logger.swift */; };
 		459F873225F69A8B004ACAD4 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F873125F69A8B004ACAD4 /* Environment.swift */; };
-		459F875725F69F71004ACAD4 /* DataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F875625F69F71004ACAD4 /* DataLayer.swift */; };
-		459F876725F6A280004ACAD4 /* PresentationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F876625F6A280004ACAD4 /* PresentationLayer.swift */; };
 		459F877C25F6A367004ACAD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F877B25F6A367004ACAD4 /* BaseViewController.swift */; };
 		459F878525F6A3A6004ACAD4 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F878425F6A3A6004ACAD4 /* BaseTableViewController.swift */; };
 		459F878E25F6A3B8004ACAD4 /* BaseTableViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F878D25F6A3B8004ACAD4 /* BaseTableViewController+Rx.swift */; };
@@ -290,7 +284,6 @@
 		459F8B5E25F6B643004ACAD4 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8B5D25F6B643004ACAD4 /* Error+Extensions.swift */; };
 		459F8B8425F6B82A004ACAD4 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8B8325F6B82A004ACAD4 /* Observable+Extensions.swift */; };
 		459F8BB225F6C338004ACAD4 /* HasNoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8BB125F6C338004ACAD4 /* HasNoProvider.swift */; };
-		459F8BE825F6D67F004ACAD4 /* DependencyInjection.h in Headers */ = {isa = PBXBuildFile; fileRef = 459F8BE625F6D67F004ACAD4 /* DependencyInjection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		459F8C0525F6D733004ACAD4 /* UseCaseDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C0425F6D733004ACAD4 /* UseCaseDependency.swift */; };
 		459F8C2725F6D812004ACAD4 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C2625F6D812004ACAD4 /* RepositoryDependency.swift */; };
 		459F8C3725F6D86B004ACAD4 /* ProviderDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */; };
@@ -498,7 +491,6 @@
 		4558D30720FCC8FF005BC325 /* DevStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4558D30A20FCC8FF005BC325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		456E73DD25F817FA007D9A6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4575E5D525F6EF7200CCC003 /* Info-Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Debug.plist"; sourceTree = "<group>"; };
 		4575E65525F6FA7600CCC003 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		4575E65C25F6FFA300CCC003 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		4575E67525F7051100CCC003 /* HasNoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNoUseCase.swift; sourceTree = "<group>"; };
@@ -519,13 +511,10 @@
 		458068CF2612A888000E96A0 /* Recorded+Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recorded+Event.swift"; sourceTree = "<group>"; };
 		458068DD2612A89B000E96A0 /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		4582185825F25D5800D587EB /* DataLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4582185A25F25D5900D587EB /* DataLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataLayer.h; sourceTree = "<group>"; };
 		4582185B25F25D5900D587EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4582188625F25E3300D587EB /* DomainLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DomainLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4582188825F25E3300D587EB /* DomainLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DomainLayer.h; sourceTree = "<group>"; };
 		4582188925F25E3300D587EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		458218BA25F25E4300D587EB /* PresentationLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PresentationLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		458218BC25F25E4300D587EB /* PresentationLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentationLayer.h; sourceTree = "<group>"; };
 		458218BD25F25E4300D587EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4582190425F261B200D587EB /* DBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		4582190D25F261BD00D587EB /* NETAuthToken.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NETAuthToken.json; sourceTree = "<group>"; };
@@ -558,7 +547,6 @@
 		4582197925F2621800D587EB /* Object+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Object+Extensions.swift"; sourceTree = "<group>"; };
 		4582197B25F2621800D587EB /* Realm+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+Extensions.swift"; sourceTree = "<group>"; };
 		458219A825F262F000D587EB /* SPMDependencies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPMDependencies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		458219AA25F262F000D587EB /* SPMDependencies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPMDependencies.h; sourceTree = "<group>"; };
 		458219AB25F262F000D587EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45821A6E25F2689200D587EB /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		45821A7725F268A000D587EB /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
@@ -601,8 +589,6 @@
 		459F86DE25F66F7A004ACAD4 /* HasNoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNoRepository.swift; sourceTree = "<group>"; };
 		459F86F525F66FA9004ACAD4 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		459F873125F69A8B004ACAD4 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		459F875625F69F71004ACAD4 /* DataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayer.swift; sourceTree = "<group>"; };
-		459F876625F6A280004ACAD4 /* PresentationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationLayer.swift; sourceTree = "<group>"; };
 		459F877B25F6A367004ACAD4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		459F878425F6A3A6004ACAD4 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		459F878D25F6A3B8004ACAD4 /* BaseTableViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTableViewController+Rx.swift"; sourceTree = "<group>"; };
@@ -737,7 +723,6 @@
 		459F8B8325F6B82A004ACAD4 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		459F8BB125F6C338004ACAD4 /* HasNoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNoProvider.swift; sourceTree = "<group>"; };
 		459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependencyInjection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		459F8BE625F6D67F004ACAD4 /* DependencyInjection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DependencyInjection.h; sourceTree = "<group>"; };
 		459F8BE725F6D67F004ACAD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		459F8C0425F6D733004ACAD4 /* UseCaseDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseDependency.swift; sourceTree = "<group>"; };
 		459F8C2625F6D812004ACAD4 /* RepositoryDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDependency.swift; sourceTree = "<group>"; };
@@ -1091,7 +1076,6 @@
 			isa = PBXGroup;
 			children = (
 				456E73DD25F817FA007D9A6D /* Info.plist */,
-				4575E5D525F6EF7200CCC003 /* Info-Debug.plist */,
 				459896B026129CB300C852E0 /* Info+Proxyman.plist */,
 			);
 			path = Info;
@@ -1195,8 +1179,6 @@
 				458218FE25F2610F00D587EB /* Providers */,
 				4582190125F2612A00D587EB /* Utilities */,
 				458218F725F260D500D587EB /* Extensions */,
-				459F875625F69F71004ACAD4 /* DataLayer.swift */,
-				4582185A25F25D5900D587EB /* DataLayer.h */,
 				4582185B25F25D5900D587EB /* Info.plist */,
 			);
 			path = DataLayer;
@@ -1211,7 +1193,6 @@
 				458FD8F125F289B600FBD3B0 /* Repositories */,
 				459F865625F665CF004ACAD4 /* Utilities */,
 				459F86A025F66A02004ACAD4 /* Extensions */,
-				4582188825F25E3300D587EB /* DomainLayer.h */,
 				4582188925F25E3300D587EB /* Info.plist */,
 			);
 			path = DomainLayer;
@@ -1225,8 +1206,6 @@
 				459F8A2025F6B123004ACAD4 /* Resources */,
 				459F877725F6A32A004ACAD4 /* Utilities */,
 				459F877825F6A333004ACAD4 /* Extensions */,
-				459F876625F6A280004ACAD4 /* PresentationLayer.swift */,
-				458218BC25F25E4300D587EB /* PresentationLayer.h */,
 				458218BD25F25E4300D587EB /* Info.plist */,
 			);
 			path = PresentationLayer;
@@ -1348,7 +1327,6 @@
 		458219A925F262F000D587EB /* SPMDependencies */ = {
 			isa = PBXGroup;
 			children = (
-				458219AA25F262F000D587EB /* SPMDependencies.h */,
 				458219AB25F262F000D587EB /* Info.plist */,
 			);
 			path = SPMDependencies;
@@ -1944,7 +1922,6 @@
 				459F8C2625F6D812004ACAD4 /* RepositoryDependency.swift */,
 				459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */,
 				48C3DFA42602165D004CB3E1 /* KMPDependency.swift */,
-				459F8BE625F6D67F004ACAD4 /* DependencyInjection.h */,
 				459F8BE725F6D67F004ACAD4 /* Info.plist */,
 			);
 			path = DependencyInjection;
@@ -2106,7 +2083,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4582186A25F25D5900D587EB /* DataLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2114,7 +2090,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4582189825F25E3400D587EB /* DomainLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2122,7 +2097,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				458218CC25F25E4400D587EB /* PresentationLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2130,7 +2104,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				458219AC25F262F000D587EB /* SPMDependencies.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2138,7 +2111,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				459F8BE825F6D67F004ACAD4 /* DependencyInjection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2688,7 +2660,6 @@
 				4582191425F261BE00D587EB /* NETAuthToken.swift in Sources */,
 				4582193025F261D900D587EB /* AuthTokenRepository.swift in Sources */,
 				4582196325F2620900D587EB /* AuthAPI.swift in Sources */,
-				459F875725F69F71004ACAD4 /* DataLayer.swift in Sources */,
 				4575E69125F7E8E300CCC003 /* DatabaseProvider.swift in Sources */,
 				4598969B26129B9E00C852E0 /* UserRepository.swift in Sources */,
 				4582194325F261E100D587EB /* FirebasePushNotificationsProvider.swift in Sources */,
@@ -2855,7 +2826,6 @@
 				45D3772025F8D07800D05900 /* Storyboards.swift in Sources */,
 				459F894B25F6ADB8004ACAD4 /* Double+Extensions.swift in Sources */,
 				459F8B1425F6B4E3004ACAD4 /* CounterViewController.swift in Sources */,
-				459F876725F6A280004ACAD4 /* PresentationLayer.swift in Sources */,
 				459F877C25F6A367004ACAD4 /* BaseViewController.swift in Sources */,
 				459F879725F6A3D3004ACAD4 /* FullscreenImageViewController.swift in Sources */,
 				459F8ADA25F6B4A0004ACAD4 /* ProfileFlowController.swift in Sources */,
