@@ -10,7 +10,7 @@
 
 workspace = "DevStack.xcworkspace"
 slack_channel = "#ci"
-info_plist_path = "./Application/Info/Info-Release.plist"
+info_plist_path = "./Application/Info/Info.plist"
 
 alpha = {
   output_name: "A-DevStack",
