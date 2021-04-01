@@ -44,8 +44,8 @@ final class BooksViewModel: BaseViewModel, ViewModel {
         let activity = ActivityIndicator()
         
         let refreshUsers = page.flatMap { _ -> Observable<Int> in
-            dependencies.refreshBooksUseCase!.execute().map({ _ in 100 }).trackActivity(activity)
-        }.ignoreErrors().share()
+            dependencies.refreshBooksUseCase!.execute().map({ _ in 100 }).trackActivity(activity).ignoreErrors()
+        }.share()
 
         let isRefreshing = Observable<Bool>.merge(
             activity.asObservable(),

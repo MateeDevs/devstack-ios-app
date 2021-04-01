@@ -135,7 +135,9 @@ class LoginViewModelTests: BaseTestCase {
         
         scheduler.start()
         
-        XCTAssertEqual(output.flow.events, [])
+        XCTAssertEqual(output.flow.events, [
+            .next(10, .dismiss)
+        ])
         XCTAssertEqual(output.alertAction.events, [
             .next(0, .showWhisper(Whisper(L10n.signing_in))),
             .next(0, .showWhisper(Whisper(error: L10n.invalid_credentials))),
