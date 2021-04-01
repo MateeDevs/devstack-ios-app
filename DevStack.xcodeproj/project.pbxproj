@@ -32,12 +32,12 @@
 		4534C249260427A40022ACF4 /* RegistrationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C248260427A40022ACF4 /* RegistrationViewModelTests.swift */; };
 		4534C2512604280D0022ACF4 /* RegistrationData+Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C2502604280D0022ACF4 /* RegistrationData+Stubs.swift */; };
 		4534C25926042E780022ACF4 /* UsersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C25826042E780022ACF4 /* UsersViewModelTests.swift */; };
-		454AAD10260508930098A3E1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		454AAD11260508990098A3E1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4534C1C42603D6AD0022ACF4 /* XCTest.framework */; };
 		454AAD1F26050B7B0098A3E1 /* SwiftyMocky in Frameworks */ = {isa = PBXBuildFile; productRef = 454AAD1E26050B7B0098A3E1 /* SwiftyMocky */; };
 		454AAD2026050B800098A3E1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4534C1C42603D6AD0022ACF4 /* XCTest.framework */; };
 		454AC06524A221B300D6F367 /* ProviderDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454AC06424A221B300D6F367 /* ProviderDependencyMock.swift */; };
 		454D163625FC21FD00920CF0 /* Decodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D163525FC21FD00920CF0 /* Decodable+Extensions.swift */; };
+		455500392615DEEE006B5B69 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */; };
 		4558D30B20FCC8FF005BC325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4558D30A20FCC8FF005BC325 /* AppDelegate.swift */; };
 		456479AC2615B9140074DFFB /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 456479AB2615B9140074DFFB /* DevstackKmpShared */; };
 		456E744625F83452007D9A6D /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582185825F25D5800D587EB /* DataLayer.framework */; };
@@ -773,13 +773,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				454AAD2026050B800098A3E1 /* XCTest.framework in Frameworks */,
-				454AAD11260508990098A3E1 /* XCTest.framework in Frameworks */,
 				4534C11026036AA10022ACF4 /* DataLayer.framework in Frameworks */,
 				4534C11126036AA10022ACF4 /* DependencyInjection.framework in Frameworks */,
 				4534C11226036AA10022ACF4 /* DomainLayer.framework in Frameworks */,
 				4534C11326036AA10022ACF4 /* PresentationLayer.framework in Frameworks */,
-				454AAD1F26050B7B0098A3E1 /* SwiftyMocky in Frameworks */,
-				454AAD10260508930098A3E1 /* (null) in Frameworks */,
 				454AAD1F26050B7B0098A3E1 /* SwiftyMocky in Frameworks */,
 				456E747425F837D7007D9A6D /* SPMDependencies.framework in Frameworks */,
 			);
@@ -2608,6 +2605,7 @@
 				4530D2152612B2CB00A5520D /* UpdateProfileCounterUseCaseTests.swift in Sources */,
 				4530D22C2612B96000A5520D /* RegisterForPushNotificationsUseCaseTests.swift in Sources */,
 				45E1012525E6B45C0082CABA /* Bag.swift in Sources */,
+				455500392615DEEE006B5B69 /* LoginViewModelTests.swift in Sources */,
 				45B675AF260E104B00DF7387 /* UserDetailViewModelTests.swift in Sources */,
 				45B675EA260E23BB00DF7387 /* GetUsersUseCaseTests.swift in Sources */,
 				458C1ACD24A347E600549420 /* DatabaseProviderMock.swift in Sources */,

@@ -43,8 +43,8 @@ final class UsersViewModel: BaseViewModel, ViewModel {
         let activity = ActivityIndicator()
         
         let refreshUsers = page.flatMap { page -> Observable<Int> in
-            dependencies.refreshUsersUseCase.execute(page: page).trackActivity(activity)
-        }.ignoreErrors().share()
+            dependencies.refreshUsersUseCase.execute(page: page).trackActivity(activity).ignoreErrors()
+        }.share()
         
         let isRefreshing = Observable<Bool>.merge(
             activity.asObservable(),

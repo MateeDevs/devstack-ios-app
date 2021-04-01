@@ -49,16 +49,16 @@ final class RegistrationViewModel: BaseViewModel, ViewModel {
         
         let inputs = Observable.combineLatest(email, password) { (email: $0, password: $1) }
         
-        let registration = registerButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Observable<Void> in
+        let registration = registerButtonTaps.withLatestFrom(inputs).flatMapLatest { inputs -> Observable<Event<Void>> in
             if inputs.email.isEmpty || inputs.password.isEmpty {
-                return .error(ValidationError(L10n.invalid_credentials))
+                return .just(.error(ValidationError(L10n.invalid_credentials)))
             } else if !inputs.email.isValidEmail {
-                return .error(ValidationError(L10n.invalid_email))
+                return .just(.error(ValidationError(L10n.invalid_email)))
             } else {
                 let data = RegistrationData(email: inputs.email, password: inputs.password, firstName: "Anonymous", lastName: "")
-                return dependencies.registrationUseCase.execute(data).trackActivity(activity)
+                return dependencies.registrationUseCase.execute(data).trackActivity(activity).materialize()
             }
-        }.materialize().share()
+        }.share()
         
         let flow = Observable<RegistrationViewControllerFlow>.merge(
             registration.compactMap { $0.element }.mapToVoid().map { .popRegistration },
