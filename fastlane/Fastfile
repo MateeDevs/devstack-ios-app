@@ -214,12 +214,14 @@ platform :ios do
         contact_phone: testflight_contact[:phone]
       }
     )
-    slack(
-      message: "[iOS #{config[:output_name]}] #{version} build #{build} uploaded to the TestFlight\nLink: #{config[:testflight_link]}",
-      channel: slack_channel,
-      default_payloads: [],
-      payload: {}
-    )
+    if config[:distribute_external]
+      slack(
+        message: "[iOS #{config[:output_name]}] #{version} build #{build} uploaded to the TestFlight\nLink: #{config[:testflight_link]}",
+        channel: slack_channel,
+        default_payloads: [],
+        payload: {}
+      )
+    end
   end
 
   # RUN TESTS

@@ -91,6 +91,11 @@ Sync Beta dSYM files
 fastlane ios dsym_production
 ```
 Sync Production dSYM files
+### ios tag
+```
+fastlane ios tag
+```
+Create and push git tag
 
 ----
 
