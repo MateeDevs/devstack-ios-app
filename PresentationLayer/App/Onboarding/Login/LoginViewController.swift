@@ -7,7 +7,7 @@ import DomainLayer
 import RxSwift
 import UIKit
 
-public enum LoginViewControllerFlow {
+enum LoginViewControllerFlow {
     case dismiss
     case showRegistration
 }

@@ -7,7 +7,7 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-public enum ProfileViewControllerFlow {
+enum ProfileViewControllerFlow {
     case presentOnboarding
 }
 

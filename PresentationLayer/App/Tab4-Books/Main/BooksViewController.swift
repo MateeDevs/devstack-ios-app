@@ -7,9 +7,7 @@ import class DevstackKmpShared.Book
 import RxSwift
 import UIKit
 
-public enum BooksViewControllerFlow {
-
-}
+enum BooksViewControllerFlow {}
 
 final class BooksViewController: BaseTableViewController<Book> {
 
@@ -69,11 +67,8 @@ final class BooksViewController: BaseTableViewController<Book> {
         
         return cell
     }
-    
-    override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    }
 
-    override public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         BookTableViewCell.estimatedHeight
     }
 

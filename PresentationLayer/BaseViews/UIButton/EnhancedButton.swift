@@ -113,7 +113,7 @@ import UIKit
     private func setup() {
     }
 
-    override open func layoutSubviews() {
+    override func layoutSubviews() {
         super.layoutSubviews()
         
         if enableImageRightAligned, let imageView = imageView {

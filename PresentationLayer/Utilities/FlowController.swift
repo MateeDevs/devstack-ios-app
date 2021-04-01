@@ -12,7 +12,7 @@ import UIKit
 public class FlowController: NSObject {
     
     let navigationController: UINavigationController
-    public let dependencies: UseCaseDependency
+    let dependencies: UseCaseDependency
     
     private weak var parentController: FlowController?
     private(set) var childControllers: [FlowController] = []

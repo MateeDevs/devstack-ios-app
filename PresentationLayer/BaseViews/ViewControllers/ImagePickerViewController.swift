@@ -5,26 +5,26 @@
 
 import UIKit
 
-@objc public protocol ImagePickerViewControllerDelegate: class {
+@objc protocol ImagePickerViewControllerDelegate: class {
     @objc optional func photoSelected(image: UIImage?)
 }
 
-open class ImagePickerViewController: InputViewController {
+class ImagePickerViewController: InputViewController {
 
     // MARK: Stored properties
-    public var imagePickerTitle: String = L10n.image_picker_title
-    public var imagePickerSubtitle: String = L10n.image_picker_subtitle
+    var imagePickerTitle: String = L10n.image_picker_title
+    var imagePickerSubtitle: String = L10n.image_picker_subtitle
 
-    public weak var delegate: ImagePickerViewControllerDelegate?
+    weak var delegate: ImagePickerViewControllerDelegate?
 
     // MARK: Lifecycle methods
-    override open func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     // MARK: Additional methods
     // swiftlint:disable:next private_action
-    @IBAction public func addPicture(_ sender: UIButton) {
+    @IBAction func addPicture(_ sender: UIButton) {
         view.endEditing(true)
 
         // Setup action sheet with camera/library options
@@ -63,7 +63,7 @@ open class ImagePickerViewController: InputViewController {
 }
 
 extension ImagePickerViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    open func imagePickerController(
+    func imagePickerController(
         _ picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
     ) {

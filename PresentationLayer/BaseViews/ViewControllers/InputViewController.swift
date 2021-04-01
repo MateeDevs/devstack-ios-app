@@ -5,14 +5,14 @@
 
 import UIKit
 
-open class InputViewController: BaseViewController {
+class InputViewController: BaseViewController {
     
     // MARK: UI components
     // swiftlint:disable:next private_outlet
-    @IBOutlet public weak var scrollView: UIScrollView?
+    @IBOutlet weak var scrollView: UIScrollView?
     
     // MARK: Lifecycle methods
-    override open func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         if let scrollView = scrollView {
@@ -20,7 +20,7 @@ open class InputViewController: BaseViewController {
         }
     }
     
-    override open func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(
             self,
@@ -55,14 +55,14 @@ open class InputViewController: BaseViewController {
 }
 
 extension InputViewController: UITextFieldDelegate {
-    open func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return true
     }
 }
 
 extension InputViewController: UITextViewDelegate {
-    open func textViewDidBeginEditing(_ textView: UITextView) {
+    func textViewDidBeginEditing(_ textView: UITextView) {
         if let localizedTextView = textView as? LocalizedTextView {
             if textView.text == localizedTextView.placeholder {
                 textView.text = ""
@@ -71,7 +71,7 @@ extension InputViewController: UITextViewDelegate {
         }
     }
     
-    open func textViewDidEndEditing(_ textView: UITextView) {
+    func textViewDidEndEditing(_ textView: UITextView) {
         if let localizedTextView = textView as? LocalizedTextView {
             if textView.text.isEmpty {
                 textView.text = localizedTextView.placeholder

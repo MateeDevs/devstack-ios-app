@@ -6,7 +6,7 @@
 import RxSwift
 import UIKit
 
-public enum RegistrationViewControllerFlow {
+enum RegistrationViewControllerFlow {
     case popRegistration
 }
 

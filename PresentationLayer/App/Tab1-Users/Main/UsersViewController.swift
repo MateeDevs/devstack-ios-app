@@ -7,7 +7,7 @@ import DomainLayer
 import RxSwift
 import UIKit
 
-public enum UsersViewControllerFlow {
+enum UsersViewControllerFlow {
     case showUserDetailForId(_ userId: String)
 }
 
@@ -72,12 +72,12 @@ final class UsersViewController: BaseTableViewController<User> {
         return cell
     }
     
-    override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = items[indexPath.row]
         flowController?.handleFlow(.users(.showUserDetailForId(user.id)))
     }
     
-    override public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         UserTableViewCell.estimatedHeight
     }
 
