@@ -33,13 +33,17 @@ class LoginViewModelTests: BaseTestCase {
     // MARK: Inputs and outputs
 
     private struct Input {
-        var loginData: LoginData = .empty
+        var loginData: [(time: TestTime, element: LoginData)] = []
         var loginButtonTaps: [(time: TestTime, element: Void)] = []
         var registerButtonTaps: [(time: TestTime, element: Void)] = []
 
         static let loginEmpty = Input(loginButtonTaps: [(0, ())])
-        static let loginValid = Input(loginData: .valid, loginButtonTaps: [(0, ())])
-        static let loginInvalidPassword = Input(loginData: .invalidPassword, loginButtonTaps: [(0, ())])
+        static let loginValid = Input(loginData: [(0, .valid)], loginButtonTaps: [(0, ())])
+        static let loginInvalidPassword = Input(loginData: [(0, .invalidPassword)], loginButtonTaps: [(0, ())])
+        static let loginInvalidThenValid = Input(
+            loginData: [(0, .invalidPassword), (10, .valid)],
+            loginButtonTaps: [(0, ()), (10, ())]
+        )
         static let register = Input(registerButtonTaps: [(0, ())])
     }
     
@@ -52,10 +56,10 @@ class LoginViewModelTests: BaseTestCase {
     private func generateOutput(for input: Input) -> Output {
         let viewModel = LoginViewModel(dependencies: setupDependencies())
         
-        scheduler.createColdObservable([.next(0, input.loginData.email)])
+        scheduler.createColdObservable(input.loginData.map { .next($0.time, $0.element.email) })
             .bind(to: viewModel.input.email).disposed(by: disposeBag)
 
-        scheduler.createColdObservable([.next(0, input.loginData.password)])
+        scheduler.createColdObservable(input.loginData.map { .next($0.time, $0.element.password) })
             .bind(to: viewModel.input.password).disposed(by: disposeBag)
 
         scheduler.createColdObservable(input.loginButtonTaps.map { .next($0.time, $0.element) })
@@ -124,6 +128,29 @@ class LoginViewModelTests: BaseTestCase {
             .next(0, true)
         ])
         Verify(loginUseCase, 1, .execute(.value(.invalidPassword)))
+    }
+    
+    func testLoginInvalidThenValid() {
+        let output = generateOutput(for: .loginInvalidThenValid)
+        
+        scheduler.start()
+        
+        XCTAssertEqual(output.flow.events, [])
+        XCTAssertEqual(output.alertAction.events, [
+            .next(0, .showWhisper(Whisper(L10n.signing_in))),
+            .next(0, .showWhisper(Whisper(error: L10n.invalid_credentials))),
+            .next(10, .showWhisper(Whisper(L10n.signing_in))),
+            .next(10, .hideWhisper)
+        ])
+        XCTAssertEqual(output.loginButtonEnabled.events, [
+            .next(0, true),
+            .next(0, false),
+            .next(0, true),
+            .next(10, false),
+            .next(10, true)
+        ])
+        Verify(loginUseCase, 1, .execute(.value(.invalidPassword)))
+        Verify(loginUseCase, 1, .execute(.value(.valid)))
     }
 
     func testRegister() {
