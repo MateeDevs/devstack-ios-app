@@ -86,6 +86,7 @@ FIXME
 - Version number is taken from the Xcode project (it should respect [Semantic Versioning](https://semver.org))
 - Build number is generated on the CI server, the value set in the Xcode project is ignored
 - For every merge to develop branch, a new alpha build is created and uploaded to the TestFlight for internal testers
+- Comment with version and build numbers is automatically added to the relevant JIRA issue (branch or commit must contain an issue key) 
 - Release builds must be triggered manually on the GitHub website
 - Release builds for all environments are then produced and uploaded to the TestFlight for both internal and external testers
 - After successful release build, a git tag with version and build numbers is created and pushed to the git
