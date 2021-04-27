@@ -31,6 +31,7 @@ sed -i '' -e "s/${old_name_lowercase}/${new_name_lowercase}/g" ../scripts/twine.
 sed -i '' -e "s/${old_name}/${new_name}/g" ../scripts/swiftlint-analyze.sh
 sed -i '' -e "s/${old_name}/${new_name}/g" ../fastlane/Fastfile
 sed -i '' -e "s/${old_name_lowercase}/${new_name_lowercase}/g" ../fastlane/Fastfile
+sed -i '' -e "s/${old_name}/${new_name}/g" ../.github/workflows/develop.yml
 sed -i '' -e "s/${old_name}/${new_name}/g" ../scripts/setup.sh
 
 echo "✅ Renaming successful"
