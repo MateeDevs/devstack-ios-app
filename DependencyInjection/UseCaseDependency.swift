@@ -3,29 +3,29 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-import class DevstackKmpShared.GetBooksUseCase
-import class DevstackKmpShared.RefreshBooksUseCase
+import protocol DevstackKmpShared.GetBooksUseCase
+import protocol DevstackKmpShared.RefreshBooksUseCase
 import DomainLayer
 
 public protocol UseCaseDependency: HasNoUseCase,
-    HasLoginUseCase,
-    HasLogoutUseCase,
-    HasRegistrationUseCase,
-    HasGetCurrentLocationUseCase,
-    HasGetProfileUseCase,
-    HasGetProfileIdUseCase,
-    HasRefreshProfileUseCase,
-    HasUpdateProfileCounterUseCase,
-    HasHandlePushNotificationUseCase,
-    HasRegisterForPushNotificationsUseCase,
-    HasGetRemoteConfigValueUseCase,
-    HasGetUserUseCase,
-    HasRefreshUserUseCase,
-    HasUpdateUserUseCase,
-    HasGetUsersUseCase,
-    HasRefreshUsersUseCase,
-    HasGetBooksUseCase,
-    HasRefreshBooksUseCase {}
+                                   HasLoginUseCase,
+                                   HasLogoutUseCase,
+                                   HasRegistrationUseCase,
+                                   HasGetCurrentLocationUseCase,
+                                   HasGetProfileUseCase,
+                                   HasGetProfileIdUseCase,
+                                   HasRefreshProfileUseCase,
+                                   HasUpdateProfileCounterUseCase,
+                                   HasHandlePushNotificationUseCase,
+                                   HasRegisterForPushNotificationsUseCase,
+                                   HasGetRemoteConfigValueUseCase,
+                                   HasGetUserUseCase,
+                                   HasRefreshUserUseCase,
+                                   HasUpdateUserUseCase,
+                                   HasGetUsersUseCase,
+                                   HasRefreshUsersUseCase,
+                                   HasGetBooksUseCase,
+                                   HasRefreshBooksUseCase {}
 
 public struct UseCaseDependencyImpl: UseCaseDependency {
     
