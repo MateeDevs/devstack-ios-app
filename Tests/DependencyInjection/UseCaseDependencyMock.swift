@@ -8,6 +8,10 @@ import class DevstackKmpShared.GetBooksUseCase
 import class DevstackKmpShared.RefreshBooksUseCase
 import DomainLayer
 
+extension GetBooksUseCase: AutoMockable {
+    
+}
+
 struct UseCaseDependencyMock: UseCaseDependency {
     
     let loginUseCase: LoginUseCase
@@ -33,8 +37,8 @@ struct UseCaseDependencyMock: UseCaseDependency {
     let getUsersUseCase: GetUsersUseCase
     let refreshUsersUseCase: RefreshUsersUseCase
     
-    let getBooksUseCase: GetBooksUseCase?
-    let refreshBooksUseCase: RefreshBooksUseCase?
+    let getBooksUseCase: GetBooksUseCase
+    let refreshBooksUseCase: RefreshBooksUseCase
     
     init(
         loginUseCase: LoginUseCase = LoginUseCaseMock(),
@@ -53,8 +57,8 @@ struct UseCaseDependencyMock: UseCaseDependency {
         updateUserUseCase: UpdateUserUseCase = UpdateUserUseCaseMock(),
         getUsersUseCase: GetUsersUseCase = GetUsersUseCaseMock(),
         refreshUsersUseCase: RefreshUsersUseCase = RefreshUsersUseCaseMock(),
-        getBooksUseCase: GetBooksUseCase? = nil,
-        refreshBooksUseCase: RefreshBooksUseCase? = nil
+        getBooksUseCase: GetBooksUseCase = GetBooksUseCaseMock(),
+        refreshBooksUseCase: RefreshBooksUseCase = RefreshBooksUseCaseMock()
     ) {
         self.loginUseCase = loginUseCase
         self.logoutUseCase = logoutUseCase

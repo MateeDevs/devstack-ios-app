@@ -32,7 +32,6 @@
 		4534C249260427A40022ACF4 /* RegistrationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C248260427A40022ACF4 /* RegistrationViewModelTests.swift */; };
 		4534C2512604280D0022ACF4 /* RegistrationData+Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C2502604280D0022ACF4 /* RegistrationData+Stubs.swift */; };
 		4534C25926042E780022ACF4 /* UsersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C25826042E780022ACF4 /* UsersViewModelTests.swift */; };
-		454AAD11260508990098A3E1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4534C1C42603D6AD0022ACF4 /* XCTest.framework */; };
 		454AAD1F26050B7B0098A3E1 /* SwiftyMocky in Frameworks */ = {isa = PBXBuildFile; productRef = 454AAD1E26050B7B0098A3E1 /* SwiftyMocky */; };
 		454AAD2026050B800098A3E1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4534C1C42603D6AD0022ACF4 /* XCTest.framework */; };
 		454AC06524A221B300D6F367 /* ProviderDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454AC06424A221B300D6F367 /* ProviderDependencyMock.swift */; };
@@ -297,6 +296,7 @@
 		45B675F2260E23C600DF7387 /* RefreshUsersUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675F1260E23C600DF7387 /* RefreshUsersUseCaseTests.swift */; };
 		45B676022611F23100DF7387 /* UpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B676012611F23100DF7387 /* UpdateModel.swift */; };
 		45B676102612088D00DF7387 /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6760F2612088D00DF7387 /* UserRepositoryTests.swift */; };
+		45D2A81E265297A1005FB80D /* KMPUseCases+AutoMockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2A81D265297A1005FB80D /* KMPUseCases+AutoMockable.swift */; };
 		45D3771E25F8D07800D05900 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771B25F8D07800D05900 /* Localizable.swift */; };
 		45D3771F25F8D07800D05900 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771C25F8D07800D05900 /* Assets.swift */; };
 		45D3772025F8D07800D05900 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771D25F8D07800D05900 /* Storyboards.swift */; };
@@ -735,6 +735,7 @@
 		45B675F1260E23C600DF7387 /* RefreshUsersUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshUsersUseCaseTests.swift; sourceTree = "<group>"; };
 		45B676012611F23100DF7387 /* UpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateModel.swift; sourceTree = "<group>"; };
 		45B6760F2612088D00DF7387 /* UserRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
+		45D2A81D265297A1005FB80D /* KMPUseCases+AutoMockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KMPUseCases+AutoMockable.swift"; sourceTree = "<group>"; };
 		45D3771B25F8D07800D05900 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		45D3771C25F8D07800D05900 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		45D3771D25F8D07800D05900 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
@@ -999,6 +1000,7 @@
 			children = (
 				454D161325FC1D7E00920CF0 /* Providers */,
 				4534C1A22603C98F0022ACF4 /* Mocks.swift */,
+				45D2A81D265297A1005FB80D /* KMPUseCases+AutoMockable.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -2583,6 +2585,7 @@
 				45F36B2D261324A90053BA9A /* CounterDisplayViewModelTests.swift in Sources */,
 				4530D2352612BA6200A5520D /* GetRemoteConfigValueUseCaseTests.swift in Sources */,
 				4534C249260427A40022ACF4 /* RegistrationViewModelTests.swift in Sources */,
+				45D2A81E265297A1005FB80D /* KMPUseCases+AutoMockable.swift in Sources */,
 				45B675F2260E23C600DF7387 /* RefreshUsersUseCaseTests.swift in Sources */,
 				45E100F725E6B2A00082CABA /* HotObservable.swift in Sources */,
 				45E100F925E6B2A00082CABA /* TestableObservable.swift in Sources */,

@@ -14,3 +14,7 @@ Tests:
   - Foundation
   - RxSwift
   - UserNotifications
+
+  - class DevstackKmpShared.Book
+  - class DevstackKmpShared.GetBooksUseCase
+  - class DevstackKmpShared.RefreshBooksUseCase

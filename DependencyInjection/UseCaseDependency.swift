@@ -52,9 +52,8 @@ public struct UseCaseDependencyImpl: UseCaseDependency {
     public let getUsersUseCase: GetUsersUseCase
     public let refreshUsersUseCase: RefreshUsersUseCase
     
-    #warning("TODO: KMP UseCases should be non-optional once we are able to mock them")
-    public let getBooksUseCase: GetBooksUseCase?
-    public let refreshBooksUseCase: RefreshBooksUseCase?
+    public let getBooksUseCase: GetBooksUseCase
+    public let refreshBooksUseCase: RefreshBooksUseCase
     
     public init(dependencies: RepositoryDependency, kmpDependencies: KMPDependency) {
         self.loginUseCase = LoginUseCaseImpl(dependencies: dependencies)
