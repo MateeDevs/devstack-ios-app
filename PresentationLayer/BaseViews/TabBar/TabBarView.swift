@@ -5,7 +5,7 @@
 
 import UIKit
 
-protocol TabBarViewDelegate: class {
+protocol TabBarViewDelegate: AnyObject {
     func didSelectViewController(tag: Int)
 }
 

@@ -5,7 +5,7 @@
 
 import UIKit
 
-protocol RatingViewDelegate: class {
+protocol RatingViewDelegate: AnyObject {
     func ratingHasChanged(value: Int)
 }
 
