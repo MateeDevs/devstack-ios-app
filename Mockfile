@@ -16,5 +16,5 @@ Tests:
   - UserNotifications
 
   - class DevstackKmpShared.Book
-  - class DevstackKmpShared.GetBooksUseCase
-  - class DevstackKmpShared.RefreshBooksUseCase
+  - protocol DevstackKmpShared.GetBooksUseCase
+  - protocol DevstackKmpShared.RefreshBooksUseCase

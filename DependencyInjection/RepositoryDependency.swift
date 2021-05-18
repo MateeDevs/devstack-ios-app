@@ -6,7 +6,8 @@
 import DataLayer
 import DomainLayer
 
-public protocol RepositoryDependency: HasNoRepository,
+public protocol RepositoryDependency:
+    HasNoRepository,
     HasAuthTokenRepository,
     HasLocationRepository,
     HasPushNotificationsRepository,

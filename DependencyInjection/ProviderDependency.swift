@@ -5,7 +5,8 @@
 
 import DataLayer
 
-public protocol ProviderDependency: HasNoProvider,
+public protocol ProviderDependency:
+    HasNoProvider,
     HasDatabaseProvider,
     HasKeychainProvider,
     HasNetworkProvider,

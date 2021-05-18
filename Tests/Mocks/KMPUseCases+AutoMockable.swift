@@ -6,5 +6,5 @@
 import DevstackKmpShared
 import DomainLayer
 
-extension GetBooksUseCase: AutoMockable {}
-extension RefreshBooksUseCase: AutoMockable {}
+typealias MockableGetBooksUseCase = GetBooksUseCase & AutoMockable
+typealias MockableRefreshBooksUseCase = RefreshBooksUseCase & AutoMockable

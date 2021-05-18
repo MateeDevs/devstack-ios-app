@@ -4,13 +4,9 @@
 //
 
 import DependencyInjection
-import class DevstackKmpShared.GetBooksUseCase
-import class DevstackKmpShared.RefreshBooksUseCase
+import protocol DevstackKmpShared.GetBooksUseCase
+import protocol DevstackKmpShared.RefreshBooksUseCase
 import DomainLayer
-
-extension GetBooksUseCase: AutoMockable {
-    
-}
 
 struct UseCaseDependencyMock: UseCaseDependency {
     
