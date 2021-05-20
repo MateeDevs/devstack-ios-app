@@ -100,4 +100,5 @@ FIXME
 - Use RxSwift 6 when Moya is ready - [PR](https://github.com/Moya/Moya/pull/2120)
 - Use RxTest through SPM when [fixed](https://bugs.swift.org/browse/SR-12303)
 - Get rid of SPMDependencies wrapper when [fixed](https://github.com/renaudjenny/Swift-Package-Manager-Static-Dynamic-Xcode-Bug)
+- Get rid of "service" AppleID in fastlane config (use [app_store_connect_api_key](https://docs.fastlane.tools/actions/app_store_connect_api_key/))
 - Migrate to SwiftUI + Combine when the time is right
