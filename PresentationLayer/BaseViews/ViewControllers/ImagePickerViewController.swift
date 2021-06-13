@@ -5,7 +5,7 @@
 
 import UIKit
 
-@objc protocol ImagePickerViewControllerDelegate: class {
+@objc protocol ImagePickerViewControllerDelegate: AnyObject {
     @objc optional func photoSelected(image: UIImage?)
 }
 

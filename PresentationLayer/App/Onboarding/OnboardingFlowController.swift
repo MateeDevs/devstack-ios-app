@@ -5,7 +5,7 @@
 
 import UIKit
 
-protocol OnboardingFlowControllerDelegate: class {
+protocol OnboardingFlowControllerDelegate: AnyObject {
     func setupMain()
 }
 

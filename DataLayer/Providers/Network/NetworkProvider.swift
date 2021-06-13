@@ -6,7 +6,7 @@
 import Moya
 import RxSwift
 
-public protocol NetworkProviderDelegate: class {
+public protocol NetworkProviderDelegate: AnyObject {
     func didReceiveHttpUnauthorized()
 }
 
