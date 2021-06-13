@@ -16,6 +16,7 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+        continue-on-error: true
         with:
           clean: false
       - name: Pull Twine repo
