@@ -51,7 +51,7 @@
         "repositoryURL": "git@github.com:MateeDevs/devstack-kmp-app.git",
         "state": {
           "branch": "develop",
-          "revision": "0f877d9cb85786c7b3e2670f621c956252ae3363",
+          "revision": "7e181ca8e35ee452923e599ba5494e089ba1d27b",
           "version": null
         }
       },

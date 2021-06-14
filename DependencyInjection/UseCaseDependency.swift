@@ -3,11 +3,12 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-import class DevstackKmpShared.GetBooksUseCase
-import class DevstackKmpShared.RefreshBooksUseCase
+import protocol DevstackKmpShared.GetBooksUseCase
+import protocol DevstackKmpShared.RefreshBooksUseCase
 import DomainLayer
 
-public protocol UseCaseDependency: HasNoUseCase,
+public protocol UseCaseDependency:
+    HasNoUseCase,
     HasLoginUseCase,
     HasLogoutUseCase,
     HasRegistrationUseCase,
@@ -52,9 +53,8 @@ public struct UseCaseDependencyImpl: UseCaseDependency {
     public let getUsersUseCase: GetUsersUseCase
     public let refreshUsersUseCase: RefreshUsersUseCase
     
-    #warning("TODO: KMP UseCases should be non-optional once we are able to mock them")
-    public let getBooksUseCase: GetBooksUseCase?
-    public let refreshBooksUseCase: RefreshBooksUseCase?
+    public let getBooksUseCase: GetBooksUseCase
+    public let refreshBooksUseCase: RefreshBooksUseCase
     
     public init(dependencies: RepositoryDependency, kmpDependencies: KMPDependency) {
         self.loginUseCase = LoginUseCaseImpl(dependencies: dependencies)

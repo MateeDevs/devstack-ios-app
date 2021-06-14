@@ -4,8 +4,8 @@
 //
 
 import DependencyInjection
-import class DevstackKmpShared.GetBooksUseCase
-import class DevstackKmpShared.RefreshBooksUseCase
+import protocol DevstackKmpShared.GetBooksUseCase
+import protocol DevstackKmpShared.RefreshBooksUseCase
 import DomainLayer
 
 struct UseCaseDependencyMock: UseCaseDependency {
@@ -33,8 +33,8 @@ struct UseCaseDependencyMock: UseCaseDependency {
     let getUsersUseCase: GetUsersUseCase
     let refreshUsersUseCase: RefreshUsersUseCase
     
-    let getBooksUseCase: GetBooksUseCase?
-    let refreshBooksUseCase: RefreshBooksUseCase?
+    let getBooksUseCase: GetBooksUseCase
+    let refreshBooksUseCase: RefreshBooksUseCase
     
     init(
         loginUseCase: LoginUseCase = LoginUseCaseMock(),
@@ -53,8 +53,8 @@ struct UseCaseDependencyMock: UseCaseDependency {
         updateUserUseCase: UpdateUserUseCase = UpdateUserUseCaseMock(),
         getUsersUseCase: GetUsersUseCase = GetUsersUseCaseMock(),
         refreshUsersUseCase: RefreshUsersUseCase = RefreshUsersUseCaseMock(),
-        getBooksUseCase: GetBooksUseCase? = nil,
-        refreshBooksUseCase: RefreshBooksUseCase? = nil
+        getBooksUseCase: GetBooksUseCase = GetBooksUseCaseMock(),
+        refreshBooksUseCase: RefreshBooksUseCase = RefreshBooksUseCaseMock()
     ) {
         self.loginUseCase = loginUseCase
         self.logoutUseCase = logoutUseCase
