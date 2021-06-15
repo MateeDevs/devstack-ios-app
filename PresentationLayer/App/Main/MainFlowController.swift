@@ -16,7 +16,7 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
     
     override func setup() -> UIViewController {
         let main = MainTabBarController.instantiate()
-        main.viewControllers = [setupUsersTab(), setupProfileTab(), setupCounterTab(), setupBooksTab()]
+        main.viewControllers = [setupUsersTab(), setupProfileTab(), setupCounterTab() /*setupBooksTab()*/]
         return main
     }
     
@@ -33,18 +33,18 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
         return usersNC
     }
     
-    private func setupBooksTab() -> UINavigationController {
-        let booksNC = UINavigationController()
-        booksNC.tabBarItem = UITabBarItem(
-            title: L10n.bottom_bar_item_4,
-            image: Asset.Images.usersTabBar.image,
-            tag: MainTab.books.rawValue
-        )
-        let booksFC = BooksFlowController(navigationController: booksNC, dependencies: dependencies)
-        let booksRootVC = startChildFlow(booksFC)
-        booksNC.viewControllers = [booksRootVC]
-        return booksNC
-    }
+//    private func setupBooksTab() -> UINavigationController {
+//        let booksNC = UINavigationController()
+//        booksNC.tabBarItem = UITabBarItem(
+//            title: L10n.bottom_bar_item_4,
+//            image: Asset.Images.usersTabBar.image,
+//            tag: MainTab.books.rawValue
+//        )
+//        let booksFC = BooksFlowController(navigationController: booksNC, dependencies: dependencies)
+//        let booksRootVC = startChildFlow(booksFC)
+//        booksNC.viewControllers = [booksRootVC]
+//        return booksNC
+//    }
     
     private func setupProfileTab() -> UINavigationController {
         let profileNC = UINavigationController()

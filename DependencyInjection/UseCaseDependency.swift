@@ -7,8 +7,7 @@ import protocol DevstackKmpShared.GetBooksUseCase
 import protocol DevstackKmpShared.RefreshBooksUseCase
 import DomainLayer
 
-public protocol UseCaseDependency:
-    HasNoUseCase,
+public protocol UseCaseDependency: HasNoUseCase,
     HasLoginUseCase,
     HasLogoutUseCase,
     HasRegistrationUseCase,
@@ -24,9 +23,9 @@ public protocol UseCaseDependency:
     HasRefreshUserUseCase,
     HasUpdateUserUseCase,
     HasGetUsersUseCase,
-    HasRefreshUsersUseCase,
+    HasRefreshUsersUseCase/*,
     HasGetBooksUseCase,
-    HasRefreshBooksUseCase {}
+    HasRefreshBooksUseCase*/ {}
 
 public struct UseCaseDependencyImpl: UseCaseDependency {
     
@@ -53,8 +52,8 @@ public struct UseCaseDependencyImpl: UseCaseDependency {
     public let getUsersUseCase: GetUsersUseCase
     public let refreshUsersUseCase: RefreshUsersUseCase
     
-    public let getBooksUseCase: GetBooksUseCase
-    public let refreshBooksUseCase: RefreshBooksUseCase
+//    public let getBooksUseCase: GetBooksUseCase
+//    public let refreshBooksUseCase: RefreshBooksUseCase
     
     public init(dependencies: RepositoryDependency, kmpDependencies: KMPDependency) {
         self.loginUseCase = LoginUseCaseImpl(dependencies: dependencies)
@@ -80,7 +79,7 @@ public struct UseCaseDependencyImpl: UseCaseDependency {
         self.getUsersUseCase = GetUsersUseCaseImpl(dependencies: dependencies)
         self.refreshUsersUseCase = RefreshUsersUseCaseImpl(dependencies: dependencies)
         
-        self.getBooksUseCase = kmpDependencies.get(GetBooksUseCase.self)
-        self.refreshBooksUseCase = kmpDependencies.get(RefreshBooksUseCase.self)
+//        self.getBooksUseCase = kmpDependencies.getProtocol(GetBooksUseCase.self)
+//        self.refreshBooksUseCase = kmpDependencies.getProtocol(RefreshBooksUseCase.self)
     }
 }
