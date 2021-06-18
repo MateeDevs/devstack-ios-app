@@ -83,35 +83,6 @@ default_platform(:ios)
 
 platform :ios do
 
-  # SYNC SIGNING
-
-  desc "Sync Alpha signing"
-  lane :signing_alpha do
-    signing(alpha.merge(matee))
-  end
-
-  desc "Sync Beta signing"
-  lane :signing_beta do
-    signing(beta.merge(matee))
-  end
-
-  desc "Sync Production signing"
-  lane :signing_production do
-    signing(production.merge(client))
-  end
-
-  desc "Sync signing"
-  private_lane :signing do |config|
-    sync_code_signing(
-      username: config[:apple_id],
-      team_id: config[:team_id_dev],
-      app_identifier: config[:app_identifier],
-      git_url: match_url,
-      git_branch: config[:match_branch],
-      type: "appstore"
-    )
-  end
-
   # BUILD
 
   desc "Create a new Alpha build"
@@ -153,7 +124,6 @@ platform :ios do
       in_house: false
     )
     sync_code_signing(
-      username: config[:apple_id],
       team_id: config[:team_id_dev],
       app_identifier: config[:app_identifier],
       git_url: match_url,
