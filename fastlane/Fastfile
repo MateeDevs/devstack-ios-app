@@ -28,7 +28,7 @@ beta = {
   info_plist_path: "./Application/Info/Info+Proxyman.plist",
   gsp_path: "./Application/GoogleService/GoogleService-Info-Beta.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
-  testflight_link: "NOT AVAILABLE"
+  testflight_link: "https://testflight.apple.com/join/aff9SFVc"
 }
 
 production = {
@@ -38,7 +38,7 @@ production = {
   info_plist_path: "./Application/Info/Info.plist",
   gsp_path: "./Application/GoogleService/GoogleService-Info-Prod.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
-  testflight_link: "NOT AVAILABLE"
+  testflight_link: "https://testflight.apple.com/join/lP4bFs1a"
 }
 
 #####
@@ -159,8 +159,7 @@ platform :ios do
       git_branch: config[:match_branch],
       type: "appstore",
       keychain_name: "fastlane",
-      keychain_password: keychain_password,
-      readonly: true
+      keychain_password: keychain_password
     )
     build_ios_app(
       workspace: workspace,
