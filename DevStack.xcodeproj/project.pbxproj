@@ -37,6 +37,10 @@
 		454AC06524A221B300D6F367 /* ProviderDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454AC06424A221B300D6F367 /* ProviderDependencyMock.swift */; };
 		454D163625FC21FD00920CF0 /* Decodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D163525FC21FD00920CF0 /* Decodable+Extensions.swift */; };
 		455500392615DEEE006B5B69 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */; };
+		455576F02678D69B0021B713 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E09D260264D1004CB3E1 /* BooksViewController.swift */; };
+		455576F12678D7D40021B713 /* Books.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C3E09C260264D1004CB3E1 /* Books.storyboard */; };
+		455576F22678D7D80021B713 /* BooksFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E01026025B68004CB3E1 /* BooksFlowController.swift */; };
+		455576F32678D7E70021B713 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E09E260264D1004CB3E1 /* BooksViewModel.swift */; };
 		4558D30B20FCC8FF005BC325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4558D30A20FCC8FF005BC325 /* AppDelegate.swift */; };
 		456479AC2615B9140074DFFB /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 456479AB2615B9140074DFFB /* DevstackKmpShared */; };
 		456E744625F83452007D9A6D /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582185825F25D5800D587EB /* DataLayer.framework */; };
@@ -324,12 +328,8 @@
 		48C3DF8F260215BE004CB3E1 /* KotlinUseCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DF8E260215BE004CB3E1 /* KotlinUseCase+Extensions.swift */; };
 		48C3DFA52602165D004CB3E1 /* KMPDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DFA42602165D004CB3E1 /* KMPDependency.swift */; };
 		48C3DFE426025312004CB3E1 /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
-		48C3E01126025B68004CB3E1 /* BooksFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E01026025B68004CB3E1 /* BooksFlowController.swift */; };
 		48C3E07C260262AB004CB3E1 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C3E07A260262AB004CB3E1 /* BookTableViewCell.xib */; };
 		48C3E07D260262AB004CB3E1 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E07B260262AB004CB3E1 /* BookTableViewCell.swift */; };
-		48C3E09F260264D1004CB3E1 /* Books.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C3E09C260264D1004CB3E1 /* Books.storyboard */; };
-		48C3E0A0260264D1004CB3E1 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E09D260264D1004CB3E1 /* BooksViewController.swift */; };
-		48C3E0A1260264D1004CB3E1 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E09E260264D1004CB3E1 /* BooksViewModel.swift */; };
 		48C3E0AF26026F7D004CB3E1 /* KMPUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E0AE26026F7D004CB3E1 /* KMPUseCases.swift */; };
 /* End PBXBuildFile section */
 
@@ -2410,7 +2410,7 @@
 				459F88D925F6A9A8004ACAD4 /* UserImageView.xib in Resources */,
 				459F8B1525F6B4E3004ACAD4 /* Counter.storyboard in Resources */,
 				459F8A5225F6B224004ACAD4 /* Localizable.strings in Resources */,
-				48C3E09F260264D1004CB3E1 /* Books.storyboard in Resources */,
+				455576F12678D7D40021B713 /* Books.storyboard in Resources */,
 				459F8B1925F6B4ED004ACAD4 /* CounterControl.storyboard in Resources */,
 				459F88CA25F6A9A4004ACAD4 /* TabBarView.xib in Resources */,
 				459F88AB25F6A98D004ACAD4 /* ActivityIndicatorView.xib in Resources */,
@@ -2743,12 +2743,12 @@
 				459F895D25F6ADD7004ACAD4 /* Measurement+Extensions.swift in Sources */,
 				459F88CC25F6A9A4004ACAD4 /* TabBarView.swift in Sources */,
 				459F8B4325F6B55B004ACAD4 /* ActivityIndicator.swift in Sources */,
+				455576F22678D7D80021B713 /* BooksFlowController.swift in Sources */,
 				459F8AD125F6B493004ACAD4 /* UserDetailViewController.swift in Sources */,
 				459F89C725F6AFE2004ACAD4 /* UIView+ActivityIndicator.swift in Sources */,
 				459F8B8425F6B82A004ACAD4 /* Observable+Extensions.swift in Sources */,
 				459F8AC325F6B488004ACAD4 /* UserTableViewCell.swift in Sources */,
 				459F87F225F6A5CF004ACAD4 /* EnhancedButton.swift in Sources */,
-				48C3E01126025B68004CB3E1 /* BooksFlowController.swift in Sources */,
 				45D3771E25F8D07800D05900 /* Localizable.swift in Sources */,
 				459F89FE25F6B0B2004ACAD4 /* Whisper.swift in Sources */,
 				459F87A925F6A3FD004ACAD4 /* ImagePickerViewController+Rx.swift in Sources */,
@@ -2761,7 +2761,6 @@
 				459F8A9A25F6B45D004ACAD4 /* MainTabBarController.swift in Sources */,
 				459F8A8025F6B3ED004ACAD4 /* LoginViewModel.swift in Sources */,
 				459F8B3125F6B519004ACAD4 /* AppFlowController.swift in Sources */,
-				48C3E0A0260264D1004CB3E1 /* BooksViewController.swift in Sources */,
 				459F8A8125F6B3ED004ACAD4 /* LoginViewController.swift in Sources */,
 				459F885E25F6A79C004ACAD4 /* TextFieldWithHint.swift in Sources */,
 				4575E65D25F6FFA300CCC003 /* Bundle+Extensions.swift in Sources */,
@@ -2780,6 +2779,7 @@
 				459F8AB025F6B478004ACAD4 /* UsersViewController.swift in Sources */,
 				459F89A525F6AF9C004ACAD4 /* UIScrollView+Extensions.swift in Sources */,
 				459F883A25F6A720004ACAD4 /* EnhancedLabel.swift in Sources */,
+				455576F32678D7E70021B713 /* BooksViewModel.swift in Sources */,
 				459F88EB25F6AAAF004ACAD4 /* AppTheme.swift in Sources */,
 				459F898A25F6AE96004ACAD4 /* UIFont+Extensions.swift in Sources */,
 				459F89D925F6B009004ACAD4 /* UIView+SkeletonView+Rx.swift in Sources */,
@@ -2790,7 +2790,6 @@
 				459F889D25F6A8AA004ACAD4 /* WhisperView.swift in Sources */,
 				459F87A025F6A3E8004ACAD4 /* ImagePickerViewController.swift in Sources */,
 				459F87C425F6A42E004ACAD4 /* WebViewController.swift in Sources */,
-				48C3E0A1260264D1004CB3E1 /* BooksViewModel.swift in Sources */,
 				459F892725F6ACCE004ACAD4 /* Plurals.swift in Sources */,
 				459F8AE525F6B4AB004ACAD4 /* ProfileWrapperViewController.swift in Sources */,
 				459F878E25F6A3B8004ACAD4 /* BaseTableViewController+Rx.swift in Sources */,
@@ -2818,6 +2817,7 @@
 				459F886725F6A7DD004ACAD4 /* TextFieldWithHint+Rx.swift in Sources */,
 				459F8B4C25F6B60B004ACAD4 /* BaseViewModel.swift in Sources */,
 				459F897825F6AE17004ACAD4 /* String+Extensions.swift in Sources */,
+				455576F02678D69B0021B713 /* BooksViewController.swift in Sources */,
 				459F880D25F6A674004ACAD4 /* StateButton+Rx.swift in Sources */,
 				459F87B225F6A40E004ACAD4 /* InputViewController.swift in Sources */,
 				459F878525F6A3A6004ACAD4 /* BaseTableViewController.swift in Sources */,

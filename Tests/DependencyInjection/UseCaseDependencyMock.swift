@@ -33,8 +33,8 @@ struct UseCaseDependencyMock: UseCaseDependency {
     let getUsersUseCase: GetUsersUseCase
     let refreshUsersUseCase: RefreshUsersUseCase
     
-    let getBooksUseCase: GetBooksUseCase
-    let refreshBooksUseCase: RefreshBooksUseCase
+//    let getBooksUseCase: GetBooksUseCase
+//    let refreshBooksUseCase: RefreshBooksUseCase
     
     init(
         loginUseCase: LoginUseCase = LoginUseCaseMock(),
@@ -52,9 +52,9 @@ struct UseCaseDependencyMock: UseCaseDependency {
         refreshUserUseCase: RefreshUserUseCase = RefreshUserUseCaseMock(),
         updateUserUseCase: UpdateUserUseCase = UpdateUserUseCaseMock(),
         getUsersUseCase: GetUsersUseCase = GetUsersUseCaseMock(),
-        refreshUsersUseCase: RefreshUsersUseCase = RefreshUsersUseCaseMock(),
+        refreshUsersUseCase: RefreshUsersUseCase = RefreshUsersUseCaseMock()/*,
         getBooksUseCase: GetBooksUseCase = GetBooksUseCaseMock(),
-        refreshBooksUseCase: RefreshBooksUseCase = RefreshBooksUseCaseMock()
+        refreshBooksUseCase: RefreshBooksUseCase = RefreshBooksUseCaseMock()*/
     ) {
         self.loginUseCase = loginUseCase
         self.logoutUseCase = logoutUseCase
@@ -72,7 +72,7 @@ struct UseCaseDependencyMock: UseCaseDependency {
         self.updateUserUseCase = updateUserUseCase
         self.getUsersUseCase = getUsersUseCase
         self.refreshUsersUseCase = refreshUsersUseCase
-        self.getBooksUseCase = getBooksUseCase
-        self.refreshBooksUseCase = refreshBooksUseCase
+//        self.getBooksUseCase = getBooksUseCase
+//        self.refreshBooksUseCase = refreshBooksUseCase
     }
 }
