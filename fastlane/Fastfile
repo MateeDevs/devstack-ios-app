@@ -28,7 +28,7 @@ beta = {
   info_plist_path: "./Application/Info/Info+Proxyman.plist",
   gsp_path: "./Application/GoogleService/GoogleService-Info-Beta.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
-  testflight_link: "NOT AVAILABLE"
+  testflight_link: "https://testflight.apple.com/join/aff9SFVc"
 }
 
 production = {
@@ -38,7 +38,7 @@ production = {
   info_plist_path: "./Application/Info/Info.plist",
   gsp_path: "./Application/GoogleService/GoogleService-Info-Prod.plist",
   testflight_groups: ['App Store Connect Users', 'Public'],
-  testflight_link: "NOT AVAILABLE"
+  testflight_link: "https://testflight.apple.com/join/lP4bFs1a"
 }
 
 #####
@@ -83,35 +83,6 @@ default_platform(:ios)
 
 platform :ios do
 
-  # SYNC SIGNING
-
-  desc "Sync Alpha signing"
-  lane :signing_alpha do
-    signing(alpha.merge(matee))
-  end
-
-  desc "Sync Beta signing"
-  lane :signing_beta do
-    signing(beta.merge(matee))
-  end
-
-  desc "Sync Production signing"
-  lane :signing_production do
-    signing(production.merge(client))
-  end
-
-  desc "Sync signing"
-  private_lane :signing do |config|
-    sync_code_signing(
-      username: config[:apple_id],
-      team_id: config[:team_id_dev],
-      app_identifier: config[:app_identifier],
-      git_url: match_url,
-      git_branch: config[:match_branch],
-      type: "appstore"
-    )
-  end
-
   # BUILD
 
   desc "Create a new Alpha build"
@@ -149,18 +120,17 @@ platform :ios do
     app_store_connect_api_key(
       key_id: config[:api_key_id],
       issuer_id: config[:api_key_issuer_id],
-      key_content: ENV["APP_STORE_CONNECT_API_KEY_CONTENT"]
+      key_content: ENV["APP_STORE_CONNECT_API_KEY_CONTENT"],
+      in_house: false
     )
     sync_code_signing(
-      username: config[:apple_id],
       team_id: config[:team_id_dev],
       app_identifier: config[:app_identifier],
       git_url: match_url,
       git_branch: config[:match_branch],
       type: "appstore",
       keychain_name: "fastlane",
-      keychain_password: keychain_password,
-      readonly: true
+      keychain_password: keychain_password
     )
     build_ios_app(
       workspace: workspace,
@@ -198,7 +168,8 @@ platform :ios do
     app_store_connect_api_key(
       key_id: config[:api_key_id],
       issuer_id: config[:api_key_issuer_id],
-      key_content: ENV["APP_STORE_CONNECT_API_KEY_CONTENT"]
+      key_content: ENV["APP_STORE_CONNECT_API_KEY_CONTENT"],
+      in_house: false
     )
     upload_to_testflight(
       ipa: "./ipa/#{config[:output_name]}.ipa",
