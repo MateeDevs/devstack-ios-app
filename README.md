@@ -98,5 +98,4 @@ FIXME
 
 ## TODO
 - Use RxSwift 6 when Moya is ready - [PR](https://github.com/Moya/Moya/pull/2120)
-- Use RxTest through SPM when [fixed](https://bugs.swift.org/browse/SR-12303)
 - Migrate to SwiftUI + Combine when the time is right

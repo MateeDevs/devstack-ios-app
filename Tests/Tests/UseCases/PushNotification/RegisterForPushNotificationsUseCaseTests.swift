@@ -7,6 +7,7 @@
 import DependencyInjection
 import DomainLayer
 import RxSwift
+import RxTest
 import SwiftyMocky
 import XCTest
 
