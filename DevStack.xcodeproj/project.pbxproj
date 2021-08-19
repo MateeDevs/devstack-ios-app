@@ -37,6 +37,23 @@
 		454AC06524A221B300D6F367 /* ProviderDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454AC06424A221B300D6F367 /* ProviderDependencyMock.swift */; };
 		454D163625FC21FD00920CF0 /* Decodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D163525FC21FD00920CF0 /* Decodable+Extensions.swift */; };
 		454F6EC426CE8B3900C386B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 454F6EC226CE8B3500C386B8 /* InfoPlist.strings */; };
+		454F6EC926CEA0B400C386B8 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6EC826CEA0B400C386B8 /* AlamofireImage */; };
+		454F6ECB26CEA0C100C386B8 /* Atlantis in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6ECA26CEA0C100C386B8 /* Atlantis */; };
+		454F6ECD26CEA0CC00C386B8 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6ECC26CEA0CC00C386B8 /* FirebaseMessaging */; };
+		454F6ECF26CEA0D100C386B8 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6ECE26CEA0D100C386B8 /* FirebaseRemoteConfig */; };
+		454F6ED126CEA0D700C386B8 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6ED026CEA0D700C386B8 /* KeychainAccess */; };
+		454F6ED326CEA0DD00C386B8 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6ED226CEA0DD00C386B8 /* Moya */; };
+		454F6ED526CEA0E100C386B8 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6ED426CEA0E100C386B8 /* Realm */; };
+		454F6ED726CEA0E500C386B8 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6ED626CEA0E500C386B8 /* RealmSwift */; };
+		454F6ED926CEA0ED00C386B8 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6ED826CEA0ED00C386B8 /* RxCocoa */; };
+		454F6EDB26CEA0F300C386B8 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6EDA26CEA0F300C386B8 /* RxSwift */; };
+		454F6EDD26CEA0FA00C386B8 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6EDC26CEA0FA00C386B8 /* RxMoya */; };
+		454F6EDF26CEA0FE00C386B8 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6EDE26CEA0FE00C386B8 /* RxSwift */; };
+		454F6EE126CEA10300C386B8 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6EE026CEA10300C386B8 /* RxSwift */; };
+		454F6EE326CEA10900C386B8 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6EE226CEA10900C386B8 /* RxRealm */; };
+		454F6EE526CEA11000C386B8 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6EE426CEA11000C386B8 /* SkeletonView */; };
+		454F6EE726CEA13400C386B8 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6EE626CEA13400C386B8 /* RxSwift */; };
+		454F6EE926CEA18300C386B8 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 454F6EE826CEA18300C386B8 /* RxCocoa */; };
 		455500392615DEEE006B5B69 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */; };
 		455576F02678D69B0021B713 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E09D260264D1004CB3E1 /* BooksViewController.swift */; };
 		455576F12678D7D40021B713 /* Books.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C3E09C260264D1004CB3E1 /* Books.storyboard */; };
@@ -54,17 +71,9 @@
 		456E744E25F83456007D9A6D /* PresentationLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 458218BA25F25E4300D587EB /* PresentationLayer.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		456E744F25F83458007D9A6D /* DependencyInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */; };
 		456E745225F83459007D9A6D /* DomainLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; };
-		456E745425F8345B007D9A6D /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
-		456E745625F8345D007D9A6D /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
 		456E745D25F83460007D9A6D /* DomainLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; };
-		456E746025F83461007D9A6D /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
 		456E746525F83464007D9A6D /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582185825F25D5800D587EB /* DataLayer.framework */; };
 		456E746825F83465007D9A6D /* DomainLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; };
-		456E747425F837D7007D9A6D /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
-		4575E5BF25F6EB4A00CCC003 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4575E5BE25F6EB4A00CCC003 /* RxSwift */; };
-		4575E5E825F6F18C00CCC003 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4575E5E725F6F18C00CCC003 /* AlamofireImage */; };
-		4575E5EA25F6F19000CCC003 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 4575E5E925F6F19000CCC003 /* RxCocoa */; };
-		4575E5EC25F6F19900CCC003 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 4575E5EB25F6F19900CCC003 /* SkeletonView */; };
 		4575E65625F6FA7600CCC003 /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4575E65525F6FA7600CCC003 /* AppIcon.xcassets */; };
 		4575E65D25F6FFA300CCC003 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575E65C25F6FFA300CCC003 /* Bundle+Extensions.swift */; };
 		4575E67625F7051100CCC003 /* HasNoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575E67525F7051100CCC003 /* HasNoUseCase.swift */; };
@@ -115,14 +124,6 @@
 		4582198425F2621800D587EB /* CLLocationManagerDelegate+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582197825F2621700D587EB /* CLLocationManagerDelegate+Rx.swift */; };
 		4582198525F2621800D587EB /* Object+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582197925F2621800D587EB /* Object+Extensions.swift */; };
 		4582198725F2621800D587EB /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582197B25F2621800D587EB /* Realm+Extensions.swift */; };
-		458219BD25F2631C00D587EB /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 458219BC25F2631C00D587EB /* FirebaseMessaging */; };
-		458219BF25F2632200D587EB /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 458219BE25F2632200D587EB /* FirebaseRemoteConfig */; };
-		458219C125F2633000D587EB /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 458219C025F2633000D587EB /* KeychainAccess */; };
-		458219C325F2633900D587EB /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 458219C225F2633900D587EB /* Moya */; };
-		458219C525F2633900D587EB /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 458219C425F2633900D587EB /* RxMoya */; };
-		458219C725F2634100D587EB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 458219C625F2634100D587EB /* Realm */; };
-		458219C925F2634100D587EB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 458219C825F2634100D587EB /* RealmSwift */; };
-		458219CB25F2634100D587EB /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = 458219CA25F2634100D587EB /* RxRealm */; };
 		45821A6F25F2689200D587EB /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45821A6E25F2689200D587EB /* AuthToken.swift */; };
 		45821A7825F268A000D587EB /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45821A7725F268A000D587EB /* LoginData.swift */; };
 		45821A8125F268AF00D587EB /* RegistrationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45821A8025F268AF00D587EB /* RegistrationData.swift */; };
@@ -304,9 +305,6 @@
 		45D3771E25F8D07800D05900 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771B25F8D07800D05900 /* Localizable.swift */; };
 		45D3771F25F8D07800D05900 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771C25F8D07800D05900 /* Assets.swift */; };
 		45D3772025F8D07800D05900 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3771D25F8D07800D05900 /* Storyboards.swift */; };
-		45D3776825F9228A00D05900 /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
-		45D3776925F9228A00D05900 /* SPMDependencies.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		45D3776D25F9229600D05900 /* Atlantis in Frameworks */ = {isa = PBXBuildFile; productRef = 45D3776C25F9229600D05900 /* Atlantis */; };
 		45E100F325E6B2A00082CABA /* XCTest+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100E625E6B2A00082CABA /* XCTest+Rx.swift */; };
 		45E100F625E6B2A00082CABA /* TestableObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100E925E6B2A00082CABA /* TestableObserver.swift */; };
 		45E100F725E6B2A00082CABA /* HotObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E100EA25E6B2A00082CABA /* HotObservable.swift */; };
@@ -327,27 +325,12 @@
 		45FBAABC260A992700617C25 /* NETUser+Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FBAABB260A992700617C25 /* NETUser+Stubs.swift */; };
 		48C3DF8F260215BE004CB3E1 /* KotlinUseCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DF8E260215BE004CB3E1 /* KotlinUseCase+Extensions.swift */; };
 		48C3DFA52602165D004CB3E1 /* KMPDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3DFA42602165D004CB3E1 /* KMPDependency.swift */; };
-		48C3DFE426025312004CB3E1 /* SPMDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458219A825F262F000D587EB /* SPMDependencies.framework */; };
 		48C3E07C260262AB004CB3E1 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C3E07A260262AB004CB3E1 /* BookTableViewCell.xib */; };
 		48C3E07D260262AB004CB3E1 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E07B260262AB004CB3E1 /* BookTableViewCell.swift */; };
 		48C3E0AF26026F7D004CB3E1 /* KMPUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3E0AE26026F7D004CB3E1 /* KMPUseCases.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4575E5EF25F6F1B800CCC003 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 458219A725F262F000D587EB;
-			remoteInfo = DataLayerDependencies;
-		};
-		4575E5F425F6F1C300CCC003 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 458219A725F262F000D587EB;
-			remoteInfo = DataLayerDependencies;
-		};
 		4582186B25F25D5900D587EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
@@ -368,13 +351,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 458218B925F25E4300D587EB;
 			remoteInfo = PresentationLayer;
-		};
-		458219D225F2635A00D587EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 458219A725F262F000D587EB;
-			remoteInfo = DataLayerDependencies;
 		};
 		45821A5825F2646700D587EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -418,20 +394,6 @@
 			remoteGlobalIDString = 459F8BE325F6D67F004ACAD4;
 			remoteInfo = DependencyInjection;
 		};
-		45D3776A25F9228A00D05900 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 458219A725F262F000D587EB;
-			remoteInfo = SPMDependencies;
-		};
-		48C3DFE626025312004CB3E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 458219A725F262F000D587EB;
-			remoteInfo = SPMDependencies;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -443,7 +405,6 @@
 			files = (
 				456E744E25F83456007D9A6D /* PresentationLayer.framework in Embed Frameworks */,
 				456E744C25F83454007D9A6D /* DomainLayer.framework in Embed Frameworks */,
-				45D3776925F9228A00D05900 /* SPMDependencies.framework in Embed Frameworks */,
 				456E744725F83452007D9A6D /* DataLayer.framework in Embed Frameworks */,
 				456E744A25F83453007D9A6D /* DependencyInjection.framework in Embed Frameworks */,
 			);
@@ -549,8 +510,6 @@
 		4582197825F2621700D587EB /* CLLocationManagerDelegate+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManagerDelegate+Rx.swift"; sourceTree = "<group>"; };
 		4582197925F2621800D587EB /* Object+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Object+Extensions.swift"; sourceTree = "<group>"; };
 		4582197B25F2621800D587EB /* Realm+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+Extensions.swift"; sourceTree = "<group>"; };
-		458219A825F262F000D587EB /* SPMDependencies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPMDependencies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		458219AB25F262F000D587EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45821A6E25F2689200D587EB /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		45821A7725F268A000D587EB /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		45821A8025F268AF00D587EB /* RegistrationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationData.swift; sourceTree = "<group>"; };
@@ -779,7 +738,8 @@
 				4534C11226036AA10022ACF4 /* DomainLayer.framework in Frameworks */,
 				4534C11326036AA10022ACF4 /* PresentationLayer.framework in Frameworks */,
 				454AAD1F26050B7B0098A3E1 /* SwiftyMocky in Frameworks */,
-				456E747425F837D7007D9A6D /* SPMDependencies.framework in Frameworks */,
+				454F6EE926CEA18300C386B8 /* RxCocoa in Frameworks */,
+				454F6EE726CEA13400C386B8 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,7 +751,7 @@
 				456E744925F83453007D9A6D /* DependencyInjection.framework in Frameworks */,
 				456E744D25F83456007D9A6D /* PresentationLayer.framework in Frameworks */,
 				456E744625F83452007D9A6D /* DataLayer.framework in Frameworks */,
-				45D3776825F9228A00D05900 /* SPMDependencies.framework in Frameworks */,
+				454F6ECB26CEA0C100C386B8 /* Atlantis in Frameworks */,
 				456479AC2615B9140074DFFB /* DevstackKmpShared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -800,7 +760,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				456E746025F83461007D9A6D /* SPMDependencies.framework in Frameworks */,
+				454F6EDF26CEA0FE00C386B8 /* RxSwift in Frameworks */,
+				454F6ED526CEA0E100C386B8 /* Realm in Frameworks */,
+				454F6ED126CEA0D700C386B8 /* KeychainAccess in Frameworks */,
+				454F6ED726CEA0E500C386B8 /* RealmSwift in Frameworks */,
+				454F6EE326CEA10900C386B8 /* RxRealm in Frameworks */,
+				454F6ECF26CEA0D100C386B8 /* FirebaseRemoteConfig in Frameworks */,
+				454F6ECD26CEA0CC00C386B8 /* FirebaseMessaging in Frameworks */,
+				454F6ED326CEA0DD00C386B8 /* Moya in Frameworks */,
+				454F6EDD26CEA0FA00C386B8 /* RxMoya in Frameworks */,
 				456E745D25F83460007D9A6D /* DomainLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -809,7 +777,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				456E745625F8345D007D9A6D /* SPMDependencies.framework in Frameworks */,
+				454F6EE126CEA10300C386B8 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,28 +786,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				456E745225F83459007D9A6D /* DomainLayer.framework in Frameworks */,
-				456E745425F8345B007D9A6D /* SPMDependencies.framework in Frameworks */,
 				456E744F25F83458007D9A6D /* DependencyInjection.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		458219A525F262F000D587EB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4575E5BF25F6EB4A00CCC003 /* RxSwift in Frameworks */,
-				458219C725F2634100D587EB /* Realm in Frameworks */,
-				45D3776D25F9229600D05900 /* Atlantis in Frameworks */,
-				4575E5EA25F6F19000CCC003 /* RxCocoa in Frameworks */,
-				458219C525F2633900D587EB /* RxMoya in Frameworks */,
-				4575E5EC25F6F19900CCC003 /* SkeletonView in Frameworks */,
-				458219CB25F2634100D587EB /* RxRealm in Frameworks */,
-				458219C925F2634100D587EB /* RealmSwift in Frameworks */,
-				458219BD25F2631C00D587EB /* FirebaseMessaging in Frameworks */,
-				458219BF25F2632200D587EB /* FirebaseRemoteConfig in Frameworks */,
-				4575E5E825F6F18C00CCC003 /* AlamofireImage in Frameworks */,
-				458219C325F2633900D587EB /* Moya in Frameworks */,
-				458219C125F2633000D587EB /* KeychainAccess in Frameworks */,
+				454F6EDB26CEA0F300C386B8 /* RxSwift in Frameworks */,
+				454F6ED926CEA0ED00C386B8 /* RxCocoa in Frameworks */,
+				454F6EE526CEA11000C386B8 /* SkeletonView in Frameworks */,
+				454F6EC926CEA0B400C386B8 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,7 +799,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				456E746825F83465007D9A6D /* DomainLayer.framework in Frameworks */,
-				48C3DFE426025312004CB3E1 /* SPMDependencies.framework in Frameworks */,
 				456E746525F83464007D9A6D /* DataLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1036,7 +986,6 @@
 				4582185925F25D5900D587EB /* DataLayer */,
 				459F8BE525F6D67F004ACAD4 /* DependencyInjection */,
 				4557194A24A155ED00FB24CA /* Tests */,
-				458219A925F262F000D587EB /* SPMDependencies */,
 				4558D30820FCC8FF005BC325 /* Products */,
 				4576CEDF25ACF54F00218229 /* Frameworks */,
 			);
@@ -1050,7 +999,6 @@
 				4582185825F25D5800D587EB /* DataLayer.framework */,
 				4582188625F25E3300D587EB /* DomainLayer.framework */,
 				458218BA25F25E4300D587EB /* PresentationLayer.framework */,
-				458219A825F262F000D587EB /* SPMDependencies.framework */,
 				459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */,
 			);
 			name = Products;
@@ -1320,14 +1268,6 @@
 				4582196C25F2620F00D587EB /* Representable.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		458219A925F262F000D587EB /* SPMDependencies */ = {
-			isa = PBXGroup;
-			children = (
-				458219AB25F262F000D587EB /* Info.plist */,
-			);
-			path = SPMDependencies;
 			sourceTree = "<group>";
 		};
 		45821A6925F2686700D587EB /* DomainModels */ = {
@@ -2097,13 +2037,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		458219A325F262F000D587EB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		459F8BDF25F6D67F004ACAD4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -2130,6 +2063,8 @@
 			name = Tests;
 			packageProductDependencies = (
 				454AAD1E26050B7B0098A3E1 /* SwiftyMocky */,
+				454F6EE626CEA13400C386B8 /* RxSwift */,
+				454F6EE826CEA18300C386B8 /* RxCocoa */,
 			);
 			productName = DevStackTests;
 			productReference = 4557194924A155ED00FB24CA /* Tests.xctest */;
@@ -2154,11 +2089,11 @@
 				4582189A25F25E3400D587EB /* PBXTargetDependency */,
 				458218CE25F25E4400D587EB /* PBXTargetDependency */,
 				459F8BEA25F6D67F004ACAD4 /* PBXTargetDependency */,
-				45D3776B25F9228A00D05900 /* PBXTargetDependency */,
 			);
 			name = DevStack;
 			packageProductDependencies = (
 				456479AB2615B9140074DFFB /* DevstackKmpShared */,
+				454F6ECA26CEA0C100C386B8 /* Atlantis */,
 			);
 			productName = DevStack;
 			productReference = 4558D30720FCC8FF005BC325 /* DevStack.app */;
@@ -2176,11 +2111,19 @@
 			buildRules = (
 			);
 			dependencies = (
-				458219D325F2635A00D587EB /* PBXTargetDependency */,
 				45821A6125F2647B00D587EB /* PBXTargetDependency */,
 			);
 			name = DataLayer;
 			packageProductDependencies = (
+				454F6ECC26CEA0CC00C386B8 /* FirebaseMessaging */,
+				454F6ECE26CEA0D100C386B8 /* FirebaseRemoteConfig */,
+				454F6ED026CEA0D700C386B8 /* KeychainAccess */,
+				454F6ED226CEA0DD00C386B8 /* Moya */,
+				454F6ED426CEA0E100C386B8 /* Realm */,
+				454F6ED626CEA0E500C386B8 /* RealmSwift */,
+				454F6EDC26CEA0FA00C386B8 /* RxMoya */,
+				454F6EDE26CEA0FE00C386B8 /* RxSwift */,
+				454F6EE226CEA10900C386B8 /* RxRealm */,
 			);
 			productName = DataLayer;
 			productReference = 4582185825F25D5800D587EB /* DataLayer.framework */;
@@ -2198,10 +2141,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				4575E5F025F6F1B800CCC003 /* PBXTargetDependency */,
 			);
 			name = DomainLayer;
 			packageProductDependencies = (
+				454F6EE026CEA10300C386B8 /* RxSwift */,
 			);
 			productName = DomainLayer;
 			productReference = 4582188625F25E3300D587EB /* DomainLayer.framework */;
@@ -2223,46 +2166,16 @@
 			dependencies = (
 				45821A5925F2646700D587EB /* PBXTargetDependency */,
 				459F8C4925F6D96F004ACAD4 /* PBXTargetDependency */,
-				4575E5F525F6F1C300CCC003 /* PBXTargetDependency */,
 			);
 			name = PresentationLayer;
 			packageProductDependencies = (
+				454F6EC826CEA0B400C386B8 /* AlamofireImage */,
+				454F6ED826CEA0ED00C386B8 /* RxCocoa */,
+				454F6EDA26CEA0F300C386B8 /* RxSwift */,
+				454F6EE426CEA11000C386B8 /* SkeletonView */,
 			);
 			productName = PresentationLayer;
 			productReference = 458218BA25F25E4300D587EB /* PresentationLayer.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		458219A725F262F000D587EB /* SPMDependencies */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 458219AD25F262F000D587EB /* Build configuration list for PBXNativeTarget "SPMDependencies" */;
-			buildPhases = (
-				458219A325F262F000D587EB /* Headers */,
-				458219A425F262F000D587EB /* Sources */,
-				458219A525F262F000D587EB /* Frameworks */,
-				458219A625F262F000D587EB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SPMDependencies;
-			packageProductDependencies = (
-				458219BC25F2631C00D587EB /* FirebaseMessaging */,
-				458219BE25F2632200D587EB /* FirebaseRemoteConfig */,
-				458219C025F2633000D587EB /* KeychainAccess */,
-				458219C225F2633900D587EB /* Moya */,
-				458219C425F2633900D587EB /* RxMoya */,
-				458219C625F2634100D587EB /* Realm */,
-				458219C825F2634100D587EB /* RealmSwift */,
-				458219CA25F2634100D587EB /* RxRealm */,
-				4575E5BE25F6EB4A00CCC003 /* RxSwift */,
-				4575E5E725F6F18C00CCC003 /* AlamofireImage */,
-				4575E5E925F6F19000CCC003 /* RxCocoa */,
-				4575E5EB25F6F19900CCC003 /* SkeletonView */,
-				45D3776C25F9229600D05900 /* Atlantis */,
-			);
-			productName = DataLayerDependencies;
-			productReference = 458219A825F262F000D587EB /* SPMDependencies.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		459F8BE325F6D67F004ACAD4 /* DependencyInjection */ = {
@@ -2279,7 +2192,6 @@
 			dependencies = (
 				459F8C1925F6D798004ACAD4 /* PBXTargetDependency */,
 				459F8C1D25F6D798004ACAD4 /* PBXTargetDependency */,
-				48C3DFE726025312004CB3E1 /* PBXTargetDependency */,
 			);
 			name = DependencyInjection;
 			packageProductDependencies = (
@@ -2315,9 +2227,6 @@
 					458218B925F25E4300D587EB = {
 						CreatedOnToolsVersion = 12.4;
 						LastSwiftMigration = 1240;
-					};
-					458219A725F262F000D587EB = {
-						CreatedOnToolsVersion = 12.4;
 					};
 					459F8BE325F6D67F004ACAD4 = {
 						CreatedOnToolsVersion = 12.4;
@@ -2358,7 +2267,6 @@
 				4582188525F25E3300D587EB /* DomainLayer */,
 				4582185725F25D5800D587EB /* DataLayer */,
 				459F8BE325F6D67F004ACAD4 /* DependencyInjection */,
-				458219A725F262F000D587EB /* SPMDependencies */,
 				4557194824A155ED00FB24CA /* Tests */,
 			);
 		};
@@ -2428,13 +2336,6 @@
 				48C3E07C260262AB004CB3E1 /* BookTableViewCell.xib in Resources */,
 				459F8B2625F6B4F2004ACAD4 /* CounterDisplay.storyboard in Resources */,
 				459F8AFF25F6B4CC004ACAD4 /* Settings.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		458219A625F262F000D587EB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2839,13 +2740,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		458219A425F262F000D587EB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		459F8BE025F6D67F004ACAD4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2860,16 +2754,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4575E5F025F6F1B800CCC003 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 458219A725F262F000D587EB /* SPMDependencies */;
-			targetProxy = 4575E5EF25F6F1B800CCC003 /* PBXContainerItemProxy */;
-		};
-		4575E5F525F6F1C300CCC003 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 458219A725F262F000D587EB /* SPMDependencies */;
-			targetProxy = 4575E5F425F6F1C300CCC003 /* PBXContainerItemProxy */;
-		};
 		4582186C25F25D5900D587EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4582185725F25D5800D587EB /* DataLayer */;
@@ -2884,11 +2768,6 @@
 			isa = PBXTargetDependency;
 			target = 458218B925F25E4300D587EB /* PresentationLayer */;
 			targetProxy = 458218CD25F25E4400D587EB /* PBXContainerItemProxy */;
-		};
-		458219D325F2635A00D587EB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 458219A725F262F000D587EB /* SPMDependencies */;
-			targetProxy = 458219D225F2635A00D587EB /* PBXContainerItemProxy */;
 		};
 		45821A5925F2646700D587EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2919,16 +2798,6 @@
 			isa = PBXTargetDependency;
 			target = 459F8BE325F6D67F004ACAD4 /* DependencyInjection */;
 			targetProxy = 459F8C4825F6D96F004ACAD4 /* PBXContainerItemProxy */;
-		};
-		45D3776B25F9228A00D05900 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 458219A725F262F000D587EB /* SPMDependencies */;
-			targetProxy = 45D3776A25F9228A00D05900 /* PBXContainerItemProxy */;
-		};
-		48C3DFE726025312004CB3E1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 458219A725F262F000D587EB /* SPMDependencies */;
-			targetProxy = 48C3DFE626025312004CB3E1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -4224,196 +4093,6 @@
 			};
 			name = "Alpha Release";
 		};
-		458219AE25F262F000D587EB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WNB34WBN42;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SPMDependencies/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.SPMDependencies;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		458219AF25F262F000D587EB /* Beta Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WNB34WBN42;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SPMDependencies/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.SPMDependencies;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Beta Debug";
-		};
-		458219B025F262F000D587EB /* Alpha Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WNB34WBN42;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SPMDependencies/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.SPMDependencies;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Alpha Debug";
-		};
-		458219B125F262F000D587EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SPMDependencies/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.SPMDependencies;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		458219B225F262F000D587EB /* Beta Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SPMDependencies/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.SPMDependencies;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Beta Release";
-		};
-		458219B325F262F000D587EB /* Alpha Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SPMDependencies/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.SPMDependencies;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Alpha Release";
-		};
 		459F8BED25F6D67F004ACAD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -4700,19 +4379,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		458219AD25F262F000D587EB /* Build configuration list for PBXNativeTarget "SPMDependencies" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				458219AE25F262F000D587EB /* Debug */,
-				458219AF25F262F000D587EB /* Beta Debug */,
-				458219B025F262F000D587EB /* Alpha Debug */,
-				458219B125F262F000D587EB /* Release */,
-				458219B225F262F000D587EB /* Beta Release */,
-				458219B325F262F000D587EB /* Alpha Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		459F8BF325F6D67F004ACAD4 /* Build configuration list for PBXNativeTarget "DependencyInjection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -4825,75 +4491,95 @@
 			package = 4534C17D2603BF050022ACF4 /* XCRemoteSwiftPackageReference "SwiftyMocky" */;
 			productName = SwiftyMocky;
 		};
-		456479AB2615B9140074DFFB /* DevstackKmpShared */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
-			productName = DevstackKmpShared;
-		};
-		4575E5BE25F6EB4A00CCC003 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		4575E5E725F6F18C00CCC003 /* AlamofireImage */ = {
+		454F6EC826CEA0B400C386B8 /* AlamofireImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 45840CA925ACE69A00DFC729 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
 			productName = AlamofireImage;
 		};
-		4575E5E925F6F19000CCC003 /* RxCocoa */ = {
+		454F6ECA26CEA0C100C386B8 /* Atlantis */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
+			package = 459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */;
+			productName = Atlantis;
 		};
-		4575E5EB25F6F19900CCC003 /* SkeletonView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840CCB25ACE8E900DFC729 /* XCRemoteSwiftPackageReference "SkeletonView" */;
-			productName = SkeletonView;
-		};
-		458219BC25F2631C00D587EB /* FirebaseMessaging */ = {
+		454F6ECC26CEA0CC00C386B8 /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
 		};
-		458219BE25F2632200D587EB /* FirebaseRemoteConfig */ = {
+		454F6ECE26CEA0D100C386B8 /* FirebaseRemoteConfig */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
 		};
-		458219C025F2633000D587EB /* KeychainAccess */ = {
+		454F6ED026CEA0D700C386B8 /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 45840CC425ACE89800DFC729 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
 		};
-		458219C225F2633900D587EB /* Moya */ = {
+		454F6ED226CEA0DD00C386B8 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
 		};
-		458219C425F2633900D587EB /* RxMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = RxMoya;
-		};
-		458219C625F2634100D587EB /* Realm */ = {
+		454F6ED426CEA0E100C386B8 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 45840CB025ACE7A800DFC729 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = Realm;
 		};
-		458219C825F2634100D587EB /* RealmSwift */ = {
+		454F6ED626CEA0E500C386B8 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 45840CB025ACE7A800DFC729 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
 		};
-		458219CA25F2634100D587EB /* RxRealm */ = {
+		454F6ED826CEA0ED00C386B8 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		454F6EDA26CEA0F300C386B8 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		454F6EDC26CEA0FA00C386B8 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		454F6EDE26CEA0FE00C386B8 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		454F6EE026CEA10300C386B8 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		454F6EE226CEA10900C386B8 /* RxRealm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 45840CBD25ACE84900DFC729 /* XCRemoteSwiftPackageReference "RxRealm" */;
 			productName = RxRealm;
 		};
-		45D3776C25F9229600D05900 /* Atlantis */ = {
+		454F6EE426CEA11000C386B8 /* SkeletonView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */;
-			productName = Atlantis;
+			package = 45840CCB25ACE8E900DFC729 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+		454F6EE626CEA13400C386B8 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		454F6EE826CEA18300C386B8 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		456479AB2615B9140074DFFB /* DevstackKmpShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
+			productName = DevstackKmpShared;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
