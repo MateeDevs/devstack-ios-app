@@ -101,7 +101,7 @@ extension MoyaNetworkProvider: NetworkProvider {
             }
             .asObservable()
             .filterSuccessfulStatusCodes()
-            .catchError { error -> Observable<Response> in
+            .catch { error -> Observable<Response> in
                 guard let moyaError = error as? MoyaError,
                       let response = moyaError.response,
                       let statusCode = StatusCode(rawValue: response.statusCode) else { return .error(error) }

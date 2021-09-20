@@ -8,6 +8,7 @@ import DependencyInjection
 import DomainLayer
 @testable import PresentationLayer
 import RxSwift
+import RxTest
 import SwiftyMocky
 import XCTest
 
