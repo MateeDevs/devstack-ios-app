@@ -97,4 +97,5 @@ FIXME
 - Mocking of network requests is based on [Moya stubbing provider](https://github.com/Moya/Moya/blob/master/docs/Testing.md)
 
 ## TODO
+- Remove `Move Frameworks` scripts from Build Phases when no longer needed
 - Migrate to SwiftUI + Combine when the time is right
