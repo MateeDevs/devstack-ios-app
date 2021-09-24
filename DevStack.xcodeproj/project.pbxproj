@@ -2009,6 +2009,7 @@
 				453D3FCD25ED976A0094ADD7 /* Copy GoogleService-Info.plist */,
 				4597628220FE17930034DE29 /* Run Firebase Crashlytics */,
 				456E744825F83452007D9A6D /* Embed Frameworks */,
+				45540B3926FE2E03006C978B /* Move Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2331,6 +2332,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "GOOGLE_SERVICE_INFO_PLIST_FROM=\"${PROJECT_DIR}/${GOOGLE_SERVICE_INFO_PLIST_FILE}\"\nGOOGLE_SERVICE_INFO_PLIST_TO=\"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}/GoogleService-Info.plist\"\ncp \"${GOOGLE_SERVICE_INFO_PLIST_FROM}\" \"${GOOGLE_SERVICE_INFO_PLIST_TO}\" \n";
+		};
+		45540B3926FE2E03006C978B /* Move Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Move Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Flatten and code sign nested frameworks\n# https://forums.swift.org/t/swift-packages-in-multiple-targets-results-in-this-will-result-in-duplication-of-library-code-errors/34892/67\n\nmovedFrameworks=()\ncd \"${CODESIGNING_FOLDER_PATH}/Frameworks/\"\nfor framework in *; do\n  if [ -d \"$framework\" ]; then\n    if [ -d \"${framework}/Frameworks\" ]; then\n      echo \"Moving nested frameworks from ${framework}/Frameworks/ to ${PRODUCT_NAME}.app/Frameworks/\"\n\n      cd \"${framework}/Frameworks/\"\n      for nestedFramework in *; do\n        echo \"- nested: ${nestedFramework}\"\n        movedFrameworks+=(\"${nestedFramework}\")\n      done\n      cd ..\n      cd ..\n\n      cp -R \"${framework}/Frameworks/\" .\n      rm -rf \"${framework}/Frameworks\"\n    fi\n  fi\ndone\n\nif\n  [ \"${CONFIGURATION}\" == \"Debug\" ] &\n  [ \"${PLATFORM_NAME}\" != \"iphonesimulator\" ]\nthen\n  for movedFramework in \"${movedFrameworks[@]}\"; do\n    codesign --force --deep --sign \"${EXPANDED_CODE_SIGN_IDENTITY}\" --preserve-metadata=identifier,entitlements --timestamp=none \"${movedFramework}\"\n  done\nelse\n  echo \"Info: CODESIGNING is only needed for Debug on device (will be re-signed anyway when archiving) \"\nfi\n";
 		};
 		4597628220FE17930034DE29 /* Run Firebase Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
