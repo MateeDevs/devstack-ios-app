@@ -3,7 +3,7 @@
 //  Copyright © 2020 Matee. All rights reserved.
 //
 
-import RxCocoa
+import RxSwift
 
 extension BaseTableViewController {
     

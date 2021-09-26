@@ -6,6 +6,7 @@
 import DomainLayer
 import Foundation
 import RealmSwift
+import RxRealm
 import RxSwift
 
 public struct RealmDatabaseProvider {
@@ -79,12 +80,36 @@ extension RealmDatabaseProvider: DatabaseProvider {
     
     public func save<T>(_ object: T, model: UpdateModel) -> Observable<T> where T: Object {
         guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
-        return realm.rx.save(object, model: model)
+        return .create { observer in
+            do {
+                try realm.write {
+                    realm.create(T.self, value: model.value(for: object), update: .modified)
+                }
+                observer.onNext(object)
+                observer.onCompleted()
+            } catch {
+                observer.onError(error)
+            }
+            return Disposables.create()
+        }
     }
     
     public func save<T>(_ objects: [T], model: UpdateModel) -> Observable<[T]> where T: Object {
         guard let realm = Realm.safeInit() else { return .error(CommonError.realmNotAvailable) }
-        return realm.rx.save(objects, model: model)
+        return .create { observer in
+            do {
+                try realm.write {
+                    for object in objects {
+                        realm.create(T.self, value: model.value(for: object), update: .modified)
+                    }
+                }
+                observer.onNext(objects)
+                observer.onCompleted()
+            } catch {
+                observer.onError(error)
+            }
+            return Disposables.create()
+        }
     }
     
     public func deleteAll() {

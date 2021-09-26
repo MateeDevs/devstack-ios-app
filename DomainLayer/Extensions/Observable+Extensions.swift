@@ -15,6 +15,6 @@ public extension ObservableType {
     }
     
     func ignoreErrors() -> Observable<Element> {
-        catchError { _ in .empty() }
+        `catch` { _ in .empty() }
     }
 }
