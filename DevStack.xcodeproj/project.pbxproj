@@ -13,6 +13,9 @@
 		4515099627010F3600EC0B7B /* FirebaseAnalyticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515099527010F3600EC0B7B /* FirebaseAnalyticsProvider.swift */; };
 		45150998270110FB00EC0B7B /* AnalyticsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45150997270110FB00EC0B7B /* AnalyticsRepository.swift */; };
 		4515099A2701112500EC0B7B /* AnalyticsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451509992701112500EC0B7B /* AnalyticsRepository.swift */; };
+		4515099F270268EF00EC0B7B /* TrackAnalyticsEventUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515099E270268EF00EC0B7B /* TrackAnalyticsEventUseCase.swift */; };
+		451509A12702776F00EC0B7B /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451509A02702776F00EC0B7B /* AnalyticsEvent.swift */; };
+		451509A327027AE200EC0B7B /* UserEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451509A227027AE200EC0B7B /* UserEvent.swift */; };
 		451FAFC425FBFBAE00171EDB /* DomainRepresentable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451FAFC325FBFBAE00171EDB /* DomainRepresentable+Extensions.swift */; };
 		451FB00C25FC12E400171EDB /* NETPushNotification.json in Resources */ = {isa = PBXBuildFile; fileRef = 451FB00B25FC12E400171EDB /* NETPushNotification.json */; };
 		4530D1B72612AAA900A5520D /* RemoteConfigRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D1B62612AAA900A5520D /* RemoteConfigRepositoryTests.swift */; };
@@ -415,6 +418,9 @@
 		4515099527010F3600EC0B7B /* FirebaseAnalyticsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsProvider.swift; sourceTree = "<group>"; };
 		45150997270110FB00EC0B7B /* AnalyticsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsRepository.swift; sourceTree = "<group>"; };
 		451509992701112500EC0B7B /* AnalyticsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsRepository.swift; sourceTree = "<group>"; };
+		4515099E270268EF00EC0B7B /* TrackAnalyticsEventUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackAnalyticsEventUseCase.swift; sourceTree = "<group>"; };
+		451509A02702776F00EC0B7B /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
+		451509A227027AE200EC0B7B /* UserEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEvent.swift; sourceTree = "<group>"; };
 		451FAFC325FBFBAE00171EDB /* DomainRepresentable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DomainRepresentable+Extensions.swift"; sourceTree = "<group>"; };
 		451FAFE325FC107600171EDB /* LoginUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseTests.swift; sourceTree = "<group>"; };
 		451FB00B25FC12E400171EDB /* NETPushNotification.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NETPushNotification.json; sourceTree = "<group>"; };
@@ -828,7 +834,17 @@
 		4515099227010D6B00EC0B7B /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				451509A02702776F00EC0B7B /* AnalyticsEvent.swift */,
 				4515099327010D8C00EC0B7B /* LoginEvent.swift */,
+				451509A227027AE200EC0B7B /* UserEvent.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		4515099D270268BB00EC0B7B /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				4515099E270268EF00EC0B7B /* TrackAnalyticsEventUseCase.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -1322,6 +1338,7 @@
 		45821AA425F268EC00D587EB /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				4515099D270268BB00EC0B7B /* Analytics */,
 				45821AB525F2690800D587EB /* Auth */,
 				45821AD825F2694F00D587EB /* Location */,
 				45821AE925F2696E00D587EB /* Profile */,
@@ -2548,11 +2565,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				459F86C425F66C58004ACAD4 /* RepositoryError.swift in Sources */,
+				4515099F270268EF00EC0B7B /* TrackAnalyticsEventUseCase.swift in Sources */,
 				459F86F625F66FA9004ACAD4 /* Logger.swift in Sources */,
 				459F86B425F66C42004ACAD4 /* ErrorMessages.swift in Sources */,
 				45821A8A25F268C000D587EB /* PushNotification.swift in Sources */,
 				48C3E0AF26026F7D004CB3E1 /* KMPUseCases.swift in Sources */,
 				45821A9325F268D500D587EB /* RemoteConfigCoding.swift in Sources */,
+				451509A12702776F00EC0B7B /* AnalyticsEvent.swift in Sources */,
 				459F86D625F66C78004ACAD4 /* ValidationError.swift in Sources */,
 				4575E67625F7051100CCC003 /* HasNoUseCase.swift in Sources */,
 				45821B5725F26AE900D587EB /* RefreshUsersUseCase.swift in Sources */,
@@ -2584,6 +2603,7 @@
 				45821B0425F2699400D587EB /* RefreshProfileUseCase.swift in Sources */,
 				458FD8FC25F289F700FBD3B0 /* LocationRepository.swift in Sources */,
 				45821AEB25F2697800D587EB /* GetProfileUseCase.swift in Sources */,
+				451509A327027AE200EC0B7B /* UserEvent.swift in Sources */,
 				459F86CD25F66C69004ACAD4 /* StatusCode.swift in Sources */,
 				45821AD025F2694800D587EB /* RegistrationUseCase.swift in Sources */,
 				45821ABE25F2691900D587EB /* LoginUseCase.swift in Sources */,

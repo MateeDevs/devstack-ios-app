@@ -11,5 +11,5 @@ public protocol HasAnalyticsProvider {
 
 public protocol AnalyticsProvider: AutoMockable {
     /// Track a given event
-    func track(_ event: TrackableEvent)
+    func track(_ event: AnalyticsEvent)
 }

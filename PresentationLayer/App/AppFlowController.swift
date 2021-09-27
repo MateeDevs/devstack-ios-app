@@ -35,6 +35,7 @@ public class AppFlowController: FlowController, MainFlowControllerDelegate, Onbo
         nc.modalPresentationStyle = .fullScreen
         nc.navigationBar.isHidden = true
         navigationController.present(nc, animated: animated, completion: completion)
+        dependencies.trackAnalyticsEventUseCase.execute(LoginAnalyticsEvent.screenAppear)
     }
     
     public func handlePushNotification(_ notification: [AnyHashable: Any]) {

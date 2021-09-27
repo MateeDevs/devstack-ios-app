@@ -16,7 +16,7 @@ public struct AnalyticsRepositoryImpl: AnalyticsRepository {
         self.analyticsProvider = dependencies.analyticsProvider
     }
     
-    public func create(_ event: TrackableEvent) {
+    public func create(_ event: AnalyticsEvent) {
         analyticsProvider.track(event)
     }
 }

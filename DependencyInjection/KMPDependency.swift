@@ -22,7 +22,7 @@ public class KMPKoinDependency: KMPDependency {
     
     private func startKoin() {
         let onStartup = {
-            DomainLayer.Logger.debug("Koin Started", category: .app)
+            DomainLayer.Logger.info("Koin Started", category: .app)
         }
         
         let koinApplication = KoinIOSKt.doInitKoinIos(doOnStartup: onStartup)
