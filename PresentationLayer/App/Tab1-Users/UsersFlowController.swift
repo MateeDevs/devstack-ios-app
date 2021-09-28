@@ -3,7 +3,6 @@
 //  Copyright © 2019 Matee. All rights reserved.
 //
 
-import DomainLayer
 import UIKit
 
 class UsersFlowController: FlowController {
@@ -33,6 +32,5 @@ extension UsersFlowController {
         let vm = UserDetailViewModel(dependencies: dependencies, userId: userId)
         let vc = UserDetailViewController.instantiate(fc: self, vm: vm)
         navigationController.show(vc, sender: nil)
-        dependencies.trackAnalyticsEventUseCase.execute(UserAnalyticsEvent.openUserDetail(id: userId))
     }
 }

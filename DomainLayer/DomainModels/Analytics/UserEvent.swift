@@ -4,17 +4,17 @@
 //
 
 public enum UserAnalyticsEvent: AnalyticsEvent {
-    case openUserDetail(id: String)
+    case userDetail(id: String)
     
     public var name: String {
         switch self {
-        case .openUserDetail: return "open_user_detail"
+        case .userDetail: return "user_detail"
         }
     }
     
     public var params: [String: Any] {
         switch self {
-        case .openUserDetail(let id): return ["id": id]
+        case .userDetail(let id): return ["id": id]
         }
     }
 }

@@ -4,7 +4,7 @@
 //
 
 public enum LoginAnalyticsEvent: AnalyticsEvent {
-    case screenAppear // Just for a show case purposes, already tracked by default
+    case screenAppear
     case loginButtonTap
     case registerButtonTap
     

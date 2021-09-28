@@ -86,6 +86,8 @@ final class LoginViewModel: BaseViewModel, ViewModel {
             alertAction: alertAction.asDriver()
         )
         
-        super.init()
+        super.init(
+            trackScreenAppear: { dependencies.trackAnalyticsEventUseCase.execute(LoginAnalyticsEvent.screenAppear) }
+        )
     }
 }

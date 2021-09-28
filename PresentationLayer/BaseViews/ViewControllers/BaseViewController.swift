@@ -11,6 +11,7 @@ class BaseViewController: UIViewController {
     
     // MARK: Stored properties
     private(set) var disposeBag = DisposeBag()
+    var trackScreenAppear: (() -> Void)?
     
     // MARK: Inits
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -35,6 +36,12 @@ class BaseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // Track that screen appears if required
+        if let trackScreenAppear = trackScreenAppear {
+            trackScreenAppear()
+        }
+        
         // As long as viewWillAppear make sure to setup your reactive bindings
         setupBindings()
     }
