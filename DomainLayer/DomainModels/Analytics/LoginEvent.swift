@@ -3,20 +3,18 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-public enum LoginAnalyticsEvent: AnalyticsEvent {
+public enum LoginEvent {
     case screenAppear
     case loginButtonTap
     case registerButtonTap
-    
-    public var name: String {
+}
+
+extension LoginEvent: Trackable {
+    public var analyticsEvent: AnalyticsEvent {
         switch self {
-        case .screenAppear: return "login_screen"
-        case .loginButtonTap: return "login_button_tap"
-        case .registerButtonTap: return "register_button_tap"
+        case .screenAppear: return .init(name: "login_screen")
+        case .loginButtonTap: return .init(name: "login_button_tap")
+        case .registerButtonTap: return .init(name: "register_button_tap")
         }
-    }
-    
-    public var params: [String: Any] {
-        return [:]
     }
 }

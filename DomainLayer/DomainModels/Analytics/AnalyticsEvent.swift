@@ -3,7 +3,19 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-public protocol AnalyticsEvent {
-    var name: String { get }
-    var params: [String: Any] { get }
+public protocol Trackable {
+    var analyticsEvent: AnalyticsEvent { get }
+}
+
+public struct AnalyticsEvent: Equatable {
+    public let name: String
+    public let params: [String: AnyHashable]
+    
+    public init(
+        name: String,
+        params: [String: AnyHashable] = [:]
+    ) {
+        self.name = name
+        self.params = params
+    }
 }

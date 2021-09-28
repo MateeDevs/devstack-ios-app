@@ -55,7 +55,7 @@ final class LoginViewModel: BaseViewModel, ViewModel {
             if inputs.email.isEmpty || inputs.password.isEmpty {
                 return .just(.error(ValidationError(L10n.invalid_credentials)))
             } else {
-                dependencies.trackAnalyticsEventUseCase.execute(LoginAnalyticsEvent.loginButtonTap)
+                dependencies.trackAnalyticsEventUseCase.execute(LoginEvent.loginButtonTap.analyticsEvent)
                 let data = LoginData(email: inputs.email, password: inputs.password)
                 return dependencies.loginUseCase.execute(data).trackActivity(activity).materialize()
             }
@@ -64,7 +64,7 @@ final class LoginViewModel: BaseViewModel, ViewModel {
         let flow = Observable<LoginViewControllerFlow>.merge(
             login.compactMap { $0.element }.map { .dismiss },
             registerButtonTaps.map { .showRegistration }.do { _ in
-                dependencies.trackAnalyticsEventUseCase.execute(LoginAnalyticsEvent.registerButtonTap)
+                dependencies.trackAnalyticsEventUseCase.execute(LoginEvent.registerButtonTap.analyticsEvent)
             }
         )
         
@@ -87,7 +87,7 @@ final class LoginViewModel: BaseViewModel, ViewModel {
         )
         
         super.init(
-            trackScreenAppear: { dependencies.trackAnalyticsEventUseCase.execute(LoginAnalyticsEvent.screenAppear) }
+            trackScreenAppear: { dependencies.trackAnalyticsEventUseCase.execute(LoginEvent.screenAppear.analyticsEvent) }
         )
     }
 }

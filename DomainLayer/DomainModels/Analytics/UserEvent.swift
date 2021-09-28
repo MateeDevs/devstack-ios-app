@@ -3,18 +3,14 @@
 //  Copyright © 2021 Matee. All rights reserved.
 //
 
-public enum UserAnalyticsEvent: AnalyticsEvent {
+public enum UserEvent {
     case userDetail(id: String)
-    
-    public var name: String {
+}
+
+extension UserEvent: Trackable {
+    public var analyticsEvent: AnalyticsEvent {
         switch self {
-        case .userDetail: return "user_detail"
-        }
-    }
-    
-    public var params: [String: Any] {
-        switch self {
-        case .userDetail(let id): return ["id": id]
+        case .userDetail(let id): return .init(name: "user_detail", params: ["id": id])
         }
     }
 }

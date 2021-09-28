@@ -16,6 +16,8 @@
 		4515099F270268EF00EC0B7B /* TrackAnalyticsEventUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515099E270268EF00EC0B7B /* TrackAnalyticsEventUseCase.swift */; };
 		451509A12702776F00EC0B7B /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451509A02702776F00EC0B7B /* AnalyticsEvent.swift */; };
 		451509A327027AE200EC0B7B /* UserEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451509A227027AE200EC0B7B /* UserEvent.swift */; };
+		451509A527039CDE00EC0B7B /* AnalyticsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451509A427039CDE00EC0B7B /* AnalyticsRepositoryTests.swift */; };
+		451509A82703A78500EC0B7B /* TrackAnalyticsEventUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451509A72703A78500EC0B7B /* TrackAnalyticsEventUseCaseTests.swift */; };
 		451FAFC425FBFBAE00171EDB /* DomainRepresentable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451FAFC325FBFBAE00171EDB /* DomainRepresentable+Extensions.swift */; };
 		451FB00C25FC12E400171EDB /* NETPushNotification.json in Resources */ = {isa = PBXBuildFile; fileRef = 451FB00B25FC12E400171EDB /* NETPushNotification.json */; };
 		4530D1B72612AAA900A5520D /* RemoteConfigRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D1B62612AAA900A5520D /* RemoteConfigRepositoryTests.swift */; };
@@ -421,6 +423,8 @@
 		4515099E270268EF00EC0B7B /* TrackAnalyticsEventUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackAnalyticsEventUseCase.swift; sourceTree = "<group>"; };
 		451509A02702776F00EC0B7B /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
 		451509A227027AE200EC0B7B /* UserEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEvent.swift; sourceTree = "<group>"; };
+		451509A427039CDE00EC0B7B /* AnalyticsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsRepositoryTests.swift; sourceTree = "<group>"; };
+		451509A72703A78500EC0B7B /* TrackAnalyticsEventUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackAnalyticsEventUseCaseTests.swift; sourceTree = "<group>"; };
 		451FAFC325FBFBAE00171EDB /* DomainRepresentable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DomainRepresentable+Extensions.swift"; sourceTree = "<group>"; };
 		451FAFE325FC107600171EDB /* LoginUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseTests.swift; sourceTree = "<group>"; };
 		451FB00B25FC12E400171EDB /* NETPushNotification.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NETPushNotification.json; sourceTree = "<group>"; };
@@ -811,6 +815,7 @@
 		4511287825FBD08A007CBA76 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				451509A62703A77500EC0B7B /* Analytics */,
 				45B675BE260E237C00DF7387 /* Auth */,
 				4530D1E02612AE3E00A5520D /* Location */,
 				4530D1EF2612AFC300A5520D /* Profile */,
@@ -845,6 +850,14 @@
 			isa = PBXGroup;
 			children = (
 				4515099E270268EF00EC0B7B /* TrackAnalyticsEventUseCase.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		451509A62703A77500EC0B7B /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				451509A72703A78500EC0B7B /* TrackAnalyticsEventUseCaseTests.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -976,10 +989,11 @@
 		4557195624A15BF200FB24CA /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				451509A427039CDE00EC0B7B /* AnalyticsRepositoryTests.swift */,
+				45B6760F2612088D00DF7387 /* UserRepositoryTests.swift */,
 				4557195724A15C0200FB24CA /* AuthTokenRepositoryTests.swift */,
 				4530D1C42612ABC100A5520D /* PushNotificationsRepositoryTests.swift */,
 				4530D1B62612AAA900A5520D /* RemoteConfigRepositoryTests.swift */,
-				45B6760F2612088D00DF7387 /* UserRepositoryTests.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -2464,6 +2478,7 @@
 				4530D2052612B13900A5520D /* GetProfileIdUseCaseTests.swift in Sources */,
 				45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */,
 				45F36B1F2613249F0053BA9A /* CounterControlViewModelTests.swift in Sources */,
+				451509A527039CDE00EC0B7B /* AnalyticsRepositoryTests.swift in Sources */,
 				4530D2432612BB2D00A5520D /* UpdateUserUseCaseTests.swift in Sources */,
 				458068AC2612A82E000E96A0 /* NetworkProviderMock.swift in Sources */,
 				4530D1FD2612B07500A5520D /* GetProfileUseCaseTests.swift in Sources */,
@@ -2473,6 +2488,7 @@
 				4534C25926042E780022ACF4 /* UsersViewModelTests.swift in Sources */,
 				4534C2512604280D0022ACF4 /* RegistrationData+Stubs.swift in Sources */,
 				45B676102612088D00DF7387 /* UserRepositoryTests.swift in Sources */,
+				451509A82703A78500EC0B7B /* TrackAnalyticsEventUseCaseTests.swift in Sources */,
 				4580688C2612A7B5000E96A0 /* UseCaseDependencyMock.swift in Sources */,
 				4534C1A32603C98F0022ACF4 /* Mocks.swift in Sources */,
 				45B675B7260E237100DF7387 /* RegistrationUseCaseTests.swift in Sources */,

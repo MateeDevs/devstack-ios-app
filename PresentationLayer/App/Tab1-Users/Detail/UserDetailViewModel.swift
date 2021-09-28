@@ -69,7 +69,7 @@ final class UserDetailViewModel: BaseViewModel, ViewModel {
         )
         
         super.init(
-            trackScreenAppear: { dependencies.trackAnalyticsEventUseCase.execute(UserAnalyticsEvent.userDetail(id: userId)) }
+            trackScreenAppear: { dependencies.trackAnalyticsEventUseCase.execute(UserEvent.userDetail(id: userId).analyticsEvent) }
         )
     }
 }
