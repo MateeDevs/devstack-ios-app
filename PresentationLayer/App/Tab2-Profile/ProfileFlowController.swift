@@ -31,7 +31,7 @@ class ProfileFlowController: FlowController {
 
 // MARK: Profile flow
 extension ProfileFlowController {
-    func handleProfileFlow(_ flow: ProfileViewControllerFlow) {
+    func handleProfileFlow(_ flow: Flow.Profile) {
         switch flow {
         case .presentOnboarding: presentOnboarding()
         }

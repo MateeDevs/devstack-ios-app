@@ -7,8 +7,10 @@ import DomainLayer
 import RxSwift
 import UIKit
 
-enum UsersViewControllerFlow {
-    case showUserDetailForId(_ userId: String)
+extension Flow {
+    enum Users {
+        case showUserDetailForId(_ userId: String)
+    }
 }
 
 final class UsersViewController: BaseTableViewController<User> {

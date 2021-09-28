@@ -22,7 +22,7 @@ final class LoginViewModel: BaseViewModel, ViewModel {
     }
     
     struct Output {
-        let flow: Driver<LoginViewControllerFlow>
+        let flow: Driver<Flow.Login>
         let loginButtonEnabled: Driver<Bool>
         let alertAction: Driver<AlertAction>
     }
@@ -58,7 +58,7 @@ final class LoginViewModel: BaseViewModel, ViewModel {
             }
         }.share()
         
-        let flow = Observable<LoginViewControllerFlow>.merge(
+        let flow = Observable<Flow.Login>.merge(
             login.compactMap { $0.element }.map { .dismiss },
             registerButtonTaps.map { .showRegistration }
         )

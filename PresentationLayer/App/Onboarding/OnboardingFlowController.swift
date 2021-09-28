@@ -34,7 +34,7 @@ class OnboardingFlowController: FlowController {
 
 // MARK: Login flow
 extension OnboardingFlowController {
-    func handleLoginFlow(_ flow: LoginViewControllerFlow) {
+    func handleLoginFlow(_ flow: Flow.Login) {
         switch flow {
         case .dismiss: dismiss()
         case .showRegistration: showRegistration()
@@ -50,7 +50,7 @@ extension OnboardingFlowController {
 
 // MARK: Registration flow
 extension OnboardingFlowController {
-    func handleRegistrationFlow(_ flow: RegistrationViewControllerFlow) {
+    func handleRegistrationFlow(_ flow: Flow.Registration) {
         switch flow {
         case .popRegistration: popRegistration()
         }

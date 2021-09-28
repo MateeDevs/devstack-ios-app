@@ -7,8 +7,6 @@ import class DevstackKmpShared.Book
 import RxSwift
 import UIKit
 
-// enum BooksViewControllerFlow {}
-
 final class BooksViewController: BaseTableViewController<Book> {
 
 //    // MARK: FlowController

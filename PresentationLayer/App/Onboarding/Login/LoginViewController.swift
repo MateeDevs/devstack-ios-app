@@ -7,9 +7,11 @@ import DomainLayer
 import RxSwift
 import UIKit
 
-enum LoginViewControllerFlow {
-    case dismiss
-    case showRegistration
+extension Flow {
+    enum Login {
+        case dismiss
+        case showRegistration
+    }
 }
 
 final class LoginViewController: InputViewController {
