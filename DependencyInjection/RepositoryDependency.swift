@@ -7,6 +7,7 @@ import DataLayer
 import DomainLayer
 
 public protocol RepositoryDependency: HasNoRepository,
+    HasAnalyticsRepository,
     HasAuthTokenRepository,
     HasLocationRepository,
     HasPushNotificationsRepository,
@@ -15,6 +16,7 @@ public protocol RepositoryDependency: HasNoRepository,
 
 public struct RepositoryDependencyImpl: RepositoryDependency {
     
+    public let analyticsRepository: AnalyticsRepository
     public let authTokenRepository: AuthTokenRepository
     public let locationRepository: LocationRepository
     public let pushNotificationsRepository: PushNotificationsRepository
@@ -22,6 +24,7 @@ public struct RepositoryDependencyImpl: RepositoryDependency {
     public let userRepository: UserRepository
     
     public init(dependencies: ProviderDependency) {
+        self.analyticsRepository = AnalyticsRepositoryImpl(dependencies: dependencies)
         self.authTokenRepository = AuthTokenRepositoryImpl(dependencies: dependencies)
         self.locationRepository = LocationRepositoryImpl(dependencies: dependencies)
         self.pushNotificationsRepository = PushNotificationsRepositoryImpl(dependencies: dependencies)

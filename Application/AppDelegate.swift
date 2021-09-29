@@ -87,6 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Setup providers
     private func setupProviders(for application: UIApplication) -> ProviderDependency {
+        let analyticsProvider = FirebaseAnalyticsProvider()
         let databaseProvider = RealmDatabaseProvider()
         let userDefaultsProvider = SystemUserDefaultsProvider()
         let keychainProvider = SystemKeychainProvider(userDefaultsProvider: userDefaultsProvider)
@@ -97,6 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         networkProvider.delegate = self
 
         return ProviderDependencyImpl(
+            analyticsProvider: analyticsProvider,
             databaseProvider: databaseProvider,
             keychainProvider: keychainProvider,
             networkProvider: networkProvider,

@@ -8,6 +8,7 @@ import DependencyInjection
 
 struct ProviderDependencyMock: ProviderDependency {
     
+    let analyticsProvider: AnalyticsProvider
     let databaseProvider: DatabaseProvider
     let keychainProvider: KeychainProvider
     let networkProvider: NetworkProvider
@@ -16,6 +17,7 @@ struct ProviderDependencyMock: ProviderDependency {
     let userDefaultsProvider: UserDefaultsProvider
     
     init(
+        analyticsProvider: AnalyticsProvider = AnalyticsProviderMock(),
         databaseProvider: DatabaseProvider = DatabaseProviderMock(),
         keychainProvider: KeychainProvider = KeychainProviderMock(),
         networkProvider: NetworkProvider = NetworkProviderMock(),
@@ -23,6 +25,7 @@ struct ProviderDependencyMock: ProviderDependency {
         remoteConfigProvider: RemoteConfigProvider = RemoteConfigProviderMock(),
         userDefaultsProvider: UserDefaultsProvider = UserDefaultsProviderMock()
     ) {
+        self.analyticsProvider = analyticsProvider
         self.databaseProvider = databaseProvider
         self.keychainProvider = keychainProvider
         self.networkProvider = networkProvider

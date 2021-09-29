@@ -11,7 +11,8 @@ final class UserDetailViewModel: BaseViewModel, ViewModel {
     
     typealias Dependencies =
         HasGetUserUseCase &
-        HasRefreshUserUseCase
+        HasRefreshUserUseCase &
+        HasTrackAnalyticsEventUseCase
     
     let input: Input
     let output: Output
@@ -67,6 +68,8 @@ final class UserDetailViewModel: BaseViewModel, ViewModel {
             isRefreshing: isRefreshing.asDriver()
         )
         
-        super.init()
+        super.init(
+            trackScreenAppear: { dependencies.trackAnalyticsEventUseCase.execute(UserEvent.userDetail(id: userId).analyticsEvent) }
+        )
     }
 }

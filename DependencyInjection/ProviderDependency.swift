@@ -6,6 +6,7 @@
 import DataLayer
 
 public protocol ProviderDependency: HasNoProvider,
+    HasAnalyticsProvider,
     HasDatabaseProvider,
     HasKeychainProvider,
     HasNetworkProvider,
@@ -15,6 +16,7 @@ public protocol ProviderDependency: HasNoProvider,
 
 public struct ProviderDependencyImpl: ProviderDependency {
 
+    public let analyticsProvider: AnalyticsProvider
     public let databaseProvider: DatabaseProvider
     public let keychainProvider: KeychainProvider
     public let networkProvider: NetworkProvider
@@ -23,6 +25,7 @@ public struct ProviderDependencyImpl: ProviderDependency {
     public let userDefaultsProvider: UserDefaultsProvider
 
     public init(
+        analyticsProvider: AnalyticsProvider,
         databaseProvider: DatabaseProvider,
         keychainProvider: KeychainProvider,
         networkProvider: NetworkProvider,
@@ -30,6 +33,7 @@ public struct ProviderDependencyImpl: ProviderDependency {
         remoteConfigProvider: RemoteConfigProvider,
         userDefaultsProvider: UserDefaultsProvider
     ) {
+        self.analyticsProvider = analyticsProvider
         self.databaseProvider = databaseProvider
         self.keychainProvider = keychainProvider
         self.networkProvider = networkProvider
