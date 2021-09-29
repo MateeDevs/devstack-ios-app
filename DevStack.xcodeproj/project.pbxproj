@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4515098E27010C3300EC0B7B /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 4515098D27010C3300EC0B7B /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		4515099127010C6D00EC0B7B /* AnalyticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515099027010C6D00EC0B7B /* AnalyticsProvider.swift */; };
+		4515099427010D8C00EC0B7B /* LoginEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515099327010D8C00EC0B7B /* LoginEvent.swift */; };
+		4515099627010F3600EC0B7B /* FirebaseAnalyticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515099527010F3600EC0B7B /* FirebaseAnalyticsProvider.swift */; };
+		45150998270110FB00EC0B7B /* AnalyticsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45150997270110FB00EC0B7B /* AnalyticsRepository.swift */; };
+		4515099A2701112500EC0B7B /* AnalyticsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451509992701112500EC0B7B /* AnalyticsRepository.swift */; };
+		4515099F270268EF00EC0B7B /* TrackAnalyticsEventUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515099E270268EF00EC0B7B /* TrackAnalyticsEventUseCase.swift */; };
+		451509A12702776F00EC0B7B /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451509A02702776F00EC0B7B /* AnalyticsEvent.swift */; };
+		451509A327027AE200EC0B7B /* UserEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451509A227027AE200EC0B7B /* UserEvent.swift */; };
+		451509A527039CDE00EC0B7B /* AnalyticsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451509A427039CDE00EC0B7B /* AnalyticsRepositoryTests.swift */; };
+		451509A82703A78500EC0B7B /* TrackAnalyticsEventUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451509A72703A78500EC0B7B /* TrackAnalyticsEventUseCaseTests.swift */; };
 		451FAFC425FBFBAE00171EDB /* DomainRepresentable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451FAFC325FBFBAE00171EDB /* DomainRepresentable+Extensions.swift */; };
 		451FB00C25FC12E400171EDB /* NETPushNotification.json in Resources */ = {isa = PBXBuildFile; fileRef = 451FB00B25FC12E400171EDB /* NETPushNotification.json */; };
 		4530D1B72612AAA900A5520D /* RemoteConfigRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D1B62612AAA900A5520D /* RemoteConfigRepositoryTests.swift */; };
@@ -404,6 +415,16 @@
 		450392842256B29D0037BF42 /* GoogleService-Info-Alpha.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Alpha.plist"; sourceTree = "<group>"; };
 		450392862256B35E0037BF42 /* GoogleService-Info-Beta.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Beta.plist"; sourceTree = "<group>"; };
 		450392882256B3C60037BF42 /* GoogleService-Info-Prod.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Prod.plist"; sourceTree = "<group>"; };
+		4515099027010C6D00EC0B7B /* AnalyticsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsProvider.swift; sourceTree = "<group>"; };
+		4515099327010D8C00EC0B7B /* LoginEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEvent.swift; sourceTree = "<group>"; };
+		4515099527010F3600EC0B7B /* FirebaseAnalyticsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsProvider.swift; sourceTree = "<group>"; };
+		45150997270110FB00EC0B7B /* AnalyticsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsRepository.swift; sourceTree = "<group>"; };
+		451509992701112500EC0B7B /* AnalyticsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsRepository.swift; sourceTree = "<group>"; };
+		4515099E270268EF00EC0B7B /* TrackAnalyticsEventUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackAnalyticsEventUseCase.swift; sourceTree = "<group>"; };
+		451509A02702776F00EC0B7B /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
+		451509A227027AE200EC0B7B /* UserEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEvent.swift; sourceTree = "<group>"; };
+		451509A427039CDE00EC0B7B /* AnalyticsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsRepositoryTests.swift; sourceTree = "<group>"; };
+		451509A72703A78500EC0B7B /* TrackAnalyticsEventUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackAnalyticsEventUseCaseTests.swift; sourceTree = "<group>"; };
 		451FAFC325FBFBAE00171EDB /* DomainRepresentable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DomainRepresentable+Extensions.swift"; sourceTree = "<group>"; };
 		451FAFE325FC107600171EDB /* LoginUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseTests.swift; sourceTree = "<group>"; };
 		451FB00B25FC12E400171EDB /* NETPushNotification.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NETPushNotification.json; sourceTree = "<group>"; };
@@ -736,6 +757,7 @@
 				45F5900D26F9260D00BEDFCC /* FirebaseMessaging in Frameworks */,
 				45F5901126F9260D00BEDFCC /* RxSwift in Frameworks */,
 				45F5900926F9260D00BEDFCC /* RxRealm in Frameworks */,
+				4515098E27010C3300EC0B7B /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				45F5900326F9260D00BEDFCC /* RxMoya in Frameworks */,
 				45F5900B26F9260D00BEDFCC /* KeychainAccess in Frameworks */,
 				45F5900126F9260D00BEDFCC /* Moya in Frameworks */,
@@ -793,6 +815,7 @@
 		4511287825FBD08A007CBA76 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				451509A62703A77500EC0B7B /* Analytics */,
 				45B675BE260E237C00DF7387 /* Auth */,
 				4530D1E02612AE3E00A5520D /* Location */,
 				4530D1EF2612AFC300A5520D /* Profile */,
@@ -802,6 +825,41 @@
 				45B675DC260E23AA00DF7387 /* Users */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		4515098F27010C5300EC0B7B /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				4515099027010C6D00EC0B7B /* AnalyticsProvider.swift */,
+				4515099527010F3600EC0B7B /* FirebaseAnalyticsProvider.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		4515099227010D6B00EC0B7B /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				451509A02702776F00EC0B7B /* AnalyticsEvent.swift */,
+				4515099327010D8C00EC0B7B /* LoginEvent.swift */,
+				451509A227027AE200EC0B7B /* UserEvent.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		4515099D270268BB00EC0B7B /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				4515099E270268EF00EC0B7B /* TrackAnalyticsEventUseCase.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		451509A62703A77500EC0B7B /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				451509A72703A78500EC0B7B /* TrackAnalyticsEventUseCaseTests.swift */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 		451FAFC225FBFBA400171EDB /* Extensions */ = {
@@ -931,10 +989,11 @@
 		4557195624A15BF200FB24CA /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				451509A427039CDE00EC0B7B /* AnalyticsRepositoryTests.swift */,
+				45B6760F2612088D00DF7387 /* UserRepositoryTests.swift */,
 				4557195724A15C0200FB24CA /* AuthTokenRepositoryTests.swift */,
 				4530D1C42612ABC100A5520D /* PushNotificationsRepositoryTests.swift */,
 				4530D1B62612AAA900A5520D /* RemoteConfigRepositoryTests.swift */,
-				45B6760F2612088D00DF7387 /* UserRepositoryTests.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1210,6 +1269,7 @@
 		458218FD25F2610900D587EB /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				45150997270110FB00EC0B7B /* AnalyticsRepository.swift */,
 				4582192C25F261D900D587EB /* AuthTokenRepository.swift */,
 				4582192D25F261D900D587EB /* LocationRepository.swift */,
 				4575E6C925F7F2F100CCC003 /* PushNotificationsRepository.swift */,
@@ -1223,6 +1283,7 @@
 			isa = PBXGroup;
 			children = (
 				459F8BB125F6C338004ACAD4 /* HasNoProvider.swift */,
+				4515098F27010C5300EC0B7B /* Analytics */,
 				4575E68F25F7E8D500CCC003 /* Database */,
 				4575E69A25F7E97700CCC003 /* Keychain */,
 				4575E69B25F7E98900CCC003 /* Network */,
@@ -1245,6 +1306,7 @@
 		45821A6925F2686700D587EB /* DomainModels */ = {
 			isa = PBXGroup;
 			children = (
+				4515099227010D6B00EC0B7B /* Analytics */,
 				45821A6A25F2686C00D587EB /* Auth */,
 				45821A6B25F2687000D587EB /* PushNotification */,
 				45821A6C25F2687900D587EB /* RemoteConfig */,
@@ -1290,6 +1352,7 @@
 		45821AA425F268EC00D587EB /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				4515099D270268BB00EC0B7B /* Analytics */,
 				45821AB525F2690800D587EB /* Auth */,
 				45821AD825F2694F00D587EB /* Location */,
 				45821AE925F2696E00D587EB /* Profile */,
@@ -1372,6 +1435,7 @@
 			isa = PBXGroup;
 			children = (
 				459F86DE25F66F7A004ACAD4 /* HasNoRepository.swift */,
+				451509992701112500EC0B7B /* AnalyticsRepository.swift */,
 				458FD8F225F289C900FBD3B0 /* AuthTokenRepository.swift */,
 				458FD8FB25F289F700FBD3B0 /* LocationRepository.swift */,
 				4575E6CF25F7F30300CCC003 /* PushNotificationsRepository.swift */,
@@ -2052,6 +2116,7 @@
 				45F5900C26F9260D00BEDFCC /* FirebaseMessaging */,
 				45F5900E26F9260D00BEDFCC /* FirebaseRemoteConfig */,
 				45F5901026F9260D00BEDFCC /* RxSwift */,
+				4515098D27010C3300EC0B7B /* FirebaseAnalyticsWithoutAdIdSupport */,
 			);
 			productName = DataLayer;
 			productReference = 4582185825F25D5800D587EB /* DataLayer.framework */;
@@ -2413,6 +2478,7 @@
 				4530D2052612B13900A5520D /* GetProfileIdUseCaseTests.swift in Sources */,
 				45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */,
 				45F36B1F2613249F0053BA9A /* CounterControlViewModelTests.swift in Sources */,
+				451509A527039CDE00EC0B7B /* AnalyticsRepositoryTests.swift in Sources */,
 				4530D2432612BB2D00A5520D /* UpdateUserUseCaseTests.swift in Sources */,
 				458068AC2612A82E000E96A0 /* NetworkProviderMock.swift in Sources */,
 				4530D1FD2612B07500A5520D /* GetProfileUseCaseTests.swift in Sources */,
@@ -2422,6 +2488,7 @@
 				4534C25926042E780022ACF4 /* UsersViewModelTests.swift in Sources */,
 				4534C2512604280D0022ACF4 /* RegistrationData+Stubs.swift in Sources */,
 				45B676102612088D00DF7387 /* UserRepositoryTests.swift in Sources */,
+				451509A82703A78500EC0B7B /* TrackAnalyticsEventUseCaseTests.swift in Sources */,
 				4580688C2612A7B5000E96A0 /* UseCaseDependencyMock.swift in Sources */,
 				4534C1A32603C98F0022ACF4 /* Mocks.swift in Sources */,
 				45B675B7260E237100DF7387 /* RegistrationUseCaseTests.swift in Sources */,
@@ -2467,11 +2534,13 @@
 				4582190525F261B200D587EB /* DBUser.swift in Sources */,
 				459F869125F6692A004ACAD4 /* FirebaseRemoteConfig+Rx.swift in Sources */,
 				4582198225F2621800D587EB /* Observable+Realm.swift in Sources */,
+				4515099627010F3600EC0B7B /* FirebaseAnalyticsProvider.swift in Sources */,
 				4582194525F261E100D587EB /* RealmDatabaseProvider.swift in Sources */,
 				454D163625FC21FD00920CF0 /* Decodable+Extensions.swift in Sources */,
 				4582198725F2621800D587EB /* Realm+Extensions.swift in Sources */,
 				4575E6C025F7ED0500CCC003 /* UserDefaultsProvider.swift in Sources */,
 				4582191325F261BE00D587EB /* NETRegistrationData.swift in Sources */,
+				4515099127010C6D00EC0B7B /* AnalyticsProvider.swift in Sources */,
 				459F868125F66764004ACAD4 /* FirebaseRemoteConfigProvider.swift in Sources */,
 				4575E6B725F7EC5900CCC003 /* RemoteConfigProvider.swift in Sources */,
 				4582198525F2621800D587EB /* Object+Extensions.swift in Sources */,
@@ -2495,6 +2564,7 @@
 				4598969B26129B9E00C852E0 /* UserRepository.swift in Sources */,
 				4582194325F261E100D587EB /* FirebasePushNotificationsProvider.swift in Sources */,
 				4582197F25F2621800D587EB /* Encodable+Extensions.swift in Sources */,
+				45150998270110FB00EC0B7B /* AnalyticsRepository.swift in Sources */,
 				4575E6CA25F7F2F100CCC003 /* PushNotificationsRepository.swift in Sources */,
 				4575E6B125F7EB9000CCC003 /* KeychainProvider.swift in Sources */,
 				4582194425F261E100D587EB /* MoyaNetworkProvider.swift in Sources */,
@@ -2511,11 +2581,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				459F86C425F66C58004ACAD4 /* RepositoryError.swift in Sources */,
+				4515099F270268EF00EC0B7B /* TrackAnalyticsEventUseCase.swift in Sources */,
 				459F86F625F66FA9004ACAD4 /* Logger.swift in Sources */,
 				459F86B425F66C42004ACAD4 /* ErrorMessages.swift in Sources */,
 				45821A8A25F268C000D587EB /* PushNotification.swift in Sources */,
 				48C3E0AF26026F7D004CB3E1 /* KMPUseCases.swift in Sources */,
 				45821A9325F268D500D587EB /* RemoteConfigCoding.swift in Sources */,
+				451509A12702776F00EC0B7B /* AnalyticsEvent.swift in Sources */,
 				459F86D625F66C78004ACAD4 /* ValidationError.swift in Sources */,
 				4575E67625F7051100CCC003 /* HasNoUseCase.swift in Sources */,
 				45821B5725F26AE900D587EB /* RefreshUsersUseCase.swift in Sources */,
@@ -2538,13 +2610,16 @@
 				45821A7825F268A000D587EB /* LoginData.swift in Sources */,
 				459F88FC25F6AB33004ACAD4 /* Biometric.swift in Sources */,
 				45821A8125F268AF00D587EB /* RegistrationData.swift in Sources */,
+				4515099A2701112500EC0B7B /* AnalyticsRepository.swift in Sources */,
 				459F86A225F66A49004ACAD4 /* Observable+Extensions.swift in Sources */,
 				4534C1872603C1530022ACF4 /* AutoMockable.swift in Sources */,
 				45821B2B25F269FD00D587EB /* GetUserUseCase.swift in Sources */,
+				4515099427010D8C00EC0B7B /* LoginEvent.swift in Sources */,
 				45821B1725F269BE00D587EB /* HandlePushNotificationUseCase.swift in Sources */,
 				45821B0425F2699400D587EB /* RefreshProfileUseCase.swift in Sources */,
 				458FD8FC25F289F700FBD3B0 /* LocationRepository.swift in Sources */,
 				45821AEB25F2697800D587EB /* GetProfileUseCase.swift in Sources */,
+				451509A327027AE200EC0B7B /* UserEvent.swift in Sources */,
 				459F86CD25F66C69004ACAD4 /* StatusCode.swift in Sources */,
 				45821AD025F2694800D587EB /* RegistrationUseCase.swift in Sources */,
 				45821ABE25F2691900D587EB /* LoginUseCase.swift in Sources */,
@@ -4424,6 +4499,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4515098D27010C3300EC0B7B /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
 		454AAD1E26050B7B0098A3E1 /* SwiftyMocky */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4534C17D2603BF050022ACF4 /* XCRemoteSwiftPackageReference "SwiftyMocky" */;

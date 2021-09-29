@@ -43,6 +43,7 @@ final class LoginViewController: InputViewController {
         let vc = StoryboardScene.Login.initialScene.instantiate()
         vc.flowController = fc
         vc.viewModel = vm
+        vc.trackScreenAppear = vm.trackScreenAppear
         return vc
     }
     

@@ -26,6 +26,7 @@ final class UserDetailViewController: BaseViewController {
         let vc = StoryboardScene.UserDetail.initialScene.instantiate()
         vc.flowController = fc
         vc.viewModel = vm
+        vc.trackScreenAppear = vm.trackScreenAppear
         return vc
     }
 

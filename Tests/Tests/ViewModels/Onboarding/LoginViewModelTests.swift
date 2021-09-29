@@ -17,10 +17,14 @@ class LoginViewModelTests: BaseTestCase {
     // MARK: Dependencies
     
     private let loginUseCase = LoginUseCaseMock()
+    private let trackAnalyticsEventUseCase = TrackAnalyticsEventUseCaseMock()
     
     private func setupDependencies() -> UseCaseDependency {
         setupLoginUseCase()
-        return UseCaseDependencyMock(loginUseCase: loginUseCase)
+        return UseCaseDependencyMock(
+            trackAnalyticsEventUseCase: trackAnalyticsEventUseCase,
+            loginUseCase: loginUseCase
+        )
     }
     
     private func setupLoginUseCase() {
@@ -111,6 +115,7 @@ class LoginViewModelTests: BaseTestCase {
             .next(0, true)
         ])
         Verify(loginUseCase, 1, .execute(.value(.valid)))
+        Verify(trackAnalyticsEventUseCase, 1, .execute(.value(LoginEvent.loginButtonTap.analyticsEvent)))
     }
 
     func testLoginInvalidPassword() {
@@ -169,5 +174,6 @@ class LoginViewModelTests: BaseTestCase {
             .next(0, true)
         ])
         Verify(loginUseCase, 0, .execute(.any))
+        Verify(trackAnalyticsEventUseCase, 1, .execute(.value(LoginEvent.registerButtonTap.analyticsEvent)))
     }
 }

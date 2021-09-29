@@ -10,6 +10,8 @@ import DomainLayer
 
 struct UseCaseDependencyMock: UseCaseDependency {
     
+    let trackAnalyticsEventUseCase: TrackAnalyticsEventUseCase
+    
     let loginUseCase: LoginUseCase
     let logoutUseCase: LogoutUseCase
     let registrationUseCase: RegistrationUseCase
@@ -37,6 +39,7 @@ struct UseCaseDependencyMock: UseCaseDependency {
 //    let refreshBooksUseCase: RefreshBooksUseCase
     
     init(
+        trackAnalyticsEventUseCase: TrackAnalyticsEventUseCase = TrackAnalyticsEventUseCaseMock(),
         loginUseCase: LoginUseCase = LoginUseCaseMock(),
         logoutUseCase: LogoutUseCase = LogoutUseCaseMock(),
         registrationUseCase: RegistrationUseCase = RegistrationUseCaseMock(),
@@ -56,6 +59,7 @@ struct UseCaseDependencyMock: UseCaseDependency {
         getBooksUseCase: GetBooksUseCase = GetBooksUseCaseMock(),
         refreshBooksUseCase: RefreshBooksUseCase = RefreshBooksUseCaseMock()*/
     ) {
+        self.trackAnalyticsEventUseCase = trackAnalyticsEventUseCase
         self.loginUseCase = loginUseCase
         self.logoutUseCase = logoutUseCase
         self.registrationUseCase = registrationUseCase

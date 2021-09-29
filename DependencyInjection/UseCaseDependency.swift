@@ -8,6 +8,7 @@ import protocol DevstackKmpShared.RefreshBooksUseCase
 import DomainLayer
 
 public protocol UseCaseDependency: HasNoUseCase,
+    HasTrackAnalyticsEventUseCase,
     HasLoginUseCase,
     HasLogoutUseCase,
     HasRegistrationUseCase,
@@ -28,6 +29,8 @@ public protocol UseCaseDependency: HasNoUseCase,
     HasRefreshBooksUseCase*/ {}
 
 public struct UseCaseDependencyImpl: UseCaseDependency {
+    
+    public let trackAnalyticsEventUseCase: TrackAnalyticsEventUseCase
     
     public let loginUseCase: LoginUseCase
     public let logoutUseCase: LogoutUseCase
@@ -56,6 +59,8 @@ public struct UseCaseDependencyImpl: UseCaseDependency {
 //    public let refreshBooksUseCase: RefreshBooksUseCase
     
     public init(dependencies: RepositoryDependency, kmpDependencies: KMPDependency) {
+        self.trackAnalyticsEventUseCase = TrackAnalyticsEventUseCaseImpl(dependencies: dependencies)
+        
         self.loginUseCase = LoginUseCaseImpl(dependencies: dependencies)
         self.logoutUseCase = LogoutUseCaseImpl(dependencies: dependencies)
         self.registrationUseCase = RegistrationUseCaseImpl(dependencies: dependencies)

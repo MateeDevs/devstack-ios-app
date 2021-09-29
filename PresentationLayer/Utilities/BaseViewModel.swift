@@ -6,7 +6,11 @@
 import DomainLayer
 
 class BaseViewModel {
-    init() {
+    
+    let trackScreenAppear: () -> Void
+
+    init(trackScreenAppear: @escaping () -> Void = {}) {
+        self.trackScreenAppear = trackScreenAppear
         Logger.info("%@ initialized", "\(type(of: self))", category: .lifecycle)
     }
     

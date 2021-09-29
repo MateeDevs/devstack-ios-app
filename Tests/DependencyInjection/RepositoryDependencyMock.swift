@@ -8,6 +8,7 @@ import DomainLayer
 
 struct RepositoryDependencyMock: RepositoryDependency {
     
+    let analyticsRepository: AnalyticsRepository
     let authTokenRepository: AuthTokenRepository
     let locationRepository: LocationRepository
     let pushNotificationsRepository: PushNotificationsRepository
@@ -15,12 +16,14 @@ struct RepositoryDependencyMock: RepositoryDependency {
     let userRepository: UserRepository
     
     init(
+        analyticsRepository: AnalyticsRepository = AnalyticsRepositoryMock(),
         authTokenRepository: AuthTokenRepository = AuthTokenRepositoryMock(),
         locationRepository: LocationRepository = LocationRepositoryMock(),
         pushNotificationsRepository: PushNotificationsRepository = PushNotificationsRepositoryMock(),
         remoteConfigRepository: RemoteConfigRepository = RemoteConfigRepositoryMock(),
         userRepository: UserRepository = UserRepositoryMock()
     ) {
+        self.analyticsRepository = analyticsRepository
         self.authTokenRepository = authTokenRepository
         self.locationRepository = locationRepository
         self.pushNotificationsRepository = pushNotificationsRepository

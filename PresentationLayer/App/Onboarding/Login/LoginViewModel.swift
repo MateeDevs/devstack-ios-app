@@ -9,7 +9,9 @@ import RxSwift
 
 final class LoginViewModel: BaseViewModel, ViewModel {
     
-    typealias Dependencies = HasLoginUseCase
+    typealias Dependencies =
+        HasLoginUseCase &
+        HasTrackAnalyticsEventUseCase
     
     let input: Input
     let output: Output
@@ -53,6 +55,7 @@ final class LoginViewModel: BaseViewModel, ViewModel {
             if inputs.email.isEmpty || inputs.password.isEmpty {
                 return .just(.error(ValidationError(L10n.invalid_credentials)))
             } else {
+                dependencies.trackAnalyticsEventUseCase.execute(LoginEvent.loginButtonTap.analyticsEvent)
                 let data = LoginData(email: inputs.email, password: inputs.password)
                 return dependencies.loginUseCase.execute(data).trackActivity(activity).materialize()
             }
@@ -60,7 +63,9 @@ final class LoginViewModel: BaseViewModel, ViewModel {
         
         let flow = Observable<Flow.Login>.merge(
             login.compactMap { $0.element }.map { .dismiss },
-            registerButtonTaps.map { .showRegistration }
+            registerButtonTaps.map { .showRegistration }.do { _ in
+                dependencies.trackAnalyticsEventUseCase.execute(LoginEvent.registerButtonTap.analyticsEvent)
+            }
         )
         
         let messages = ErrorMessages([.httpUnathorized: L10n.invalid_credentials], defaultMessage: L10n.signing_failed)
@@ -81,6 +86,8 @@ final class LoginViewModel: BaseViewModel, ViewModel {
             alertAction: alertAction.asDriver()
         )
         
-        super.init()
+        super.init(
+            trackScreenAppear: { dependencies.trackAnalyticsEventUseCase.execute(LoginEvent.screenAppear.analyticsEvent) }
+        )
     }
 }
