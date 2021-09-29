@@ -6,8 +6,10 @@
 import RxSwift
 import UIKit
 
-enum RegistrationViewControllerFlow {
-    case popRegistration
+extension Flow {
+    enum Registration {
+        case popRegistration
+    }
 }
 
 final class RegistrationViewController: InputViewController {

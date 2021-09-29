@@ -7,8 +7,10 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-enum ProfileViewControllerFlow {
-    case presentOnboarding
+extension Flow {
+    enum Profile {
+        case presentOnboarding
+    }
 }
 
 final class ProfileViewController: BaseViewController {

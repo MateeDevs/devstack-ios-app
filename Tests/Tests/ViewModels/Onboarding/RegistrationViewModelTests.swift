@@ -46,7 +46,7 @@ class RegistrationViewModelTests: BaseTestCase {
     }
     
     private struct Output {
-        let flow: TestableObserver<RegistrationViewControllerFlow>
+        let flow: TestableObserver<Flow.Registration>
         let alertAction: TestableObserver<AlertAction>
         let registerButtonEnabled: TestableObserver<Bool>
     }

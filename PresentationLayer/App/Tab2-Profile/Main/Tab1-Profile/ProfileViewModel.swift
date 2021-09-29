@@ -32,7 +32,7 @@ final class ProfileViewModel: BaseViewModel, ViewModel {
         let currentLocation: Driver<String>
         let remoteConfigLabelIsHidden: Driver<Bool>
         let registerForPushNotifications: Driver<Void>
-        let flow: Driver<ProfileViewControllerFlow>
+        let flow: Driver<Flow.Profile>
     }
 
     struct OutputProfile {

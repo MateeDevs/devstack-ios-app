@@ -60,7 +60,7 @@ class ProfileViewModelTests: BaseTestCase {
         let currentLocation: TestableObserver<String>
         let remoteConfigLabelIsHidden: TestableObserver<Bool>
         let registerForPushNotifications: TestableObserver<Bool>
-        let flow: TestableObserver<ProfileViewControllerFlow>
+        let flow: TestableObserver<Flow.Profile>
     }
     
     private struct OutputProfile {

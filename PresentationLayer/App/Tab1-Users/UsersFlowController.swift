@@ -22,7 +22,7 @@ class UsersFlowController: FlowController {
 
 // MARK: Users flow
 extension UsersFlowController {
-    func handleUsersFlow(_ flow: UsersViewControllerFlow) {
+    func handleUsersFlow(_ flow: Flow.Users) {
         switch flow {
         case .showUserDetailForId(let userId): showUserDetailForId(userId)
         }

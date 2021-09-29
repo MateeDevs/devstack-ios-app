@@ -53,7 +53,7 @@ class LoginViewModelTests: BaseTestCase {
     }
     
     private struct Output {
-        let flow: TestableObserver<LoginViewControllerFlow>
+        let flow: TestableObserver<Flow.Login>
         let alertAction: TestableObserver<AlertAction>
         let loginButtonEnabled: TestableObserver<Bool>
     }

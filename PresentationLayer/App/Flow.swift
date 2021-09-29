@@ -6,9 +6,8 @@
 import Foundation
 
 enum Flow {
-    case login(LoginViewControllerFlow)
-    case registration(RegistrationViewControllerFlow)
-    case users(UsersViewControllerFlow)
-    case profile(ProfileViewControllerFlow)
-    // case books(BooksViewControllerFlow)
+    case login(Login)
+    case registration(Registration)
+    case users(Users)
+    case profile(Profile)
 }
