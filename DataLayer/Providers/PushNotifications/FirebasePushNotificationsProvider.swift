@@ -16,8 +16,10 @@ public class FirebasePushNotificationsProvider: NSObject {
         self.application = application
         super.init()
         
-        // Start Firebase
-        FirebaseApp.configure()
+        // Start Firebase if not yet started
+        if FirebaseApp.app() == nil {
+            FirebaseApp.configure()
+        }
         
         // Setup delegates
         UNUserNotificationCenter.current().delegate = appDelegate
