@@ -282,6 +282,7 @@
 		459F8C2725F6D812004ACAD4 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C2625F6D812004ACAD4 /* RepositoryDependency.swift */; };
 		459F8C3725F6D86B004ACAD4 /* ProviderDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */; };
 		459F8C5225F6DA4E004ACAD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F8C5125F6DA4E004ACAD4 /* Constants.swift */; };
+		45AB0CAF270D13C400CEE9E1 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB0CAE270D13C400CEE9E1 /* BaseNavigationController.swift */; };
 		45B675AF260E104B00DF7387 /* UserDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675AE260E104B00DF7387 /* UserDetailViewModelTests.swift */; };
 		45B675B7260E237100DF7387 /* RegistrationUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675B6260E237100DF7387 /* RegistrationUseCaseTests.swift */; };
 		45B675D3260E239D00DF7387 /* GetUserUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675D2260E239D00DF7387 /* GetUserUseCaseTests.swift */; };
@@ -690,6 +691,7 @@
 		459F8C2625F6D812004ACAD4 /* RepositoryDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDependency.swift; sourceTree = "<group>"; };
 		459F8C3625F6D86B004ACAD4 /* ProviderDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDependency.swift; sourceTree = "<group>"; };
 		459F8C5125F6DA4E004ACAD4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		45AB0CAE270D13C400CEE9E1 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		45B675AE260E104B00DF7387 /* UserDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModelTests.swift; sourceTree = "<group>"; };
 		45B675B6260E237100DF7387 /* RegistrationUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUseCaseTests.swift; sourceTree = "<group>"; };
 		45B675D2260E239D00DF7387 /* GetUserUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserUseCaseTests.swift; sourceTree = "<group>"; };
@@ -1488,6 +1490,7 @@
 				459F87CE25F6A51B004ACAD4 /* UIButton */,
 				459F87CF25F6A520004ACAD4 /* UIImageView */,
 				459F87D525F6A552004ACAD4 /* UILabel */,
+				45AB0CAD270D13AE00CEE9E1 /* UINavigationController */,
 				459F87D425F6A54B004ACAD4 /* UINavigationItem */,
 				459F87D325F6A544004ACAD4 /* UITableViewCell */,
 				459F87D225F6A540004ACAD4 /* UITextField */,
@@ -1898,6 +1901,14 @@
 				459F8BE725F6D67F004ACAD4 /* Info.plist */,
 			);
 			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		45AB0CAD270D13AE00CEE9E1 /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				45AB0CAE270D13C400CEE9E1 /* BaseNavigationController.swift */,
+			);
+			path = UINavigationController;
 			sourceTree = "<group>";
 		};
 		45B675BE260E237C00DF7387 /* Auth */ = {
@@ -2687,6 +2698,7 @@
 				459F8AB025F6B478004ACAD4 /* UsersViewController.swift in Sources */,
 				459F89A525F6AF9C004ACAD4 /* UIScrollView+Extensions.swift in Sources */,
 				459F883A25F6A720004ACAD4 /* EnhancedLabel.swift in Sources */,
+				45AB0CAF270D13C400CEE9E1 /* BaseNavigationController.swift in Sources */,
 				455576F32678D7E70021B713 /* BooksViewModel.swift in Sources */,
 				459F88EB25F6AAAF004ACAD4 /* AppTheme.swift in Sources */,
 				459F898A25F6AE96004ACAD4 /* UIFont+Extensions.swift in Sources */,

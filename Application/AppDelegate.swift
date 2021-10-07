@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupEnvironment()
         
         // Init main window with navigation controller
-        let nc = UINavigationController()
+        let nc = BaseNavigationController(statusBarStyle: .lightContent)
         nc.navigationBar.isHidden = true
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = nc
