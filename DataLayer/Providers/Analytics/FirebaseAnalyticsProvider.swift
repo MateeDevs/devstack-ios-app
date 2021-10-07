@@ -4,11 +4,17 @@
 //
 
 import DomainLayer
+import Firebase
 import FirebaseAnalytics
 
 public struct FirebaseAnalyticsProvider {
     
     public init() {
+        // Start Firebase if not yet started
+        if FirebaseApp.app() == nil {
+            FirebaseApp.configure()
+        }
+        
         // Enable Firebase Analytics debug mode for non production environments
         // Idea taken from: https://stackoverflow.com/a/47594030/6947225
         if Environment.value.type != .production {

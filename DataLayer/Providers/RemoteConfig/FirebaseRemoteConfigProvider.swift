@@ -4,12 +4,18 @@
 //
 
 import DomainLayer
+import Firebase
 import FirebaseRemoteConfig
 import RxSwift
 
 public struct FirebaseRemoteConfigProvider {
     
     public init() {
+        // Start Firebase if not yet started
+        if FirebaseApp.app() == nil {
+            FirebaseApp.configure()
+        }
+        
         // Set fetch interval to zero for non production environments
         if Environment.value.type != .production {
             let settings = RemoteConfigSettings()
