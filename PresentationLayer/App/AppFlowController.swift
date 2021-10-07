@@ -22,12 +22,11 @@ public class AppFlowController: FlowController, MainFlowControllerDelegate, Onbo
         let fc = MainFlowController(navigationController: navigationController, dependencies: dependencies)
         fc.delegate = self
         let rootVC = startChildFlow(fc)
-        navigationController.navigationBar.barStyle = .black
         navigationController.viewControllers = [rootVC]
     }
     
     func presentOnboarding(animated: Bool, completion: (() -> Void)?) {
-        let nc = UINavigationController()
+        let nc = BaseNavigationController()
         let fc = OnboardingFlowController(navigationController: nc, dependencies: dependencies)
         fc.delegate = self
         let rootVC = startChildFlow(fc)
@@ -58,6 +57,7 @@ public class AppFlowController: FlowController, MainFlowControllerDelegate, Onbo
     
     private func setupAppearance() {
         // Navigation bar
+        UINavigationBar.appearance().tintColor = AppTheme.Colors.navBarTitle
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.backgroundColor = AppTheme.Colors.navBarBackground
@@ -66,7 +66,6 @@ public class AppFlowController: FlowController, MainFlowControllerDelegate, Onbo
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         } else {
             UINavigationBar.appearance().isTranslucent = false
-            UINavigationBar.appearance().tintColor = AppTheme.Colors.navBarTitle
             UINavigationBar.appearance().barTintColor = AppTheme.Colors.navBarBackground
             UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: AppTheme.Colors.navBarTitle]
         }

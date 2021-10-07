@@ -21,7 +21,7 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
     }
     
     private func setupUsersTab() -> UINavigationController {
-        let usersNC = UINavigationController()
+        let usersNC = BaseNavigationController()
         usersNC.tabBarItem = UITabBarItem(
             title: L10n.bottom_bar_item_1,
             image: Asset.Images.usersTabBar.image,
@@ -34,7 +34,7 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
     }
     
 //    private func setupBooksTab() -> UINavigationController {
-//        let booksNC = UINavigationController()
+//        let booksNC = BaseNavigationController()
 //        booksNC.tabBarItem = UITabBarItem(
 //            title: L10n.bottom_bar_item_4,
 //            image: Asset.Images.usersTabBar.image,
@@ -47,7 +47,7 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
 //    }
     
     private func setupProfileTab() -> UINavigationController {
-        let profileNC = UINavigationController()
+        let profileNC = BaseNavigationController()
         profileNC.tabBarItem = UITabBarItem(
             title: L10n.bottom_bar_item_2,
             image: Asset.Images.profileTabBar.image,
@@ -61,7 +61,7 @@ class MainFlowController: FlowController, ProfileFlowControllerDelegate {
     }
     
     private func setupCounterTab() -> UINavigationController {
-        let counterNC = UINavigationController()
+        let counterNC = BaseNavigationController()
         counterNC.tabBarItem = UITabBarItem(
             title: L10n.bottom_bar_item_3,
             image: Asset.Images.counterTabBar.image,
