@@ -5,7 +5,6 @@ on: workflow_dispatch
 jobs:
   sync-alpha:
     name: Sync Alpha
-    needs: build
     runs-on: [self-hosted, ios-alpha]
     timeout-minutes: 10
     steps:
@@ -17,7 +16,6 @@ jobs:
 
   sync-beta:
     name: Sync Beta
-    needs: build
     runs-on: [self-hosted, ios-beta]
     timeout-minutes: 10
     steps:
@@ -29,7 +27,6 @@ jobs:
 
   sync-production:
     name: Sync Production
-    needs: build
     runs-on: [self-hosted, ios-prod]
     timeout-minutes: 10
     steps:
