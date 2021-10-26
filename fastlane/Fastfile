@@ -46,7 +46,6 @@ production = {
 # Variables shared among all projects (do not change unless necessary)
 
 matee = {
-  apple_id: "mateefastlane@gmail.com",
   team_id_dev: "WNB34WBN42",
   team_id_connect: "120470944",
   match_branch: "matee",
@@ -68,7 +67,6 @@ match_url = "git@github.com:MateeDevs/match.git"
 # Variables to specify developer for production release
 
 client = {
-  apple_id: matee[:apple_id],
   team_id_dev: matee[:team_id_dev],
   team_id_connect: matee[:team_id_connect],
   match_branch: matee[:match_branch],
@@ -238,8 +236,13 @@ platform :ios do
 
   desc "Sync dSYM files"
   private_lane :dsym do |config|
+    app_store_connect_api_key(
+      key_id: config[:api_key_id],
+      issuer_id: config[:api_key_issuer_id],
+      key_content: ENV["APP_STORE_CONNECT_API_KEY_CONTENT"],
+      in_house: false
+    )
     download_dsyms(
-      username: config[:apple_id],
       team_id: config[:team_id_connect],
       app_identifier: config[:app_identifier],
       version: 'latest'
