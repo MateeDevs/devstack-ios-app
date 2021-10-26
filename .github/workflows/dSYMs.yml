@@ -1,0 +1,40 @@
+name: Sync dSYM files
+
+on: workflow_dispatch
+
+jobs:
+  sync-alpha:
+    name: Sync Alpha
+    needs: build
+    runs-on: [self-hosted, ios-alpha]
+    timeout-minutes: 10
+    steps:
+      - name: Sync Alpha dSYMs
+        env:
+          APP_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
+          SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
+        run: fastlane dsym_alpha
+
+  sync-beta:
+    name: Sync Beta
+    needs: build
+    runs-on: [self-hosted, ios-beta]
+    timeout-minutes: 10
+    steps:
+      - name: Sync Beta
+        env:
+          APP_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
+          SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
+        run: fastlane dsym_beta
+
+  sync-production:
+    name: Sync Production
+    needs: build
+    runs-on: [self-hosted, ios-prod]
+    timeout-minutes: 10
+    steps:
+      - name: Sync Production dSYMs
+        env:
+          APP_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
+          SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
+        run: fastlane dsym_production
