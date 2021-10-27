@@ -3,35 +3,27 @@ name: Sync dSYM files
 on: workflow_dispatch
 
 jobs:
-  sync-alpha:
-    name: Sync Alpha
-    runs-on: [self-hosted, ios-alpha]
+  sync:
+    name: Sync dSYM files
+    runs-on: [self-hosted, ios-internal]
     timeout-minutes: 10
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        continue-on-error: true
+        with:
+          clean: false
+      - name: Get path of Crashlytics upload-symbols
+        run: echo "UPLOAD_SYMBOLS_PATH=`xcodebuild -project *.xcodeproj -showBuildSettings | grep -m 1 "BUILD_DIR" | grep -oEi "\/.*" | sed 's:Build/Products:SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/upload-symbols:' | tr -d '\n'`" >> $GITHUB_ENV
       - name: Sync Alpha dSYMs
         env:
           APP_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
-          SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
         run: fastlane dsym_alpha
-
-  sync-beta:
-    name: Sync Beta
-    runs-on: [self-hosted, ios-beta]
-    timeout-minutes: 10
-    steps:
-      - name: Sync Beta
+      - name: Sync Beta dSYMs
         env:
           APP_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
-          SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
         run: fastlane dsym_beta
-
-  sync-production:
-    name: Sync Production
-    runs-on: [self-hosted, ios-prod]
-    timeout-minutes: 10
-    steps:
       - name: Sync Production dSYMs
         env:
           APP_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_MATEE }}
-          SLACK_URL: ${{ secrets.FASTLANE_SLACK_URL }}
         run: fastlane dsym_production

@@ -248,8 +248,10 @@ platform :ios do
       version: 'latest'
     )
     upload_symbols_to_crashlytics(
-      gsp_path: config[:gsp_path]
+      gsp_path: config[:gsp_path],
+      binary_path: ENV["UPLOAD_SYMBOLS_PATH"]
     )
+    clean_build_artifacts
   end
 
   # GIT TAG
