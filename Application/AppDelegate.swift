@@ -4,7 +4,7 @@
 //
 
 #if ALPHA || BETA
-import Atlantis
+// import Atlantis
 #endif
 
 import DataLayer
@@ -72,11 +72,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Setup environment
     private func setupEnvironment() {
         #if ALPHA
-        Atlantis.start()
+        // Atlantis.start()
         Environment.value = EnvironmentValue(type: .alpha)
         Logger.info("ALPHA environment", category: .app)
         #elseif BETA
-        Atlantis.start()
+        // Atlantis.start()
         Environment.value = EnvironmentValue(type: .beta)
         Logger.info("BETA environment", category: .app)
         #elseif PRODUCTION
