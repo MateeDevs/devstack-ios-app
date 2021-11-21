@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4515098E27010C3300EC0B7B /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 4515098D27010C3300EC0B7B /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		451509A527039CDE00EC0B7B /* AnalyticsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451509A427039CDE00EC0B7B /* AnalyticsRepositoryTests.swift */; };
 		451509A82703A78500EC0B7B /* TrackAnalyticsEventUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451509A72703A78500EC0B7B /* TrackAnalyticsEventUseCaseTests.swift */; };
 		451FAFC425FBFBAE00171EDB /* DomainRepresentable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451FAFC325FBFBAE00171EDB /* DomainRepresentable+Extensions.swift */; };
@@ -24,26 +23,16 @@
 		4530D2352612BA6200A5520D /* GetRemoteConfigValueUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D2342612BA6200A5520D /* GetRemoteConfigValueUseCaseTests.swift */; };
 		4530D2432612BB2D00A5520D /* UpdateUserUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D2422612BB2D00A5520D /* UpdateUserUseCaseTests.swift */; };
 		4530D24E2613153300A5520D /* ProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4530D24D2613153300A5520D /* ProfileViewModelTests.swift */; };
-		4534C11026036AA10022ACF4 /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582185825F25D5800D587EB /* DataLayer.framework */; };
-		4534C11126036AA10022ACF4 /* DependencyInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */; };
-		4534C11226036AA10022ACF4 /* DomainLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; };
-		4534C11326036AA10022ACF4 /* PresentationLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458218BA25F25E4300D587EB /* PresentationLayer.framework */; };
 		4534C14F2603706B0022ACF4 /* RepositoryDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C14E2603706B0022ACF4 /* RepositoryDependencyMock.swift */; };
 		4534C1A32603C98F0022ACF4 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C1A22603C98F0022ACF4 /* Mocks.swift */; };
 		4534C249260427A40022ACF4 /* RegistrationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C248260427A40022ACF4 /* RegistrationViewModelTests.swift */; };
 		4534C2512604280D0022ACF4 /* RegistrationData+Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C2502604280D0022ACF4 /* RegistrationData+Stubs.swift */; };
 		4534C25926042E780022ACF4 /* UsersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534C25826042E780022ACF4 /* UsersViewModelTests.swift */; };
-		454AAD1F26050B7B0098A3E1 /* SwiftyMocky in Frameworks */ = {isa = PBXBuildFile; productRef = 454AAD1E26050B7B0098A3E1 /* SwiftyMocky */; };
 		454AAD2026050B800098A3E1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4534C1C42603D6AD0022ACF4 /* XCTest.framework */; };
 		454AC06524A221B300D6F367 /* ProviderDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454AC06424A221B300D6F367 /* ProviderDependencyMock.swift */; };
 		454F6EC426CE8B3900C386B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 454F6EC226CE8B3500C386B8 /* InfoPlist.strings */; };
 		455500392615DEEE006B5B69 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557195C24A15C3200FB24CA /* LoginViewModelTests.swift */; };
 		4558D30B20FCC8FF005BC325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4558D30A20FCC8FF005BC325 /* AppDelegate.swift */; };
-		456E744F25F83458007D9A6D /* DependencyInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */; };
-		456E745225F83459007D9A6D /* DomainLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; };
-		456E745D25F83460007D9A6D /* DomainLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; };
-		456E746525F83464007D9A6D /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582185825F25D5800D587EB /* DataLayer.framework */; };
-		456E746825F83465007D9A6D /* DomainLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4582188625F25E3300D587EB /* DomainLayer.framework */; };
 		4575E65625F6FA7600CCC003 /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4575E65525F6FA7600CCC003 /* AppIcon.xcassets */; };
 		4580685F2612A6CB000E96A0 /* LoginData+Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580685E2612A6CB000E96A0 /* LoginData+Stubs.swift */; };
 		4580688C2612A7B5000E96A0 /* UseCaseDependencyMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580688B2612A7B5000E96A0 /* UseCaseDependencyMock.swift */; };
@@ -55,6 +44,7 @@
 		4583E850272F47D7002D1E1C /* PresentationLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 4583E84F272F47D7002D1E1C /* PresentationLayer */; };
 		458C1ACD24A347E600549420 /* DatabaseProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C1ACC24A347E600549420 /* DatabaseProviderMock.swift */; };
 		4597626F20FDF0810034DE29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4597626E20FDF0810034DE29 /* LaunchScreen.storyboard */; };
+		459C3707274B001B00536110 /* Atlantis in Frameworks */ = {isa = PBXBuildFile; productRef = 459C3706274B001B00536110 /* Atlantis */; };
 		45B675AF260E104B00DF7387 /* UserDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675AE260E104B00DF7387 /* UserDetailViewModelTests.swift */; };
 		45B675B7260E237100DF7387 /* RegistrationUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675B6260E237100DF7387 /* RegistrationUseCaseTests.swift */; };
 		45B675D3260E239D00DF7387 /* GetUserUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B675D2260E239D00DF7387 /* GetUserUseCaseTests.swift */; };
@@ -67,67 +57,9 @@
 		45F36B11261324250053BA9A /* CounterSharedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F36B10261324250053BA9A /* CounterSharedViewModelTests.swift */; };
 		45F36B1F2613249F0053BA9A /* CounterControlViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F36B1E2613249F0053BA9A /* CounterControlViewModelTests.swift */; };
 		45F36B2D261324A90053BA9A /* CounterDisplayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F36B2C261324A90053BA9A /* CounterDisplayViewModelTests.swift */; };
-		45F58FF726F925C400BEDFCC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45F58FF626F925C400BEDFCC /* RxSwift */; };
-		45F58FF926F925D200BEDFCC /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 45F58FF826F925D200BEDFCC /* RxCocoa */; };
-		45F58FFB26F925D200BEDFCC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45F58FFA26F925D200BEDFCC /* RxSwift */; };
-		45F58FFD26F925D800BEDFCC /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 45F58FFC26F925D800BEDFCC /* SkeletonView */; };
-		45F58FFF26F925DC00BEDFCC /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 45F58FFE26F925DC00BEDFCC /* AlamofireImage */; };
-		45F5900126F9260D00BEDFCC /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 45F5900026F9260D00BEDFCC /* Moya */; };
-		45F5900326F9260D00BEDFCC /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 45F5900226F9260D00BEDFCC /* RxMoya */; };
-		45F5900526F9260D00BEDFCC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 45F5900426F9260D00BEDFCC /* Realm */; };
-		45F5900726F9260D00BEDFCC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45F5900626F9260D00BEDFCC /* RealmSwift */; };
-		45F5900926F9260D00BEDFCC /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = 45F5900826F9260D00BEDFCC /* RxRealm */; };
-		45F5900B26F9260D00BEDFCC /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 45F5900A26F9260D00BEDFCC /* KeychainAccess */; };
-		45F5900D26F9260D00BEDFCC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 45F5900C26F9260D00BEDFCC /* FirebaseMessaging */; };
-		45F5900F26F9260D00BEDFCC /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 45F5900E26F9260D00BEDFCC /* FirebaseRemoteConfig */; };
-		45F5901126F9260D00BEDFCC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45F5901026F9260D00BEDFCC /* RxSwift */; };
-		45F5901526F9262C00BEDFCC /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 45F5901426F9262C00BEDFCC /* RxTest */; };
-		45F5901726F928B100BEDFCC /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 45F5901626F928B100BEDFCC /* RxCocoa */; };
-		45F5901926F928BA00BEDFCC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45F5901826F928BA00BEDFCC /* RxSwift */; };
-		45F5901B26F9296800BEDFCC /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 45F5901A26F9296800BEDFCC /* DevstackKmpShared */; };
-		45F5901D26F9296E00BEDFCC /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 45F5901C26F9296E00BEDFCC /* DevstackKmpShared */; };
-		45F5901F26F9297B00BEDFCC /* DevstackKmpShared in Frameworks */ = {isa = PBXBuildFile; productRef = 45F5901E26F9297B00BEDFCC /* DevstackKmpShared */; };
 		45FB498324A3D7C000932918 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB498224A3D7C000932918 /* BaseTestCase.swift */; };
 		45FBAABC260A992700617C25 /* NETUser+Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FBAABB260A992700617C25 /* NETUser+Stubs.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		45821A5825F2646700D587EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4582188525F25E3300D587EB;
-			remoteInfo = DomainLayer;
-		};
-		45821A6025F2647B00D587EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4582188525F25E3300D587EB;
-			remoteInfo = DomainLayer;
-		};
-		459F8C1825F6D798004ACAD4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4582185725F25D5800D587EB;
-			remoteInfo = DataLayer;
-		};
-		459F8C1C25F6D798004ACAD4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4582188525F25E3300D587EB;
-			remoteInfo = DomainLayer;
-		};
-		459F8C4825F6D96F004ACAD4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4558D2FF20FCC8FF005BC325 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 459F8BE325F6D67F004ACAD4;
-			remoteInfo = DependencyInjection;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		450392842256B29D0037BF42 /* GoogleService-Info-Alpha.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Alpha.plist"; sourceTree = "<group>"; };
@@ -179,13 +111,9 @@
 		4580688B2612A7B5000E96A0 /* UseCaseDependencyMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseDependencyMock.swift; sourceTree = "<group>"; };
 		458068AB2612A82E000E96A0 /* NetworkProviderMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProviderMock.swift; sourceTree = "<group>"; };
 		458068DD2612A89B000E96A0 /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		4582185825F25D5800D587EB /* DataLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4582188625F25E3300D587EB /* DomainLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DomainLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		458218BA25F25E4300D587EB /* PresentationLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PresentationLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		458C1ACC24A347E600549420 /* DatabaseProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProviderMock.swift; sourceTree = "<group>"; };
 		4597626E20FDF0810034DE29 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		459896B026129CB300C852E0 /* Info+Proxyman.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info+Proxyman.plist"; sourceTree = "<group>"; };
-		459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependencyInjection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B675AE260E104B00DF7387 /* UserDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModelTests.swift; sourceTree = "<group>"; };
 		45B675B6260E237100DF7387 /* RegistrationUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUseCaseTests.swift; sourceTree = "<group>"; };
 		45B675D2260E239D00DF7387 /* GetUserUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserUseCaseTests.swift; sourceTree = "<group>"; };
@@ -207,16 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45F5901926F928BA00BEDFCC /* RxSwift in Frameworks */,
-				45F5901B26F9296800BEDFCC /* DevstackKmpShared in Frameworks */,
-				45F5901526F9262C00BEDFCC /* RxTest in Frameworks */,
 				454AAD2026050B800098A3E1 /* XCTest.framework in Frameworks */,
-				4534C11026036AA10022ACF4 /* DataLayer.framework in Frameworks */,
-				4534C11126036AA10022ACF4 /* DependencyInjection.framework in Frameworks */,
-				4534C11226036AA10022ACF4 /* DomainLayer.framework in Frameworks */,
-				4534C11326036AA10022ACF4 /* PresentationLayer.framework in Frameworks */,
-				45F5901726F928B100BEDFCC /* RxCocoa in Frameworks */,
-				454AAD1F26050B7B0098A3E1 /* SwiftyMocky in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,58 +145,9 @@
 			files = (
 				4583E84E272F47D1002D1E1C /* DomainLayer in Frameworks */,
 				4583E84C272F47CD002D1E1C /* DependencyInjection in Frameworks */,
+				459C3707274B001B00536110 /* Atlantis in Frameworks */,
 				4583E84A272F47C6002D1E1C /* DataLayer in Frameworks */,
 				4583E850272F47D7002D1E1C /* PresentationLayer in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4582185525F25D5800D587EB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45F5900F26F9260D00BEDFCC /* FirebaseRemoteConfig in Frameworks */,
-				45F5900D26F9260D00BEDFCC /* FirebaseMessaging in Frameworks */,
-				45F5901126F9260D00BEDFCC /* RxSwift in Frameworks */,
-				45F5900926F9260D00BEDFCC /* RxRealm in Frameworks */,
-				4515098E27010C3300EC0B7B /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
-				45F5900326F9260D00BEDFCC /* RxMoya in Frameworks */,
-				45F5900B26F9260D00BEDFCC /* KeychainAccess in Frameworks */,
-				45F5900126F9260D00BEDFCC /* Moya in Frameworks */,
-				45F5900526F9260D00BEDFCC /* Realm in Frameworks */,
-				45F5900726F9260D00BEDFCC /* RealmSwift in Frameworks */,
-				456E745D25F83460007D9A6D /* DomainLayer.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4582188325F25E3300D587EB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45F58FF726F925C400BEDFCC /* RxSwift in Frameworks */,
-				45F5901F26F9297B00BEDFCC /* DevstackKmpShared in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		458218B725F25E4300D587EB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45F58FF926F925D200BEDFCC /* RxCocoa in Frameworks */,
-				456E745225F83459007D9A6D /* DomainLayer.framework in Frameworks */,
-				45F58FFB26F925D200BEDFCC /* RxSwift in Frameworks */,
-				456E744F25F83458007D9A6D /* DependencyInjection.framework in Frameworks */,
-				45F58FFD26F925D800BEDFCC /* SkeletonView in Frameworks */,
-				45F58FFF26F925DC00BEDFCC /* AlamofireImage in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		459F8BE125F6D67F004ACAD4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				456E746825F83465007D9A6D /* DomainLayer.framework in Frameworks */,
-				456E746525F83464007D9A6D /* DataLayer.framework in Frameworks */,
-				45F5901D26F9296E00BEDFCC /* DevstackKmpShared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,10 +353,6 @@
 			children = (
 				4558D30720FCC8FF005BC325 /* DevStack.app */,
 				4557194924A155ED00FB24CA /* Tests.xctest */,
-				4582185825F25D5800D587EB /* DataLayer.framework */,
-				4582188625F25E3300D587EB /* DomainLayer.framework */,
-				458218BA25F25E4300D587EB /* PresentationLayer.framework */,
-				459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -607,37 +473,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		4582185325F25D5800D587EB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4582188125F25E3300D587EB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		458218B525F25E4300D587EB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		459F8BDF25F6D67F004ACAD4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		4557194824A155ED00FB24CA /* Tests */ = {
 			isa = PBXNativeTarget;
@@ -654,11 +489,6 @@
 			);
 			name = Tests;
 			packageProductDependencies = (
-				454AAD1E26050B7B0098A3E1 /* SwiftyMocky */,
-				45F5901426F9262C00BEDFCC /* RxTest */,
-				45F5901626F928B100BEDFCC /* RxCocoa */,
-				45F5901826F928BA00BEDFCC /* RxSwift */,
-				45F5901A26F9296800BEDFCC /* DevstackKmpShared */,
 			);
 			productName = DevStackTests;
 			productReference = 4557194924A155ED00FB24CA /* Tests.xctest */;
@@ -668,6 +498,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4558D31920FCC900005BC325 /* Build configuration list for PBXNativeTarget "DevStack" */;
 			buildPhases = (
+				459C3704274AFE1300536110 /* Script for Twine */,
+				459C3705274AFE2A00536110 /* Script for SwiftGen */,
 				0C3E096223F6B3950051287D /* Script for SwiftLint */,
 				4558D30320FCC8FF005BC325 /* Sources */,
 				4558D30420FCC8FF005BC325 /* Frameworks */,
@@ -686,114 +518,11 @@
 				4583E84B272F47CD002D1E1C /* DependencyInjection */,
 				4583E84D272F47D1002D1E1C /* DomainLayer */,
 				4583E84F272F47D7002D1E1C /* PresentationLayer */,
+				459C3706274B001B00536110 /* Atlantis */,
 			);
 			productName = DevStack;
 			productReference = 4558D30720FCC8FF005BC325 /* DevStack.app */;
 			productType = "com.apple.product-type.application";
-		};
-		4582185725F25D5800D587EB /* DataLayer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4582186F25F25D5900D587EB /* Build configuration list for PBXNativeTarget "DataLayer" */;
-			buildPhases = (
-				4582185325F25D5800D587EB /* Headers */,
-				4582185425F25D5800D587EB /* Sources */,
-				4582185525F25D5800D587EB /* Frameworks */,
-				4582185625F25D5800D587EB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				45821A6125F2647B00D587EB /* PBXTargetDependency */,
-			);
-			name = DataLayer;
-			packageProductDependencies = (
-				45F5900026F9260D00BEDFCC /* Moya */,
-				45F5900226F9260D00BEDFCC /* RxMoya */,
-				45F5900426F9260D00BEDFCC /* Realm */,
-				45F5900626F9260D00BEDFCC /* RealmSwift */,
-				45F5900826F9260D00BEDFCC /* RxRealm */,
-				45F5900A26F9260D00BEDFCC /* KeychainAccess */,
-				45F5900C26F9260D00BEDFCC /* FirebaseMessaging */,
-				45F5900E26F9260D00BEDFCC /* FirebaseRemoteConfig */,
-				45F5901026F9260D00BEDFCC /* RxSwift */,
-				4515098D27010C3300EC0B7B /* FirebaseAnalyticsWithoutAdIdSupport */,
-			);
-			productName = DataLayer;
-			productReference = 4582185825F25D5800D587EB /* DataLayer.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		4582188525F25E3300D587EB /* DomainLayer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4582189D25F25E3400D587EB /* Build configuration list for PBXNativeTarget "DomainLayer" */;
-			buildPhases = (
-				4582188125F25E3300D587EB /* Headers */,
-				4582188225F25E3300D587EB /* Sources */,
-				4582188325F25E3300D587EB /* Frameworks */,
-				4582188425F25E3300D587EB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DomainLayer;
-			packageProductDependencies = (
-				45F58FF626F925C400BEDFCC /* RxSwift */,
-				45F5901E26F9297B00BEDFCC /* DevstackKmpShared */,
-			);
-			productName = DomainLayer;
-			productReference = 4582188625F25E3300D587EB /* DomainLayer.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		458218B925F25E4300D587EB /* PresentationLayer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 458218D125F25E4400D587EB /* Build configuration list for PBXNativeTarget "PresentationLayer" */;
-			buildPhases = (
-				459F8B6D25F6B6BA004ACAD4 /* Script for Twine */,
-				459F8B6E25F6B6D6004ACAD4 /* Script for SwiftGen */,
-				458218B525F25E4300D587EB /* Headers */,
-				458218B625F25E4300D587EB /* Sources */,
-				458218B725F25E4300D587EB /* Frameworks */,
-				458218B825F25E4300D587EB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				45821A5925F2646700D587EB /* PBXTargetDependency */,
-				459F8C4925F6D96F004ACAD4 /* PBXTargetDependency */,
-			);
-			name = PresentationLayer;
-			packageProductDependencies = (
-				45F58FF826F925D200BEDFCC /* RxCocoa */,
-				45F58FFA26F925D200BEDFCC /* RxSwift */,
-				45F58FFC26F925D800BEDFCC /* SkeletonView */,
-				45F58FFE26F925DC00BEDFCC /* AlamofireImage */,
-			);
-			productName = PresentationLayer;
-			productReference = 458218BA25F25E4300D587EB /* PresentationLayer.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		459F8BE325F6D67F004ACAD4 /* DependencyInjection */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 459F8BF325F6D67F004ACAD4 /* Build configuration list for PBXNativeTarget "DependencyInjection" */;
-			buildPhases = (
-				459F8BDF25F6D67F004ACAD4 /* Headers */,
-				459F8BE025F6D67F004ACAD4 /* Sources */,
-				459F8BE125F6D67F004ACAD4 /* Frameworks */,
-				459F8BE225F6D67F004ACAD4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				459F8C1925F6D798004ACAD4 /* PBXTargetDependency */,
-				459F8C1D25F6D798004ACAD4 /* PBXTargetDependency */,
-			);
-			name = DependencyInjection;
-			packageProductDependencies = (
-				45F5901C26F9296E00BEDFCC /* DevstackKmpShared */,
-			);
-			productName = DependencyInjection;
-			productReference = 459F8BE425F6D67F004ACAD4 /* DependencyInjection.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -811,22 +540,6 @@
 					4558D30620FCC8FF005BC325 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
-					4582185725F25D5800D587EB = {
-						CreatedOnToolsVersion = 12.4;
-						LastSwiftMigration = 1240;
-					};
-					4582188525F25E3300D587EB = {
-						CreatedOnToolsVersion = 12.4;
-						LastSwiftMigration = 1240;
-					};
-					458218B925F25E4300D587EB = {
-						CreatedOnToolsVersion = 12.4;
-						LastSwiftMigration = 1240;
-					};
-					459F8BE325F6D67F004ACAD4 = {
-						CreatedOnToolsVersion = 12.4;
-						LastSwiftMigration = 1240;
-					};
 				};
 			};
 			buildConfigurationList = 4558D30220FCC8FF005BC325 /* Build configuration list for PBXProject "DevStack" */;
@@ -841,27 +554,13 @@
 			);
 			mainGroup = 4558D2FE20FCC8FF005BC325;
 			packageReferences = (
-				45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */,
-				45840CA925ACE69A00DFC729 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
-				45840CB025ACE7A800DFC729 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
-				45840CBD25ACE84900DFC729 /* XCRemoteSwiftPackageReference "RxRealm" */,
-				45840CC425ACE89800DFC729 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
-				45840CCB25ACE8E900DFC729 /* XCRemoteSwiftPackageReference "SkeletonView" */,
-				4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */,
-				45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */,
-				4534C17D2603BF050022ACF4 /* XCRemoteSwiftPackageReference "SwiftyMocky" */,
 			);
 			productRefGroup = 4558D30820FCC8FF005BC325 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				4558D30620FCC8FF005BC325 /* DevStack */,
-				458218B925F25E4300D587EB /* PresentationLayer */,
-				4582188525F25E3300D587EB /* DomainLayer */,
-				4582185725F25D5800D587EB /* DataLayer */,
-				459F8BE325F6D67F004ACAD4 /* DependencyInjection */,
 				4557194824A155ED00FB24CA /* Tests */,
 			);
 		};
@@ -882,34 +581,6 @@
 				4575E65625F6FA7600CCC003 /* AppIcon.xcassets in Resources */,
 				454F6EC426CE8B3900C386B8 /* InfoPlist.strings in Resources */,
 				4597626F20FDF0810034DE29 /* LaunchScreen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4582185625F25D5800D587EB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4582188425F25E3300D587EB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		458218B825F25E4300D587EB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		459F8BE225F6D67F004ACAD4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1002,7 +673,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${BUILD_DIR%Build/*}SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
-		459F8B6D25F6B6BA004ACAD4 /* Script for Twine */ = {
+		459C3704274AFE1300536110 /* Script for Twine */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1020,7 +691,7 @@
 			shellPath = /bin/sh;
 			shellScript = "scripts/twine.sh\n";
 		};
-		459F8B6E25F6B6D6004ACAD4 /* Script for SwiftGen */ = {
+		459C3705274AFE2A00536110 /* Script for SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1098,63 +769,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4582185425F25D5800D587EB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4582188225F25E3300D587EB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		458218B625F25E4300D587EB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		459F8BE025F6D67F004ACAD4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		45821A5925F2646700D587EB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4582188525F25E3300D587EB /* DomainLayer */;
-			targetProxy = 45821A5825F2646700D587EB /* PBXContainerItemProxy */;
-		};
-		45821A6125F2647B00D587EB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4582188525F25E3300D587EB /* DomainLayer */;
-			targetProxy = 45821A6025F2647B00D587EB /* PBXContainerItemProxy */;
-		};
-		459F8C1925F6D798004ACAD4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4582185725F25D5800D587EB /* DataLayer */;
-			targetProxy = 459F8C1825F6D798004ACAD4 /* PBXContainerItemProxy */;
-		};
-		459F8C1D25F6D798004ACAD4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4582188525F25E3300D587EB /* DomainLayer */;
-			targetProxy = 459F8C1C25F6D798004ACAD4 /* PBXContainerItemProxy */;
-		};
-		459F8C4925F6D96F004ACAD4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 459F8BE325F6D67F004ACAD4 /* DependencyInjection */;
-			targetProxy = 459F8C4825F6D96F004ACAD4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		454F6EC226CE8B3500C386B8 /* InfoPlist.strings */ = {
@@ -1828,826 +1443,6 @@
 			};
 			name = Release;
 		};
-		4582187025F25D5900D587EB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WNB34WBN42;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DataLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		4582187125F25D5900D587EB /* Beta Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WNB34WBN42;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DataLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Beta Debug";
-		};
-		4582187225F25D5900D587EB /* Alpha Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WNB34WBN42;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DataLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Alpha Debug";
-		};
-		4582187325F25D5900D587EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DataLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		4582187425F25D5900D587EB /* Beta Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DataLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Beta Release";
-		};
-		4582187525F25D5900D587EB /* Alpha Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DataLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Alpha Release";
-		};
-		4582189E25F25E3400D587EB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WNB34WBN42;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DomainLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		4582189F25F25E3400D587EB /* Beta Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WNB34WBN42;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DomainLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Beta Debug";
-		};
-		458218A025F25E3400D587EB /* Alpha Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WNB34WBN42;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DomainLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Alpha Debug";
-		};
-		458218A125F25E3400D587EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DomainLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		458218A225F25E3400D587EB /* Beta Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DomainLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Beta Release";
-		};
-		458218A325F25E3400D587EB /* Alpha Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DomainLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Alpha Release";
-		};
-		458218D225F25E4400D587EB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WNB34WBN42;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.PresentationLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		458218D325F25E4400D587EB /* Beta Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WNB34WBN42;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.PresentationLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Beta Debug";
-		};
-		458218D425F25E4400D587EB /* Alpha Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WNB34WBN42;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.PresentationLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Alpha Debug";
-		};
-		458218D525F25E4400D587EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.PresentationLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		458218D625F25E4400D587EB /* Beta Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.PresentationLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Beta Release";
-		};
-		458218D725F25E4400D587EB /* Alpha Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.PresentationLayer;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Alpha Release";
-		};
-		459F8BED25F6D67F004ACAD4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WNB34WBN42;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DependencyInjection;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		459F8BEE25F6D67F004ACAD4 /* Beta Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WNB34WBN42;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DependencyInjection;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Beta Debug";
-		};
-		459F8BEF25F6D67F004ACAD4 /* Alpha Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WNB34WBN42;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DependencyInjection;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Alpha Debug";
-		};
-		459F8BF025F6D67F004ACAD4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DependencyInjection;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		459F8BF125F6D67F004ACAD4 /* Beta Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DependencyInjection;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Beta Release";
-		};
-		459F8BF225F6D67F004ACAD4 /* Alpha Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.matee.devstack.DependencyInjection;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Alpha Release";
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2690,125 +1485,9 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4582186F25F25D5900D587EB /* Build configuration list for PBXNativeTarget "DataLayer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4582187025F25D5900D587EB /* Debug */,
-				4582187125F25D5900D587EB /* Beta Debug */,
-				4582187225F25D5900D587EB /* Alpha Debug */,
-				4582187325F25D5900D587EB /* Release */,
-				4582187425F25D5900D587EB /* Beta Release */,
-				4582187525F25D5900D587EB /* Alpha Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4582189D25F25E3400D587EB /* Build configuration list for PBXNativeTarget "DomainLayer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4582189E25F25E3400D587EB /* Debug */,
-				4582189F25F25E3400D587EB /* Beta Debug */,
-				458218A025F25E3400D587EB /* Alpha Debug */,
-				458218A125F25E3400D587EB /* Release */,
-				458218A225F25E3400D587EB /* Beta Release */,
-				458218A325F25E3400D587EB /* Alpha Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		458218D125F25E4400D587EB /* Build configuration list for PBXNativeTarget "PresentationLayer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				458218D225F25E4400D587EB /* Debug */,
-				458218D325F25E4400D587EB /* Beta Debug */,
-				458218D425F25E4400D587EB /* Alpha Debug */,
-				458218D525F25E4400D587EB /* Release */,
-				458218D625F25E4400D587EB /* Beta Release */,
-				458218D725F25E4400D587EB /* Alpha Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		459F8BF325F6D67F004ACAD4 /* Build configuration list for PBXNativeTarget "DependencyInjection" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				459F8BED25F6D67F004ACAD4 /* Debug */,
-				459F8BEE25F6D67F004ACAD4 /* Beta Debug */,
-				459F8BEF25F6D67F004ACAD4 /* Alpha Debug */,
-				459F8BF025F6D67F004ACAD4 /* Release */,
-				459F8BF125F6D67F004ACAD4 /* Beta Release */,
-				459F8BF225F6D67F004ACAD4 /* Alpha Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4534C17D2603BF050022ACF4 /* XCRemoteSwiftPackageReference "SwiftyMocky" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MakeAWishFoundation/SwiftyMocky";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.4;
-			};
-		};
-		4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
-			};
-		};
-		45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.0;
-			};
-		};
-		45840CA925ACE69A00DFC729 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/AlamofireImage";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.1.0;
-			};
-		};
-		45840CB025ACE7A800DFC729 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-cocoa";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.5.0;
-			};
-		};
-		45840CBD25ACE84900DFC729 /* XCRemoteSwiftPackageReference "RxRealm" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxRealm";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		45840CC425ACE89800DFC729 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.2.1;
-			};
-		};
-		45840CCB25ACE8E900DFC729 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Juanpe/SkeletonView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.11.0;
-			};
-		};
 		459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ProxymanApp/atlantis";
@@ -2817,35 +1496,9 @@
 				minimumVersion = 1.7.1;
 			};
 		};
-		45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:MateeDevs/devstack-kmp-app.git";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
-		45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4515098D27010C3300EC0B7B /* FirebaseAnalyticsWithoutAdIdSupport */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsWithoutAdIdSupport;
-		};
-		454AAD1E26050B7B0098A3E1 /* SwiftyMocky */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4534C17D2603BF050022ACF4 /* XCRemoteSwiftPackageReference "SwiftyMocky" */;
-			productName = SwiftyMocky;
-		};
 		4583E849272F47C6002D1E1C /* DataLayer */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DataLayer;
@@ -2862,105 +1515,10 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = PresentationLayer;
 		};
-		45F58FF626F925C400BEDFCC /* RxSwift */ = {
+		459C3706274B001B00536110 /* Atlantis */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		45F58FF826F925D200BEDFCC /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		45F58FFA26F925D200BEDFCC /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		45F58FFC26F925D800BEDFCC /* SkeletonView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840CCB25ACE8E900DFC729 /* XCRemoteSwiftPackageReference "SkeletonView" */;
-			productName = SkeletonView;
-		};
-		45F58FFE26F925DC00BEDFCC /* AlamofireImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840CA925ACE69A00DFC729 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
-			productName = AlamofireImage;
-		};
-		45F5900026F9260D00BEDFCC /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		45F5900226F9260D00BEDFCC /* RxMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840C9C25ACE5BB00DFC729 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = RxMoya;
-		};
-		45F5900426F9260D00BEDFCC /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840CB025ACE7A800DFC729 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = Realm;
-		};
-		45F5900626F9260D00BEDFCC /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840CB025ACE7A800DFC729 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = RealmSwift;
-		};
-		45F5900826F9260D00BEDFCC /* RxRealm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840CBD25ACE84900DFC729 /* XCRemoteSwiftPackageReference "RxRealm" */;
-			productName = RxRealm;
-		};
-		45F5900A26F9260D00BEDFCC /* KeychainAccess */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45840CC425ACE89800DFC729 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
-			productName = KeychainAccess;
-		};
-		45F5900C26F9260D00BEDFCC /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
-		};
-		45F5900E26F9260D00BEDFCC /* FirebaseRemoteConfig */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4576CED425ACF50F00218229 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseRemoteConfig;
-		};
-		45F5901026F9260D00BEDFCC /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		45F5901426F9262C00BEDFCC /* RxTest */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxTest;
-		};
-		45F5901626F928B100BEDFCC /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		45F5901826F928BA00BEDFCC /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45E4337425F6E99D00974991 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		45F5901A26F9296800BEDFCC /* DevstackKmpShared */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
-			productName = DevstackKmpShared;
-		};
-		45F5901C26F9296E00BEDFCC /* DevstackKmpShared */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
-			productName = DevstackKmpShared;
-		};
-		45F5901E26F9297B00BEDFCC /* DevstackKmpShared */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45C45B5326124BD80076991C /* XCRemoteSwiftPackageReference "devstack-kmp-app" */;
-			productName = DevstackKmpShared;
+			package = 459EF41025BF6EEF00C9DAC0 /* XCRemoteSwiftPackageReference "atlantis" */;
+			productName = Atlantis;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
