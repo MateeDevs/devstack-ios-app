@@ -17,7 +17,7 @@ public struct FirebaseAnalyticsProvider {
         
         // Enable Firebase Analytics debug mode for non production environments
         // Idea taken from: https://stackoverflow.com/a/47594030/6947225
-        if Environment.value.type != .production {
+        if Environment.type != .production {
             var args = ProcessInfo.processInfo.arguments
             args.append("-FIRAnalyticsDebugEnabled")
             ProcessInfo.processInfo.setValue(args, forKey: "arguments")

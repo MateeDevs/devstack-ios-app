@@ -26,14 +26,14 @@ enum TextFieldType {
     // MARK: Stored properties
     @IBInspectable var title: String = "" {
         didSet {
-            titleLabel.text = NSLocalizedString(title, bundle: Bundle.current, comment: "")
+            titleLabel.text = NSLocalizedString(title, bundle: .module, comment: "")
             titleLabel.isHidden = title.isEmpty
         }
     }
 
     @IBInspectable var placeholder: String = "" {
         didSet {
-            textField.placeholder = NSLocalizedString(placeholder, bundle: Bundle.current, comment: "")
+            textField.placeholder = NSLocalizedString(placeholder, bundle: .module, comment: "")
         }
     }
 
@@ -48,7 +48,7 @@ enum TextFieldType {
 
     @IBInspectable var hint: String = "" {
         didSet {
-            hintLabel.text = NSLocalizedString(hint, bundle: Bundle.current, comment: "")
+            hintLabel.text = NSLocalizedString(hint, bundle: .module, comment: "")
             hintLabel.isHidden = hint.isEmpty
         }
     }

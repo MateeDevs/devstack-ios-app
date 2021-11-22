@@ -35,10 +35,34 @@
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4557194824A155ED00FB24CA"
-               BuildableName = "Tests.xctest"
-               BlueprintName = "Tests"
-               ReferencedContainer = "container:DevStack.xcodeproj">
+               BlueprintIdentifier = "DataLayerTests"
+               BuildableName = "DataLayerTests"
+               BlueprintName = "DataLayerTests"
+               ReferencedContainer = "container:DataLayer">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DomainLayerTests"
+               BuildableName = "DomainLayerTests"
+               BlueprintName = "DomainLayerTests"
+               ReferencedContainer = "container:DomainLayer">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "PresentationLayerTests"
+               BuildableName = "PresentationLayerTests"
+               BlueprintName = "PresentationLayerTests"
+               ReferencedContainer = "container:PresentationLayer">
             </BuildableReference>
          </TestableReference>
       </Testables>

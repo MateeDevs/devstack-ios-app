@@ -13,7 +13,7 @@ struct NetworkingConstants {
     static let iso8601DateOnly = "yyyy-MM-dd"
     
     static var baseURL: String {
-        switch Environment.value.type {
+        switch Environment.type {
         case .alpha: return "https://matee-devstack.herokuapp.com"
         case .beta: return "https://matee-devstack.herokuapp.com"
         case .production: return "https://matee-devstack.herokuapp.com"

@@ -8,7 +8,6 @@ import Atlantis
 #endif
 
 import DataLayer
-import DependencyInjection
 import DomainLayer
 import PresentationLayer
 import UIKit
@@ -73,15 +72,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupEnvironment() {
         #if ALPHA
         Atlantis.start()
-        Environment.value = EnvironmentValue(type: .alpha)
+        Environment.type = .alpha
         Logger.info("ALPHA environment", category: .app)
         #elseif BETA
         Atlantis.start()
-        Environment.value = EnvironmentValue(type: .beta)
+        Environment.type = .beta
         Logger.info("BETA environment", category: .app)
         #elseif PRODUCTION
-        Environment.value = EnvironmentValue(type: .production)
+        Environment.type = .production
         Logger.info("PRODUCTION environment", category: .app)
+        #endif
+        
+        #if DEBUG
+        Environment.flavor = .debug
+        #else
+        Environment.flavor = .release
         #endif
     }
     

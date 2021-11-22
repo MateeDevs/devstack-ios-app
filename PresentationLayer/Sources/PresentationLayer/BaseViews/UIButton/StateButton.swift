@@ -48,6 +48,6 @@ import UIKit
     // MARK: Additional methods
     private func updateTitle() {
         let titleForState = (isOn ? titleOnState : titleOffState) ?? title(for: .normal) ?? ""
-        setTitle(NSLocalizedString(titleForState, bundle: Bundle.current, comment: ""), for: .normal)
+        setTitle(NSLocalizedString(titleForState, bundle: .module, comment: ""), for: .normal)
     }
 }

@@ -15,11 +15,8 @@ public extension Decodable {
     }
     
     private static func stub(for resourceName: String) -> Data {
-        let bundle = Bundle(for: BundleToken.self)
-        guard let path = bundle.path(forResource: resourceName, ofType: "json"),
-              let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else { return Data() }
+        guard let url = Bundle.module.url(forResource: resourceName, withExtension: "json"),
+              let data = try? Data(contentsOf: url) else { return Data() }
         return data
     }
 }
-
-private final class BundleToken {}

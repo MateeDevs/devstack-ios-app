@@ -18,10 +18,10 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
         .package(name: "DomainLayer", path: "../DomainLayer"),
-        .package(name: "DependencyInjection", path: "../DependencyInjection"),
         .package(url: "https://github.com/Alamofire/AlamofireImage.git", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
-        .package(url: "https://github.com/Juanpe/SkeletonView.git", .upToNextMajor(from: "1.0.0"))
+        .package(url: "https://github.com/Juanpe/SkeletonView.git", .upToNextMajor(from: "1.0.0")),
+        .package(url: "https://github.com/MakeAWishFoundation/SwiftyMocky", .upToNextMajor(from: "4.0.0"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -30,7 +30,6 @@ let package = Package(
             name: "PresentationLayer",
             dependencies: [
                 .product(name: "DomainLayer", package: "DomainLayer"),
-                .product(name: "DependencyInjection", package: "DependencyInjection"),
                 .product(name: "AlamofireImage", package: "AlamofireImage"),
                 .product(name: "RxSwift", package: "RxSwift"),
                 .product(name: "RxCocoa", package: "RxSwift"),
@@ -39,7 +38,14 @@ let package = Package(
         ),
         .testTarget(
             name: "PresentationLayerTests",
-            dependencies: ["PresentationLayer"]
+            dependencies: [
+                "PresentationLayer",
+                .product(name: "DomainLayer", package: "DomainLayer"),
+                .product(name: "SwiftyMocky", package: "SwiftyMocky"),
+                .product(name: "RxSwift", package: "RxSwift"),
+                .product(name: "RxCocoa", package: "RxSwift"),
+                .product(name: "RxTest", package: "RxSwift")
+            ]
         )
     ]
 )

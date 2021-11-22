@@ -51,14 +51,10 @@ final class LoginViewController: InputViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        #if DEBUG
-        switch Environment.value.type {
-        case .alpha, .beta:
+        if Environment.flavor == .debug && Environment.type == .alpha {
             emailTextField.textField.text = "petr.chmelar@matee.cz"
             passwordTextField.textField.text = "11111111"
-        default: ()
         }
-        #endif
     }
     
     // MARK: Default methods

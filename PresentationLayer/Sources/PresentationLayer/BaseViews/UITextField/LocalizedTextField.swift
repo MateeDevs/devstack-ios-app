@@ -25,7 +25,7 @@ class LocalizedTextField: UITextField {
     // MARK: Default methods
     private func setup() {
         if let placeholder = placeholder {
-            self.placeholder = NSLocalizedString(placeholder, bundle: Bundle.current, comment: "")
+            self.placeholder = NSLocalizedString(placeholder, bundle: .module, comment: "")
         }
     }
 

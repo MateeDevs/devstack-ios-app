@@ -17,7 +17,7 @@ public struct FirebaseRemoteConfigProvider {
         }
         
         // Set fetch interval to zero for non production environments
-        if Environment.value.type != .production {
+        if Environment.type != .production {
             let settings = RemoteConfigSettings()
             settings.minimumFetchInterval = 0
             RemoteConfig.remoteConfig().configSettings = settings

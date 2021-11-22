@@ -39,21 +39,9 @@ class XIBView: UIView {
 
     // MARK: Additional methods
     private func loadViewFromNib() -> UIView? {
-        let nib = UINib(nibName: "\(type(of: self))", bundle: BundleToken.bundle)
+        let nib = UINib(nibName: "\(type(of: self))", bundle: .module)
         guard let view = nib.instantiate(withOwner: self, options: nil)[0] as? UIView else { return nil }
         return view
     }
     
 }
-
-// swiftlint:disable convenience_type
-private final class BundleToken {
-  static let bundle: Bundle = {
-    #if SWIFT_PACKAGE
-    return Bundle.module
-    #else
-    return Bundle(for: BundleToken.self)
-    #endif
-  }()
-}
-// swiftlint:enable convenience_type

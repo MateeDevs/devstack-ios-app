@@ -216,6 +216,15 @@
           "revision": "1f62db409f2c9b0223a3f68567b4a01333aae778",
           "version": "1.17.0"
         }
+      },
+      {
+        "package": "swiftymocky",
+        "repositoryURL": "https://github.com/MakeAWishFoundation/SwiftyMocky",
+        "state": {
+          "branch": null,
+          "revision": "5cae2006d61247b63a8b0c27ff4d3a6fae294bcf",
+          "version": "4.0.4"
+        }
       }
     ]
   },

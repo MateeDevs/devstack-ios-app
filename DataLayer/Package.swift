@@ -22,7 +22,8 @@ let package = Package(
         .package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: "15.0.0")),
         .package(url: "https://github.com/realm/realm-cocoa.git", .upToNextMajor(from: "10.0.0")),
         .package(url: "https://github.com/RxSwiftCommunity/RxRealm.git", .upToNextMajor(from: "5.0.0")),
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0"))
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
+        .package(url: "https://github.com/MakeAWishFoundation/SwiftyMocky", .upToNextMajor(from: "4.0.0"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -43,12 +44,19 @@ let package = Package(
                 .product(name: "RxSwift", package: "RxSwift")
             ],
             resources: [
-              .copy("NetworkStubs")
+              .process("NetworkStubs")
             ]
         ),
         .testTarget(
             name: "DataLayerTests",
-            dependencies: ["DataLayer"]
+            dependencies: [
+                "DataLayer",
+                .product(name: "DomainLayer", package: "DomainLayer"),
+                .product(name: "SwiftyMocky", package: "SwiftyMocky"),
+                .product(name: "RxSwift", package: "RxSwift"),
+                .product(name: "RxCocoa", package: "RxSwift"),
+                .product(name: "RxTest", package: "RxSwift")
+            ]
         )
     ]
 )

@@ -1,20 +1,43 @@
 sourceryCommand: null
 sourceryTemplate: null
-Tests:
+
+UseCases:
   sources:
     include:
-    - ./.
-  output: ./Tests/Mocks/Mocks.swift
-  targets:
-  - Tests
+      - ./DomainLayer/Sources/DomainLayer/UseCases/.
+  output: 
+    ./PresentationLayer/Tests/PresentationLayerTests/Mocks/Mocks.swift
   import:
-  - CoreLocation
-  - DataLayer
-  - DomainLayer
-  - Foundation
-  - RxSwift
-  - UserNotifications
+    - CoreLocation
+    - DomainLayer
+    - Foundation
+    - RxSwift
+    - class DevstackKmpShared.Book
+    - protocol DevstackKmpShared.GetBooksUseCase
+    - protocol DevstackKmpShared.RefreshBooksUseCase
 
-  - class DevstackKmpShared.Book
-  - protocol DevstackKmpShared.GetBooksUseCase
-  - protocol DevstackKmpShared.RefreshBooksUseCase
+Repositories:
+  sources:
+    include:
+      - ./DomainLayer/Sources/DomainLayer/Repositories/.
+  output: 
+    ./DomainLayer/Tests/DomainLayerTests/Mocks/Mocks.swift
+  import:
+    - CoreLocation
+    - DomainLayer
+    - Foundation
+    - RxSwift
+
+Providers:
+  sources:
+    include:
+      - ./DataLayer/Sources/DataLayer/Providers/.
+  output: 
+    ./DataLayer/Tests/DataLayerTests/Mocks/Mocks.swift
+  import:
+    - CoreLocation
+    - DataLayer
+    - DomainLayer
+    - Foundation
+    - RxSwift
+    - UserNotifications
