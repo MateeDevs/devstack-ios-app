@@ -40,10 +40,8 @@ let package = Package(
             name: "PresentationLayerTests",
             dependencies: [
                 "PresentationLayer",
-                .product(name: "DomainLayer", package: "DomainLayer"),
-                .product(name: "SwiftyMocky", package: "SwiftyMocky"),
-                .product(name: "RxSwift", package: "RxSwift"),
-                .product(name: "RxCocoa", package: "RxSwift"),
+                .product(name: "DomainStubs", package: "DomainLayer"),
+                .product(name: "UseCaseMocks", package: "DomainLayer"),
                 .product(name: "RxTest", package: "RxSwift")
             ]
         )

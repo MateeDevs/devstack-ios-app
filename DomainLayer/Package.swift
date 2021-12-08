@@ -11,6 +11,14 @@ let package = Package(
         .library(
             name: "DomainLayer",
             targets: ["DomainLayer"]
+        ),
+        .library(
+            name: "DomainStubs",
+            targets: ["DomainStubs"]
+        ),
+        .library(
+            name: "UseCaseMocks",
+            targets: ["UseCaseMocks"]
         )
     ],
     dependencies: [
@@ -30,12 +38,31 @@ let package = Package(
                 .product(name: "DevstackKmpShared", package: "devstack-kmp-app")
             ]
         ),
+        .target(
+            name: "DomainStubs",
+            dependencies: [
+                "DomainLayer"
+            ]
+        ),
+        .target(
+            name: "UseCaseMocks",
+            dependencies: [
+                "DomainLayer",
+                .product(name: "SwiftyMocky", package: "SwiftyMocky")
+            ]
+        ),
+        .target(
+            name: "RepositoryMocks",
+            dependencies: [
+                "DomainLayer",
+                .product(name: "SwiftyMocky", package: "SwiftyMocky")
+            ]
+        ),
         .testTarget(
             name: "DomainLayerTests",
             dependencies: [
-                "DomainLayer",
-                .product(name: "SwiftyMocky", package: "SwiftyMocky"),
-                .product(name: "RxSwift", package: "RxSwift"),
+                "DomainStubs",
+                "RepositoryMocks",
                 .product(name: "RxCocoa", package: "RxSwift"),
                 .product(name: "RxTest", package: "RxSwift")
             ]

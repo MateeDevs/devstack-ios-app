@@ -47,13 +47,18 @@ let package = Package(
               .process("NetworkStubs")
             ]
         ),
+        .target(
+            name: "ProviderMocks",
+            dependencies: [
+                "DataLayer",
+                .product(name: "SwiftyMocky", package: "SwiftyMocky")
+            ]
+        ),
         .testTarget(
             name: "DataLayerTests",
             dependencies: [
-                "DataLayer",
-                .product(name: "DomainLayer", package: "DomainLayer"),
-                .product(name: "SwiftyMocky", package: "SwiftyMocky"),
-                .product(name: "RxSwift", package: "RxSwift"),
+                "ProviderMocks",
+                .product(name: "DomainStubs", package: "DomainLayer"),
                 .product(name: "RxCocoa", package: "RxSwift"),
                 .product(name: "RxTest", package: "RxSwift")
             ]
