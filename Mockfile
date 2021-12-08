@@ -6,22 +6,19 @@ UseCases:
     include:
       - ./DomainLayer/Sources/DomainLayer/UseCases/.
   output: 
-    ./PresentationLayer/Tests/PresentationLayerTests/Mocks/Mocks.swift
+    ./DomainLayer/Sources/UseCaseMocks/Mocks.swift
   import:
     - CoreLocation
     - DomainLayer
     - Foundation
     - RxSwift
-    - class DevstackKmpShared.Book
-    - protocol DevstackKmpShared.GetBooksUseCase
-    - protocol DevstackKmpShared.RefreshBooksUseCase
 
 Repositories:
   sources:
     include:
       - ./DomainLayer/Sources/DomainLayer/Repositories/.
   output: 
-    ./DomainLayer/Tests/DomainLayerTests/Mocks/Mocks.swift
+    ./DomainLayer/Sources/RepositoryMocks/Mocks.swift
   import:
     - CoreLocation
     - DomainLayer
@@ -33,7 +30,7 @@ Providers:
     include:
       - ./DataLayer/Sources/DataLayer/Providers/.
   output: 
-    ./DataLayer/Tests/DataLayerTests/Mocks/Mocks.swift
+    ./DataLayer/Sources/ProviderMocks/Mocks.swift
   import:
     - CoreLocation
     - DataLayer

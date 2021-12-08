@@ -19,10 +19,4 @@ class BaseTestCase: XCTestCase {
         scheduler = TestScheduler(initialClock: 0)
         disposeBag = DisposeBag()
     }
-
-    func testableOutput<T>(from driver: Driver<T>) -> TestableObserver<T> {
-        let output = scheduler.createObserver(T.self)
-        driver.drive(output).disposed(by: disposeBag)
-        return output
-    }
 }
