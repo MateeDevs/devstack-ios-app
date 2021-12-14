@@ -23,13 +23,19 @@
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_Proxyman._tcp</string>
+	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>You need to grant access to the camera so you can take a photo.</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Atlantis would use Bonjour Service to discover Proxyman app from your local network.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>You need to grant access to location services in order to fully benefit from all the features.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
@@ -52,11 +58,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-    <key>NSLocalNetworkUsageDescription</key>
-    <string>Atlantis would use Bonjour Service to discover Proxyman app from your local network.</string>
-    <key>NSBonjourServices</key>
-    <array>
-        <string>_Proxyman._tcp</string>
-    </array>
+    <key>LSMinimumSystemVersion</key>
+    <string>12.0</string>
 </dict>
 </plist>

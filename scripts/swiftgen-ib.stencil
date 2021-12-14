@@ -1,4 +1,5 @@
-// Template is just a clone of the default ib/scenes-swift5.stencil (to make it work with Mint)
+// Template is based on the default ib/scenes-swift5.stencil
+// Imports are restricted just to Foundation and UIKit in order to eliminate warning when using in Swift Package
 // https://github.com/SwiftGen/SwiftGen/blob/stable/Sources/SwiftGenCLI/templates/ib/scenes-swift5.stencil
 
 // swiftlint:disable all
@@ -11,9 +12,7 @@
 {% set controller %}{% if isAppKit %}Controller{% else %}ViewController{% endif %}{% endset %}
 // swiftlint:disable sorted_imports
 import Foundation
-{% for module in modules where module != env.PRODUCT_MODULE_NAME and module != param.module %}
-import {{module}}
-{% endfor %}
+import UIKit
 
 // swiftlint:disable superfluous_disable_command
 // swiftlint:disable file_length implicit_return

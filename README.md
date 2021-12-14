@@ -34,7 +34,7 @@ FIXME
 FIXME
 
 ## Dependencies
-- All code dependencies are managed via [Swift Package Manager](https://swift.org/package-manager/) directly in the Xcode
+- All code dependencies are managed via [Swift Package Manager](https://swift.org/package-manager/)
 - All tools (SwiftGen, SwiftLint, etc.) are managed via [Mint](https://github.com/yonaskolb/Mint)
 - You can use the `scripts/setup.sh` for quick setup of all required tools
 - There is also `scripts/rename.sh` for quick renaming from DevStack to YourProject
@@ -57,7 +57,6 @@ FIXME
 - To ensure a uniform style, it is advised to use the ready-made templates for ViewController / ViewModel / FlowController etc.
 - The templates are available from a separate repository [ios-templates](https://github.com/MateeDevs/devstack-ios-templates)
 - When using storyboards, strictly go with the rule `one view = one storyboard`!
-- Project structure in the Xcode should reflect the directory structure on your drive
 - Unfinished or broken code should be marked with `#warning("TODO:")` or `#warning("FIXME:")`
 - Identifiers for storyboard, assets, colors and localized strings are generated with [SwiftGen](https://github.com/SwiftGen/SwiftGen)
 
@@ -92,10 +91,11 @@ FIXME
 - After successful release build, a git tag with version and build numbers is created and pushed to the git
 
 ## Tests
-- Unit tests are in `Tests`, you can run them on any scheme with `CMD + U`
-- All new features should have at least a basic test set for ViewModel's outputs and all newly created UseCases + Repositories
+- All newly created ViewModels / UseCases / Repositories should have at least a basic set of tests
 - Mocking of network requests is based on [Moya stubbing provider](https://github.com/Moya/Moya/blob/master/docs/Testing.md)
+- [SwiftyMocky](https://github.com/MakeAWishFoundation/SwiftyMocky) is used for automatic mock generation
 
 ## TODO
-- Remove `Move Frameworks` scripts from Build Phases when no longer needed
+- Re-enable KMP example once the module is fixed - [related PR](https://github.com/MateeDevs/devstack-ios-app/pull/133)
+- Replace Mint with SPM Extensible Build Tools once it is available (should be in Swift 5.6)
 - Migrate to SwiftUI + Combine when the time is right
