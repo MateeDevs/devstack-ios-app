@@ -34,15 +34,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = nc
         window?.makeKeyAndVisible()
         
+        let dependencies = UseCaseDependencyImpl(
+            dependencies: RepositoryDependencyImpl(dependencies: setupProviders(for: application)),
+            kmpDependencies: KMPKoinDependency()
+        )
+        
         // Init main flow controller and start the flow
         flowController = AppFlowController(
             navigationController: nc,
-            dependencies: UseCaseDependencyImpl(
-                dependencies: RepositoryDependencyImpl(dependencies: setupProviders(for: application)),
-                kmpDependencies: KMPKoinDependency()
-            )
+            dependencies: dependencies
         )
         flowController?.start()
+        
+     //   widget.dependecies = dependencies
         
         return true
     }

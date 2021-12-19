@@ -11,16 +11,19 @@ public struct AuthTokenRepositoryImpl: AuthTokenRepository {
     public typealias Dependencies =
         HasDatabaseProvider &
         HasKeychainProvider &
-        HasNetworkProvider
+        HasNetworkProvider &
+        HasUserDefaultsProvider
 
     private let database: DatabaseProvider
     private let keychain: KeychainProvider
     private let network: NetworkProvider
+    private let userDefaults: UserDefaultsProvider
     
     public init(dependencies: Dependencies) {
         self.database = dependencies.databaseProvider
         self.keychain = dependencies.keychainProvider
         self.network = dependencies.networkProvider
+        self.userDefaults = dependencies.userDefaultsProvider
     }
     
     public func create(_ data: LoginData) -> Observable<AuthToken> {
@@ -29,6 +32,7 @@ public struct AuthTokenRepositoryImpl: AuthTokenRepository {
         return network.observableRequest(endpoint, withInterceptor: false).map(NETAuthToken.self).mapToDomain().do { authToken in
             self.keychain.save(.authToken, value: authToken.token)
             self.keychain.save(.userId, value: authToken.userId)
+            self.userDefaults.save(.userId, value: authToken.userId)
         }
     }
     

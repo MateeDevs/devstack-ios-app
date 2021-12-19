@@ -11,6 +11,7 @@ public protocol HasUserDefaultsProvider {
 
 public enum UserDefaultsCoding: String, CaseIterable {
     case hasRunBefore
+    case userId
 }
 
 public protocol UserDefaultsProvider: AutoMockable {
