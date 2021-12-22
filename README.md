@@ -1,3 +1,5 @@
+# ⚠️ Deprecated - use [devstack-native-app](https://github.com/MateeDevs/devstack-native-app) ⚠️
+
 # Matee iOS DevStack
 
 ## Documents
